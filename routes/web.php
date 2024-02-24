@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
+
+Route::get('/home', function () {
+    return view('user.home');
+});
+
+Route::get('/profile', function () {
+    return view('user.prolfile');
+});
