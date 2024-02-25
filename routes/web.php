@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    });
 });
 
 Route::get('/home', function () {
@@ -26,5 +28,5 @@ Route::get('/home', function () {
 });
 
 Route::get('/profile', function () {
-    return view('user.prolfile');
+    return view('user.profile');
 });
