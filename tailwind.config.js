@@ -10,6 +10,10 @@ export default {
   theme: {
     extend: {
     },
+    fontFamily: {
+      'sans': ['ui-serif', 'Georgia'],
+      'serif': ['Noto Serif', 'poppins'],
+    },
   },
   plugins: [
     require('flowbite/plugin')
