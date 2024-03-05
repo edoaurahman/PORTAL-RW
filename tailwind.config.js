@@ -14,6 +14,10 @@ export default {
       'sans': ['ui-serif', 'Georgia'],
       'serif': ['Noto Serif', 'poppins'],
     },
+    colors: {
+      'chocolate': '#e6bc73',
+      'black': '#222222',
+    },
   },
   plugins: [
     require('flowbite/plugin')

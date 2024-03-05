@@ -1,19 +1,17 @@
 <x-layout.user-layout>
-
-
+    {{-- header  --}}
     <div id="default-carousel" class="relative w-full " data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-[620px]">
             <!-- Item 1 -->
-            <div class="bg-[url(/'{{ asset('assets/images/header-2.jpg') }}/')] hidden duration-700 ease-in-out"
-                data-carousel-item>
-
-                <div class="bg-red-400 font-bold  text-lg">
-                    <h1>Apa ajaaaaa</h1>
-                </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('assets/images/header-1.jpg') }}"
+                    class="absolute block w-full
+                    -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
             <!-- Item 2 -->
-            {{-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('assets/images/header-2.jpg') }}"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
@@ -21,7 +19,7 @@
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('assets/images/header-3.jpg') }}"
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div> --}}
+            </div>
         </div>
         <!-- Slider indicators -->
         <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
@@ -60,5 +58,32 @@
             </span>
         </button>
     </div>
+    {{-- end header  --}}
+
+    <div class="container mx-auto p-10">
+        {{-- start About  --}}
+        <div class="py-[0px] ">
+            <div class="text-center font-serif pb-14">
+                <h4 class="text-chocolate text-lg">Welcome To Apartio Real Estate</h4>
+                <h2 class="text-black text-5xl">PROPERTY OVERVIEW</h2>
+            </div>
+
+            <div class="flex flex-col items-center  rounded-lg md:flex-row md:max-w-full ">
+                <div class="flex w-1/2 justify-center">
+                    <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
+                        alt="">
+                </div>
+                <div class="flex w-1/2 flex-col justify-between p-4 leading-normal">
+                    <h2 class="mb-4 text-2xl font-medium tracking-tight text-red-500">A Dream Living Space</h2>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HLorem ipsum dolor sit amet consectetur
+                        adipisicing elit sed tempor incididunt ut labore et dolore magna aliqua. Ut enim veniam quis
+                        nostrud exercitation lamco..</p>
+                </div>
+            </div>
+
+        </div>
+        {{-- end About  --}}
+    </div>
+
 
 </x-layout.user-layout>
