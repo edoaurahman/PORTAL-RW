@@ -15,6 +15,8 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+    <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
