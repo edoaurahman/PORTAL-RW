@@ -11,7 +11,7 @@ export default {
     extend: {
     },
     fontFamily: {
-      'sans': ['ope Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+      'sans': ['open Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
       'serif': ['Noto Serif', 'ui-serif'],
     },
     colors: {
