@@ -30,3 +30,7 @@ Route::get('/home', function () {
 Route::get('/profile', function () {
     return view('user.profile');
 });
+
+Route::get('/login', function () {
+    return view('user.login');
+});
