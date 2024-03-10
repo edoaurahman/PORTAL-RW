@@ -26,5 +26,6 @@
     <x-partials.user.footer />
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
+<script src="{{ asset('assets/all.min.css') }}"></script>
 
 </html>
