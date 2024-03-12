@@ -61,28 +61,56 @@
     {{-- end header  --}}
 
     <div class="container mx-auto p-10">
-        {{-- start About  --}}
         <div class="py-[0px] ">
+            {{-- start About  --}}
             <div class="text-center font-serif pb-14">
                 <h4 class="text-chocolate text-lg">Welcome To Apartio Real Estate</h4>
                 <h2 class="text-black text-5xl">PROPERTY OVERVIEW</h2>
             </div>
-
-            <div class="flex flex-col items-center  rounded-lg md:flex-row md:max-w-full ">
-                <div class="flex w-1/2 justify-center">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+                <div class="">
                     <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
                         alt="">
                 </div>
-                <div class="flex w-1/2 flex-col justify-between p-4 leading-normal">
-                    <h2 class="mb-4 text-2xl font-medium tracking-tight text-red-500">A Dream Living Space</h2>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">HLorem ipsum dolor sit amet consectetur
-                        adipisicing elit sed tempor incididunt ut labore et dolore magna aliqua. Ut enim veniam quis
-                        nostrud exercitation lamco..</p>
+                <div class="">
+                    <h2 class="mb-4 font-serif text-3xl font-medium tracking-tight text-black1">A Dream Living Space
+                    </h2>
+                    <p class="mb-3 font-serif font-normal text-base text-black2 ">Lorem ipsum dolor
+                        sit amet
+                        consectetur
+                        adipisicing elit. Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat,
+                        inventore sunt in nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.
+                        Reiciendis laboriosam nostrum, optio qui reprehenderit pariatur doloremque omnis repudiandae
+                        repellat recusandae cum facere ratione perspiciatis, beatae rem debitis iusto possimus
+                        sequi.</p>
                 </div>
             </div>
-
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+                <div class="">
+                    <h2 class="mb-4 font-serif text-3xl font-medium tracking-tight text-black1">A Dream Living Space
+                    </h2>
+                    <p class="mb-3 font-serif font-normal text-base text-black2 ">Lorem ipsum dolor
+                        sit amet
+                        consectetur
+                        adipisicing elit. Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat,
+                        inventore sunt in nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.
+                        Reiciendis laboriosam nostrum, optio qui reprehenderit pariatur doloremque omnis repudiandae
+                        repellat recusandae cum facere ratione perspiciatis, beatae rem debitis iusto possimus
+                        sequi.</p>
+                </div>
+                <div class="">
+                    <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
+                        alt="">
+                </div>
+                {{-- end About  --}}
+            </div>
+            {{-- start acara --}}
+            <div class="text-center font-serif pb-14 pt-10">
+                <h4 class="text-chocolate text-lg">Bergabunglah dalam kegiatan kesehatan, sosial, dan kebersamaan</h4>
+                <h2 class="text-black text-5xl">ACARA - ACARA RW</h2>
+            </div>
+            {{-- end acara --}}
         </div>
-        {{-- end About  --}}
     </div>
 
 

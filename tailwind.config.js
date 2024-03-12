@@ -17,7 +17,8 @@ export default {
     colors: {
       'chocolate': '#e6bc73',
       'chocolate-light': '#ffc801',
-      'black': '#222222',
+      'black1': '#222222',
+      'black2': '#666666',
     },
   },
   plugins: [
