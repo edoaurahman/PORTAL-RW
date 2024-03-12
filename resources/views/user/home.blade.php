@@ -60,14 +60,14 @@
     </div>
     {{-- end header  --}}
 
-    <div class="container mx-auto p-10">
-        <div class="py-[0px] ">
-            {{-- start About  --}}
-            <div class="text-center font-serif pb-14">
+    <div class="container mx-auto p-5 lg:p-10">
+        {{-- start About  --}}
+        <div class=" pb-28 pt-28">
+            <div class="text-center font-serif pb-20">
                 <h4 class="text-chocolate text-lg">Welcome To Apartio Real Estate</h4>
                 <h2 class="text-black text-5xl">PROPERTY OVERVIEW</h2>
             </div>
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div class="">
                     <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
                         alt="">
@@ -85,7 +85,7 @@
                         sequi.</p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div class="">
                     <h2 class="mb-4 font-serif text-3xl font-medium tracking-tight text-black1">A Dream Living Space
                     </h2>
@@ -102,15 +102,83 @@
                     <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
                         alt="">
                 </div>
-                {{-- end About  --}}
             </div>
-            {{-- start acara --}}
-            <div class="text-center font-serif pb-14 pt-10">
-                <h4 class="text-chocolate text-lg">Bergabunglah dalam kegiatan kesehatan, sosial, dan kebersamaan</h4>
-                <h2 class="text-black text-5xl">ACARA - ACARA RW</h2>
-            </div>
-            {{-- end acara --}}
         </div>
+        {{-- end About  --}}
+        {{-- start acara --}}
+        <div class="text-center font-serif pb-20 pt-10">
+            <h4 class="text-chocolate text-lg">kegiatan kesehatan, sosial, dan kebersamaan</h4>
+            <h2 class="text-black text-5xl">ACARA - ACARA RW</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-10">
+            <div class="a">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden lg:rounded-none lg:shadow-none">
+                    <div class="py-4 px-6 lg:px-0">
+                        <h1 class="mb-3 text-2xl font-serif font-semibold text-black1">Langkah Bersama Menjaga
+                            Kesehatan : Posyandu Sehat RW</h1>
+                        <p class="pb-9 font-serif text-base text-black2">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing
+                            elit.
+                            Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat, inventore sunt
+                            in
+                            nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.</p>
+                    </div>
+                    <img class="w-full max-h-[450px]  object-cover object-center"
+                        src="{{ asset('assets/images/baby.jpg') }}" alt="avatar">
+                </div>
+            </div>
+            <div class="b">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden lg:rounded-none lg:shadow-none">
+                    <img class="w-full max-h-[450px] object-cover object-center"
+                        src="{{ asset('assets/images/baby.jpg') }}" alt="avatar">
+                    <div class="py-4 px-6 lg:px-0">
+                        <h1 class="mb-3 text-2xl font-serif font-semibold text-black1">Langkah Bersama Menjaga
+                            Kesehatan</h1>
+                        <p class="pb-9 font-serif text-base text-black2">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing
+                            elit.
+                            Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat, inventore sunt
+                            in
+                            nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="c">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden lg:rounded-none lg:shadow-none">
+                    <div class="py-4 px-6 lg:px-0">
+                        <h1 class="mb-3 text-2xl font-serif font-semibold text-black1">Langkah Bersama Menjaga
+                            Kesehatan</h1>
+                        <p class="pb-9 font-serif text-base text-black2">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing
+                            elit.
+                            Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat, inventore sunt
+                            in
+                            nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.</p>
+                    </div>
+                    <img class="w-full max-h-[450px] object-cover object-center"
+                        src="{{ asset('assets/images/baby.jpg') }}" alt="avatar">
+                </div>
+            </div>
+            <div class="b">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden lg:rounded-none lg:shadow-none">
+                    <img class="w-full max-h-[450px] object-cover object-center"
+                        src="{{ asset('assets/images/baby.jpg') }}" alt="avatar">
+                    <div class="py-4 px-6 lg:px-0">
+                        <h1 class="mb-3 text-2xl font-serif font-semibold text-black1">Langkah Bersama Menjaga
+                            Kesehatan</h1>
+                        <p class="pb-9 font-serif text-base text-black2">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing
+                            elit.
+                            Eos commodi minus non quasi consequatur distinctio animi, iusto, placeat, inventore sunt
+                            in
+                            nisi consequuntur? Amet esse unde tempora deleniti laudantium molestias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end acara --}}
+
     </div>
 
 
