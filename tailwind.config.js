@@ -15,12 +15,9 @@ export default {
       'serif': ['Noto Serif', 'ui-serif'],
     },
     colors: {
-      'chocolate': '#e6bc73',
-      'chocolate-light': '#ffc801',
-      'black1': '#222222',
-      'black2': '#666666',
-      // warna mode light 
       'ungu':'#640EF1',
+      'black1':'#080C2E',
+      'black2':'#5D5D7C',
     },
   },
   plugins: [
