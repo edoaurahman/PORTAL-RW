@@ -67,7 +67,7 @@
                 <h4 class="text-chocolate text-lg">Welcome To Apartio Real Estate</h4>
                 <h2 class="text-black text-5xl">PROPERTY OVERVIEW</h2>
             </div>
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="grid grid-cols-1 gap-11 md:grid-cols-2">
                 <div class="">
                     <img class="object-cover w-full md:h-72 md:w-full" src="{{ asset('assets/images/header-1.jpg') }}"
                         alt="">
@@ -85,7 +85,7 @@
                         sequi.</p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="grid grid-cols-1 gap-11 md:grid-cols-2">
                 <div class="">
                     <h2 class="mb-4 font-serif text-3xl font-medium tracking-tight text-black1">A Dream Living Space
                     </h2>

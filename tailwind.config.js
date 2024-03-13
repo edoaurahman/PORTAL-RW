@@ -11,7 +11,7 @@ export default {
     extend: {
     },
     fontFamily: {
-      'sans': ['open Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+      'sans': ['Poppins','open Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
       'serif': ['Noto Serif', 'ui-serif'],
     },
     colors: {
@@ -19,6 +19,8 @@ export default {
       'chocolate-light': '#ffc801',
       'black1': '#222222',
       'black2': '#666666',
+      // warna mode light 
+      'ungu':'#640EF1',
     },
   },
   plugins: [
