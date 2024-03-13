@@ -2,17 +2,17 @@
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px]">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
-                <div class="w-fit gap-x-2 px-5 py-2 small-badge flex flex-row bg-white rounded-full items-center">
+                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
                     <i class="fa-solid fa-globe"></i>
                     <p class=" text-base font-semibold text-indigo-900">
                         Kami memiliki jumlah penduduk lebih dari 1.000 jiwa.
                     </p>
                 </div>
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-indigo-900 font-bold text-[70px] leading-none">Tumbuh <br>
+                    <h1 class="text-black1 font-bold text-[70px] leading-none">Tumbuh <br>
                         Bersama RW 02.
                     </h1>
-                    <div class="text-base leading-loose text-gray-500">
+                    <div class="text-base leading-loose text-black2">
                         We provide a variety of servers to grow your users <br>
                         acquisition much user-friendly and boosting up sales.
                     </div>
@@ -31,5 +31,8 @@
                 <img src="{{ asset('assets/images/illustration.png') }}" alt="" class="h-[550px]">
             </div>
         </div>
+    </section>
+    <section>
+
     </section>
 </x-layout.user-layout>
