@@ -1,6 +1,7 @@
 <x-layout.form-login-layout>
     <div class="grid grid-cols-2 h-screen">
-        <div class="flex justify-center items-center bg-black2">
+        <div class="flex justify-center items-center bg-transparent">
+            <div class="absolute z-[-1] h-screen w-screen bg-black2" id="particles-js"></div>
             <div class="text-right pr-20 pl-20">
                 <h2 class="text-5xl font-bold font-sans text-ungu mb-5 uppercase">Membangun Hubungan <br>Era Digital
                 </h2>
@@ -19,8 +20,7 @@
                 <h1 class="text-3xl font-sans font-medium text-ungu mb-2">Welcome!</h1>
                 <h3 class="text-2xl font-sans font-normal capitalize mb-8">Sign into your account</h3>
                 <div class="mb-5">
-                    <label for="email"
-                        class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">NIK</label>
+                    <label for="email" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">NIK</label>
                     <input type="email" id="email"
                         class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm  focus:ring-ungu focus:border-ungu block w-full py-3 px-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         placeholder="name@flowbite.com" required />
@@ -49,5 +49,118 @@
                     new account</button>
             </form>
         </div>
-    </div>
+
+        <script src="{{ asset('assets/js/particles.min.js') }}"></script>
+        <script>
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 380,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        </script>
 </x-layout.form-login-layout>
