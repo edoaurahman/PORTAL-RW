@@ -1,8 +1,8 @@
 <x-layout.form-login-layout>
     <div class="grid grid-cols-2 h-screen">
-        <div class="flex justify-center items-center bg-blue-500">
+        <div class="flex justify-center items-center bg-black2">
             <div class="text-right pr-20 pl-20">
-                <h2 class="text-5xl font-bold font-sans text-ungu mb-5">Membangun Hubungan <br>Era Digital
+                <h2 class="text-5xl font-bold font-sans text-ungu mb-5 uppercase">Membangun Hubungan <br>Era Digital
                 </h2>
                 <p class="text-white text-lg mb-9">Selamat datang di Portal Web RW 02, tempat di mana Anda dapat
                     mengakses berbagai layanan dan informasi terkait dengan lingkungan dan kegiatan komunitas di RW 02.

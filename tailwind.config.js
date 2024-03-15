@@ -15,12 +15,16 @@ export default {
     },
     extend: {
       colors: {
-        'chocolate': '#e6bc73',
-        'chocolate-light': '#ffc801',
-        'black1': '#222222',
-        'black2': '#666666',
-        // warna mode light 
+        // warna utama halaman user 
         'ungu': '#640EF1',
+        'black1': '#080C2E',
+        'black2': '#080C2E',
+        'black3': '#5D5D7C',
+
+        // warna utama halaman user hover
+        
+
+        // -----
         current: 'currentColor',
         transparent: 'transparent',
         white: '#FFFFFF',
