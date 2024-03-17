@@ -15,6 +15,7 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/flowbite.min.css') }}">
     <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
