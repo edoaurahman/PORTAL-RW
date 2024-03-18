@@ -11,4 +11,9 @@ class AkunModel extends Model
     protected $table = 'tb_akun';
     protected $primaryKey = 'id_akun';
     protected $fillable = ['username', 'password', 'id_level', 'nik'];
+
+    public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(PendudukModel::class, 'nik', 'nik');
+    }
 }
