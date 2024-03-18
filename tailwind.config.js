@@ -20,6 +20,7 @@ export default {
         'black1': '#080C2E',
         'black2': '#080C2E',
         'black3': '#5D5D7C',
+        'black4': '#8D90A8',
 
         // warna utama halaman user hover
         
