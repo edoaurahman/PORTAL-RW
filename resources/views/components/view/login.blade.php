@@ -3,7 +3,7 @@
         <div class="flex justify-center items-center bg-transparent">
             <div class="absolute z-[-1] h-screen w-screen bg-black2" id="particles-js"></div>
             <div class="text-right pr-20 pl-20 ">
-                <h2 class="text-5xl font-extrabold font-sans text-ungu mb-5 uppercase">Hubungan di Era Digital
+                <h2 class="text-5xl font-extrabold font-sans text-white mb-5 uppercase">Hubungan di Era Digital
                 </h2>
                 <p class="text-white text-lg mb-9">Selamat datang di Portal Web RW 02, tempat di mana Anda dapat
                     mengakses berbagai layanan dan informasi terkait dengan lingkungan dan kegiatan komunitas di RW 02.
@@ -63,7 +63,7 @@
                         }
                     },
                     "color": {
-                        "value": "#ffffff"
+                        "value": "#640EF1"
                     },
                     "shape": {
                         "type": "circle",
@@ -103,7 +103,7 @@
                     "line_linked": {
                         "enable": true,
                         "distance": 150,
-                        "color": "#ffffff",
+                        "color": "#640EF1",
                         "opacity": 0.4,
                         "width": 1
                     },

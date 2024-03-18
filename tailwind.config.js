@@ -16,6 +16,7 @@ export default {
     extend: {
       colors: {
         // warna utama halaman user 
+        'kuning': '#FFD15A',
         'ungu': '#640EF1',
         'black1': '#080C2E',
         'black2': '#080C2E',
