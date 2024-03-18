@@ -19,7 +19,7 @@ class CreateTbAkunTable extends Migration
             $table->string('password', 100);
             $table->integer('id_level');
             $table->string('nik', 16)->index('nik');
-            
+            $table->timestamps();
             $table->foreign('id_level', 'tb_akun_ibfk_1')->references('id_level')->on('tb_level');
         });
     }

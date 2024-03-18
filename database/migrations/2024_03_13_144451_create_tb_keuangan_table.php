@@ -19,7 +19,8 @@ class CreateTbKeuanganTable extends Migration
             $table->enum('status', ['Lunas', 'Belum Lunas']);
             $table->string('nik', 16);
             $table->integer('id_kategori_keuangan');
-            
+            $table->timestamps();
+
             $table->foreign('nik', 'tb_keuangan_ibfk_1')->references('nik')->on('tb_penduduk');
             $table->foreign('id_kategori_keuangan', 'tb_keuangan_ibfk_2')->references('id_kategori')->on('tb_kategori_keuangan');
         });

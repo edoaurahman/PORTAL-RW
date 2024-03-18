@@ -18,6 +18,7 @@ class CreateTbInventarisTable extends Migration
             $table->string('nama', 20);
             $table->integer('jumlah');
             $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
+            $table->timestamps();
         });
     }
 

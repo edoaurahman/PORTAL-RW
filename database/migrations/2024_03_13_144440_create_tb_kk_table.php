@@ -16,6 +16,7 @@ class CreateTbKkTable extends Migration
         Schema::create('tb_kk', function (Blueprint $table) {
             $table->string('no_kk', 16)->primary();
             $table->string('nik_kepalakeluarga', 16);
+            $table->timestamps();
         });
     }
 

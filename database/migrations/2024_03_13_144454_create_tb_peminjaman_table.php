@@ -17,7 +17,8 @@ class CreateTbPeminjamanTable extends Migration
             $table->integer('id_peminjaman')->primary();
             $table->integer('id_inventaris');
             $table->string('nik', 16);
-            
+            $table->timestamps();
+
             $table->foreign('id_inventaris', 'tb_peminjaman_ibfk_1')->references('id_inventaris')->on('tb_inventaris');
             $table->foreign('nik', 'tb_peminjaman_ibfk_2')->references('nik')->on('tb_penduduk');
         });

@@ -25,7 +25,7 @@ class CreateTbKkFkPendudukTable extends Migration
      */
     public function down()
     {
-        Schema::table('tb_kk', function(Blueprint $table){
+        Schema::table('tb_kk', function (Blueprint $table) {
             $table->dropForeign('fk_penduduk');
         });
     }

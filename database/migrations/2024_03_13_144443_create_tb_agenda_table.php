@@ -18,7 +18,8 @@ class CreateTbAgendaTable extends Migration
             $table->string('judul', 100);
             $table->text('deskripsi');
             $table->string('author', 16);
-            
+            $table->timestamps();
+
             $table->foreign('author', 'tb_agenda_ibfk_1')->references('nik')->on('tb_penduduk');
         });
     }

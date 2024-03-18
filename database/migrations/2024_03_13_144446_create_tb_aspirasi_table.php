@@ -21,7 +21,8 @@ class CreateTbAspirasiTable extends Migration
             $table->string('dokumentasi', 50);
             $table->enum('status', ['Belum Ditanggapi', 'Sudah Ditanggapi']);
             $table->text('respon');
-            
+            $table->timestamps();
+
             $table->foreign('author', 'tb_aspirasi_ibfk_1')->references('nik')->on('tb_penduduk');
         });
     }

@@ -24,7 +24,8 @@ class CreateTbPendudukTable extends Migration
             $table->string('gol_darah', 5);
             $table->integer('id_alamat');
             $table->string('no_kk', 16);
-            
+            $table->timestamps();
+
             $table->foreign('id_alamat', 'tb_penduduk_ibfk_2')->references('id_alamat')->on('tb_alamat');
         });
     }

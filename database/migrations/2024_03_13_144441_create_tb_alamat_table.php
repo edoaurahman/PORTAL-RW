@@ -20,6 +20,7 @@ class CreateTbAlamatTable extends Migration
             $table->string('kel/desa', 50);
             $table->string('kecamatan', 50);
             $table->string('jalan', 50);
+            $table->timestamps();
         });
     }
 

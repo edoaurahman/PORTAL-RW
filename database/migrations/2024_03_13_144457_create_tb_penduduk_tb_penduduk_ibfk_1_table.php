@@ -25,7 +25,7 @@ class CreateTbPendudukTbPendudukIbfk1Table extends Migration
      */
     public function down()
     {
-        Schema::table('tb_penduduk', function(Blueprint $table){
+        Schema::table('tb_penduduk', function (Blueprint $table) {
             $table->dropForeign('tb_penduduk_ibfk_1');
         });
     }

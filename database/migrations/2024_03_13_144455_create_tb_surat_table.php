@@ -17,6 +17,7 @@ class CreateTbSuratTable extends Migration
             $table->integer('id_surat')->primary();
             $table->string('nama_surat');
             $table->string('file', 50);
+            $table->timestamps();
         });
     }
 

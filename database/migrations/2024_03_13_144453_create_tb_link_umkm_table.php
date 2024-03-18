@@ -17,7 +17,8 @@ class CreateTbLinkUmkmTable extends Migration
             $table->integer('id_umkm');
             $table->string('nama', 100);
             $table->string('link', 100);
-            
+            $table->timestamps();
+
             $table->foreign('id_umkm', 'tb_link_umkm_ibfk_1')->references('id_umkm')->on('tb_umkm');
         });
     }
