@@ -17,7 +17,10 @@ class CreateTbSuratTable extends Migration
             $table->integer('id_surat')->primary();
             $table->string('nama_surat');
             $table->string('file', 50);
+            $table->string('author', 16)->index();
             $table->timestamps();
+
+            $table->foreign('author', 'tb_surat_ibfk')->references('nik')->on('tb_akun');
         });
     }
 
