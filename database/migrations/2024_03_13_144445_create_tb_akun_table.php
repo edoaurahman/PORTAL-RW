@@ -14,7 +14,7 @@ class CreateTbAkunTable extends Migration
     public function up()
     {
         Schema::create('tb_akun', function (Blueprint $table) {
-            $table->integer('id_akun')->primary();
+            $table->integer('id_akun')->autoIncrement();
             $table->string('username', 100);
             $table->string('password', 100);
             $table->integer('id_level');
@@ -22,6 +22,7 @@ class CreateTbAkunTable extends Migration
             $table->string('nik', 16)->index('nik');
             $table->timestamps();
             $table->foreign('id_level', 'tb_akun_ibfk_1')->references('id_level')->on('tb_level');
+            $table->foreign('nik', 'tb_akun_ibfk_2')->references('nik')->on('tb_penduduk');
         });
     }
 

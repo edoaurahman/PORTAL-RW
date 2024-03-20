@@ -24,8 +24,14 @@ class CreateTbPendudukTable extends Migration
             $table->string('pekerjaan', 50);
             $table->string('gol_darah', 5);
             $table->string('no_kk', 16);
+            $table->integer('id_alamat');
             $table->enum('status_penduduk', ['Pendatang', 'Penduduk Tetap']);
             $table->timestamps();
+
+            // foreign key id_alamat
+            $table->foreign('id_alamat')->references('id_alamat')->on('tb_alamat')->onDelete('cascade');
+            // foreign key no_kk
+            $table->foreign('no_kk')->references('no_kk')->on('tb_kk');
         });
     }
 

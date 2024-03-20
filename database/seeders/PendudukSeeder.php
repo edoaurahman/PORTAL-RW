@@ -15,12 +15,21 @@ class PendudukSeeder extends Seeder
      */
     public function run(): void
     {
+        $alamat = [
+            'id_alamat' => '1',
+            'rw' => '1',
+            'rt' => '1',
+            'kel/desa' => 'Prigi',
+            'kecamatan' => 'Kanor',
+            'jalan' => 'Jl. Raya Prigi'
+        ];
+        AlamatModel::create($alamat);
         $kk = [
             'no_kk' => '3522110504040001',
             'nik_kepalakeluarga' => '3522110504040006',
         ];
         KkModel::create($kk);
-        $data =
+        $penduduk =
             [
                 'nik' => '3522110504040006',
                 'nama' => "Ridho Aulia' Rahman",
@@ -32,18 +41,9 @@ class PendudukSeeder extends Seeder
                 'pekerjaan' => 'Pelajar',
                 'gol_darah' => 'O',
                 'no_kk' => '3522110504040001',
-                'status_penduduk' => 'Pendatang'
+                'status_penduduk' => 'Pendatang',
+                'id_alamat' => '1',
             ];
-        PendudukModel::create($data);
-        $alamat = [
-            'id_alamat' => '1',
-            'nik' => '3522110504040006',
-            'rw' => '1',
-            'rt' => '1',
-            'kel/desa' => 'Prigi',
-            'kecamatan' => 'Kanor',
-            'jalan' => 'Jl. Raya Prigi'
-        ];
-        AlamatModel::create($alamat);
+        PendudukModel::create($penduduk);
     }
 }

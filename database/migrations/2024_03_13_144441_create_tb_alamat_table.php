@@ -15,15 +15,12 @@ class CreateTbAlamatTable extends Migration
     {
         Schema::create('tb_alamat', function (Blueprint $table) {
             $table->integer('id_alamat')->primary();
-            $table->string('nik', 16);
             $table->integer('rw');
             $table->integer('rt');
             $table->string('kel/desa', 50);
             $table->string('kecamatan', 50);
             $table->string('jalan', 50);
             $table->timestamps();
-
-            $table->foreign('nik', 'tb_alamat_ibfk_1')->references('nik')->on('tb_penduduk');
         });
     }
 
