@@ -16,6 +16,7 @@ class AkunSeeder extends Seeder
     {
         $akun = [
             [
+                'email' => 'edoaurahman@gmail.com',
                 'username' => 'superadmin',
                 'password' => Hash::make('superadmin'),
                 'id_level' => '1',

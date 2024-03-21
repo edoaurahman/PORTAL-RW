@@ -10,7 +10,7 @@ class AkunModel extends Model
     use HasFactory;
     protected $table = 'tb_akun';
     protected $primaryKey = 'id_akun';
-    protected $fillable = ['username', 'password', 'id_level', 'nik'];
+    protected $fillable = ['email', 'username', 'password', 'id_level', 'nik'];
 
     public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

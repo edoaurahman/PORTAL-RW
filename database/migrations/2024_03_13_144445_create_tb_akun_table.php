@@ -15,7 +15,8 @@ class CreateTbAkunTable extends Migration
     {
         Schema::create('tb_akun', function (Blueprint $table) {
             $table->integer('id_akun')->autoIncrement();
-            $table->string('username', 100);
+            $table->string('email', 50);
+            $table->string('username', 50);
             $table->string('password', 100);
             $table->integer('id_level');
             $table->rememberToken();
