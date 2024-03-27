@@ -22,6 +22,7 @@
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
+<script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
 </head>
 
 </html>
