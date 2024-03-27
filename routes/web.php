@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,19 +19,21 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        })->name('admin.dashboard');
     });
 });
 
 Route::get('/home', function () {
     return view('user.home');
-});
+})->name('user.home');
 
 Route::get('/profile', function () {
     return view('user.profile');
 });
 
-Route::get('/login', function () {
-    return view('components.view.login');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

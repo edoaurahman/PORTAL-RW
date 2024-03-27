@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\AkunModel;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
@@ -17,14 +18,17 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-        $guards = empty($guards) ? [null] : $guards;
-
+        // dd($guards);
+        $guards = empty ($guards) ? [null] : $guards;
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                $level = auth()->user()->level->nama_level;
+                if ($level == 'Super Admin') {
+                    return redirect(RouteServiceProvider::ADMIN);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-
         return $next($request);
     }
 }
