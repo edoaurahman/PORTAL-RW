@@ -18,7 +18,8 @@
                     </div>
                 </div>
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Tanpa
+                    <a href="#"
+                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Tanpa
                         Login</a>
                     <a href="#" class="gap-x-2 flex items-center text-ungu font-semibold text-base">
                         <i class="fa-solid fa-message"></i>
@@ -74,7 +75,7 @@
                     <a href="" class="text-base font-semibold text-white">Selengkapnya</a>
                 </div>
                 <div class="absolute top-5 right-5">
-                    <img src="{{ asset('assets/images/Home/Ellipse 2.png') }}" alt="">
+                    <img src="{{ asset('assets/images/home/Ellipse 2.png') }}" alt="">
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -84,7 +85,7 @@
                         Meninggal Dunia
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                    Lorem ipsum dolor sit amet consectetur
+                        Lorem ipsum dolor sit amet consectetur
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Selengkapnya</a>
@@ -96,7 +97,7 @@
                         SKTM
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                    Lorem ipsum dolor sit amet consectetur
+                        Lorem ipsum dolor sit amet consectetur
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Selengkapnya</a>
@@ -108,7 +109,7 @@
                         Izin menginap
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                    Lorem ipsum dolor sit amet consectetur
+                        Lorem ipsum dolor sit amet consectetur
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Selengkapnya</a>
@@ -141,7 +142,7 @@
                                 25 Maret
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
                             </div>
                         </div>
                     </div>
@@ -152,14 +153,15 @@
                                 Di Balai Warga
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Selengkapnya</a>
+                    <a href="#"
+                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Selengkapnya</a>
                     <a href="#" class="gap-x-2 flex items-center text-ungu font-semibold">
                         <i class="fa-solid fa-message"></i>
                         Schedule a Demo
@@ -183,31 +185,43 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                                Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                                Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                                Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -215,31 +229,43 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                Selengkapnya</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                            Selengkapnya</a>
+                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +291,8 @@
                     </div>
                 </div>
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-kuning text-black1 py-4 px-10 rounded-full font-semibold">Explore
+                    <a href="#"
+                        class="hover:bg-indigo-900 text-base bg-kuning text-black1 py-4 px-10 rounded-full font-semibold">Explore
                         More
                     </a>
                     <a href="#" class="gap-x-2 flex items-center text-white font-semibold text-base">
@@ -275,7 +302,8 @@
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-x-5 gap-y-5">
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
@@ -283,7 +311,8 @@
                             More</a>
                     </div>
                 </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
@@ -291,7 +320,8 @@
                             More</a>
                     </div>
                 </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
@@ -299,7 +329,8 @@
                             More</a>
                     </div>
                 </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
@@ -307,7 +338,8 @@
                             More</a>
                     </div>
                 </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
@@ -315,7 +347,8 @@
                             More</a>
                     </div>
                 </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
+                <div
+                    class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Web Crawl</h3>
