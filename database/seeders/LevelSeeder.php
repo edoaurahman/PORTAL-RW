@@ -25,7 +25,11 @@ class LevelSeeder extends Seeder
             [
                 'id_level' => 3,
                 'nama_level' => 'Penduduk'
-            ]
+            ],
+            [
+                'id_level' => 4,
+                'nama_level' => 'RW'
+            ],
         ];
         LevelModel::insert($level);
     }

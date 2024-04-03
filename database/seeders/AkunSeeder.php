@@ -35,7 +35,14 @@ class AkunSeeder extends Seeder
                 'password' => Hash::make('rt01'),
                 'id_level' => '2',
                 'nik' => '3522110504040008'
-            ]
+            ],
+            [
+                'email' => 'rw@gmail.com',
+                'username' => 'rw',
+                'password' => Hash::make('rw'),
+                'id_level' => '4',
+                'nik' => '3522110504040006'
+            ],
         ];
 
         AkunModel::insert($akun);
