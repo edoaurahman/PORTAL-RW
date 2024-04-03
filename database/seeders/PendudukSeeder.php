@@ -32,14 +32,36 @@ class PendudukSeeder extends Seeder
                     'kel/desa' => 'Prigi',
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
-                ]
+                ],
+                [
+                    'id_alamat' => '3',
+                    'rw' => '1',
+                    'rt' => '1',
+                    'kel/desa' => 'Prigi',
+                    'kecamatan' => 'Kanor',
+                    'jalan' => 'Jl. Raya Prigi'
+                ],
+                [
+                    'id_alamat' => '4',
+                    'rw' => '1',
+                    'rt' => '1',
+                    'kel/desa' => 'Prigi',
+                    'kecamatan' => 'Kanor',
+                    'jalan' => 'Jl. Raya Prigi'
+                ],
             ];
         AlamatModel::insert($alamat);
         $kk = [
-            'no_kk' => '3522110504040001',
-            'nik_kepalakeluarga' => '3522110504040006',
+            [
+                'no_kk' => '3522110504040001',
+                'nik_kepalakeluarga' => '3522110504040006',
+            ],
+            [
+                'no_kk' => '3522110504040002',
+                'nik_kepalakeluarga' => '3522110504040008',
+            ],
         ];
-        KkModel::create($kk);
+        KkModel::insert($kk);
         $penduduk =
             [
 
@@ -70,7 +92,49 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '2',
-                ]
+                ],
+                [
+                    'nik' => '3522110504040008',
+                    'nama' => "Abid",
+                    'tempat_lahir' => 'Bojonegoro',
+                    'tgl_lahir' => '2004-05-04',
+                    'jenis_kelamin' => 'Laki-Laki',
+                    'agama' => 'Islam',
+                    'status_perkawinan' => 'Belum Kawin',
+                    'pekerjaan' => 'Pelajar',
+                    'gol_darah' => 'O',
+                    'no_kk' => '3522110504040001',
+                    'status_penduduk' => 'Pendatang',
+                    'id_alamat' => '3',
+                ],
+                [
+                    'nik' => '3522110504040009',
+                    'nama' => "Putra",
+                    'tempat_lahir' => 'Bojonegoro',
+                    'tgl_lahir' => '2004-05-04',
+                    'jenis_kelamin' => 'Laki-Laki',
+                    'agama' => 'Islam',
+                    'status_perkawinan' => 'Belum Kawin',
+                    'pekerjaan' => 'Pelajar',
+                    'gol_darah' => 'O',
+                    'no_kk' => '3522110504040002',
+                    'status_penduduk' => 'Pendatang',
+                    'id_alamat' => '3',
+                ],
+                [
+                    'nik' => '3522110504040010',
+                    'nama' => "Zaki",
+                    'tempat_lahir' => 'Bojonegoro',
+                    'tgl_lahir' => '2004-05-04',
+                    'jenis_kelamin' => 'Laki-Laki',
+                    'agama' => 'Islam',
+                    'status_perkawinan' => 'Belum Kawin',
+                    'pekerjaan' => 'Pelajar',
+                    'gol_darah' => 'O',
+                    'no_kk' => '3522110504040002',
+                    'status_penduduk' => 'Pendatang',
+                    'id_alamat' => '3',
+                ],
             ];
         PendudukModel::insert($penduduk);
     }

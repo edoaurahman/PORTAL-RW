@@ -19,11 +19,12 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         // dd($guards);
-        $guards = empty ($guards) ? [null] : $guards;
+        $guards = empty($guards) ? [null] : $guards;
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 $level = auth()->user()->level->nama_level;
-                if ($level == 'Super Admin') {
+                $auth = $level == 'Super Admin' || str_contains($level, 'RT') || $level == 'RW';
+                if ($auth) {
                     return redirect(RouteServiceProvider::ADMIN);
                 }
                 return redirect(RouteServiceProvider::HOME);
