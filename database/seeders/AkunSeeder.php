@@ -32,7 +32,7 @@ class AkunSeeder extends Seeder
             [
                 'email' => 'rt@gmail.com',
                 'username' => 'rt01',
-                'password' => Hash::make('rt123456'),
+                'password' => Hash::make('rt01'),
                 'id_level' => '2',
                 'nik' => '3522110504040008'
             ]

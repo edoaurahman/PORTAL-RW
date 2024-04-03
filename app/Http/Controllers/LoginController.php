@@ -23,7 +23,8 @@ class LoginController extends Controller
         if (Auth::attempt(['username' => $credentials['username'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
             $level = AkunModel::with('level')->find(Auth::id())->level->nama_level;
-            if ($level == 'Super Admin' || $level == 'RW' || $level == 'RT') {
+            $auth = $level == 'Super Admin' || str_contains($level, 'RT') || $level == 'RW';
+            if ($auth) {
                 return redirect()->route('admin.dashboard');
             } else {
                 return redirect()->route('user.home');
@@ -42,6 +43,9 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        // clear all localStorage
+
 
         return redirect()->route('user.home');
     }
