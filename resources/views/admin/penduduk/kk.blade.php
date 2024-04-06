@@ -43,10 +43,16 @@
                                 {{ $item->nik_kepalakeluarga }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}"
-                                    class="font-medium text-white hover:underline bg-blue-600 p-2 rounded">Details</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button class="font-medium text-white bg-blue-600 p-2 rounded">
+                                    <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
+                                        Details
+                                    </a>
+                                </button>
+                                <button class="font-medium text-white bg-zinc-500 p-2 dark:text-white rounded">
+                                    <a href="#">
+                                        Edit
+                                    </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach
