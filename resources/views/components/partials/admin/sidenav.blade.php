@@ -69,19 +69,19 @@
                             :class="(selected === 'Penduduk') ? 'block' :'hidden'">
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
+                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk') }}" ">Daftar
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
-                                    <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
+                                    <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk.akun') }}">Akun
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
+                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk.kk') }}">Daftar KK
                                     </a>
                                 </li>
