@@ -131,11 +131,11 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium text-black dark:text-white">
+                            <h5 class="font-bold text-black dark:text-white">
                                 Pembersihan lingkungan bersama
                             </h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Ayo gotong royong menjaga kebersihan lingkungan RW kita!
                                 </span>
                                 <span class="text-xs"> . Minggu, 14 April 2024</span>
@@ -147,9 +147,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Rapat koordinasi RW</h5>
+                            <h5 class="font-bold">Rapat koordinasi RW</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Pembahasan keamanan dan kebersihan lingkungan RW.
                                 </span>
                                 <span class="text-xs"> . Rabu, 10 April 2024, 19:00 WIB</span>
@@ -161,9 +161,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Posyandu Balita</h5>
+                            <h5 class="font-bold">Posyandu Balita</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Pemeriksaan dan imunisasi gratis untuk balita di RW kita.
                                 </span>
                                 <span class="text-xs"> . Selasa, 09 April 2024, 08:00 WIB</span>
@@ -175,9 +175,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Arisan RW</h5>
+                            <h5 class="font-bold">Arisan RW</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Ayo kumpul dan bersenang-senang di acara arisan RW!
                                 </span>
                                 <span class="text-xs"> . Sabtu, 06 April 2024, 15:00 WIB</span>
@@ -277,7 +277,6 @@
             maintainAspectRatio: true,
             legend: {
               labels: {
-                // Menambahkan label dataset pada legend
                 fontColor: '#000000',
                 fontSize: 16
               }
