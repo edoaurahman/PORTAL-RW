@@ -31,7 +31,7 @@
     <div class="flex h-screen overflow-hidden">
         <x-partials.admin.sidenav />
         <!-- ===== Content Area Start ===== -->
-        <div style="background-color: #F9F5FF" class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-purple-50 dark:bg-black">
             <!-- ===== Header Start ===== -->
             <x-partials.admin.header />
             <!-- ===== Header End ===== -->

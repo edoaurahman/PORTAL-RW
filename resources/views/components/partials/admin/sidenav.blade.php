@@ -5,7 +5,7 @@
     <!-- SIDEBAR HEADER -->
     <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
         <a href="index.html">
-            <img width="150px" height="auto" src="{{ asset('assets/images/logo/logo-dark.png') }}" alt="Logo" />
+            <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' : '{{ asset('assets/images/logo/logo-dark.png') }}'" width="150px" height="auto" class="duration-300" alt="Logo" />
         </a>
 
         <button class="block lg:hidden" @click.stop="sidebarToggle = !sidebarToggle">
