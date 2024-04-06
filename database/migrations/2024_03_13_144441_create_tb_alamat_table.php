@@ -17,7 +17,7 @@ class CreateTbAlamatTable extends Migration
             $table->integer('id_alamat')->autoIncrement();
             $table->integer('rw');
             $table->integer('rt');
-            $table->string('kel/desa', 50);
+            $table->string('kel', 50);
             $table->string('kecamatan', 50);
             $table->string('jalan', 50);
             $table->timestamps();
