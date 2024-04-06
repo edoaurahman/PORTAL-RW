@@ -21,7 +21,7 @@ class PendudukSeeder extends Seeder
                     'id_alamat' => '1',
                     'rw' => '1',
                     'rt' => '1',
-                    'kel/desa' => 'Prigi',
+                    'kel' => 'Prigi',
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
                 ],
@@ -29,7 +29,7 @@ class PendudukSeeder extends Seeder
                     'id_alamat' => '2',
                     'rw' => '1',
                     'rt' => '1',
-                    'kel/desa' => 'Prigi',
+                    'kel' => 'Prigi',
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
                 ],
@@ -37,7 +37,7 @@ class PendudukSeeder extends Seeder
                     'id_alamat' => '3',
                     'rw' => '1',
                     'rt' => '1',
-                    'kel/desa' => 'Prigi',
+                    'kel' => 'Prigi',
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
                 ],
@@ -45,7 +45,7 @@ class PendudukSeeder extends Seeder
                     'id_alamat' => '4',
                     'rw' => '1',
                     'rt' => '1',
-                    'kel/desa' => 'Prigi',
+                    'kel' => 'Prigi',
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
                 ],
