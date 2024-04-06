@@ -193,12 +193,11 @@
         <!-- ====== Kalender Start -->
         <div
             class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
-            <div class="mb-3 justify-between gap-4 sm:flex">
-                <div>
-                    <h4 class="text-xl font-bold text-black dark:text-white text-center">
-                        Kalender RW 02
-                    </h4>
-                </div>
+            <div class="mb-3 gap-4">
+                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                    Kalender RW 02
+                </h4>
+                <div id="calender"></div>
             </div>
         </div>
 
@@ -241,47 +240,56 @@
 
     <script>
         const ctx = document.getElementById('myChart');
-        
+
         new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
-            datasets: [{
-              label: 'Total Penduduk',
-              data: [100, 60, 40],
-              backgroundColor: '#270551',
-              borderWidth: 1
-            }, {
-              label: 'Laki-laki',
-              data: [55, 35, 20],
-              backgroundColor: '#640EF1',
-              borderWidth: 1
-            }, {
-              label: 'Perempuan',
-              data: [45, 25, 20],
-              backgroundColor: '#B186F8',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              x: {
-                labels: ['Total', 'Tetap', 'Pendatang']
-              },
-              y: {
-                beginAtZero: true
-              }
+            type: 'bar',
+            data: {
+                labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
+                datasets: [{
+                    label: 'Total Penduduk',
+                    data: [100, 60, 40],
+                    backgroundColor: '#270551',
+                    borderWidth: 1
+                }, {
+                    label: 'Laki-laki',
+                    data: [55, 35, 20],
+                    backgroundColor: '#640EF1',
+                    borderWidth: 1
+                }, {
+                    label: 'Perempuan',
+                    data: [45, 25, 20],
+                    backgroundColor: '#B186F8',
+                    borderWidth: 1
+                }]
             },
-            maintainAspectRatio: true,
-            legend: {
-              labels: {
-                // Menambahkan label dataset pada legend
-                fontColor: '#000000',
-                fontSize: 16
-              }
+            options: {
+                scales: {
+                    x: {
+                        labels: ['Total', 'Tetap', 'Pendatang']
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                maintainAspectRatio: true,
+                legend: {
+                    labels: {
+                        // Menambahkan label dataset pada legend
+                        fontColor: '#000000',
+                        fontSize: 16
+                    }
+                }
             }
-          }
         });
     </script>
-                
+    <script src="{{ asset('assets/js/calender.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calender');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+            });
+            calendar.render();
+        });
+    </script>
 </x-layout.admin-layout>
