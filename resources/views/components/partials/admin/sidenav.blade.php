@@ -53,7 +53,7 @@
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="#" @click.prevent="selected = (selected === 'Penduduk' ? '':'Penduduk')"
                             :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Penduduk') }">
-                            <i class="fa-regular fa-address-card"></i>
+                            <i class="fa-solid fa-id-card"></i>
                             Penduduk
                             <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
                                 :class="{ 'rotate-180': (selected === 'Penduduk') }" width="20" height="20"
