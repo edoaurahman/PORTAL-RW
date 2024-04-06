@@ -18,7 +18,7 @@
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-ungu dark:bg-purple dark:text-white">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nama
@@ -42,7 +42,7 @@
                             {{ $item->nik }}
                         </td>
                         <td class="px-6 py-4">
-                            <button class="font-medium text-white bg-zinc-500 p-2 dark:text-white rounded">
+                            <button class="font-medium text-white bg-ungu p-2  rounded">
                                 <a href="#">
                                     Edit
                                 </a>

@@ -131,11 +131,11 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium text-black dark:text-white">
+                            <h5 class="font-bold text-black dark:text-white">
                                 Pembersihan lingkungan bersama
                             </h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Ayo gotong royong menjaga kebersihan lingkungan RW kita!
                                 </span>
                                 <span class="text-xs"> . Minggu, 14 April 2024</span>
@@ -147,9 +147,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Rapat koordinasi RW</h5>
+                            <h5 class="font-bold">Rapat koordinasi RW</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Pembahasan keamanan dan kebersihan lingkungan RW.
                                 </span>
                                 <span class="text-xs"> . Rabu, 10 April 2024, 19:00 WIB</span>
@@ -161,9 +161,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Posyandu Balita</h5>
+                            <h5 class="font-bold">Posyandu Balita</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Pemeriksaan dan imunisasi gratis untuk balita di RW kita.
                                 </span>
                                 <span class="text-xs"> . Selasa, 09 April 2024, 08:00 WIB</span>
@@ -175,9 +175,9 @@
                     class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-medium">Arisan RW</h5>
+                            <h5 class="font-bold">Arisan RW</h5>
                             <p>
-                                <span class="text-sm font-medium text-black dark:text-white">
+                                <span class="text-sm font-normal text-black dark:text-white">
                                     Ayo kumpul dan bersenang-senang di acara arisan RW!
                                 </span>
                                 <span class="text-xs"> . Sabtu, 06 April 2024, 15:00 WIB</span>
@@ -211,21 +211,23 @@
             </h4>
             <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm1.jpeg') }}"
+                    <div class="">
+                        <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm1.jpeg') }}"
                         alt="UMKM 1">
+                    </div>
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Warung Madura Cak Abid</h5>
                     </div>
                 </div>
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm3.jpeg') }}"
+                    <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm3.jpeg') }}"
                         alt="UMKM 2">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Maklor Anang</h5>
                     </div>
                 </div>
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm2.jpeg') }}"
+                    <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm2.jpeg') }}"
                         alt="UMKM 3">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Rawon Mak Cik Edo</h5>
@@ -242,44 +244,43 @@
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
-                datasets: [{
-                    label: 'Total Penduduk',
-                    data: [100, 60, 40],
-                    backgroundColor: '#270551',
-                    borderWidth: 1
-                }, {
-                    label: 'Laki-laki',
-                    data: [55, 35, 20],
-                    backgroundColor: '#640EF1',
-                    borderWidth: 1
-                }, {
-                    label: 'Perempuan',
-                    data: [45, 25, 20],
-                    backgroundColor: '#B186F8',
-                    borderWidth: 1
-                }]
+          type: 'bar',
+          data: {
+            labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
+            datasets: [{
+              label: 'Total Penduduk',
+              data: [100, 60, 40],
+              backgroundColor: '#270551',
+              borderWidth: 1
+            }, {
+              label: 'Laki-laki',
+              data: [55, 35, 20],
+              backgroundColor: '#640EF1',
+              borderWidth: 1
+            }, {
+              label: 'Perempuan',
+              data: [45, 25, 20],
+              backgroundColor: '#B186F8',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                labels: ['Total', 'Tetap', 'Pendatang']
+              },
+              y: {
+                beginAtZero: true
+              }
             },
-            options: {
-                scales: {
-                    x: {
-                        labels: ['Total', 'Tetap', 'Pendatang']
-                    },
-                    y: {
-                        beginAtZero: true
-                    }
-                },
-                maintainAspectRatio: true,
-                legend: {
-                    labels: {
-                        // Menambahkan label dataset pada legend
-                        fontColor: '#000000',
-                        fontSize: 16
-                    }
-                }
+            maintainAspectRatio: true,
+            legend: {
+              labels: {
+                fontColor: '#000000',
+                fontSize: 16
+              }
             }
+          }
         });
     </script>
     <script src="{{ asset('assets/js/calender.js') }}"></script>

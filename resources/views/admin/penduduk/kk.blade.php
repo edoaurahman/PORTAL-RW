@@ -43,12 +43,12 @@
                                 {{ $item->nik_kepalakeluarga }}
                             </td>
                             <td class="px-6 py-4">
-                                <button class="font-medium text-white bg-blue-600 p-2 rounded">
+                                <button class="font-medium text-white bg-purple-950 p-2 rounded">
                                     <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
                                         Details
                                     </a>
                                 </button>
-                                <button class="font-medium text-white bg-zinc-500 p-2 dark:text-white rounded">
+                                <button class="font-medium text-white bg-ungu p-2  rounded">
                                     <a href="#">
                                         Edit
                                     </a>
