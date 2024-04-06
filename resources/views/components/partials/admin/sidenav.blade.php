@@ -70,16 +70,20 @@
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('admin.penduduk') }}"
-                                        :class="page === 'daftar-penduduk' && '!text-white'">Daftar
+                                        href="{{ route('admin.penduduk') }}" ">Daftar
+                                        Penduduk
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium
+                                        text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                        href="{{ route('admin.penduduk.akun') }}">Akun
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('admin.akun-penduduk') }}"
-                                        :class="page === 'akun-penduduk' && '!text-white'">Akun
-                                        Penduduk
+                                        href="{{ route('admin.penduduk.kk') }}">Daftar KK
                                     </a>
                                 </li>
                             </ul>

@@ -14,4 +14,14 @@ class KkModel extends Model
         'no_kk',
         'nik_kepalakeluarga',
     ];
+
+    public function penduduk()
+    {
+        return $this->hasMany(PendudukModel::class, 'no_kk', 'no_kk');
+    }
+
+    public function pendudukHasOne()
+    {
+        return $this->hasOne(PendudukModel::class, 'nik', 'nik_kepalakeluarga');
+    }
 }

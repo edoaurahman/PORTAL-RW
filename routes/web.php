@@ -35,8 +35,19 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-        Route::get('/penduduk', [PendudukController::class, 'index'])->name('admin.penduduk');
-        Route::get('/akun-penduduk', [PendudukController::class, 'akun_penduduk'])->name('admin.akun-penduduk');
+        // Admin Penduduk
+        Route::prefix('penduduk')->group(function () {
+            Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
+            Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk');
+            Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
+            Route::get('/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
+            Route::get('/kk/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
+        });
+        // Route::get('/penduduk', [PendudukController::class, 'index'])->name('admin.penduduk');
+        // Route::get('/penduduk/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
+        // Route::get('/penduduk/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
+        // Route::get('/penduduk/kk/detail', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.kk.detail');
+
         Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
         Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt');
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');

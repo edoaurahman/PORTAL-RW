@@ -10,7 +10,7 @@ class PendudukModel extends Model
     use HasFactory;
     protected $table = 'tb_penduduk';
     protected $primaryKey = 'nik';
-    protected $fillable = ['nik', 'nama', 'tempat_lahir', 'tgl_lahir', 'jenis_kelamin', 'agama', 'status_perkawinan', 'pekerjaan', 'gol_darah', 'no_kk'];
+    protected $fillable = ['nik', 'nama', 'tempat_lahir', 'tgl_lahir', 'jenis_kelamin', 'agama', 'status_perkawinan', 'pekerjaan', 'gol_darah', 'no_kk', 'id_alamat'];
 
     protected $hidden = [
         'password'
@@ -28,5 +28,10 @@ class PendudukModel extends Model
     public function alamat(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(AlamatModel::class, 'nik', 'nik');
+    }
+
+    public function kk()
+    {
+        return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
     }
 }

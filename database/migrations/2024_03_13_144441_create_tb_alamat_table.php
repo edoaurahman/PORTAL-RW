@@ -14,7 +14,7 @@ class CreateTbAlamatTable extends Migration
     public function up()
     {
         Schema::create('tb_alamat', function (Blueprint $table) {
-            $table->integer('id_alamat')->primary();
+            $table->integer('id_alamat')->autoIncrement();
             $table->integer('rw');
             $table->integer('rt');
             $table->string('kel/desa', 50);

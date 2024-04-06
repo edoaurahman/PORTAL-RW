@@ -11,10 +11,9 @@ class AlamatModel extends Model
     protected $table = 'tb_alamat';
     protected $primaryKey = 'id_alamat';
     protected $fillable = [
-        'nik',
         'rw',
         'rt',
-        'kel/desa',
+        'kel',
         'kecamatan',
         'jalan'
     ];
