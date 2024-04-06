@@ -206,7 +206,7 @@
                     <div x-show="dropdownOpen"
                         class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
                         <div class="px-4.5 py-3">
-                            <h5 class="text-sm font-medium text-bodydark2">Messages</h5>
+                            <h5 class="text-sm font-medium text-bodydark2">Pengaduan Masyarakat</h5>
                         </div>
 
                         <ul class="flex h-auto flex-col overflow-y-auto">
@@ -219,9 +219,9 @@
 
                                     <div>
                                         <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Mariya Desoja
+                                            Penduduk 1
                                         </h6>
-                                        <p class="text-sm">I like your confidence 💪</p>
+                                        <p class="text-sm">Bagaimana ini pak? Banyak sekali sampah ...</p>
                                         <p class="text-xs">2min ago</p>
                                     </div>
                                 </a>
@@ -235,9 +235,9 @@
 
                                     <div>
                                         <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Robert Jhon
+                                            Penduduk 2
                                         </h6>
-                                        <p class="text-sm">Can you share your offer?</p>
+                                        <p class="text-sm">Gimana ini kelola keamanan nya!!</p>
                                         <p class="text-xs">10min ago</p>
                                     </div>
                                 </a>
@@ -251,9 +251,9 @@
 
                                     <div>
                                         <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Henry Dholi
+                                            Penduduk 3
                                         </h6>
-                                        <p class="text-sm">I cam across your profile and...</p>
+                                        <p class="text-sm">Dana buat kegiatan kemana semua??</p>
                                         <p class="text-xs">1day ago</p>
                                     </div>
                                 </a>
@@ -267,9 +267,9 @@
 
                                     <div>
                                         <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Cody Fisher
+                                            Penduduk 4
                                         </h6>
-                                        <p class="text-sm">I’m waiting for you response!</p>
+                                        <p class="text-sm">Alangkah lebih baik nya ...</p>
                                         <p class="text-xs">5days ago</p>
                                     </div>
                                 </a>
@@ -283,9 +283,9 @@
 
                                     <div>
                                         <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Mariya Desoja
+                                            Penduduk 5
                                         </h6>
-                                        <p class="text-sm">I like your confidence 💪</p>
+                                        <p class="text-sm">Rumput di lapangan sudah lebat pak ...</p>
                                         <p class="text-xs">2min ago</p>
                                     </div>
                                 </a>
@@ -301,9 +301,8 @@
             <div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
                 <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
                     <span class="hidden text-right lg:block">
-                        <span class="block text-sm font-medium text-black dark:text-white">Thomas
-                            Anree</span>
-                        <span class="block text-xs font-medium">UX Designer</span>
+                        <span class="block text-sm font-medium text-black dark:text-white">Username</span>
+                        <span class="block text-xs font-medium">Nama Level</span>
                     </span>
 
                     <span class="h-12 w-12 rounded-full">
