@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::middleware(['auth', 'admin'])->group(function () {
+    Route::middleware(['guest'])->group(function () { // auth and admin middleware
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk

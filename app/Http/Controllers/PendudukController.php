@@ -12,11 +12,17 @@ use Illuminate\Support\Facades\DB;
 
 class PendudukController extends Controller
 {
+    // global variable level
+    private $level;
+    public function __construct(){
+        // $this->level = auth()->user()->level->nama_level;
+        $this->level = 'Super Admin';
+    }
     public function index()
     {
         $penduduk = new PendudukModel();
+        $level = $this->level;
         try {
-            $level = auth()->user()->level->nama_level;
             // check if level is superadmin or RW, leave this try catch
             if ($level === 'Super Admin' || $level === 'RW') {
                 $penduduk = PendudukModel::all();

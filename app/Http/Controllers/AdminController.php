@@ -11,7 +11,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $level = auth()->user()->level->nama_level;
-        return view('admin.dashboard', compact('level'));
+        return view('admin.dashboard');
     }
 }
