@@ -14,7 +14,25 @@ class PendudukController extends Controller
 {
     public function index()
     {
-        $penduduk = PendudukModel::all();
+        $penduduk = new PendudukModel();
+        try {
+            $level = auth()->user()->level->nama_level;
+            // check if level is superadmin or RW, leave this try catch
+            if ($level === 'Super Admin' || $level === 'RW') {
+                $penduduk = PendudukModel::all();
+            } else {
+                preg_match('/\d+/', $level, $matches);
+                $levelValue = $matches[0] ?? throw new \Exception('Hubungi superadmin, terdapat kesalahan pada pemberian level');
+                $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($levelValue) {
+                    $query->where('rt', $levelValue);
+                })->get();
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('error')->with([
+                'code' => 500,
+                'message' => $e->getMessage(),
+            ]);
+        }
         $kk = KkModel::with('pendudukHasOne')->get();
         return view('admin.penduduk.index', compact('penduduk', 'kk'));
     }
@@ -56,21 +74,26 @@ class PendudukController extends Controller
             }
         }
 
-        DB::transaction(function () use ($request) {
-            $alamat = AlamatModel::create([
-                'kel' => $request->kelurahan,
-                'kecamatan' => $request->kecamatan,
-                'jalan' => $request->jalan,
-                'rw' => $request->rw,
-                'rt' => $request->rt,
-            ]);
+        try {
+            DB::transaction(function () use ($request) {
+                $alamat = AlamatModel::create([
+                    'kel' => $request->kelurahan,
+                    'kecamatan' => $request->kecamatan,
+                    'jalan' => $request->jalan,
+                    'rw' => $request->rw,
+                    'rt' => $request->rt,
+                ]);
 
+                $request->merge([
+                    'id_alamat' => $alamat->id_alamat,
+                ]);
 
-            $request->merge([
-                'id_alamat' => $alamat->id_alamat,
-            ]);
-            PendudukModel::create($request->all());
-        });
-        return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan');
+                PendudukModel::create($request->all());
+            });
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="text-white">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
+        }
+
+        return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan.');
     }
 }

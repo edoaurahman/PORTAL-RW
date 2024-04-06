@@ -20,6 +20,6 @@ class AlamatModel extends Model
 
     public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(PendudukModel::class, 'nik', 'nik');
+        return $this->belongsTo(PendudukModel::class, 'id_alamat', 'id_alamat');
     }
 }

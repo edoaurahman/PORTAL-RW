@@ -72,3 +72,7 @@ Route::get('/profile', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/error', function () {
+    return view('error');
+})->name('error');
