@@ -1,11 +1,11 @@
 <!-- ===== Sidebar Start ===== -->
 <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-    class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:!static lg:!translate-x-0"
+    class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:!static lg:!translate-x-0"
     @click.outside="sidebarToggle = false">
     <!-- SIDEBAR HEADER -->
-    <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+    <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
         <a href="index.html">
-            <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo" />
+            <img width="150px" height="auto" src="{{ asset('assets/images/logo/logo-dark.png') }}" alt="Logo" />
         </a>
 
         <button class="block lg:hidden" @click.stop="sidebarToggle = !sidebarToggle">
@@ -24,14 +24,14 @@
         <nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6" x-data="{selected: $persist('Dashboard')}">
             <!-- Menu Group -->
             <div>
-                <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
+                <h3 class="mb-4 ml-4 text-sm font-medium text-black dark:text-white duration-300">MENU</h3>
 
                 <ul class="mb-6 flex flex-col gap-1.5">
                     <!-- Menu Item Dashboard -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.dashboard') }}" @click="selected = 'Dashboard'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Dashboard')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Dashboard')}">
                             <i class="fa-solid fa-house-chimney"></i>
                             Dashboard
                         </a>
@@ -40,9 +40,9 @@
 
                     <!-- Menu Item Level -->
                     <li x-show="levelUser === 'Super Admin'">
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.level') }}" @click="selected = 'Level'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Level')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Level')}">
                             <i class="fa-solid fa-layer-group"></i>
                             Kelola Level
                         </a>
@@ -50,9 +50,9 @@
                     <!-- Menu Item Level -->
 
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="#" @click.prevent="selected = (selected === 'Penduduk' ? '':'Penduduk')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Penduduk') }">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Penduduk') }">
                             <i class="fa-regular fa-address-card"></i>
                             Penduduk
                             <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
@@ -69,20 +69,19 @@
                             :class="(selected === 'Penduduk') ? 'block' :'hidden'">
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk') }}" ">Daftar
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
-                                    <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium
-                                        text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                    <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk.akun') }}">Akun
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark duration-300 ease-in-out hover:text-ungu"
                                         href="{{ route('admin.penduduk.kk') }}">Daftar KK
                                     </a>
                                 </li>
@@ -93,9 +92,9 @@
 
                     <!-- Menu Bansos -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.bansos') }}" @click="selected = 'Bansos'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Bansos')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Bansos')}">
                             <i class="fa-solid fa-handshake-angle"></i>
                             Bansos
                         </a>
@@ -104,9 +103,9 @@
 
                     {{-- Menu Data RT --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.data-rt') }}" @click="selected = 'Data RT'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Data RT')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Data RT')}">
                             <i class="fa-solid fa-people-roof"></i>
 
                             Data RT
@@ -115,9 +114,9 @@
 
                     {{-- Menu Inventaris --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.inventaris') }}" @click="selected = 'Inventaris'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Inventaris')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Inventaris')}">
 
                             <i class="fa-solid fa-toolbox"></i>
 
@@ -127,9 +126,9 @@
 
                     {{-- Menu News --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.news') }}" @click="selected = 'News'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'News')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'News')}">
 
                             <i class="fa-regular fa-newspaper"></i>
 
@@ -139,9 +138,9 @@
 
                     {{-- Menu Layanan --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.layanan') }}" @click="selected = 'Layanan'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Layanan')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Layanan')}">
                             <i class="fa-solid fa-headset"></i>
 
                             Layanan
@@ -150,9 +149,9 @@
 
                     {{-- Menu Data UMKM --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.data-umkm') }}" @click="selected = 'Data UMKM'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Data UMKM')}">
+                            :class="{ 'bg-ungu-text-white dark:bg-meta-4': (selected === 'Data UMKM')}">
                             <i class="fa-solid fa-store"></i>
 
                             Data UMKM
@@ -161,9 +160,9 @@
 
                     {{-- Menu Keuangan --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.keuangan') }}" @click="selected = 'Keuangan'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Keuangan')}">
+                            :class="{ 'bg-ungu-text-white dark:bg-meta-4': (selected === 'Keuangan')}">
                             <i class="fa-solid fa-money-bill"></i>
 
                             Keuangan
@@ -172,9 +171,9 @@
 
                     {{-- Menu Aspirasi --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.aspirasi') }}" @click="selected = 'Aspirasi'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Aspirasi')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Aspirasi')}">
                             <i class="fa-regular fa-lightbulb" width="18"></i>
                             Aspirasi
                         </a>
@@ -182,9 +181,9 @@
 
                     {{-- Menu Report Data --}}
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.report-data') }}" @click="selected = 'Report Data'"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Report Data')}">
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Report Data')}">
                             <i class="fa-solid fa-chart-line"></i>
                             Report Data
                         </a>
