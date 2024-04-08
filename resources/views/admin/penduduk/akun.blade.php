@@ -1,7 +1,7 @@
 <x-layout.admin-layout>
     <div class="relative">
         <div class="mb-5">
-            <div class="mb-2">
+            <div class="mb-2 text-xl">
                 <h1><strong>PENDUDUK</strong></h1>
             </div>
             <h3 class="text-muted"> 
