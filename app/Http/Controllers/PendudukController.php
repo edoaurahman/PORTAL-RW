@@ -12,25 +12,38 @@ use Illuminate\Support\Facades\DB;
 
 class PendudukController extends Controller
 {
-    // global variable level
     private $level;
-    public function __construct(){
-        // $this->level = auth()->user()->level->nama_level;
-        $this->level = 'Super Admin';
+    private $alamat;
+    private $user;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
     }
+    private function init()
+    {
+        $this->user = auth()->user();
+        $this->level = $this->user->level->nama_level;
+        $this->alamat = $this->user->penduduk->alamat;
+    }
+
+    private function checkLevel(string $level): bool
+    {
+        return $level === 'Super Admin' || $level === 'RW';
+    }
+
     public function index()
     {
         $penduduk = new PendudukModel();
-        $level = $this->level;
         try {
-            // check if level is superadmin or RW, leave this try catch
-            if ($level === 'Super Admin' || $level === 'RW') {
+            if ($this->checkLevel($this->level)) {
                 $penduduk = PendudukModel::all();
             } else {
-                preg_match('/\d+/', $level, $matches);
-                $levelValue = $matches[0] ?? throw new \Exception('Hubungi superadmin, terdapat kesalahan pada pemberian level');
-                $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($levelValue) {
-                    $query->where('rt', $levelValue);
+                $rt = $this->alamat->rt;
+                $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($rt) {
+                    $query->where('rt', $rt);
                 })->get();
             }
         } catch (\Exception $e) {
@@ -45,14 +58,43 @@ class PendudukController extends Controller
 
     public function akun_penduduk()
     {
-        $penduduk = AkunModel::with('penduduk')->get();
+        $penduduk = new AkunModel();
+        try {
+            if ($this->checkLevel($this->level)) {
+                $penduduk = AkunModel::all();
+            } else {
+                $rt = $this->alamat->rt;
+                $penduduk = AkunModel::with('penduduk')->whereHas('penduduk.alamat', function ($query) use ($rt) {
+                    $query->where('rt', $rt);
+                })->get();
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('error')->with([
+                'code' => 500,
+                'message' => $e->getMessage(),
+            ]);
+        }
         return view('admin.penduduk.akun', compact('penduduk'));
     }
 
     public function kk_penduduk()
     {
-        $penduduk = KkModel::with('pendudukHasOne')->get();
-        // dd($penduduk->toArray());
+        $penduduk = new KkModel();
+        try {
+            if ($this->checkLevel($this->level)) {
+                $penduduk = KkModel::with('pendudukHasOne')->get();
+            } else {
+                $rt = $this->alamat->rt;
+                $penduduk = KkModel::with('pendudukHasOne')->whereHas('pendudukHasOne.alamat', function ($query) use ($rt) {
+                    $query->where('rt', $rt);
+                })->get();
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('error')->with([
+                'code' => 500,
+                'message' => $e->getMessage(),
+            ]);
+        }
         return view('admin.penduduk.kk', compact('penduduk'));
     }
 
