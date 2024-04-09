@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 $level = auth()->user()->level->nama_level;
-                $auth = $level == 'Super Admin' || str_contains($level, 'RT') || $level == 'RW';
+                $auth = $level == 'Super Admin' || $level == 'RT' || $level == 'RW';
                 if ($auth) {
                     return redirect(RouteServiceProvider::ADMIN);
                 }
