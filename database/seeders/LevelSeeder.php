@@ -20,7 +20,7 @@ class LevelSeeder extends Seeder
             ],
             [
                 'id_level' => 2,
-                'nama_level' => 'RT 1'
+                'nama_level' => 'RT'
             ],
             [
                 'id_level' => 3,

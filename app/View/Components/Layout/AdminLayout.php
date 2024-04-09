@@ -21,8 +21,7 @@ class AdminLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        // $level = auth()->user()->level->nama_level;
-        $level = 'Super Admin';
+        $level = auth()->user()->level->nama_level;
         return view('components.layout.admin-layout',compact('level'));
     }
 }

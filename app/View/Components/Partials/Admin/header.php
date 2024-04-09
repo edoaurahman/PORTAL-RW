@@ -21,6 +21,8 @@ class header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.partials.admin.header');
+        $username = auth()->user()->penduduk->nama;
+        $level = auth()->user()->level->nama_level;
+        return view('components.partials.admin.header',compact('username','level'));
     }
 }
