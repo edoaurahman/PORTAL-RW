@@ -102,7 +102,7 @@
                     <!-- Menu Bansos End -->
 
                     {{-- Menu Data RT --}}
-                    <li>
+                    <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.data-rt') }}" @click="selected = 'Data RT'"
                             :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected === 'Data RT')}">

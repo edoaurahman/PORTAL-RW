@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::middleware(['guest'])->group(function () { // auth and admin middleware
+    Route::middleware(['auth','admin'])->group(function () { // auth and admin middleware
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
@@ -44,13 +44,8 @@ Route::prefix('admin')->group(function () {
             Route::get('/kk/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
         });
-        // Route::get('/penduduk', [PendudukController::class, 'index'])->name('admin.penduduk');
-        // Route::get('/penduduk/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
-        // Route::get('/penduduk/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
-        // Route::get('/penduduk/kk/detail', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.kk.detail');
 
         Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
-        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt');
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
         Route::get('/inventaris', [InventarisController::class, 'index'])->name('admin.inventaris');
         Route::get('/keuangan', [KeuanganController::class, 'index'])->name('admin.keuangan');
@@ -58,6 +53,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
+
+        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw',]);
         Route::get('/level', [LevelController::class, 'index'])->name('admin.level')->middleware('isSuperAdmin');
     });
 });
