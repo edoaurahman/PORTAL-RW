@@ -48,11 +48,59 @@
                             conditions</a></label>
                 </div>
                 @error('message')
-                <div class="text-red-500 text-sm mb-5">{{ $message }}</div>
+                    <div class="text-red-500 text-sm mb-5">{{ $message }}</div>
                 @enderror
                 <button type="submit"
                     class="text-white bg-ungu hover:bg-indigo-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-4 w-full text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
             </form>
+            {{-- <div class="flex justify-end z-50 fixed text-white right-4 top-2">
+                <button
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                    type="button" id="buttonsidebar" data-drawer-target="drawer-navigation"
+                    data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                    <i class="fa-solid fa-bars" style="color: #ffffff"></i>
+                </button>
+            </div> --}}
+
+
+            <div class=" fixed right-6 top-6 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
+                    <button data-collapse-toggle="navbar-hamburger" type="button"
+                        class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-hamburger" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                    <div class="hidden fixed right-8 top-15" id="navbar-hamburger">
+                        <ul
+                            class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600"
+                                    aria-current="page">Penduduk</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">RT</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">RW</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Super
+                                    Admin</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="{{ asset('assets/js/particles.min.js') }}"></script>
