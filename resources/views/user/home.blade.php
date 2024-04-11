@@ -1,5 +1,5 @@
 <x-layout.user-layout>
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px]">
+    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
                 <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
@@ -39,7 +39,7 @@
                 <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
             </div>
             <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo2.png') }}" alt="">
+                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
             </div>
             <div class="iklan-3 flex items-center gap-x-3 font-bold text-2xl">
                 <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
@@ -268,7 +268,7 @@
         </div>
     </section>
 
-    <section class="closing font-sans mx-auto max-w-6xl bg-ungu p-14 rounded-3xl">
+    <section class="closing font-sans mx-auto max-w-6xl bg-ungu p-14 rounded-3xl z-20 relative">
         <div class="grid grid-cols-2 gap-x-10">
             <div class="flex flex-col gap-y-10">
                 <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">

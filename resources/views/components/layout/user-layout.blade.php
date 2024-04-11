@@ -25,8 +25,7 @@
 <body class="bg-[#f1f4f5]">
     <x-partials.user.nav />
     {{ $slot }}
-    {{--
-    <x-partials.user.footer /> --}}
+    <x-partials.user.footer />
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 
