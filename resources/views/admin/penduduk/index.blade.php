@@ -1,7 +1,23 @@
 <x-layout.admin-layout>
     <div class="relative">
+        <div class="mb-5">
+            <div class="mb-2 text-xl">
+                <h1><strong>PENDUDUK</strong></h1>
+            </div>
+            <h3 class="text-muted"> 
+                ADMIN            
+                <small class="text-dark">
+                    <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    Penduduk
+                    <small class="text-dark">
+                        <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    </small>
+                    Daftar Penduduk
+                </small>
+            </h3>
+        </div>
         <div class="flex justify-between pb-5">
-            <h1>Penduduk</h1>
+            <h1> </h1>
             <!-- Modal toggle -->
             <button data-modal-target="add-penduduk" data-modal-toggle="add-penduduk"
                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -36,14 +52,14 @@
             @endforeach
         @endif
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-ungu dark:bg-purple dark:text-white">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nama
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nik
+                            NIK
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Status
@@ -56,7 +72,7 @@
                 <tbody>
                     @foreach ($penduduk as $item)
                         <tr
-                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $item->nama }}
@@ -68,8 +84,11 @@
                                 {{ $item->status_perkawinan }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button class="font-medium text-white bg-ungu p-2  rounded">
+                                    <a href="#">
+                                        Edit
+                                    </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach
@@ -107,7 +126,7 @@
 
                     <!-- Modal body Form -->
                     <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[50vh]">
-                        <label for="no-kk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No
+                        <label for="no-kk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No.
                             KK</label>
                         <div class="relative mb-6">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -124,7 +143,7 @@
                         </div>
 
                         <label for="nik"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nik</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIK</label>
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -136,7 +155,7 @@
                             </span>
                             <input required name="nik" type="text" id="nik"
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Nik">
+                                placeholder="NIK">
                         </div>
 
                         <div class="flex items-center mb-4">
@@ -160,7 +179,7 @@
                             </span>
                             <input required name="nama" type="text" id="nama"
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="elonmusk">
+                                placeholder="Tante Abid">
                         </div>
 
                         <label for="tempat-lahir"
@@ -222,7 +241,7 @@
 
                         <label for="status-perkawinan"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status
-                            perkawinan</label>
+                            Perkawinan</label>
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -234,7 +253,7 @@
                             </span>
                             <input name="status_perkawinan" type="text" id="status-perkawinan" required
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Status perkawinan">
+                                placeholder="Status Perkawinan">
                         </div>
 
                         <label for="pekerjaan"
@@ -254,7 +273,7 @@
                         </div>
 
                         <label for="gol-darah"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gol darah</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gol. Darah</label>
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -266,7 +285,7 @@
                             </span>
                             <input name="gol_darah" type="text" id="gol-darah" required
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Gol darah">
+                                placeholder="Gol Darah">
                         </div>
 
                         <label for="status-penduduk"
@@ -330,7 +349,7 @@
                         </div>
 
                         <label for="rt"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rt</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">RT</label>
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -342,11 +361,11 @@
                             </span>
                             <input name="rt" type="text" id="rt" required
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Rt">
+                                placeholder="RT">
                         </div>
 
                         <label for="rw"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rw</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">RW</label>
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -358,7 +377,7 @@
                             </span>
                             <input name="rw" type="text" id="rw" required
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Rw">
+                                placeholder="RW">
                         </div>
 
                     </div>

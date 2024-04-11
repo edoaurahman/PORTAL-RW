@@ -15,7 +15,7 @@ class CreateTbLevelTable extends Migration
     {
         Schema::create('tb_level', function (Blueprint $table) {
             $table->integer('id_level')->primary();
-            $table->string('nama_level', 20);
+            $table->string('nama_level', 20)->unique();
             $table->timestamps();
         });
     }

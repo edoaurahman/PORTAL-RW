@@ -1,9 +1,24 @@
 <x-layout.admin-layout>
     <div class="relative">
-        <h1>Kartu Keluarga</h1>
+        <div class="mb-5">
+            <div class="mb-2 text-xl">
+                <h1><strong>PENDUDUK</strong></h1>
+            </div>
+            <h3 class="text-muted"> 
+                ADMIN            
+                <small class="text-dark">
+                    <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    Penduduk
+                    <small class="text-dark">
+                        <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    </small>
+                    Kartu Keluarga
+                </small>
+            </h3>
+        </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-ungu dark:bg-ungu dark:text-white">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nama Kepala Keluarga
@@ -19,7 +34,7 @@
                 <tbody>
                     @foreach ($penduduk as $item)
                         <tr
-                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $item->pendudukHasOne->nama }}
@@ -28,10 +43,16 @@
                                 {{ $item->nik_kepalakeluarga }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}"
-                                    class="font-medium text-white hover:underline bg-blue-600 p-2 rounded">Details</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <button class="font-medium text-white bg-purple-950 p-2 rounded">
+                                    <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
+                                        Details
+                                    </a>
+                                </button>
+                                <button class="font-medium text-white bg-ungu p-2  rounded">
+                                    <a href="#">
+                                        Edit
+                                    </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

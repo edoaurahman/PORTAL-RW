@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class AkunModel extends Authenticatable
@@ -21,12 +23,12 @@ class AkunModel extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function penduduk(): BelongsTo
     {
         return $this->belongsTo(PendudukModel::class, 'nik', 'nik');
     }
 
-    public function level(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function level(): BelongsTo
     {
         return $this->belongsTo(LevelModel::class, 'id_level', 'id_level');
     }

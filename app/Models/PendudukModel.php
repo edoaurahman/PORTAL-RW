@@ -27,7 +27,7 @@ class PendudukModel extends Model
 
     public function alamat(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(AlamatModel::class, 'nik', 'nik');
+        return $this->hasOne(AlamatModel::class, 'id_alamat', 'id_alamat');
     }
 
     public function kk()
