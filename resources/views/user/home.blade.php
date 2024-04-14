@@ -54,17 +54,18 @@
     </section>
 
     <section class="features max-w-6xl mx-auto py-12 font-sans">
-        <h3 class="text-black1 font-bold text-5xl text-center mb-8">Your Best Choice</h3>
+        <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3>
         <div class="grid grid-cols-4 gap-x-8 px-5">
             <div class="my-card relative bg-black1 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <div class="z-1 flex flex-col items-start gap-y-8">
                     <i class="fa-solid fa-shield-halved text-5xl text-white"></i>
                     <div class="flex flex-col gap-y-1">
                         <h3 class=" text-2xl font-bold text-white">
-                            Extra Layers
+                            RT 001
                         </h3>
                         <div class="text-base leading-relaxed text-black4">
-                            Making your project more secure avoiding DDoS
+                            Bpk. Sutrisno <br>
+                            RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                         </div>
                     </div>
                     <a href="" class="text-base font-semibold text-white">Learn More</a>
@@ -77,10 +78,11 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        Extra Layers
+                        RT 002
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Making your project more secure avoiding DDoS
+                        Bpk. Anang <br>
+                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Learn More</a>
@@ -89,10 +91,11 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        Extra Layers
+                        RT 003
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Making your project more secure avoiding DDoS
+                        Bpk. Edo <br>
+                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Learn More</a>
@@ -101,10 +104,11 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        Extra Layers
+                        RT 004
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Making your project more secure avoiding DDoS
+                        Bpk. Jaki <br>
+                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
                 <a href="" class="text-base font-semibold text-ungu">Learn More</a>
@@ -113,18 +117,18 @@
     </section>
 
     <section class="benefit max-w-6xl mx-auto font-sans py-12">
-        <div class="flex flex-row items-center gap-x-18">
+        <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
                 <img src="{{ asset('assets/images/home/illustration_2.png') }}" alt="" class="h-[550px]">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-5xl leading-tight">We Have Very <br>
-                        Strong Ecosytem
+                    <h1 class="text-black1 font-bold text-5xl leading-tight">Kerja Bakti
+                        Serentak Seluruh RT
                     </h1>
                     <div class="text-base leading-loose text-black3">
-                        We provide a variety of servers to grow your users<br>
-                        acquisition much user-friendly and boosting up sales.
+                        kegiatan gotong royong yang dilakukan secarab bersama-sama oleh seluruh warga di tingkat RT
+                        untuk membersihkan lingkungan dan memperbaiki infrastruktur.
                     </div>
                 </div>
 
@@ -133,10 +137,11 @@
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
                             <h3 class=" text-2xl font-bold text-black1">
-                                Extra Layers
+                                Meningkatnya kebersihan lingkungan
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                Making your project more secure avoiding DDoS
+                                Melalui kerja bakti serentak, sampah-sampah dapat dibersihkan secara efektif, menjadikan
+                                lingkungan lebih bersih dan nyaman untuk ditinggali.
                             </div>
                         </div>
                     </div>
@@ -144,10 +149,11 @@
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
                             <h3 class=" text-2xl font-bold text-black1">
-                                Extra Layers
+                                Penguatan hubungan sosial
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                Making your project more secure avoiding DDoS
+                                Melalui kerja bakti, warga memperkuat ikatan sosial dan menciptakan rasa kebersamaan
+                                yang lebih kuat dalam komunitas.
                             </div>
                         </div>
                     </div>
