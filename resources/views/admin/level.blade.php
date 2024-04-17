@@ -82,11 +82,15 @@
                                 {{ $item->level->nama_level === 'RT' ? $item->penduduk->alamat->rt : null }}
                             </td>
                             <td class="px-6 py-4">
-                                <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
-                                    <a href="#">
-                                        Edit
-                                    </a>
-                                </button>
+                                <form action="{{ route('admin.level') }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="id_akun" value="{{ $item->id_akun }}">
+                                    <button class="font-medium text-white !bg-ungu p-2 dark:text-white rounded"
+                                        type="submit">
+                                        Set penduduk
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

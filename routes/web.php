@@ -59,6 +59,7 @@ Route::prefix('admin')->group(function () {
             Route::middleware(['isSuperAdmin'])->group(function () { // isSuperAdmin middleware
                 Route::get('/', [LevelController::class, 'index'])->name('admin.level');
                 Route::post('/', [LevelController::class, 'store'])->name('admin.level');
+                Route::delete('/', [LevelController::class, 'delete'])->name('admin.level');
             });
         });
     });
