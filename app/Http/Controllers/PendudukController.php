@@ -53,7 +53,9 @@ class PendudukController extends Controller
             ]);
         }
         $kk = KkModel::with('pendudukHasOne')->get();
-        return view('admin.penduduk.index', compact('penduduk', 'kk'));
+        $rt = $this->alamat->rt;
+        $level = $this->level;
+        return view('admin.penduduk.index', compact('penduduk', 'kk', 'rt', 'level'));
     }
 
     public function akun_penduduk()
