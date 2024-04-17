@@ -16,7 +16,7 @@ class LevelController extends Controller
             })
             ->get();
 
-        // dd($users->toArray());
+        // dd($users[1]->penduduk->alamat->toArray());
         return view("admin.level", compact("users"));
     }
 }
