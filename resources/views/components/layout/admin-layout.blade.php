@@ -47,6 +47,24 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
 <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.directive('log', (el, {
+            expression
+        }, {
+            evaluateLater,
+            effect
+        }) => {
+            let getThingToLog = evaluateLater(expression)
+
+            effect(() => {
+                getThingToLog(thingToLog => {
+                    console.log(thingToLog)
+                })
+            })
+        })
+    })
+</script>
 </head>
 
 </html>

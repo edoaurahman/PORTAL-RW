@@ -141,7 +141,7 @@ class PendudukController extends Controller
                 PendudukModel::create($request->all());
             });
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="text-white">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
+            return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
         }
 
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan.');

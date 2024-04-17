@@ -32,7 +32,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::middleware(['auth','admin'])->group(function () { // auth and admin middleware
+    Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
@@ -55,7 +55,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
 
         Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw',]);
-        Route::get('/level', [LevelController::class, 'index'])->name('admin.level')->middleware('isSuperAdmin');
+        Route::prefix('level')->group(function () {
+            Route::middleware(['isSuperAdmin'])->group(function () { // isSuperAdmin middleware
+                Route::get('/', [LevelController::class, 'index'])->name('admin.level');
+                Route::post('/', [LevelController::class, 'store'])->name('admin.level');
+            });
+        });
     });
 });
 

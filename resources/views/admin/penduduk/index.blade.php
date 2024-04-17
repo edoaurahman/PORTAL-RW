@@ -47,7 +47,7 @@
             @foreach ($errors->all() as $error)
                 <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                     role="alert">
-                    <span class="font-medium">{{ $error }}</span>
+                    <span class="font-medium">{!! $error !!}</span>
                 </div>
             @endforeach
         @endif
@@ -132,7 +132,7 @@
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-hashtag"></i>
                             </div>
-                            <input required name="no_kk" type="text" list="listKK" id="no-kk"
+                            <input autocomplete="off" required name="no_kk" type="text" list="listKK" id="no-kk"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Masukkan No KK">
                             <datalist id="listKK">

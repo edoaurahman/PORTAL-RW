@@ -21,6 +21,33 @@
                 </button>
             </div>
         </div>
+        @if (session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-3"
+                role="alert">
+                <strong class="font-bold">Berhasil!</strong>
+                <span class="block sm:inline">{{ session('success') }}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg onclick="this.parentElement.parentElement.style.display='none'"
+                        class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                            d="M14.348 5.652a.5.5 0 0 1 0 .707l-8.485 8.485a.5.5 0 0 1-.707-.707l8.485-8.485a.5.5 0 0 1 .707 0zm-8.485 8.485a.5.5 0 0 1-.707 0l-8.485-8.485a.5.5 0 0 1 .707-.707l8.485 8.485a.5.5 0 0 1 0 .707z" />
+                    </svg>
+                </span>
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="p-4 mb-4 text-sm bg-red-600 text-white rounded-lg" role="alert">
+                <span class="font-bold">Terjadi Kesalahan</span>
+            </div>
+            @foreach ($errors->all() as $error)
+                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                    role="alert">
+                    <span class="font-medium">{!! $error !!}</span>
+                </div>
+            @endforeach
+        @endif
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-ungu dark:bg-ungu dark:text-white">
@@ -67,9 +94,6 @@
             </table>
         </div>
     </div>
-
-
-
     <!-- Main modal Add Penduduk -->
     <form action="" method="post">
         @csrf
@@ -98,7 +122,13 @@
                     <!-- Modal body Form -->
                     <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[50vh]">
                         <label for="nik"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIK</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Penduduk</label>
+                        @if (empty($penduduk[0]))
+                            {{-- alert --}}
+                            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                                role="alert">Data berlevel penduduk kosong
+                            </div>
+                        @endif
                         <div class="flex">
                             <span
                                 class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -108,11 +138,41 @@
                                         d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
                                 </svg>
                             </span>
-                            <input required name="nik" type="text" id="nik"
+                            <input name="nik"
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="NIK">
+                                type="text" autocomplete="off" list="myList" id="nik"
+                                placeholder="Placeholder here" />
+                            <datalist id="myList">
+                                @foreach ($penduduk as $item)
+                                    <option value="{{ $item->penduduk->nik }}">{{ $item->penduduk->nama }}</option>
+                                @endforeach
+                            </datalist>
                         </div>
+                        <small class="text-red-500">*pergi ke <a class="text-blue-500"
+                                href="{{ route('admin.penduduk.akun') }}">Akun Penduduk</a> jika data tidak di
+                            temukan</small>
 
+                        <label for="level"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Level</label>
+                        <div class="flex">
+                            <span
+                                class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+                                </svg>
+                            </span>
+
+                            <select
+                                class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                name="level" id="level" required>
+                                <option value="">Pilih Level</option>
+                                @foreach ($listLevel as $item)
+                                    <option value="{{ $item->id_level }}">{{ $item->nama_level }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                     </div>
                     <!-- Modal footer -->
@@ -125,4 +185,17 @@
                 </div>
             </div>
     </form>
+    <script>
+        function clearFormInputPenduduk() {
+            document.getElementById('nik').value = '';
+            document.getElementById('level').value = '';
+        }
+
+        const hideButton = document.querySelectorAll('[data-modal-hide]');
+        hideButton.forEach(button => {
+            button.addEventListener('click', () => {
+                clearFormInputPenduduk();
+            });
+        });
+    </script>
 </x-layout.admin-layout>
