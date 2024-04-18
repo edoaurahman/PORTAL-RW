@@ -41,6 +41,7 @@ Route::prefix('admin')->group(function () {
             Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk');
             Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
             Route::get('/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
+            Route::post('/akun', [PendudukController::class, 'akun_penduduk_store'])->name('admin.penduduk.akun');
             Route::get('/kk/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
         });

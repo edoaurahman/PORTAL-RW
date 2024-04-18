@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAkunPenduduk;
 use App\Http\Requests\StorePenduduk;
 use App\Models\AkunModel;
 use App\Models\AlamatModel;
 use App\Models\KkModel;
+use App\Models\LevelModel;
 use App\Models\PendudukModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class PendudukController extends Controller
 {
@@ -76,7 +79,9 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-        return view('admin.penduduk.akun', compact('penduduk'));
+
+        $listPenduduk = PendudukModel::whereDoesntHave('akun')->get();
+        return view('admin.penduduk.akun', compact('penduduk', 'listPenduduk'));
     }
 
     public function kk_penduduk()
@@ -145,5 +150,31 @@ class PendudukController extends Controller
         }
 
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan.');
+    }
+
+    public function akun_penduduk_store(StoreAkunPenduduk $request)
+    {
+        $setAsNik = $request->setAsNik;
+        $nik = $request->nik;
+        $id_level = LevelModel::where('nama_level', 'Penduduk')->first()->id_level;
+        if ($setAsNik) {
+            AkunModel::create([
+                'nik' => $nik,
+                'username' => $nik,
+                'password' => Hash::make($nik),
+                'email' => $request->email,
+                'id_level' => $id_level,
+            ]);
+
+            return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Ditambahkan.');
+        }
+        AkunModel::create([
+            'nik' => $request->nik,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+            'id_level' => $id_level,
+        ]);
+        return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Ditambahkan.');
     }
 }
