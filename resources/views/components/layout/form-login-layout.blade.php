@@ -20,6 +20,7 @@
     {{--
     <x-partials.admin.footer /> --}}
 </body>
+<script defer src="{{ asset('assets/js/bundle.js') }}"></script>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 
 </html>

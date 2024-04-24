@@ -22,12 +22,11 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt(['username' => $credentials['username'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
-            $level = AkunModel::with('level')->find(Auth::id())->level->nama_level;
-            $auth = $level == 'Super Admin' || str_contains($level, 'RT') || $level == 'RW';
-            if ($auth) {
-                return redirect()->route('admin.dashboard');
-            } else {
+            $page = $request->page;
+            if ($page == 'penduduk') {
                 return redirect()->route('user.home');
+            } else if ($page == 'admin') {
+                return redirect()->route('admin.dashboard');
             }
         }
 
