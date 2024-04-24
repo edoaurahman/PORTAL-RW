@@ -15,7 +15,7 @@
                     Beranda</button>
             </div>
         </div>
-        <div class="flex justify-center items-center bg-white">
+        <div class="flex justify-center items-center bg-white" x-data="{ page: 'penduduk' }">
             <form class="w-full pl-20 pr-24" action="{{ route('auth') }}" method="POST">
                 @csrf
                 <h1 class="text-3xl font-sans font-medium text-ungu mb-2">Welcome!</h1>
@@ -50,6 +50,7 @@
                 @error('message')
                     <div class="text-red-500 text-sm mb-5">{{ $message }}</div>
                 @enderror
+                <input type="hidden" name="page" :value="page">
                 <button type="submit"
                     class="text-white bg-ungu hover:bg-indigo-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-4 w-full text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
             </form>
@@ -77,24 +78,18 @@
                         </svg>
                     </button>
                     <div class="hidden fixed right-8 top-15" id="navbar-hamburger">
-                        <ul
+                        <ul x-log="page"
                             class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                             <li>
-                                <a href="#"
-                                    class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600"
+                                <a href="#" @click.prevent="page = 'penduduk'"
+                                    :class="{ 'bg-blue-700 text-white': page === 'penduduk' }"
+                                    class="block py-2 px-3 text-gray-900  rounded dark:bg-blue-600"
                                     aria-current="page">Penduduk</a>
                             </li>
                             <li>
-                                <a href="#"
-                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">RT</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">RW</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Super
+                                <a href="#" @click.prevent="page = 'admin'"
+                                    :class="{ 'bg-blue-700 text-white': page === 'admin' }"
+                                    class="block py-2 px-3 text-gray-900 rounded dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Super
                                     Admin</a>
                             </li>
                         </ul>
@@ -216,5 +211,23 @@
                 },
                 "retina_detect": true
             });
+        </script>
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.directive('log', (el, {
+                    expression
+                }, {
+                    evaluateLater,
+                    effect
+                }) => {
+                    let getThingToLog = evaluateLater(expression)
+
+                    effect(() => {
+                        getThingToLog(thingToLog => {
+                            console.log(thingToLog)
+                        })
+                    })
+                })
+            })
         </script>
 </x-layout.form-login-layout>
