@@ -10,9 +10,11 @@
                     Portal ini menyediakan akses mudah dan cepat bagi warga untuk terhubung, berkomunikasi, dan
                     terinformasi tentang berbagai kegiatan dan inisiatif yang sedang berlangsung di sekitar lingkungan
                     kita.</p>
-                <button type="button"
-                    class="text-ungu hover:text-white border-2 border-ungu hover:bg-ungu focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium text-base px-8 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
-                    Beranda</button>
+                <a href="{{ route('user.home') }}">
+                    <button type="button"
+                        class="text-ungu hover:text-white border-2 border-ungu hover:bg-ungu focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium text-base px-8 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                        Beranda</button>
+                </a>
             </div>
         </div>
         <div class="flex justify-center items-center bg-white" x-data="{ page: 'penduduk' }">
