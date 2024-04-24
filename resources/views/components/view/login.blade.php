@@ -63,6 +63,7 @@
             </div> --}}
 
 
+            {{-- opsi akses --}}
             <div class=" fixed right-6 top-6 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
                     <button data-collapse-toggle="navbar-hamburger" type="button"
