@@ -91,8 +91,7 @@
                             <li>
                                 <a href="#" @click.prevent="page = 'admin'"
                                     :class="{ 'bg-blue-700 text-white': page === 'admin' }"
-                                    class="block py-2 px-3 text-gray-900 rounded dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Super
-                                    Admin</a>
+                                    class="block py-2 px-3 text-gray-900 rounded dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Admin</a>
                             </li>
                         </ul>
                     </div>
