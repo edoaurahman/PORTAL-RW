@@ -28,7 +28,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         <!-- ===== Content Area Start ===== -->
         <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-purple-50 dark:bg-black">
             <!-- ===== Header Start ===== -->
-            <x-partials.admin.header />
+            <x-partials.admin.header-component />
             <!-- ===== Header End ===== -->
 
             <!-- ===== Main Content Start ===== -->

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\partials\admin;
+namespace App\View\Components\Partials\Admin;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class header extends Component
+class HeaderComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class header extends Component
     {
         $username = auth()->user()->penduduk->nama;
         $level = auth()->user()->level->nama_level;
-        return view('components.partials.admin.header',compact('username','level'));
+        return view('components.partials.admin.header-component',compact('username','level'));
     }
 }
