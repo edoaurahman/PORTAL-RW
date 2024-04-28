@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class add extends Component
+class Edit extends Component
 {
     private $user;
     private $level;
@@ -28,12 +28,11 @@ class add extends Component
     {
         return $level === 'Super Admin' || $level === 'RW';
     }
-
     public function render(): View|Closure|string
     {
         $kk = KkModel::with('pendudukHasOne')->get();
         $rt = $this->alamat->rt;
         $level = $this->level;
-        return view('components.partials.admin.penduduk.add', compact('kk', 'rt', 'level'));
+        return view('components.partials.admin.penduduk.edit', compact('kk', 'rt', 'level'));
     }
 }

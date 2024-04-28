@@ -23,6 +23,7 @@ class HeaderComponent extends Component
     {
         $username = auth()->user()->penduduk->nama;
         $level = auth()->user()->level->nama_level;
+        // dd($level);
         return view('components.partials.admin.header-component',compact('username','level'));
     }
 }
