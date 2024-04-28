@@ -39,15 +39,11 @@
                 </div>
                 <div class="flex items-center mb-5 mt-4">
                     <div class="flex items-center h-5">
-                        <input id="terms" type="checkbox" value=""
-                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                            required />
+                        <input id="terms" type="checkbox" value="true" name="remember"
+                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" />
                     </div>
                     <label for="terms" class="ms-2 text-base font-medium  text-gray-900 dark:text-gray-300">I
-                        agree
-                        with
-                        the <a href="#" class="text-ungu hover:underline dark:text-blue-500">terms and
-                            conditions</a></label>
+                        Remember me</label>
                 </div>
                 @error('message')
                     <div class="text-red-500 text-sm mb-5">{{ $message }}</div>
@@ -80,7 +76,7 @@
                         </svg>
                     </button>
                     <div class="hidden fixed right-8 top-15" id="navbar-hamburger">
-                        <ul x-log="page"
+                        <ul
                             class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                             <li>
                                 <a href="#" @click.prevent="page = 'penduduk'"
