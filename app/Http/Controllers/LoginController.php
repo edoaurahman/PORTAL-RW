@@ -25,9 +25,9 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $page = $request->page;
             if ($page == 'penduduk') {
-                return redirect()->route('user.home');
+                return redirect()->intended('/home');
             } else if ($page == 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->intended('/admin');
             }
         }
 
