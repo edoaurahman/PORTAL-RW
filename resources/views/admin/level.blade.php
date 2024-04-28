@@ -82,7 +82,7 @@
                                 {{ $item->level->nama_level === 'RT' ? $item->penduduk->alamat->rt : null }}
                             </td>
                             <td class="px-6 py-4">
-                                <form action="{{ route('admin.level') }}" method="post">
+                                <form action="{{ route('admin.level.delete') }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="id_akun" value="{{ $item->id_akun }}">
@@ -144,8 +144,7 @@
                             </span>
                             <input name="nik"
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                type="text" autocomplete="off" list="myList" id="nik"
-                                placeholder="Nik" />
+                                type="text" autocomplete="off" list="myList" id="nik" placeholder="Nik" />
                             <datalist id="myList">
                                 @foreach ($penduduk as $item)
                                     <option value="{{ $item->penduduk->nik }}">{{ $item->penduduk->nama }}</option>
