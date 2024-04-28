@@ -4,17 +4,17 @@
             <div class="mb-2 text-xl">
                 <h1><strong>PENDUDUK</strong></h1>
             </div>
-            <h3 class="text-muted"> 
-                ADMIN            
+            <h3 class="text-muted">
+                ADMIN
                 <small class="text-dark">
-                    <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    <i class="fas fa-xs fa-angle-right text-muted"></i>
                     Penduduk
                     <small class="text-dark">
-                        <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                        <i class="fas fa-xs fa-angle-right text-muted"></i>
                     </small>
                     Kartu Keluarga
                     <small class="text-dark">
-                        <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                        <i class="fas fa-xs fa-angle-right text-muted"></i>
                     </small>
                     Detail Kartu Keluarga
                 </small>
@@ -30,19 +30,30 @@
                         <th scope="col" class="px-6 py-3">
                             NIK
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Aksi
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($penduduk->penduduk as $item)
-                    <tr
-                        class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $item->nama }}
-                        </th>
-                        <td class="px-6 py-4">
-                            {{ $item->nik }}
-                        </td>
-                    </tr>
+                        <tr
+                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $item->nama }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $item->nik }}
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="font-medium text-white bg-ungu p-2  rounded">
+                                    <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
+                                        Detail
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

@@ -39,11 +39,13 @@ Route::prefix('admin')->group(function () {
         Route::prefix('penduduk')->group(function () {
             Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
             Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk');
+            Route::post('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
             Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
             Route::get('/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
             Route::post('/akun', [PendudukController::class, 'akun_penduduk_store'])->name('admin.penduduk.akun');
             Route::get('/kk/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
+            Route::delete('/{nik}', [PendudukController::class, 'destroy'])->name('admin.penduduk.delete');
         });
 
         Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');

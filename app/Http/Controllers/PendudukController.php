@@ -37,17 +37,26 @@ class PendudukController extends Controller
         return $level === 'Super Admin' || $level === 'RW';
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $penduduk = new PendudukModel();
+        $paginate = 10;
         try {
             if ($this->checkLevel($this->level)) {
-                $penduduk = PendudukModel::all();
+                $penduduk = PendudukModel::with('alamat')->paginate($paginate);
+                if ($request->has('s')) {
+                    $penduduk = PendudukModel::where('nama', 'like', '%' . $request->s . '%')->paginate($paginate);
+                }
             } else {
                 $rt = $this->alamat->rt;
                 $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($rt) {
                     $query->where('rt', $rt);
-                })->get();
+                })->paginate($paginate);
+                if ($request->has('s')) {
+                    $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($rt) {
+                        $query->where('rt', $rt);
+                    })->where('nama', 'like', '%' . $request->s . '%')->paginate($paginate);
+                }
             }
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
@@ -55,10 +64,7 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-        $kk = KkModel::with('pendudukHasOne')->get();
-        $rt = $this->alamat->rt;
-        $level = $this->level;
-        return view('admin.penduduk.index', compact('penduduk', 'kk', 'rt', 'level'));
+        return view('admin.penduduk.index', compact('penduduk'));
     }
 
     public function akun_penduduk()
@@ -132,7 +138,7 @@ class PendudukController extends Controller
         try {
             DB::transaction(function () use ($request) {
                 $alamat = AlamatModel::create([
-                    'kel' => $request->kelurahan,
+                    'kel' => $request->kel,
                     'kecamatan' => $request->kecamatan,
                     'jalan' => $request->jalan,
                     'rw' => $request->rw,
@@ -176,5 +182,49 @@ class PendudukController extends Controller
             'id_level' => $id_level,
         ]);
         return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Ditambahkan.');
+    }
+
+    public function detail_penduduk($nik)
+    {
+        $penduduk = PendudukModel::with('alamat')->where('nik', $nik)->first();
+        $detail_penduduk = [
+            'No KK' => $penduduk->no_kk,
+            'Nama' => $penduduk->nama,
+            'NIK' => $penduduk->nik,
+            'Tempat Lahir' => $penduduk->tempat_lahir,
+            'Tanggal Lahir' => $penduduk->tgl_lahir,
+            'Jenis Kelamin' => $penduduk->jenis_kelamin,
+            'Golongan Darah' => $penduduk->gol_darah,
+            'Agama' => $penduduk->agama,
+            'Status Perkawinan' => $penduduk->status_perkawinan,
+            'Pekerjaan' => $penduduk->pekerjaan,
+            'Alamat' => $penduduk->alamat->jalan,
+            'Kelurahan' => $penduduk->alamat->kel,
+            'Kecamatan' => $penduduk->alamat->kecamatan,
+            'Rt' => $penduduk->alamat->rt,
+            'Rw' => $penduduk->alamat->rw,
+        ];
+        return view('admin.penduduk.penduduk-detail', compact('detail_penduduk'));
+    }
+
+    public function update(Request $request)
+    {
+        $penduduk = PendudukModel::where('nik', $request->nik)->first();
+        $penduduk->update($request->all());
+        $alamat = AlamatModel::where('id_alamat', $penduduk->id_alamat)->first();
+        $alamat->update($request->all());
+        return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Diupdate.');
+    }
+
+    public function destroy($nik)
+    {
+        return $nik;
+        try {
+            $penduduk = PendudukModel::where('nik', $nik)->first();
+            $penduduk->delete();
+        } catch (\Exception $e) {
+            return redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.');
+        }
+        return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Dihapus.');
     }
 }

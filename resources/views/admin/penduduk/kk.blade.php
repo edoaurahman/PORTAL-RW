@@ -4,13 +4,13 @@
             <div class="mb-2 text-xl">
                 <h1><strong>PENDUDUK</strong></h1>
             </div>
-            <h3 class="text-muted"> 
-                ADMIN            
+            <h3 class="text-muted">
+                ADMIN
                 <small class="text-dark">
-                    <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                    <i class="fas fa-xs fa-angle-right text-muted"></i>
                     Penduduk
                     <small class="text-dark">
-                        <i class="fas fa-xs fa-angle-right text-muted"></i> 
+                        <i class="fas fa-xs fa-angle-right text-muted"></i>
                     </small>
                     Kartu Keluarga
                 </small>
@@ -43,16 +43,16 @@
                                 {{ $item->nik_kepalakeluarga }}
                             </td>
                             <td class="px-6 py-4">
-                                <button class="font-medium text-white bg-purple-950 p-2 rounded">
-                                    <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
+                                <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
+                                    <button class="font-medium text-white bg-purple-950 p-2 rounded">
                                         Details
-                                    </a>
-                                </button>
-                                <button class="font-medium text-white bg-ungu p-2  rounded">
-                                    <a href="#">
+                                    </button>
+                                </a>
+                                <a href="#">
+                                    <button class="font-medium text-white bg-ungu p-2  rounded">
                                         Edit
-                                    </a>
-                                </button>
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -71,21 +71,21 @@
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
-                                    :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk') }"
+                                        :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk') }"
                                         href="{{ route('admin.penduduk') }}">Daftar
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
                                     <a class=" group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
-                                    :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk/akun') }"
+                                        :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk/akun') }"
                                         href="{{ route('admin.penduduk.akun') }}">Akun
                                         Penduduk
                                     </a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
-                                    :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk/kk') }"
+                                        :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/penduduk/kk') }"
                                         href="{{ route('admin.penduduk.kk') }}">Daftar KK
                                     </a>
                                 </li>
@@ -157,7 +157,7 @@
                             href="{{ route('admin.data-umkm') }}"
                             :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('data-umkm')) }">
                             <i class="fa-solid fa-headset"></i>
-                        Data UMKM
+                            Data UMKM
                         </a>
                     </li>
 
