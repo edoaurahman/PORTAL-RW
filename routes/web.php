@@ -72,9 +72,20 @@ Route::get('/home', function () {
     return view('user.home');
 })->name('user.home');
 
+
+
 Route::get('/profile', function () {
     return view('user.profile');
 });
+
+Route::get('/penduduk', function () {
+    return view('user.penduduk');
+})->name('user.penduduk');
+
+Route::get('/berita', function () {
+    return view('user.berita');
+})->name('user.berita');
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
