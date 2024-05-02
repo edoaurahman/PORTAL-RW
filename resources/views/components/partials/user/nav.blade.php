@@ -73,8 +73,8 @@
                 <div id="userDropdown"
                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                        <div>Anang Aja</div>
-                        <div class="font-medium truncate">090988303(NIK)</div>
+                        <div>{{ $user->penduduk->nama }}</div>
+                        <div class="font-medium truncate">{{ $user->penduduk->nik }}(NIK)</div>
                     </div>
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
                         <li>
