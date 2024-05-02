@@ -49,6 +49,14 @@ class PendudukSeeder extends Seeder
                     'kecamatan' => 'Kanor',
                     'jalan' => 'Jl. Raya Prigi'
                 ],
+                [
+                    'id_alamat' => '5',
+                    'rw' => '1',
+                    'rt' => '1',
+                    'kel' => 'Prigi',
+                    'kecamatan' => 'Kanor',
+                    'jalan' => 'Jl. Raya Prigi'
+                ],
             ];
         AlamatModel::insert($alamat);
         $kk = [
@@ -119,7 +127,7 @@ class PendudukSeeder extends Seeder
                     'gol_darah' => 'O',
                     'no_kk' => '3522110504040002',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '3',
+                    'id_alamat' => '4',
                 ],
                 [
                     'nik' => '3522110504040010',
@@ -133,7 +141,7 @@ class PendudukSeeder extends Seeder
                     'gol_darah' => 'O',
                     'no_kk' => '3522110504040002',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '3',
+                    'id_alamat' => '5',
                 ],
             ];
         PendudukModel::insert($penduduk);
