@@ -30,6 +30,13 @@ class AkunSeeder extends Seeder
                 'nik' => '3522110504040007'
             ],
             [
+                'email' => 'anangg@gmail.com',
+                'username' => 'user',
+                'password' => Hash::make('user'),
+                'id_level' => '3',
+                'nik' => '3522110504040007'
+            ],
+            [
                 'email' => 'rt@gmail.com',
                 'username' => 'rt01',
                 'password' => Hash::make('rt01'),
