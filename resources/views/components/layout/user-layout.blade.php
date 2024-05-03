@@ -19,5 +19,6 @@
     <x-partials.user.footer />
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
+<script defer src="{{ asset('assets/js/bundle.js') }}"></script>
 
 </html>
