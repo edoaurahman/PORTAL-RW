@@ -32,7 +32,7 @@ class CreateTbPendudukTable extends Migration
             // foreign key id_alamat
             $table->foreign('id_alamat')->references('id_alamat')->on('tb_alamat')->onDelete('cascade');
             // foreign key no_kk
-            $table->foreign('no_kk')->references('no_kk')->on('tb_kk');
+            $table->foreign('no_kk')->references('no_kk')->on('tb_kk')->onUpdate('cascade');
         });
     }
 
