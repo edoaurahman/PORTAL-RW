@@ -32,9 +32,13 @@ class PendudukController extends Controller
         $this->alamat = $this->user->penduduk->alamat;
     }
 
-    private function checkLevel(string $level): bool
+    private function isAdmin(): bool
     {
-        return $level === 'Super Admin' || $level === 'RW';
+        return $this->level === 'Super Admin';
+    }
+    private function isRW(): bool
+    {
+        return $this->level === 'RW';
     }
 
     public function index(Request $request)
@@ -42,16 +46,26 @@ class PendudukController extends Controller
         $penduduk = new PendudukModel();
         $paginate = 10;
         try {
-            if ($this->checkLevel($this->level)) {
+            if ($this->isAdmin()) {
                 $penduduk = PendudukModel::with('alamat')->paginate($paginate);
                 if ($request->has('s')) {
                     $penduduk = PendudukModel::where('nama', 'like', '%' . $request->s . '%')->paginate($paginate);
+                }
+            } else if ($this->isRW()) {
+                $penduduk = PendudukModel::with('alamat')->whereHas('akun.level', function ($query) {
+                    $query->whereIn('nama_level', ['Penduduk', 'RT']);
+                })->paginate($paginate);
+                if ($request->has('s')) {
+                    $penduduk = PendudukModel::with('alamat')->whereHas('akun.level', function ($query) {
+                        $query->whereIn('nama_level', ['Penduduk', 'RT']);
+                    })->where('nama', 'like', '%' . $request->s . '%')->paginate($paginate);
                 }
             } else {
                 $rt = $this->alamat->rt;
                 $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($rt) {
                     $query->where('rt', $rt);
                 })->paginate($paginate);
+
                 if ($request->has('s')) {
                     $penduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) use ($rt) {
                         $query->where('rt', $rt);
@@ -71,12 +85,18 @@ class PendudukController extends Controller
     {
         $penduduk = new AkunModel();
         try {
-            if ($this->checkLevel($this->level)) {
+            if ($this->isAdmin()) {
                 $penduduk = AkunModel::all();
+            } else if ($this->isRW()) {
+                $penduduk = AkunModel::with('penduduk', 'level')->whereHas('level', function ($query) {
+                    $query->whereIn('nama_level', ['Penduduk', 'RT']);
+                })->get();
             } else {
                 $rt = $this->alamat->rt;
-                $penduduk = AkunModel::with('penduduk')->whereHas('penduduk.alamat', function ($query) use ($rt) {
+                $penduduk = AkunModel::with('penduduk', 'level')->whereHas('penduduk.alamat', function ($query) use ($rt) {
                     $query->where('rt', $rt);
+                })->whereHas('level', function ($query) {
+                    $query->where('nama_level', 'Penduduk');
                 })->get();
             }
         } catch (\Exception $e) {
@@ -93,7 +113,7 @@ class PendudukController extends Controller
     {
         $penduduk = new KkModel();
         try {
-            if ($this->checkLevel($this->level)) {
+            if ($this->isAdmin()) {
                 $penduduk = KkModel::with('pendudukHasOne')->get();
             } else {
                 $rt = $this->alamat->rt;
@@ -183,6 +203,35 @@ class PendudukController extends Controller
         return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Ditambahkan.');
     }
 
+    public static function akun_penduduk_update(Request $request)
+    {
+        $request->validate([
+            'nik' => 'required',
+            'username' => 'required',
+            'password' => 'nullable',
+            'email' => 'required',
+        ]);
+
+        try {
+            $akun = AkunModel::where('nik', $request->nik)->first();
+            if ($request->password != null) {
+                $akun->update([
+                    'username' => $request->username,
+                    'password' => Hash::make($request->password),
+                    'email' => $request->email,
+                ]);
+            } else {
+                $akun->update([
+                    'username' => $request->username,
+                    'email' => $request->email,
+                ]);
+            }
+            return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Diupdate.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage())->withInput();
+        }
+    }
+
     public function detail_penduduk($nik)
     {
         $penduduk = PendudukModel::with('alamat')->where('nik', $nik)->first();
@@ -243,6 +292,17 @@ class PendudukController extends Controller
             return redirect()->route('admin.penduduk.kk')->with('success', 'Kepala Keluarga Berhasil Diupdate.');
         } catch (\Exception $e) {
             return redirect()->route('admin.penduduk.kk')->withErrors($e->getMessage())->withInput();
+        }
+    }
+
+    public function akun_penduduk_delete($id)
+    {
+        try {
+            $akun = AkunModel::find($id);
+            $akun->delete();
+            return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage());
         }
     }
 }
