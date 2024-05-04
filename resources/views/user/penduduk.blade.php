@@ -1,16 +1,16 @@
 <x-layout.user-layout>
 
-    <section class="graph mx-auto py-12 font-sans flex-col items-center justify-center w-screen  text-gray-700 bg-gray-100">
+    <section class="graph max-w-6xl mx-auto font-sans py-12">
 
         <!-- Component Start -->
-        <div class="flex flex-col items-center w-full max-w-screen-md p-6 pb-6 mt-10 bg-white rounded-lg shadow-xl sm:p-8">
+        <div class="flex flex-col items-center w-full p-6 pb-6 mt-10 bg-white rounded-lg shadow-xl sm:p-8">
             <h2 class="text-xl font-bold">Pemetaan Penduduk</h2>
             <span class="text-sm font-semibold text-gray-500">2024</span>
             <div class="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
                 <div class="relative flex flex-col items-center flex-grow pb-5 group">
                     <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">1200</span>
                     <div class="flex items-end w-full">
-                        <div class="relative flex justify-center flex-grow h-100 bg-ungu"></div>
+                        <div class="relative flex justify-center flex-grow h-100 bg-ungu "></div>
                         <div class="relative flex justify-center flex-grow h-40 bg-indigo-500"></div>
                         <div class="relative flex justify-center flex-grow h-60 bg-indigo-400"></div>
                     </div>
@@ -34,8 +34,6 @@
                     </div>
                     <span class="absolute bottom-0 text-xs font-bold">Penduduk Pendatang</span>
                 </div>
-
-
             </div>
             <div class="flex w-full mt-3">
                 <div class="flex items-center ml-auto">
@@ -54,6 +52,7 @@
         </div>
         <!-- Component End  -->
     </section>
+
 
 
     <section class="tabel max-w-6xl mx-auto font-sans py-12">
