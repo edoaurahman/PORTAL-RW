@@ -21,12 +21,23 @@ class LevelController extends Controller
 
     public function index()
     {
-        $users = AkunModel::with('level', 'penduduk')
-            ->whereHas('level', function ($query) {
-                $query->where('nama_level', '!=', 'Penduduk');
-            })
-            ->get();
-
+        $users = new AkunModel();
+        $listLevel = new LevelModel();
+        if ($this->level === 'Super Admin') {
+            $users = AkunModel::with('level', 'penduduk')
+                ->whereHas('level', function ($query) {
+                    $query->where('nama_level', '!=', 'Penduduk');
+                })
+                ->get();
+            $listLevel = LevelModel::whereNotIn('nama_level', ['Penduduk', 'Super Admin'])->get();
+        } else if ($this->level === 'RW') {
+            $users = AkunModel::with('level', 'penduduk')
+                ->whereHas('level', function ($query) {
+                    $query->where('nama_level', 'RT');
+                })
+                ->get();
+            $listLevel = LevelModel::where('nama_level', 'RT')->get();
+        }
         // dd($users[1]->penduduk->alamat->toArray());
         // mendapatkan penduduk yang memiliki level penduduk
         $penduduk = AkunModel::with('penduduk')
@@ -35,7 +46,7 @@ class LevelController extends Controller
             })
             ->get();
         // dd($penduduk->toArray());
-        $listLevel = LevelModel::where('nama_level', '!=', 'Penduduk')->where('nama_level', '!=', 'Super Admin')->get();
+
         return view("admin.level", compact("users", "penduduk", "listLevel"));
     }
 
