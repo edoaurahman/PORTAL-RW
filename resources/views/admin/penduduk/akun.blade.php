@@ -26,7 +26,8 @@
             </button>
         </div>
         @if (session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-3"
+                role="alert">
                 <strong class="font-bold">Berhasil!</strong>
                 <span class="block sm:inline">{{ session('success') }}</span>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -83,9 +84,19 @@
                             <td class="px-6 py-4">
                                 {{ $item->level->nama_level }}
                             </td>
-                            <td class="px-6 py-4">
-                                <button class="font-medium text-white bg-ungu p-2  rounded">
-                                    <a href="#">
+                            <td class="px-6 py-4 flex gap-3">
+                                <form action="{{ route('admin.penduduk.akun.delete', $item->id_akun) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" onclick="return confirm('Apakah anda yakin?')">
+                                        <div class="font-medium text-white bg-red-600 p-2  rounded">
+                                            Delete
+                                        </div>
+                                    </button>
+                                </form>
+                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-akun-penduduk"
+                                    data-modal-toggle="edit-akun-penduduk">
+                                    <a class="font-medium text-white bg-ungu p-2  rounded" href="#">
                                         Edit
                                     </a>
                                 </button>
@@ -99,6 +110,8 @@
 
     <!-- Main modal Add Akun Penduduk -->
     <x-partials.admin.penduduk.add-akun />
+    <!-- Main modal Edit Akun Penduduk -->
+    <x-partials.admin.penduduk.edit-akun />
     <script>
         function clearFormInputPenduduk() {
             const form = document.querySelector('[data-modal-backdrop="static"]');
