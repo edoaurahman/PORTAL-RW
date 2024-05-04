@@ -15,6 +15,34 @@
                     Kartu Keluarga
                 </small>
             </h3>
+
+            @if (session('success'))
+                <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                    role="alert">
+                    <strong class="font-bold">Berhasil!</strong>
+                    <span class="block sm:inline">{{ session('success') }}</span>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                        <svg onclick="this.parentElement.parentElement.style.display='none'"
+                            class="fill-current h-6 w-6 text-green-500" role="button"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Close</title>
+                            <path
+                                d="M14.348 5.652a.5.5 0 0 1 0 .707l-8.485 8.485a.5.5 0 0 1-.707-.707l8.485-8.485a.5.5 0 0 1 .707 0zm-8.485 8.485a.5.5 0 0 1-.707 0l-8.485-8.485a.5.5 0 0 1 .707-.707l8.485 8.485a.5.5 0 0 1 0 .707z" />
+                        </svg>
+                    </span>
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="p-4 mb-4 text-sm bg-red-600 text-white rounded-lg" role="alert">
+                    <span class="font-bold">Data gagal disimpan</span>
+                </div>
+                @foreach ($errors->all() as $error)
+                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                        role="alert">
+                        <span class="font-medium">{!! $error !!}</span>
+                    </div>
+                @endforeach
+            @endif
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
@@ -25,6 +53,9 @@
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Nik
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            No KK
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -43,13 +74,18 @@
                                 {{ $item->nik_kepalakeluarga }}
                             </td>
                             <td class="px-6 py-4">
+                                {{ $item->no_kk }}
+                            </td>
+                            <td class="px-6 py-4">
                                 <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
                                     <button class="font-medium text-white bg-purple-950 p-2 rounded">
                                         Details
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="font-medium text-white bg-ungu p-2  rounded">
+                                    <button x-data @click="$store.penduduk.showEdit({{ $item }})"
+                                        data-modal-target="edit-kk" data-modal-toggle="edit-kk"
+                                        class="font-medium text-white bg-ungu p-2  rounded">
                                         Edit
                                     </button>
                                 </a>
@@ -60,4 +96,6 @@
             </table>
         </div>
     </div>
+
+    <x-partials.admin.penduduk.kk.edit />
 </x-layout.admin-layout>
