@@ -21,6 +21,7 @@ class PendudukModel extends Model
         'pekerjaan',
         'gol_darah',
         'no_kk',
+        'no_hp',
         'id_alamat'
     ];
 
