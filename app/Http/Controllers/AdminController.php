@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlamatModel;
+use App\Models\PendudukModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -11,6 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $jumlahRT = AlamatModel::groupBy('rt')->count('rt');
+        $jumlahPenduduk = PendudukModel::count();
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk'));
     }
 }
