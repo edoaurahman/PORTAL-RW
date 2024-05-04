@@ -41,7 +41,7 @@ class AkunSeeder extends Seeder
                 'username' => 'rw',
                 'password' => Hash::make('rw'),
                 'id_level' => '4',
-                'nik' => '3522110504040006'
+                'nik' => '3522110504040009'
             ],
         ];
 
