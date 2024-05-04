@@ -86,6 +86,10 @@ Route::get('/berita', function () {
     return view('user.berita');
 })->name('user.berita');
 
+Route::get('/layanan', function () {
+    return view('user.layanan');
+})->name('user.layanan');
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
