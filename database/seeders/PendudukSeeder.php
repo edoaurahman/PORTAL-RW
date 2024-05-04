@@ -113,7 +113,7 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040001',
+                    'no_kk' => '3522110504040002',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '3',
