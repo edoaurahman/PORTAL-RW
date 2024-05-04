@@ -1,5 +1,5 @@
 <div>
-    <form action="{{ route('admin.penduduk.akun') }}" method="post" x-data="{ setAsNik: false }">
+    <form action="{{ route('admin.penduduk.akun.store') }}" method="post" x-data="{ setAsNik: false }">
         @csrf
         <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
