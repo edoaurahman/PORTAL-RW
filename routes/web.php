@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
-        Route::get('/', fn() => redirect(route('admin.dashboard')));
+        Route::get('/', fn () => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
@@ -79,8 +79,11 @@ Route::get('/profile', function () {
 });
 
 Route::get('/penduduk', function () {
-    return view('user.penduduk');
+    return view('user.penduduk.index');
 })->name('user.penduduk');
+Route::get('/penduduk/detail_penduduk', function () {
+    return view('user.penduduk.detail_penduduk');
+})->name('user.detail_penduduk');
 
 Route::get('/berita', function () {
     return view('user.berita');
