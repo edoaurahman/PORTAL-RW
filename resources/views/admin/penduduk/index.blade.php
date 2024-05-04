@@ -133,18 +133,5 @@
                 clearFormInputPenduduk();
             });
         });
-
-        function showEdit(e) {
-            const formEdit = document.getElementById('form-edit-penduduk');
-            for (let input of formEdit) {
-                const key = input.name;
-                const value = e[key];
-                if (value) {
-                    input.value = value;
-                } else if (e.alamat && e.alamat[key]) {
-                    input.value = e.alamat[key];
-                }
-            }
-        }
     </script>
 </x-layout.admin-layout>
