@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-blue-900">
+<nav class="bg-white border-gray-200 dark:bg-blue-900 sticky top-0 z-99999">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('assets/images/template/logo/LogoRWHitam.png') }}" alt="" class=" h-6">
@@ -14,17 +14,19 @@
                     d="M1 1h15M1 7h15M1 13h15" />
             </svg>
         </button>
-        <div class="hidden w-full md:flex md:flex-row md:w-auto" id="navbar-default">
+        <div class="hidden w-full md:flex md:flex-row md:w-auto" id="navbar-default" x-data="{ selected: location.pathname }">
             <ul
                 class="font-medium flex flex-col md:items-center p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                 <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                        aria-current="page">Home</a>
+                    <a href="{{ route('user.home') }}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        aria-current="page"
+                        :class="{ 'text-blue-700 dark:text-gray-400': (selected.includes('home')) }">Home</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Penduduk</a>
+                    <a href="{{ route('user.penduduk') }}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        :class="{ 'text-blue-700 dark:text-gray-400': (selected.includes('penduduk')) }">Penduduk</a>
                 </li>
                 <li>
                     <a href="#"
@@ -47,12 +49,35 @@
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Layanan</a>
                 </li>
                 <li>
-                    <label class="inline-flex items-center cursor-pointer py-2 px-">
-                        <input id="toggleDarkMode" type="checkbox" value="" class="sr-only peer">
-                        <div
-                            class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
-                        </div>
+                    <!-- Dark Mode Toggler -->
+                    <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
+                        class="relative m-0 block h-7.5 w-14 rounded-full">
+                        <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
+                            class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" />
+                        <span :class="darkMode && '!right-1 !translate-x-full'"
+                            class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
+                            <span class="dark:hidden">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.99992 12.6666C10.5772 12.6666 12.6666 10.5772 12.6666 7.99992C12.6666 5.42259 10.5772 3.33325 7.99992 3.33325C5.42259 3.33325 3.33325 5.42259 3.33325 7.99992C3.33325 10.5772 5.42259 12.6666 7.99992 12.6666Z"
+                                        fill="#969AA1" />
+                                    <path
+                                        d="M8.00008 15.3067C7.63341 15.3067 7.33342 15.0334 7.33342 14.6667V14.6134C7.33342 14.2467 7.63341 13.9467 8.00008 13.9467C8.36675 13.9467 8.66675 14.2467 8.66675 14.6134C8.66675 14.9801 8.36675 15.3067 8.00008 15.3067ZM12.7601 13.4267C12.5867 13.4267 12.4201 13.3601 12.2867 13.2334L12.2001 13.1467C11.9401 12.8867 11.9401 12.4667 12.2001 12.2067C12.4601 11.9467 12.8801 11.9467 13.1401 12.2067L13.2267 12.2934C13.4867 12.5534 13.4867 12.9734 13.2267 13.2334C13.1001 13.3601 12.9334 13.4267 12.7601 13.4267ZM3.24008 13.4267C3.06675 13.4267 2.90008 13.3601 2.76675 13.2334C2.50675 12.9734 2.50675 12.5534 2.76675 12.2934L2.85342 12.2067C3.11342 11.9467 3.53341 11.9467 3.79341 12.2067C4.05341 12.4667 4.05341 12.8867 3.79341 13.1467L3.70675 13.2334C3.58008 13.3601 3.40675 13.4267 3.24008 13.4267ZM14.6667 8.66675H14.6134C14.2467 8.66675 13.9467 8.36675 13.9467 8.00008C13.9467 7.63341 14.2467 7.33342 14.6134 7.33342C14.9801 7.33342 15.3067 7.63341 15.3067 8.00008C15.3067 8.36675 15.0334 8.66675 14.6667 8.66675ZM1.38675 8.66675H1.33341C0.966748 8.66675 0.666748 8.36675 0.666748 8.00008C0.666748 7.63341 0.966748 7.33342 1.33341 7.33342C1.70008 7.33342 2.02675 7.63341 2.02675 8.00008C2.02675 8.36675 1.75341 8.66675 1.38675 8.66675ZM12.6734 3.99341C12.5001 3.99341 12.3334 3.92675 12.2001 3.80008C11.9401 3.54008 11.9401 3.12008 12.2001 2.86008L12.2867 2.77341C12.5467 2.51341 12.9667 2.51341 13.2267 2.77341C13.4867 3.03341 13.4867 3.45341 13.2267 3.71341L13.1401 3.80008C13.0134 3.92675 12.8467 3.99341 12.6734 3.99341ZM3.32675 3.99341C3.15341 3.99341 2.98675 3.92675 2.85342 3.80008L2.76675 3.70675C2.50675 3.44675 2.50675 3.02675 2.76675 2.76675C3.02675 2.50675 3.44675 2.50675 3.70675 2.76675L3.79341 2.85342C4.05341 3.11342 4.05341 3.53341 3.79341 3.79341C3.66675 3.92675 3.49341 3.99341 3.32675 3.99341ZM8.00008 2.02675C7.63341 2.02675 7.33342 1.75341 7.33342 1.38675V1.33341C7.33342 0.966748 7.63341 0.666748 8.00008 0.666748C8.36675 0.666748 8.66675 0.966748 8.66675 1.33341C8.66675 1.70008 8.36675 2.02675 8.00008 2.02675Z"
+                                        fill="#969AA1" />
+                                </svg>
+                            </span>
+                            <span class="hidden dark:inline-block">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.3533 10.62C14.2466 10.44 13.9466 10.16 13.1999 10.2933C12.7866 10.3667 12.3666 10.4 11.9466 10.38C10.3933 10.3133 8.98659 9.6 8.00659 8.5C7.13993 7.53333 6.60659 6.27333 6.59993 4.91333C6.59993 4.15333 6.74659 3.42 7.04659 2.72666C7.33993 2.05333 7.13326 1.7 6.98659 1.55333C6.83326 1.4 6.47326 1.18666 5.76659 1.48C3.03993 2.62666 1.35326 5.36 1.55326 8.28666C1.75326 11.04 3.68659 13.3933 6.24659 14.28C6.85993 14.4933 7.50659 14.62 8.17326 14.6467C8.27993 14.6533 8.38659 14.66 8.49326 14.66C10.7266 14.66 12.8199 13.6067 14.1399 11.8133C14.5866 11.1933 14.4666 10.8 14.3533 10.62Z"
+                                        fill="#969AA1" />
+                                </svg>
+                            </span>
+                        </span>
                     </label>
+                    <!-- Dark Mode Toggler -->
                 </li>
                 <li>
                     @guest
@@ -63,49 +88,6 @@
                     @endguest
                 </li>
             </ul>
-            {{-- <div>
-                @auth('web')
-                    <div id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
-                        data-dropdown-placement="bottom-start" class="rounded-full cursor-pointer" alt="User dropdown">
-                        <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                            <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                @endauth
-                <!-- Dropdown menu -->
-                <div id="userDropdown"
-                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                    <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                        <div>{{ $user->penduduk->nama ?? '' }}</div>
-                        <div class="font-medium truncate">{{ $user->penduduk->nik ?? '' }}</div>
-                    </div>
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
-                        <li>
-                            <label class="inline-flex cursor-pointer">
-                                <button type="submit"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"">
-                                    Profil</button>
-                            </label>
-                        </li>
-                    </ul>
-                    @auth
-                        <div class="py-1">
-                            <form action="{{ route('logout') }}" method="post">
-                                @csrf
-                                <button type="submit"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"">
-                                    Log out</button>
-                            </form>
-                        </div>
-                    @endauth
-
-                </div>
-
-            </div> --}}
             @auth
                 <div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
                     <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
