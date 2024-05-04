@@ -24,6 +24,7 @@ class CreateTbPendudukTable extends Migration
             $table->string('pekerjaan', 50);
             $table->string('gol_darah', 5);
             $table->string('no_kk', 16);
+            $table->string('no_hp', 13)->nullable();
             $table->integer('id_alamat');
             $table->enum('status_penduduk', ['Pendatang', 'Penduduk Tetap']);
             $table->timestamps();
