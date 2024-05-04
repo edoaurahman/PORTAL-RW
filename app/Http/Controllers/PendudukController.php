@@ -86,8 +86,7 @@ class PendudukController extends Controller
             ]);
         }
 
-        $listPenduduk = PendudukModel::whereDoesntHave('akun')->get();
-        return view('admin.penduduk.akun', compact('penduduk', 'listPenduduk'));
+        return view('admin.penduduk.akun', compact('penduduk'));
     }
 
     public function kk_penduduk()
@@ -218,7 +217,7 @@ class PendudukController extends Controller
 
     public function destroy($nik)
     {
-        return $nik;
+        // return $nik;
         try {
             $penduduk = PendudukModel::where('nik', $nik)->first();
             $penduduk->delete();
@@ -226,5 +225,24 @@ class PendudukController extends Controller
             return redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.');
         }
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Dihapus.');
+    }
+
+    public function update_kk(Request $request)
+    {
+        $request->validate([
+            'no_kk' => 'required',
+            'no_kk_prev' => 'required',
+            'nik_kepalakeluarga' => 'required',
+        ]);
+        try {
+            $kk = KkModel::where('no_kk', $request->no_kk_prev)->first();
+            $kk->update([
+                'no_kk' => $request->no_kk,
+                'nik_kepalakeluarga' => $request->nik_kepalakeluarga,
+            ]);
+            return redirect()->route('admin.penduduk.kk')->with('success', 'Kepala Keluarga Berhasil Diupdate.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.penduduk.kk')->withErrors($e->getMessage())->withInput();
+        }
     }
 }
