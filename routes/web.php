@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
-        Route::get('/', fn() => redirect(route('admin.dashboard')));
+        Route::get('/', fn () => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
@@ -87,22 +87,33 @@ Route::get('/profile', function () {
     return view('user.profile');
 });
 
+
+// penduduk route
 Route::get('/penduduk', function () {
     return view('user.penduduk.index');
 })->name('user.penduduk');
-Route::get('/penduduk/detail_penduduk', function () {
-    return view('user.penduduk.detail_penduduk');
-})->name('user.detail_penduduk');
+Route::get('/penduduk/detailPenduduk', function () {
+    return view('user.penduduk.detailPenduduk');
+})->name('user.detailPenduduk');
 
+
+// berita route
 Route::get('/berita', function () {
     return view('user.berita');
 })->name('user.berita');
 
+
+// Layanan route
 Route::get('/layanan', function () {
-    return view('user.layanan');
+    return view('user.layanan.index');
 })->name('user.layanan');
+Route::get('/suratSKTM', function () {
+    return view('user.layanan.surat.SKTM');
+})->name('user.SKTM');
 
 
+
+// login & logout route
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
