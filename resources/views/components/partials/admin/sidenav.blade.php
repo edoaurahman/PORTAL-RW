@@ -40,7 +40,7 @@
                     <!-- Menu Item Dashboard -->
 
                     <!-- Menu Item Level -->
-                    <li x-show="levelUser === 'Super Admin'">
+                    <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.level') }}"
                             :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('level')) }">

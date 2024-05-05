@@ -133,38 +133,5 @@
                 clearFormInputPenduduk();
             });
         });
-
-        function showEdit(e) {
-            const formEdit = document.getElementById('form-edit-penduduk');
-            for (let input of formEdit) {
-                const key = input.name;
-                const value = e[key];
-                if (value) {
-                    input.value = value;
-                } else if (e.alamat && e.alamat[key]) {
-                    input.value = e.alamat[key];
-                }
-            }
-        }
-
-        // function show delete modal with swalalert2
-        function showDeleteModal(e) {
-            e.preventDefault();
-            console.log(e);
-            // Swal.fire({
-            //     title: 'Are you sure?',
-            //     text: "You won't be able to revert this!",
-            //     icon: 'warning',
-            //     showCancelButton: true,
-            //     confirmButtonColor: '#3085d6',
-            //     cancelButtonColor: '#d33',
-            //     confirmButtonText: 'Yes, delete it!'
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            //         return true;
-            //     }
-            //     return false;
-            // })
-        }
     </script>
 </x-layout.admin-layout>

@@ -16,7 +16,7 @@ class IsSuperAdmin
     public function handle(Request $request, Closure $next): Response
     {
         $level = auth()->user()->level->nama_level;
-        $auth = $level == 'Super Admin';
+        $auth = $level == 'Super Admin' || $level == 'RW';
         if ($auth) {
             return $next($request);
         }

@@ -24,7 +24,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        7
+                        {{ $jumlahRT }}
                     </h4>
                     <span class="text-sm font-medium">Jumlah RT</span>
                 </div>
@@ -48,7 +48,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        1000
+                        {{ $jumlahPenduduk }}
                     </h4>
                     <span class="text-sm font-medium">Jumlah Penduduk</span>
                 </div>
@@ -212,23 +212,23 @@
             <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="">
-                        <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm1.jpeg') }}"
-                        alt="UMKM 1">
+                        <img class="w-full h-50 object-cover rounded-t-sm"
+                            src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="UMKM 1">
                     </div>
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Warung Madura Cak Abid</h5>
                     </div>
                 </div>
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm3.jpeg') }}"
-                        alt="UMKM 2">
+                    <img class="w-full h-50 object-cover rounded-t-sm"
+                        src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="UMKM 2">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Maklor Anang</h5>
                     </div>
                 </div>
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset('assets/images/umkm/umkm2.jpeg') }}"
-                        alt="UMKM 3">
+                    <img class="w-full h-50 object-cover rounded-t-sm"
+                        src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt="UMKM 3">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Rawon Mak Cik Edo</h5>
                     </div>
@@ -244,43 +244,43 @@
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
-            datasets: [{
-              label: 'Total Penduduk',
-              data: [100, 60, 40],
-              backgroundColor: '#270551',
-              borderWidth: 1
-            }, {
-              label: 'Laki-laki',
-              data: [55, 35, 20],
-              backgroundColor: '#640EF1',
-              borderWidth: 1
-            }, {
-              label: 'Perempuan',
-              data: [45, 25, 20],
-              backgroundColor: '#B186F8',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              x: {
-                labels: ['Total', 'Tetap', 'Pendatang']
-              },
-              y: {
-                beginAtZero: true
-              }
+            type: 'bar',
+            data: {
+                labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
+                datasets: [{
+                    label: 'Total Penduduk',
+                    data: [100, 60, 40],
+                    backgroundColor: '#270551',
+                    borderWidth: 1
+                }, {
+                    label: 'Laki-laki',
+                    data: [55, 35, 20],
+                    backgroundColor: '#640EF1',
+                    borderWidth: 1
+                }, {
+                    label: 'Perempuan',
+                    data: [45, 25, 20],
+                    backgroundColor: '#B186F8',
+                    borderWidth: 1
+                }]
             },
-            maintainAspectRatio: true,
-            legend: {
-              labels: {
-                fontColor: '#000000',
-                fontSize: 16
-              }
+            options: {
+                scales: {
+                    x: {
+                        labels: ['Total', 'Tetap', 'Pendatang']
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                maintainAspectRatio: true,
+                legend: {
+                    labels: {
+                        fontColor: '#000000',
+                        fontSize: 16
+                    }
+                }
             }
-          }
         });
     </script>
     <script src="{{ asset('assets/js/calender.js') }}"></script>

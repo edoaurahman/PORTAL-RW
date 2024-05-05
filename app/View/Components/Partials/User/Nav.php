@@ -15,7 +15,7 @@ class Nav extends Component
     public function render(): View|Closure|string
     {
         $user = auth()->user();
-        $username = $user->username ?? null;
+        $username = $user->penduduk->nama ?? null;
         $level = $user->level->nama_level ?? null;
         return view('components.partials.user.nav', compact('user', 'username', 'level'));
     }

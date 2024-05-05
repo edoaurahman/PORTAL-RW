@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
-        Route::get('/', fn () => redirect(route('admin.dashboard')));
+        Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
@@ -41,11 +41,20 @@ Route::prefix('admin')->group(function () {
             Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk.store');
             Route::post('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
             Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
-            Route::get('/akun', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
-            Route::post('/akun', [PendudukController::class, 'akun_penduduk_store'])->name('admin.penduduk.akun.store');
-            Route::get('/kk/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
             Route::delete('/{nik}', [PendudukController::class, 'destroy'])->name('admin.penduduk.delete');
+
+            Route::prefix('akun')->group(function () {
+                Route::get('/', [PendudukController::class, 'akun_penduduk'])->name('admin.penduduk.akun');
+                Route::post('/store', [PendudukController::class, 'akun_penduduk_store'])->name('admin.penduduk.akun.store');
+                Route::put('/update', [PendudukController::class, 'akun_penduduk_update'])->name('admin.penduduk.akun.update');
+                Route::delete('/delete/{id}', [PendudukController::class, 'akun_penduduk_delete'])->name('admin.penduduk.akun.delete');
+            });
+
+            Route::prefix('kk')->group(function () {
+                Route::get('/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
+                Route::put('/update', [PendudukController::class, 'update_kk'])->name('admin.penduduk.kk.update');
+            });
         });
 
         Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
