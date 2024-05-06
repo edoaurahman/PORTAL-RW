@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\penduduk\PendudukController;
+use App\Http\Controllers\Penduduk\PendudukController;
 
 Route::prefix('penduduk')->group(function () {
     Route::middleware(['auth'])->group(function () {
