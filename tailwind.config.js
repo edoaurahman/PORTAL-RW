@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       colors: {
-        // warna utama halaman user 
+        // warna utama halaman user
         'kuning': '#FFD15A',
         'ungu': '#640EF1',
         'black1': '#080C2E',
@@ -24,7 +24,7 @@ export default {
         'black4': '#8D90A8',
 
         // warna utama halaman user hover
-        
+
 
         // -----
         current: 'currentColor',
