@@ -113,59 +113,35 @@
                 </tr>
             </thead>
             <tbody>
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
+                @foreach ($penduduk as $item)
+                    <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td class="w-4 p-4">
 
-                    </td>
-                    <th scope="row"
-                        class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                        <img width="45px" src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                        <div class="ps-3">
-                            <div class="text-base font-semibold">Anang</div>
-                            <div class="font-normal text-gray-500">Tetap</div>
-                        </div>
-                    </th>
-                    <td class="px-6 py-4">
-                        Jl.Simbar, No.33, RT 1
-                    </td>
-                    <td class="px-6 py-4">
-                        Laki - Laki
-                    </td>
-                    <td class="px-6 py-4">
-                        081234567891
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
-                    </td>
-                </tr>
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                    </td>
-                    <th scope="row"
-                        class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                        <img width="45px" src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                        <div class="ps-3">
-                            <div class="text-base font-semibold">Anang</div>
-                            <div class="font-normal text-gray-500">Pendatang</div>
-                        </div>
-                    </th>
-                    <td class="px-6 py-4">
-                        Jl.Simbar, No.33, RT 1
-                    </td>
-                    <td class="px-6 py-4">
-                        Perempuan
-                    </td>
-                    <td class="px-6 py-4">
-                        081234567891
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
-                    </td>
-                </tr>
+                        </td>
+                        <th scope="row"
+                            class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                            <img width="45px" src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
+                            <div class="ps-3">
+                                <div class="text-base font-semibold">{{ $item->nama }}</div>
+                                <div class="font-normal text-gray-500">{{ $item->status_penduduk }}</div>
+                            </div>
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $item->jenis_kelamin }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $item->no_hp }}
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="{{ route('user.detail', $item->nik) }}"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </section>

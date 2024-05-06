@@ -77,6 +77,8 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+require __DIR__ . '/user.php';
+
 Route::get('/home', function () {
     return view('user.home');
 })->name('user.home');
@@ -86,15 +88,6 @@ Route::get('/home', function () {
 Route::get('/profile', function () {
     return view('user.profile');
 });
-
-
-// penduduk route
-Route::get('/penduduk', function () {
-    return view('user.penduduk.index');
-})->name('user.penduduk');
-Route::get('/penduduk/detailPenduduk', function () {
-    return view('user.penduduk.detailPenduduk');
-})->name('user.detailPenduduk');
 
 
 // berita route
@@ -107,9 +100,6 @@ Route::get('/berita', function () {
 Route::get('/layanan', function () {
     return view('user.layanan.index');
 })->name('user.layanan');
-Route::get('/suratSKTM', function () {
-    return view('user.layanan.surat.SKTM');
-})->name('user.SKTM');
 
 
 

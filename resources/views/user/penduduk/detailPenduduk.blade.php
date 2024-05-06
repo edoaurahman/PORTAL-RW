@@ -80,11 +80,12 @@
 
     <section class="DataDiri max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-1 gap-y-10">
+            <div class="flex flex-1 gap-y-10
+            ">
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
                         <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">Pendatang</span>
+                                class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -99,22 +100,23 @@
                                 class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                                 <div class="flex flex-col pb-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
-                                    <dd class="text-lg font-semibold">Abid Gymnastiar Alfiansyah</dd>
-                                </div>
-                                <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
-                                    <dd class="text-lg font-semibold">Jl.Simbar, No.33, RT 1</dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->nama }}</dd>
                                 </div>
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Tempat, tanggal lahir
                                     </dt>
-                                    <dd class="text-lg font-semibold">Blitar,10-01-2004</dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->tgl_lahir }}</dd>
                                 </div>
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Jenis Kelamin
                                     </dt>
-                                    <dd class="text-lg font-semibold">Laki-laki</dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->jenis_kelamin }}</dd>
                                 </div>
+                                <div class="flex flex-col py-3">
+                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Agama</dt>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->agama }}</dd>
+                                </div>
+
 
                             </dl>
                         </div>
@@ -123,20 +125,21 @@
                                 class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                                 <div class="flex flex-col pb-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Pekerjaan</dt>
-                                    <dd class="text-lg font-semibold">Pelajar</dd>
-                                </div>
-                                <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Agama</dt>
-                                    <dd class="text-lg font-semibold">Islam
-                                    </dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->pekerjaan }}</dd>
                                 </div>
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">status perkawinan</dt>
-                                    <dd class="text-lg font-semibold">Belum Kawin</dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->status_perkawinan }}</dd>
                                 </div>
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor hanphone</dt>
-                                    <dd class="text-lg font-semibold">081234567891</dd>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
+                                </div>
+                                <div class="flex flex-col py-3">
+                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                                    <dd class="text-lg font-semibold">
+                                        {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
+                                    </dd>
                                 </div>
                             </dl>
                         </div>
