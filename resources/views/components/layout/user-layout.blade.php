@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-[#f1f4f5]" x-data="{ 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
+<body class="bg-[#f1f4f5]" x-data="{ 'darkMode': true, }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
 $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
 
@@ -23,5 +23,23 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.directive('log', (el, {
+            expression
+        }, {
+            evaluateLater,
+            effect
+        }) => {
+            let getThingToLog = evaluateLater(expression)
+
+            effect(() => {
+                getThingToLog(thingToLog => {
+                    console.log(thingToLog)
+                })
+            })
+        })
+    })
+</script>
 
 </html>

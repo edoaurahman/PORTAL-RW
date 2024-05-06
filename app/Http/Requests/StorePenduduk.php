@@ -22,8 +22,8 @@ class StorePenduduk extends FormRequest
     public function rules(): array
     {
         return [
-            "nik" => "required|unique:tb_penduduk,nik",
-            "no_kk" => "required",
+            "nik" => "required|unique:tb_penduduk,nik|max:16",
+            "no_kk" => "required|max:16",
             "nama" => "required",
             "tempat_lahir" => "required",
             "tgl_lahir" => "required",
@@ -37,6 +37,7 @@ class StorePenduduk extends FormRequest
             "rw" => "required",
             "jalan" => "required",
             "rt" => "required",
+            "no_hp" => "required",
         ];
     }
 
@@ -49,8 +50,10 @@ class StorePenduduk extends FormRequest
     {
         return [
             "nik.required" => "Kolom NIK wajib diisi.",
+            "nik.max" => "NIK maksimal 16 karakter.",
             "nik.unique" => "NIK sudah terdaftar.",
             "no_kk.required" => "Kolom No. KK wajib diisi.",
+            "no_kk.max" => "No. KK maksimal 16 karakter.",
             "nama.required" => "Kolom Nama wajib diisi.",
             "tempat_lahir.required" => "Kolom Tempat Lahir wajib diisi.",
             "tgl_lahir.required" => "Kolom Tanggal Lahir wajib diisi.",
@@ -64,6 +67,7 @@ class StorePenduduk extends FormRequest
             "rw.required" => "Kolom RW wajib diisi.",
             "jalan.required" => "Kolom Jalan wajib diisi.",
             "rt.required" => "Kolom RT wajib diisi.",
+            "no_hp.required" => "Kolom No. HP wajib diisi.",
         ];
     }
 }

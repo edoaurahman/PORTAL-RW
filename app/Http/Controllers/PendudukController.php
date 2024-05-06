@@ -151,9 +151,9 @@ class PendudukController extends Controller
                 'no_kk' => $request->no_kk,
                 'nik_kepalakeluarga' => $request->nik,
             ];
-            $isKepalaKK = KkModel::where('no_kk', $request->no_kk)->first();
-            if (!empty($isKepalaKK)) {
-                return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'sudah terdaftar. hilangkan opsi kepala keluarga, anda dapat merubah kepala keluarga pada halaman detail KK.');
+            $checkKK = KkModel::where('no_kk', $request->no_kk)->first();
+            if (!empty($checkKK)) {
+                return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'sudah terdaftar. hilangkan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
             } else {
                 KkModel::create($kk);
             }
