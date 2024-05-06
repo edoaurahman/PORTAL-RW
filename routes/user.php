@@ -12,3 +12,9 @@ Route::prefix('penduduk')->group(function () {
 Route::get('/beritaa', function () {
     return view('user.berita.index');
 })->name('user.beritaa');
+Route::get('/detailBerita', function () {
+    return view('user.berita.detailBerita');
+})->name('user.detailBerita');
+Route::get('/beritaaa', function () {
+    return view('user.berita.populerBerita');
+})->name('user.populerBerita');
