@@ -34,23 +34,24 @@
                         :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('beritaa')) }">Berita</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Agenda</a>
+                    <a href="{{ route('user.detailBerita') }}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('detailBerita')) }">Agenda</a>
+                </li>
+                <li>
+                    <a href="{{ route('user.populerBerita') }}"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('populerBerita')) }">UMKM</a>
                 </li>
                 <li>
                     <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">UMKM</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">inventaris</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('inventaris')) }">inventaris</a>
                 </li>
                 <li>
                     <a href="{{ route('user.layanan') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Layanan</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('Layanan')) }">Layanan</a>
                 </li>
                 <li>
-                    <!-- Dark Mode Toggler -->
+                    <!-- Dark Mode Toggler  -->
                     <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
                         class="relative m-0 block h-7.5 w-14 rounded-full">
                         <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
