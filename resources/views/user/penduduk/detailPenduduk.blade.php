@@ -85,7 +85,7 @@
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
                         <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                                class="bg-blue-100 text-blue-800 text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -105,7 +105,8 @@
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Tempat, tanggal lahir
                                     </dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->tgl_lahir }}</dd>
+                                    <dd class="text-lg font-semibold">
+                                        {{ $penduduk->tempat_lahir . ', ' . $penduduk->tgl_lahir }}</dd>
                                 </div>
                                 <div class="flex flex-col pt-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Jenis Kelamin
