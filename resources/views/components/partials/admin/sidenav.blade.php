@@ -156,7 +156,7 @@
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                             href="{{ route('admin.data-umkm') }}"
                             :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('data-umkm')) }">
-                            <i class="fa-solid fa-headset"></i>
+                            <i class="fa-solid fa-shop"></i>
                             Data UMKM
                         </a>
                     </li>

@@ -46,7 +46,7 @@
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-ungu dark:text-white">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nama Kepala Keluarga
@@ -65,7 +65,7 @@
                 <tbody>
                     @foreach ($penduduk as $item)
                         <tr
-                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $item->pendudukHasOne->nama }}
@@ -78,14 +78,14 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
-                                    <button class="font-medium text-white bg-purple-950 p-2 rounded">
+                                    <button class="font-medium text-white bg-green-400 p-2 rounded">
                                         Details
                                     </button>
                                 </a>
                                 <a href="#">
                                     <button x-data @click="$store.penduduk.showEdit({{ $item }})"
                                         data-modal-target="edit-kk" data-modal-toggle="edit-kk"
-                                        class="font-medium text-white bg-ungu p-2  rounded">
+                                        class="font-medium text-white bg-yellow-300 p-2  rounded">
                                         Edit
                                     </button>
                                 </a>

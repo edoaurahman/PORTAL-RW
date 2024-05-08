@@ -2,7 +2,7 @@
     <div class="relative">
         <h1>Detail Penduduk</h1>
         <div class="mt-5 relative overflow-x-auto sm:rounded-lg">
-            <table class="text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
                 <tbody>
                     @foreach ($detail_penduduk as $key => $value)
                         <tr class="bg-white dark:bg-gray-900 border-b dark:border-gray-700">
