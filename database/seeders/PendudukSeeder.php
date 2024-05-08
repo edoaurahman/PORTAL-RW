@@ -95,6 +95,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '083193985902',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '1',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
                 [
                     'nik' => '3522110504040007',
@@ -110,6 +111,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '2',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
                 [
                     'nik' => '3522110504040008',
@@ -125,6 +127,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '3',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
                 [
                     'nik' => '3522110504040009',
@@ -140,6 +143,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '4',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
                 [
                     'nik' => '3522110504040010',
@@ -155,6 +159,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '5',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
                 [
                     'nik' => '3522110504040012',
@@ -170,6 +175,7 @@ class PendudukSeeder extends Seeder
                     'no_hp' => '081234512393',
                     'status_penduduk' => 'Penduduk Tetap',
                     'id_alamat' => '6',
+                    'image' => url('assets/images/user/user-01.png')
                 ],
             ];
         PendudukModel::insert($penduduk);
