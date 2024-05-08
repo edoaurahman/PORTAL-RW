@@ -85,7 +85,7 @@
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
                         <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-blue-100 text-blue-800 text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                                class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -140,7 +140,7 @@
                 </h1>
                 <div class="text-base leading-loose text-black3 items-center">
                     tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
-                    
+
                 </div>
             </div>
             
