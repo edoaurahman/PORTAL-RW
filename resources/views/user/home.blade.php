@@ -180,28 +180,28 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
@@ -212,28 +212,28 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
                             <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
