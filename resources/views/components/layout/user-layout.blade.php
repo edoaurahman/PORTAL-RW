@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/flowbite.min.css') }}">
     <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
+    <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -21,8 +23,6 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
     {{ $slot }}
     <x-partials.user.footer />
 </body>
-<script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
-<script defer src="{{ asset('assets/js/bundle.js') }}"></script>
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.directive('log', (el, {

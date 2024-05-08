@@ -24,7 +24,7 @@ export default {
         'black4': '#8D90A8',
 
         // warna utama halaman user hover
-        
+
 
         // -----
         current: 'currentColor',
@@ -299,6 +299,6 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin')
-  ],
+    require('flowbite/plugin'),
+  ]
 }

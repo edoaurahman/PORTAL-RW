@@ -19,6 +19,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="flex flex-row item-center">
 
                 <div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
@@ -242,7 +243,7 @@
 
 
     <div class="mt-90"></div>
-
+    <script src="{{ asset('assets/js/apexcharts.min.js') }}"></script>
     <script>
         const options = {
             colors: ["#1A56DB", "#FDBA8C"],

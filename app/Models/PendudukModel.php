@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -47,5 +48,12 @@ class PendudukModel extends Model
     public function kk()
     {
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
+    }
+
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn($image) => url('storage/images/users/' . $image)
+        );
     }
 }
