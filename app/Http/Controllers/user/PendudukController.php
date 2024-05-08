@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\penduduk;
+namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\PendudukModel;

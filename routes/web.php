@@ -91,9 +91,6 @@ Route::get('/profile', function () {
 
 
 // berita route
-Route::get('/berita', function () {
-    return view('user.berita');
-})->name('user.berita');
 
 
 // Layanan route
