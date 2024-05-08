@@ -212,7 +212,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm4.jpeg') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -236,7 +236,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
