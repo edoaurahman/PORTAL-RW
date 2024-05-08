@@ -248,68 +248,53 @@
         const options = {
             colors: ["#1A56DB", "#FDBA8C"],
             series: [{
-                    name: "Organic",
-                    color: "#1A56DB",
+                    name: "Total",
+                    color: "#270551",
                     data: [{
-                            x: "Mon",
+                            x: "Total",
                             y: 231
                         },
                         {
-                            x: "Tue",
+                            x: "Pendatang",
                             y: 122
                         },
                         {
-                            x: "Wed",
+                            x: "Tetap",
                             y: 63
-                        },
-                        {
-                            x: "Thu",
-                            y: 421
-                        },
-                        {
-                            x: "Fri",
-                            y: 122
-                        },
-                        {
-                            x: "Sat",
-                            y: 323
-                        },
-                        {
-                            x: "Sun",
-                            y: 111
                         },
                     ],
                 },
                 {
-                    name: "Social media",
-                    color: "#FDBA8C",
+                    name: "Laki-Laki",
+                    color: "#7733FF",
                     data: [{
-                            x: "Mon",
+                            x: "Total",
                             y: 232
                         },
                         {
-                            x: "Tue",
+                            x: "Pendatang",
                             y: 113
                         },
                         {
-                            x: "Wed",
+                            x: "Tetap",
                             y: 341
                         },
-                        {
-                            x: "Thu",
-                            y: 224
+                    ],
+                },
+                {
+                    name: "Perempuan",
+                    color: "#b286f8",
+                    data: [{
+                            x: "Total",
+                            y: 231
                         },
                         {
-                            x: "Fri",
-                            y: 522
+                            x: "Pendatang",
+                            y: 122
                         },
                         {
-                            x: "Sat",
-                            y: 411
-                        },
-                        {
-                            x: "Sun",
-                            y: 243
+                            x: "Tetap",
+                            y: 63
                         },
                     ],
                 },
