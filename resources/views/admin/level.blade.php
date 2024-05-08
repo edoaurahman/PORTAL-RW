@@ -11,15 +11,15 @@
                     Kelola Level
                 </small>
             </h3>
-            <div class="flex justify-between pb-5">
-                <h1> </h1>
-                <!-- Modal toggle -->
-                <button data-modal-target="add-penanggungjawab" data-modal-toggle="add-penanggungjawab"
-                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    type="button">
-                    Tambah Penanggung Jawab
-                </button>
-            </div>
+        </div>
+        <div class="flex justify-between pb-5">
+            <h1> </h1>
+            <!-- Modal toggle -->
+            <button data-modal-target="add-penanggungjawab" data-modal-toggle="add-penanggungjawab"
+            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                Tambah Penanggung Jawab
+            </button>
         </div>
         @if (session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-3"
@@ -48,10 +48,10 @@
                 </div>
             @endforeach
         @endif
-        <div class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-md">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-md">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
+                    <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
                             Nama
                         </th>
@@ -86,7 +86,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="id_akun" value="{{ $item->id_akun }}">
-                                    <button class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                                    <button class="font-medium text-white bg-red-500 p-2 rounded "
                                         type="submit">
                                         Set to Penduduk
                                     </button>
@@ -144,7 +144,7 @@
                             </span>
                             <input name="nik"
                                 class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                type="text" autocomplete="off" list="myList" id="nik" placeholder="Nik" />
+                                type="text" autocomplete="off" list="myList" id="nik" placeholder="NIK" />
                             <datalist id="myList">
                                 @foreach ($penduduk as $item)
                                     <option value="{{ $item->penduduk->nik }}">{{ $item->penduduk->nama }}</option>

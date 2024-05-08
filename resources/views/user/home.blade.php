@@ -68,7 +68,6 @@
                             RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                         </div>
                     </div>
-                    <a href="" class="text-base font-semibold text-white">Learn More</a>
                 </div>
                 <div class="absolute top-5 right-5">
                     <img src="{{ asset('assets/images/Home/Ellipse 2.png') }}" alt="">
@@ -85,7 +84,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
@@ -98,7 +96,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
@@ -111,7 +108,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
         </div>
     </section>
@@ -186,7 +182,7 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -196,7 +192,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -206,7 +202,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -216,7 +212,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -230,7 +226,7 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -240,7 +236,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -250,7 +246,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -260,7 +256,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -306,6 +302,13 @@
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="tulis aspirasi disini..."></textarea>
                     </form>
+
+                </div>
+                <div>
+                    <button type="submit"
+                        class="text-black bg-kuning hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
+                        aspirasi</button>
+
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-x-5 gap-y-5">
@@ -315,8 +318,8 @@
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
                         <a href="#"
-                            class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                            class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan
+                            layanan</a>
                     </div>
                 </div>
                 <div
@@ -325,8 +328,8 @@
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
                         <a href="#"
-                            class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                            class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan
+                            layanan</a>
                     </div>
                 </div>
 
