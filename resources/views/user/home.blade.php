@@ -67,7 +67,6 @@
                             RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                         </div>
                     </div>
-                    <a href="" class="text-base font-semibold text-white">Learn More</a>
                 </div>
                 <div class="absolute top-5 right-5">
                     <img src="{{ asset('assets/images/Home/Ellipse 2.png') }}" alt="">
@@ -84,7 +83,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
@@ -97,7 +95,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
@@ -110,7 +107,6 @@
                         RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
                     </div>
                 </div>
-                <a href="" class="text-base font-semibold text-ungu">Learn More</a>
             </div>
         </div>
     </section>
@@ -251,12 +247,12 @@
     <section class="closing font-sans mx-auto max-w-6xl bg-ungu p-14 rounded-3xl z-20 relative">
         <div class="grid grid-cols-2 gap-x-10">
             <div class="flex flex-col gap-y-10">
-                
+
                 <div class="gap-y-2 flex flex-col">
                     <h1 class="text-white font-bold text-5xl leading-tight">Layanan Bersama
                     </h1>
                     <div class="text-base leading-loose text-white">
-                        sebuah layanan berupa template form yang nantinya membantu 
+                        sebuah layanan berupa template form yang nantinya membantu
                         setiap proses pelayanan bersama RW
                     </div>
                 </div>
@@ -268,13 +264,18 @@
                         Unduh Surat
                     </a>
                 </div>
-                
-                <div>
-                <label for="email" class="block mb-2 text-sm font-medium dark:text-gray-900 text-white">kirimkan aspirasimu</label>
-    
+
+                <div >
+                    <label for="email" class="block mb-2 text-sm font-medium dark:text-gray-900 text-white">kirimkan aspirasimu</label>
+
                     <form class="max-w-sm mx-auto">
                         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="tulis aspirasi disini..."></textarea>
                     </form>
+
+                </div>
+                <div>
+                    <button type="submit" class="text-black bg-kuning hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim aspirasi</button>
+
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-x-5 gap-y-5">
@@ -282,33 +283,29 @@
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan layanan</a>
                     </div>
                 </div>
                 <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan layanan</a>
                     </div>
                 </div>
-                
+
                 <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan layanan</a>
                     </div>
                 </div>
                 <div class="group closing-card-feature flex flex-col justify-center bg-white hover:bg-black1 p-5 rounded-2xl gap-y-5">
                     <i class="fa-solid fa-shield-halved text-4xl  text-ungu group-hover:text-white"></i>
                     <div class="flex flex-col items-center">
                         <h3 class="font-bold text-lg text-black1 group-hover:text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Learn
-                            More</a>
+                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-500">Gunakan layanan</a>
                     </div>
                 </div>
             </div>
