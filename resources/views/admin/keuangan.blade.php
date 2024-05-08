@@ -15,8 +15,8 @@
         <!-- Start Body Content -->
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-ungu dark:text-white">
-                    <tr>
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
                             Jumlah
                         </th>
