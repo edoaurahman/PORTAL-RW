@@ -79,27 +79,6 @@ Route::prefix('admin')->group(function () {
 
 require __DIR__ . '/user.php';
 
-Route::get('/home', function () {
-    return view('user.home');
-})->name('user.home');
-
-
-
-Route::get('/profile', function () {
-    return view('user.profile');
-});
-
-
-// berita route
-
-
-// Layanan route
-Route::get('/layanan', function () {
-    return view('user.layanan.index');
-})->name('user.layanan');
-
-
-
 // login & logout route
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
