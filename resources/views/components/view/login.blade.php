@@ -42,8 +42,8 @@
                         <input id="terms" type="checkbox" value="true" name="remember"
                             class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" />
                     </div>
-                    <label for="terms" class="ms-2 text-base font-medium  text-gray-900 dark:text-gray-300">I
-                        Remember me</label>
+                    <label for="terms" class="ms-2 text-base font-medium  text-gray-900 dark:text-gray-300">Remember
+                        me</label>
                 </div>
                 @error('message')
                     <div class="text-red-500 text-sm mb-5">{{ $message }}</div>
