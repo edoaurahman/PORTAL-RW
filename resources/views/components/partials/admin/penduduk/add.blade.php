@@ -1,9 +1,9 @@
 <!-- Main modal Add Penduduk -->
 <div>
 
-    <form action="{{ route('admin.penduduk.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.penduduk.store') }}" method="post" enctype="multipart/form-data" x-data="{ isKepalaKK: false }">
         @csrf
-        <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+        <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" x-log="isKepalaKK"
             class="hidden overflow-y-hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-[80%]">
                 <!-- Modal content -->
@@ -62,8 +62,8 @@
                         </div>
 
                         <div class="flex items-center mb-4">
-                            <input {{ old('isKepalaKK') == 'true' ? 'checked' : '' }} id="default-checkbox"
-                                type="checkbox" value="true" name="isKepalaKK"
+                            <input @click="isKepalaKK = !isKepalaKK" {{ old('isKepalaKK') == 'true' ? 'checked' : '' }}
+                                id="default-checkbox" type="checkbox" value="true" name="isKepalaKK"
                                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             <label for="default-checkbox"
                                 class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kepala
@@ -299,6 +299,7 @@
                                 placeholder="RW">
 
                         </div>
+
                         <label for="no_hp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No.
                             Hp</label>
                         <div class="flex">
@@ -319,11 +320,22 @@
 
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             for="file_input">Upload foto</label>
-                        <input name="image" accept="image/*"
+                        <input required name="image" accept="image/*"
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                             aria-describedby="file_input_help" id="file_input" type="file">
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG,
                             JPG.(MAX 2MB)</p>
+
+                        <label x-show="isKepalaKK"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="file_input">Upload foto rumah</label>
+                        <input required x-show="isKepalaKK" :disabled="!isKepalaKK" name="rumah[]" accept="image/*"
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="file_input_help" id="file_input" type="file">
+                        <p x-show="isKepalaKK" class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+                            id="file_input_help">SVG, PNG,
+                            JPG.(MAX 2MB)</p>
+
                         <!-- Modal footer -->
                         <div
                             class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">

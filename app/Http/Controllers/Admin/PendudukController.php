@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAkunPenduduk;
 use App\Http\Requests\StorePenduduk;
 use App\Models\AkunModel;
 use App\Models\AlamatModel;
+use App\Models\FotoRumah;
 use App\Models\KkModel;
 use App\Models\LevelModel;
 use App\Models\PendudukModel;
@@ -145,22 +147,30 @@ class PendudukController extends Controller
     public function store(StorePenduduk $request)
     {
         // dd($request->toArray());
-        $isKepalaKK = $request->isKepalaKK;
-        if (!empty($isKepalaKK)) {
-            $kk = [
-                'no_kk' => $request->no_kk,
-                'nik_kepalakeluarga' => $request->nik,
-            ];
-            $checkKK = KkModel::where('no_kk', $request->no_kk)->first();
-            if (!empty($checkKK)) {
-                return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'sudah terdaftar. hilangkan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
-            } else {
-                KkModel::create($kk);
-            }
-        }
-
         try {
             DB::transaction(function () use ($request) {
+                $isKepalaKK = $request->isKepalaKK;
+                if (!empty ($isKepalaKK)) {
+                    $kk = [
+                        'no_kk' => $request->no_kk,
+                        'nik_kepalakeluarga' => $request->nik,
+                    ];
+                    $checkKK = KkModel::where('no_kk', $request->no_kk)->first();
+                    if (!empty ($checkKK)) {
+                        return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'sudah terdaftar. hilangkan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
+                    } else {
+                        KkModel::create($kk);
+                        // save all images
+                        foreach ($request->rumah as $image) {
+                            $fotoRumah = new FotoRumah();
+                            $fotoRumah->no_kk = $request->no_kk;
+                            $fotoRumah->image = url('images/rumah/' . $image->hashName());
+                            $fotoRumah->save();
+                            $image->store('public/images/rumah');
+                        }
+                    }
+                }
+
                 $alamat = AlamatModel::create([
                     'kel' => $request->kel,
                     'kecamatan' => $request->kecamatan,
@@ -190,8 +200,7 @@ class PendudukController extends Controller
                 $request->image->store('public/images/penduduk');
             });
         } catch (\Exception $e) {
-            return redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput();
-            // return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
+            return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
         }
 
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan.');
@@ -235,7 +244,7 @@ class PendudukController extends Controller
             $akun->update($updateData);
             return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Diupdate.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage())->withInput();
+            return config('app.debug') ? redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk.akun')->withErrors('Gagal mengupdate akun.')->withInput();
         }
     }
 

@@ -1,18 +1,17 @@
 <?php
-
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AspirasiController;
-use App\Http\Controllers\BansosController;
-use App\Http\Controllers\InventarisController;
-use App\Http\Controllers\KeuanganController;
-use App\Http\Controllers\LayananController;
-use App\Http\Controllers\LevelController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\PendudukController;
-use App\Http\Controllers\ReportDataController;
-use App\Http\Controllers\RTController;
-use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AspirasiController;
+use App\Http\Controllers\Admin\BansosController;
+use App\Http\Controllers\Admin\InventarisController;
+use App\Http\Controllers\Admin\KeuanganController;
+use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\PendudukController;
+use App\Http\Controllers\Admin\ReportDataController;
+use App\Http\Controllers\Admin\RTController;
+use App\Http\Controllers\Admin\UmkmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +32,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
-        Route::get('/', fn () => redirect(route('admin.dashboard')));
+        Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {

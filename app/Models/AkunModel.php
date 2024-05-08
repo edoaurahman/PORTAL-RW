@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class AkunModel extends Authenticatable
 {
-    use HasFactory;
     protected $table = 'tb_akun';
     protected $primaryKey = 'id_akun';
     protected $fillable = ['email', 'username', 'password', 'id_level', 'nik'];

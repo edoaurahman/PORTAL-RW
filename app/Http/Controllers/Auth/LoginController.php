@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\AkunModel;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -19,6 +20,7 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required'],
+            'page' => 'required'
         ]);
         $remember = $request->remember ?? false;
         if (Auth::attempt(['username' => $credentials['username'], 'password' => $credentials['password']], $remember)) {

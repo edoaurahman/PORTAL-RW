@@ -30,6 +30,7 @@ class StorePenduduk extends FormRequest
             "jenis_kelamin" => "required",
             "agama" => "required",
             "status_perkawinan" => "required",
+            "status_penduduk" => "required",
             "pekerjaan" => "required",
             "gol_darah" => "required",
             "kel" => "required",
@@ -73,6 +74,7 @@ class StorePenduduk extends FormRequest
             "image.image" => "Foto harus berupa gambar.",
             "image.mimes" => "Foto harus berformat jpeg, png, jpg, atau svg.",
             "image.max" => "Foto maksimal 2MB.",
+            "status_penduduk.required" => "Kolom Status Penduduk wajib diisi.",
         ];
     }
 }

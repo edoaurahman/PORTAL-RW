@@ -11,9 +11,9 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_foto_bansos', function (Blueprint $table) {
-            $table->integer('id_foto_rumah');
+            $table->integer('id_foto_rumah')->autoIncrement();
             $table->integer('id_bansos')->index();
-            $table->string('foto_rumah', 255);
+            $table->string('image', 255);
             $table->timestamps();
 
             $table->foreign('id_bansos')->references('id_bansos')->on('tb_bansos');
