@@ -29,25 +29,25 @@
                         :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('penduduk')) }">Penduduk</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.beritaa') }}"
+                    <a href="{{ route('user.berita') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('beritaa')) }">Berita</a>
+                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('berita')) }">Berita</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.detailBerita') }}"
+                    <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('detailBerita')) }">Agenda</a>
+                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('Agenda')) }">Agenda</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.populerBerita') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('populerBerita')) }">UMKM</a>
+                    <a href="#"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('UMKM')) }">UMKM</a>
                 </li>
                 <li>
                     <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('inventaris')) }">inventaris</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.layanan') }}"
+                    <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent":class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('Layanan')) }">Layanan</a>
                 </li>
                 <li>
