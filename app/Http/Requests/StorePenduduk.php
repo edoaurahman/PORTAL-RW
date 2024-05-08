@@ -38,6 +38,7 @@ class StorePenduduk extends FormRequest
             "jalan" => "required",
             "rt" => "required",
             "no_hp" => "required",
+            "image" => "required|image|mimes:jpeg,png,jpg,svg|max:2048",
         ];
     }
 
@@ -68,6 +69,10 @@ class StorePenduduk extends FormRequest
             "jalan.required" => "Kolom Jalan wajib diisi.",
             "rt.required" => "Kolom RT wajib diisi.",
             "no_hp.required" => "Kolom No. HP wajib diisi.",
+            "image.required" => "Kolom Foto wajib diisi.",
+            "image.image" => "Foto harus berupa gambar.",
+            "image.mimes" => "Foto harus berformat jpeg, png, jpg, atau svg.",
+            "image.max" => "Foto maksimal 2MB.",
         ];
     }
 }

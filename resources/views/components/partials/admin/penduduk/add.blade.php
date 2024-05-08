@@ -1,7 +1,7 @@
 <!-- Main modal Add Penduduk -->
 <div>
 
-    <form action="{{ route('admin.penduduk.store') }}" method="post">
+    <form action="{{ route('admin.penduduk.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -316,6 +316,14 @@
                                 placeholder="No. Hp">
 
                         </div>
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="file_input">Upload foto</label>
+                        <input name="image" accept="image/*"
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="file_input_help" id="file_input" type="file">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG,
+                            JPG.(MAX 2MB)</p>
                         <!-- Modal footer -->
                         <div
                             class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">

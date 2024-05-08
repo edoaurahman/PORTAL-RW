@@ -407,6 +407,5 @@
         </div>
     </div> --}}
 
-    <script src="/assets/js/detail-booking.js"></script>
     <div class="mt-90"></div>
 </x-layout.user-layout>
