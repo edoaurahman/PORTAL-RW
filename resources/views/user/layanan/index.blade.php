@@ -1,6 +1,6 @@
 <x-layout.user-layout>
 
-    <a href="{{ route('user.SKTM') }}">surat sktm</a>
+    
 
     <div id="gallery" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
