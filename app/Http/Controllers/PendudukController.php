@@ -144,7 +144,7 @@ class PendudukController extends Controller
 
     public function store(StorePenduduk $request)
     {
-
+        // dd($request->toArray());
         $isKepalaKK = $request->isKepalaKK;
         if (!empty($isKepalaKK)) {
             $kk = [
@@ -169,14 +169,29 @@ class PendudukController extends Controller
                     'rt' => $request->rt,
                 ]);
 
-                $request->merge([
+                PendudukModel::create([
                     'id_alamat' => $alamat->id_alamat,
+                    'nik' => $request->nik,
+                    'nama' => $request->nama,
+                    'tempat_lahir' => $request->tempat_lahir,
+                    'tgl_lahir' => $request->tgl_lahir,
+                    'jenis_kelamin' => $request->jenis_kelamin,
+                    'agama' => $request->agama,
+                    'status_perkawinan' => $request->status_perkawinan,
+                    'pekerjaan' => $request->pekerjaan,
+                    'gol_darah' => $request->gol_darah,
+                    'no_kk' => $request->no_kk,
+                    'status_penduduk' => $request->status_penduduk,
+                    'no_hp' => $request->no_hp,
+                    'image' => url('images/penduduk/' . $request->image->hashName()),
                 ]);
 
-                PendudukModel::create($request->all());
+                // store foto
+                $request->image->store('public/images/penduduk');
             });
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
+            return redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput();
+            // return redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
         }
 
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Ditambahkan.');

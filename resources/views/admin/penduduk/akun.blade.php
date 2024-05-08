@@ -54,7 +54,7 @@
         @endif
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-purple dark:text-white">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Nama
@@ -73,7 +73,7 @@
                 <tbody>
                     @foreach ($penduduk as $item)
                         <tr
-                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $item->penduduk->nama }}
@@ -85,21 +85,21 @@
                                 {{ $item->level->nama_level }}
                             </td>
                             <td class="px-6 py-4 flex gap-3">
+                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-akun-penduduk"
+                                    data-modal-toggle="edit-akun-penduduk">
+                                    <a class="font-medium text-white bg-yellow-300 p-2  rounded" href="#">
+                                        Edit
+                                    </a>
+                                </button>
                                 <form action="{{ route('admin.penduduk.akun.delete', $item->id_akun) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="return confirm('Apakah anda yakin?')">
-                                        <div class="font-medium text-white bg-red-600 p-2  rounded">
-                                            Delete
+                                        <div class="font-medium text-white bg-red-500 p-2  rounded">
+                                            Hapus
                                         </div>
                                     </button>
                                 </form>
-                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-akun-penduduk"
-                                    data-modal-toggle="edit-akun-penduduk">
-                                    <a class="font-medium text-white bg-ungu p-2  rounded" href="#">
-                                        Edit
-                                    </a>
-                                </button>
                             </td>
                         </tr>
                     @endforeach

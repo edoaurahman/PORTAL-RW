@@ -85,7 +85,7 @@
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
                         <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-blue-100 text-blue-800 text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                                class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -102,21 +102,13 @@
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
                                     <dd class="text-lg font-semibold">{{ $penduduk->nama }}</dd>
                                 </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Tempat, tanggal lahir
-                                    </dt>
-                                    <dd class="text-lg font-semibold">
-                                        {{ $penduduk->tempat_lahir . ', ' . $penduduk->tgl_lahir }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Jenis Kelamin
-                                    </dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->jenis_kelamin }}</dd>
-                                </div>
                                 <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Agama</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->agama }}</dd>
+                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                                    <dd class="text-lg font-semibold">
+                                        {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
+                                    </dd>
                                 </div>
+                                
 
 
                             </dl>
@@ -124,24 +116,12 @@
                         <div class="flex flex-1">
                             <dl
                                 class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-                                <div class="flex flex-col pb-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Pekerjaan</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->pekerjaan }}</dd>
-                                </div>
+                                
                                 <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">status perkawinan</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->status_perkawinan }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor hanphone</dt>
+                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor handphone</dt>
                                     <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
                                 </div>
-                                <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
-                                    <dd class="text-lg font-semibold">
-                                        {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
-                                    </dd>
-                                </div>
+                                
                             </dl>
                         </div>
                     </div>
@@ -153,11 +133,26 @@
         </div>
     </section>
 
+    <section class="berita mx-auto font-sans py-12">
+        <div class="flex flex-col gap-y-8">
+            <div class="gap-y-2 flex flex-col text-center">
+                <h1 class="text-black1 font-bold text-5xl leading-tight">Berita 
+                </h1>
+                <div class="text-base leading-loose text-black3 items-center">
+                    tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
 
     <section class="umkm mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">Profil UMKM
+                <h1 class="text-black1 font-bold text-5xl leading-tight">Showcase UMKM 
                 </h1>
                 <div class="text-base leading-loose text-black3 items-center">
                     Di sini, Anda dapat melihat detail tentang bisnis, termasuk informasi kontak, <br> deskripsi
@@ -167,26 +162,7 @@
             </div>
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
+                    
                     <div class="group relative">
                         <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
@@ -231,26 +207,7 @@
                                 Details</a>
                         </div>
                     </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -450,6 +407,5 @@
         </div>
     </div> --}}
 
-    <script src="/assets/js/detail-booking.js"></script>
     <div class="mt-90"></div>
 </x-layout.user-layout>

@@ -52,10 +52,13 @@
                 </div>
             @endforeach
         @endif
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-purple dark:text-white">
-                    <tr>
+        <div class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr class="whitespace-nowrap">
+                        <th scope="col" class="p-4">
+    
+                        </th>
                         <th scope="col" class="px-6 py-3">
                             Nama
                         </th>
@@ -63,7 +66,34 @@
                             NIK
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Tempat, Tanggal Lahir
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Jenis Kelamin
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Alamat
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Agama
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Status
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Pekerjaaan
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Gol. Darah
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            No KK
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            No HP
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Status Penduduk
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -73,37 +103,67 @@
                 <tbody>
                     @foreach ($penduduk as $item)
                         <tr
-                            class="odd:bg-white odd:dark:bg-gray-900 even:bg-violet-300 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $item->nama }}
-                            </th>
+                            class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="w-4 p-4">
+                            </td>
+                            <td 
+                                class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                <div>{{ $item->nama }}</div>
+                            </td>
+                            <td class="px-6 py-4 ">
+                                {{ $item->nik}}
+                            </td>
+                            <td class="px-6 py-4 ">
+                                {{ $item->tempat_lahir . ', ' . $item->tgl_lahir}}
+                            </td>
                             <td class="px-6 py-4">
-                                {{ $item->nik }}
+                                {{ $item->jenis_kelamin }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->agama }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $item->status_perkawinan }}
                             </td>
+                            <td class="px-6 py-4">
+                                {{ $item->pekerjaan }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->gol_darah }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->no_kk }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->no_hp }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->status_penduduk }}
+                            </td>
                             <td class="px-6 py-4 flex gap-2">
+                                <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
+                                    <button class="font-medium text-white bg-green-400 p-2  rounded">
+                                        Detail
+                                    </button>
+                                </a>
+                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-penduduk"
+                                    data-modal-toggle="edit-penduduk"
+                                    class="font-medium text-white bg-yellow-300 p-2  rounded">
+                                    Edit
+                                </button>
+                                
                                 <form action="{{ route('admin.penduduk.delete', $item->nik) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button
                                         onclick="return confirm('Apakah Anda akan menghapus data dengan Nik : {{ $item->nik }}')"
-                                        type="submit" class="font-medium text-white bg-red-600 p-2 rounded">
+                                        type="submit" class="font-medium text-white bg-red-500 p-2 rounded">
                                         Hapus
                                     </button>
                                 </form>
-                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-penduduk"
-                                    data-modal-toggle="edit-penduduk"
-                                    class="font-medium text-white bg-ungu p-2  rounded">
-                                    Edit
-                                </button>
-                                <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
-                                    <button class="font-medium text-white bg-ungu p-2  rounded">
-                                        Detail
-                                    </button>
-                                </a>
                             </td>
                         </tr>
                     @endforeach

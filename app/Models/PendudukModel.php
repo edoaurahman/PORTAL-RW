@@ -24,7 +24,8 @@ class PendudukModel extends Model
         'no_kk',
         'status_penduduk',
         'no_hp',
-        'id_alamat'
+        'id_alamat',
+        'image'
     ];
 
     protected $hidden = [
@@ -32,7 +33,7 @@ class PendudukModel extends Model
     ];
     protected $casts = [
         'ttl' => 'datetime',
-        'password' => 'hashed'
+        'password' => 'hashed',
     ];
 
     public function akun(): \Illuminate\Database\Eloquent\Relations\HasOne
@@ -48,12 +49,5 @@ class PendudukModel extends Model
     public function kk()
     {
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
-    }
-
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn($image) => url('storage/images/users/' . $image)
-        );
     }
 }
