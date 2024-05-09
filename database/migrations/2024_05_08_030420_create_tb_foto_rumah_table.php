@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('image', 255);
             $table->timestamps();
 
-            $table->foreign('no_kk')->references('no_kk')->on('tb_kk');
+            $table->foreign('no_kk')->references('no_kk')->on('tb_kk')->onDelete('cascade');
         });
     }
 

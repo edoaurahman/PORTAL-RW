@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('penduduk')->group(function () {
             Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
             Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk.store');
-            Route::post('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
+            Route::put('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
             Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
             Route::delete('/{nik}', [PendudukController::class, 'destroy'])->name('admin.penduduk.delete');

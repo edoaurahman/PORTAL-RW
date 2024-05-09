@@ -285,9 +285,22 @@ class PendudukController extends Controller
         // return $nik;
         try {
             $penduduk = PendudukModel::where('nik', $nik)->first();
+            // cek apakah penduduk kepala keluarga
+            $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
+            if ($isKepalaKK) {
+                // ambil semua anggota keluarga kecuali kepala keluarga
+                $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
+                // jika anggota keluarga lebih dari 1
+                if ($anggotaKeluarga->count() >= 1) {
+                    return redirect()->route('admin.penduduk')->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.')->withInput();
+                }
+                // jika anggota keluarga hanya 1
+                $penduduk->delete();
+                $isKepalaKK->delete();
+            }
             $penduduk->delete();
         } catch (\Exception $e) {
-            return redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.');
+            return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
         }
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Dihapus.');
     }

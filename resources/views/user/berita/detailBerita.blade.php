@@ -15,7 +15,7 @@
         <div class="flex flex-col lg:flex-row lg:space-x-12">
             <div class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
                 {{-- * ... Existing code ... * --}}
-                <p>{{ $berita->isi }}</p>
+                <p>{!! $berita->isi !!}</p>
                 <div class="flex items-center justify-between mt-4 md:w-1/2">
                     <div class="flex items-center space-x-2">
                         <BiCommentDetail class="text-gray-600" />

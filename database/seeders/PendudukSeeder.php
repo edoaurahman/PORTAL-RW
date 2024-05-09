@@ -80,7 +80,6 @@ class PendudukSeeder extends Seeder
         KkModel::insert($kk);
         $penduduk =
             [
-
                 [
                     'nik' => '3522110504040006',
                     'nama' => "Ridho Aulia' Rahman",

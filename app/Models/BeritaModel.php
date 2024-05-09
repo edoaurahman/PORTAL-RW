@@ -22,4 +22,9 @@ class BeritaModel extends Model
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'author');
     }
+
+    public function gambar()
+    {
+        return $this->hasMany(GambarBeritaModel::class, 'id_berita', 'id_berita');
+    }
 }
