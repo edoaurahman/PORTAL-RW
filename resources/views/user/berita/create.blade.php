@@ -1,73 +1,51 @@
-{{-- <x-layout.user-layout>
-    <style>
-        /* set ckeditor height */
-        .ck-editor__editable {
-            min-height: 300px;
-        }
-    </style>
-    <div class="px-20">
-        <form action="{{ route('user.berita.store') }}" method="post">
-            @csrf
-            <label for="">Title</label>
-            <input type="text" name="title">
-            <label for="">Isi</label>
-            <textarea name="content" id="editor" name="isi" onchange="checkImage()"></textarea>
-            <input type="submit" value="Simpan">
-        </form>
-    </div>
-    <div class="mt-80"></div>
-</x-layout.user-layout>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<x-layout.user-layout>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    @endif
 
-<script src="{{ asset('assets/js/texteditor/ckeditor.js') }}"></script>
-<script type="module">
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            ckfinder: {
-                // Upload the images to the server using the CKFinder QuickUpload command.
-                uploadUrl: "{{ route('user.berita.ckfinderconnector', ['_token' => csrf_token()]) }}",
-                // Define the CKFinder configuration (if necessary).
-                options: {
-                    resourceType: 'Images',
-                },
-            },
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
-
-</html> --}}
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Summernote</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="{{ asset('assets/js/summernote/summernote.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('assets/js/summernote/summernote.min.css') }}">
-</head>
-
-<body>
-    <form action="{{ route('user.berita.store') }}" method="post" enctype="multipart/form-data">
+    <form class="max-w-xl mx-auto mt-5" action="{{ route('user.berita.store') }}" method="post"
+        enctype="multipart/form-data">
         @csrf
-        <input type="text" name="judul" placeholder="Judul">
-        <input type="file" name="gambar">
-        <textarea id="summernote" name="isi"></textarea>
-        <input type="submit" value="Simpan">
+        <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" value="{{ old('judul') }}" name="judul" id="floating_first_name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " required />
+                <label for="floating_first_name"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Judul</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="slug" id="floating_last_name"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " required />
+                <label for="floating_last_name"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Slug</label>
+            </div>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="file" name="gambar" id="gambar"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" " required />
+            <label for="gambar"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
+                2MB</label>
+        </div>
+
+        <textarea id="summernote" name="isi">{{ old('isi') }}</textarea>
+
+        <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
     </form>
 
-</body>
+    <div class="mt-187.5"></div>
+</x-layout.user-layout>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
 </script>
-
-</html>

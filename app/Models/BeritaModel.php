@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class BeritaModel extends Model
 {
@@ -27,4 +28,13 @@ class BeritaModel extends Model
     {
         return $this->hasMany(GambarBeritaModel::class, 'id_berita', 'id_berita');
     }
+
+    public function generateCuplikan()
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML($this->isi);
+        $cuplikan = strip_tags($dom->textContent);
+        return Str::limit($cuplikan, 150);
+    }
+
 }

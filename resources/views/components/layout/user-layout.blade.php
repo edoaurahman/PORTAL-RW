@@ -18,7 +18,6 @@
 <body class="bg-[#f1f4f5]" x-data="{ 'darkMode': true, }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
 $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
-
     <x-partials.user.nav />
     {{ $slot }}
     <x-partials.user.footer />
