@@ -299,6 +299,12 @@ export default {
     },
   },
   plugins: [
+<<<<<<< HEAD
     require('flowbite/plugin')
   ],
 }
+=======
+    require('flowbite/plugin'),
+  ]
+}
+>>>>>>> d0401eec643ee8a28c71a6e5d5b6a981b3c3b689

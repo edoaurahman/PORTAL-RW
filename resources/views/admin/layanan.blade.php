@@ -12,11 +12,20 @@
                 </small>
             </h3>
         </div>
+        <div class="flex justify-between pb-5">
+            <h1> </h1>
+            <!-- Modal toggle -->
+            <button data-modal-target="" data-modal-toggle=""
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                Tambah Surat
+            </button>
+        </div>
         <!-- Start Body Content -->
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-ungu dark:bg-ungu dark:text-white">
-                    <tr>
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
                             Nama Surat
                         </th>

@@ -14,12 +14,14 @@ class CreateTbBeritaTable extends Migration
     public function up()
     {
         Schema::create('tb_berita', function (Blueprint $table) {
-            $table->integer('id_berita')->primary();
+            $table->integer('id_berita')->autoIncrement();
             $table->string('judul');
-            $table->string('gambar', 50);
+            $table->text('slug')->unique('slug');
+            $table->text('gambar');
             $table->text('isi');
             $table->date('tanggal_posting');
             $table->string('author', 16);
+            $table->enum('status', ['publish', 'pending', 'reject'])->default('pending');
             $table->timestamps();
 
             $table->foreign('author', 'tb_berita_ibfk_1')->references('nik')->on('tb_penduduk');

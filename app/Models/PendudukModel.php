@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,7 +24,8 @@ class PendudukModel extends Model
         'no_kk',
         'status_penduduk',
         'no_hp',
-        'id_alamat'
+        'id_alamat',
+        'image'
     ];
 
     protected $hidden = [
@@ -31,7 +33,7 @@ class PendudukModel extends Model
     ];
     protected $casts = [
         'ttl' => 'datetime',
-        'password' => 'hashed'
+        'password' => 'hashed',
     ];
 
     public function akun(): \Illuminate\Database\Eloquent\Relations\HasOne

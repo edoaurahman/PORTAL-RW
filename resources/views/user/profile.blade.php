@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-    <main class="profile-page">
         <section class="relative block h-500-px">
             <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
             background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
@@ -40,10 +39,10 @@
                                         <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">1</span><span class="text-sm text-blueGray-400">istri cantik</span>
                                     </div>
                                     <div class="mr-4 p-3 text-center">
-                                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">2</span><span class="text-sm text-blueGray-400">anak pinter</span>
+                                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">2</span><span class="text-sm text-blueGray-400">anak</span>
                                     </div>
                                     <div class="lg:mr-4 p-3 text-center">
-                                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span class="text-sm text-blueGray-400">mobil mewah</span>
+                                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span class="text-sm text-blueGray-400">mobil</span>
                                     </div>
                                 </div>
                             </div>
@@ -80,5 +79,4 @@
                 </div>
             </div>
         </section>
-    </main>
 </x-layout.user-layout>

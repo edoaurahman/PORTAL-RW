@@ -30,6 +30,7 @@ class StorePenduduk extends FormRequest
             "jenis_kelamin" => "required",
             "agama" => "required",
             "status_perkawinan" => "required",
+            "status_penduduk" => "required",
             "pekerjaan" => "required",
             "gol_darah" => "required",
             "kel" => "required",
@@ -38,6 +39,7 @@ class StorePenduduk extends FormRequest
             "jalan" => "required",
             "rt" => "required",
             "no_hp" => "required",
+            "image" => "required|image|mimes:jpeg,png,jpg,svg|max:2048",
         ];
     }
 
@@ -68,6 +70,11 @@ class StorePenduduk extends FormRequest
             "jalan.required" => "Kolom Jalan wajib diisi.",
             "rt.required" => "Kolom RT wajib diisi.",
             "no_hp.required" => "Kolom No. HP wajib diisi.",
+            "image.required" => "Kolom Foto wajib diisi.",
+            "image.image" => "Foto harus berupa gambar.",
+            "image.mimes" => "Foto harus berformat jpeg, png, jpg, atau svg.",
+            "image.max" => "Foto maksimal 2MB.",
+            "status_penduduk.required" => "Kolom Status Penduduk wajib diisi.",
         ];
     }
 }

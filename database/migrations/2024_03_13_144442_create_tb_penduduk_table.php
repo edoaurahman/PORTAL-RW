@@ -27,6 +27,7 @@ class CreateTbPendudukTable extends Migration
             $table->string('no_hp', 13)->nullable();
             $table->integer('id_alamat');
             $table->enum('status_penduduk', ['Pendatang', 'Penduduk Tetap']);
+            $table->text('image');
             $table->timestamps();
 
             // foreign key id_alamat

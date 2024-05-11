@@ -1,18 +1,17 @@
 <?php
-
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AspirasiController;
-use App\Http\Controllers\BansosController;
-use App\Http\Controllers\InventarisController;
-use App\Http\Controllers\KeuanganController;
-use App\Http\Controllers\LayananController;
-use App\Http\Controllers\LevelController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\PendudukController;
-use App\Http\Controllers\ReportDataController;
-use App\Http\Controllers\RTController;
-use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AspirasiController;
+use App\Http\Controllers\Admin\BansosController;
+use App\Http\Controllers\Admin\InventarisController;
+use App\Http\Controllers\Admin\KeuanganController;
+use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\PendudukController;
+use App\Http\Controllers\Admin\ReportDataController;
+use App\Http\Controllers\Admin\RTController;
+use App\Http\Controllers\Admin\UmkmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,13 +32,13 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
-        Route::get('/', fn () => redirect(route('admin.dashboard')));
+        Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
             Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
             Route::post('/', [PendudukController::class, 'store'])->name('admin.penduduk.store');
-            Route::post('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
+            Route::put('/update', [PendudukController::class, 'update'])->name('admin.penduduk.update');
             Route::get('/kk', [PendudukController::class, 'kk_penduduk'])->name('admin.penduduk.kk');
             Route::get('/detail/{nik}', [PendudukController::class, 'detail_penduduk'])->name('admin.penduduk.detail');
             Route::delete('/{nik}', [PendudukController::class, 'destroy'])->name('admin.penduduk.delete');
@@ -76,32 +75,6 @@ Route::prefix('admin')->group(function () {
         });
     });
 });
-
-require __DIR__ . '/user.php';
-
-Route::get('/home', function () {
-    return view('user.home');
-})->name('user.home');
-
-
-
-Route::get('/profile', function () {
-    return view('user.profile');
-});
-
-
-// berita route
-Route::get('/berita', function () {
-    return view('user.berita');
-})->name('user.berita');
-
-
-// Layanan route
-Route::get('/layanan', function () {
-    return view('user.layanan.index');
-})->name('user.layanan');
-
-
 
 // login & logout route
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

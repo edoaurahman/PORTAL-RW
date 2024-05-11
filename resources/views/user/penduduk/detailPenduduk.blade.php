@@ -5,71 +5,46 @@
             <div class="relative overflow-hidden h-52 md:h-[468px]">
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/assets/images/umkm/umkm4.jpg" loading="lazy"
-                        class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+                    <img src="/assets/images/umkm/umkm4.jpg" loading="lazy" class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/assets/images/umkm/umkm5.jpg" loading="lazy"
-                        class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+                    <img src="/assets/images/umkm/umkm5.jpg" loading="lazy" class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/assets/images/umkm/umkm3.jpeg" loading="lazy"
-                        class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+                    <img src="/assets/images/umkm/umkm3.jpeg" loading="lazy" class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/assets/images/umkm/umkm2.jpeg" loading="lazy"
-                        class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+                    <img src="/assets/images/umkm/umkm2.jpeg" loading="lazy" class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/assets/images/umkm/umkm1.jpeg" loading="lazy"
-                        class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+                    <img src="/assets/images/umkm/umkm1.jpeg" loading="lazy" class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
             <!-- Slider indicators -->
             <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                    data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                    data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                    data-carousel-slide-to="2"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                    data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                    data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
             </div>
             <!-- Slider controls -->
-            <button type="button"
-                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
                     </svg>
                     <span class="sr-only">Previous</span>
                 </span>
             </button>
-            <button type="button"
-                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                     </svg>
                     <span class="sr-only">Next</span>
                 </span>
@@ -84,8 +59,7 @@
             ">
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
-                        <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                        <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -96,44 +70,10 @@
                     </div>
                     <div class="flex flex-row justify-between gap-5  pt-5">
                         <div class="flex flex-1">
-                            <dl
-                                class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+                            <dl class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
                                 <div class="flex flex-col pb-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
                                     <dd class="text-lg font-semibold">{{ $penduduk->nama }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Tempat, tanggal lahir
-                                    </dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->tgl_lahir }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Jenis Kelamin
-                                    </dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->jenis_kelamin }}</dd>
-                                </div>
-                                <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Agama</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->agama }}</dd>
-                                </div>
-
-
-                            </dl>
-                        </div>
-                        <div class="flex flex-1">
-                            <dl
-                                class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-                                <div class="flex flex-col pb-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Pekerjaan</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->pekerjaan }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">status perkawinan</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->status_perkawinan }}</dd>
-                                </div>
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor hanphone</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
                                 </div>
                                 <div class="flex flex-col py-3">
                                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
@@ -141,6 +81,19 @@
                                         {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
                                     </dd>
                                 </div>
+
+
+
+                            </dl>
+                        </div>
+                        <div class="flex flex-1">
+                            <dl class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+
+                                <div class="flex flex-col pt-3">
+                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor handphone</dt>
+                                    <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
+                                </div>
+
                             </dl>
                         </div>
                     </div>
@@ -152,11 +105,26 @@
         </div>
     </section>
 
+    <section class="berita mx-auto font-sans py-12">
+        <div class="flex flex-col gap-y-8">
+            <div class="gap-y-2 flex flex-col text-center">
+                <h1 class="text-black1 font-bold text-5xl leading-tight">Berita
+                </h1>
+                <div class="text-base leading-loose text-black3 items-center">
+                    tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
 
     <section class="umkm mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">Profil UMKM
+                <h1 class="text-black1 font-bold text-5xl leading-tight">Showcase UMKM
                 </h1>
                 <div class="text-base leading-loose text-black3 items-center">
                     Di sini, Anda dapat melihat detail tentang bisnis, termasuk informasi kontak, <br> deskripsi
@@ -166,43 +134,18 @@
             </div>
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
+
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
@@ -211,45 +154,20 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_1.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_2.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_3.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/home/Rectangle_4.png') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -440,15 +358,14 @@
                                 </div>
                             </div>
                             <img width="45px" src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                        </div>
-                    </div>
-                    <!-- refisi perbandingan end -->
+    </div>
+    </div>
+    <!-- refisi perbandingan end -->
 
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </div>
     </div> --}}
 
-    <script src="/assets/js/detail-booking.js"></script>
     <div class="mt-90"></div>
 </x-layout.user-layout>

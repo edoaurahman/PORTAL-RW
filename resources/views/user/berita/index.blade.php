@@ -11,7 +11,7 @@
                     <span
                         class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Nutrition</span>
                     <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
-                        Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
+                        Berita Makanan Hari Rabu
                     </h2>
                     <div class="flex mt-3">
                         <img src="https://randomuser.me/api/portraits/men/97.jpg"
@@ -33,8 +33,7 @@
                 <div class="p-4 absolute bottom-0 left-0 z-20">
                     <span
                         class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Science</span>
-                    <h2 class="text-3xl font-semibold text-gray-100 leading-tight">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit.</h2>
+                    <h2 class="text-3xl font-semibold text-gray-100 leading-tight">Makanan kategori busuk di RW</h2>
                     <div class="flex mt-3">
                         <img src="https://randomuser.me/api/portraits/men/97.jpg"
                             class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
@@ -50,34 +49,33 @@
         <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
             {{-- * post cards * --}}
             <div class="w-full lg:w-2/3">
-                <a class="block rounded w-full lg:flex mb-10" href="#">
-                    <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
-                        style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
-                        title="deit is very important"></div>
-                    <div class="bg-white rounded px-4 flex flex-col justify-between leading-normal">
-                        <div>
-                            <div class="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
-                                Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit.
-                            </div>
-                            <p class="text-gray-700 text-base">
-                                Duis euismod est quis lacus elementum, eu laoreet dolor consectetur. Pellentesque sed
-                                neque vel tellus
-                                lacinia elementum. Proin consequat ullamcorper eleifend.
-                            </p>
-                        </div>
-                        <div class="flex mt-3">
-                            <img src="https://randomuser.me/api/portraits/men/86.jpg"
-                                class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
+                @foreach ($berita as $item)
+                    <a class="block rounded w-full lg:flex mb-10" href="{{ route('user.detailberita', $item->slug) }}">
+                        <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
+                            style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
+                            title="deit is very important"></div>
+                        <div class="bg-white rounded px-4 flex flex-col justify-between leading-normal w-full p-5">
                             <div>
-                                <p class="font-semibold text-gray-700 text-sm capitalize">eduard franz</p>
-                                <p class="text-gray-600 text-xs">14 Aug</p>
+                                <div class="mt-3 md:mt-0 ">
+                                    <p class="text-gray-700 font-bold text-2xl mb-2">{{ $item->judul }}</p>
+                                </div>
+                                <p class="text-gray-700 text-base">{{ $item->generateCuplikan() }}</p>
+                            </div>
+                            <div class="flex mt-3">
+                                <img src="https://randomuser.me/api/portraits/men/86.jpg"
+                                    class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
+                                <div>
+                                    <p class="font-semibold text-gray-700 text-sm capitalize">{{ $item->autor->nama }}
+                                    </p>
+                                    <p class="text-gray-600 text-xs">14 Aug</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
 
 
-                <div class="rounded w-full lg:flex mb-10">
+                {{-- <div class="rounded w-full lg:flex mb-10">
                     <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
                         style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
                         title="deit is very important">
@@ -131,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
             </div>
@@ -186,14 +184,19 @@
 
                 {{-- * subscribe * --}}
                 <div class="p-1 mt-4 mb-4">
-                    <h5 class="font-bold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
+                    <h5 class="font-bold text-lg uppercase text-gray-700 mb-2"> Pentingnya Berita RW 02 </h5>
                     <p class="text-gray-600">
-                        Subscribe to our newsletter. We deliver the best health-related articles to your inbox
+                        Berita memiliki peran yang sangat penting di RW 02 Arjosari karena menjadi sumber informasi
+                        utama bagi warga untuk mengetahui berbagai peristiwa, kegiatan, dan kebijakan yang terjadi di
+                        lingkungan mereka. Dengan adanya berita, warga dapat tetap terinformasi tentang hal-hal penting
+                        seperti keamanan, lingkungan, dan acara sosial di sekitar mereka, yang pada gilirannya
+                        memungkinkan mereka untuk berpartisipasi aktif dalam kehidupan komunitas dan membuat keputusan
+                        yang lebih baik untuk kesejahteraan bersama.
                     </p>
-                    <input placeholder="your email address"
+                    <input placeholder="Tampilkan Seluruh Berita RW 02"
                         class="text-gray-700 bg-gray-100 rounded-t hover:outline-none p-2 w-full mt-4 border" />
                     <button class="px-4 py-2 bg-indigo-600 text-gray-200 rounded-b w-full capitalize tracking-wide">
-                        Subscribe
+                        Selengkapnya
                     </button>
                 </div>
 

@@ -147,7 +147,7 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-bold">Rapat koordinasi RW</h5>
+                            <h5 class="font-bold text-black dark:text-white">Rapat koordinasi RW</h5>
                             <p>
                                 <span class="text-sm font-normal text-black dark:text-white">
                                     Pembahasan keamanan dan kebersihan lingkungan RW.
@@ -161,7 +161,7 @@
                     class="flex items-center gap-5 px-7.5 py-3 border-b border-gray-300 dark:border-gray-600 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-bold">Posyandu Balita</h5>
+                            <h5 class="font-bold text-black dark:text-white">Posyandu Balita</h5>
                             <p>
                                 <span class="text-sm font-normal text-black dark:text-white">
                                     Pemeriksaan dan imunisasi gratis untuk balita di RW kita.
@@ -175,7 +175,7 @@
                     class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4">
                     <div class="flex flex-1 items-center justify-between">
                         <div>
-                            <h5 class="font-bold">Arisan RW</h5>
+                            <h5 class="font-bold text-black dark:text-white">Arisan RW</h5>
                             <p>
                                 <span class="text-sm font-normal text-black dark:text-white">
                                     Ayo kumpul dan bersenang-senang di acara arisan RW!
