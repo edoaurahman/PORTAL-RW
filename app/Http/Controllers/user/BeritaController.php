@@ -19,7 +19,7 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $berita = BeritaModel::with('autor')->get();
+        $berita = BeritaModel::with('autor')->where('status', 'publish')->orderBy('tanggal_posting', 'desc')->get();
 
         // foreach ($berita as $news) {
         //     $news->isi = Str::words($news->isi, 50, '...');
@@ -124,5 +124,13 @@ class BeritaController extends Controller
         }
         $berita->delete();
         return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus');
+    }
+
+    public function set_status(Request $request)
+    {
+        $berita = BeritaModel::find($request->id_berita);
+        $berita->status = $request->status;
+        $berita->save();
+        return redirect()->route('user.berita')->with('success', 'Berita berhasil di ' . $request->status);
     }
 }

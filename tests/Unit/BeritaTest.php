@@ -66,4 +66,29 @@ class BeritaTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/berita');
     }
+
+    public function test_set_berita_published(): void
+    {
+        $akun = AkunModel::find(1);
+        $response = $this->actingAs($akun)->post('/berita/status', [
+            'id_berita' => 2,
+            'status' => 'publish'
+        ]);
+        $response->assertSessionHasNoErrors();
+        // $response->assertStatus(302);
+        // $response->assertRedirect('/berita');
+    }
+
+    public function test_set_berita_rejected(): void
+    {
+        $akun = AkunModel::find(1);
+        $response = $this->actingAs($akun)->post('/berita/status', [
+            'id_berita' => 2,
+            'status' => 'reject'
+        ]);
+        $response->assertSessionHasNoErrors();
+        // print session message
+        // $response->assertStatus(302);
+        // $response->assertRedirect('/berita');
+    }
 }

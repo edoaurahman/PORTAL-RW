@@ -22,6 +22,7 @@ Route::prefix('berita')->group(function () {
         Route::get('/create', [BeritaController::class, 'create'])->name('user.berita.tambah');
         Route::post('/store', [BeritaController::class, 'store'])->name('user.berita.store');
         Route::delete('/delete/{berita}', [BeritaController::class, 'destroy'])->name('user.berita.delete');
+        Route::post('/status', [BeritaController::class, 'set_status'])->name('user.berita.status');
     });
 });
 
