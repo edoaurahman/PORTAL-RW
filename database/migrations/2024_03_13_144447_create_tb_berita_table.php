@@ -16,7 +16,7 @@ class CreateTbBeritaTable extends Migration
         Schema::create('tb_berita', function (Blueprint $table) {
             $table->integer('id_berita')->autoIncrement();
             $table->string('judul');
-            $table->text('slug')->unique('slug');
+            $table->text('slug')->unique();
             $table->text('gambar');
             $table->text('isi');
             $table->date('tanggal_posting');
