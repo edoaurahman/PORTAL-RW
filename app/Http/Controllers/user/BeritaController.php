@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Storage;
 
 // use Illuminate\Support\Str;
 
@@ -89,9 +90,9 @@ class BeritaController extends Controller
                 $gambar->id_berita = $berita->id_berita;
                 $gambar->gambar = $name;
                 $gambar->save();
-                file_put_contents(storage_path('app/public/images/berita/content/' . $name), $data);
+                Storage::disk('public')->makeDirectory('images/berita/content');
+                Storage::disk('public')->put('images/berita/content/' . $name, $data);
             }
-
             $request->gambar->store('images/berita', 'public');
         });
         return redirect()->route('user.berita');
@@ -104,12 +105,21 @@ class BeritaController extends Controller
         if ($gambar->count() > 0) {
             foreach ($gambar as $g) {
                 $g->delete();
-                unlink(storage_path('app/public/images/berita/content/' . $g->gambar));
+                try {
+                    unlink(storage_path('app/public/images/berita/content/' . $g->gambar));
+                } catch (\Exception $e) {
+                    continue;
+                }
             }
         }
         // hapus gambar berita
         $fileName = basename($berita->gambar);
-        unlink(storage_path('app/public/images/berita/' . $fileName));
+        try {
+            unlink(storage_path('app/public/images/berita/' . $fileName));
+        } catch (\Exception $e) {
+            $berita->delete();
+            return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus (Gambar tidak ditemukan)');
+        }
         $berita->delete();
         return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus');
     }
