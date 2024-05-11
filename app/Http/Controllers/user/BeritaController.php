@@ -67,7 +67,7 @@ class BeritaController extends Controller
                 $image_name = time() . $k . '.png';
                 $list_images[$image_name] = $data;
                 $img->removeAttribute('src');
-                $img->setAttribute('src', asset('images/berita/content/' . $image_name));
+                $img->setAttribute('src', asset('storage/images/berita/content/' . $image_name));
             }
         } catch (\Exception $e) {
             return config('app.debug') ? $e->getMessage() : redirect()->back()->withErrors(['Terjadi kesalahan pada gambar/format berita yang diupload', 'Coba format ulang text berita'])->withInput();
@@ -78,7 +78,7 @@ class BeritaController extends Controller
             $request->slug = Str::slug($request->slug, '-');
             $berita = new BeritaModel();
             $berita->judul = $request->judul;
-            $berita->gambar = asset('images/berita/' . $request->gambar->hashName());
+            $berita->gambar = asset('storage/images/berita/' . $request->gambar->hashName());
             $berita->isi = $isi;
             $berita->slug = $request->slug;
             $berita->author = auth()->user()->nik;
@@ -106,7 +106,8 @@ class BeritaController extends Controller
             foreach ($gambar as $g) {
                 $g->delete();
                 try {
-                    unlink(storage_path('app/public/images/berita/content/' . $g->gambar));
+                    // unlink(storage_path('app/public/images/berita/content/' . $g->gambar));
+                    Storage::disk('public')->delete('images/berita/content/' . $g->gambar);
                 } catch (\Exception $e) {
                     continue;
                 }
@@ -115,7 +116,8 @@ class BeritaController extends Controller
         // hapus gambar berita
         $fileName = basename($berita->gambar);
         try {
-            unlink(storage_path('app/public/images/berita/' . $fileName));
+            // unlink(storage_path('app/public/images/berita/' . $fileName));
+            Storage::disk('public')->delete('images/berita/' . $fileName);
         } catch (\Exception $e) {
             $berita->delete();
             return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus (Gambar tidak ditemukan)');
