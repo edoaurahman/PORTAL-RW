@@ -30,6 +30,9 @@ Route::get('/agenda', function () {
     return view('user.berita.riwayatBerita');
 })->name('user.agenda');
 
+Route::get('/umkm', function () {
+    return view('user.umkm.index');
+})->name('user.umkm');
 
 // Layanan route
 Route::get('/layanan', function () {
