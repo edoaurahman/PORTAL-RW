@@ -8,14 +8,13 @@
                 </a>
             </div>
 
-            <img src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-                class="w-full object-cover lg:rounded h-[28em]" alt="Blog Cover" />
+            <img src="{{ $berita->gambar }}" class="w-full object-cover lg:rounded h-[28em]" alt="Blog Cover" />
         </div>
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
             <div class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
                 {{-- * ... Existing code ... * --}}
-                <p>{{ $berita->isi }}</p>
+                <p>{!! $berita->isi !!}</p>
                 <div class="flex items-center justify-between mt-4 md:w-1/2">
                     <div class="flex items-center space-x-2">
                         <BiCommentDetail class="text-gray-600" />

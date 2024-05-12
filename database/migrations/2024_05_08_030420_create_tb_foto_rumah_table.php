@@ -11,12 +11,12 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_foto_rumah', function (Blueprint $table) {
-            $table->integer('id_foto_rumah');
-            $table->string('no_kk')->index();
+            $table->integer('id_foto_rumah')->autoIncrement();
+            $table->string('no_kk', 16)->index();
             $table->string('image', 255);
             $table->timestamps();
 
-            $table->foreign('no_kk')->references('no_kk')->on('tb_kk');
+            $table->foreign('no_kk')->references('no_kk')->on('tb_kk')->onDelete('cascade');
         });
     }
 

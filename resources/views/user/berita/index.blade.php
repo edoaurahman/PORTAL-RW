@@ -50,17 +50,16 @@
             {{-- * post cards * --}}
             <div class="w-full lg:w-2/3">
                 @foreach ($berita as $item)
-                    <a class="block rounded w-full lg:flex mb-10"
-                        href="{{ route('user.detailberita', $item->id_berita) }}">
+                    <a class="block rounded w-full lg:flex mb-10" href="{{ route('user.detailberita', $item->slug) }}">
                         <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
                             style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
                             title="deit is very important"></div>
-                        <div class="bg-white rounded px-4 flex flex-col justify-between leading-normal">
+                        <div class="bg-white rounded px-4 flex flex-col justify-between leading-normal w-full p-5">
                             <div>
                                 <div class="mt-3 md:mt-0 ">
                                     <p class="text-gray-700 font-bold text-2xl mb-2">{{ $item->judul }}</p>
                                 </div>
-                                <p class="text-gray-700 text-base">{{ $item->isi }}</p>
+                                <p class="text-gray-700 text-base">{{ $item->generateCuplikan() }}</p>
                             </div>
                             <div class="flex mt-3">
                                 <img src="https://randomuser.me/api/portraits/men/86.jpg"

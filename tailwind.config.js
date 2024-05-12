@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       colors: {
-        // warna utama halaman user 
+        // warna utama halaman user
         'kuning': '#FFD15A',
         'ungu': '#640EF1',
         'black1': '#080C2E',
@@ -299,6 +299,6 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
-  ]
+    require('flowbite/plugin')
+  ],
 }
