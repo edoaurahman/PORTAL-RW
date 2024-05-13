@@ -1,7 +1,7 @@
 <x-layout.user-layout>
 
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
-        <div class="">
+    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[50px] ">
+        <div class="px-4 py-6 border border-gray-300 rounded-lg bg-gray-50 dark:border-gray-600 dark:bg-gray-800">
             <div class="flex flex-col gap-y-10">
                 <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
                     <i class="fa-solid fa-globe"></i>
@@ -10,7 +10,7 @@
                     </p>
                 </div>
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none">RiwayatBerita Saya.
+                    <h1 class="text-black1 font-bold text-[70px] leading-none">Berita Saya
                     </h1>
                     <div class="text-base leading-loose text-black3">
                         We provide a variety of servers to grow your users <br>
@@ -25,6 +25,26 @@
             </div>
         </div>
     </section>
+
+    {{-- <section
+        class="header px-4 py-6 border border-gray-300 rounded-lg bg-gray-50 dark:border-gray-600 dark:bg-gray-800 max-w-6xl mx-auto">
+        <div class="md:flex md:justify-between md:space-x-10">
+            <h3 class="md:flex md:flex-1 text-4xl md:text-7xl">let's learn to code an application</h3>
+            <div class="content md:flex-1">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, praesentium. Nulla repellat ducimus
+                    facilis,
+                    vero dolor quaerat est odit commodi deleniti voluptatum officiis voluptatem omnis numquam, quam
+                    aspernatur
+                    libero debitis?
+                </p>
+                <div class="flex flex-row gap-x-4 items-center pt-5">
+                    <a href="#"
+                        class="hover:bg-indigo-900 text-sm bg-ungu text-white py-4 px-6 rounded-full font-semibold">Tambah
+                        Berita</a>
+                </div>
+            </div>
+        </div>
+    </section> --}}
 
     <div class="historyberita max-w-6xl mx-auto font-sans pb-12">
         <div id="alert-additional-content-2"

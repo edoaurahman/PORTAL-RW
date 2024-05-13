@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/flowbite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/user/style.css') }}">
     <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
     <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
     <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
