@@ -17,4 +17,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/kk/{no_kk}', [PendudukController::class, 'getPendudukByKK']);
-Route::post('/berita/upload', [BeritaController::class, 'upload'])->name('user.berita.ckfinderconnector');

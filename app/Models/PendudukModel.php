@@ -28,12 +28,8 @@ class PendudukModel extends Model
         'image'
     ];
 
-    protected $hidden = [
-        'password'
-    ];
     protected $casts = [
         'ttl' => 'datetime',
-        'password' => 'hashed',
     ];
 
     public function akun(): \Illuminate\Database\Eloquent\Relations\HasOne
@@ -49,5 +45,15 @@ class PendudukModel extends Model
     public function kk()
     {
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
+    }
+
+    protected function foto_profil(): Attribute
+    {
+        return Attribute::make(get: fn($gambar) => asset('storage/images/penduduk/' . $this->image));
+    }
+
+    public function berita()
+    {
+        return $this->hasMany(BeritaModel::class, 'author', 'nik');
     }
 }

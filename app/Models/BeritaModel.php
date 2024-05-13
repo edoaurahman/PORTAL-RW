@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class BeritaModel extends Model
 {
@@ -19,12 +20,12 @@ class BeritaModel extends Model
         'author'
     ];
 
-    public function autor()
+    public function penulis()
     {
-        return $this->hasOne(PendudukModel::class, 'nik', 'author');
+        return $this->belongsTo(PendudukModel::class, 'author', 'nik');
     }
 
-    public function gambar()
+    public function gambar_berita()
     {
         return $this->hasMany(GambarBeritaModel::class, 'id_berita', 'id_berita');
     }
@@ -37,4 +38,8 @@ class BeritaModel extends Model
         return Str::limit($cuplikan, 150);
     }
 
+    protected function sampul(): Attribute
+    {
+        return Attribute::make(get: fn($gambar) => asset('storage/images/berita/' . $this->gambar));
+    }
 }

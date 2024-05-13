@@ -8,7 +8,7 @@
                 </a>
             </div>
 
-            <img src="{{ $berita->gambar }}" class="w-full object-cover lg:rounded h-[28em]" alt="Blog Cover" />
+            <img src="{{ $berita->sampul }}" class="w-full object-cover lg:rounded h-[28em]" alt="Blog Cover" />
         </div>
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
@@ -36,17 +36,17 @@
                         <img src="https://randomuser.me/api/portraits/men/97.jpg"
                             class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
                         <div>
-                            <p class="font-semibold text-gray-700 text-sm"> {{ $berita->autor->nama }}</p>
+                            <p class="font-semibold text-gray-700 text-sm"> {{ $berita->Penulis->nama }}</p>
                             <p class="font-semibold text-gray-600 text-xs"> Editor </p>
                         </div>
                     </div>
                     <p class="text-gray-700 py-3 text-xs">
                         Tanggal Publikasi: {{ $berita->tanggal_posting }}
                     </p>
-                    <a href="{{ route('user.detail', $berita->autor) }}">
+                    <a href="{{ route('user.detail', $berita->Penulis) }}">
                         <button
                             class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-                            Detail Autor
+                            Detail Penulis
                             <div class="ml-2"></div>
                         </button>
                     </a>

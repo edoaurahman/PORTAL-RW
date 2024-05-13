@@ -164,7 +164,7 @@ class PendudukController extends Controller
                         foreach ($request->rumah as $image) {
                             $fotoRumah = new FotoRumah();
                             $fotoRumah->no_kk = $request->no_kk;
-                            $fotoRumah->image = url('storage/images/rumah/' . $image->hashName());
+                            $fotoRumah->image = $image->hashName();
                             $fotoRumah->save();
                             $image->store('public/images/rumah');
                         }
@@ -193,7 +193,7 @@ class PendudukController extends Controller
                     'no_kk' => $request->no_kk,
                     'status_penduduk' => $request->status_penduduk,
                     'no_hp' => $request->no_hp,
-                    'image' => url('storage/images/penduduk/' . $request->image->hashName()),
+                    'image' => $request->image->hashName(),
                 ]);
 
                 // store foto

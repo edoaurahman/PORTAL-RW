@@ -18,11 +18,13 @@ Route::prefix('penduduk')->group(function () {
 Route::prefix('berita')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::get('/', [BeritaController::class, 'index'])->name('user.berita');
-        Route::get('/detail/{slug}', [BeritaController::class, 'show'])->name('user.detailberita');
+        Route::get('/detail/{slug}', [BeritaController::class, 'show'])->name('user.berita.detail');
         Route::get('/create', [BeritaController::class, 'create'])->name('user.berita.tambah');
         Route::post('/store', [BeritaController::class, 'store'])->name('user.berita.store');
         Route::delete('/delete/{berita}', [BeritaController::class, 'destroy'])->name('user.berita.delete');
         Route::post('/status', [BeritaController::class, 'set_status'])->name('user.berita.status');
+        Route::get('/edit/{berita}', [BeritaController::class, 'edit'])->name('user.berita.edit');
+        Route::put('/', [BeritaController::class, 'update'])->name('user.berita.update');
     });
 });
 

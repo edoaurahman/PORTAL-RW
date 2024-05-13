@@ -50,7 +50,7 @@
             {{-- * post cards * --}}
             <div class="w-full lg:w-2/3">
                 @foreach ($berita as $item)
-                    <a class="block rounded w-full lg:flex mb-10" href="{{ route('user.detailberita', $item->slug) }}">
+                    <a class="block rounded w-full lg:flex mb-10" href="{{ route('user.berita.detail', $item->slug) }}">
                         <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
                             style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
                             title="deit is very important"></div>
@@ -65,7 +65,7 @@
                                 <img src="https://randomuser.me/api/portraits/men/86.jpg"
                                     class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
                                 <div>
-                                    <p class="font-semibold text-gray-700 text-sm capitalize">{{ $item->autor->nama }}
+                                    <p class="font-semibold text-gray-700 text-sm capitalize">{{ $item->penulis->nama }}
                                     </p>
                                     <p class="text-gray-600 text-xs">14 Aug</p>
                                 </div>

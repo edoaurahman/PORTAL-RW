@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,5 +20,10 @@ class FotoRumah extends Model
     public function kk()
     {
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
+    }
+
+    protected function foto_rumah(): Attribute
+    {
+        return Attribute::make(get: fn($gambar) => asset('storage/images/rumah/' . $this->image));
     }
 }

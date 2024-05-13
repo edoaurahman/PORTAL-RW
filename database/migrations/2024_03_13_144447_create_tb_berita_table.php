@@ -23,7 +23,6 @@ class CreateTbBeritaTable extends Migration
             $table->string('author', 16);
             $table->enum('status', ['publish', 'pending', 'reject'])->default('pending');
             $table->timestamps();
-
             $table->foreign('author', 'tb_berita_ibfk_1')->references('nik')->on('tb_penduduk');
         });
     }
