@@ -19,8 +19,10 @@
 
     <section class="max-w-6xl mx-auto font-sans">
         <div class="explore-menu flex flex-col gap-5">
-            <h1 class="text-[#262626] font-medium">Explore our menu</h1>
-            <p class="explore-menu-text max-w-[60%] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            <h1 class="text-[#262626] text-2xl font-semibold">Explore our menu</h1>
+            <p class="explore-menu-text
+                max-w-[60%] ">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Tempore
                 accusamus,mollitia reiciendis quod, molestiae atque voluptas ea quo nesciunt placeat error temporibus
                 veniam sunt perspiciatis, nulla nobis aliquam laudantium iure!</p>
             <div
@@ -91,8 +93,93 @@
     </section>
 
     <section class="max-w-6xl mx-auto font-sans">
-        <div class="display">
-            <div class="display-list">
+        <div class="display mt-8">
+            <h2 class="text-2xl font-semibold">Top dishes near you</h2>
+            <div class="display-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_1.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_2.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_3.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_5.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_6.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
+                <div class="items w-auto m-auto rounded-2xl shadow-md">
+                    <div class="item-img pb-5">
+                        <img class="w-auto rounded-t-lg" src="assets/Images/umkm/food_4.png" alt="">
+                    </div>
+                    <div class="item-info p-5">
+                        <div class="item-rating flex justify-between items-center mt-3">
+                            <p class="text-xl font-medium">Padang Murah</p>
+                            <img class="w-18" src="assets/Images/umkm/rating_starts.png" alt="">
+                        </div>
+                        <p class="item-desc text-gray-600 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quos magnam blanditiis quis aperiam porro? </p>
+                        <div class="item price text-orange-400 text-2xl font-medium my-3">$5</div>
+                    </div>
+                </div>
 
             </div>
         </div>

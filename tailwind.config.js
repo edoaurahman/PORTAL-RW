@@ -279,6 +279,9 @@ export default {
         bottomtop: {
           '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
           '50%': { transform: 'translate3d(0, -100%, 0)' },
+        },fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
       },
       animation: {
@@ -295,11 +298,7 @@ export default {
         'spin-1.5': 'spin 1.5s linear infinite',
         'spin-2': 'spin 2s linear infinite',
         'spin-3': 'spin 3s linear infinite',
-        // keyframes fadein
-        fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        },
+
         // tambahkan animasi fadein-3s
         fadein3s: 'fadeIn 3s ease-in-out',
       },
