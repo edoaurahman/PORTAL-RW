@@ -78,11 +78,11 @@
                                         </div>
                                     </button>
                                 </form>
-                                <button>
-                                    <a href="{{ route('user.berita.detail', $item->slug) }}"
-                                        class="font-medium text-white bg-ungu p-2 dark:text-white rounded"><i
-                                            class="fa fa-eye" aria-hidden="true"></i> Lihat</a>
-                                </button>
+                                <a href="{{ route('user.berita.detail', $item->slug) }}">
+                                    <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                                        <i class="fa fa-eye" aria-hidden="true"></i> Lihat
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
