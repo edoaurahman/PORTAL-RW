@@ -65,6 +65,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
 
+
         Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw',]);
         Route::prefix('level')->group(function () {
             Route::middleware(['isSuperAdmin'])->group(function () { // isSuperAdmin middleware
