@@ -36,7 +36,7 @@
                         :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('berita')) }">Berita</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.agenda') }}"
+                    <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                         :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('Agenda')) }">Agenda</a>
                 </li>
@@ -211,7 +211,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="messages.html"
+                                <a href="{{ route('user.riwayatberita') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

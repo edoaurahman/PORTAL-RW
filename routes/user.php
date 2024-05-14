@@ -4,6 +4,10 @@ use App\Http\Controllers\user\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\PendudukController;
 
+
+// menus
+
+
 Route::get('/home', function () {
     return view('user.home');
 })->name('user.home');
@@ -28,6 +32,14 @@ Route::prefix('berita')->group(function () {
     });
 });
 
+
+// menus profile
+
+Route::prefix('menudropdown')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/', [BeritaController::class, 'riwayatBerita'])->name('user.riwayatberita');
+    });
+});
 Route::get('/profile', function () {
     return view('user.profile');
 });

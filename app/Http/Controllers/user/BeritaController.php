@@ -28,6 +28,12 @@ class BeritaController extends Controller
         return view('user.berita.index', compact('berita'));
     }
 
+    public function riwayatBerita()
+    {
+        $berita = BeritaModel::with('penulis')->where('status', 'draft')->orderBy('tanggal_posting', 'desc')->get();
+        return view('user.berita.riwayatBerita', compact('berita'));
+    }
+
     public function show($slug)
     {
         $berita = BeritaModel::with('penulis')->where('slug', $slug)->first();

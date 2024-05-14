@@ -1,30 +1,37 @@
 <x-layout.user-layout>
 
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[50px] ">
-        <div class="px-4 py-6 border border-gray-300 rounded-lg bg-gray-50 dark:border-gray-600 dark:bg-gray-800">
-            <div class="flex flex-col gap-y-10">
-                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
-                    <i class="fa-solid fa-globe"></i>
-                    <p class=" text-base font-semibold text-black2">
-                        Kami memiliki jumlah penduduk lebih dari 1.000 jiwa.
-                    </p>
-                </div>
-                <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none">Berita Saya
-                    </h1>
-                    <div class="text-base leading-loose text-black3">
-                        We provide a variety of servers to grow your users <br>
-                        acquisition much user-friendly and boosting up sales.
+    <section class="hero max-w-6xl mx-auto font-sans py-20">
+        <div class="px-4 py-6  dark:border-gray-600 dark:bg-gray-800">
+            <div class="flex flex-col gap-y-4">
+                <div class="gap-y-2 flex flex-row justify-between items-center">
+                    <div class="flex-1 space-y-2">
+                        <div class="w-fit gap-x-2  small-badge flex flex-row  rounded-full items-center">
+                            <i class="fa-regular fa-newspaper"></i>
+                            <p class=" text-base font-normal text-black">
+                                Riwayat Unggahan Berita RW
+                            </p>
+                        </div>
+                        <h2 class="font-bold text-black text-6xl">Mari tambahkan kabar terbaru </h2>
+                    </div>
+                    <div class=" flex-1 text-base leading-loose text-black3">
+                        <p class="text-sm text-black3">
+                            Tetaplah terinformasi dengan berita terbaru di wilayah RW kita. Ayo, tambahkan kabar terbaru
+                            untuk berbagi informasi penting, kegiatan, dan perkembangan menarik dengan seluruh warga.
+                            Klik tombol di bawah ini untuk mulai membuat berita baru dan berkontribusi dalam menjaga
+                            komunitas kita tetap terhubung!
+                        </p>
+                        <div class="mt-7">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-sm bg-ungu text-white py-3 px-7  font-semibold">Tambah
+                                Berita</a>
+                        </div>
                     </div>
                 </div>
-                <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#"
-                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Tambah
-                        Berita</a>
-                </div>
+
             </div>
         </div>
     </section>
+
 
     {{-- <section
         class="header px-4 py-6 border border-gray-300 rounded-lg bg-gray-50 dark:border-gray-600 dark:bg-gray-800 max-w-6xl mx-auto">
