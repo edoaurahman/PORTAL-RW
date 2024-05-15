@@ -11,7 +11,8 @@ class PendudukController extends Controller
     public function index()
     {
         $penduduk = PendudukModel::with('alamat')->get();
-        return view('user.penduduk.index', compact('penduduk'));
+        $user = auth()->user();
+        return view('user.penduduk.index', compact('penduduk', 'user'));
     }
 
     public function show($nik)

@@ -1,29 +1,28 @@
 <x-layout.user-layout>
 
-<section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+    <section class="hero  max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
-                
+
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[70px] leading-none">Pak RW 
+                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[70px] leading-none">Pak RW
                     </h1>
                     <h1 class="text-black1 dark:text-purple-500 font-bold text-[70px] leading-none">
                         Siap Melayani!
                     </h1>
-                    <div class="text-base leading-loose text-black3 dark:text-white">
+                    <!-- <div class="text-base leading-loose text-black3 dark:text-white">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro necessitatibus excepturi repellendus est mollitia iusto ea, tenetur, reprehenderit expedita enim! Beatae, veniam. Doloribus officiis totam culpa. Quibusdam, delectus hic!
-                    </div>
-                    
+                    </div> -->
+
                 </div>
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#"
-                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Pilih Layanan</a>
-                    
+                    <a href="#tutorial" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Cara Menggunakan layanan</a>
+
                 </div>
-                
+
             </div>
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/avatarPakRW.png') }}" alt="" class="">
+                <img src="{{ asset('assets/images/illustration/avatarPakRW.png') }}" alt="" class=" max-w-100">
             </div>
         </div>
     </section>
@@ -31,8 +30,7 @@
     <section class="row max-w-6xl mx-auto font-sans py-12">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -43,19 +41,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -66,19 +60,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -89,19 +79,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -112,21 +98,17 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
 
 
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -137,19 +119,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -160,19 +138,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -183,19 +157,15 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                 </a>
@@ -206,13 +176,10 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                         technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                         Gunakan Layanan
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
@@ -220,8 +187,7 @@
 
 
             <section class="top  max-w-6xl mx-auto font-sans py-12">
-                <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                     </a>
@@ -232,21 +198,17 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                             technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                             Gunakan Layanan
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
                         </a>
                     </div>
                 </div>
             </section>
             <section class="top  max-w-6xl mx-auto font-sans py-12">
-                <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="assets/images/berita/rapat.jpg" alt="" />
                     </a>
@@ -257,18 +219,23 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                             technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border text-ungu bg-white border-ungu rounded-lg hover:bg-ungu hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                             Gunakan Layanan
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
                         </a>
                     </div>
                 </div>
             </section>
+        </div>
+    </section>
+
+    <section id="tutorial" class="max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+        <div class="flex flex-row items-center justify-between">
+            <div class="text-base leading-loose text-black3 dark:text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro necessitatibus excepturi repellendus est mollitia iusto ea, tenetur, reprehenderit expedita enim! Beatae, veniam. Doloribus officiis totam culpa. Quibusdam, delectus hic!
+            </div>
         </div>
     </section>
 
