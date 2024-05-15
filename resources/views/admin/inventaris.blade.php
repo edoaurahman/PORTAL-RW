@@ -14,6 +14,15 @@
                 </small>
             </h3>
         </div>
+        <div class="flex justify-between pb-5">
+            <h1> </h1>
+            <!-- Modal toggle -->
+            <button data-modal-target="" data-modal-toggle=""
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                Tambah Barang
+            </button>
+        </div>
         <!-- End Header Content -->
 
         <!-- Start Body Content -->
@@ -39,17 +48,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($users as $item)
+                    @foreach ($inventaris as $item)
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $item->penduduk->nama }}
+                            {{ $item->inventaris->nama }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $item->penduduk->nik }}
+                            {{ $item->inventaris->jumlah }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $item->level->nama_level }}
+                            {{ $item->inventaris->status }}
                         </td>
                         <td class="px-6 py-4">
                             <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
@@ -59,7 +68,7 @@
                             </button>
                         </td>
                     </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>
