@@ -21,10 +21,6 @@ class BeritaController extends Controller
     {
         $berita = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('created_at', 'desc')->get();
 
-        // foreach ($berita as $news) {
-        //     $news->isi = Str::words($news->isi, 50, '...');
-        // }
-
         return view('user.berita.index', compact('berita'));
     }
 
@@ -38,9 +34,12 @@ class BeritaController extends Controller
     public function show($slug)
     {
         $berita = BeritaModel::with('penulis')->where('slug', $slug)->first();
-        // add view
-        $berita->view += 1;
-        $berita->save();
+        // add view count, and limit view count to 1 per session
+        if (!session()->has('viewed_berita_' . $berita->id_berita)) {
+            $berita->view += 1;
+            $berita->save();
+            session()->put('viewed_berita_' . $berita->id_berita, true);
+        }
         return view('user.berita.detailBerita', compact('berita'));
     }
 

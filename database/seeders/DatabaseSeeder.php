@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\InventarisModel;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,12 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // run all seeder
         $this->call([
+            InventarisSeeder::class,
             LevelSeeder::class,
             PendudukSeeder::class,
             AkunSeeder::class,
             KategoriAspirasiSeeder::class,
             BeritaSeeder::class,
-            InventarisModel::class,
         ]);
     }
 }

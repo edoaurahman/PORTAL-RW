@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\InventarisModel;
-use App\Models\KategoriAspirasiModel;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class InventarisSeeder extends Seeder
