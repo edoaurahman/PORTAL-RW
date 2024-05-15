@@ -16,6 +16,7 @@ class CreateTbSuratTable extends Migration
         Schema::create('tb_surat', function (Blueprint $table) {
             $table->integer('id_surat')->primary();
             $table->string('nama_surat');
+            $table->text('keterangan');
             $table->string('file', 50);
             $table->string('author', 16)->index();
             $table->timestamps();
