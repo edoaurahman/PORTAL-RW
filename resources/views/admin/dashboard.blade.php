@@ -213,24 +213,24 @@
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="">
                         <img class="w-full h-50 object-cover rounded-t-sm"
-                            src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="UMKM 1">
+                            src="{{ asset('assets/images/umkm/food_19.png') }}" alt="UMKM 1">
                     </div>
                     <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Warung Madura Cak Abid</h5>
-                    </div>
-                </div>
-                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm"
-                        src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="UMKM 2">
-                    <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Maklor Anang</h5>
+                        <h5 class="text-lg font-medium mb-1">Abid's Bakery</h5>
                     </div>
                 </div>
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <img class="w-full h-50 object-cover rounded-t-sm"
-                        src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt="UMKM 3">
+                        src="{{ asset('assets/images/umkm/food_26.png') }}" alt="UMKM 2">
                     <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Rawon Mak Cik Edo</h5>
+                        <h5 class="text-lg font-medium mb-1">Makaroni 25 Anang</h5>
+                    </div>
+                </div>
+                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+                    <img class="w-full h-50 object-cover rounded-t-sm"
+                        src="{{ asset('assets/images/umkm/food_12.png') }}" alt="UMKM 3">
+                    <div class="p-4">
+                        <h5 class="text-lg font-medium mb-1">Ice Cream Mak Cik Edo</h5>
                     </div>
                 </div>
             </div>
