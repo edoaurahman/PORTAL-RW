@@ -29,17 +29,10 @@ Route::prefix('berita')->group(function () {
         Route::post('/status', [BeritaController::class, 'set_status'])->name('user.berita.status');
         Route::get('/edit/{berita}', [BeritaController::class, 'edit'])->name('user.berita.edit');
         Route::put('/', [BeritaController::class, 'update'])->name('user.berita.update');
+        Route::get('/dashboard', [BeritaController::class, 'riwayatBerita'])->name('user.berita.dashboard');
     });
 });
 
-
-// menus profile
-
-Route::prefix('menudropdown')->group(function () {
-    Route::middleware(['auth'])->group(function () {
-        Route::get('/', [BeritaController::class, 'riwayatBerita'])->name('user.riwayatberita');
-    });
-});
 Route::get('/profile', function () {
     return view('user.profile');
 });

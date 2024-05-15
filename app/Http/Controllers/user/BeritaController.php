@@ -19,7 +19,7 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $berita = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('tanggal_posting', 'desc')->get();
+        $berita = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('created_at', 'desc')->get();
 
         // foreach ($berita as $news) {
         //     $news->isi = Str::words($news->isi, 50, '...');
@@ -30,13 +30,17 @@ class BeritaController extends Controller
 
     public function riwayatBerita()
     {
-        $berita = BeritaModel::with('penulis')->where('status', 'draft')->orderBy('tanggal_posting', 'desc')->get();
+        $nik = auth()->user()->nik;
+        $berita = BeritaModel::with('penulis')->where('author', $nik)->orderBy('updated_at', 'desc')->get();
         return view('user.berita.riwayatBerita', compact('berita'));
     }
 
     public function show($slug)
     {
         $berita = BeritaModel::with('penulis')->where('slug', $slug)->first();
+        // add view
+        $berita->view += 1;
+        $berita->save();
         return view('user.berita.detailBerita', compact('berita'));
     }
 
@@ -101,7 +105,7 @@ class BeritaController extends Controller
             }
             $request->gambar->store('images/berita', 'public');
         });
-        return redirect()->route('user.berita');
+        return redirect()->route('user.berita.dashboard');
     }
 
     public function update(Request $request)
@@ -173,6 +177,7 @@ class BeritaController extends Controller
             $berita->slug = $request->slug;
             $berita->author = auth()->user()->nik;
             $berita->tanggal_posting = now();
+            $berita->status = 'pending';
             $berita->save();
 
             foreach ($list_images as $name => $data) {
@@ -190,7 +195,7 @@ class BeritaController extends Controller
             if ($request->hasFile('gambar'))
                 $request->gambar->store('images/berita', 'public');
         });
-        return redirect()->route('user.berita');
+        return redirect()->route('user.berita.dashboard');
     }
 
     public function destroy(BeritaModel $berita)

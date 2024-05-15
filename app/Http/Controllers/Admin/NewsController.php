@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $berita = BeritaModel::with('penulis')->orderBy('tanggal_posting', 'desc')->get();
+        $berita = BeritaModel::with('penulis')->orderBy('updated_at', 'desc')->get();
         return view("admin.news", compact('berita'));
     }
 }

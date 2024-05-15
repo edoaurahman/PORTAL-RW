@@ -19,6 +19,7 @@ class CreateTbBeritaTable extends Migration
             $table->text('slug');
             $table->text('gambar');
             $table->text('isi');
+            $table->integer('view')->default(0);
             $table->date('tanggal_posting');
             $table->string('author', 16);
             $table->enum('status', ['publish', 'pending', 'reject'])->default('pending');
