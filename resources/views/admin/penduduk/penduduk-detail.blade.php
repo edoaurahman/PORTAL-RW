@@ -1,6 +1,17 @@
 <x-layout.admin-layout>
     <div class="relative">
-        <h1>Detail Penduduk</h1>
+        <div class="mb-5">
+            <div class="mb-2 text-xl">
+                <h1><strong>PENDUDUK</strong></h1>
+            </div>
+            <h3 class="text-muted">
+                ADMIN
+                <small class="text-dark">
+                    <i class="fas fa-xs fa-angle-right text-muted"></i>
+                    Detail Penduduk
+                </small>
+            </h3>
+        </div>
         <div class="mt-5 relative overflow-x-auto sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
                 <tbody>

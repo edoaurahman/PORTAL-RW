@@ -56,44 +56,17 @@
             <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="whitespace-nowrap">
-                        <th scope="col" class="p-4">
-    
-                        </th>
                         <th scope="col" class="px-6 py-3">
                             Nama
                         </th>
                         <th scope="col" class="px-6 py-3">
                             NIK
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Tempat, Tanggal Lahir
-                        </th>
                         <th scope="col" class="px-6 py-3 ">
                             Jenis Kelamin
                         </th>
                         <th scope="col" class="px-6 py-3 ">
                             Alamat
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Agama
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Status
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Pekerjaaan
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Gol. Darah
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            No KK
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            No HP
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Status Penduduk
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -104,8 +77,6 @@
                     @foreach ($penduduk as $item)
                         <tr
                             class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td class="w-4 p-4">
-                            </td>
                             <td 
                                 class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                 <div>{{ $item->nama }}</div>
@@ -113,35 +84,11 @@
                             <td class="px-6 py-4 ">
                                 {{ $item->nik}}
                             </td>
-                            <td class="px-6 py-4 ">
-                                {{ $item->tempat_lahir . ', ' . $item->tgl_lahir}}
-                            </td>
                             <td class="px-6 py-4">
                                 {{ $item->jenis_kelamin }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->agama }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->status_perkawinan }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->pekerjaan }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->gol_darah }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->no_kk }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->no_hp }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->status_penduduk }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
                                 <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
