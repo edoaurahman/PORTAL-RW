@@ -64,7 +64,7 @@
                                     <input type="hidden" name="status" value="publish">
                                     <button type="submit">
                                         <div
-                                            class="font-medium text-white bg-ungu p-2 dark:text-white rounded inline-flex items-center gap-1">
+                                            class="font-medium text-white bg-green-400 p-2 dark:text-white rounded inline-flex items-center gap-1">
                                             <i class="fa-regular fa-circle-check"></i>
                                             Publish
                                         </div>
@@ -76,7 +76,7 @@
                                     <input type="hidden" name="status" value="reject">
                                     <button type="submit">
                                         <div
-                                            class="font-medium text-white bg-ungu p-2 dark:text-white rounded inline-flex items-center gap-1">
+                                            class="font-medium text-white bg-red-500 p-2 dark:text-white rounded inline-flex items-center gap-1">
                                             <i class="fa-regular fa-circle-xmark"></i>
                                             Reject
                                         </div>
@@ -84,7 +84,7 @@
                                 </form>
                                 <a href="{{ route('user.berita.detail', $item->slug) }}">
                                     <button type="button"
-                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-3 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-3 py-2 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         <i class="fa fa-eye mr-1" aria-hidden="true"></i>
                                         Lihat
                                     </button>
