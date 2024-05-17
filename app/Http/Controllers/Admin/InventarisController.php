@@ -11,6 +11,6 @@ class InventarisController extends Controller
     public function index()
     {
         $inventaris = new InventarisModel();
-        return view("admin.inventaris");
+        return view("admin.inventaris", compact("inventaris"));
     }
 }

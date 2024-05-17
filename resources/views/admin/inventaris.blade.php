@@ -52,13 +52,13 @@
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $item->inventaris->nama }}
+                            {{ $item->nama }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $item->inventaris->jumlah }}
+                            {{ $item->jumlah }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $item->inventaris->status }}
+                            {{ $item->status }}
                         </td>
                         <td class="px-6 py-4">
                             <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
