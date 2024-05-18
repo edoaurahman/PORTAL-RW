@@ -56,10 +56,22 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-        Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
+        Route::prefix('bansos')->group(function () {
+            Route::get('/', [BansosController::class, 'index'])->name('admin.bansos');
+            Route::post('/store', [BansosController::class, 'store'])->name('admin.bansos.store');
+            Route::get('/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
+            Route::delete('/foto', [BansosController::class, 'destroy_foto_bansos'])->name('admin.bansos.foto.delete');
+            Route::put('/update/{bansos}', [BansosController::class, 'update'])->name('admin.bansos.update');
+            Route::delete('/', [BansosController::class, 'destroy'])->name('admin.bansos.delete');
+            Route::put('/status', [BansosController::class, 'status'])->name('admin.bansos.status');
+        });
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
         Route::get('/inventaris', [InventarisController::class, 'index'])->name('admin.inventaris');
-        Route::get('/keuangan', [KeuanganController::class, 'index'])->name('admin.keuangan');
+
+        Route::prefix('keuangan')->group(function () {
+            Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
+            Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
+        });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
