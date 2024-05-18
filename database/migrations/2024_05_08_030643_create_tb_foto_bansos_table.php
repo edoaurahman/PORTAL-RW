@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('tb_foto_bansos', function (Blueprint $table) {
-            $table->integer('id_foto_rumah')->autoIncrement();
+            $table->integer('id_foto_bansos')->autoIncrement();
             $table->integer('id_bansos')->index();
             $table->string('image', 255);
             $table->timestamps();
