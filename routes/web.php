@@ -58,7 +58,11 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
-        Route::get('/inventaris', [InventarisController::class, 'index'])->name('admin.inventaris');
+        Route::prefix('inventaris')->group(function () {
+            Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
+            Route::delete('/{id_inventaris}', [InventarisController::class, 'destroy'])->name('admin.inventaris.delete');
+        });
+        
         Route::get('/keuangan', [KeuanganController::class, 'index'])->name('admin.keuangan');
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
