@@ -4,7 +4,6 @@
         <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
                 <h2 class="text-4xl font-semibold text-gray-800 leading-tight"> {{ $berita->judul }}</h2>
-                <a href="#" class="py-2 text-green-700 inline-flex items-center justify-center mb-2"> Cryptocurrency
                 </a>
             </div>
 
@@ -13,21 +12,10 @@
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
             <div class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
-                {{-- * ... Existing code ... * --}}
-                <p>{!! $berita->isi !!}</p>
-                <div class="flex items-center justify-between mt-4 md:w-1/2">
-                    <div class="flex items-center space-x-2">
-                        <BiCommentDetail class="text-gray-600" />
-                        <span class="text-gray-600">15 comments</span>
-                    </div>
-                    <div class="flex items-center space-x-2 mt-8">
-                        <AiOutlineHeart class="text-red-500" />
-                        <span class="text-gray-600">120 likes</span>
-                    </div>
-                    <a href="/" class="text-green-700 inline-flex items-center justify-center"> Back to Blogs
-                        <AiOutlineArrowRight class="ml-2" />
-                    </a>
-                </div>
+                <span class="text-gray-500">View:
+                    {{ $berita->view }}</span>
+
+                <p class="mt-2">{!! $berita->isi !!}</p>
             </div>
 
             <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
@@ -62,9 +50,6 @@
 
             </div>
         </div>
-
-
-        <PopularBlog />
     </section>
     <x-view.popular-berita />
 

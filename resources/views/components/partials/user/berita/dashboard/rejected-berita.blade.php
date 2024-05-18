@@ -14,20 +14,30 @@
         {{ $judul }}
     </div>
     <div class="flex">
-        <button type="button"
-            class="text-white gap-1 bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <a href="{{ route('user.berita.detail', $slug) }}">Lihat</a>
-        </button>
-        <button type="button"
-            class="text-white gap-1 bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <a href="{{ route('user.berita.edit', $id_berita) }}">Edit</a>
-        </button>
-        <button type="button"
-            class="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800"
-            data-dismiss-target="#alert-additional-content-2" aria-label="Close">
-            Dismiss
-        </button>
+        <a href="{{ route('user.berita.detail', $slug) }}">
+            <button type="button"
+                class="text-white gap-1 bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Lihat
+            </button>
+        </a>
+
+        <a href="{{ route('user.berita.edit', $id_berita) }}">
+            <button type="button"
+                class="text-white gap-1 bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                Edit
+            </button>
+        </a>
+
+        <form action="{{ route('user.berita.delete', $id_berita) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit"
+                class="text-white gap-1 bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Delete
+            </button>
+        </form>
     </div>
 </div>
