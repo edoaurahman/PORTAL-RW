@@ -220,7 +220,7 @@ class BeritaController extends Controller
             return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus (Gambar tidak ditemukan)');
         }
         $berita->delete();
-        return redirect()->route('user.berita')->with('success', 'Berita berhasil dihapus');
+        return redirect()->route('user.berita.dashboard')->with('success', 'Berita berhasil dihapus');
     }
 
     public function set_status(Request $request)
