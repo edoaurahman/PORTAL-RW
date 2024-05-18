@@ -189,6 +189,19 @@
         </div>
         <!-- ====== Agenda End -->
 
+        <!-- ====== Usia Penduduk Start -->
+        <div
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+            <div class="mb-3 gap-4">
+                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                    Pemetaan Usia
+                </h4>
+                <!-- Elemen kanvas untuk chart -->
+                <canvas id="usiaPendudukChart"></canvas>
+            </div>
+        </div>
+
+        <!-- ====== Usia Penduduk End -->
 
         <!-- ====== Kalender Start -->
         <div
@@ -283,6 +296,7 @@
             }
         });
     </script>
+    
     <script src="{{ asset('assets/js/calender.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -292,5 +306,54 @@
             });
             calendar.render();
         });
+    </script>
+    
+    <script>
+        const ctx = document.getElementById('usiaPenduduk').getContext('2d');
+        const usiaPendudukChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['0-14 tahun', '15-64 tahun', '65+ tahun'],
+        datasets: [{
+            label: 'Pemetaan Usia Penduduk',
+            data: [30, 50, 20], // Data contoh, silakan sesuaikan dengan data sebenarnya
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.label || '';
+
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed !== null) {
+                            label += context.parsed + '%';
+                        }
+                        return label;
+                    }
+                }
+            }
+        }
+    }
+}); 
+
     </script>
 </x-layout.admin-layout>

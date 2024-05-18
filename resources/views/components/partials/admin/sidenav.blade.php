@@ -25,9 +25,8 @@
         <nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             <!-- Menu Group -->
             <div>
-                <h3 class="mb-4 ml-4 text-sm font-medium text-black dark:text-white duration-300">MENU</h3>
-
-                <ul class="mb-6 flex flex-col gap-1.5">
+                
+                <ul class="mb-5 flex flex-col gap-1.5">
                     <!-- Menu Item Dashboard -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
@@ -39,6 +38,8 @@
                     </li>
                     <!-- Menu Item Dashboard -->
 
+                    <h3 class="mb-3 mt-4 ml-4 text-sm font-medium text-black dark:text-white duration-300">Menu Kependudukan</h3>
+                    
                     <!-- Menu Item Level -->
                     <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
@@ -94,17 +95,6 @@
                         <!-- Dropdown Menu End -->
                     </li>
 
-                    <!-- Menu Bansos -->
-                    <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
-                            href="{{ route('admin.bansos') }}"
-                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('bansos')) }">
-                            <i class="fa-solid fa-handshake-angle"></i>
-                            Bansos
-                        </a>
-                    </li>
-                    <!-- Menu Bansos End -->
-
                     {{-- Menu Data RT --}}
                     <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
@@ -116,6 +106,50 @@
                         </a>
                     </li>
 
+                    <h3 class="mb-3 mt-4 ml-4 text-sm font-medium text-black dark:text-white duration-300">Menu Kesejahteraan Masyarakat</h3>   
+
+                    <!-- Menu Bansos -->
+                    <li>
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
+                            href="{{ route('admin.bansos') }}"
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('bansos')) }">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                            Bansos
+                        </a>
+                    </li>
+                    <!-- Menu Bansos End -->
+
+                    {{-- Menu Data UMKM --}}
+                    <li>
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
+                            href="{{ route('admin.data-umkm') }}"
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('data-umkm')) }">
+                            <i class="fa-solid fa-shop"></i>
+                            Data UMKM
+                        </a>
+                    </li>
+
+                    {{-- Menu Layanan --}}
+                    <li>
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
+                            href="{{ route('admin.layanan') }}"
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('layanan')) }">
+                            <i class="fa-solid fa-headset"></i>
+
+                            Layanan
+                        </a>
+                    </li>
+
+                    {{-- Menu Aspirasi --}}
+                    <li>
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
+                            href="{{ route('admin.aspirasi') }}"
+                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('aspirasi')) }">
+                            <i class="fa-regular fa-lightbulb" width="18"></i>
+                            Aspirasi
+                        </a>
+                    </li>
+                    
                     {{-- Menu Inventaris --}}
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
@@ -140,26 +174,7 @@
                         </a>
                     </li>
 
-                    {{-- Menu Layanan --}}
-                    <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
-                            href="{{ route('admin.layanan') }}"
-                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('layanan')) }">
-                            <i class="fa-solid fa-headset"></i>
-
-                            Layanan
-                        </a>
-                    </li>
-
-                    {{-- Menu Data UMKM --}}
-                    <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
-                            href="{{ route('admin.data-umkm') }}"
-                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('data-umkm')) }">
-                            <i class="fa-solid fa-shop"></i>
-                            Data UMKM
-                        </a>
-                    </li>
+                    <h3 class="mb-3 mt-4 ml-4 text-sm font-medium text-black dark:text-white duration-300">Menu Laporan RT/RW</h3>
 
                     {{-- Menu Keuangan --}}
                     <li>
@@ -169,16 +184,6 @@
                             <i class="fa-solid fa-money-bill"></i>
 
                             Keuangan
-                        </a>
-                    </li>
-
-                    {{-- Menu Aspirasi --}}
-                    <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
-                            href="{{ route('admin.aspirasi') }}"
-                            :class="{ 'bg-ungu text-white dark:bg-meta-4': (selected.includes('aspirasi')) }">
-                            <i class="fa-regular fa-lightbulb" width="18"></i>
-                            Aspirasi
                         </a>
                     </li>
 

@@ -52,20 +52,33 @@
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $item->inventaris->nama }}
+                            {{ $item->id_inventaris }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $item->nama }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $item->inventaris->jumlah }}
+                            {{ $item->jumlah }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $item->inventaris->status }}
+                            {{ $item->status }}
                         </td>
-                        <td class="px-6 py-4">
-                            <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                        <td class="px-6 py-4 flex gap-2">
+                            <button class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
                                 <a href="#">
                                     Edit
                                 </a>
                             </button>
+
+                            <form action="{{ route('admin.inventaris.delete', $item->id_inventaris) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button
+                                    onclick="return confirm('Apakah Anda akan menghapus barang ini? : {{ $item->nama }}')"
+                                    type="submit" class="font-medium text-white bg-red-500 p-2 rounded">
+                                    Hapus
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
