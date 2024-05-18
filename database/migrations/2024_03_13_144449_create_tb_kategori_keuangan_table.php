@@ -14,8 +14,9 @@ class CreateTbKategoriKeuanganTable extends Migration
     public function up()
     {
         Schema::create('tb_kategori_keuangan', function (Blueprint $table) {
-            $table->integer('id_kategori')->primary();
+            $table->integer('id_kategori')->autoIncrement();
             $table->string('nama_kategori', 50);
+            $table->string('keterangan', 100);
             $table->timestamps();
         });
     }
