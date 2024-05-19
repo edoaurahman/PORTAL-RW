@@ -16,5 +16,6 @@ class KeuanganModel extends Model
         'nik',
         'jumlah',
         'keterangan',
+        'created_at'
     ];
 }

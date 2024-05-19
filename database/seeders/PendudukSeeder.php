@@ -76,6 +76,14 @@ class PendudukSeeder extends Seeder
                 'no_kk' => '3522110504040002',
                 'nik_kepalakeluarga' => '3522110504040008',
             ],
+            [
+                'no_kk' => '3522110504040003',
+                'nik_kepalakeluarga' => '3522110504040007',
+            ],
+            [
+                'no_kk' => '3522110504040004',
+                'nik_kepalakeluarga' => '3522110504040009',
+            ],
         ];
         KkModel::insert($kk);
         $penduduk =
@@ -106,7 +114,7 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040001',
+                    'no_kk' => '3522110504040003',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '2',
@@ -122,7 +130,7 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040002',
+                    'no_kk' => '3522110504040004',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '3',
