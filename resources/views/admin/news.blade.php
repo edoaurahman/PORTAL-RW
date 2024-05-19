@@ -56,9 +56,9 @@
                             </th>
                             <td class="px-6 py-4">
                                 @if (Storage::disk('public')->exists('images/berita/' . $item->gambar))
-                                    <img src="{{ $item->sampul }}" class="max-w-15" alt="gambar sampul berita">
+                                    <img src="{{ $item->sampul }}" class="max-w-20" alt="gambar sampul berita">
                                 @else
-                                    <img src="{{ asset('assets/images/illustration/images.svg') }}" class="max-w-15"
+                                    <img src="{{ asset('assets/images/illustration/images.svg') }}" class="max-w-20"
                                         alt="placeholder image">
                                 @endif
                             </td>

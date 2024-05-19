@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
             LevelSeeder::class,
             PendudukSeeder::class,
             AkunSeeder::class,
+            KategoriKeuanganSeeder::class,
             KategoriAspirasiSeeder::class,
             BeritaSeeder::class,
+            SettingKeuangan::class,
         ]);
     }
 }
