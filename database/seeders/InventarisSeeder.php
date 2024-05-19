@@ -13,18 +13,18 @@ class InventarisSeeder extends Seeder
     public function run(): void
     {
         $inventaris = [
-            ['nama' => 'Ember', 'jumlah' => 7, 'status' => 'Tersedia'],
-            ['nama' => 'Sabun Tangan', 'jumlah' => 8, 'status' => 'Tersedia'],
-            ['nama' => 'Sikat Toilet', 'jumlah' => 4, 'status' => 'Tersedia'],
-            ['nama' => 'Pengki', 'jumlah' => 6, 'status' => 'Tersedia'],
-            ['nama' => 'Lap Kain', 'jumlah' => 20, 'status' => 'Tersedia'],
-            ['nama' => 'Pengharum Ruangan', 'jumlah' => 2, 'status' => 'Tersedia'],
-            ['nama' => 'Kantong Sampah', 'jumlah' => 15, 'status' => 'Tersedia'],
-            ['nama' => 'Masker', 'jumlah' => 50, 'status' => 'Tersedia'],
-            ['nama' => 'Hand Sanitizer', 'jumlah' => 5, 'status' => 'Tersedia'],
-            ['nama' => 'Cangkul', 'jumlah' => 2, 'status' => 'Tersedia'],
-            ['nama' => 'Gembor', 'jumlah' => 3, 'status' => 'Tersedia'],
-            ['nama' => 'Parang', 'jumlah' => 4, 'status' => 'Tersedia']
+            ['nama' => 'Ember', 'jumlah' => 7],
+            ['nama' => 'Sabun Tangan', 'jumlah' => 8],
+            ['nama' => 'Sikat Toilet', 'jumlah' => 4],
+            ['nama' => 'Pengki', 'jumlah' => 6],
+            ['nama' => 'Lap Kain', 'jumlah' => 20],
+            ['nama' => 'Pengharum Ruangan', 'jumlah' => 2],
+            ['nama' => 'Kantong Sampah', 'jumlah' => 15],
+            ['nama' => 'Masker', 'jumlah' => 50],
+            ['nama' => 'Hand Sanitizer', 'jumlah' => 5],
+            ['nama' => 'Cangkul', 'jumlah' => 2],
+            ['nama' => 'Gembor', 'jumlah' => 3],
+            ['nama' => 'Parang', 'jumlah' => 4]
         ];
 
         InventarisModel::insert($inventaris);
