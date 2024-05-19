@@ -9,12 +9,11 @@ use Illuminate\Http\Request;
 class InventarisController extends Controller
 {
     private $inventaris;
-    
+
     public function index()
     {
-        // $inventaris = new InventarisModel();
         $inventaris = InventarisModel::all();
-        
+
         return view("admin.inventaris", compact("inventaris"));
     }
 
@@ -22,23 +21,11 @@ class InventarisController extends Controller
     {
         // return $nik;
         try {
-            $penduduk = InventarisModel::where('id_inventaris', $id_inventaris)->first();
-            
-            if ($isKepalaKK) {
-                // ambil semua anggota keluarga kecuali kepala keluarga
-                $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
-                // jika anggota keluarga lebih dari 1
-                if ($anggotaKeluarga->count() >= 1) {
-                    return redirect()->route('admin.penduduk')->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.')->withInput();
-                }
-                // jika anggota keluarga hanya 1
-                $penduduk->delete();
-                $isKepalaKK->delete();
-            }
-            $penduduk->delete();
+            $barang = InventarisModel::where('id_inventaris', $id_inventaris)->first();
+            $barang->delete();
         } catch (\Exception $e) {
-            return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
+            return config('app.debug') ? redirect()->route('admin.inventaris')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Barang di Inventaris Gagal di Hapus.')->withInput();
         }
-        return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Dihapus.');
+        return redirect()->route('admin.inventaris')->with('success', 'Barang Berhasil Dihapus.');
     }
 }

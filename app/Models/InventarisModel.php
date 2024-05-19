@@ -13,7 +13,6 @@ class InventarisModel extends Model
     protected $fillable = [
         'nama',
         'jumlah',
-        'status',
     ];
 
     // public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo

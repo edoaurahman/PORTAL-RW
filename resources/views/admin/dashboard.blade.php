@@ -296,7 +296,7 @@
             }
         });
     </script>
-    
+
     <script src="{{ asset('assets/js/calender.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -307,53 +307,52 @@
             calendar.render();
         });
     </script>
-    
-    <script>
-        const ctx = document.getElementById('usiaPenduduk').getContext('2d');
-        const usiaPendudukChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['0-14 tahun', '15-64 tahun', '65+ tahun'],
-        datasets: [{
-            label: 'Pemetaan Usia Penduduk',
-            data: [30, 50, 20], // Data contoh, silakan sesuaikan dengan data sebenarnya
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        let label = context.label || '';
 
-                        if (label) {
-                            label += ': ';
+    <script>
+        const ctxUsia = document.getElementById('usiaPendudukChart').getContext('2d');
+        const usiaPendudukChart = new Chart(ctxUsia, {
+            type: 'doughnut',
+            data: {
+                labels: ['0-14 tahun', '15-64 tahun', '65+ tahun'],
+                datasets: [{
+                    label: 'Pemetaan Usia Penduduk',
+                    data: [30, 50, 20], // Data contoh, silakan sesuaikan dengan data sebenarnya
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
                         }
-                        if (context.parsed !== null) {
-                            label += context.parsed + '%';
-                        }
-                        return label;
                     }
                 }
             }
-        }
-    }
-}); 
-
+        });
     </script>
 </x-layout.admin-layout>
