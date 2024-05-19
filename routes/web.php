@@ -91,6 +91,10 @@ Route::prefix('admin')->group(function () {
                 Route::delete('/', [LevelController::class, 'delete'])->name('admin.level.delete');
             });
         });
+
+        Route::post('/agenda/store', [AdminController::class, 'store_agenda'])->name('admin.agenda.store');
+        Route::put('/agenda/update', [AdminController::class, 'update_agenda'])->name('admin.agenda.update');
+        Route::get('/agenda/delete/{id}', [AdminController::class, 'delete_agenda'])->name('admin.agenda.delete');
     });
 });
 
