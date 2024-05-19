@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BansosController;
+use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\PendudukController;
 use Illuminate\Http\Request;
@@ -20,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/kk/{no_kk}', [PendudukController::class, 'getPendudukByKK']);
 Route::get('/bansos/saw', [BansosController::class, 'method_saw']);
 Route::get('/bansos/ahp', [BansosController::class, 'method_ahp']);
+
+Route::put('/agenda/update', [AdminController::class, 'update_draggable_agenda']);

@@ -206,11 +206,43 @@
         <!-- ====== Kalender Start -->
         <div
             class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
+            @if (session('success'))
+                <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                    role="alert">
+                    <strong class="font-bold">Berhasil!</strong>
+                    <span class="block sm:inline">{{ session('success') }}</span>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                        <svg onclick="this.parentElement.parentElement.style.display='none'"
+                            class="fill-current h-6 w-6 text-green-500" role="button"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Close</title>
+                            <path
+                                d="M14.348 5.652a.5.5 0 0 1 0 .707l-8.485 8.485a.5.5 0 0 1-.707-.707l8.485-8.485a.5.5 0 0 1 .707 0zm-8.485 8.485a.5.5 0 0 1-.707 0l-8.485-8.485a.5.5 0 0 1 .707-.707l8.485 8.485a.5.5 0 0 1 0 .707z" />
+                        </svg>
+                    </span>
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="p-4 mb-4 text-sm bg-red-600 text-white rounded-lg" role="alert">
+                    <span class="font-bold">Data gagal disimpan</span>
+                </div>
+                @foreach ($errors->all() as $error)
+                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                        role="alert">
+                        <span class="font-medium">{!! $error !!}</span>
+                    </div>
+                @endforeach
+            @endif
             <div class="mb-3 gap-4">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Kalender RW 02
                 </h4>
-                <div id="calender"></div>
+                <div id="calendar"></div>
+                <button data-modal-target="add-agenda" data-modal-toggle="add-agenda"
+                    class="mt-5 block text-white bg-gray-800 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-gray-800 dark:focus:ring-blue-800"
+                    type="button">
+                    Tambah Agenda
+                </button>
             </div>
         </div>
 
@@ -249,7 +281,8 @@
             </div>
         </div>
         <!-- ====== UMKM End -->
-
+        <x-partials.admin.agenda.add-agenda />
+        <x-partials.admin.agenda.edit-agenda />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -297,12 +330,62 @@
         });
     </script>
 
-    <script src="{{ asset('assets/js/calender.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/calender.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calender');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
+            let calendarEl = document.getElementById('calendar');
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                timeZone: 'Asia/Jakarta',
+                locale: 'id',
+                events: @json($agenda),
+                editable: true,
+                headerToolbar: {
+                    start: 'dayGridMonth',
+                    center: 'title',
+                    end: 'prev,next'
+                },
+                customButtons: {
+                    addEvent: {
+                        text: 'Tambah Agenda',
+                        click: function() {
+                            document.getElementById('add-agenda').classList.add('block');
+                        }
+                    },
+                },
+                eventClick: function(info) {
+                    info.jsEvent.preventDefault(); // don't let the browser navigate
+                    Alpine.store('agenda').id = info.event.id;
+                    Alpine.store('agenda').title = info.event.title;
+                    Alpine.store('agenda').deskripsi = info.event.extendedProps.deskripsi;
+                    Alpine.store('agenda').start = info.event.startStr;
+                    Alpine.store('agenda').end = info.event.endStr;
+
+                    // call alpine toggle agenda modal
+                    Alpine.store('agenda').toggle();
+                },
+                eventDrop: function(info) {
+                    if (!confirm("Apakah Anda yakin ingin memindahkan agenda ini?")) {
+                        info.revert();
+                        return;
+                    }
+                    const data = {
+                        id: info.event.id,
+                        start: info.event.startStr,
+                        end: info.event.endStr
+                    };
+                    fetch('/api/agenda/update', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    }).then(response => response.json()).then(data => {
+                        // console.log(data);
+                    }).catch(error => {
+                        console.error('Error:', error);
+                    });
+                },
             });
             calendar.render();
         });
@@ -356,3 +439,20 @@
         });
     </script>
 </x-layout.admin-layout>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('agenda', {
+            on: false,
+            id: '',
+            title: '',
+            deskripsi: '',
+            start: '',
+            end: '',
+
+            toggle() {
+                this.on = !this.on
+            }
+        })
+    })
+</script>
