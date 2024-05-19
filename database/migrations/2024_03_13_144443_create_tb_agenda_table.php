@@ -14,9 +14,11 @@ class CreateTbAgendaTable extends Migration
     public function up()
     {
         Schema::create('tb_agenda', function (Blueprint $table) {
-            $table->integer('id_agenda')->primary();
-            $table->string('judul', 100);
+            $table->integer('id')->autoIncrement();
+            $table->string('title', 100);
             $table->text('deskripsi');
+            $table->datetime('start');
+            $table->datetime('end');
             $table->string('author', 16);
             $table->timestamps();
 

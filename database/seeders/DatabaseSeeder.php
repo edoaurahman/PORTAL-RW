@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             KategoriAspirasiSeeder::class,
             BeritaSeeder::class,
             SettingKeuangan::class,
+            AgendaSeeder::class,
         ]);
     }
 }
