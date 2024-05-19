@@ -42,7 +42,7 @@ Route::get('/agenda', function () {
 })->name('user.agenda');
 
 Route::get('/umkm', function () {
-    return view('user.umkm.index');
+    return view('user.UMKM.index');
 })->name('user.umkm');
 
 // Layanan route
