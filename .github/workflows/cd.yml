@@ -20,6 +20,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            whoami
             cd /home/diy-projects.my.id/portal-rw.diy-projects.my.id
-            ls -la
+            npm i
+            npm run build
