@@ -1,0 +1,26 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy to production using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/diy-projects.my.id/portal-rw.diy-projects.my.id
+            git pull origin dev
+            git status
+            npm install
+            npm run build
