@@ -21,3 +21,5 @@ jobs:
           port: 22
           script: |
             whoami
+            cd /home/diy-projects.my.id/portal-rw.diy-projects.my.id
+            ls -la
