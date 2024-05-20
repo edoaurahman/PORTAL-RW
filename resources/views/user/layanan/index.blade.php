@@ -232,15 +232,15 @@
         </div>
     </section>
 
-    <section id="tutorial" class=" max-w-6xl mx-auto font-sans pb-12 pt-[50px] mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
+    <section id="tutorial" class=" max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
         <div class=" items-center justify-between">
             <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Cara Menggunakan Layanan Pak RW</h5>
             <h1 class="leading-loose text-white dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro necessitatibus excepturi repellendus est mollitia iusto ea, tenetur, reprehenderit expedita enim! Beatae, veniam. Doloribus officiis totam culpa. Quibusdam, delectus hic!
-            </h1>
-            <div class="text-base leading-loose text-white dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro necessitatibus excepturi repellendus est mollitia iusto ea, tenetur, reprehenderit expedita enim! Beatae, veniam. Doloribus officiis totam culpa. Quibusdam, delectus hic!
-            </div>
+                1. Jika Layanan tersebut berupa surat, maka tahap pertama adalah mendowload surat tersebut. <br>
+                2. Surat yang membutuhkan tanda tangan RT/RW, sudah terlegalisir. <br>
+                3. Setelah di download, isi data-data yang diperlukan, baik diedit atau secara manual. <br>
+                4. setelah berbentuk hard file, antar kepada RW untuk diproses lebih lanjut.
+            </h1>   
         </div>
     </section>
 

@@ -249,61 +249,28 @@
             <div class="flex flex-col gap-y-10">
 
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-white font-bold text-5xl leading-tight">Layanan Bersama
+                    <h1 class="text-white font-bold text-3xl leading-tight">Kirimkan Aspirasimu!    
                     </h1>
                     <div class="text-base leading-loose text-white">
-                        sebuah layanan berupa template form yang nantinya membantu
-                        setiap proses pelayanan bersama RW
+                    memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas layanan publik dan mendukung transparansi serta akuntabilitas.
                     </div>
                 </div>
-                <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-kuning text-white py-4 px-10 rounded-full font-semibold">Selengkapnya
-                    </a>
-                </div>
 
-                <div class="text-black bg-kuning font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600">
-                    <label for="email" class="block mb-2 text-2xl font-medium dark:text-gray-900 text-white">kirimkan
-                        aspirasimu</label>
+
+
+            </div>
+            <div class="grid ">
+                <div class="">
+                    <!-- <label for="email" class="block mb-2 text-2xl font-medium dark:text-gray-900 text-white">kirimkan -->
+                        <!-- aspirasimu</label> -->
 
                     <form class="max-w-sm">
                         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="tulis aspirasi disini..."></textarea>
                     </form>
                     <div>
-                        <button type="submit" class=" my-2 text-white bg-ungu hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
+                        <button type="submit" class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
                             aspirasi</button>
 
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid grid-cols-2 gap-x-5 gap-y-5">
-                <div class="group closing-card-feature flex flex-col justify-center bg-purple-400 hover:bg-black1 p-5 rounded-2xl gap-y-5">
-                    <img class="max-w-30 " src="assets/images/illustration/pindahMasuk.png"></img>
-                    <div class="flex flex-col items-center">
-                        <h3 class="font-bold text-lg text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-100">Gunakan Layanan</a>
-                    </div>
-                </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-purple-400 hover:bg-black1 p-5 rounded-2xl gap-y-5">
-                    <img class="max-w-30" src="assets/images/illustration/pindahMasuk.png"></img>
-                    <div class="flex flex-col items-center">
-                        <h3 class="font-bold text-lg text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-100">Gunakan Layanan</a>
-                    </div>
-                </div>
-
-                <div class="group closing-card-feature flex flex-col justify-center bg-purple-400 hover:bg-black1 p-5 rounded-2xl gap-y-5">
-                    <img class="max-w-30" src="assets/images/illustration/pindahMasuk.png"></img>
-                    <div class="flex flex-col items-center">
-                        <h3 class="font-bold text-lg text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-100">Gunakan Layanan</a>
-                    </div>
-                </div>
-                <div class="group closing-card-feature flex flex-col justify-center bg-purple-400 hover:bg-black1 p-5 rounded-2xl gap-y-5">
-                    <img class="max-w-30" src="assets/images/illustration/pindahMasuk.png"></img>
-                    <div class="flex flex-col items-center">
-                        <h3 class="font-bold text-lg text-white">Perpindahan Penduduk</h3>
-                        <a href="#" class="group-hover:opacity-100 opacity-0 text-base font-semibold text-gray-100">Gunakan Layanan</a>
                     </div>
                 </div>
             </div>
