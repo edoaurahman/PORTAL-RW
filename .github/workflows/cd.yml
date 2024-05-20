@@ -21,5 +21,8 @@ jobs:
           port: 22
           script: |
             cd /home/diy-projects.my.id/portal-rw.diy-projects.my.id
-            npm i
+            export ASDF_DATA_DIR=~/.asdf
+            source ~/.asdf/asdf.sh
+            git pull origin dev
+            npm install
             npm run build
