@@ -45,6 +45,10 @@ Route::get('/umkm', function () {
     return view('user.UMKM.index');
 })->name('user.umkm');
 
+Route::get('/inventaris', function () {
+    return view('user.inventaris.index');
+})->name('user.inventaris');
+
 // Layanan route
 Route::get('/layanan', function () {
     return view('user.layanan.index');
