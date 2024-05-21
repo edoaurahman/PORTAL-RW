@@ -74,8 +74,13 @@ Route::prefix('admin')->group(function () {
 
         Route::prefix('keuangan')->group(function () {
             Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
+            Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
             Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
             Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
+            Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+            Route::get('/riwayat', [KeuanganController::class, 'riwayat'])->name('admin.keuangan.riwayat');
+            Route::get('/{no_kk}', [KeuanganController::class, 'show'])->name('admin.keuangan.detail');
+            Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
         });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
