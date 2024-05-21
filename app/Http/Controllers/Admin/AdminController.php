@@ -45,7 +45,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Agenda Gagal Ditambahkan.')->withInput();
         }
-        return redirect()->route('admin.dashboard')->with('success', 'Agenda Berhasil Ditambahkan.');
+        return redirect()->route('admin.dashboard', '#kalender')->with('success', 'Agenda Berhasil Ditambahkan.');
     }
 
     public function update_agenda(Request $request)
@@ -71,7 +71,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Agenda Gagal Diubah.')->withInput();
         }
-        return redirect()->route('admin.dashboard')->with('success', 'Agenda Berhasil Diubah.');
+        return redirect()->route('admin.dashboard', '#kalender')->with('success', 'Agenda Berhasil Diubah.');
     }
 
     public function delete_agenda($id)
@@ -82,6 +82,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Agenda Gagal Dihapus.')->withInput();
         }
-        return redirect()->route('admin.dashboard')->with('success', 'Agenda Berhasil Dihapus.');
+        return redirect()->route('admin.dashboard', '#kalender')->with('success', 'Agenda Berhasil Dihapus.');
+
     }
 }

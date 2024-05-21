@@ -233,7 +233,7 @@
                     </div>
                 @endforeach
             @endif
-            <div class="mb-3 gap-4">
+            <section class="mb-3 gap-4" id="kalender">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Kalender RW 02
                 </h4>
@@ -243,7 +243,7 @@
                     type="button">
                     Tambah Agenda
                 </button>
-            </div>
+            </section>
         </div>
 
         <!-- ====== Kalender End -->
@@ -330,8 +330,8 @@
         });
     </script>
 
-    {{-- <script src="{{ asset('assets/js/calender.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <script src="{{ asset('assets/js/calender.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let calendarEl = document.getElementById('calendar');
@@ -341,9 +341,9 @@
                 events: @json($agenda),
                 editable: true,
                 headerToolbar: {
-                    start: 'dayGridMonth',
+                    start: 'prevYear,prev',
                     center: 'title',
-                    end: 'prev,next'
+                    end: 'next,nextYear'
                 },
                 customButtons: {
                     addEvent: {
