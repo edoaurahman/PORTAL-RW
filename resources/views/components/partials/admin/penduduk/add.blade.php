@@ -1,6 +1,5 @@
 <!-- Main modal Add Penduduk -->
 <div>
-
     <form action="{{ route('admin.penduduk.store') }}" method="post" enctype="multipart/form-data" x-data="{ isKepalaKK: false }">
         @csrf
         <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" x-log="isKepalaKK"

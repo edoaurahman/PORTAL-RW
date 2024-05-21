@@ -1,5 +1,5 @@
 <x-layout.admin-layout>
-    <div class="relative">
+    <div class="relative" x-data="bansos">
 
         <!-- Start Header Content -->
         <div class="mb-5">
@@ -18,12 +18,30 @@
         <div class="flex justify-between pb-5">
             <h1> </h1>
             <!-- Modal toggle -->
-            <button data-modal-target="add-penduduk" data-modal-toggle="add-penduduk"
+            <button data-modal-target="add-bansos" data-modal-toggle="add-bansos"
                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
-                Tambah Penduduk
+                Tambah Penerima Bansos
             </button>
         </div>
+
+        <ul
+            class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 p-5 bg-white rounded my-5">
+            <li class="me-2">
+                <a href="#"
+                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-blue-600 dark:hover:bg-gray-800 dark:hover:text-white"
+                    :class="{ 'text-white bg-blue-600': (method === 'SAW') }" @click="toggle('SAW')">Metode
+                    SAW</a>
+            </li>
+            <li class="me-2">
+                <a href="#"
+                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-blue-600 dark:hover:bg-gray-800 dark:hover:text-white"
+                    :class="{ 'text-white bg-blue-600': (method === 'AHP') }" @click="toggle('AHP')">Metode AHP</a>
+            </li>
+        </ul>
+
+
+
         @if (session('success'))
             <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                 role="alert">
@@ -51,74 +69,147 @@
                 </div>
             @endforeach
         @endif
-        <!-- Start Body Content -->
-        <div class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-lg">
+
+        <!-- SAW -->
+        <div x-show="method == 'SAW'" class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
-                            Nama
+                            Rank
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            NIK
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Tagihan
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Alamat
+                            No KK
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Action
+                            Gaji
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Jumlah Tanggungan
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Luas Tanah
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Kapasistas Listrik
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Jumlah Kendaraan
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Nilai Total
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($penduduk as $item)
+                    @foreach ($saw as $item)
                         <tr
                             class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                <div>{{ $item->nama }}</div>
+                                <div>{{ $loop->iteration }}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div>{{ $item['no_kk'] }}</div>
                             </td>
                             <td class="px-6 py-4 ">
-                                {{ $item->nik }}
+                                {{ $item['gaji'] }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->jenis_kelamin }}
+                                {{ $item['jumlah_tanggungan'] }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
+                                {{ $item['luas_tanah'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['kapasitas_listrik'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['jumlah_kendaraan'] }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <a href="#">
-                                    <button class="font-medium text-white bg-green-400 p-2  rounded">
-                                        Detail
-                                    </button>
-                                </a>
-                                <button onclick="" data-modal-target="edit-penduduk"
-                                    data-modal-toggle="edit-penduduk"
-                                    class="font-medium text-white bg-yellow-300 p-2  rounded">
-                                    Edit
-                                </button>
-
-                                <form action="" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button
-                                        onclick="return confirm('Apakah Anda akan menghapus data dengan Nik : {{ $item->nik }}')"
-                                        type="submit" class="font-medium text-white bg-red-500 p-2 rounded">
-                                        Hapus
-                                    </button>
-                                </form>
+                                {{ $item['nilai_total'] }}
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="mt-5">
-            {{ $penduduk->links() }}
+        <!-- SAW -->
+        <!-- AHP -->
+        <div x-show="method == 'AHP'" class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr class="whitespace-nowrap">
+                        <th scope="col" class="px-6 py-3">
+                            Rank
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            No KK
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Gaji
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Jumlah Tanggungan
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            Luas Tanah
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Kapasistas Listrik
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Jumlah Kendaraan
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Nilai Total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($ahp as $item)
+                        <tr
+                            class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                <div>{{ $loop->iteration }}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div>{{ $item['no_kk'] }}</div>
+                            </td>
+                            <td class="px-6 py-4 ">
+                                {{ $item['gaji'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['jumlah_tanggungan'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['luas_tanah'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['kapasitas_listrik'] }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item['jumlah_kendaraan'] }}
+                            </td>
+                            <td class="px-6 py-4 flex gap-2">
+                                {{ $item['nilai_total'] }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-        <!-- End Body Content -->
+        <!-- AHP -->
     </div>
+    <x-partials.admin.bansos.add-bansos />
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('bansos', () => ({
+                method: 'SAW',
+                toggle(e) {
+                    this.method = e
+                }
+            }))
+        })
+    </script>
 </x-layout.admin-layout>
