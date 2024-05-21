@@ -202,7 +202,13 @@
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/keuangan') }"
-                                        href="{{ route('admin.keuangan') }}">Pembayaran
+                                        href="{{ route('admin.keuangan') }}">Keuangan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
+                                        :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/keuangan/pembayaran') }"
+                                        href="{{ route('admin.keuangan.pembayaran') }}">Pembayaran
                                     </a>
                                 </li>
                                 <li>
