@@ -21,7 +21,7 @@
     <div class="min-h-screen">
         <main class="p-8">
             <div class="space-y-8">
-                <div class="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
+                <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
                     <div class="flex items-center space-x-4">
                         <img src="https://placehold.co/200x100" alt="Terop" class="w-64 h-34 rounded-lg">
                         <div>
@@ -44,7 +44,7 @@
                         <button class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
                     </div>
                 </div>
-                <div class="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
+                <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
                     <div class="flex items-center space-x-4">
                         <img src="https://placehold.co/200x100" alt="Kursi" class="w-64 h-34 rounded-lg">
                         <div>
