@@ -158,8 +158,8 @@
                 </div>
 
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Explore
-                        More</a>
+                    <a href="{{ route('user.agenda') }}" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
+                        Selengkapnya</a>
                     
                 </div>
             </div>

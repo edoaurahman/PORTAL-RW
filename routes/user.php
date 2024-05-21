@@ -38,7 +38,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('/agenda', function () {
-    return view('user.berita.riwayatBerita');
+    return view('user.agenda.index');
 })->name('user.agenda');
 
 Route::get('/umkm', function () {
