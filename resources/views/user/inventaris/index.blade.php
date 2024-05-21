@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/avatarPakRW.png') }}" alt="" class=" max-w-100">
+                <img src="{{ asset('assets/images/illustration/nyilih.png') }}" alt="" class=" max-w-100">
             </div>
         </div>
     </section>
