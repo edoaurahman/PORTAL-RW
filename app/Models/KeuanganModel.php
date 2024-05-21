@@ -13,9 +13,19 @@ class KeuanganModel extends Model
     protected $primaryKey = 'id_keuangan';
     protected $fillable = [
         'id_kategori',
-        'nik',
+        'no_kk',
         'jumlah',
         'keterangan',
         'created_at'
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(KategoriKeuanganModel::class, 'id_kategori', 'id_kategori');
+    }
+
+    public function kk()
+    {
+        return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
+    }
 }

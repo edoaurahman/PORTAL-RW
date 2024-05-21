@@ -16,12 +16,10 @@ class CreateTbKeuanganTable extends Migration
         Schema::create('tb_keuangan', function (Blueprint $table) {
             $table->integer('id_keuangan')->autoIncrement();
             $table->integer('jumlah');
-            $table->string('nik', 16);
-            $table->integer('id_kategori');
+            $table->string('no_kk', 16);
             $table->timestamps();
 
-            $table->foreign('nik', 'tb_keuangan_ibfk_1')->references('nik')->on('tb_penduduk');
-            $table->foreign('id_kategori', 'tb_keuangan_ibfk_2')->references('id_kategori')->on('tb_kategori_keuangan');
+            $table->foreign('no_kk', 'tb_keuangan_ibfk_1')->references('no_kk')->on('tb_kk');
         });
     }
 
