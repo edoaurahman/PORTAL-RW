@@ -46,7 +46,21 @@
 </x-layout.user-layout>
 <script>
     $(document).ready(function() {
-        $('#summernote').summernote();
+        $('#summernote').summernote({
+            toolbar: [
+                ['font', ['fontsize', 'bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            height: 500,
+            lineHeights: ['0.2', '0.3', '0.4', '0.5', '0.6', '0.8', '1.0', '1.2', '1.4', '1.5', '2.0',
+                '3.0'
+            ]
+
+        });
     });
 
     document.getElementById('gambar').addEventListener('change', function(event) {
