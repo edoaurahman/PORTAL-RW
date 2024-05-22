@@ -21,54 +21,38 @@
         <div class="min-h-screen">
             <main class="p-8">
                 <div class="space-y-8">
+                    @foreach ($inventaris as $item)
+
                     <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
                         <div class="flex items-center space-x-4">
-                            <img src="https://placehold.co/200x100" alt="Terop" class="w-64 h-34 rounded-lg">
+                            <img src="{{ $item->getImage() }}" alt="Terop" class="w-64 h-34 rounded-lg">
                             <div>
-                                <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">TEROP</h3>
+                                <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">{{ $item->nama }}</h3>
                                 <div class="flex space-x-4 mt-2">
                                     <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Jumlah</span>
+                                        <span class="block text-zinc-500 dark:text-zinc-400">{{ $item->jumlah }}</span>
                                         <span class="block text-xl font-bold text-zinc-900 dark:text-white">1</span>
                                     </div>
-                                    <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Kondisi</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">Baik</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Status</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">Tersedia</span>
-                                    </div>
                                 </div>
                             </div>
-                            <button class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
+                            <button data-modal-target="pinjam-inventaris" data-modal-toggle="pinjam-inventaris" onclick="showpinjam({{$item}})" class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
                         </div>
                     </div>
-                    <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
-                        <div class="flex items-center space-x-4">
-                            <img src="https://placehold.co/200x100" alt="Kursi" class="w-64 h-34 rounded-lg">
-                            <div>
-                                <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">KURSI</h3>
-                                <div class="flex space-x-4 mt-2">
-                                    <div class="text-center ">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Jumlah</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">24</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Kondisi</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">Baik</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">Status</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">digowo abid</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </main>
         </div>
     </section>
+    <section id="tutorial" class=" max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
+        <div class=" items-center justify-between">
+            <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Mekanisme Peminjaman</h5>
+            <h1 class="leading-loose text-white dark:text-white">
+                1. Jika Layanan tersebut berupa surat, maka tahap pertama adalah mendowload surat tersebut. <br>
+                2. Surat yang membutuhkan tanda tangan RT/RW, sudah terlegalisir. <br>
+                3. Setelah di download, isi data-data yang diperlukan, baik diedit atau secara manual. <br>
+                4. setelah berbentuk hard file, antar kepada RW untuk diproses lebih lanjut.
+            </h1>   
+        </div>
+    </section>
+    <x-partials.user.inventaris.pinjam/>
 </x-layout.user-layout>

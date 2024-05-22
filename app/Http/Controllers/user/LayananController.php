@@ -13,6 +13,4 @@ class LayananController extends Controller
         $layanan = LayananModel::all();
         return view('user.layanan.index', compact('layanan'));
     }
-
-    
 }

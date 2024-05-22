@@ -12,11 +12,13 @@ class InventarisModel extends Model
     protected $primaryKey = 'id_inventaris';
     protected $fillable = [
         'nama',
+        'image',
         'jumlah',
     ];
 
-    // public function penduduk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    // {
-    //     return $this->belongsTo(PendudukModel::class, 'id_alamat', 'id_alamat');
-    // }
+    public function getImage(): string
+    {
+        return asset('storage/inventaris/' . $this->image);
+    }
+
 }

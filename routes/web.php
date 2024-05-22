@@ -66,6 +66,7 @@ Route::prefix('admin')->group(function () {
             Route::put('/status', [BansosController::class, 'status'])->name('admin.bansos.status');
         });
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
+        
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
             Route::delete('/{id_inventaris}', [InventarisController::class, 'destroy'])->name('admin.inventaris.delete');

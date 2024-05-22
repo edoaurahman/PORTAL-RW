@@ -1,30 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user;
 
 
 use App\Http\Controllers\Controller;
 use App\Models\InventarisModel;
+use App\Models\PeminjamanModel;
 use Illuminate\Http\Request;
 
 class InventarisController extends Controller
 {
     public function index()
-    {
-        // Mengambil semua data inventaris
+    {        
         $inventaris = InventarisModel::all();
-        
-        // Mengirimkan data ke view
         return view('user.inventaris.index', compact('inventaris'));
     }
 
-    public function pinjam($id)
+    public function pinjam(Request $request)
     {
-        $item = InventarisModel::findOrFail($id);
-        if ($item->status == 'tersedia') {
-            $item->status = 'dipinjam';
-            $item->save();
-        }
-        return redirect('/inventaris');
+        $inventaris = new PeminjamanModel();
+        $inventaris->id_inventaris = $request->id_inventaris;
+        $inventaris->jumlah = $request->jumlah;
+        $inventaris->nik = auth()->user()->nik;
+        $inventaris->status = 'pending';
+        $inventaris->save();
+        return redirect()->route('user.inventaris')->with('success', 'Barang berhasil dipinjam');
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\user\InventarisController;
 use App\Http\Controllers\user\LayananController;
+
+
 use App\Http\Controllers\user\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\PendudukController;
@@ -46,9 +49,12 @@ Route::get('/umkm', function () {
     return view('user.UMKM.index');
 })->name('user.umkm');
 
-Route::get('/inventaris', function () {
-    return view('user.inventaris.index');
-})->name('user.inventaris');
+// Route::get('/inventaris', function () {
+//     return view('user.inventaris.index');
+// })->name('user.inventaris');
+
+Route::get('/inventaris',[InventarisController::class, 'index'])->name('user.inventaris');
+Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam');
 
 // Layanan route
 Route::get('/layanan',[LayananController::class, 'index'])->name('user.layanan');
