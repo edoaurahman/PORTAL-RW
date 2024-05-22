@@ -1,18 +1,15 @@
 <x-layout.user-layout>
     <section class="max-w-6xl mx-auto font-sans">
-        <div class="header bg-contain bg-no-repeat relative my-8 mx-auto h-[29vw]"
-            style="background-image: url(assets/Images/umkm/header_img.png);">
+        <div class="header bg-cover rounded-xl bg-no-repeat relative my-8 mx-auto h-[29vw]"
+            style="background-image: url(assets/Images/illustration/mieayam.jpg);">
             <div
-                class="header-content absolute flex flex-col items-start gap-6 max-w-[50%] bottom-[10%] left-[6vw] animate-fadein3s">
-                <h2 class="font-medium text-white text-7xl">Order your favorite foot here</h2>
-                <p class="text-sm text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
+                class="header-content absolute flex flex-col items-end gap-6 max-w-[50%] bottom-[10%] right-[6vw] animate-fadein3s">
+                <h2 class="font-medium text-right text-white text-7xl">Order your favorite food here</h2>
+                <p class="text-sm text-right text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
                     accusamus odit
-                    aperiam numquam
-                    saepe dolor, officia ipsam quas rerum porro perspiciatis quis voluptates temporibus esse distinctio?
-                    In
-                    perferendis dicta harum.</p>
-                <button class="border-none text-[#747474] font-medium py-3 px-6 bg-white text-sm rounded-[50px]"> View
-                    Menu</button>
+                    aperiam numquam</p>
+                <button class="border-none items-end text-[#747474] font-medium py-3 px-6 bg-white text-sm rounded-[50px]">Detail
+                    Showcase</button>
             </div>
         </div>
     </section>
@@ -37,12 +34,9 @@
 
     <section class="max-w-6xl mx-auto font-sans">
         <div class="explore-menu flex flex-col gap-5">
-            <h1 class="text-[#262626] text-2xl font-semibold">Explore our menu</h1>
+            <h1 class="text-[#262626] text-2xl font-semibold">Kuliner UMKM</h1>
             <p class="explore-menu-text
-                max-w-[60%] ">Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Tempore
-                accusamus,mollitia reiciendis quod, molestiae atque voluptas ea quo nesciunt placeat error temporibus
-                veniam sunt perspiciatis, nulla nobis aliquam laudantium iure!</p>
+                max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2, tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan favorit Anda dan nikmati kelezatan kuliner Malang dalam genggaman tangan</p>
             <div
                 class="explore-menu-list flex justify-between items-center gap-8 text-center my-5 mx-0 overflow-x-scroll">
                 <div class="explore-menu-item pb-5">

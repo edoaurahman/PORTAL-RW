@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-blue-900 sticky top-0 z-99999">
+<nav class="bg-white border-gray-200 dark:bg-purple-900 sticky top-0 z-99999">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
