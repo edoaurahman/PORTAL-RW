@@ -84,6 +84,8 @@ Route::prefix('admin')->group(function () {
         });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::post('/layanan/store', [LayananController::class, 'store'])->name('admin.layanan.store');
+        Route::put('/layanan/edit', [LayananController::class, 'edit'])->name('admin.layanan.edit');
+        Route::delete('/layanan/delete/{id_surat}', [LayananController::class, 'delete'])->name('admin.layanan.delete');
 
 
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
