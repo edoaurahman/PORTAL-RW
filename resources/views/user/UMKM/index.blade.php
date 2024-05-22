@@ -5,10 +5,12 @@
             <div
                 class="header-content absolute flex flex-col items-end gap-6 max-w-[50%] bottom-[10%] right-[6vw] animate-fadein3s">
                 <h2 class="font-medium text-right text-white text-7xl">Order your favorite food here</h2>
-                <p class="text-sm text-right text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
+                <p class="text-sm text-right text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Praesentium,
                     accusamus odit
                     aperiam numquam</p>
-                <button class="border-none items-end text-[#747474] font-medium py-3 px-6 bg-white text-sm rounded-[50px]">Detail
+                <button
+                    class="border-none items-end text-[#747474] font-medium py-3 px-6 bg-white text-sm rounded-[50px]">Detail
                     Showcase</button>
             </div>
         </div>
@@ -36,7 +38,9 @@
         <div class="explore-menu flex flex-col gap-5">
             <h1 class="text-[#262626] text-2xl font-semibold">Kuliner UMKM</h1>
             <p class="explore-menu-text
-                max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2, tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan favorit Anda dan nikmati kelezatan kuliner Malang dalam genggaman tangan</p>
+                max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2,
+                tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan
+                favorit Anda dan nikmati kelezatan kuliner Malang dalam genggaman tangan</p>
             <div
                 class="explore-menu-list flex justify-between items-center gap-8 text-center my-5 mx-0 overflow-x-scroll">
                 <div class="explore-menu-item pb-5">
@@ -99,7 +103,7 @@
                         src="assets/Images/umkm/menu_4.png" alt="">
                     <p class="mt-3 text-gray-500 text-base cursor-pointer">Food 10</p>
                 </div>
-            </div>
+            </div> --}}
             <hr class="my-2 mx-0 h-1 bg-slate-200 border-none">
         </div>
     </section>

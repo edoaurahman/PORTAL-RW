@@ -300,7 +300,7 @@ export default {
         'spin-3': 'spin 3s linear infinite',
 
         // tambahkan animasi fadein-3s
-        fadein3s: 'fadeIn 3s ease-in-out',
+        fadein3s: 'fadeIn 2s ease-in-out',
       },
     },
   },
