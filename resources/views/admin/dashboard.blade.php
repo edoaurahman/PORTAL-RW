@@ -403,19 +403,23 @@
         const usiaPendudukChart = new Chart(ctxUsia, {
             type: 'doughnut',
             data: {
-                labels: ['0-14 tahun', '15-64 tahun', '65+ tahun'],
+                labels: ['0-5 tahun', '5-12 tahun', '13-19 tahun', '20-60 tahun', '60+ tahun'],
                 datasets: [{
                     label: 'Pemetaan Usia Penduduk',
-                    data: [30, 50, 20], // Data contoh, silakan sesuaikan dengan data sebenarnya
+                    data: [20, 16, 30, 50, 25], // Data contoh, silakan sesuaikan dengan data sebenarnya
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
+                        '#e0cffc',
+                        '#cbaffa',
+                        '#985ef6',
+                        '#640EF1',
+                        '#270551'
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)'
+                        'black',
+                        'black',
+                        'black',
+                        'black',
+                        'black'
                     ],
                     borderWidth: 1
                 }]
