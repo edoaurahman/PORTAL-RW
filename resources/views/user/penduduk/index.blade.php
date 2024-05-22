@@ -2,17 +2,12 @@
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between gap-x-20">
             <div class="flex-1 flex-col gap-y-10 space-y-5">
-                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
-                    <i class="fa-solid fa-globe"></i>
-                    <p class=" text-base font-semibold text-black2">
-                        Profil data-data penduduk RT {{ $user->penduduk->alamat->rt }}
-                    </p>
-                </div>
+
                 <div class="gap-y-2 flex flex-col space-y-2">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none">Data Seluruh<br>
+                    <h1 class="text-black1 font-bold text-[70px] leading-none dark:text-white">Data Seluruh<br>
                         Penduduk RT {{ $user->penduduk->alamat->rt }}.
                     </h1>
-                    <div class="text-base leading-loose text-black3">
+                    <div class="text-base leading-loose text-black3 dark:text-gray-400">
                         Data seluruh penduduk RT {{ $user->penduduk->alamat->rt }} adalah fondasi penting dalam
                         perencanaan dan
                         pembangunan wilayah.
@@ -23,7 +18,6 @@
             </div>
 
             <div class="flex flex-row item-center">
-
                 <div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
                     <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
                         <div class="flex items-center">
@@ -79,8 +73,7 @@
 
 
     <section class="tablePenduduk max-w-6xl mx-auto font-sans py-12 relative overflow-x-auto shadow-md sm:rounded-lg">
-        <div
-            class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4  dark:bg-gray-900">
+        <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-10">
             <div>
                 <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction"
                     class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
