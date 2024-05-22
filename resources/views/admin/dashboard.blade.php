@@ -191,7 +191,7 @@
 
         <!-- ====== Usia Penduduk Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-6">
             <div class="mb-3 gap-4">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Pemetaan Usia
@@ -205,7 +205,7 @@
 
         <!-- ====== Kalender Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-6">
             @if (session('success'))
                 <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                     role="alert">
@@ -250,11 +250,11 @@
 
         <!-- ====== UMKM Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
+            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
             <h4 class="mb-2 text-xl font-bold text-black dark:text-white text-center">
                 UMKM
             </h4>
-            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="">
                         <img class="w-full h-50 object-cover rounded-t-sm"
@@ -276,6 +276,13 @@
                         src="{{ asset('assets/images/umkm/food_12.png') }}" alt="UMKM 3">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Ice Cream Mak Cik Edo</h5>
+                    </div>
+                </div>
+                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+                    <img class="w-full h-50 object-cover rounded-t-sm"
+                        src="{{ asset('assets/images/umkm/food_2.png') }}" alt="UMKM 3">
+                    <div class="p-4">
+                        <h5 class="text-lg font-medium mb-1">Salad Pak De Putra</h5>
                     </div>
                 </div>
             </div>
