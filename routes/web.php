@@ -83,6 +83,9 @@ Route::prefix('admin')->group(function () {
             Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
         });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
+        Route::post('/layanan/store', [LayananController::class, 'store'])->name('admin.layanan.store');
+
+
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');

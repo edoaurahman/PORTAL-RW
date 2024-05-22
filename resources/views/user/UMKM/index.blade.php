@@ -1,7 +1,7 @@
 <x-layout.user-layout>
     <section class="max-w-6xl mx-auto font-sans">
         <div class="header bg-cover rounded-xl bg-no-repeat relative my-8 mx-auto h-[29vw]"
-            style="background-image: url(assets/Images/illustration/mieayam.jpg);">
+            style="background-image: url(assets/Images/illustration/mieayam.webp);">
             <div
                 class="header-content absolute flex flex-col items-end gap-6 max-w-[50%] bottom-[10%] right-[6vw] animate-fadein3s">
                 <h2 class="font-medium text-right text-white text-7xl">Order your favorite food here</h2>

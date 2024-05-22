@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\user\LayananController;
 use App\Http\Controllers\user\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\PendudukController;
@@ -50,6 +51,4 @@ Route::get('/inventaris', function () {
 })->name('user.inventaris');
 
 // Layanan route
-Route::get('/layanan', function () {
-    return view('user.layanan.index');
-})->name('user.layanan');
+Route::get('/layanan',[LayananController::class, 'index'])->name('user.layanan');
