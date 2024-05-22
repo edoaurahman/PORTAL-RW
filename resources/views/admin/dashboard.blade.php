@@ -106,7 +106,7 @@
         <!-- ====== Pemetaan Penduduk Start -->
         <div
             class="col-span-12 rounded-sm border border-gray-200 bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-700 dark:bg-gray-800 sm:px-7.5 xl:col-span-8">
-            <div class="flex flex-wrap items-start justify-between gap-4 sm:!flex-nowrap">
+            <div class="flex flex-wrap items-start justify-center gap-4 sm:!flex-nowrap">
                 <div>
                     <h4 class="mb-6 px-7.5 text-xl font-bold text-gray-900 dark:text-white">
                         Pemetaan Penduduk
@@ -122,7 +122,7 @@
         <!-- ====== Usia Penduduk Start -->
         <div
             class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-4">
-            <div class="mb-3 gap-4">
+            <div class="mb-3 gap-4 justify-center">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Pemetaan Usia
                 </h4>
@@ -294,48 +294,61 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const ctx = document.getElementById('myChart');
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
-                datasets: [{
-                    label: 'Total Penduduk',
-                    data: [100, 60, 40],
-                    backgroundColor: '#270551',
-                    borderWidth: 1
-                }, {
-                    label: 'Laki-laki',
-                    data: [55, 35, 20],
-                    backgroundColor: '#640EF1',
-                    borderWidth: 1
-                }, {
-                    label: 'Perempuan',
-                    data: [45, 25, 20],
-                    backgroundColor: '#B186F8',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        labels: ['Total', 'Tetap', 'Pendatang']
+        // Menunggu dokumen selesai dimuat
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fungsi untuk membuat chart
+            function createChart() {
+                const ctx = document.getElementById('myChart');
+    
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
+                        datasets: [{
+                            label: 'Total Penduduk',
+                            data: [100, 60, 40],
+                            backgroundColor: '#270551',
+                            borderWidth: 1
+                        }, {
+                            label: 'Laki-laki',
+                            data: [55, 35, 20],
+                            backgroundColor: '#640EF1',
+                            borderWidth: 1
+                        }, {
+                            label: 'Perempuan',
+                            data: [45, 25, 20],
+                            backgroundColor: '#B186F8',
+                            borderWidth: 1
+                        }]
                     },
-                    y: {
-                        beginAtZero: true
+                    options: {
+                        animation: {
+                            duration: 2000 // Durasi animasi dalam milidetik (contoh: 2000ms = 2 detik)
+                        },
+                        scales: {
+                            x: {
+                                labels: ['Total', 'Tetap', 'Pendatang']
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        maintainAspectRatio: true,
+                        legend: {
+                            labels: {
+                                fontColor: '#000000',
+                                fontSize: 16
+                            }
+                        }
                     }
-                },
-                maintainAspectRatio: true,
-                legend: {
-                    labels: {
-                        fontColor: '#000000',
-                        fontSize: 16
-                    }
-                }
+                });
             }
+    
+            // Panggil fungsi pembuatan chart
+            createChart();
         });
     </script>
+    
 
     <script src="{{ asset('assets/js/calender.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script> --}}
@@ -398,57 +411,69 @@
         });
     </script>
 
-    <script>
-        const ctxUsia = document.getElementById('usiaPendudukChart').getContext('2d');
-        const usiaPendudukChart = new Chart(ctxUsia, {
-            type: 'doughnut',
-            data: {
-                labels: ['0-5 tahun', '5-12 tahun', '13-19 tahun', '20-60 tahun', '60+ tahun'],
-                datasets: [{
-                    label: 'Pemetaan Usia Penduduk',
-                    data: [20, 16, 30, 50, 25], // Data contoh, silakan sesuaikan dengan data sebenarnya
-                    backgroundColor: [
-                        '#e0cffc',
-                        '#cbaffa',
-                        '#985ef6',
-                        '#640EF1',
-                        '#270551'
-                    ],
-                    borderColor: [
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
+<script>
+    // Menunggu dokumen selesai dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        // Fungsi untuk membuat chart
+        function createChartUsia() {
+            const ctxUsia = document.getElementById('usiaPendudukChart').getContext('2d');
+            const usiaPendudukChart = new Chart(ctxUsia, {
+                type: 'doughnut',
+                data: {
+                    labels: ['0-5 tahun', '5-12 tahun', '13-19 tahun', '20-60 tahun', '60+ tahun'],
+                    datasets: [{
+                        label: 'Pemetaan Usia Penduduk',
+                        data: [10, 15, 30, 35, 10], // Data contoh, silakan sesuaikan dengan data sebenarnya
+                        backgroundColor: [
+                            '#e0cffc',
+                            '#cbaffa',
+                            '#985ef6',
+                            '#530cc9',
+                            '#270551'
+                        ],
+                        borderColor: [
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000 // Durasi animasi dalam milidetik (contoh: 2000ms = 2 detik)
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
 
-                                if (label) {
-                                    label += ': ';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
                                 }
-                                if (context.parsed !== null) {
-                                    label += context.parsed + '%';
-                                }
-                                return label;
                             }
                         }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        }
+
+        // Panggil fungsi pembuatan chart
+        createChartUsia();
+    });
+</script>
 </x-layout.admin-layout>
 
 <script>
