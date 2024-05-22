@@ -14,9 +14,10 @@ class CreateTbSuratTable extends Migration
     public function up()
     {
         Schema::create('tb_surat', function (Blueprint $table) {
-            $table->integer('id_surat')->primary();
+            $table->integer('id_surat')->autoIncrement();
             $table->string('nama_surat');
             $table->text('keterangan');
+            $table->string('image');
             $table->string('file', 50);
             $table->string('author', 16)->index();
             $table->timestamps();

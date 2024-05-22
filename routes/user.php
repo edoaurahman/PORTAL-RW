@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\user\LayananController;
 use App\Http\Controllers\user\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\PendudukController;
@@ -38,14 +39,16 @@ Route::get('/profile', function () {
 });
 
 Route::get('/agenda', function () {
-    return view('user.berita.riwayatBerita');
+    return view('user.agenda.index');
 })->name('user.agenda');
 
 Route::get('/umkm', function () {
-    return view('user.umkm.index');
+    return view('user.UMKM.index');
 })->name('user.umkm');
 
+Route::get('/inventaris', function () {
+    return view('user.inventaris.index');
+})->name('user.inventaris');
+
 // Layanan route
-Route::get('/layanan', function () {
-    return view('user.layanan.index');
-})->name('user.layanan');
+Route::get('/layanan',[LayananController::class, 'index'])->name('user.layanan');

@@ -13,8 +13,13 @@ return new class extends Migration {
         Schema::create('tb_bansos', function (Blueprint $table) {
             $table->integer('id_bansos')->autoIncrement();
             $table->string('no_kk', 16)->index();
-            $table->enum('kelayakan_rumah', ['Tidak Layak', 'Layak', 'Sangat Layak']);
-            $table->enum('pendapatan', ['Kurang dari 1 Juta', '1 Juta - 2 Juta', 'Lebih dari 2 Juta']);
+            $table->tinyInteger('gaji');
+            $table->tinyInteger('jumlah_tanggungan');
+            $table->tinyInteger('luas_tanah');
+            $table->tinyInteger('kapasitas_listrik');
+            $table->tinyInteger('jumlah_kendaraan');
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->text('alasan')->nullable();
             $table->timestamps();
 
             $table->foreign('no_kk')->references('no_kk')->on('tb_kk');

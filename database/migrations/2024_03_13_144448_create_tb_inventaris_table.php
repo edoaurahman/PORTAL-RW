@@ -14,10 +14,10 @@ class CreateTbInventarisTable extends Migration
     public function up()
     {
         Schema::create('tb_inventaris', function (Blueprint $table) {
-            $table->integer('id_inventaris')->primary();
+            $table->integer('id_inventaris')->autoIncrement();
             $table->string('nama', 20);
             $table->integer('jumlah');
-            $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
+            // $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
             $table->timestamps();
         });
     }

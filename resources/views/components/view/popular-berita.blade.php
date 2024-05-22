@@ -1,7 +1,7 @@
 <div>
     <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
     <section class="text-gray-600 mt-12 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold">Popular Blogs</h2>
+        <h2 class="text-3xl font-bold">Popular News</h2>
         <div class="container px-5 py-8 mx-auto">
             <div class="flex flex-wrap -m-4">
                 <div class="p-4 md:w-1/3">

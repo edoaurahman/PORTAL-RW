@@ -52,8 +52,7 @@
                 @foreach ($berita as $item)
                     <a class="block rounded w-full lg:flex mb-10" href="{{ route('user.berita.detail', $item->slug) }}">
                         <div class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
-                            style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
-                            title="deit is very important"></div>
+                            style="background-image: url('{{ $item->sampul }}')" title="deit is very important"></div>
                         <div class="bg-white rounded px-4 flex flex-col justify-between leading-normal w-full p-5">
                             <div>
                                 <div class="mt-3 md:mt-0 ">

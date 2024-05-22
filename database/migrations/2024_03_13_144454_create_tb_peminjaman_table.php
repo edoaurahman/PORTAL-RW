@@ -14,9 +14,11 @@ class CreateTbPeminjamanTable extends Migration
     public function up()
     {
         Schema::create('tb_peminjaman', function (Blueprint $table) {
-            $table->integer('id_peminjaman')->primary();
+            $table->integer('id_peminjaman')->autoIncrement();
             $table->integer('id_inventaris');
+            $table->tinyInteger('jumlah');
             $table->string('nik', 16);
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
 
             $table->foreign('id_inventaris', 'tb_peminjaman_ibfk_1')->references('id_inventaris')->on('tb_inventaris');

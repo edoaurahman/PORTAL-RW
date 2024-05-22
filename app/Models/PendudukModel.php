@@ -56,4 +56,9 @@ class PendudukModel extends Model
     {
         return $this->hasMany(BeritaModel::class, 'author', 'nik');
     }
+
+    public function keuangan()
+    {
+        return $this->hasMany(KeuanganModel::class, 'nik', 'nik');
+    }
 }

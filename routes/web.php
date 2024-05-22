@@ -56,11 +56,36 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-        Route::get('/bansos', [BansosController::class, 'index'])->name('admin.bansos');
+        Route::prefix('bansos')->group(function () {
+            Route::get('/', [BansosController::class, 'index'])->name('admin.bansos');
+            Route::post('/store', [BansosController::class, 'store'])->name('admin.bansos.store');
+            Route::get('/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
+            Route::delete('/foto', [BansosController::class, 'destroy_foto_bansos'])->name('admin.bansos.foto.delete');
+            Route::put('/update/{bansos}', [BansosController::class, 'update'])->name('admin.bansos.update');
+            Route::delete('/', [BansosController::class, 'destroy'])->name('admin.bansos.delete');
+            Route::put('/status', [BansosController::class, 'status'])->name('admin.bansos.status');
+        });
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
-        Route::get('/inventaris', [InventarisController::class, 'index'])->name('admin.inventaris');
-        Route::get('/keuangan', [KeuanganController::class, 'index'])->name('admin.keuangan');
+        Route::prefix('inventaris')->group(function () {
+            Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
+            Route::delete('/{id_inventaris}', [InventarisController::class, 'destroy'])->name('admin.inventaris.delete');
+        });
+
+
+        Route::prefix('keuangan')->group(function () {
+            Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
+            Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
+            Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
+            Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
+            Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+            Route::get('/riwayat', [KeuanganController::class, 'riwayat'])->name('admin.keuangan.riwayat');
+            Route::get('/{no_kk}', [KeuanganController::class, 'show'])->name('admin.keuangan.detail');
+            Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
+        });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
+        Route::post('/layanan/store', [LayananController::class, 'store'])->name('admin.layanan.store');
+
+
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
@@ -74,6 +99,10 @@ Route::prefix('admin')->group(function () {
                 Route::delete('/', [LevelController::class, 'delete'])->name('admin.level.delete');
             });
         });
+
+        Route::post('/agenda/store', [AdminController::class, 'store_agenda'])->name('admin.agenda.store');
+        Route::put('/agenda/update', [AdminController::class, 'update_agenda'])->name('admin.agenda.update');
+        Route::get('/agenda/delete/{id}', [AdminController::class, 'delete_agenda'])->name('admin.agenda.delete');
     });
 });
 
