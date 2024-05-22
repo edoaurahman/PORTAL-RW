@@ -25,7 +25,7 @@
                 elit. Tempore
                 accusamus,mollitia reiciendis quod, molestiae atque voluptas ea quo nesciunt placeat error temporibus
                 veniam sunt perspiciatis, nulla nobis aliquam laudantium iure!</p>
-            <div
+            {{-- <div
                 class="explore-menu-list flex justify-between items-center gap-8 text-center my-5 mx-0 overflow-x-scroll">
                 <div class="explore-menu-item pb-5">
                     <img class="w-[7.5vw] min-w-20 rounded-[50%] ease-in duration-300"
@@ -87,7 +87,7 @@
                         src="assets/Images/umkm/menu_4.png" alt="">
                     <p class="mt-3 text-gray-500 text-base cursor-pointer">Food 10</p>
                 </div>
-            </div>
+            </div> --}}
             <hr class="my-2 mx-0 h-1 bg-slate-200 border-none">
         </div>
     </section>
