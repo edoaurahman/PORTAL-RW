@@ -119,9 +119,23 @@
         </div>
         <!-- ====== Pemetaan Penduduk End -->
 
+        <!-- ====== Usia Penduduk Start -->
+        <div
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-4">
+            <div class="mb-3 gap-4">
+                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                    Pemetaan Usia
+                </h4>
+                <!-- Elemen kanvas untuk chart -->
+                <canvas id="usiaPendudukChart"></canvas>
+            </div>
+        </div>
+
+        <!-- ====== Usia Penduduk End -->
+
         <!-- ====== Agenda Start -->
         <div
-            class="col-span-12 rounded-sm border border-gray-200 bg-white py-6 shadow-default dark:border-gray-700 dark:bg-gray-800 xl:col-span-4">
+            class="col-span-12 rounded-sm border border-gray-200 bg-white py-6 shadow-default dark:border-gray-700 dark:bg-gray-800 xl:col-span-6">
             <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white text-center">
                 Agenda RW
             </h4>
@@ -188,20 +202,6 @@
             </div>
         </div>
         <!-- ====== Agenda End -->
-
-        <!-- ====== Usia Penduduk Start -->
-        <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-6">
-            <div class="mb-3 gap-4">
-                <h4 class="text-xl font-bold text-black dark:text-white text-center">
-                    Pemetaan Usia
-                </h4>
-                <!-- Elemen kanvas untuk chart -->
-                <canvas id="usiaPendudukChart"></canvas>
-            </div>
-        </div>
-
-        <!-- ====== Usia Penduduk End -->
 
         <!-- ====== Kalender Start -->
         <div
