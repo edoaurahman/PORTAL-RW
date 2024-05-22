@@ -17,50 +17,54 @@
                         acquisition much user-friendly and boosting up sales.
                     </div>
                 </div>
-                <div class="flex flex-row gap-x-4 items-center">
+                <!-- <div class="flex flex-row gap-x-4 items-center">
                     <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Tanpa
                         Login</a>
                     <a href="#" class="gap-x-2 flex items-center text-ungu font-semibold text-base">
                         <i class="fa-solid fa-message"></i>
                         Unduh Surat
                     </a>
-                </div>
+                </div> -->
             </div>
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/home/illustration.png') }}" alt="" class="h-[550px]">
+                <img src="{{ asset('assets/images/illustration/warga.png') }}" alt="" class="h-[550px]">
             </div>
         </div>
     </section>
 
     <section class="partners max-w-6xl mx-auto font-sans py-12">
         <div class="flex flex-row gap-x-10 items-center justify-center">
-            <div class="iklan-1 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
+            <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl w-30 mx-10">
+                <img src="{{ asset('assets/images/illustration/kotamalang.png') }}" alt="">
             </div>
+            <div class="iklan-3 flex items-center gap-x-3 font-bold text-2xl w-20 mx-20">
+                <img src="{{ asset('assets/images/illustration/polsek.png') }}" alt="">
+            </div>
+            <div class="iklan-4 flex items-center gap-x-3 font-bold text-2xl w-20 mx-20">
+                <img src="{{ asset('assets/images/illustration/jatim.png') }}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="struktur max-w-6xl mx-auto font-sans py-12">
+        
+    <h1 class="text-center font-bold text-6xl leading-tight my-20" >Struktur Kepengurusan RW 2</h1>
+        <div class="flex flex-row gap-x-10 items-center justify-center">
             <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
-            </div>
-            <div class="iklan-3 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
-            </div>
-            <div class="iklan-4 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
-            </div>
-            <div class="iklan-5 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/home/iklan/logo1.png') }}" alt="">
+                <img src="{{ asset('assets/images/illustration/struktur.png') }}" alt="">
             </div>
         </div>
     </section>
 
     <section class="features max-w-6xl mx-auto py-12 font-sans">
-        <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3>
+        <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
             <div class="my-card relative bg-black1 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <div class="z-1 flex flex-col items-start gap-y-8">
                     <i class="fa-solid fa-shield-halved text-5xl text-white"></i>
                     <div class="flex flex-col gap-y-1">
                         <h3 class=" text-2xl font-bold text-white">
-                            RT 001
+                            Kebersihan
                         </h3>
                         <div class="text-base leading-relaxed text-black4">
                             Bpk. Sutrisno <br>
@@ -76,7 +80,7 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        RT 002
+                        Keamanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
                         Bpk. Anang <br>
@@ -88,7 +92,7 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        RT 003
+                        Fasilitas
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
                         Bpk. Edo <br>
@@ -100,7 +104,7 @@
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
-                        RT 004
+                        Layanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
                         Bpk. Jaki <br>
@@ -112,13 +116,14 @@
     </section>
 
     <section class="benefit max-w-6xl mx-auto font-sans py-12">
+        <h1 class="text-center font-bold text-6xl leading-tight" >Agenda</h1>
         <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/home/illustration_2.png') }}" alt="" class="h-[550px]">
+                <img src="{{ asset('assets/images/illustration/kerjabakti.png') }}" alt="" class="h-[550px]">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-5xl leading-tight">Kerja Bakti
+                    <h1 class="text-black1 font-bold text-4xl leading-tight">Kerja Bakti
                         Serentak Seluruh RT
                     </h1>
                     <div class="text-base leading-loose text-black3">
@@ -132,11 +137,10 @@
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
                             <h3 class=" text-2xl font-bold text-black1">
-                                Meningkatnya kebersihan lingkungan
+                                Lokasi
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                Melalui kerja bakti serentak, sampah-sampah dapat dibersihkan secara efektif, menjadikan
-                                lingkungan lebih bersih dan nyaman untuk ditinggali.
+                                Seluruh Wilayah RW 2
                             </div>
                         </div>
                     </div>
@@ -144,23 +148,19 @@
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
                             <h3 class=" text-2xl font-bold text-black1">
-                                Penguatan hubungan sosial
+                                Waktu
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                Melalui kerja bakti, warga memperkuat ikatan sosial dan menciptakan rasa kebersamaan
-                                yang lebih kuat dalam komunitas.
+                                21 Juni 2024
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Explore
-                        More</a>
-                    <a href="#" class="gap-x-2 flex items-center text-ungu font-semibold">
-                        <i class="fa-solid fa-message"></i>
-                        Schedule a Demo
-                    </a>
+                    <a href="{{ route('user.agenda') }}" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
+                        Selengkapnya</a>
+                    
                 </div>
             </div>
         </div>
