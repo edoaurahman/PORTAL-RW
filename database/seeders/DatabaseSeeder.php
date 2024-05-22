@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             BeritaSeeder::class,
             SettingKeuangan::class,
             AgendaSeeder::class,
+            KategoriUMKMSeeder::class,
+            UMKMSeeder::class,
         ]);
     }
 }
