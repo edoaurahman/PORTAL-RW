@@ -17,4 +17,14 @@ class LayananModel extends Model
         'file',
         'author',
     ];
+
+    public function getImage(): string
+    {
+        return asset('storage/layanan/' . $this->image);
+    }
+    public function downloadSurat(): string
+    {
+        return asset('storage/layanan/berkas/' . $this->file);
+    }
+
 }

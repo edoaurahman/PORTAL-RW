@@ -10,7 +10,9 @@ class LayananController extends Controller
 {
     public function index()
     {
-        return view("admin.layanan");
+        
+        $layanan = LayananModel::all();
+        return view('admin.layanan', compact('layanan'));
     }
     public function store(Request $request)
     {
@@ -35,5 +37,5 @@ class LayananController extends Controller
         });
         return redirect()->route('admin.layanan')->with('success', 'Data berhasil ditambahkan');
     }
-    
+
 }
