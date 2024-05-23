@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\AgendaController;
 use App\Http\Controllers\user\InventarisController;
 use App\Http\Controllers\user\LayananController;
 
@@ -41,9 +42,7 @@ Route::get('/profile', function () {
     return view('user.profile');
 });
 
-Route::get('/agenda', function () {
-    return view('user.agenda.index');
-})->name('user.agenda');
+Route::get('/agenda', [AgendaController::class, 'index'])->name('user.agenda');
 
 Route::get('/umkm', function () {
     return view('user.UMKM.index');
@@ -53,8 +52,8 @@ Route::get('/umkm', function () {
 //     return view('user.inventaris.index');
 // })->name('user.inventaris');
 
-Route::get('/inventaris',[InventarisController::class, 'index'])->name('user.inventaris');
+Route::get('/inventaris', [InventarisController::class, 'index'])->name('user.inventaris');
 Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam');
 
 // Layanan route
-Route::get('/layanan',[LayananController::class, 'index'])->name('user.layanan');
+Route::get('/layanan', [LayananController::class, 'index'])->name('user.layanan');
