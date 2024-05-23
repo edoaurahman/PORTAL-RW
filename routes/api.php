@@ -25,4 +25,4 @@ Route::get('/bansos/ahp', [BansosController::class, 'method_ahp']);
 
 Route::put('/agenda/update', [AdminController::class, 'update_draggable_agenda']);
 
-Route::get('/agenda', [AgendaController::class, 'index']);
+Route::post('/agenda', [AgendaController::class, 'index']);
