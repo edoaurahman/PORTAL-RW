@@ -7,7 +7,7 @@ use App\Http\Controllers\user\LayananController;
 
 use App\Http\Controllers\user\BeritaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\user\PendudukController;
+use App\Http\Controllers\User\PendudukController;
 
 
 // menus
