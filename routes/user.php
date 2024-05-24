@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\User\AgendaController;
-use App\Http\Controllers\user\InventarisController;
-use App\Http\Controllers\user\LayananController;
+use App\Http\Controllers\User\InventarisController;
+use App\Http\Controllers\User\LayananController;
 
 
-use App\Http\Controllers\user\BeritaController;
+use App\Http\Controllers\User\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PendudukController;
 
