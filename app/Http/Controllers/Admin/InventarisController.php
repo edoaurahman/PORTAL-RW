@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\InventarisModel;
+use App\Models\PeminjamanModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,14 @@ class InventarisController extends Controller
     //     }
     //     return redirect()->route('admin.inventaris')->with('success', 'Barang Berhasil Dihapus.');
     // }
+    public function updatePeminjaman(Request $request)
+    {
+        $peminjaman = PeminjamanModel::findOrFail($request->id_peminjaman); 
+        $peminjaman->status = $request->status;  
+        $peminjaman->save();
+        return redirect()->route('admin.peminjaman')->with('success', 'Status peminjaman berhasil diubah');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -69,10 +78,10 @@ class InventarisController extends Controller
     public function delete($id_inventaris)
     {
         $inventaris = InventarisModel::findOrFail($id_inventaris);
-        unlink(storage_path('app/public/layanan/' . $inventaris->image));
-        unlink(storage_path('app/public/layanan/berkas/' . $inventaris->file));
+        unlink(storage_path('app/public/inventaris/' . $inventaris->image));
+        unlink(storage_path('app/public/inventaris/berkas/' . $inventaris->file));
         $inventaris->delete();
-        return redirect()->route('admin.layanan')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('admin.inventaris')->with('success', 'Data berhasil dihapus');
     }
 }
 

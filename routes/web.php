@@ -69,6 +69,7 @@ Route::prefix('admin')->group(function () {
         
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
+            Route::get('/peminjaman', [InventarisController::class, 'peminjaman'])->name('admin.inventaris.peminjaman');
             Route::delete('/{id_inventaris}', [InventarisController::class, 'destroy'])->name('admin.inventaris.delete');
         });
 

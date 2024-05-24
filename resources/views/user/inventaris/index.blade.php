@@ -27,15 +27,17 @@
                         <div class="flex items-center space-x-4">
                             <img src="{{ $item->getImage() }}" alt="Terop" class="w-64 h-34 rounded-lg">
                             <div>
-                                <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">{{ $item->nama }}</h3>
+                                <h3 class="text-2xl  font-bold text-zinc-900 dark:text-white">{{ $item->nama }}</h3>
                                 <div class="flex space-x-4 mt-2">
                                     <div class="text-center">
-                                        <span class="block text-zinc-500 dark:text-zinc-400">{{ $item->jumlah }}</span>
-                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">1</span>
+                                        <span class="block text-zinc-500 dark:text-zinc-400">Tersedia</span>
+                                        <span class="block text-xl font-bold text-zinc-900 dark:text-white">{{ $item->jumlah }}</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-modal-target="pinjam-inventaris" data-modal-toggle="pinjam-inventaris" onclick="showpinjam({{$item}})" class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
+                            <div class="item-center px-6 py-4">
+                                <button data-modal-target="pinjam-inventaris" data-modal-toggle="pinjam-inventaris" onclick="showpinjam({{$item}})" class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -51,8 +53,8 @@
                 2. Surat yang membutuhkan tanda tangan RT/RW, sudah terlegalisir. <br>
                 3. Setelah di download, isi data-data yang diperlukan, baik diedit atau secara manual. <br>
                 4. setelah berbentuk hard file, antar kepada RW untuk diproses lebih lanjut.
-            </h1>   
+            </h1>
         </div>
     </section>
-    <x-partials.user.inventaris.pinjam/>
+    <x-partials.user.inventaris.pinjam />
 </x-layout.user-layout>
