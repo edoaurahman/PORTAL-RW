@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AgendaModel;
 use App\Models\AlamatModel;
 use App\Models\PendudukModel;
+use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,9 +19,13 @@ class AdminController extends Controller
     {
         $jumlahRT = AlamatModel::groupBy('rt')->count('rt');
         $jumlahPenduduk = PendudukModel::count();
+        $jumlahAgenda = AgendaModel::count();
+        $jumlahUMKM = UMKMModel::count();
+
         $agenda = AgendaModel::select('id', 'title', 'deskripsi', 'start', 'end')->get();
         // dd($agenda);
-        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'agenda'));
+
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda','jumlahUMKM', 'agenda'));
     }
 
     public function store_agenda(Request $request)

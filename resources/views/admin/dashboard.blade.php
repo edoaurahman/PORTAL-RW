@@ -61,7 +61,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        5
+                        {{ $jumlahAgenda }}
                     </h4>
                     <span class="text-sm font-medium">Jumlah Agenda</span>
                 </div>
@@ -84,7 +84,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        54
+                        {{ $jumlahUMKM}}
                     </h4>
                     <span class="text-sm font-medium">Jumlah UMKM</span>
                 </div>
