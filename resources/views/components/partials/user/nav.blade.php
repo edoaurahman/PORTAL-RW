@@ -258,7 +258,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="settings.html"
+                                <a href="{{ route('user.bansos') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 640 512">

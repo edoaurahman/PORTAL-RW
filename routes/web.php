@@ -59,14 +59,16 @@ Route::prefix('admin')->group(function () {
         Route::prefix('bansos')->group(function () {
             Route::get('/', [BansosController::class, 'index'])->name('admin.bansos');
             Route::post('/store', [BansosController::class, 'store'])->name('admin.bansos.store');
-            Route::get('/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
+            Route::get('/show/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
             Route::delete('/foto', [BansosController::class, 'destroy_foto_bansos'])->name('admin.bansos.foto.delete');
             Route::put('/update/{bansos}', [BansosController::class, 'update'])->name('admin.bansos.update');
             Route::delete('/', [BansosController::class, 'destroy'])->name('admin.bansos.delete');
-            Route::put('/status', [BansosController::class, 'status'])->name('admin.bansos.status');
+            Route::put('/status', [BansosController::class, 'set_status'])->name('admin.bansos.status');
+            Route::get('/penerima', [BansosController::class, 'penerima'])->name('admin.bansos.penerima');
+            Route::put('/penerima', [BansosController::class, 'set_penerima'])->name('admin.bansos.set_penerima');
         });
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
-        
+
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
             Route::get('/peminjaman', [InventarisController::class, 'peminjaman'])->name('admin.inventaris.peminjaman');
