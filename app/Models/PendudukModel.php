@@ -61,4 +61,9 @@ class PendudukModel extends Model
     {
         return $this->hasMany(KeuanganModel::class, 'nik', 'nik');
     }
+
+    public function alamatLengkap(): string
+    {
+        return $this->alamat->jalan . ' RT' . $this->alamat->rt . ' RW' . $this->alamat->rw . ' Kelurahan ' . $this->alamat->kel . ' Kecamatan ' . $this->alamat->kecamatan;
+    }
 }
