@@ -26,7 +26,7 @@
                     </div>
 
                     <!-- Modal body Form -->
-                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[50vh]">
+                    <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[65 vh]">
 
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                             Agenda</label>
