@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKeuangan;
+use App\Models\KategoriKeuanganModel;
 use App\Models\KeuanganModel;
 use App\Models\KkModel;
 use App\Models\PendudukModel;
+use App\Models\PengeluaranModel;
 use App\Models\SettingKeuanganModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +27,12 @@ class KeuanganController extends Controller
                 ->groupBy('no_kk')
                 ->paginate($this->pagging)->withQueryString();
         }
-        $total = Number::currency(KeuanganModel::sum('jumlah'), 'IDR');
-        return view('admin.keuangan.index', compact('keuangan', 'total'));
+        $totalPemasukkan = KeuanganModel::sum('jumlah');
+        $totalPengeluaran = PengeluaranModel::sum('jumlah');
+        $total = Number::currency($totalPemasukkan - $totalPengeluaran, 'IDR');
+        $totalPemasukkan = Number::currency($totalPemasukkan, 'IDR');
+        $totalPengeluaran = Number::currency($totalPengeluaran, 'IDR');
+        return view('admin.keuangan.index', compact('keuangan', 'total', 'totalPemasukkan', 'totalPengeluaran'));
     }
     public function pembayaran()
     {
@@ -160,5 +166,86 @@ class KeuanganController extends Controller
         });
 
         return redirect()->back()->with('success', 'Data keuangan berhasil diubah');
+    }
+
+    public function kategori()
+    {
+        $kategori = KategoriKeuanganModel::paginate($this->pagging);
+        return view('admin.keuangan.pengeluaran.kategori', compact('kategori'));
+    }
+
+    public function pengeluaran()
+    {
+        $pengeluaran = PengeluaranModel::paginate($this->pagging);
+        $total = Number::currency(PengeluaranModel::sum('jumlah'), 'IDR');
+        return view('admin.keuangan.pengeluaran.index', compact('pengeluaran', 'total'));
+    }
+
+    public function store_kategori(Request $request)
+    {
+        $request->validate([
+            'nama_kategori' => 'required',
+            'keterangan' => 'required'
+        ]);
+
+        DB::transaction(function () use ($request) {
+            KategoriKeuanganModel::create($request->all());
+        });
+
+        return redirect()->back()->with('success', 'Kategori keuangan berhasil ditambahkan');
+    }
+
+    public function destroy_kategori(Request $request)
+    {
+        $request->validate([
+            'id_kategori' => 'required|exists:tb_kategori_keuangan,id_kategori'
+        ]);
+
+        try {
+            DB::transaction(function () use ($request) {
+                KategoriKeuanganModel::where('id_kategori', $request->id_kategori)->delete();
+            });
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['message' => 'Kategori keuangan tidak bisa dihapus karena sudah digunakan']);
+        }
+
+        return redirect()->back()->with('success', 'Kategori keuangan berhasil dihapus');
+    }
+
+    public function store_pengeluaran(Request $request)
+    {
+        $request->validate([
+            'jumlah' => 'required|numeric',
+            'keterangan' => 'required',
+            'id_kategori' => 'required|exists:tb_kategori_keuangan,id_kategori'
+        ]);
+
+        DB::transaction(function () use ($request) {
+            $keuangan = new PengeluaranModel();
+            $keuangan->jumlah = $request->jumlah;
+            $keuangan->keterangan = $request->keterangan;
+            $keuangan->id_kategori = $request->id_kategori;
+            $keuangan->save();
+        });
+
+        return redirect()->back()->with('success', 'Data pengeluaran berhasil ditambahkan');
+    }
+
+    public function update_kategori(Request $request)
+    {
+        $request->validate([
+            'id_kategori' => 'required|exists:tb_kategori_keuangan,id_kategori',
+            'nama_kategori' => 'required',
+            'keterangan' => 'required'
+        ]);
+
+        DB::transaction(function () use ($request) {
+            KategoriKeuanganModel::where('id_kategori', $request->id_kategori)->update([
+                'nama_kategori' => $request->nama_kategori,
+                'keterangan' => $request->keterangan
+            ]);
+        });
+
+        return redirect()->back()->with('success', 'Kategori keuangan berhasil diubah');
     }
 }

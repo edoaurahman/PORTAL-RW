@@ -15,8 +15,8 @@ class KategoriKeuanganSeeder extends Seeder
     {
         $kategori = [
             [
-                'nama_kategori' => 'Pemasukan',
-                'keterangan' => 'Iuran Bulanan'
+                'nama_kategori' => 'Sampah Bulanan',
+                'keterangan' => 'Iuran Sampan Bulanan'
             ]
         ];
 

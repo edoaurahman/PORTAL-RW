@@ -78,6 +78,13 @@ Route::prefix('admin')->group(function () {
 
         Route::prefix('keuangan')->group(function () {
             Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
+            Route::get('/pengeluaran', [KeuanganController::class, 'pengeluaran'])->name('admin.keuangan.pengeluaran');
+            Route::post('/pengeluaran/store', [KeuanganController::class, 'store_pengeluaran'])->name('admin.keuangan.pengeluaran.store');
+            Route::post('/kategori/store', [KeuanganController::class, 'store_kategori'])->name('admin.keuangan.kategori.store');
+            Route::put('/kategori/update', [KeuanganController::class, 'update_kategori'])->name('admin.keuangan.kategori.update');
+            Route::get('/pengeluaran/kategori', [KeuanganController::class, 'kategori'])->name('admin.keuangan.kategori');
+            Route::delete('/pengeluaran/kategori/delete', [KeuanganController::class, 'destroy_kategori'])->name('admin.keuangan.kategori.destroy');
+
             Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
             Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
             Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');

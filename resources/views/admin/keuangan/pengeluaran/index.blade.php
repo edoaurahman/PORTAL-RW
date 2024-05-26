@@ -13,7 +13,15 @@
             </h3>
         </div>
         <!-- End Header Content -->
-
+        <div class="flex justify-between pb-5">
+            <h1> </h1>
+            <!-- Modal toggle -->
+            <button data-modal-target="add-pengeluaran" data-modal-toggle="add-pengeluaran"
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                Tambah Pengeluaran
+            </button>
+        </div>
         @if (session('success'))
             <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                 role="alert">
@@ -47,44 +55,34 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
-                            Nama
+                            Keterangan
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            No KK
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Iuran
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Alamat
+                            Kategori
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Action
+                            Jumlah
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Tanggal
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($keuangan as $item)
+                    @foreach ($pengeluaran as $item)
                         <tr
                             class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                <div>{{ $item->kk->kepalaKeluarga->nama }}</div>
+                                <div>{{ $item->keterangan }}</div>
                             </td>
                             <td class="px-6 py-4 ">
-                                {{ $item->no_kk }}
+                                {{ $item->kategori->nama_kategori }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 ">
                                 {{ $item->jumlah }}
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $item->kk->kepalaKeluarga->alamat->jalan . ' RT' . $item->kk->kepalaKeluarga->alamat->rt . ' RW' . $item->kk->kepalaKeluarga->alamat->rw . ' Kelurahan ' . $item->kk->kepalaKeluarga->alamat->kel . ' Kecamatan ' . $item->kk->kepalaKeluarga->alamat->kecamatan }}
-                            </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <a href="{{ route('admin.keuangan.detail', $item->no_kk) }}">
-                                    <button class="font-medium text-white bg-green-400 p-2  rounded">
-                                        Detail
-                                    </button>
-                                </a>
+                                {{ $item->created_at }}
                             </td>
                         </tr>
                     @endforeach
@@ -93,24 +91,16 @@
         </div>
         <div class="mt-6 grow">
             <div class="space-y-4 rounded-lg border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-                <dl class="flex items-center justify-between gap-4 border-gray-200 pt-2 dark:border-gray-700">
-                    <dt class="text-base text-gray-900 dark:text-white">Total Pemasukkan</dt>
-                    <dd class="text-base text-gray-900 dark:text-white">{{ $totalPemasukkan }}</dd>
-                </dl>
-                <dl class="flex items-center justify-between gap-4 border-gray-200 pt-2 dark:border-gray-700">
-                    <dt class="text-base text-gray-900 dark:text-white">Total Pengeluaran</dt>
-                    <dd class="text-base text-gray-900 dark:text-white">{{ $totalPengeluaran }}</dd>
-                </dl>
                 <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-                    <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
+                    <dt class="text-base font-bold text-gray-900 dark:text-white">Total Pengeluaran</dt>
                     <dd class="text-base font-bold text-gray-900 dark:text-white">{{ $total }}</dd>
                 </dl>
             </div>
         </div>
-
         <div class="mt-5">
-            {{ $keuangan->links() }}
+            {{ $pengeluaran->links() }}
         </div>
         <!-- End Body Content -->
     </div>
+    <x-partials.admin.keuangan.pengeluaran.add />
 </x-layout.admin-layout>

@@ -26,6 +26,12 @@
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">No KK</dt>
                     <dd class="text-lg font-semibold">{{ $bansos->no_kk }}</dd>
                 </div>
+                <div class="flex flex-col pb-3">
+                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                    <dd class="text-lg font-semibold">
+                        {{ $bansos->kk->kepalaKeluarga->alamatLengkap() }}
+                    </dd>
+                </div>
                 <div class="flex flex-col py-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gaji</dt>
                     <dd class="text-lg font-semibold">{{ $gaji[$bansos->gaji] }}</dd>
