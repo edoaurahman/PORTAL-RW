@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AspirasiController;
@@ -121,6 +122,11 @@ Route::prefix('admin')->group(function () {
         Route::post('/agenda/store', [AdminController::class, 'store_agenda'])->name('admin.agenda.store');
         Route::put('/agenda/update', [AdminController::class, 'update_agenda'])->name('admin.agenda.update');
         Route::get('/agenda/delete/{id}', [AdminController::class, 'delete_agenda'])->name('admin.agenda.delete');
+
+        Route::prefix('notification')->group(function () {
+            Route::post('/iuran-reminder', [NotificationController::class, 'iuran_reminder'])->name('admin.notification.iuran-reminder');
+        });
+
     });
 });
 

@@ -12,6 +12,12 @@
                 </small>
             </h3>
         </div>
+        <form action="{{ route('admin.notification.iuran-reminder') }}" method="post">
+            @csrf
+            <button type="submit" class="font-medium text-white bg-blue-400 p-2  rounded">
+                Kirim Notifikasi
+            </button>
+        </form>
         <!-- End Header Content -->
         @if ($cekKeuangan == 0)
             <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400"
