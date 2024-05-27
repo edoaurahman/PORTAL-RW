@@ -302,18 +302,18 @@
                                                 <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                                     :class="{
                                                         'text-ungu dark:bg-meta-4': (subMenuPengeluaran ==
-                                                            '/admin/keuangan/pengeluaran/kategori')
+                                                            '/admin/keuangan/pengeluaran')
                                                     }"
-                                                    href="{{ route('admin.keuangan.kategori') }}">Kategori Pengeluaran
+                                                    href="{{ route('admin.keuangan.pengeluaran') }}">Pengeluaran
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                                     :class="{
                                                         'text-ungu dark:bg-meta-4': (subMenuPengeluaran ==
-                                                            '/admin/keuangan/pengeluaran')
+                                                            '/admin/keuangan/pengeluaran/kategori')
                                                     }"
-                                                    href="{{ route('admin.keuangan.pengeluaran') }}">Pengeluaran
+                                                    href="{{ route('admin.keuangan.kategori') }}">Kategori Pengeluaran
                                                 </a>
                                             </li>
                                         </ul>

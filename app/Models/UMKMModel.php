@@ -15,4 +15,9 @@ class UMKMModel extends Model
         'nama_umkm',
         'deskripsi',
     ];
+
+    public function kategori(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(KategoriUMKMModel::class, 'id_kategori', 'id_kategori_umkm');
+    }
 }
