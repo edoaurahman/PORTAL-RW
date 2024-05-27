@@ -80,7 +80,7 @@
                                 {{ $item->jumlah }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->kk->kepalaKeluarga->alamat->jalan . ' RT' . $item->kk->kepalaKeluarga->alamat->rt . ' RW' . $item->kk->kepalaKeluarga->alamat->rw . ' Kelurahan ' . $item->kk->kepalaKeluarga->alamat->kel . ' Kecamatan ' . $item->kk->kepalaKeluarga->alamat->kecamatan }}
+                                {{ $item->kk->kepalaKeluarga->alamatLengkap() }}
                             </td>
                             {{-- <td class="px-6 py-4 flex gap-2">
                                 <a href="#">

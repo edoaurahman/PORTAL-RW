@@ -261,7 +261,7 @@
                                         href="{{ route('admin.keuangan') }}">Keuangan
                                     </a>
                                 </li>
-                                <li>
+                                <li x-show="levelUser == 'RT'">
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/keuangan/pembayaran') }"
                                         href="{{ route('admin.keuangan.pembayaran') }}">Pembayaran
@@ -274,7 +274,8 @@
                                     </a>
                                 </li>
                                 {{-- Menu Keuangan --}}
-                                <li x-data="{ subMenuPengeluaran: location.pathname }">
+                                <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'"
+                                    x-data="{ subMenuPengeluaran: location.pathname }">
                                     <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-graydark duration-300 ease-in-out hover:bg-ungu hover:text-white dark:hover:bg-meta-4 dark:text-white"
                                         href="#"
                                         @click.prevent="subMenuPengeluaran = (subMenuPengeluaran.includes('pengeluaran') ? '':'pengeluaran')"
@@ -320,7 +321,7 @@
                                     </div>
                                     <!-- Dropdown Menu End -->
                                 </li>
-                                <li>
+                                <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu"
                                         :class="{ 'text-ungu dark:bg-meta-4': (selected == '/admin/keuangan/setting') }"
                                         href="{{ route('admin.keuangan.setting') }}">Settings

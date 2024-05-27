@@ -35,7 +35,7 @@ class KkModel extends Model
         return $this->hasMany(KeuanganModel::class, 'no_kk', 'no_kk');
     }
 
-    protected function kepalaKeluarga()
+    public function kepalaKeluarga()
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'nik_kepalakeluarga');
     }

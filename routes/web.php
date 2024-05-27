@@ -78,20 +78,25 @@ Route::prefix('admin')->group(function () {
 
         Route::prefix('keuangan')->group(function () {
             Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
-            Route::get('/pengeluaran', [KeuanganController::class, 'pengeluaran'])->name('admin.keuangan.pengeluaran');
-            Route::post('/pengeluaran/store', [KeuanganController::class, 'store_pengeluaran'])->name('admin.keuangan.pengeluaran.store');
-            Route::post('/kategori/store', [KeuanganController::class, 'store_kategori'])->name('admin.keuangan.kategori.store');
-            Route::put('/kategori/update', [KeuanganController::class, 'update_kategori'])->name('admin.keuangan.kategori.update');
-            Route::get('/pengeluaran/kategori', [KeuanganController::class, 'kategori'])->name('admin.keuangan.kategori');
-            Route::delete('/pengeluaran/kategori/delete', [KeuanganController::class, 'destroy_kategori'])->name('admin.keuangan.kategori.destroy');
 
-            Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
-            Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
-            Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
-            Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+            Route::middleware(['isRT'])->group(function () {
+                Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
+                Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
+                Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
+            });
+
+            Route::middleware(['isRw'])->group(function () {
+                Route::get('/pengeluaran', [KeuanganController::class, 'pengeluaran'])->name('admin.keuangan.pengeluaran');
+                Route::post('/pengeluaran/store', [KeuanganController::class, 'store_pengeluaran'])->name('admin.keuangan.pengeluaran.store');
+                Route::post('/kategori/store', [KeuanganController::class, 'store_kategori'])->name('admin.keuangan.kategori.store');
+                Route::put('/kategori/update', [KeuanganController::class, 'update_kategori'])->name('admin.keuangan.kategori.update');
+                Route::get('/pengeluaran/kategori', [KeuanganController::class, 'kategori'])->name('admin.keuangan.kategori');
+                Route::delete('/pengeluaran/kategori/delete', [KeuanganController::class, 'destroy_kategori'])->name('admin.keuangan.kategori.destroy');
+                Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
+                Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+            });
             Route::get('/riwayat', [KeuanganController::class, 'riwayat'])->name('admin.keuangan.riwayat');
             Route::get('/{no_kk}', [KeuanganController::class, 'show'])->name('admin.keuangan.detail');
-            Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
         });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::post('/layanan/store', [LayananController::class, 'store'])->name('admin.layanan.store');
@@ -104,9 +109,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
 
 
-        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw',]);
+        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw']);
         Route::prefix('level')->group(function () {
-            Route::middleware(['isSuperAdmin'])->group(function () { // isSuperAdmin middleware
+            Route::middleware(['isRw'])->group(function () { // isSuperAdmin middleware
                 Route::get('/', [LevelController::class, 'index'])->name('admin.level');
                 Route::post('/', [LevelController::class, 'store'])->name('admin.level.store');
                 Route::delete('/', [LevelController::class, 'delete'])->name('admin.level.delete');

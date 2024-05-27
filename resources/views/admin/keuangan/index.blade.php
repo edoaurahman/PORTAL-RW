@@ -91,17 +91,19 @@
                 </tbody>
             </table>
         </div>
-        <div class="mt-6 grow">
+        <div class="mt-6 grow" x-data="{ isRt: {{ auth()->user()->level->nama_level == 'RT' ? false : true }} }">
             <div class="space-y-4 rounded-lg border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
                 <dl class="flex items-center justify-between gap-4 border-gray-200 pt-2 dark:border-gray-700">
                     <dt class="text-base text-gray-900 dark:text-white">Total Pemasukkan</dt>
                     <dd class="text-base text-gray-900 dark:text-white">{{ $totalPemasukkan }}</dd>
                 </dl>
-                <dl class="flex items-center justify-between gap-4 border-gray-200 pt-2 dark:border-gray-700">
+                <dl x-show="isRt"
+                    class="flex items-center justify-between gap-4 border-gray-200 pt-2 dark:border-gray-700">
                     <dt class="text-base text-gray-900 dark:text-white">Total Pengeluaran</dt>
                     <dd class="text-base text-gray-900 dark:text-white">{{ $totalPengeluaran }}</dd>
                 </dl>
-                <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
+                <dl x-show="isRt"
+                    class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
                     <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
                     <dd class="text-base font-bold text-gray-900 dark:text-white">{{ $total }}</dd>
                 </dl>

@@ -17,23 +17,58 @@ use Illuminate\Support\Number;
 class KeuanganController extends Controller
 {
     protected $pagging = 10;
+    private $level;
+    private $alamat;
+    private $user;
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->init();
+            return $next($request);
+        });
+    }
+    private function init()
+    {
+        $this->user = auth()->user();
+        $this->level = $this->user->level->nama_level;
+        $this->alamat = $this->user->penduduk->alamat;
+    }
     public function index(Request $request)
     {
-        // jumlahkan semua keuangan per KK
-        $keuangan = KeuanganModel::select('no_kk', DB::raw('sum(jumlah) as jumlah'))->groupBy('no_kk')->paginate($this->pagging)->withQueryString();
-        if ($request->has('s')) {
-            $keuangan = KeuanganModel::select('no_kk', DB::raw('sum(jumlah) as jumlah'))
-                ->where('no_kk', 'like', '%' . $request->s . '%')
-                ->groupBy('no_kk')
-                ->paginate($this->pagging)->withQueryString();
+        $rt = $this->alamat->rt;
+        $query = KeuanganModel::select('no_kk', DB::raw('sum(jumlah) as jumlah'))
+            ->groupBy('no_kk');
+
+        if ($this->level == 'RT') {
+            $query->whereHas('kk.kepalaKeluarga.alamat', function ($query) use ($rt) {
+                $query->where('rt', $rt);
+            });
         }
+
+        if ($request->has('s')) {
+            $query->where('no_kk', 'like', '%' . $request->s . '%');
+        }
+
+        $keuangan = $query->paginate($this->pagging)->withQueryString();
+
+        // Menghitung total pemasukkan dan pengeluaran
         $totalPemasukkan = KeuanganModel::sum('jumlah');
         $totalPengeluaran = PengeluaranModel::sum('jumlah');
         $total = Number::currency($totalPemasukkan - $totalPengeluaran, 'IDR');
+
+        if ($this->level == 'RT') {
+            $totalPemasukkan = KeuanganModel::whereHas('kk.kepalaKeluarga.alamat', function ($query) use ($rt) {
+                $query->where('rt', $rt);
+            })->sum('jumlah');
+        }
+
+        // Format keuangan dengan currency
         $totalPemasukkan = Number::currency($totalPemasukkan, 'IDR');
         $totalPengeluaran = Number::currency($totalPengeluaran, 'IDR');
+
         return view('admin.keuangan.index', compact('keuangan', 'total', 'totalPemasukkan', 'totalPengeluaran'));
     }
+
     public function pembayaran()
     {
         $setting = SettingKeuanganModel::where('status', 'active')->first();
@@ -55,7 +90,9 @@ class KeuanganController extends Controller
                 $intervalWaktu = (int) $intervalWaktuSetting->nilai_setting;
                 $minimalPembayaran = (int) $minimalPembayaranSetting->nilai_setting;
                 $listKK = [];
-                $kepalaKK = KkModel::all();
+                $kepalaKK = KkModel::whereHas('kepalaKeluarga.alamat', function ($query) {
+                    $query->where('rt', $this->alamat->rt);
+                })->get();
 
                 // Hitung jumlah pembayaran yang harus dibayar dan jumlah yang sudah dibayar
                 foreach ($kepalaKK as $penduduk) {
@@ -80,18 +117,18 @@ class KeuanganController extends Controller
                     $totalBayar = $intervalLalu * $intervalWaktu * $minimalPembayaran;
                     $totalDibayar = KeuanganModel::where('no_kk', $penduduk->no_kk)->sum('jumlah');
                     $tagihan[$penduduk->no_kk] = $totalBayar - $totalDibayar;
-                    // echo ($penduduk->penduduk[0]->nama);
-                    // echo "<br>";
-                    // print_r($totalBayar);
                     if ($totalDibayar >= $totalBayar) {
                         $listKK[] = $penduduk->nik_kepalakeluarga;
                     }
-                    // echo "<br> === <br>";
                 }
-                $kk = KkModel::whereNotIn('nik_kepalakeluarga', $listKK)->get();
+                $kk = KkModel::whereNotIn('nik_kepalakeluarga', $listKK)->whereHas('kepalaKeluarga.alamat', function ($query) {
+                    $query->where('rt', $this->alamat->rt);
+                })->get();
                 $penduduk = PendudukModel::whereIn('nik', $kk->pluck('nik_kepalakeluarga'))->paginate($this->pagging);
                 // dd($tagihan);
-                $cekKeuangan = KeuanganModel::count();
+                $cekKeuangan = KeuanganModel::whereHas('kk.kepalaKeluarga.alamat', function ($query) {
+                    $query->where('rt', $this->alamat->rt);
+                })->sum('jumlah');
                 return view("admin.keuangan.pembayaran", compact('penduduk', 'tagihan', 'cekKeuangan'));
             } else {
                 return redirect()->back()->withErrors(['message' => 'Pengaturan interval, interval waktu, atau minimal pembayaran tidak ditemukan.']);
@@ -144,7 +181,14 @@ class KeuanganController extends Controller
 
     public function riwayat()
     {
-        $keuangan = KeuanganModel::orderBy('created_at', 'desc')->paginate($this->pagging);
+        $query = KeuanganModel::select('no_kk', DB::raw('sum(jumlah) as jumlah'))
+            ->groupBy('no_kk');
+        if ($this->level == 'RT') {
+            $query->whereHas('kk.kepalaKeluarga.alamat', function ($query) {
+                $query->where('rt', $this->alamat->rt);
+            });
+        }
+        $keuangan = $query->paginate($this->pagging)->withQueryString();
         return view('admin.keuangan.riwayat', compact('keuangan'));
     }
 
@@ -219,6 +263,13 @@ class KeuanganController extends Controller
             'keterangan' => 'required',
             'id_kategori' => 'required|exists:tb_kategori_keuangan,id_kategori'
         ]);
+        // cek apakah jumlah melenceng dari total keuangan
+        $totalPemasukkan = KeuanganModel::sum('jumlah');
+        $totalPengeluaran = PengeluaranModel::sum('jumlah');
+        $total = $totalPemasukkan - $totalPengeluaran;
+        if ($request->jumlah > $total) {
+            return redirect()->back()->withErrors(['message' => 'Jumlah pengeluaran melebihi total keuangan']);
+        }
 
         DB::transaction(function () use ($request) {
             $keuangan = new PengeluaranModel();
