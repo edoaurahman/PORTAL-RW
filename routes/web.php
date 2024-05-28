@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AspirasiController;
@@ -59,14 +60,16 @@ Route::prefix('admin')->group(function () {
         Route::prefix('bansos')->group(function () {
             Route::get('/', [BansosController::class, 'index'])->name('admin.bansos');
             Route::post('/store', [BansosController::class, 'store'])->name('admin.bansos.store');
-            Route::get('/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
+            Route::get('/show/{bansos}', [BansosController::class, 'show'])->name('admin.bansos.show');
             Route::delete('/foto', [BansosController::class, 'destroy_foto_bansos'])->name('admin.bansos.foto.delete');
             Route::put('/update/{bansos}', [BansosController::class, 'update'])->name('admin.bansos.update');
             Route::delete('/', [BansosController::class, 'destroy'])->name('admin.bansos.delete');
-            Route::put('/status', [BansosController::class, 'status'])->name('admin.bansos.status');
+            Route::put('/status', [BansosController::class, 'set_status'])->name('admin.bansos.status');
+            Route::get('/penerima', [BansosController::class, 'penerima'])->name('admin.bansos.penerima');
+            Route::put('/penerima', [BansosController::class, 'set_penerima'])->name('admin.bansos.set_penerima');
         });
         Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
-        
+
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
             Route::get('/peminjaman', [InventarisController::class, 'peminjaman'])->name('admin.inventaris.peminjaman');
@@ -76,13 +79,25 @@ Route::prefix('admin')->group(function () {
 
         Route::prefix('keuangan')->group(function () {
             Route::get('/', [KeuanganController::class, 'index'])->name('admin.keuangan');
-            Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
-            Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
-            Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
-            Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+
+            Route::middleware(['isRT'])->group(function () {
+                Route::get('/pembayaran', [KeuanganController::class, 'pembayaran'])->name('admin.keuangan.pembayaran');
+                Route::post('/store', [KeuanganController::class, 'store'])->name('admin.keuangan.store');
+                Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
+            });
+
+            Route::middleware(['isRw'])->group(function () {
+                Route::get('/pengeluaran', [KeuanganController::class, 'pengeluaran'])->name('admin.keuangan.pengeluaran');
+                Route::post('/pengeluaran/store', [KeuanganController::class, 'store_pengeluaran'])->name('admin.keuangan.pengeluaran.store');
+                Route::post('/kategori/store', [KeuanganController::class, 'store_kategori'])->name('admin.keuangan.kategori.store');
+                Route::put('/kategori/update', [KeuanganController::class, 'update_kategori'])->name('admin.keuangan.kategori.update');
+                Route::get('/pengeluaran/kategori', [KeuanganController::class, 'kategori'])->name('admin.keuangan.kategori');
+                Route::delete('/pengeluaran/kategori/delete', [KeuanganController::class, 'destroy_kategori'])->name('admin.keuangan.kategori.destroy');
+                Route::post('/setting', [KeuanganController::class, 'update_setting'])->name('admin.keuangan.setting.update');
+                Route::get('/setting', [KeuanganController::class, 'setting'])->name('admin.keuangan.setting');
+            });
             Route::get('/riwayat', [KeuanganController::class, 'riwayat'])->name('admin.keuangan.riwayat');
             Route::get('/{no_kk}', [KeuanganController::class, 'show'])->name('admin.keuangan.detail');
-            Route::put('/update', [KeuanganController::class, 'update_keuangan'])->name('admin.keuangan.update');
         });
         Route::get('/layanan', [LayananController::class, 'index'])->name('admin.layanan');
         Route::post('/layanan/store', [LayananController::class, 'store'])->name('admin.layanan.store');
@@ -95,9 +110,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
 
 
-        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw',]);
+        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw']);
         Route::prefix('level')->group(function () {
-            Route::middleware(['isSuperAdmin'])->group(function () { // isSuperAdmin middleware
+            Route::middleware(['isRw'])->group(function () { // isSuperAdmin middleware
                 Route::get('/', [LevelController::class, 'index'])->name('admin.level');
                 Route::post('/', [LevelController::class, 'store'])->name('admin.level.store');
                 Route::delete('/', [LevelController::class, 'delete'])->name('admin.level.delete');
@@ -107,6 +122,11 @@ Route::prefix('admin')->group(function () {
         Route::post('/agenda/store', [AdminController::class, 'store_agenda'])->name('admin.agenda.store');
         Route::put('/agenda/update', [AdminController::class, 'update_agenda'])->name('admin.agenda.update');
         Route::get('/agenda/delete/{id}', [AdminController::class, 'delete_agenda'])->name('admin.agenda.delete');
+
+        Route::prefix('notification')->group(function () {
+            Route::post('/iuran-reminder', [NotificationController::class, 'iuran_reminder'])->name('admin.notification.iuran-reminder');
+        });
+
     });
 });
 

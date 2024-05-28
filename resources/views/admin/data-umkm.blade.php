@@ -45,7 +45,7 @@
                             {{ $item->deskripsi }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $item->id_kategori_umkm }}
+                            {{ $item->kategori->nama_kategori }}
                         </td>
                         <td class="px-6 py-4">
                             {{ $item->nik }}

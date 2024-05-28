@@ -77,18 +77,17 @@
                     @foreach ($penduduk as $item)
                         <tr
                             class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td 
-                                class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                 <div>{{ $item->nama }}</div>
                             </td>
                             <td class="px-6 py-4 ">
-                                {{ $item->nik}}
+                                {{ $item->nik }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $item->jenis_kelamin }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
+                                {{ $item->alamatLengkap() }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
                                 <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
@@ -101,7 +100,7 @@
                                     class="font-medium text-white bg-yellow-300 p-2  rounded">
                                     Edit
                                 </button>
-                                
+
                                 <form action="{{ route('admin.penduduk.delete', $item->nik) }}" method="post">
                                     @csrf
                                     @method('delete')

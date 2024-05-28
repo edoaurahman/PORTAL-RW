@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\AgendaController;
+use App\Http\Controllers\User\BansosController;
 use App\Http\Controllers\User\InventarisController;
 use App\Http\Controllers\User\LayananController;
 
@@ -37,6 +38,14 @@ Route::prefix('berita')->group(function () {
         Route::get('/dashboard', [BeritaController::class, 'riwayatBerita'])->name('user.berita.dashboard');
     });
 });
+
+Route::prefix('bansos')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/', [BansosController::class, 'index'])->name('user.bansos');
+        Route::post('/store', [BansosController::class, 'store'])->name('user.bansos.store');
+    });
+});
+
 
 Route::get('/profile', function () {
     return view('user.profile');

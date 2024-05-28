@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsSuperAdmin
+class isRT
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class IsSuperAdmin
     public function handle(Request $request, Closure $next): Response
     {
         $level = auth()->user()->level->nama_level;
-        $auth = $level == 'Super Admin' || $level == 'RW';
+        $auth = $level == 'RT';
         if ($auth) {
             return $next($request);
         }

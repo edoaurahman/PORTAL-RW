@@ -7,11 +7,13 @@ use App\Http\Requests\StoreBansos;
 use App\Models\BansosModel;
 use App\Models\FotoBansosModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class BansosController extends Controller
 {
+    private $pagination = 10;
     private function method_saw()
     {
         $bobot = [
@@ -21,7 +23,7 @@ class BansosController extends Controller
             'kapasitas_listrik' => 0.15,
             'jumlah_kendaraan' => 0.1,
         ];
-        $data = BansosModel::all();
+        $data = BansosModel::where('status', 'pending')->get();
 
         // Normalisasi nilai kriteria
         $maxJumlahTanggungan = $data->max('jumlah_tanggungan');
@@ -32,6 +34,7 @@ class BansosController extends Controller
 
         $normalizedData = $data->map(function ($item) use ($maxJumlahTanggungan, $minGaji, $minLuasTanah, $minKapasitasListrik, $minJumlahKendaraan) {
             return [
+                'id_bansos' => $item->id_bansos,
                 'no_kk' => $item->no_kk,
                 'gaji' => $minGaji / $item->gaji,
                 'jumlah_tanggungan' => $item->jumlah_tanggungan / $maxJumlahTanggungan,
@@ -64,7 +67,7 @@ class BansosController extends Controller
             'kapasitas_listrik' => 0.2,
             'jumlah_kendaraan' => 0.2,
         ];
-        $data = BansosModel::all();
+        $data = BansosModel::where('status', 'pending')->get();
         // Normalisasi nilai kriteria
         $maxJumlahTanggungan = $data->max('jumlah_tanggungan');
         $minGaji = $data->min('gaji');
@@ -74,6 +77,7 @@ class BansosController extends Controller
 
         $normalizedData = $data->map(function ($item) use ($maxJumlahTanggungan, $minGaji, $minLuasTanah, $minKapasitasListrik, $minJumlahKendaraan) {
             return [
+                'id_bansos' => $item->id_bansos,
                 'no_kk' => $item->no_kk,
                 'gaji' => $minGaji / $item->gaji,
                 'jumlah_tanggungan' => $item->jumlah_tanggungan / $maxJumlahTanggungan,
@@ -165,7 +169,44 @@ class BansosController extends Controller
     public function show(BansosModel $bansos)
     {
         $bansos->load('foto_bansos');
-        return view('admin.bansos.show', compact('bansos'));
+        $gaji = [
+            1 => 'Kurang dari 1 Juta',
+            2 => '1 Juta - 2 Juta',
+            3 => '2 Juta - 3 Juta',
+            4 => '3 Juta - 4 Juta',
+            5 => 'Lebih dari 4 Juta',
+        ];
+        $jumlah_tanggungan = [
+            1 => '1 - 2 Orang',
+            2 => '3 - 4 Orang',
+            3 => '5 - 6 Orang',
+            4 => '7 - 8 Orang',
+            5 => 'Lebih dari 8 Orang',
+        ];
+        $luas_tanah = [
+            1 => 'Kurang dari 36 m2',
+            2 => '36 m2 - 72 m2',
+            3 => '72 m2 - 108 m2',
+            4 => '108 m2 - 144 m2',
+            5 => 'Lebih dari 144 m2',
+        ];
+        $kapasitas_listrik = [
+            1 => '450 VA',
+            2 => '900 VA',
+            3 => '1300 VA',
+            4 => '2200 VA',
+            5 => '4400 VA',
+        ];
+        $jumlah_kendaraan = [
+            1 => 'Tidak Punya',
+            2 => '1 Kendaraan',
+            3 => '2 Kendaraan',
+            4 => '3 Kendaraan',
+            5 => 'Lebih dari 3 Kendaraan',
+        ];
+        // dd($bansos);
+
+        return view('admin.bansos.show', compact('bansos', 'gaji', 'jumlah_tanggungan', 'luas_tanah', 'kapasitas_listrik', 'jumlah_kendaraan'));
     }
 
     public function destroy_foto_bansos(Request $request)
@@ -188,7 +229,7 @@ class BansosController extends Controller
         return redirect()->back()->with('success', 'Data bansos berhasil dihapus');
     }
 
-    public function status(Request $request)
+    public function set_status(Request $request)
     {
         $request->validate([
             'id' => 'required|exists:tb_bansos,id_bansos',
@@ -198,6 +239,38 @@ class BansosController extends Controller
         $bansos = BansosModel::find($request->id);
         $bansos->status = $request->status;
         $bansos->alasan = $request->alasan;
+        $bansos->save();
+        return redirect()->back()->with('success', 'Status bansos berhasil diubah');
+    }
+
+    public function penerima(Request $request)
+    {
+        $penerima = BansosModel::whereIn('status', ['done', 'approved'])->where('created_at', '>=', now()->subMonth())->paginate($this->pagination);
+        if ($request->has('date')) {
+            $date = Carbon::parse($request->date);
+            $year = $date->year;
+            $month = $date->month;
+            $penerima = BansosModel::whereIn('status', ['done', 'approved'])
+                ->whereYear('created_at', $year)
+                ->whereMonth('created_at', $month)
+                ->paginate($this->pagination);
+        }
+        if ($request->has('s')) {
+            $penerima = BansosModel::whereIn('status', ['done', 'approved'])
+                ->where('no_kk', 'like', '%' . $request->s . '%')
+                ->paginate($this->pagination);
+        }
+        return view('admin.bansos.penerima', compact('penerima'));
+    }
+
+    public function set_penerima(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:tb_bansos,id_bansos',
+            'status' => 'required|in:done,approved,pending',
+        ]);
+        $bansos = BansosModel::find($request->id);
+        $bansos->status = $request->status;
         $bansos->save();
         return redirect()->back()->with('success', 'Status bansos berhasil diubah');
     }

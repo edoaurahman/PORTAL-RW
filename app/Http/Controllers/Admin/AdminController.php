@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AgendaModel;
 use App\Models\AlamatModel;
+use App\Models\KeuanganModel;
 use App\Models\PendudukModel;
+use App\Models\PengeluaranModel;
+use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Number;
 
 class AdminController extends Controller
 {
@@ -18,9 +22,19 @@ class AdminController extends Controller
     {
         $jumlahRT = AlamatModel::groupBy('rt')->count('rt');
         $jumlahPenduduk = PendudukModel::count();
+        $jumlahAgenda = AgendaModel::count();
+        $jumlahUMKM = UMKMModel::count();
+
+        $totalPemasukkan = KeuanganModel::sum('jumlah');
+        $totalPengeluaran = PengeluaranModel::sum('jumlah');
+        $total = Number::currency($totalPemasukkan - $totalPengeluaran, 'IDR');
+        $totalPemasukkan = Number::currency($totalPemasukkan, 'IDR');
+        $totalPengeluaran = Number::currency($totalPengeluaran, 'IDR');
+
         $agenda = AgendaModel::select('id', 'title', 'deskripsi', 'start', 'end')->get();
         // dd($agenda);
-        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'agenda'));
+
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran'));
     }
 
     public function store_agenda(Request $request)

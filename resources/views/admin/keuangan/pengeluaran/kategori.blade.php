@@ -12,19 +12,16 @@
                 </small>
             </h3>
         </div>
-        <form action="{{ route('admin.notification.iuran-reminder') }}" method="post">
-            @csrf
-            <button type="submit" class="font-medium text-white bg-blue-400 p-2  rounded">
-                Kirim Notifikasi
-            </button>
-        </form>
         <!-- End Header Content -->
-        @if ($cekKeuangan == 0)
-            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400"
-                role="alert">
-                <span class="font-medium">Belum ada pembayaran</span>
-            </div>
-        @endif
+        <div class="flex justify-between pb-5">
+            <h1> </h1>
+            <!-- Modal toggle -->
+            <button data-modal-target="add-kategori" data-modal-toggle="add-kategori"
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">
+                Tambah kategori
+            </button>
+        </div>
         @if (session('success'))
             <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                 role="alert">
@@ -58,16 +55,10 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
-                            Nama
+                            Nama Kategori
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            NIK
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Tagihan
-                        </th>
-                        <th scope="col" class="px-6 py-3 ">
-                            Alamat
+                            Keterangan
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -75,42 +66,44 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($penduduk as $item)
+                    @foreach ($kategori as $item)
                         <tr
                             class="whitespace-nowrap bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                <div>{{ $item->nama }}</div>
+                                <div>{{ $item->nama_kategori }}</div>
                             </td>
                             <td class="px-6 py-4 ">
-                                {{ $item->nik }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $tagihan[$item->kk->no_kk] ?? 'Belum Ada Tagihan' }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item->alamat->jalan . ' RT' . $item->alamat->rt . ' RW' . $item->alamat->rw . ' Kelurahan ' . $item->alamat->kel . ' Kecamatan ' . $item->alamat->kecamatan }}
+                                {{ $item->keterangan }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <a href="{{ route('admin.keuangan.detail', $item->no_kk) }}">
-                                    <button class="font-medium text-white bg-green-400 p-2  rounded">
-                                        Detail
+                                <a href="#">
+                                    <button onclick="showFormEdit({{ $item }})"
+                                        data-modal-target="edit-kategori" data-modal-toggle="edit-kategori"
+                                        class="font-medium text-white bg-yellow-400 p-2  rounded">
+                                        Edit
                                     </button>
                                 </a>
-                                <button onclick="showFormPembayaran({{ $item->no_kk }})"
-                                    data-modal-target="pembayaran-penduduk" data-modal-toggle="pembayaran-penduduk"
-                                    class="font-medium text-white bg-blue-400 p-2  rounded">
-                                    Bayar
-                                </button>
+                                <form action="{{ route('admin.keuangan.kategori.destroy') }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id_kategori" value="{{ $item->id_kategori }}">
+                                    <button onclick="return confirm('Apakah Anda yakin ingin menghapus ?')"
+                                        type="submit" class="font-medium text-white bg-red-600 p-2  rounded">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+
         <div class="mt-5">
-            {{ $penduduk->links() }}
+            {{ $kategori->links() }}
         </div>
         <!-- End Body Content -->
     </div>
-    <x-partials.admin.keuangan.add-pembayaran />
+    <x-partials.admin.keuangan.pengeluaran.kategori.add />
+    <x-partials.admin.keuangan.pengeluaran.kategori.edit />
 </x-layout.admin-layout>

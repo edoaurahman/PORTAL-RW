@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->tinyInteger('luas_tanah');
             $table->tinyInteger('kapasitas_listrik');
             $table->tinyInteger('jumlah_kendaraan');
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->enum('status', ['pending', 'approved', 'rejected', 'done'])->default('pending');
             $table->text('alasan')->nullable();
             $table->timestamps();
 

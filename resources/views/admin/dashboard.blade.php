@@ -5,7 +5,7 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-primary dark:fill-white" width="22" height="25" xmlns="http://www.w3.org/2000/svg"
+                <svg class="fill-ungu dark:fill-white" width="22" height="25" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 640 512">
                     <path
                         d="M335.5 4l288 160c15.4 8.6 21 28.1 12.4 43.5s-28.1 21-43.5 12.4L320 68.6 47.5 220c-15.4 8.6-34.9 3-43.5-12.4s-3-34.9 12.4-43.5L304.5 4c9.7-5.4 21.4-5.4 31.1 0zM320 160a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM144 256a40 40 0 1 1 0 80 40 40 0 1 1 0-80zm312 40a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM226.9 491.4L200 441.5V480c0 17.7-14.3 32-32 32H120c-17.7 0-32-14.3-32-32V441.5L61.1 491.4c-6.3 11.7-20.8 16-32.5 9.8s-16-20.8-9.8-32.5l37.9-70.3c15.3-28.5 45.1-46.3 77.5-46.3h19.5c16.3 0 31.9 4.5 45.4 12.6l33.6-62.3c15.3-28.5 45.1-46.3 77.5-46.3h19.5c32.4 0 62.1 17.8 77.5 46.3l33.6 62.3c13.5-8.1 29.1-12.6 45.4-12.6h19.5c32.4 0 62.1 17.8 77.5 46.3l37.9 70.3c6.3 11.7 1.9 26.2-9.8 32.5s-26.2 1.9-32.5-9.8L552 441.5V480c0 17.7-14.3 32-32 32H472c-17.7 0-32-14.3-32-32V441.5l-26.9 49.9c-6.3 11.7-20.8 16-32.5 9.8s-16-20.8-9.8-32.5l36.3-67.5c-1.7-1.7-3.2-3.6-4.3-5.8L376 345.5V400c0 17.7-14.3 32-32 32H296c-17.7 0-32-14.3-32-32V345.5l-26.9 49.9c-1.2 2.2-2.6 4.1-4.3 5.8l36.3 67.5c6.3 11.7 1.9 26.2-9.8 32.5s-26.2 1.9-32.5-9.8z" />
@@ -28,7 +28,7 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-primary dark:fill-white" width="22" height="25"
+                <svg class="fill-ungu dark:fill-white" width="22" height="25"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 512">
                     <path
                         d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z" />
@@ -51,7 +51,7 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-primary dark:fill-white" width="25" height="22"
+                <svg class="fill-ungu dark:fill-white" width="25" height="22"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path
                         d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
@@ -61,7 +61,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        5
+                        {{ $jumlahAgenda }}
                     </h4>
                     <span class="text-sm font-medium">Jumlah Agenda</span>
                 </div>
@@ -73,7 +73,7 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-primary dark:fill-white" width="22" height="22"
+                <svg class="fill-ungu dark:fill-white" width="22" height="22"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -84,7 +84,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        54
+                        {{ $jumlahUMKM}}
                     </h4>
                     <span class="text-sm font-medium">Jumlah UMKM</span>
                 </div>
@@ -124,13 +124,51 @@
 
         <!-- ====== Usia Penduduk End -->
 
+       <!-- ====== Data Keuangan Start -->
+        <div class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-7">
+            <div class="mb-3 gap-4 justify-center">
+                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                    Data Keuangan
+                </h4>
+            </div>
+            <div class="w-full h-[300px]">
+                <canvas id="keuanganChart"></canvas>
+            </div>
+        </div>
+        <!-- ====== Data Keuangan End -->
+        
+        <!-- ====== Detail Keuangan Start -->
+        <div class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
+            <div class="mb-3 gap-4 justify-center">
+                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                    Detail Keuangan
+                </h4>
+            </div>
+            <div id="keuangan-container" class="text-center">
+                <div class="flex flex-col items-center justify-center">
+                    <i class="fas fa-coins text-5xl text-ungu mb-2"></i>
+                    <p class="text-lg font-medium text-black dark:text-white">Jumlah Keuangan Saat Ini: <span id="total-keuangan" class="text-2xl font-semibold">{{ $total }}</span></p>
+                </div>
+                <div class="flex flex-col items-center justify-center mt-4">
+                    <i class="fas fa-arrow-up text-green-500 text-3xl mb-2"></i>
+                    <p class="text-lg font-medium text-black dark:text-white">Pemasukan Bulan Ini: <span id="total-pemasukan" class="text-2xl font-semibold">{{ $totalPemasukkan }}</span></p>
+                </div>
+                <div class="flex flex-col items-center justify-center mt-4">
+                    <i class="fas fa-arrow-down text-red-500 text-3xl mb-2"></i>
+                    <p class="text-lg font-medium text-black dark:text-white">Pengeluaran Bulan Ini: <span id="total-pengeluaran" class="text-2xl font-semibold">{{ $totalPengeluaran }}</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- ====== Detail Keuangan End -->
+
+
         <!-- ====== Agenda Start -->
         <div
             class="overflow-hidden col-span-12 rounded-sm border border-gray-200 bg-white py-6 shadow-default dark:border-gray-700 dark:bg-gray-800 xl:col-span-6 xl:h-[650px]">
             <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white text-center">
                 Agenda RW
             </h4>
-            <div class="overflow-auto h-full p-5">
+            <div class="overflow-auto h-[550px] p-5">
                 <div x-show="$store.agenda.data.length === 0">
                     <div class="flex items center justify-center h-full">
                         <span class="text-gray-400 dark:text-gray-500">Tidak ada Agenda</span>
@@ -519,4 +557,50 @@
             },
         })
     })
+</script>
+
+<script>
+    // Ambil konteks canvas
+    var ctx = document.getElementById('keuanganChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            datasets: [{
+                label: 'Pemasukan',
+                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200, 2800, 3200, 4000, 3500, 3000], // Ganti dengan data pemasukan per bulan
+                borderColor: '#530cc9',
+                tension: 0.1,
+                fill: false
+            }, {
+                label: 'Pengeluaran',
+                data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600, 1400], // Ganti dengan data pengeluaran per bulan
+                borderColor: '#B186F8',
+                tension: 0.1,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/admin/keuangan/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('total-keuangan').textContent = data.totalKeuangan;
+                document.getElementById('total-pemasukan').textContent = data.totalPemasukan;
+                document.getElementById('total-pengeluaran').textContent = data.totalPengeluaran;
+            })
+            .catch(error => {
+                console.error('Error fetching keuangan data:', error);
+            });
+    });
 </script>

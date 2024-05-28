@@ -34,7 +34,7 @@
             </a> --}}
         </div>
         <div class="hidden sm:block">
-            <form action="" method="GET">
+            {{-- <form action="" method="GET">
                 <div class="relative">
                     <button class="absolute right-2 top-1/2 -translate-y-1/2">
                         <svg class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"
@@ -52,7 +52,7 @@
                     <input type="text" placeholder="Type to search..." name="s"
                         class="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125 rounded-lg" />
                 </div>
-            </form>
+            </form> --}}
         </div>
 
         <div class="flex items-center gap-3 2xsm:gap-7">
