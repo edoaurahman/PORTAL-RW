@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             UMKMSeeder::class,
             KategoriBeritaSeeder::class,
             DetailBeritaSeeder::class,
+            SettingHomeSeeder::class,
         ]);
     }
 }

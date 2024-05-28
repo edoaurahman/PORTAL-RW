@@ -28,8 +28,8 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-ungu dark:fill-white" width="22" height="25"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 512">
+                <svg class="fill-ungu dark:fill-white" width="22" height="25" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 650 512">
                     <path
                         d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z" />
                 </svg>
@@ -51,8 +51,8 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-ungu dark:fill-white" width="25" height="22"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <svg class="fill-ungu dark:fill-white" width="25" height="22" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512">
                     <path
                         d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
                 </svg>
@@ -73,8 +73,7 @@
         <div
             class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div class="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-                <svg class="fill-ungu dark:fill-white" width="22" height="22"
-                    xmlns="http://www.w3.org/2000/svg"
+                <svg class="fill-ungu dark:fill-white" width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M547.6 103.8L490.3 13.1C485.2 5 476.1 0 466.4 0H109.6C99.9 0 90.8 5 85.7 13.1L28.3 103.8c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1 .8 12.1 .8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zM499.7 254.9l-.1 0c-5.3 .7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1l-.1 0c-4.1-.6-8.1-1.3-12-2.3V384v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384 252.6c-4 1-8 1.8-12.3 2.3z" />
@@ -84,7 +83,7 @@
             <div class="mt-4 flex items-end justify-between">
                 <div>
                     <h4 class="text-title-md font-bold text-black dark:text-white">
-                        {{ $jumlahUMKM}}
+                        {{ $jumlahUMKM }}
                     </h4>
                     <span class="text-sm font-medium">Jumlah UMKM</span>
                 </div>
@@ -124,8 +123,9 @@
 
         <!-- ====== Usia Penduduk End -->
 
-       <!-- ====== Data Keuangan Start -->
-        <div class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-7">
+        <!-- ====== Data Keuangan Start -->
+        <div
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-7">
             <div class="mb-3 gap-4 justify-center">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Data Keuangan
@@ -136,9 +136,10 @@
             </div>
         </div>
         <!-- ====== Data Keuangan End -->
-        
+
         <!-- ====== Detail Keuangan Start -->
-        <div class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
+        <div
+            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
             <div class="mb-3 gap-4 justify-center">
                 <h4 class="text-xl font-bold text-black dark:text-white text-center">
                     Detail Keuangan
@@ -147,15 +148,18 @@
             <div id="keuangan-container" class="text-center">
                 <div class="flex flex-col items-center justify-center">
                     <i class="fas fa-coins text-5xl text-ungu mb-2"></i>
-                    <p class="text-lg font-medium text-black dark:text-white">Jumlah Keuangan Saat Ini: <span id="total-keuangan" class="text-2xl font-semibold">{{ $total }}</span></p>
+                    <p class="text-lg font-medium text-black dark:text-white">Jumlah Keuangan Saat Ini: <span
+                            id="total-keuangan" class="text-2xl font-semibold">{{ $total }}</span></p>
                 </div>
                 <div class="flex flex-col items-center justify-center mt-4">
                     <i class="fas fa-arrow-up text-green-500 text-3xl mb-2"></i>
-                    <p class="text-lg font-medium text-black dark:text-white">Pemasukan Bulan Ini: <span id="total-pemasukan" class="text-2xl font-semibold">{{ $totalPemasukkan }}</span></p>
+                    <p class="text-lg font-medium text-black dark:text-white">Pemasukan Bulan Ini: <span
+                            id="total-pemasukan" class="text-2xl font-semibold">{{ $totalPemasukkan }}</span></p>
                 </div>
                 <div class="flex flex-col items-center justify-center mt-4">
                     <i class="fas fa-arrow-down text-red-500 text-3xl mb-2"></i>
-                    <p class="text-lg font-medium text-black dark:text-white">Pengeluaran Bulan Ini: <span id="total-pengeluaran" class="text-2xl font-semibold">{{ $totalPengeluaran }}</span></p>
+                    <p class="text-lg font-medium text-black dark:text-white">Pengeluaran Bulan Ini: <span
+                            id="total-pengeluaran" class="text-2xl font-semibold">{{ $totalPengeluaran }}</span></p>
                 </div>
             </div>
         </div>
@@ -305,6 +309,21 @@
             </div>
         </div>
         <!-- ====== UMKM End -->
+        <!--- struktur RW -->
+        <div class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7" >
+            <div class="flex ">
+            <h1 >Struktur RW 2</h1>
+            <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur" data-modal-toggle="struktur" class=" ml-5 bg-purple-600 text-white px-4 py-2 rounded-lg">change </button>
+        </div>
+                <div class="flex flex-col items-center justify-center">
+                    <img src="{{ $gambarstruktur->getGambar() }}" alt="" class="">
+                </div>
+        </div>
+
+
+        <!--- struktur RW end-->
+
+        <x-partials.admin.struktur/>
         <x-partials.admin.agenda.add-agenda />
         <x-partials.admin.agenda.edit-agenda />
     </div>
@@ -565,16 +584,20 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
+                'Oktober', 'November', 'Desember'
+            ],
             datasets: [{
                 label: 'Pemasukan',
-                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200, 2800, 3200, 4000, 3500, 3000], // Ganti dengan data pemasukan per bulan
+                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200, 2800, 3200, 4000, 3500,
+                3000], // Ganti dengan data pemasukan per bulan
                 borderColor: '#530cc9',
                 tension: 0.1,
                 fill: false
             }, {
                 label: 'Pengeluaran',
-                data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600, 1400], // Ganti dengan data pengeluaran per bulan
+                data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600,
+                1400], // Ganti dengan data pengeluaran per bulan
                 borderColor: '#B186F8',
                 tension: 0.1,
                 fill: false

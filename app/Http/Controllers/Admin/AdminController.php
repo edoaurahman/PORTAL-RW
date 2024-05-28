@@ -8,9 +8,11 @@ use App\Models\AlamatModel;
 use App\Models\KeuanganModel;
 use App\Models\PendudukModel;
 use App\Models\PengeluaranModel;
+use App\Models\SettingHomeModel;
 use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Number;
 
 class AdminController extends Controller
@@ -32,9 +34,10 @@ class AdminController extends Controller
         $totalPengeluaran = Number::currency($totalPengeluaran, 'IDR');
 
         $agenda = AgendaModel::select('id', 'title', 'deskripsi', 'start', 'end')->get();
+        $gambarstruktur = SettingHomeModel::select('id_setting', 'gambarstruktur')->first();
         // dd($agenda);
 
-        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran'));
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran', 'gambarstruktur'));
     }
 
     public function store_agenda(Request $request)
@@ -98,5 +101,22 @@ class AdminController extends Controller
         }
         return redirect()->route('admin.dashboard', '#kalender')->with('success', 'Agenda Berhasil Dihapus.');
 
+    }
+
+    public function updategambarStruktur(Request $request)
+    {
+        $request->validate([
+            'gambarstruktur' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        try {
+            $gambarstruktur = SettingHomeModel::find( $request->id_setting);
+            $gambarstruktur->gambarstruktur = $request->gambarstruktur->hashName();
+            $gambarstruktur->save();
+            move_uploaded_file($request->gambarstruktur, public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
+        } catch (\Exception $e) {
+            return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Struktur RT Gagal Diubah.')->withInput();
+        }
+        return redirect()->route('admin.dashboard')->with('success', 'Struktur RW Berhasil Diubah.');
     }
 }

@@ -35,6 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+        Route::put('/gambarstruktur', [AdminController::class, 'updategambarStruktur'])->name('admin.gambarstruktur.update');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
             Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
