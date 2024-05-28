@@ -17,7 +17,7 @@
         <div class="flex justify-between pb-5">
             <h1> </h1>
             <!-- Modal toggle -->
-            <button data-modal-target="" data-modal-toggle=""
+            <button data-modal-target="tambah-inventaris" data-modal-toggle="tambah-inventaris"
                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
                 Tambah Barang
@@ -117,4 +117,7 @@
         </div>
         <!-- End Body Content -->
     </div>
+
+    <x-partials.admin.inventaris.add />
 </x-layout.admin-layout>
+

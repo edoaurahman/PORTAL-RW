@@ -16,5 +16,8 @@ class PeminjamanModel extends Model
         'nik',
         'status'
     ];
-
+    public function inventaris()
+    {
+        return $this->belongsTo(InventarisModel::class, 'id_inventaris', 'id_inventaris');
+    }
 }
