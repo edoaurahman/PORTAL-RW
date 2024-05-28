@@ -2,19 +2,19 @@
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
-                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
-                    <i class="fa-solid fa-globe"></i>
-                    <p class=" text-base font-semibold text-black2">
-                        Kami memiliki jumlah penduduk lebih dari 1.000 jiwa.
+                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-purple-500 rounded-full items-center">
+                    <!-- <i class="fa-solid fa-globe"></i> -->
+                    <p class=" text-base font-semibold text-white">
+                        Lingkungan yang berisi lebih dari 1000 jiwa.
                     </p>
                 </div>
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none">Tumbuh <br>
-                        Bersama RW 02.
-                    </h1>
-                    <div class="text-base leading-loose text-black3">
-                        We provide a variety of servers to grow your users <br>
-                        acquisition much user-friendly and boosting up sales.
+                    <h1 class="text-black1 text-[35px] leading-none">
+                        Bersatu dalam <b>Keberagaman</b>, <br>
+                        Harmoni dalam <b> Kebersamaan</b>.</h1>
+                    <div class="text-[20px] leading-loose text-black3">
+                        RW 2 Desa Arjosari<br>
+                        Kecamatan Blimbing.
                     </div>
                 </div>
                 <!-- <div class="flex flex-row gap-x-4 items-center">
@@ -47,8 +47,8 @@
     </section>
 
     <section class="struktur max-w-6xl mx-auto font-sans py-12">
-        
-    <h1 class="text-center font-bold text-6xl leading-tight my-20" >Struktur Kepengurusan RW 2</h1>
+
+        <h1 class="text-center font-bold text-6xl leading-tight my-20">Struktur Kepengurusan RW 2</h1>
         <div class="flex flex-row gap-x-10 items-center justify-center">
             <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl">
                 <img src="{{ asset('assets/images/illustration/struktur.png') }}" alt="">
@@ -116,7 +116,7 @@
     </section>
 
     <section class="benefit max-w-6xl mx-auto font-sans py-12">
-        <h1 class="text-center font-bold text-6xl leading-tight" >Agenda</h1>
+        <h1 class="text-center font-bold text-6xl leading-tight">Agenda</h1>
         <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
                 <img src="{{ asset('assets/images/illustration/kerjabakti.png') }}" alt="" class="h-[550px]">
@@ -160,7 +160,7 @@
                 <div class="flex flex-row gap-x-4 items-center">
                     <a href="{{ route('user.agenda') }}" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
                         Selengkapnya</a>
-                    
+
                 </div>
             </div>
         </div>
@@ -249,10 +249,10 @@
             <div class="flex flex-col gap-y-10">
 
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-white font-bold text-3xl leading-tight">Kirimkan Aspirasimu!    
+                    <h1 class="text-white font-bold text-3xl leading-tight">Kirimkan Aspirasimu!
                     </h1>
                     <div class="text-base leading-loose text-white">
-                    memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas layanan publik dan mendukung transparansi serta akuntabilitas.
+                        memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas layanan publik dan mendukung transparansi serta akuntabilitas.
                     </div>
                 </div>
 
@@ -262,7 +262,7 @@
             <div class="grid ">
                 <div class="">
                     <!-- <label for="email" class="block mb-2 text-2xl font-medium dark:text-gray-900 text-white">kirimkan -->
-                        <!-- aspirasimu</label> -->
+                    <!-- aspirasimu</label> -->
 
                     <form class="max-w-sm">
                         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="tulis aspirasi disini..."></textarea>
