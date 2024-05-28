@@ -95,7 +95,7 @@
                                     <input type="hidden" name="status" value="done">
                                     <button type="submit">
                                         <div
-                                            class="font-medium text-white bg-blue-500 p-2 dark:text-white rounded inline-flex items-center gap-1">
+                                            class="font-medium text-white bg-purple-500 p-2 dark:text-white rounded inline-flex items-center gap-1">
                                             <i class="fa-regular fa-circle-xmark"></i>
                                             done
                                         </div>

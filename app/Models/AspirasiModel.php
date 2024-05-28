@@ -11,17 +11,15 @@ class AspirasiModel extends Model
     protected $table = 'tb_aspirasi';
     protected $primaryKey = 'id_aspirasi';
     protected $fillable = [
-        'judul',
         'author',
         'isi',
-        'dokumentasi',
         'status',
         'respon',
-        'id_kategori'
     ];
 
-    public function kategori()
+    public function penduduk()
     {
-        return $this->belongsTo(KategoriAspirasiModel::class, 'id_kategori', 'id_kategori');
+        return $this->belongsTo(PendudukModel::class, 'author', 'nik');
     }
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\AspirasiController;
 use App\Http\Controllers\User\AgendaController;
 use App\Http\Controllers\User\BansosController;
 use App\Http\Controllers\User\InventarisController;
@@ -9,14 +10,18 @@ use App\Http\Controllers\User\LayananController;
 use App\Http\Controllers\User\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PendudukController;
-
+use App\Http\Controllers\User\UserController;
 
 // menus
 
 
-Route::get('/home', function () {
-    return view('user.home');
-})->name('user.home');
+Route::get('/home',[UserController::class,'index'])->name('user.home');
+
+Route::prefix('aspirasi')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::post('/store', [AspirasiController::class, 'store'])->name('user.aspirasi.store');
+    });
+});
 
 Route::prefix('penduduk')->group(function () {
     Route::middleware(['auth'])->group(function () {

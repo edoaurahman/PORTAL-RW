@@ -111,6 +111,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
+        Route::put('/aspirasi/respon', [AspirasiController::class, 'respon'])->name('admin.aspirasi.respon');
 
 
         Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw']);

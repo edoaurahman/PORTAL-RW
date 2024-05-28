@@ -18,25 +18,16 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="whitespace-nowrap">
                         <th scope="col" class="px-6 py-3">
-                            Judul
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Kategori
-                        </th>
-                        <th scope="col" class="px-6 py-3">
                             Author
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Isi
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Dokumentasi
-                        </th>
-                        <th scope="col" class="px-6 py-3">
                             Status
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Respon
+                            Pesan Respon
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -44,30 +35,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($users as $item)
+                    @foreach ($aspirasi as $item)
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $item->penduduk->nama }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $item->penduduk->nik }}
+                            {{ $item->isi }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $item->level->nama_level }}
+                            {{ $item->status }}
                         </td>
                         <td class="px-6 py-4">
-                            <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
-                                <a href="#">
-                                    Edit
-                                </a>
+                            {{ $item->respon }}
+                        </td>
+                        
+                        <td class="px-6 py-4">
+                            <button onclick="showEdit({{ $item }})" data-modal-target="aspirasi" data-modal-toggle="aspirasi" class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                                
+                                    respon
                             </button>
                         </td>
                     </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>
         <!-- End Body Content -->
     </div>
+    <x-partials.admin.aspirasi/>
 </x-layout.admin-layout>
