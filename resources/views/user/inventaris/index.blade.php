@@ -24,7 +24,7 @@
                     @foreach ($inventaris as $item)
 
                     <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
-                        <div class="flex items-center space-x-4">
+                        <div class="flex relative items-center space-x-4">
                             <img src="{{ $item->getImage() }}" alt="Terop" class="w-64 h-34 rounded-lg">
                             <div>
                                 <h3 class="text-2xl  font-bold text-zinc-900 dark:text-white">{{ $item->nama }}</h3>
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-center px-6 py-4">
+                            <div class="absolute item-center bottom-0 right-0 px-6 py-4">
                                 <button data-modal-target="pinjam-inventaris" data-modal-toggle="pinjam-inventaris" onclick="showpinjam({{$item}})" class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
                             </div>
                         </div>
