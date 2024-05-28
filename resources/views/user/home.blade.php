@@ -123,27 +123,14 @@
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-4xl leading-tight">Kerja Bakti
-                        Serentak Seluruh RT
+                    <h1 class="text-black1 font-bold text-4xl leading-tight">{{ $agenda->title }}
                     </h1>
-                    <div class="text-base leading-loose text-black3">
-                        kegiatan gotong royong yang dilakukan secarab bersama-sama oleh seluruh warga di tingkat RT
-                        untuk membersihkan lingkungan dan memperbaiki infrastruktur.
+                    <div class="text-base leading-loose text-black3">{{ $agenda->deskripsi }}
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-y-10">
-                    <div class=" flex flex-row bg-white rounded-2xl p-5 w-full items-center gap-x-4">
-                        <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                        <div class="flex flex-col ">
-                            <h3 class=" text-2xl font-bold text-black1">
-                                Lokasi
-                            </h3>
-                            <div class="text-base leading-relaxed text-black4">
-                                Seluruh Wilayah RW 2
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class=" flex flex-row bg-white rounded-2xl p-5 items-center gap-x-4">
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
@@ -151,7 +138,7 @@
                                 Waktu
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                21 Juni 2024
+                                {{ $agenda -> start . ' - ' . $agenda -> end}}
                             </div>
                         </div>
                     </div>
