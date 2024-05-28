@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\KategoriBeritaModel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +27,7 @@ class KategoriBeritaSeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-
+            KategoriBeritaModel::create($item);
         }
     }
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBerita;
 use App\Models\BeritaModel;
+use App\Models\DetailBeritaModel;
 use App\Models\GambarBeritaModel;
+use App\Models\KategoriBeritaModel;
 use DOMDocument;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -50,11 +52,13 @@ class BeritaController extends Controller
 
     public function create()
     {
-        return view('user.berita.create');
+        $kategori = KategoriBeritaModel::all();
+        return view('user.berita.create', compact('kategori'));
     }
 
     public function store(StoreBerita $request)
     {
+        dd($request->all());
         try {
             $isi = $request->isi;
             $dom = new DOMDocument();
@@ -103,6 +107,14 @@ class BeritaController extends Controller
                 Storage::disk('public')->put('images/berita/content/' . $name, $data);
             }
             $request->gambar->store('images/berita', 'public');
+
+            $kategori = $request->kategori;
+            foreach ($kategori as $k) {
+                $detail = new DetailBeritaModel();
+                $detail->id_berita = $berita->id_berita;
+                $detail->id_kategori = $k;
+                $detail->save();
+            }
         });
         return redirect()->route('user.berita.dashboard');
     }
