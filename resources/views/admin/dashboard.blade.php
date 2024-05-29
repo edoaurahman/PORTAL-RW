@@ -310,20 +310,23 @@
         </div>
         <!-- ====== UMKM End -->
         <!--- struktur RW -->
-        <div class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7" >
+        <div
+            class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
             <div class="flex ">
-            <h1 >Struktur RW 2</h1>
-            <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur" data-modal-toggle="struktur" class=" ml-5 bg-purple-600 text-white px-4 py-2 rounded-lg">change </button>
-        </div>
-                <div class="flex flex-col items-center justify-center">
-                    <img src="{{ $gambarstruktur->getGambar() }}" alt="" class="">
-                </div>
+                <h1>Struktur RW 2</h1>
+                <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur"
+                    data-modal-toggle="struktur" class=" ml-5 bg-purple-600 text-white px-4 py-2 rounded-lg">change
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <img src="{{ $gambarstruktur->getGambar() }}" alt="" class="">
+            </div>
         </div>
 
 
         <!--- struktur RW end-->
 
-        <x-partials.admin.struktur/>
+        <x-partials.admin.struktur />
         <x-partials.admin.agenda.add-agenda />
         <x-partials.admin.agenda.edit-agenda />
     </div>
@@ -341,17 +344,24 @@
                         labels: ['Penduduk Total', 'Penduduk Tetap', 'Pendatang'],
                         datasets: [{
                             label: 'Total Penduduk',
-                            data: [100, 60, 40],
+                            data: [{{ $totalPenduduk }}, {{ $totalPendudukTetap }},
+                                {{ $totalPendudukPendatang }}
+                            ],
                             backgroundColor: '#270551',
                             borderWidth: 1
                         }, {
                             label: 'Laki-laki',
-                            data: [55, 35, 20],
+                            data: [{{ $totalPendudukLaki }}, {{ $totalPendudukLakiTetap }},
+                                {{ $totalPendudukLakiPendatang }}
+                            ],
                             backgroundColor: '#640EF1',
                             borderWidth: 1
                         }, {
                             label: 'Perempuan',
-                            data: [45, 25, 20],
+                            data: [{{ $totalPendudukPerempuan }},
+                                {{ $totalPendudukPerempuanTetap }},
+                                {{ $totalPendudukPerempuanPendatang }}
+                            ],
                             backgroundColor: '#B186F8',
                             borderWidth: 1
                         }]
@@ -469,11 +479,13 @@
                 const usiaPendudukChart = new Chart(ctxUsia, {
                     type: 'doughnut',
                     data: {
-                        labels: ['0-5 tahun', '5-12 tahun', '13-19 tahun', '20-60 tahun', '60+ tahun'],
+                        labels: ['0-5 tahun', '6-12 tahun', '13-19 tahun', '20-60 tahun', '60+ tahun'],
                         datasets: [{
                             label: 'Pemetaan Usia Penduduk',
-                            data: [10, 15, 30, 35,
-                                10
+                            data: [
+                                {{ $umur['0-5'] }}, {{ $umur['6-12'] }},
+                                {{ $umur['13-19'] }}, {{ $umur['20-60'] }},
+                                {{ $umur['60+'] }}
                             ], // Data contoh, silakan sesuaikan dengan data sebenarnya
                             backgroundColor: [
                                 '#e0cffc',
@@ -584,20 +596,26 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
-                'Oktober', 'November', 'Desember'
+            labels: [
+                @foreach ($pemasukkan as $value)
+                    '{{ $listBulan[$value->bulan - 1] }}',
+                @endforeach
             ],
             datasets: [{
                 label: 'Pemasukan',
-                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200, 2800, 3200, 4000, 3500,
-                3000], // Ganti dengan data pemasukan per bulan
+                data: [
+                    @foreach ($pemasukkan as $value)
+                        '{{ $value->total }}',
+                    @endforeach
+                ], // Ganti dengan data pemasukan per bulan
                 borderColor: '#530cc9',
                 tension: 0.1,
                 fill: false
             }, {
                 label: 'Pengeluaran',
                 data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600,
-                1400], // Ganti dengan data pengeluaran per bulan
+                    1400
+                ], // Ganti dengan data pengeluaran per bulan
                 borderColor: '#B186F8',
                 tension: 0.1,
                 fill: false
@@ -610,20 +628,5 @@
                 }
             }
         }
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('/admin/keuangan/data')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('total-keuangan').textContent = data.totalKeuangan;
-                document.getElementById('total-pemasukan').textContent = data.totalPemasukan;
-                document.getElementById('total-pengeluaran').textContent = data.totalPengeluaran;
-            })
-            .catch(error => {
-                console.error('Error fetching keuangan data:', error);
-            });
     });
 </script>
