@@ -51,7 +51,7 @@
         <h1 class="text-center font-bold text-6xl leading-tight my-20">Struktur Kepengurusan RW 2</h1>
         <div class="flex flex-row gap-x-10 items-center justify-center">
             <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/illustration/struktur.png') }}" alt="">
+                <img src="{{ $gambar_struktur->getGambar() }}" alt="">
             </div>
         </div>
     </section>
@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="flex flex-col gap-y-10">
-                    
+
                     <div class=" flex flex-row bg-white rounded-2xl p-5 items-center gap-x-4">
                         <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                         <div class="flex flex-col ">
@@ -138,14 +138,15 @@
                                 Waktu
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                {{ $agenda -> start . ' - ' . $agenda -> end}}
+                                {{ $agenda->start . ' - ' . $agenda->end }}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-row gap-x-4 items-center">
-                    <a href="{{ route('user.agenda') }}" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
+                    <a href="{{ route('user.agenda') }}"
+                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
                         Selengkapnya</a>
 
                 </div>
@@ -167,30 +168,42 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
@@ -199,30 +212,42 @@
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt="" class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#" class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
+                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                        <div
+                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                            <a href="#"
+                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
                                 Details</a>
                         </div>
                     </div>
@@ -239,7 +264,8 @@
                     <h1 class="text-white font-bold text-3xl leading-tight">Kirimkan Aspirasimu!
                     </h1>
                     <div class="text-base leading-loose text-white">
-                        memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas layanan publik dan mendukung transparansi serta akuntabilitas.
+                        memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas layanan publik
+                        dan mendukung transparansi serta akuntabilitas.
                     </div>
                 </div>
 
@@ -253,9 +279,12 @@
 
                     <form action="{{ route('user.aspirasi.store') }}" class="max-w-sm" method="post">
                         @csrf
-                        <textarea name="aspirasi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="tulis aspirasi disini..."></textarea>
-                    
-                        <button type="submit" class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
+                        <textarea name="aspirasi" id="message" rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="tulis aspirasi disini..."></textarea>
+
+                        <button type="submit"
+                            class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
                             aspirasi</button>
                     </form>
                 </div>
