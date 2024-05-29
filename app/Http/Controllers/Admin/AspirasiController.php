@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Notifications\Aspirasi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AspirasiModel;
@@ -16,7 +17,7 @@ class AspirasiController extends Controller
         return view("admin.aspirasi", compact('aspirasi'));
     }
 
-    public function respon (Request $request)
+    public function respon(Request $request)
     {
         $request->validate([
             'respon' => 'required',
@@ -27,9 +28,8 @@ class AspirasiController extends Controller
         $aspirasi->respon = $request->respon;
         $aspirasi->status = $request->status;
         $aspirasi->save();
+        $aspirasi->akun->notify(new Aspirasi('Aspirasi Anda telah direspon oleh admin.'));
 
         return redirect()->route('admin.aspirasi')->with('success', 'Respon berhasil dikirim.');
     }
-
-
 }
