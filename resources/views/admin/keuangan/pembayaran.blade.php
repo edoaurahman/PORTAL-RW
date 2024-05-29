@@ -14,7 +14,7 @@
         </div>
         <form action="{{ route('admin.notification.iuran-reminder') }}" method="post">
             @csrf
-            <button type="submit" class="font-medium text-white bg-blue-400 p-2  rounded">
+            <button type="submit" class="mb-2 font-medium text-white bg-blue-700 p-2 rounded">
                 Kirim Notifikasi
             </button>
         </form>
