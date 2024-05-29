@@ -362,6 +362,13 @@
                                 Account Settings
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('user.home') }}"
+                                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                <i class="fa fa-home w-[22px]" aria-hidden="true"></i>
+                                Halaman Penduduk
+                            </a>
+                        </li>
                     </ul>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
