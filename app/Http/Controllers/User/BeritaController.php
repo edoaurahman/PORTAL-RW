@@ -19,11 +19,23 @@ use Storage;
 
 class BeritaController extends Controller
 {
-    public function index()
+    private $paggination = 10;
+    public function index(Request $request)
     {
-        $berita = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('created_at', 'desc')->get();
-
-        return view('user.berita.index', compact('berita'));
+        $query = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('created_at', 'desc');
+        $kategori_populer = KategoriBeritaModel::withCount('berita')->orderBy('berita_count', 'desc')->limit(5)->get();
+        // berita populer di urutan pertama dan kedua
+        $berita_populer = BeritaModel::with('penulis')->where('status', 'publish')->orderBy('view', 'desc')->limit(2)->get();
+        if ($request->has('kategori')) {
+            $query->whereHas('kategori', function ($q) use ($request) {
+                $q->where('nama_kategori', $request->kategori);
+            });
+        }
+        if ($request->has('s')) {
+            $query->where('judul', 'like', '%' . $request->s . '%');
+        }
+        $berita = $query->paginate($this->paggination)->withQueryString();
+        return view('user.berita.index', compact('berita', 'kategori_populer', 'berita_populer'));
     }
 
     public function riwayatBerita()
@@ -58,7 +70,6 @@ class BeritaController extends Controller
 
     public function store(StoreBerita $request)
     {
-        dd($request->all());
         try {
             $isi = $request->isi;
             $dom = new DOMDocument();
@@ -191,6 +202,16 @@ class BeritaController extends Controller
             $berita->status = 'pending';
             $berita->save();
 
+            // hapus semua kategori berita
+            DetailBeritaModel::where('id_berita', $berita->id_berita)->delete();
+            $kategori = $request->kategori;
+            foreach ($kategori as $k) {
+                $detail = new DetailBeritaModel();
+                $detail->id_berita = $berita->id_berita;
+                $detail->id_kategori = $k;
+                $detail->save();
+            }
+
             foreach ($list_images as $name => $data) {
                 $gambar = new GambarBeritaModel();
                 // check if image already exist
@@ -245,6 +266,7 @@ class BeritaController extends Controller
 
     public function edit(BeritaModel $berita)
     {
-        return view('user.berita.edit', compact('berita'));
+        $kategori = KategoriBeritaModel::all();
+        return view('user.berita.edit', compact('berita', 'kategori'));
     }
 }

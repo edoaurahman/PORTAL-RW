@@ -35,11 +35,16 @@ class BeritaModel extends Model
         $dom = new \DOMDocument();
         $dom->loadHTML($this->isi);
         $cuplikan = strip_tags($dom->textContent);
-        return Str::limit($cuplikan, 150);
+        return Str::limit($cuplikan, 100);
     }
 
     protected function sampul(): Attribute
     {
         return Attribute::make(get: fn($gambar) => asset('storage/images/berita/' . $this->gambar));
+    }
+
+    public function kategori()
+    {
+        return $this->belongsToMany(KategoriBeritaModel::class, 'tb_detail_berita', 'id_berita', 'id_kategori');
     }
 }

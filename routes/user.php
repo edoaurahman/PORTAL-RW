@@ -15,7 +15,7 @@ use App\Http\Controllers\User\UserController;
 // menus
 
 
-Route::get('/home',[UserController::class,'index'])->name('user.home');
+Route::get('/home', [UserController::class, 'index'])->name('user.home');
 
 Route::prefix('aspirasi')->group(function () {
     Route::middleware(['auth'])->group(function () {
@@ -54,7 +54,7 @@ Route::prefix('bansos')->group(function () {
 
 Route::get('/profile', function () {
     return view('user.profile');
-});
+})->name('user.profile');
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('user.agenda');
 
