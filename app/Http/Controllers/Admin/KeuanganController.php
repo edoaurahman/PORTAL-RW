@@ -181,14 +181,13 @@ class KeuanganController extends Controller
 
     public function riwayat()
     {
-        $query = KeuanganModel::select('no_kk', DB::raw('sum(jumlah) as jumlah'))
-            ->groupBy('no_kk');
+        $query = KeuanganModel::select('*');
         if ($this->level == 'RT') {
             $query->whereHas('kk.kepalaKeluarga.alamat', function ($query) {
                 $query->where('rt', $this->alamat->rt);
             });
         }
-        $keuangan = $query->paginate($this->pagging)->withQueryString();
+        $keuangan = $query->orderBy('created_at', 'desc')->paginate($this->pagging)->withQueryString();
         return view('admin.keuangan.riwayat', compact('keuangan'));
     }
 
