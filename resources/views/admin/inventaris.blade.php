@@ -22,7 +22,7 @@
             <h1> </h1>
             <!-- Modal toggle -->
             <button data-modal-target="tambah-inventaris" data-modal-toggle="tambah-inventaris"
-                class="block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-purple-800"
                 type="button">
                 Tambah Barang
             </button>

@@ -98,7 +98,7 @@
             class="col-span-12 rounded-sm border border-gray-200 bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-700 dark:bg-gray-800 sm:px-7.5 xl:col-span-8">
             <div class="flex flex-wrap items-start justify-center gap-4 sm:!flex-nowrap">
                 <div>
-                    <h4 class="mb-6 px-7.5 text-xl font-bold text-gray-900 dark:text-white">
+                    <h4 class="mb-5 px-7.5 text-xl font-bold text-gray-900 dark:text-white">
                         Pemetaan Penduduk
                     </h4>
                 </div>
@@ -113,7 +113,7 @@
         <div
             class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-4">
             <div class="mb-3 gap-4 justify-center">
-                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                <h4 class="mb-3 text-xl font-bold text-black dark:text-white text-center">
                     Pemetaan Usia
                 </h4>
                 <!-- Elemen kanvas untuk chart -->
@@ -141,7 +141,7 @@
         <div
             class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
             <div class="mb-3 gap-4 justify-center">
-                <h4 class="text-xl font-bold text-black dark:text-white text-center">
+                <h4 class="mb-4 text-xl font-bold text-black dark:text-white text-center">
                     Detail Keuangan
                 </h4>
             </div>
@@ -169,7 +169,7 @@
         <!-- ====== Agenda Start -->
         <div
             class="overflow-hidden col-span-12 rounded-sm border border-gray-200 bg-white py-6 shadow-default dark:border-gray-700 dark:bg-gray-800 xl:col-span-6 xl:h-[650px]">
-            <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white text-center">
+            <h4 class="mb-4 px-7.5 text-xl font-bold text-black dark:text-white text-center">
                 Agenda RW
             </h4>
             <div class="overflow-auto h-[550px] p-5">
@@ -260,7 +260,7 @@
                 </h4>
                 <div id="calendar"></div>
                 <button data-modal-target="add-agenda" data-modal-toggle="add-agenda"
-                    class="mt-5 block text-white bg-gray-800 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-gray-800 dark:focus:ring-blue-800"
+                    class="mt-5 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-800"
                     type="button">
                     Tambah Agenda
                 </button>
@@ -271,12 +271,12 @@
 
         <!-- ====== UMKM Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
+            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
             <h4 class="mb-2 text-xl font-bold text-black dark:text-white text-center">
                 UMKM
             </h4>
-            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
+                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="">
                         <img class="w-full h-50 object-cover rounded-t-sm"
                             src="{{ asset('assets/images/umkm/food_19.png') }}" alt="UMKM 1">
@@ -285,21 +285,21 @@
                         <h5 class="text-lg font-medium mb-1">Abid's Bakery</h5>
                     </div>
                 </div>
-                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <img class="w-full h-50 object-cover rounded-t-sm"
                         src="{{ asset('assets/images/umkm/food_26.png') }}" alt="UMKM 2">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Makaroni 25 Anang</h5>
                     </div>
                 </div>
-                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <img class="w-full h-50 object-cover rounded-t-sm"
                         src="{{ asset('assets/images/umkm/food_12.png') }}" alt="UMKM 3">
                     <div class="p-4">
                         <h5 class="text-lg font-medium mb-1">Ice Cream Mak Cik Edo</h5>
                     </div>
                 </div>
-                <div class="rounded-sm border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
+                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <img class="w-full h-50 object-cover rounded-t-sm"
                         src="{{ asset('assets/images/umkm/food_2.png') }}" alt="UMKM 3">
                     <div class="p-4">
@@ -312,15 +312,17 @@
         <!--- struktur RW -->
         <div
             class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
-            <div class="flex ">
-                <h1>Struktur RW 2</h1>
-                <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur"
-                    data-modal-toggle="struktur" class=" ml-5 bg-purple-600 text-white px-4 py-2 rounded-lg">change
-                </button>
+            <div>
+                <h4 class="mb-4 text-xl font-bold text-black dark:text-white text-center">
+                    Struktur RW 2
+                </h4>
             </div>
             <div class="flex flex-col items-center justify-center">
                 <img src="{{ $gambarstruktur->getGambar() }}" alt="" class="">
             </div>
+            <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur"
+                    data-modal-toggle="struktur" class=" bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">Ubah
+            </button>
         </div>
 
 
