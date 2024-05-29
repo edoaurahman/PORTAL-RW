@@ -22,4 +22,9 @@ class AspirasiModel extends Model
         return $this->belongsTo(PendudukModel::class, 'author', 'nik');
     }
 
+    public function akun()
+    {
+        return $this->belongsTo(AkunModel::class, 'author', 'nik');
+    }
+
 }
