@@ -110,12 +110,18 @@ class AdminController extends Controller
         ]);
 
         try {
-            $gambarstruktur = SettingHomeModel::find( $request->id_setting);
+            $gambarstruktur = SettingHomeModel::find($request->id_setting);
+            // hapus gambar lama keculi gambar default struktur.png
+            if ($gambarstruktur->gambarstruktur != 'struktur.png') {
+                if (file_exists(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur))) {
+                    unlink(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
+                }
+            }
             $gambarstruktur->gambarstruktur = $request->gambarstruktur->hashName();
             $gambarstruktur->save();
             move_uploaded_file($request->gambarstruktur, public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
         } catch (\Exception $e) {
-            return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Struktur RT Gagal Diubah.')->withInput();
+            return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Struktur RT Berhasil di Ubah, Gambar tidak ditemukan')->withInput();
         }
         return redirect()->route('admin.dashboard')->with('success', 'Struktur RW Berhasil Diubah.');
     }
