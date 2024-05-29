@@ -39,4 +39,9 @@ class KkModel extends Model
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'nik_kepalakeluarga');
     }
+
+    public function akunKepalaKeluarga()
+    {
+        return $this->hasOne(AkunModel::class, 'nik', 'nik_kepalakeluarga');
+    }
 }

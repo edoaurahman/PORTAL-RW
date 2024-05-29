@@ -209,86 +209,22 @@
                         </div>
 
                         <ul class="flex h-auto flex-col overflow-y-auto">
-                            <li>
-                                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                    href="messages.html">
-                                    <div class="h-12.5 w-12.5 rounded-full">
-                                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                                    </div>
+                            @foreach ($aspirasi as $item)
+                                <li>
+                                    <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                                        href="messages.html">
+                                        <i class="fa fa-user-circle h-12.5 w-12.5" aria-hidden="true"></i>
 
-                                    <div>
-                                        <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Penduduk 1
-                                        </h6>
-                                        <p class="text-sm">Bagaimana ini pak? Banyak sekali sampah ...</p>
-                                        <p class="text-xs">2min ago</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                    href="messages.html">
-                                    <div class="h-12.5 w-12.5 rounded-full">
-                                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                                    </div>
-
-                                    <div>
-                                        <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Penduduk 2
-                                        </h6>
-                                        <p class="text-sm">Gimana ini kelola keamanan nya!!</p>
-                                        <p class="text-xs">10min ago</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                    href="messages.html">
-                                    <div class="h-12.5 w-12.5 rounded-full">
-                                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                                    </div>
-
-                                    <div>
-                                        <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Penduduk 3
-                                        </h6>
-                                        <p class="text-sm">Dana buat kegiatan kemana semua??</p>
-                                        <p class="text-xs">1day ago</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                    href="messages.html">
-                                    <div class="h-12.5 w-12.5 rounded-full">
-                                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                                    </div>
-
-                                    <div>
-                                        <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Penduduk 4
-                                        </h6>
-                                        <p class="text-sm">Alangkah lebih baik nya ...</p>
-                                        <p class="text-xs">5days ago</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                    href="messages.html">
-                                    <div class="h-12.5 w-12.5 rounded-full">
-                                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                                    </div>
-
-                                    <div>
-                                        <h6 class="text-sm font-medium text-black dark:text-white">
-                                            Penduduk 5
-                                        </h6>
-                                        <p class="text-sm">Rumput di lapangan sudah lebat pak ...</p>
-                                        <p class="text-xs">2min ago</p>
-                                    </div>
-                                </a>
-                            </li>
+                                        <div>
+                                            <h6 class="text-sm font-medium text-black dark:text-white">
+                                                {{ $item->penduduk->nama }}
+                                            </h6>
+                                            <p class="text-sm">{{ $item->isi }}</p>
+                                            <p class="text-xs">{{ $item->created_at }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- Dropdown End -->
@@ -304,9 +240,7 @@
                         <span class="block text-xs font-medium">{{ $level }}</span>
                     </span>
 
-                    <span class="h-12 w-12 rounded-full">
-                        <img src="{{ asset('assets/images/user/user-04.png') }}" alt="User" />
-                    </span>
+                    <i class="fa fa-user-circle h-12.5 w-12.5" aria-hidden="true"></i>
 
                     <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block" width="12"
                         height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
