@@ -34,5 +34,4 @@ class BansosModel extends Model
     {
         return $this->hasMany(FotoBansosModel::class, 'id_bansos', 'id_bansos');
     }
-
 }

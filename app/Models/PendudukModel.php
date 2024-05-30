@@ -47,9 +47,15 @@ class PendudukModel extends Model
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
     }
 
-    protected function foto_profil(): Attribute
+    public function foto_profile()
     {
-        return Attribute::make(get: fn($gambar) => asset('storage/images/penduduk/' . $this->image));
+        // return asset('storage/images/penduduk/' . $this->image);
+        // check if image is null or image exists
+        if ($this->image == null || !file_exists(public_path('storage/images/penduduk/' . $this->image))) {
+            return asset('assets/images/illustration/profile-not-found.svg');
+        } else {
+            return asset('storage/images/penduduk/' . $this->image);
+        }
     }
 
     public function berita()
