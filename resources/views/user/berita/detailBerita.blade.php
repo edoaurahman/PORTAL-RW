@@ -51,7 +51,7 @@
             </div>
         </div>
     </section>
-    <x-View.Popular-Berita />
+    <x-view.Popular-Berita />
 
     <div class="mt-90"></div>
 </x-layout.user-layout>
