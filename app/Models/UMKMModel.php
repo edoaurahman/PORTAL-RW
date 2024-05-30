@@ -14,10 +14,20 @@ class UMKMModel extends Model
         'id_umkm',
         'nama_umkm',
         'deskripsi',
+        'cover',
+        'hari',
+        'jam_buka',
+        'jam_tutup',
+        'id_kategori_umkm',
+        'nik',
     ];
 
     public function kategori(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(KategoriUMKMModel::class, 'id_kategori', 'id_kategori_umkm');
+    }
+    public function nik(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(PendudukModel::class, 'nik', 'nik');
     }
 }

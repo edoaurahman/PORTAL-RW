@@ -14,7 +14,7 @@ class CreateTbKategoriUmkmTable extends Migration
     public function up()
     {
         Schema::create('tb_kategori_umkm', function (Blueprint $table) {
-            $table->integer('id_kategori')->primary();
+            $table->integer('id_kategori')->autoIncrement();
             $table->string('nama_kategori', 50);
             $table->timestamps();
         });
