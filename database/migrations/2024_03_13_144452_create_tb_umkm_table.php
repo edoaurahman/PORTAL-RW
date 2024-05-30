@@ -14,9 +14,13 @@ class CreateTbUmkmTable extends Migration
     public function up()
     {
         Schema::create('tb_umkm', function (Blueprint $table) {
-            $table->integer('id_umkm')->primary();
+            $table->integer('id_umkm')->autoIncrement();
             $table->string('nama_umkm', 100);
-            $table->string('deskripsi', 300);
+            $table->text('deskripsi');
+            $table->string('cover', 1000);
+            $table->string('hari', 200);
+            $table->time('jam_buka');
+            $table->time('jam_tutup');
             $table->integer('id_kategori_umkm');
             $table->string('nik', 16);
             $table->timestamps();

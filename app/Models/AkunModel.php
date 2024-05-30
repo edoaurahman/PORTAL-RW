@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -30,5 +31,10 @@ class AkunModel extends Authenticatable
     public function level(): BelongsTo
     {
         return $this->belongsTo(LevelModel::class, 'id_level', 'id_level');
+    }
+
+    public function umkm(): HasMany
+    {
+        return $this->HasMany(UMKMModel::class, 'nik', 'nik');
     }
 }
