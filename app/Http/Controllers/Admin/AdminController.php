@@ -149,7 +149,7 @@ class AdminController extends Controller
     public function updategambarStruktur(Request $request)
     {
         $request->validate([
-            'gambarstruktur' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambarstruktur' => 'required|image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
         ]);
 
         try {
