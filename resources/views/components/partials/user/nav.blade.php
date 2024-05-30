@@ -188,7 +188,8 @@
                         </span>
 
                         <span class="h-12 w-12 rounded-full">
-                            <img src="{{ auth()->user()->penduduk->foto_profile() }}" alt="User" />
+                            <img src="{{ auth()->user()->penduduk->foto_profile() }}" alt="User"
+                                class="h-12 absolute rounded-full" />
                         </span>
 
                         <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block dark:text-white"
