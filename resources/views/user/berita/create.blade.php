@@ -35,6 +35,18 @@
                 2MB</label>
             <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
         </div>
+        <label>Kategori berita</label>
+        <div
+            class="mb-5 text-sm font-medium text-gray-900 border border-gray-400 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white grid grid-cols-4">
+            @foreach ($kategori as $item)
+                <div class="flex items-center ps-3 bordeer">
+                    <input type="checkbox" value="{{ $item->id_kategori }}" name="kategori[]"
+                        class="w-4 h-4 text-blue-600 bg-gray-300 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="vue-checkbox"
+                        class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $item->nama_kategori }}</label>
+                </div>
+            @endforeach
+        </div>
 
         <textarea id="summernote" name="isi">{{ old('isi') ?? '### Tulis Berita disini ###' }}</textarea>
 

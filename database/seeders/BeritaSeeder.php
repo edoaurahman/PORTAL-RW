@@ -55,6 +55,8 @@ class BeritaSeeder extends Seeder
                 'author' => '3522110504040006'
             ],
         ];
-        BeritaModel::insert($berita);
+        foreach ($berita as $b) {
+            BeritaModel::create($b);
+        }
     }
 }

@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
             AgendaSeeder::class,
             KategoriUMKMSeeder::class,
             UMKMSeeder::class,
+            KategoriBeritaSeeder::class,
+            DetailBeritaSeeder::class,
+            SettingHomeSeeder::class,
         ]);
     }
 }

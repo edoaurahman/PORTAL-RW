@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBansos;
 use App\Models\BansosModel;
 use App\Models\FotoBansosModel;
+use App\Notifications\Bansos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -240,6 +241,7 @@ class BansosController extends Controller
         $bansos->status = $request->status;
         $bansos->alasan = $request->alasan;
         $bansos->save();
+        $bansos->kk->akunKepalaKeluarga->notify(new Bansos('Periksa status bansos Anda.'));
         return redirect()->back()->with('success', 'Status bansos berhasil diubah');
     }
 
@@ -272,6 +274,8 @@ class BansosController extends Controller
         $bansos = BansosModel::find($request->id);
         $bansos->status = $request->status;
         $bansos->save();
+        // kirim notifikasi
+        $bansos->kk->akunKepalaKeluarga->notify(new Bansos('Periksa status bansos Anda.'));
         return redirect()->back()->with('success', 'Status bansos berhasil diubah');
     }
 }

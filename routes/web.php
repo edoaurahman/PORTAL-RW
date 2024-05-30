@@ -35,6 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth', 'admin'])->group(function () { // auth and admin middleware
         Route::get('/', fn() => redirect(route('admin.dashboard')));
         Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+        Route::put('/gambarstruktur', [AdminController::class, 'updategambarStruktur'])->name('admin.gambarstruktur.update');
         // Admin Penduduk
         Route::prefix('penduduk')->group(function () {
             Route::get('/', [PendudukController::class, 'index'])->name('admin.penduduk');
@@ -73,7 +74,10 @@ Route::prefix('admin')->group(function () {
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');
             Route::get('/peminjaman', [InventarisController::class, 'peminjaman'])->name('admin.inventaris.peminjaman');
-            Route::delete('/{id_inventaris}', [InventarisController::class, 'destroy'])->name('admin.inventaris.delete');
+            Route::post('/peminjaman/status', [InventarisController::class, 'peminjaman_status'])->name('admin.inventaris.peminjaman.status');
+            Route::post('/store', [InventarisController::class, 'store'])->name('admin.inventaris.tambah');
+            Route::put('/edit', [InventarisController::class, 'edit'])->name('admin.inventaris.edit');
+            Route::delete('/{id_inventaris}', [InventarisController::class, 'delete'])->name('admin.inventaris.delete');
         });
 
 
@@ -108,6 +112,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
         Route::get('/report-data', [ReportDataController::class, 'index'])->name('admin.report-data');
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
+        Route::put('/aspirasi/respon', [AspirasiController::class, 'respon'])->name('admin.aspirasi.respon');
 
 
         Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw']);

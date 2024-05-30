@@ -2,19 +2,19 @@
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
-                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-white rounded-full items-center">
-                    <i class="fa-solid fa-globe"></i>
-                    <p class=" text-base font-semibold text-black2">
-                        Kami memiliki jumlah penduduk lebih dari 1.000 jiwa.
+                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-purple-500 rounded-full items-center">
+                    <!-- <i class="fa-solid fa-globe"></i> -->
+                    <p class=" text-base font-semibold text-white">
+                        Lingkungan yang berisi lebih dari 1000 jiwa.
                     </p>
                 </div>
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none">Tumbuh <br>
-                        Bersama RW 02.
-                    </h1>
-                    <div class="text-base leading-loose text-black3">
-                        We provide a variety of servers to grow your users <br>
-                        acquisition much user-friendly and boosting up sales.
+                    <h1 class="text-black1 text-[35px] leading-none">
+                        Bersatu dalam <b>Keberagaman</b>, <br>
+                        Harmoni dalam <b> Kebersamaan</b>.</h1>
+                    <div class="text-[20px] leading-loose text-black3">
+                        RW 2 Desa Arjosari<br>
+                        Kecamatan Blimbing.
                     </div>
                 </div>
                 <!-- <div class="flex flex-row gap-x-4 items-center">
@@ -46,34 +46,38 @@
         </div>
     </section>
 
-    <section class="struktur max-w-6xl mx-auto font-sans py-12">
-
-        <h1 class="text-center font-bold text-6xl leading-tight my-20">Struktur Kepengurusan RW 2</h1>
-        <div class="flex flex-row gap-x-10 items-center justify-center">
-            <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl">
-                <img src="{{ asset('assets/images/illustration/struktur.png') }}" alt="">
+    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+        <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-row item-center">
+                <img src="{{ $gambar_struktur->getGambar() }}" alt="" class=" mr-30 max-w-150">
+            </div>
+            <div class="flex flex-col gap-y-10">
+                <div class=" text-right gap-y-2 flex flex-col">
+                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[60px] leading-none">Struktur Kepengurusan
+                    </h1>
+                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[60px] leading-none">
+                        RW 2
+                    </h1>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="features max-w-6xl mx-auto py-12 font-sans">
+
+        <h1 class="text-center font-bold text-6xl leading-tight">Mengutamakan Kenyamanan<br>Untuk Warga</h1>
         <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
-            <div class="my-card relative bg-black1 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
-                <div class="z-1 flex flex-col items-start gap-y-8">
-                    <i class="fa-solid fa-shield-halved text-5xl text-white"></i>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class=" text-2xl font-bold text-white">
-                            Kebersihan
-                        </h3>
-                        <div class="text-base leading-relaxed text-black4">
-                            Bpk. Sutrisno <br>
-                            RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute top-5 right-5">
-                    <img src="{{ asset('assets/images/Home/Ellipse 2.png') }}" alt="">
+
+            <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+                <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
+                <div class="flex flex-col gap-y-1">
+                    <h3 class=" text-2xl font-bold">
+                        Kebersihan
+                    </h3>
+                    <div class="text-base leading-relaxed text-black3">
+                        Adanya bersih Lingkungan Rutin Tiap Bulan dan petugas kebersihan yang bekerja setiap hari,
+                        membuat lingkungan RW 2 selalu bersih dan nyaman</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -83,9 +87,8 @@
                         Keamanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Bpk. Anang <br>
-                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
-                    </div>
+                        Satpam Linmas yang berjaga 24 jam dan berbagai peraturan yang telah ditetapkan, membuat
+                        lingkungan RW 2 Lebih Aman</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -95,9 +98,8 @@
                         Fasilitas
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Bpk. Edo <br>
-                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
-                    </div>
+                        Berbagai Fasilitas yang tersedia, memberikan rasa bangga tersendiri bagi warga RW 2 atas
+                        pencapaiannya hingga saat ini</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -107,9 +109,8 @@
                         Layanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Bpk. Jaki <br>
-                        RW 2, RT 1, No 24. Desa Arjosari, Kecamatan Singosari, Kabupaten Malang
-                    </div>
+                        pengaduan dan keperluan yang dibutuhkan warga, selalu dilayani oleh Ketua RT dan RW sebaik
+                        mungkin, sehingga memberikan kepuasan untuk warga</div>
                 </div>
             </div>
         </div>
@@ -123,35 +124,22 @@
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-4xl leading-tight">Kerja Bakti
-                        Serentak Seluruh RT
+                    <h1 class="text-black1 font-bold text-4xl leading-tight">{{ $agenda->title }}
                     </h1>
-                    <div class="text-base leading-loose text-black3">
-                        kegiatan gotong royong yang dilakukan secarab bersama-sama oleh seluruh warga di tingkat RT
-                        untuk membersihkan lingkungan dan memperbaiki infrastruktur.
+                    <div class="text-base leading-loose text-black3">{{ $agenda->deskripsi }}
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-y-10">
-                    <div class=" flex flex-row bg-white rounded-2xl p-5 w-full items-center gap-x-4">
-                        <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                        <div class="flex flex-col ">
-                            <h3 class=" text-2xl font-bold text-black1">
-                                Lokasi
-                            </h3>
-                            <div class="text-base leading-relaxed text-black4">
-                                Seluruh Wilayah RW 2
-                            </div>
-                        </div>
-                    </div>
+
                     <div class=" flex flex-row bg-white rounded-2xl p-5 items-center gap-x-4">
-                        <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
+                        {{-- <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i> --}}
                         <div class="flex flex-col ">
                             <h3 class=" text-2xl font-bold text-black1">
                                 Waktu
                             </h3>
                             <div class="text-base leading-relaxed text-black4">
-                                21 Juni 2024
+                                {{ $agenda->start . ' - ' . $agenda->end }}
                             </div>
                         </div>
                     </div>
@@ -255,7 +243,7 @@
                         </div>
                     </div>
                     <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/food_1.png') }}" alt=""
+                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
                             class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
                         <div
                             class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
@@ -290,17 +278,16 @@
                     <!-- <label for="email" class="block mb-2 text-2xl font-medium dark:text-gray-900 text-white">kirimkan -->
                     <!-- aspirasimu</label> -->
 
-                    <form class="max-w-sm">
-                        <textarea id="message" rows="4"
+                    <form action="{{ route('user.aspirasi.store') }}" class="max-w-sm" method="post">
+                        @csrf
+                        <textarea name="aspirasi" id="message" rows="4"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="tulis aspirasi disini..."></textarea>
-                    </form>
-                    <div>
+
                         <button type="submit"
                             class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
                             aspirasi</button>
-
-                    </div>
+                    </form>
                 </div>
             </div>
     </section>

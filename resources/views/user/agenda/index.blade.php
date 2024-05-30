@@ -59,8 +59,10 @@
                         </div>
                         <time class="mb-1 text-sm font-normal leading-none text-gray-100 dark:text-gray-500"
                             x-text="item.start">Tanggal</time>
-                        <h3 class="text-lg font-semibold text-white dark:text-white">Abid Sunatan</h3>
-                        <p class="mb-4 text-base font-normal text-gray-300 dark:text-gray-400">Lorem ipsum dolor sit
+                        <h3 class="text-lg font-semibold text-white dark:text-white" x-text="item.title">Abid Sunatan
+                        </h3>
+                        <p class="mb-4 text-base font-normal text-gray-300 dark:text-gray-400" x-text="item.deskripsi">
+                            Lorem ipsum dolor sit
                             amet
                             consectetur adipisicing elit. Enim deserunt minus aspernatur quo, dolorum accusamus eligendi
                             veritati.</p>

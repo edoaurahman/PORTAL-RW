@@ -2,6 +2,7 @@
 
 namespace App\View\Components\view;
 
+use App\Models\BeritaModel;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,11 @@ class PopularBerita extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.view.popular-berita');
+        // berikan 5 berita yang paling populer
+        $berita = BeritaModel::with('penulis', 'kategori')
+            ->orderBy('view', 'desc')
+            ->limit(3)
+            ->get();
+        return view('components.view.popular-berita', compact('berita'));
     }
 }

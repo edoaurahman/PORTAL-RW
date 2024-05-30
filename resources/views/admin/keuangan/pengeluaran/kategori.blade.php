@@ -79,7 +79,7 @@
                                 <a href="#">
                                     <button onclick="showFormEdit({{ $item }})"
                                         data-modal-target="edit-kategori" data-modal-toggle="edit-kategori"
-                                        class="font-medium text-white bg-yellow-400 p-2  rounded">
+                                        class="font-medium text-white bg-yellow-300 p-2  rounded">
                                         Edit
                                     </button>
                                 </a>

@@ -21,8 +21,8 @@
             <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
                 <div class="p-4 border-t border-b md:border md:rounded">
                     <div class="flex py-2">
-                        <img src="https://randomuser.me/api/portraits/men/97.jpg"
-                            class="h-10 w-10 rounded-full mr-2 object-cover" alt="Author" />
+                        <i class="fa fa-user h-5 my-auto mx-3" aria-hidden="true"></i>
+
                         <div>
                             <p class="font-semibold text-gray-700 text-sm"> {{ $berita->Penulis->nama }}</p>
                             <p class="font-semibold text-gray-600 text-xs"> Editor </p>

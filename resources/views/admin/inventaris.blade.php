@@ -11,14 +11,18 @@
                 <small class="text-dark">
                     <i class="fas fa-xs fa-angle-right text-muted"></i>
                     Inventaris
+                    <small class="text-dark">
+                        <i class="fas fa-xs fa-angle-right text-muted"></i>
+                        Kelola
+                    </small>
                 </small>
             </h3>
         </div>
         <div class="flex justify-between pb-5">
             <h1> </h1>
             <!-- Modal toggle -->
-            <button data-modal-target="" data-modal-toggle=""
-                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            <button data-modal-target="tambah-inventaris" data-modal-toggle="tambah-inventaris"
+                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-purple-800"
                 type="button">
                 Tambah Barang
             </button>
@@ -93,10 +97,10 @@
                                 {{ $item->jumlah > 0 ? 'Tersedia' : 'Kosong' }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <button class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
-                                    <a href="#">
+                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-inventaris" data-modal-toggle="edit-inventaris" class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
+                                    
                                         Edit
-                                    </a>
+                                    
                                 </button>
 
                                 <form action="{{ route('admin.inventaris.delete', $item->id_inventaris) }}"
@@ -117,4 +121,8 @@
         </div>
         <!-- End Body Content -->
     </div>
+
+    <x-partials.admin.inventaris.add />
+    <x-partials.admin.inventaris.edit/>
 </x-layout.admin-layout>
+
