@@ -54,7 +54,7 @@
                             {{ $item->level->nama_level }}
                         </td>
                         <td class="px-6 py-4">
-                            <button class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                            <button class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
                                 <a href="#">
                                     Edit
                                 </a>
