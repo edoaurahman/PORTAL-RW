@@ -55,46 +55,6 @@
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                         :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('layanan')) }">Layanan</a>
                 </li>
-
-                <!-- <li>
-                    <div class="relative inline-block text-left">
-                        <div>
-                            <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                                Lainnya
-                                <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div> -->
-
-                <!--
-    Dropdown menu, show/hide based on menu state.
-
-    Entering: "transition ease-out duration-100"
-      From: "transform opacity-0 scale-95"
-      To: "transform opacity-100 scale-100"
-    Leaving: "transition ease-in duration-75"
-      From: "transform opacity-100 scale-100"
-      To: "transform opacity-0 scale-95"
-  -->
-                <!-- <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                            <div class="py-1" role="none"> -->
-                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <!-- <a href="{{ route('user.agenda') }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Agenda</a>
-                            </div>
-                            <div class="py-1" role="none">
-                                <a href="{{ route('user.umkm') }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">UMKM</a>
-                            </div>
-                            <div class="py-1" role="none">
-                                <a href="{{ route('user.inventaris') }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Inventaris</a>
-                            </div>
-                            <div class="py-1" role="none">
-                                <a href="{{ route('user.layanan') }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-6">Layanan</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </li> -->
                 <li>
                     <!-- Dark Mode Toggler  -->
                     <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
@@ -249,7 +209,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="settings.html"
+                                <a href="{{ route('user.umkm.dashboard') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 640 512">

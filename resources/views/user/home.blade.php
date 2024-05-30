@@ -68,7 +68,7 @@
         <h1 class="text-center font-bold text-6xl leading-tight">Mengutamakan Kenyamanan<br>Untuk Warga</h1>
         <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
-            
+
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
@@ -76,7 +76,8 @@
                         Kebersihan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                      Adanya bersih Lingkungan Rutin Tiap Bulan dan petugas kebersihan yang bekerja setiap hari, membuat lingkungan RW 2 selalu bersih dan nyaman</div>
+                        Adanya bersih Lingkungan Rutin Tiap Bulan dan petugas kebersihan yang bekerja setiap hari,
+                        membuat lingkungan RW 2 selalu bersih dan nyaman</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -86,7 +87,8 @@
                         Keamanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Satpam Linmas yang berjaga 24 jam dan berbagai peraturan yang telah ditetapkan, membuat lingkungan RW 2 Lebih Aman</div>
+                        Satpam Linmas yang berjaga 24 jam dan berbagai peraturan yang telah ditetapkan, membuat
+                        lingkungan RW 2 Lebih Aman</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -96,7 +98,8 @@
                         Fasilitas
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        Berbagai Fasilitas yang tersedia, memberikan rasa bangga tersendiri bagi warga RW 2 atas pencapaiannya hingga saat ini</div>
+                        Berbagai Fasilitas yang tersedia, memberikan rasa bangga tersendiri bagi warga RW 2 atas
+                        pencapaiannya hingga saat ini</div>
                 </div>
             </div>
             <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
@@ -106,7 +109,8 @@
                         Layanan
                     </h3>
                     <div class="text-base leading-relaxed text-black3">
-                        pengaduan dan keperluan yang dibutuhkan warga, selalu dilayani oleh Ketua RT dan RW sebaik mungkin, sehingga memberikan kepuasan untuk warga</div>
+                        pengaduan dan keperluan yang dibutuhkan warga, selalu dilayani oleh Ketua RT dan RW sebaik
+                        mungkin, sehingga memberikan kepuasan untuk warga</div>
                 </div>
             </div>
         </div>

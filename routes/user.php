@@ -10,6 +10,7 @@ use App\Http\Controllers\User\LayananController;
 use App\Http\Controllers\User\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PendudukController;
+use App\Http\Controllers\User\UmkmController;
 use App\Http\Controllers\User\UserController;
 
 // menus
@@ -51,20 +52,22 @@ Route::prefix('bansos')->group(function () {
     });
 });
 
+Route::prefix('umkm')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/', [UmkmController::class, 'index'])->name('user.umkm');
+        Route::get('/dashboard', [UmkmController::class, 'dashboard'])->name('user.umkm.dashboard');
+        Route::get('/detail/{id}', [UmkmController::class, 'show'])->name('user.umkm.detail');
+        Route::get('/create', [UmkmController::class, 'create'])->name('user.umkm.tambah');
+        Route::post('/store', [UmkmController::class, 'store'])->name('user.umkm.store');
+    });
+});
+
 
 Route::get('/profile', function () {
     return view('user.profile');
 })->name('user.profile');
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('user.agenda');
-
-Route::get('/umkm', function () {
-    return view('user.UMKM.index');
-})->name('user.umkm');
-
-// Route::get('/inventaris', function () {
-//     return view('user.inventaris.index');
-// })->name('user.inventaris');
 
 Route::get('/inventaris', [InventarisController::class, 'index'])->name('user.inventaris');
 Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam');
