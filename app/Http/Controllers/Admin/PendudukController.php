@@ -45,22 +45,44 @@ class PendudukController extends Controller
 
     public function index(Request $request)
     {
-        $penduduk = new PendudukModel();
         $paginate = 10;
         try {
             $query = PendudukModel::with('alamat');
+
+            if ($request->has('s')) {
+                $query->where('nama', 'like', '%' . $request->s . '%');
+            }
+
             if ($this->isAdmin()) {
                 $query->where('nama', 'like', '%' . $request->s . '%');
-            } else if ($this->isRW()) {
+            } elseif ($this->isRW()) {
                 $query->whereHas('akun.level', function ($query) {
                     $query->whereIn('nama_level', ['Penduduk', 'RT']);
-                })->where('nama', 'like', '%' . $request->s . '%');
+                });
             } else {
                 $rt = $this->alamat->rt;
                 $query->whereHas('alamat', function ($query) use ($rt) {
                     $query->where('rt', $rt);
-                })->where('nama', 'like', '%' . $request->s . '%');
+                });
             }
+
+            $filters = [
+                'rt' => 'alamat.rt',
+                'status_penduduk' => 'status_penduduk',
+                'jenis_kelamin' => 'jenis_kelamin'
+            ];
+
+            foreach ($filters as $param => $column) {
+                if ($request->has($param)) {
+                    $value = $request->$param;
+                    if (is_array($value)) {
+                        $query->whereIn($column, $value);
+                    } else {
+                        $query->where($column, $value);
+                    }
+                }
+            }
+
             $penduduk = $query->paginate($paginate);
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
@@ -68,8 +90,11 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-        return view('admin.penduduk.index', compact('penduduk'));
+
+        $listRT = AlamatModel::select('rt')->distinct()->get();
+        return view('admin.penduduk.index', compact('penduduk', 'listRT'));
     }
+
 
     public function akun_penduduk(Request $request)
     {
