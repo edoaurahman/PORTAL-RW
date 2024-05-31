@@ -60,9 +60,9 @@
                     tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
                 </div>
 
-                <div class=" w-full font-sans pb-12">
+                <div class="mx-auto max-w-6xl font-sans pb-12">
                     @if ($berita == null || $berita->isEmpty())
-                        <div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+                        <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                             role="alert">
                             <div>
                                 {{ $penduduk->nama }} belum memiliki berita.

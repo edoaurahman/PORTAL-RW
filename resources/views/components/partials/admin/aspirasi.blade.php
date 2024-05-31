@@ -14,7 +14,7 @@
                     <!-- Modal header -->
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                            respon aspirasi
+                            Respon Aspirasi
                         </h3>
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -30,8 +30,8 @@
 
                     <!-- Modal body Form -->
                     <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[50vh]">
-                        <label for="respon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">isi
-                            pesan respon</label>
+                        <label for="respon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Isi
+                            Pesan Respon</label>
                         <div class="relative mb-6">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-hashtag"></i>
@@ -44,7 +44,7 @@
                         <input type="hidden" name="id_aspirasi">
 
                         <label for="countries"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">pilih status respon</label>
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pilih Status Respon</label>
                         <select name="status" id="countries"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500">
                             <option selected>Pilih Respon</option>
@@ -57,10 +57,10 @@
                         <div
                             class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                             <button type="submit"
-                                class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                                 Kirim Respon</button>
                             <button data-modal-hide="aspirasi" type="button"
-                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tutup</button>
+                                class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tutup</button>
                         </div>
                     </div>
                 </div>
