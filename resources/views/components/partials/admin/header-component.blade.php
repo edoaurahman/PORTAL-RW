@@ -89,7 +89,7 @@
                     <!-- Dark Mode Toggler -->
                 </li>
 
-                <!-- Notification Menu Area -->
+                {{-- <!-- Notification Menu Area -->
                 <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
                     <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
                         href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
@@ -171,19 +171,19 @@
                         </ul>
                     </div>
                     <!-- Dropdown End -->
-                </li>
+                </li> --}}
                 <!-- Notification Menu Area -->
 
                 <!-- Chat Notification Area -->
-                <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+                <li class="relative" x-data="{ dropdownOpen: false, notifying: true, aspirasiCount: {{ $aspirasi->count() }} }" @click.outside="dropdownOpen = false">
                     <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-                        href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
-                        <span :class="!notifying && 'hidden'"
+                        href="#" @click.prevent="dropdownOpen = !dropdownOpen; notifying = false">
+                        <span x-show="aspirasiCount > 0" :class="!notifying && 'hidden'"
                             class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
                             <span
                                 class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
                         </span>
-
+                
                         <svg class="fill-current duration-300 ease-in-out" width="18" height="18"
                             viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -200,21 +200,21 @@
                                 fill="" />
                         </svg>
                     </a>
-
+                
                     <!-- Dropdown Start -->
                     <div x-show="dropdownOpen"
                         class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
                         <div class="px-4.5 py-3">
                             <h5 class="text-sm font-medium text-bodydark2">Pengaduan Masyarakat</h5>
                         </div>
-
+                
                         <ul class="flex h-auto flex-col overflow-y-auto">
                             @foreach ($aspirasi as $item)
                                 <li>
                                     <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
                                         href="messages.html">
                                         <i class="fa fa-user-circle h-12.5 w-12.5" aria-hidden="true"></i>
-
+                
                                         <div>
                                             <h6 class="text-sm font-medium text-black dark:text-white">
                                                 {{ $item->penduduk->nama }}
@@ -228,7 +228,7 @@
                         </ul>
                     </div>
                     <!-- Dropdown End -->
-                </li>
+                </li>                
                 <!-- Chat Notification Area -->
             </ul>
 
