@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\BeritaModel;
 use App\Models\PendudukModel;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class PendudukController extends Controller
     public function show($nik)
     {
         $penduduk = PendudukModel::with('alamat')->where('nik', $nik)->first();
-        return view('user.penduduk.detailPenduduk', compact('penduduk'));
+        $berita = BeritaModel::with('penulis')->where('author', $nik)->orderBy('updated_at', 'desc')->get();
+        return view('user.penduduk.detailPenduduk', compact('penduduk', 'berita'));
     }
 
     public function store(Request $request)
@@ -75,4 +77,6 @@ class PendudukController extends Controller
     {
         // update data
     }
+
+    
 }
