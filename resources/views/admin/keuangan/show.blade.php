@@ -80,7 +80,7 @@
                             <td class="px-6 py-4 flex gap-2">
                                 <button onclick="showFormPembayaran({{ $item }})"
                                     data-modal-target="pembayaran-edit" data-modal-toggle="pembayaran-edit"
-                                    class="font-medium text-white bg-blue-400 p-2  rounded">
+                                    class="font-medium text-white bg-yellow-400 p-2  rounded">
                                     Edit
                                 </button>
                             </td>

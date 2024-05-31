@@ -151,7 +151,7 @@
                                 @endforeach
                             </datalist>
                         </div>
-                        <small class="text-red-500">*pergi ke <a class="text-blue-500"
+                        <small class="text-red-500">*Pergi ke <a class="text-blue-500"
                                 href="{{ route('admin.penduduk.akun') }}">Akun Penduduk</a> jika data tidak di
                             temukan</small>
 

@@ -25,7 +25,7 @@
 
                     <!-- Modal body Form -->
                     <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[50vh]">
-                        <label for="nama_inventaris" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama inventaris</label>
+                        <label for="nama_inventaris" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Inventaris</label>
                         <div class="relative mb-6">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-hashtag"></i>

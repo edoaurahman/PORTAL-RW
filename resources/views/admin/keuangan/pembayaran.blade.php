@@ -14,7 +14,7 @@
         </div>
         <form action="{{ route('admin.notification.iuran-reminder') }}" method="post">
             @csrf
-            <button type="submit" class="mb-2 font-medium text-white bg-blue-700 p-2 rounded">
+            <button type="submit" class="px-4 py-2 mb-2 font-medium text-white bg-blue-700 p-2 rounded">
                 Kirim Notifikasi
             </button>
         </form>
@@ -98,7 +98,7 @@
                                 </a>
                                 <button onclick="showFormPembayaran({{ $item->no_kk }})"
                                     data-modal-target="pembayaran-penduduk" data-modal-toggle="pembayaran-penduduk"
-                                    class="font-medium text-white bg-blue-400 p-2  rounded">
+                                    class="font-medium text-white bg-blue-500 p-2  rounded">
                                     Bayar
                                 </button>
                             </td>
