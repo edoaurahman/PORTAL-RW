@@ -191,7 +191,7 @@ class PendudukController extends Controller
                             $fotoRumah->no_kk = $request->no_kk;
                             $fotoRumah->image = $image->hashName();
                             $fotoRumah->save();
-                            $image->store('public/images/rumah');
+                            $image->store('images/rumah', 'public');
                         }
                     }
                 }
@@ -222,7 +222,7 @@ class PendudukController extends Controller
                 ]);
 
                 // store foto
-                $request->image->store('public/images/penduduk');
+                $request->image->store('images/penduduk', 'public');
             });
         } catch (\Exception $e) {
             return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->back()->withErrors('Kepala Keluarga dengan no KK ' . ' ' . $request->no_kk . ' ' . 'belum terdaftar. nyalakan opsi <strong class="dark:text-white text-black">☑️ kepala keluarga</strong>, anda dapat merubah kepala keluarga pada halaman detail KK.')->withInput();
@@ -312,7 +312,7 @@ class PendudukController extends Controller
                 }
             }
             // simpan file image yang baru
-            $request->image->store('public/images/penduduk');
+            $request->image->store('images/penduduk', 'public');
             $penduduk->update(['image' => $request->image->hashName()]);
         }
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Diupdate.');
