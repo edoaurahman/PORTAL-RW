@@ -40,7 +40,12 @@ class BeritaModel extends Model
 
     protected function sampul(): Attribute
     {
-        return Attribute::make(get: fn($gambar) => asset('storage/images/berita/' . $this->gambar));
+        // cek apakah file gambar ada
+        if (file_exists(storage_path('app/public/images/berita/' . $this->gambar))) {
+            return Attribute::make(get: fn($gambar) => asset('storage/images/berita/' . $this->gambar));
+        } else {
+            return Attribute::make(get: fn($gambar) => asset('assets/images/illustration/image-not-found.svg'));
+        }
     }
 
     public function kategori()

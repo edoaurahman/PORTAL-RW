@@ -147,10 +147,8 @@
                             <span class="block text-xs font-medium text-black dark:text-white">{{ $level }}</span>
                         </span>
 
-                        <span class="h-12 w-12 rounded-full">
-                            <img src="{{ auth()->user()->penduduk->foto_profile() }}" alt="User"
-                                class="h-12 absolute rounded-full" />
-                        </span>
+                        <img src="{{ auth()->user()->penduduk->foto_profile() }}" alt="User"
+                            class="h-12 w-12 rounded-full" />
 
                         <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block dark:text-white"
                             width="12" height="8" viewBox="0 0 12 8" fill="none"
