@@ -8,7 +8,8 @@
         @endforeach
     @endif
 
-    <form class="px-70 mt-5" action="{{ route('user.berita.update') }}" method="post" enctype="multipart/form-data">
+    <form class="mx-70 p-10 mt-5 bg-white rounded-xl" action="{{ route('user.berita.update') }}" method="post"
+        enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <input type="hidden" name="id_berita" value="{{ $berita->id_berita }}">
@@ -35,9 +36,12 @@
             <label for="gambar"
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
                 2MB (Kosongkan jika tidak ingin diubah)</label>
+            <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
+
         </div>
 
-        <img class="h-auto max-w-full" src="{{ $berita->sampul }}" alt="image description">
+        <img class="h-auto max-w-full" src="{{ $berita->sampul }}" alt="image description" id="old-image">
+
 
         <label>Kategori berita</label>
         <div
@@ -55,7 +59,7 @@
         <textarea id="summernote" name="isi">{{ $berita->isi }}</textarea>
 
         <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+            class="text-white mt-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
     </form>
 
     <div class="mt-187.5"></div>
@@ -77,5 +81,25 @@
             ]
 
         });
+    });
+
+
+    document.getElementById('gambar').addEventListener('change', function(event) {
+        // remove hidden class
+        document.getElementById('imagePreview').classList.remove('hidden');
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            }
+
+            reader.readAsDataURL(file);
+            // hide old image
+            document.getElementById('old-image').classList.add('hidden');
+        } else {
+            document.getElementById('imagePreview').src = "#";
+        }
     });
 </script>

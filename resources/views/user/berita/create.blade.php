@@ -8,7 +8,8 @@
         @endforeach
     @endif
 
-    <form class="px-70 mt-5" action="{{ route('user.berita.store') }}" method="post" enctype="multipart/form-data">
+    <form class="mx-70 p-10 mt-5 bg-white rounded-xl" action="{{ route('user.berita.store') }}" method="post"
+        enctype="multipart/form-data">
         @csrf
         <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-5 group">
@@ -37,7 +38,7 @@
         </div>
         <label>Kategori berita</label>
         <div
-            class="mb-5 text-sm font-medium text-gray-900 border border-gray-400 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white grid grid-cols-4">
+            class="mb-5 mt-2 text-sm font-medium text-gray-900 border border-gray-400 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white grid grid-cols-4">
             @foreach ($kategori as $item)
                 <div class="flex items-center ps-3 bordeer">
                     <input type="checkbox" value="{{ $item->id_kategori }}" name="kategori[]"
@@ -51,7 +52,7 @@
         <textarea id="summernote" name="isi">{{ old('isi') ?? '### Tulis Berita disini ###' }}</textarea>
 
         <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            class="text-white mt-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
     </form>
 
     <div class="mt-187.5"></div>
