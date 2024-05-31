@@ -52,7 +52,7 @@ class PendudukModel extends Model
         // return asset('storage/images/penduduk/' . $this->image);
         // check if image is null or image exists
         if ($this->image == null || !file_exists(public_path('storage/images/penduduk/' . $this->image))) {
-            return asset('assets/images/illustration/profile-not-found.svg');
+            return asset('assets/images/illustration/image-not-found.svg');
         } else {
             return asset('storage/images/penduduk/' . $this->image);
         }
@@ -71,5 +71,11 @@ class PendudukModel extends Model
     public function alamatLengkap(): string
     {
         return $this->alamat->jalan . ' RT' . $this->alamat->rt . ' RW' . $this->alamat->rw . ' Kelurahan ' . $this->alamat->kel . ' Kecamatan ' . $this->alamat->kecamatan;
+    }
+
+    public function isPenerimaBansos()
+    {
+        $bansos = BansosModel::where('no_kk', $this->no_kk)->whereIn('status', ['approved', 'done'])->first();
+        return $bansos != null;
     }
 }
