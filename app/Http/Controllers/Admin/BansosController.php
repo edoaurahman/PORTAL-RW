@@ -178,25 +178,25 @@ class BansosController extends Controller
             5 => 'Lebih dari 4 Juta',
         ];
         $jumlah_tanggungan = [
-            1 => '1 - 2 Orang',
-            2 => '3 - 4 Orang',
-            3 => '5 - 6 Orang',
-            4 => '7 - 8 Orang',
-            5 => 'Lebih dari 8 Orang',
+            1 => '1 Orang',
+            2 => '2 Orang',
+            3 => '3 Orang',
+            4 => '4 Orang',
+            5 => '5 Orang atau Lebih',
         ];
         $luas_tanah = [
-            1 => 'Kurang dari 36 m2',
-            2 => '36 m2 - 72 m2',
-            3 => '72 m2 - 108 m2',
-            4 => '108 m2 - 144 m2',
-            5 => 'Lebih dari 144 m2',
+            1 => 'Kurang dari 50 m2',
+            2 => '50 m2 - 100 m2',
+            3 => '100 m2 - 200 m2',
+            4 => '200 m2 - 500 m2',
+            5 => 'Lebih dari 500 m2',
         ];
         $kapasitas_listrik = [
             1 => '450 VA',
             2 => '900 VA',
             3 => '1300 VA',
             4 => '2200 VA',
-            5 => '4400 VA',
+            5 => 'Lebih dari 2200 VA',
         ];
         $jumlah_kendaraan = [
             1 => 'Tidak Punya',
