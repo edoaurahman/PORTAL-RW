@@ -71,6 +71,7 @@
                                 class="bg-blue-100 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-dark_grey4 dark:text-slate-100 ms-2 dark:group-hover:bg-gray-600">Rt
                                 {{ $umkm->penduduk->alamat->rt }}</span>
                         </h1>
+                        <p class="text-xs®">Kategori Umkm</p>
                     </div>
                     <!-- Fasilitas start -->
                     <div class="flex sm:flex-wrap sm:justify-start flex-nowrap overflow-x-auto pb-3 pt-8">

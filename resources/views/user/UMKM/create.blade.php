@@ -8,199 +8,218 @@
         @endforeach
     @endif
 
+
+
     <form class="hero max-w-6xl mx-auto font-sans py-20" action="{{ route('user.umkm.store') }}" method="post"
         enctype="multipart/form-data">
         @csrf
-        <div class="grid md:grid-cols-2 md:gap-6">
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="floating_first_name"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " required />
-                <label for="floating_first_name"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nama
-                    UMKM</label>
-            </div>
-        </div>
+        <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-12">
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Create data UMKM</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600">Dalam proses pencatatan data UMKM, langkah awal yang
+                    penting adalah pembuatan data yang akurat dan komprehensif. Melalui formulir ini, Anda dapat dengan
+                    mudah mencatat informasi penting tentang UMKM, termasuk nama UMKM, jadwal operasional, kategori
+                    produk atau layanan, serta unggahan gambar cover dan slide untuk memberikan gambaran yang jelas
+                    tentang bisnis UMKM tersebut</p>
 
-        <div class="">
-            <p>cover</p>
-            <div class="relative z-0 w-full my-5 group">
-                <input type="file" name="cover" id="cover"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " required />
-                <label for="cover"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
-                    2MB</label>
-                <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
-            </div>
-        </div>
-
-        {{-- Pemilihan hari  --}}
-        <div class=" py-2">
-            <p class="mb-4">Buka hari</p>
-
-            <div class="flex items-center ">
-                <input id="default-checkbox-1" type="checkbox" value="Senin"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-1"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Senin</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-2" type="checkbox" value="Selasa"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-2"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Selasa</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-3" type="checkbox" value="Rabu"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-3"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Rabu</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-4" type="checkbox" value="Kamis"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-4"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kamis</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-5" type="checkbox" value="Jumat"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-5"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jum'at</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-6" type="checkbox" value="Sabtu"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-6"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sabtu</label>
-            </div>
-            <div class="flex items-center ">
-                <input id="default-checkbox-7" type="checkbox" value="Minggu"
-                    name="hari[]
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded
-                    focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700
-                    dark:border-gray-600">
-                <label for="default-checkbox-7"
-                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Minggu</label>
-            </div>
-
-        </div>
-
-        {{-- kategori umkm --}}
-        <div x-data="{ open: false }" class="p-3 border rounded-md mt-4 dark:border-dark_grey2">
-            <label class="block mb-2 text-sm font-medium font-sans text-gray-900 dark:text-white">Pilih Kategori
-                UMKM</label>
-            <button @click="open = ! open" id="button_kategori"
-                class="rounded text-white bg-black hover:bg-bingu_hover dark:bg-dark_grey5  font-sans font-medium text-sm w-full py-3 px-4 text-center flex justify-between items-center"
-                type="button">
-                Kategori UMKM
-                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 1 4 4 4-4" />
-                </svg>
-            </button>
-
-            <!-- Dropdown menu lantai -->
-            <div x-show="open" @click.outside="open = false"
-                class="w-full bg-white rounded-b-lg shadow dark:bg-gray-700 font-sans">
-                <div class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
-                    @foreach ($kategori as $item)
-                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input type="checkbox" id="list_kategori {{ $item->id_kategori }}" name="list_kategori[]"
-                                value="{{ $item->id_kategori }}" name="kategori[]" multiple
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                            <label for="list_kategori{{ $item->id_kategori }}"
-                                class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{{ $item->nama_kategori }}</label>
+                <div class="mt-10 gap-x-6 gap-y-8">
+                    <div class="sm:col-span-4">
+                        <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Nama Usaha
+                            Mikro Kecil dan Menengah (UMKM)</label>
+                        <div class="mt-2">
+                            <div
+                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="username"
+                                    autocomplete="username"
+                                    class="block flex-1 border-0 bg-transparent ml-1 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                    placeholder="Toko..">
+                            </div>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
-        {{-- Pemilihan waktu --}}
-        <div class="w-[16rem]">
-            <button id="selectTimeToggle" data-collapse-toggle="time-range-container" type="button"
-                class="text-blue-700 dark:text-blue-500 text-base font-medium hover:underline p-0 inline-flex items-center mb-2">Select
-                time <svg class="w-8 h-8 ms-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m8 10 4 4 4-4" />
-                </svg>
-            </button>
-            <div id="time-range-container" class="max-w-[16rem] mx-auto grid grid-cols-2 gap-4 mb-2 hidden">
-                <div>
-                    <label for="start-time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start
-                        time:</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <input type="time" id="start_time" name="start_time"
-                            class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            min="01:00" max="18:00" value="00:00" required />
                     </div>
-                </div>
-                <div>
-                    <label for="end-time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End
-                        time:</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z"
-                                    clip-rule="evenodd" />
-                            </svg>
+
+                    {{-- <div class="col-span-full">
+                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover
+                            photo</label>
+                        <div
+                            class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            <div class="text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                                    <label for="file-upload"
+                                        class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                            </div>
                         </div>
-                        <input type="time" id="end_time" name="end_time"
-                            class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            min="01:00" max="00:00" value="00:00" required />
+                    </div> --}}
+                    <div class="cover">
+                        <p>cover</p>
+                        <div class="relative z-0 w-full my-5 group">
+                            <input type="file" name="cover" id="cover"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" " required />
+                            <label for="cover"
+                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
+                                2MB</label>
+                            <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="border-b border-gray-900/10 pb-12">
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Informasi Data</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600">Tersedia informasi terbaru mengenai jam operasional dan
+                    layanan UMKM, lengkap dengan kategori produk, waktu buka dan tutup.</p>
+
+                <div class=" mt-10">
+                    <div id="time-range-container" class="mt-4 grid grid-cols-2 gap-4 mb-6 ">
+                        <div>
+                            <label for="start-time"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam Buka:</label>
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <input type="time" id="start_time" name="start_time"
+                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    min="01:00" max="18:00" value="00:00" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="end-time"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam Tutup:</label>
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <input type="time" id="end_time" name="end_time"
+                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    min="01:00" max="00:00" value="00:00" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <fieldset class="mt-10">
+                    <legend class="text-sm font-semibold leading-6 text-gray-900">Pilih Hari Buka</legend>
+                    <div class="mt-4 space-y-3 ">
+                        <div class="flex items-center gap-x-3">
+                            <input id="Senin" value="Senin" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Senin"
+                                class="block text-sm font-medium leading-6 text-gray-900">Senin</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Selasa" value="Selasa" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Selasa"
+                                class="block text-sm font-medium leading-6 text-gray-900">Selasa</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Rabu" value="Rabu" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Rabu"
+                                class="block text-sm font-medium leading-6 text-gray-900">Rabu</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Kamis" value="Kamis" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Kamis"
+                                class="block text-sm font-medium leading-6 text-gray-900">Kamis</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Jumat" value="Jumat" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Jumat"
+                                class="block text-sm font-medium leading-6 text-gray-900">Jumat</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Sabtu" value="Sabtu" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Sabtu"
+                                class="block text-sm font-medium leading-6 text-gray-900">Sabtu</label>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input id="Minggu" value="Minggu" name="hari[]" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            <label for="Minggu"
+                                class="block text-sm font-medium leading-6 text-gray-900">Minggu</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mt-10">
+                    <legend class="text-sm font-semibold leading-6 text-gray-900">Pilih Kategori Mikro Kecil dan
+                        Menengah (UMKM)</legend>
+                    <div class="mt-4 space-y-3 ">
+                        @foreach ($kategori as $item)
+                            <div class="flex items-center gap-x-3">
+                                <input type="checkbox" id="list_kategori {{ $item->id_kategori }}"
+                                    name="list_kategori[]" value="{{ $item->id_kategori }}" multiple
+                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <label for="ist_kategori{{ $item->id_kategori }}"
+                                    class="block text-sm font-medium leading-6 text-gray-900">{{ $item->nama_kategori }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <div class="border-b border-gray-900/10 pb-12">
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Deskripsi Mikro Kecil dan Menengah (UMKM)
+                </h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600">We'll always let you know about important changes, but
+                    you pick what else you want to hear about.</p>
+
+                <div class="mt-10 space-y-10">
+                    <h2>Slide Header UMKM</h2>
+                    <div class="relative z-0 w-full my-5 group">
+                        <input type="file" name="slide[]" id="slide" multiple accept="image/*"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="slide"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
+                            2MB</label>
+                        <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
+                    </div>
+
+                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
+                </div>
+
+            </div>
         </div>
 
-        {{-- slide  --}}
-        <div class="relative z-0 w-full my-5 group">
-            <input type="file" name="slide[]" id="slide" multiple accept="image/*"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required />
-            <label for="slide"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
-                2MB</label>
-            <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+            <a href="{{ route('user.umkm.dashboard') }}">
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button></a>
+            <button type="submit"
+                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
-
-        <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
-
-        <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
     </form>
+
 
     <div class="mt-187.5"></div>
 </x-layout.user-layout>
@@ -223,7 +242,7 @@
         });
     });
 
-    document.getElementById('gambar').addEventListener('change', function(event) {
+    document.getElementById('cover').addEventListener('change', function(event) {
         // remove hidden class
         document.getElementById('imagePreview').classList.remove('hidden');
         const file = event.target.files[0];
@@ -237,6 +256,33 @@
             reader.readAsDataURL(file);
         } else {
             document.getElementById('imagePreview').src = "#";
+        }
+    });
+
+    document.getElementById('gambar').addEventListener('change', function(event) {
+        const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        imagePreviewContainer.innerHTML = ''; // Kosongkan container
+
+        const files = event.target.files;
+
+        if (files.length > 0) {
+            imagePreviewContainer.classList.remove('hidden'); // Tampilkan container
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('image-preview'); // Tambahkan kelas untuk styling
+                    img.alt = 'Image Preview';
+
+                    imagePreviewContainer.appendChild(img);
+                }
+
+                reader.readAsDataURL(file);
+            });
+        } else {
+            imagePreviewContainer.classList.add('hidden'); // Sembunyikan container jika tidak ada file
         }
     });
 </script>

@@ -22,9 +22,11 @@ class CreateTbUmkmTable extends Migration
             $table->time('jam_buka');
             $table->time('jam_tutup');
             $table->string('nik', 16);
+            $table->integer('id_kategori');
             $table->timestamps();
 
             $table->foreign('nik', 'tb_umkm_ibfk_1')->references('nik')->on('tb_penduduk');
+            $table->foreign('id_kategori')->references('id_kategori')->on('tb_kategori_umkm');
         });
     }
 
