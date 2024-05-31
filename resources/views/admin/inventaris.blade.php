@@ -100,13 +100,15 @@
                                 {{ $item->jumlah > 0 ? 'Tersedia' : 'Kosong' }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->getImage() }}
+                                <img src="{{ $item->getImage() }}" class="max-w-[100px]" alt="">
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-inventaris" data-modal-toggle="edit-inventaris" class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
-                                    
-                                        Edit
-                                    
+                                <button onclick="showEdit({{ $item }})" data-modal-target="edit-inventaris"
+                                    data-modal-toggle="edit-inventaris"
+                                    class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
+
+                                    Edit
+
                                 </button>
 
                                 <form action="{{ route('admin.inventaris.delete', $item->id_inventaris) }}"
@@ -129,6 +131,5 @@
     </div>
 
     <x-partials.admin.inventaris.add />
-    <x-partials.admin.inventaris.edit/>
+    <x-partials.admin.inventaris.edit />
 </x-layout.admin-layout>
-
