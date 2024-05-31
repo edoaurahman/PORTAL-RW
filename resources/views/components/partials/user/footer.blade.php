@@ -1,4 +1,4 @@
-<footer class="w-screen -mt-[330px] bg-black1 z-10">
+<footer class="w-full -mt-[330px] bg-black1 z-10">
     <div class="max-w-6xl mx-auto py-6 grid grid-cols-4 pt-[330px] gap-x-10">
         <div class="company flex flex-col gap-y-7">
             <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
