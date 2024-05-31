@@ -32,30 +32,30 @@ class LayananController extends Controller
             $layanan->author = auth()->user()->nik;
             $layanan->save();
             $file = $request->file('file');
-            $file->store('public/layanan/berkas');
+            $file->store('layanan/berkas', 'public');
             $image = $request->file('image');
-            $image->store('public/layanan');
+            $image->store('layanan', 'public');
         });
         return redirect()->route('admin.layanan')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function edit(Request $request)
     {
-        
+
         DB::transaction(function () use ($request) {
             $layanan = LayananModel::findOrFail($request->id_surat);
             if ($request->hasFile('image')) {
                 // hapus gambar lama
                 unlink(storage_path('app/public/layanan/' . $layanan->image));
                 $image = $request->file('image');
-                $image->store('public/layanan');
+                $image->store('layanan', 'public');
                 $layanan->image = $image->hashName();
             }
             if ($request->hasFile('file')) {
                 // hapus file lama
                 unlink(storage_path('app/public/layanan/berkas/' . $layanan->file));
                 $file = $request->file('file');
-                $file->store('public/layanan/berkas/');
+                $file->store('layanan/berkas/', 'public');
                 $layanan->file = $file->hashName();
             }
             $layanan->nama_surat = $request->nama_surat;

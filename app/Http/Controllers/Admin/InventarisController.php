@@ -33,8 +33,8 @@ class InventarisController extends Controller
     // }
     public function updatePeminjaman(Request $request)
     {
-        $peminjaman = PeminjamanModel::findOrFail($request->id_peminjaman); 
-        $peminjaman->status = $request->status;  
+        $peminjaman = PeminjamanModel::findOrFail($request->id_peminjaman);
+        $peminjaman->status = $request->status;
         $peminjaman->save();
         return redirect()->route('admin.peminjaman')->with('success', 'Status peminjaman berhasil diubah');
     }
@@ -52,21 +52,21 @@ class InventarisController extends Controller
             $layanan->jumlah = $request->jumlah;
             $layanan->save();
             $image = $request->file('image');
-            $image->store('public/inventaris');
+            $image->store('inventaris', 'public');
         });
         return redirect()->route('admin.inventaris')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function edit(Request $request)
     {
-        
+
         DB::transaction(function () use ($request) {
             $inventaris = InventarisModel::findOrFail($request->id_inventaris);
             if ($request->hasFile('image')) {
                 // hapus gambar lama
                 unlink(storage_path('app/public/inventaris/' . $inventaris->image));
                 $image = $request->file('image');
-                $image->store('public/inventaris');
+                $image->store('inventaris', 'public');
                 $inventaris->image = $image->hashName();
             }
             $inventaris->nama = $request->nama;
@@ -79,9 +79,9 @@ class InventarisController extends Controller
     public function delete($id_inventaris)
     {
         $inventaris = InventarisModel::findOrFail($id_inventaris);
-        try{
+        try {
             unlink(storage_path('app/public/inventaris/' . $inventaris->image));
-        }catch(Exception $e){
+        } catch (Exception $e) {
             $inventaris->delete();
             return redirect()->route('admin.inventaris')->with('success', 'Data berhasil dihapus, gambar tidak ditemukan');
         }
@@ -95,7 +95,7 @@ class InventarisController extends Controller
         return view("admin.peminjaman", compact("peminjaman"));
     }
 
-    public function peminjaman_status (Request $request)
+    public function peminjaman_status(Request $request)
     {
         $peminjaman = PeminjamanModel::findOrFail($request->id_peminjaman);
         $peminjaman->status = $request->status;
