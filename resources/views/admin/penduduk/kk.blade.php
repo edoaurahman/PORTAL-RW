@@ -76,7 +76,7 @@
                             <td class="px-6 py-4">
                                 {{ $item->no_kk }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 flex gap-2">
                                 <a href="{{ route('admin.penduduk.kk.detail', $item->no_kk) }}">
                                     <button class="font-medium text-white bg-green-400 p-2 rounded">
                                         Details

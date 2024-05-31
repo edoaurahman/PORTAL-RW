@@ -84,13 +84,13 @@
                             <td class="px-6 py-4">
                                 {{ $item->level->nama_level }}
                             </td>
-                            <td class="px-6 py-4 flex gap-3">
+                            <td class="px-6 py-4 flex gap-2">
                                 <button onclick="showEdit({{ $item }})" data-modal-target="edit-akun-penduduk"
-                                    data-modal-toggle="edit-akun-penduduk">
-                                    <a class="font-medium text-white bg-yellow-300 p-2  rounded" href="#">
+                                    data-modal-toggle="edit-akun-penduduk"
+                                    class="font-medium text-white bg-yellow-300 p-2  rounded">
                                         Edit
-                                    </a>
                                 </button>
+
                                 <form action="{{ route('admin.penduduk.akun.delete', $item->id_akun) }}" method="post">
                                     @csrf
                                     @method('DELETE')
