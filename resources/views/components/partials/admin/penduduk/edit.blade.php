@@ -1,6 +1,7 @@
 <!-- Main modal Edit Penduduk -->
 <div>
-    <form action="{{ route('admin.penduduk.update') }}" method="post" id="form-edit-penduduk">
+    <form action="{{ route('admin.penduduk.update') }}" method="post" id="form-edit-penduduk"
+        enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div id="edit-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
@@ -288,6 +289,15 @@
                                 placeholder="No. Hp">
 
                         </div>
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="file_input">Upload foto</label>
+                        <input required name="image" accept="image/*"
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="file_input_help" id="gambar_profile" type="file">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG,
+                            JPG.(MAX 2MB)</p>
+                        <img alt="foto profile" id="imagePreview" class="hidden max-w-[50%]">
                     </div>
                     <!-- Modal footer -->
                     <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
@@ -315,4 +325,22 @@
             }
         }
     }
+
+    // show image on input file
+    document.getElementById('gambar_profile').addEventListener('change', function(event) {
+        // remove hidden class
+        document.getElementById('imagePreview').classList.remove('hidden');
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            document.getElementById('imagePreview').src = "#";
+        }
+    });
 </script>

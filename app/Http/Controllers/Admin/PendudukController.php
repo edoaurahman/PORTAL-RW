@@ -274,9 +274,22 @@ class PendudukController extends Controller
     public function update(Request $request)
     {
         $penduduk = PendudukModel::where('nik', $request->nik)->first();
-        $penduduk->update($request->all());
         $alamat = AlamatModel::where('id_alamat', $penduduk->id_alamat)->first();
+        $penduduk->update($request->all());
         $alamat->update($request->all());
+        if ($request->hasFile('image')) {
+            // cek apakah file image yang lama ada
+            if ($penduduk->image) {
+                // hapus file image yang lama
+                $oldImage = 'public/images/penduduk/' . $penduduk->image;
+                if (file_exists($oldImage)) {
+                    unlink($oldImage);
+                }
+            }
+            // simpan file image yang baru
+            $request->image->store('public/images/penduduk');
+            $penduduk->update(['image' => $request->image->hashName()]);
+        }
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Diupdate.');
     }
 
