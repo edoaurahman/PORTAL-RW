@@ -52,6 +52,7 @@
                         </td>
                         <td class="px-6 py-4">
                             {{ $item->level->nama_level }}
+                            {{ $item->level->nama_level === 'RT' ? $item->penduduk->alamat->rt : null }}
                         </td>
                         <td class="px-6 py-4">
                             <button class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
