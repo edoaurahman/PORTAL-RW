@@ -20,4 +20,13 @@ class GambarUMKMModel extends Model
     {
         return $this->belongsTo(UMKMModel::class, 'id_umkm', 'id_umkm');
     }
+
+    public function getSlideUMKM(): string
+    {
+        if (file_exists(storage_path('app/public/images/umkm/slide_umkm/' . $this->gambar))) {
+            return asset('storage/images/umkm/slide_umkm/' . $this->gambar);
+        } else {
+            return asset('assets/images/illustration/image-not-found.svg');
+        }
+    }
 }

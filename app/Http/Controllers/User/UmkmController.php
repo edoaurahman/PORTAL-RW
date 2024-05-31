@@ -30,7 +30,7 @@ class UmkmController extends Controller
     public function show($id)
     {
         $umkm = UMKMModel::find($id);
-        return view('user.UMKM.show', compact('umkm'));
+        return view('user.UMKM.detailumkm', compact('umkm'));
     }
 
     public function create()
@@ -91,13 +91,13 @@ class UmkmController extends Controller
                 Storage::disk('public')->put('images/umkm/content/' . $name, $data);
             }
 
-            // image list
+            // image slide
             foreach ($request->slide as $data) {
                 $slide = new GambarUMKMModel();
                 $slide->id_umkm = $umkm->id_umkm;
                 $slide->gambar = $data->hashName();
                 $slide->save();
-                $data->store('images/umkm/content', 'public');
+                $data->store('images/umkm/slide_umkm', 'public');
             }
 
             // 
@@ -108,7 +108,7 @@ class UmkmController extends Controller
                 $list_kategori->save();
             }
 
-            $request->cover->store('images/cover_umkm', 'public');
+            $request->cover->store('images/umkm/cover_umkm', 'public');
         });
         return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil ditambahkan');
     }

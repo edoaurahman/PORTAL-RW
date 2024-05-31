@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class UMKMModel extends Model
@@ -28,10 +29,15 @@ class UMKMModel extends Model
     {
         return $this->hasOne(KategoriUMKMModel::class, 'id_kategori', 'id_kategori_umkm');
     }
-    public function nik(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function penduduk(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'nik');
     }
+    public function gambar(): HasMany
+    {
+        return $this->hasMany(GambarUMKMModel::class, 'id_umkm', 'id_umkm');
+    }
+
     public function generateCuplikan()
     {
         $dom = new \DOMDocument();
@@ -41,8 +47,8 @@ class UMKMModel extends Model
     }
     public function getCover(): string
     {
-        if (file_exists(storage_path('app/public/images/cover_umkm/' . $this->cover))) {
-            return asset('storage/images/cover_umkm/' . $this->cover);
+        if (file_exists(storage_path('app/public/images/umkm/cover_umkm/' . $this->cover))) {
+            return asset('storage/images/umkm/cover_umkm/' . $this->cover);
         } else {
             return asset('assets/images/illustration/image-not-found.svg');
         }
