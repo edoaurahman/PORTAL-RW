@@ -18,6 +18,7 @@ class AspirasiController extends Controller
         $aspirasi->author = auth()->user()->nik;
         $aspirasi->isi = $request->aspirasi;
         $aspirasi->status = 'pending';
+        $aspirasi->respon = $request->aspirasi;
         $aspirasi->save();
 
         return redirect()->route('user.home')->with('success', 'Aspirasi berhasil dikirim.');

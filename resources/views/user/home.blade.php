@@ -120,7 +120,8 @@
         <h1 class="text-center font-bold text-5xl leading-tight">Kegiatan dan Agenda</h1>
         <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}" alt="" class="h-[550px]">
+                <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}" alt=""
+                    class="h-[550px]">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
@@ -256,6 +257,50 @@
             </div>
         </div>
     </section>
+    <section class="umkm mx-auto font-sans py-12">
+        <div class="flex flex-col gap-y-8">
+            <div class="gap-y-2 flex flex-col text-center">
+                <h1 class="text-black1 font-bold text-5xl leading-tight">Aspirasi Warga
+                </h1>
+                <div class="text-base leading-loose text-black3 items-center">
+                    Suarakan Keluh Kesah Pesan dan Kesan mu <br>untuk membangun Lingkungan RW 2 Menjadi Lebih Baik
+                </div>
+                <div class="grid grid-cols-1 mx-auto sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13">
+                    @foreach ($aspirasi as $item)
+                        <div class="flex flex-row gap-2.5">
+                            <div
+                                class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-300 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Author : </span>
+                                    <span
+                                        class="text-sm font-semibold text-gray-900 dark:text-white">{{ $item->author }}</span>
+                                </div>
+
+                                <span class="text-sm font-normal text-start text-gray-500 dark:text-gray-400">pesan :
+                                </span>
+                                <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+                                    {{ $item->isi }}
+                                </p>
+                                <div
+                                    class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                    @if ($item->status == 'pending')
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">belum di
+                                            respon</span>
+                                    @else
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Respon :
+                                        </span>
+                                        <span
+                                            class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ $item->respon }}</span>
+                                    @endif
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="closing font-sans mx-auto max-w-6xl bg-ungu p-14 rounded-3xl z-20 relative">
         <div class="grid grid-cols-2 gap-x-10">
@@ -269,9 +314,6 @@
                         dan mendukung transparansi serta akuntabilitas.
                     </div>
                 </div>
-
-
-
             </div>
             <div class="grid ">
                 <div class="">
