@@ -15,7 +15,7 @@
                         <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                             <div class="relative">
                                 <img alt="Foto Profile" src="{{ auth()->user()->penduduk->foto_profile() }}"
-                                    class="w-50 h-50 -mt-20 rounded-full bg-white shadow-xl">
+                                    class="w-50 h-50 -mt-20 rounded-full bg-white shadow-xl object-cover">
                             </div>
                         </div>
                         <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
