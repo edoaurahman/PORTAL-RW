@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class UMKMModel extends Model
 {
@@ -29,5 +30,12 @@ class UMKMModel extends Model
     public function nik(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'nik');
+    }
+    public function generateCuplikan()
+    {
+        $dom = new \DOMDocument();
+        $dom->loadHTML($this->deskripsi);
+        $cuplikan = strip_tags($dom->textContent);
+        return Str::limit($cuplikan, 50);
     }
 }

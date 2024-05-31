@@ -4,10 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBerita;
+use App\Models\AkunModel;
 use App\Models\BeritaModel;
 use App\Models\DetailBeritaModel;
 use App\Models\GambarBeritaModel;
 use App\Models\KategoriBeritaModel;
+use App\Notifications\Berita;
 use DOMDocument;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -127,6 +129,12 @@ class BeritaController extends Controller
                 $detail->save();
             }
         });
+        $admins = AkunModel::whereHas('level', function ($q) {
+            $q->whereIn('nama_level', ['Super Admin', 'RW', 'RT']);
+        })->get();
+        foreach ($admins as $admin) {
+            $admin->notify(new Berita('Terdapat Berita baru telah ditambahkan, periksa di halaman admin'));
+        }
         return redirect()->route('user.berita.dashboard');
     }
 
@@ -227,6 +235,14 @@ class BeritaController extends Controller
             if ($request->hasFile('gambar'))
                 $request->gambar->store('images/berita', 'public');
         });
+        auth()->user()->notify(new Berita('Berita anda sedang dalam proses review'));
+        // send notification to all admin
+        $admins = AkunModel::whereHas('level', function ($q) {
+            $q->whereIn('nama_level', ['Super Admin', 'RW', 'RT']);
+        })->get();
+        foreach ($admins as $admin) {
+            $admin->notify(new Berita('Terdapat Berita baru telah ditambahkan, periksa di halaman admin'));
+        }
         return redirect()->route('user.berita.dashboard');
     }
 
@@ -261,6 +277,13 @@ class BeritaController extends Controller
         $berita = BeritaModel::find($request->id_berita);
         $berita->status = $request->status;
         $berita->save();
+        if ($request->status == 'publish') {
+            $berita->penulis->akun->notify(new Berita('Berita anda telah dipublikasikan'));
+        } else if ($request->status == 'pending') {
+            $berita->penulis->akun->notify(new Berita('Berita anda sedang dalam proses review'));
+        } else if ($request->status == 'reject') {
+            $berita->penulis->akun->notify(new Berita('Berita anda ditolak'));
+        }
         return redirect()->back();
     }
 

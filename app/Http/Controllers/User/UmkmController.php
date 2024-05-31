@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\GambarUMKMModel;
 use App\Models\KategoriUMKMModel;
+use App\Models\ListKategoriUMKMModel;
 use App\Models\UMKMModel;
 use DOMDocument;
 use Illuminate\Http\Request;
@@ -71,6 +72,7 @@ class UmkmController extends Controller
         $deskripsi = $dom->saveHTML();
         DB::transaction(function () use ($request, $deskripsi, $list_images) {
             $umkm = new UMKMModel();
+            $umkm->nik = auth()->user()->penduduk->nik;
             $umkm->nama_umkm = $request->nama_umkm;
             $umkm->cover = $request->cover->hashName();
             $umkm->deskripsi = $deskripsi;
@@ -98,8 +100,16 @@ class UmkmController extends Controller
                 $data->store('images/umkm/content', 'public');
             }
 
+            // 
+            foreach ($request->list_kategori as $data) {
+                $list_kategori = new ListKategoriUMKMModel();
+                $list_kategori->id_umkm = $umkm->id_umkm;
+                $list_kategori->id_kategori = $data;
+                $list_kategori->save();
+            }
+
             $request->cover->store('images/cover_umkm', 'public');
         });
-        return redirect()->route('umkm.index')->with('success', 'UMKM berhasil ditambahkan');
+        return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil ditambahkan');
     }
 }

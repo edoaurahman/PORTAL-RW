@@ -20,7 +20,11 @@ class LayananModel extends Model
 
     public function getImage(): string
     {
-        return asset('storage/layanan/' . $this->image);
+        if (file_exists(storage_path('app/public/images/layanan/' . $this->image))) {
+            return asset('storage/images/layanan/' . $this->image);
+        } else {
+            return asset('assets/images/illustration/image-not-found.svg');
+        }
     }
     public function downloadSurat(): string
     {

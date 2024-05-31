@@ -18,7 +18,11 @@ class InventarisModel extends Model
 
     public function getImage(): string
     {
-        return asset('storage/inventaris/' . $this->image);
+        if (file_exists(storage_path('app/public/images/inventaris/' . $this->image))) {
+            return asset('storage/images/inventaris/' . $this->image);
+        } else {
+            return asset('assets/images/illustration/image-not-found.svg');
+        }
     }
 
 }
