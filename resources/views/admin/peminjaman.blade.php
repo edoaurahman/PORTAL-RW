@@ -8,11 +8,11 @@
                 ADMIN
                 <small class="text-dark">
                     <i class="fas fa-xs fa-angle-right text-muted"></i>
-                    inventaris
-                    <small class="text-dark">
-                    <i class="fas fa-xs fa-angle-right text-muted"></i>
-                    peminjaman
+                    Inventaris
                 </small>
+                <small class="text-dark">
+                    <i class="fas fa-xs fa-angle-right text-muted"></i>
+                    Peminjaman
                 </small>
                 
             </h3>
@@ -95,9 +95,9 @@
                                     <input type="hidden" name="status" value="done">
                                     <button type="submit">
                                         <div
-                                            class="font-medium text-white bg-purple-500 p-2 dark:text-white rounded inline-flex items-center gap-1">
+                                            class="font-medium text-white bg-green-500 p-2 dark:text-white rounded inline-flex items-center gap-1">
                                             <i class="fa-regular fa-circle-xmark"></i>
-                                            done
+                                            Done
                                         </div>
                                     </button>
                                 </form>

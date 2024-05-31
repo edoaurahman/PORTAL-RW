@@ -85,8 +85,9 @@
                         <td class="px-6 py-4">
                             {{ $item->author }}
                         </td>
-                        <td class="px-6 py-4">
-                            <button onclick="showEdit({{ $item }})" data-modal-target="edit-surat" data-modal-toggle="edit-surat" class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                        <td class="px-6 py-4 flex gap-2">
+                            <button onclick="showEdit({{ $item }})" data-modal-target="edit-surat" data-modal-toggle="edit-surat"
+                            class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
                                 
                                     Edit
                                 

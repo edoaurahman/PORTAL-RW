@@ -52,9 +52,10 @@
                         </td>
                         
                         <td class="px-6 py-4">
-                            <button onclick="showEdit({{ $item }})" data-modal-target="aspirasi" data-modal-toggle="aspirasi" class="font-medium text-white bg-ungu p-2 dark:text-white rounded">
+                            <button onclick="showEdit({{ $item }})" data-modal-target="aspirasi" data-modal-toggle="aspirasi" 
+                            class="font-medium text-white bg-green-400 p-2 dark:text-white rounded">
                                 
-                                    respon
+                                    Respon
                             </button>
                         </td>
                     </tr>

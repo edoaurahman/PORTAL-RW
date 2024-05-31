@@ -11,10 +11,10 @@
                 <small class="text-dark">
                     <i class="fas fa-xs fa-angle-right text-muted"></i>
                     Inventaris
-                    <small class="text-dark">
-                        <i class="fas fa-xs fa-angle-right text-muted"></i>
-                        Kelola
-                    </small>
+                </small>
+                <small class="text-dark">
+                    <i class="fas fa-xs fa-angle-right text-muted"></i>
+                    Kelola
                 </small>
             </h3>
         </div>
