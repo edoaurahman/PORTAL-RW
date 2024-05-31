@@ -14,8 +14,8 @@
                     <div class="flex flex-wrap justify-center">
                         <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                             <div class="relative">
-                                <img alt="..." src="{{ auth()->user()->penduduk->foto_profile() }}"
-                                    class="shadow-xl rounded-full bg-white h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]">
+                                <img alt="Foto Profile" src="{{ auth()->user()->penduduk->foto_profile() }}"
+                                    class="w-50 h-50 -mt-20 rounded-full bg-white shadow-xl">
                             </div>
                         </div>
                         <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -23,7 +23,7 @@
                                 <button
                                     class="border-ungu hover:bg-ungu uppercase text-ungu hover:text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                     type="button">
-                                    {{-- {{ auth()->user()-> }} --}}
+                                    {{ auth()->user()->penduduk->isPenerimaBansos() ? 'Penerima Bansos' : 'Bukan Penerima Bansos' }}
                                 </button>
                             </div>
                         </div>
