@@ -43,10 +43,11 @@
                 </div>
             @endforeach
         @endif
-        <form action="" method="get">
-            <input type="month" id="month" name="date" class="rounded-xl-" required>
-            <input type="submit" value="Filter">
+        <form action="" method="get" class="flex items-center mb-2">
+            <input type="month" id="month" name="date" class="rounded-lg border-gray-300 px-3 py-2 mr-2" required>
+            <input type="submit" value="Filter" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800">
         </form>
+        
         <!-- List Penerima -->
         <div class="flex flex-nowrap relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
