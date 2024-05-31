@@ -58,5 +58,15 @@
                 </tbody>
             </table>
         </div>
+        <div class="my-10 text-xl">
+            <h1><strong>FOTO RUMAH</strong></h1>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+            @foreach ($penduduk->foto_rumah as $item)
+                <div class="relative bg-white p-5 rounded-xl">
+                    <img src="{{ $item->image() }}" alt="" class="w-full h-80 object-cover">
+                </div>
+            @endforeach
+        </div>
     </div>
 </x-layout.admin-layout>

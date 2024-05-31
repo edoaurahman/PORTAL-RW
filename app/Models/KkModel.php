@@ -44,4 +44,9 @@ class KkModel extends Model
     {
         return $this->hasOne(AkunModel::class, 'nik', 'nik_kepalakeluarga');
     }
+
+    public function foto_rumah()
+    {
+        return $this->hasMany(FotoRumah::class, 'no_kk', 'no_kk');
+    }
 }

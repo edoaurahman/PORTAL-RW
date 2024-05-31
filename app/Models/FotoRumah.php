@@ -22,8 +22,12 @@ class FotoRumah extends Model
         return $this->belongsTo(KkModel::class, 'no_kk', 'no_kk');
     }
 
-    protected function foto_rumah(): Attribute
+    public function image(): string
     {
-        return Attribute::make(get: fn($gambar) => asset('storage/images/rumah/' . $this->image));
+        if ($this->image == null || !file_exists(public_path('storage/images/rumah/' . $this->image))) {
+            return asset('assets/images/illustration/image-not-found.svg');
+        } else {
+            return asset('storage/images/rumah/' . $this->image);
+        }
     }
 }
