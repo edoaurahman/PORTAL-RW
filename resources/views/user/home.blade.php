@@ -65,7 +65,7 @@
 
     <section class="features max-w-6xl mx-auto py-12 font-sans">
 
-        <h1 class="text-center font-bold text-6xl leading-tight">Mengutamakan Kenyamanan<br>Untuk Warga</h1>
+        <h1 class="pb-5 text-center font-bold text-5xl leading-tight">Mengutamakan Kenyamanan<br>Untuk Warga</h1>
         <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
 
@@ -117,10 +117,10 @@
     </section>
 
     <section class="benefit max-w-6xl mx-auto font-sans py-12">
-        <h1 class="text-center font-bold text-6xl leading-tight">Agenda</h1>
+        <h1 class="text-center font-bold text-5xl leading-tight">Kegiatan dan Agenda</h1>
         <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/kerjabakti.png') }}" alt="" class="h-[550px]">
+                <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}" alt="" class="h-[550px]">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">

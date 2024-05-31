@@ -1,17 +1,16 @@
 <x-layout.user-layout>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+    <section class="hero max-w-6xl mx-auto font-sans pb-30 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/kerjabakti.png') }}" alt="" class=" max-w-100">
+                <img src="{{ asset('assets/images/illustration/orangorang.webp') }}" alt="" class=" max-w-100">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[70px] leading-none">Kerja Bakti Serentak
-                        Seluruh RT
+                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[50px] leading-none">Informasi Kegiatan dan Agenda
                     </h1>
-                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[70px] leading-none">
-                        26 Mei 2024
+                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[60px] leading-none">
+                        Warga RW 2
                     </h1>
                 </div>
             </div>
