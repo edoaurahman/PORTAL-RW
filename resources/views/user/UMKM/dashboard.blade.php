@@ -62,7 +62,7 @@
                     <div class="absolute bg-slate-950 rounded-2xl w-full h-full opacity-30"></div>
                     <div class="items w-full h-full m-auto rounded-2xl shadow-md">
                         <div class="item-img pb-5">
-                            <img class="w-auto rounded-t-lg" src="{{ $items->cover }}" alt="">
+                            <img class="w-auto rounded-t-lg" src="{{ $items->getCover() }}" alt="">
                         </div>
                         <div class="item-info p-5">
                             <div class="item-rating flex justify-between items-center mt-3">

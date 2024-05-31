@@ -23,7 +23,7 @@
                 max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2,
                 tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan
                 favorit Anda dan nikmati kelezatan kuliner Malang dalam genggaman tangan</p>
-            <div
+            {{-- <div
                 class="explore-menu-list flex justify-between items-center gap-8 text-center my-5 mx-0 overflow-x-scroll">
                 <div class="explore-menu-item pb-5">
                     <img class="w-[7.5vw] min-w-20 rounded-[50%] ease-in duration-300"
@@ -85,8 +85,8 @@
                         src="assets/images/umkm/menu_4.png" alt="">
                     <p class="mt-3 text-gray-500 text-base cursor-pointer">Food 10</p>
                 </div>
-            </div>
-            <hr class="my-2 mx-0 h-1 bg-slate-200 border-none">
+            </div> --}}
+            {{-- <hr class="my-2 mx-0 h-1 bg-slate-200 border-none"> --}}
         </div>
     </section>
 
@@ -113,22 +113,25 @@
             <div class="display-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
                 @foreach ($umkm as $item)
                     <div class="group relative">
-                        <div class="absolute bg-slate-950 rounded-2xl w-full h-full opacity-30"></div>
+                        <div
+                            class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
+                        </div>
                         <div class="items w-full h-full m-auto rounded-2xl shadow-md  ">
                             <div class="item-img pb-5">
-                                <img class="w-auto rounded-t-lg" src="{{ $item->cover }}" alt="">
+                                <img class="w-auto rounded-t-lg" src="{{ $item->getCover() }}" alt="">
                             </div>
                             <div class="item-info p-5">
                                 <div class="item-rating flex justify-between items-center mt-3">
                                     <p class="text-xl font-medium">{{ $item->nama_umkm }}</p>
                                     {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                 </div>
-                                <p class="item-desc text-gray-600 text-xs">{{ $item->deskripsi }}</p>
+                                <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
                                 <div class="item price text-purple-700 text-sm font-medium my-3">Selengkapnya</div>
                             </div>
-                            <div class="opacity-100 absolute justify-center w-full bottom-[60%] flex">
+                            <div
+                                class="{{ $item->tokoBuka() ? 'hidden' : '' }} opacity-100 absolute justify-center w-full bottom-[60%] flex">
                                 <p
-                                    class="f text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                    class="text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
                                     TUTUP</p>
                             </div>
                         </div>
