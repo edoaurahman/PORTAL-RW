@@ -74,6 +74,9 @@
                             Status
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Gambar
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Action
                         </th>
                     </tr>
@@ -95,6 +98,9 @@
                             </td>
                             <td class="px-6 py-4">
                                 {{ $item->jumlah > 0 ? 'Tersedia' : 'Kosong' }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $item->getImage() }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
                                 <button onclick="showEdit({{ $item }})" data-modal-target="edit-inventaris" data-modal-toggle="edit-inventaris" class="font-medium text-white bg-yellow-300 p-2 dark:text-white rounded">
