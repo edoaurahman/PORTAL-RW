@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-purple-900 sticky top-0 z-99999">
+<nav class="bg-white border-gray-200 dark:bg-purple-600 sticky top-0 z-99999">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
@@ -21,43 +21,43 @@
                 class="font-medium flex flex-col md:items-center p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                 <li>
                     <a href="{{ route('user.home') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent"
                         aria-current="page"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('home')) }">Home</a>
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('home')) }">Home</a>
                 </li>
                 <li>
                     <a href="{{ route('user.penduduk') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('penduduk')) }">Penduduk</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent"
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('penduduk')) }">Penduduk</a>
                 </li>
                 <li>
                     <a href="{{ route('user.berita') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('berita')) }">Berita</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('berita')) }">Berita</a>
                 </li>
                 <li>
                     <a href="{{ route('user.agenda') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('agenda')) }">Agenda</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('agenda')) }">Agenda</a>
                 </li>
                 <li>
                     <a href="{{ route('user.umkm') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('umkm')) }">UMKM</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('umkm')) }">UMKM</a>
                 </li>
                 <li>
                     <a href="{{ route('user.inventaris') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('inventaris')) }">Inventaris</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('inventaris')) }">Inventaris</a>
                 </li>
                 <li>
                     <a href="{{ route('user.layanan') }}"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ '!text-blue-700 !dark:text-gray-400': (selected.includes('layanan')) }">Layanan</a>
+                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
+                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('layanan')) }">Layanan</a>
                 </li>
                 <li>
                     <!-- Dark Mode Toggler  -->
-                    <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
+                    <label :class="darkMode ? 'bg-purple-200' : 'bg-stroke'"
                         class="relative m-0 block h-7.5 w-14 rounded-full">
                         <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
                             class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" />
@@ -89,7 +89,7 @@
                 @auth
 
                     <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
-                        <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
+                        <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-purple-800 dark:border-strokedark dark:bg-purple-400 dark:text-white"
                             href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
                             <span :class="!notifying && 'hidden'"
                                 class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
@@ -107,7 +107,7 @@
 
                         <!-- Dropdown Start -->
                         <div x-show="dropdownOpen"
-                            class="absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+                            class="absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke  bg-white dark:bg-gray-800 shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
                             <div class="px-4.5 py-3">
                                 <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
                             </div>
@@ -161,18 +161,18 @@
 
                     <!-- Dropdown Start -->
                     <div x-show="dropdownOpen"
-                        class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark ">
+                        class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:bg-purple-950 dark:border-strokedark ">
                         <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
                             <li {{ auth()->user()->level->nama_level == 'Penduduk' ? 'hidden' : '' }}>
                                 <a href="{{ route('admin.dashboard') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-toolbox w-[22px]"></i>
                                     Admin
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('user.profile') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 448 512">
                                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -184,7 +184,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('user.berita.dashboard') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 512 512">
                                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -196,7 +196,7 @@
                             </li>
                             <li>
                                 <a href="messages.html"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512">
                                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -208,7 +208,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('user.umkm.dashboard') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 640 512">
                                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -220,7 +220,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('user.bansos') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 640 512">
                                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -234,7 +234,7 @@
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button
-                                class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base w-100">
+                                class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base w-100">
                                 <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
