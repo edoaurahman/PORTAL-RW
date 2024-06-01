@@ -260,7 +260,7 @@
                 </h4>
                 <div id="calendar"></div>
                 <button data-modal-target="add-agenda" data-modal-toggle="add-agenda"
-                    class="mt-5 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-800"
+                    class="mt-5 block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-700 dark:hover:bg-purple-800 dark:focus:ring-purple-800"
                     type="button">
                     Tambah Agenda
                 </button>
@@ -321,7 +321,7 @@
                 <img src="{{ $gambarstruktur->getGambar() }}" alt="" class="">
             </div>
             <button onclick="showEdit({{ $gambarstruktur }})" data-modal-target="struktur"
-                    data-modal-toggle="struktur" class=" bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">Ubah
+                    data-modal-toggle="struktur" class=" bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg">Ubah
             </button>
         </div>
 
