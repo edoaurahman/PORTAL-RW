@@ -1,6 +1,6 @@
 <div>
     <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
-    <section class="text-gray-600 mt-12 max-w-6xl mx-auto">
+    <section class="text-gray-600 dark:text-gray-50 mt-12 max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold">Popular News</h2>
         <div class="container px-5 py-8 mx-auto">
             <div class="flex flex-wrap -m-4">
@@ -13,7 +13,7 @@
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                                     {{ $item->kategori[0]->nama_kategori }}
                                 </h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                                <h1 class="title-font text-lg font-medium text-gray-900 dark:text-gray-50 mb-3">
                                     {{ $item->judul }}
                                 </h1>
                                 <p class="leading-relaxed mb-3">
@@ -22,7 +22,7 @@
                                 <div class="flex items-center flex-wrap ">
                                     <a href="{{ route('user.berita.detail', $item->slug) }}"
                                         class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                                        Learn More
+                                        Baca
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
                                             strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>

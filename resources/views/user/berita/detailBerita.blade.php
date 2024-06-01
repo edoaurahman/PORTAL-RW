@@ -3,7 +3,7 @@
     <section class="mt-8 max-w-6xl mx-auto">
         <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
-                <h2 class="text-4xl font-semibold text-gray-800 leading-tight"> {{ $berita->judul }}</h2>
+                <h2 class="text-4xl font-semibold text-gray-800 dark:text-gray-50 leading-tight"> {{ $berita->judul }}</h2>
                 </a>
             </div>
 
@@ -12,10 +12,10 @@
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
             <div class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
-                <span class="text-gray-500">View:
+                <span class="text-gray-500 dark:text-gray-400">View:
                     {{ $berita->view }}</span>
 
-                <p class="mt-2">{!! $berita->isi !!}</p>
+                <p class="mt-2 dark:text-gray-300">{!! $berita->isi !!}</p>
             </div>
 
             <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
@@ -23,16 +23,16 @@
                     <div class="flex py-2">
                         <i class="fa fa-user h-5 my-auto mx-3" aria-hidden="true"></i>
                         <div>
-                            <p class="font-semibold text-gray-700 text-sm"> {{ $berita->Penulis->nama }}</p>
-                            <p class="font-semibold text-gray-600 text-xs"> Editor </p>
+                            <p class="font-semibold text-gray-700 dark:text-gray-300 text-sm"> {{ $berita->Penulis->nama }}</p>
+                            <p class="font-semibold text-gray-600 dark:text-gray-500 text-xs"> Editor </p>
                         </div>
                     </div>
-                    <p class="text-gray-700 py-3 text-xs">
+                    <p class="text-gray-700 dark:text-gray-400 py-3 text-xs">
                         Tanggal Publikasi: {{ $berita->tanggal_posting }}
                     </p>
                     <a href="{{ route('user.detail', $berita->Penulis) }}">
                         <button
-                            class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
+                            class="px-2 py-1 text-gray-100 bg-purple-700 flex w-full items-center justify-center rounded">
                             Detail Penulis
                             <div class="ml-2"></div>
                         </button>
