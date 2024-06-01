@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 dark:bg-purple-600 sticky top-0 z-99999">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="https://flowbite.com/" class="flex shadow shadow-fuchsia-50 items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
                 '{{ asset('assets/images/logo/logo-dark.png') }}'"
                 width="40px" height="auto" class="duration-300" alt="Logo" />
@@ -23,37 +23,37 @@
                     <a href="{{ route('user.home') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent"
                         aria-current="page"
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('home')) }">Home</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('home')) }">Home</a>
                 </li>
                 <li>
                     <a href="{{ route('user.penduduk') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent"
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('penduduk')) }">Penduduk</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('penduduk')) }">Penduduk</a>
                 </li>
                 <li>
                     <a href="{{ route('user.berita') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('berita')) }">Berita</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('berita')) }">Berita</a>
                 </li>
                 <li>
                     <a href="{{ route('user.agenda') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('agenda')) }">Agenda</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('agenda')) }">Agenda</a>
                 </li>
                 <li>
                     <a href="{{ route('user.umkm') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('umkm')) }">UMKM</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('umkm')) }">UMKM</a>
                 </li>
                 <li>
                     <a href="{{ route('user.inventaris') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('inventaris')) }">Inventaris</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('inventaris')) }">Inventaris</a>
                 </li>
                 <li>
                     <a href="{{ route('user.layanan') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
-                        :class="{ 'text-purple-500 dark:text-purple-100': (selected.includes('layanan')) }">Layanan</a>
+                        :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('layanan')) }">Layanan</a>
                 </li>
                 <li>
                     <!-- Dark Mode Toggler  -->
