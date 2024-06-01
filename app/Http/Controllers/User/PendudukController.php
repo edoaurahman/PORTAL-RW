@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\BeritaModel;
 use App\Models\PendudukModel;
+use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 
 class PendudukController extends Controller
@@ -71,7 +72,8 @@ class PendudukController extends Controller
     {
         $penduduk = PendudukModel::with('alamat')->where('nik', $nik)->first();
         $berita = BeritaModel::with('penulis')->where('author', $nik)->orderBy('updated_at', 'desc')->get();
-        return view('user.penduduk.detailPenduduk', compact('penduduk', 'berita'));
+        $umkm = UMKMModel::where('nik', $nik)->orderBy('updated_at', 'desc')->get();
+        return view('user.penduduk.detailPenduduk', compact('penduduk', 'berita','umkm'));
     }
 
     public function store(Request $request)
