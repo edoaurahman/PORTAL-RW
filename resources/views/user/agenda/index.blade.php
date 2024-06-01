@@ -16,12 +16,12 @@
             </div>
         </div>
     </section>
-    <section class=" max-w-2xl  mx-auto font-sans bg-purple-500 p-2 rounded-3xl z-20 relative">
+    <section class=" max-w-2xl  mx-auto font-sans bg-purple-500 dark:bg-gray-700 p-2 rounded-3xl z-20 relative">
         <h1 class="text-center font-bold text-3xl leading-tight text-white">Agenda</h1>
     </section>
 
-    <section id="tutorial"
-        class="grid grid-cols-2 gap-4 max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
+    <section id="kalender"
+        class="grid grid-cols-2 gap-4 max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-gray-800 p-14 rounded-3xl z-20 relative ">
         <div>
             <h5 class="mx-5 mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Kalender Agenda RW 2
             </h5>
@@ -56,7 +56,7 @@
                         <div
                             class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
                         </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-100 dark:text-gray-500"
+                        <time class="mb-1 text-sm font-normal leading-none text-gray-100 dark:text-gray-200"
                             x-text="item.start">Tanggal</time>
                         <h3 class="text-lg font-semibold text-white dark:text-white" x-text="item.title">Abid Sunatan
                         </h3>

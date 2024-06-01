@@ -23,7 +23,7 @@
                 <div class="space-y-8">
                     @foreach ($inventaris as $item)
 
-                    <div class="bg-purple-100 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
+                    <div class="bg-purple-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <div class="flex relative items-center space-x-4">
                             <img src="{{ $item->getImage() }}" alt="Terop" class="w-64 h-34 rounded-lg">
                             <div>
@@ -49,10 +49,10 @@
         <div class=" items-center justify-between">
             <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Mekanisme Peminjaman</h5>
             <h1 class="leading-loose text-white dark:text-white">
-                1. Jika Layanan tersebut berupa surat, maka tahap pertama adalah mendowload surat tersebut. <br>
-                2. Surat yang membutuhkan tanda tangan RT/RW, sudah terlegalisir. <br>
-                3. Setelah di download, isi data-data yang diperlukan, baik diedit atau secara manual. <br>
-                4. setelah berbentuk hard file, antar kepada RW untuk diproses lebih lanjut.
+                1. klik tombol pinjam. <br>
+                2. isi jumlah barang yang diperlukan. <br>
+                3. Tunggu hingga mendapat pemberitahuan bahwa peminjaman telah di setujui oleh Admin. <br>
+                4. Datang ke rumah Pak RW untuk mengambil barang.
             </h1>
         </div>
     </section>
