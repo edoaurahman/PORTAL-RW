@@ -32,33 +32,26 @@
                                 </svg>
                             </div>
                             <div>
-                                <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
+                                <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">
+                                    {{ $totalPenduduk }}</h5>
                                 <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Total penduduk di RT
                                     {{ $user->penduduk->alamat->rt }}
                                 </p>
                             </div>
                         </div>
-                        <div>
-                            <span
-                                class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
-                                <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 10 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4" />
-                                </svg>
-                                42.5%
-                            </span>
-                        </div>
+
                     </div>
 
                     <div class="grid grid-cols-2">
                         <dl class="flex items-center">
                             <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Laki-laki:</dt>
-                            <dd class="text-gray-900 text-sm dark:text-white font-semibold">$3,232</dd>
+                            <dd class="text-gray-900 text-sm dark:text-white font-semibold">{{ $totalPendudukLakiLaki }}
+                            </dd>
                         </dl>
                         <dl class="flex items-center justify-end">
                             <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">Perempuan:</dt>
-                            <dd class="text-gray-900 text-sm dark:text-white font-semibold">1.2%</dd>
+                            <dd class="text-gray-900 text-sm dark:text-white font-semibold">
+                                {{ $totalPendudukPerempuan }}</dd>
                         </dl>
                     </div>
 
@@ -257,15 +250,15 @@
                     color: "#270551",
                     data: [{
                             x: "Total",
-                            y: 231
+                            y: {{ $totalPenduduk }}
                         },
                         {
                             x: "Pendatang",
-                            y: 122
+                            y: {{ $totalPendudukPendatang }}
                         },
                         {
                             x: "Tetap",
-                            y: 63
+                            y: {{ $totalPendudukTetap }}
                         },
                     ],
                 },
@@ -274,15 +267,15 @@
                     color: "#7733FF",
                     data: [{
                             x: "Total",
-                            y: 232
+                            y: {{ $totalPendudukLakiLaki }}
                         },
                         {
                             x: "Pendatang",
-                            y: 113
+                            y: {{ $totalPendudukLakiLakiPendatang }}
                         },
                         {
                             x: "Tetap",
-                            y: 341
+                            y: {{ $totalPendudukLakiLakiTetap }}
                         },
                     ],
                 },
@@ -291,15 +284,15 @@
                     color: "#b286f8",
                     data: [{
                             x: "Total",
-                            y: 231
+                            y: {{ $totalPendudukPerempuan }}
                         },
                         {
                             x: "Pendatang",
-                            y: 122
+                            y: {{ $totalPendudukPerempuanPendatang }}
                         },
                         {
                             x: "Tetap",
-                            y: 63
+                            y: {{ $totalPendudukPerempuanTetap }}
                         },
                     ],
                 },

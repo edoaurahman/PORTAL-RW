@@ -35,7 +35,36 @@ class PendudukController extends Controller
 
         $penduduk = $query->paginate(10);
         $user = auth()->user();
-        return view('user.penduduk.index', compact('penduduk', 'user'));
+        $totalPenduduk = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->count();
+        $totalPendudukLakiLaki = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Laki-Laki')->count();
+        $totalPendudukPerempuan = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Perempuan')->count();
+
+        $totalPendudukPendatang = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('status_penduduk', 'Pendatang')->count();
+        $totalPendudukTetap = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('status_penduduk', 'Tetap')->count();
+
+        $totalPendudukLakiLakiPendatang = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Laki-Laki')->where('status_penduduk', 'Pendatang')->count();
+        $totalPendudukPerempuanPendatang = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Pendatang')->count();
+        $totalPendudukLakiLakiTetap = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Laki-Laki')->where('status_penduduk', 'Tetap')->count();
+        $totalPendudukPerempuanTetap = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        })->where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Tetap')->count();
+        return view('user.penduduk.index', compact('penduduk', 'user', 'totalPenduduk', 'totalPendudukLakiLaki', 'totalPendudukPerempuan', 'totalPendudukPendatang', 'totalPendudukTetap', 'totalPendudukLakiLakiPendatang', 'totalPendudukPerempuanPendatang', 'totalPendudukLakiLakiTetap', 'totalPendudukPerempuanTetap'));
     }
 
     public function show($nik)
