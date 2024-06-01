@@ -27,7 +27,7 @@
                 </div> -->
             </div>
             <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/warga.png') }}" alt="" class="h-[550px]">
+                <img src="{{ asset('assets/images/illustration/warga.webp') }}" alt="" class="h-[550px]">
             </div>
         </div>
     </section>

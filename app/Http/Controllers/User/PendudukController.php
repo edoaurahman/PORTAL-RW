@@ -9,9 +9,31 @@ use Illuminate\Http\Request;
 
 class PendudukController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $penduduk = PendudukModel::with('alamat')->get();
+        $query = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
+            $query->where('rt', auth()->user()->penduduk->alamat->rt);
+        });
+        if ($request->has('s')) {
+            $query->where('nama', 'like', '%' . $request->s . '%');
+        }
+        $filters = [
+            'status_penduduk' => 'status_penduduk',
+            'jenis_kelamin' => 'jenis_kelamin'
+        ];
+
+        foreach ($filters as $param => $column) {
+            if ($request->has($param)) {
+                $value = $request->$param;
+                if (is_array($value)) {
+                    $query->whereIn($column, $value);
+                } else {
+                    $query->where($column, $value);
+                }
+            }
+        }
+
+        $penduduk = $query->paginate(10);
         $user = auth()->user();
         return view('user.penduduk.index', compact('penduduk', 'user'));
     }
@@ -78,5 +100,5 @@ class PendudukController extends Controller
         // update data
     }
 
-    
+
 }

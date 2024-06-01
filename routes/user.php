@@ -8,6 +8,7 @@ use App\Http\Controllers\User\LayananController;
 
 
 use App\Http\Controllers\User\BeritaController;
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PendudukController;
 use App\Http\Controllers\User\UmkmController;
@@ -62,15 +63,14 @@ Route::prefix('umkm')->group(function () {
     });
 });
 
-
-Route::get('/profile', function () {
-    return view('user.profile');
-})->name('user.profile');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
+});
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('user.agenda');
 
-Route::get('/inventaris', [InventarisController::class, 'index'])->name('user.inventaris');
-Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam');
+Route::get('/inventaris', [InventarisController::class, 'index'])->name('user.inventaris')->middleware('auth');
+Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam')->middleware('auth');
 
 // Layanan route
 Route::get('/layanan', [LayananController::class, 'index'])->name('user.layanan');
