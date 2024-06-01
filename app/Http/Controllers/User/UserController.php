@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AgendaModel;
 use App\Models\AspirasiModel;
 use App\Models\SettingHomeModel;
+use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,8 +15,9 @@ class UserController extends Controller
     {
         $agenda = AgendaModel::where('start', '>=', date('Y-m-d'))->first();
         $aspirasi = AspirasiModel::all();
+        $umkm = UMKMModel::all();
         $gambar_struktur = SettingHomeModel::select('id_setting', 'gambarstruktur')->first();
-        return view("user.home", compact('agenda', 'aspirasi', 'gambar_struktur'));
+        return view("user.home", compact('agenda', 'aspirasi', 'gambar_struktur', 'umkm'));
     }
 
 }

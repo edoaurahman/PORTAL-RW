@@ -70,8 +70,7 @@
         <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
 
-            <div
-                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
@@ -82,8 +81,7 @@
                         membuat lingkungan RW 2 selalu bersih dan nyaman</div>
                 </div>
             </div>
-            <div
-                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
@@ -94,8 +92,7 @@
                         lingkungan RW 2 Lebih Aman</div>
                 </div>
             </div>
-            <div
-                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
@@ -106,8 +103,7 @@
                         pencapaiannya hingga saat ini</div>
                 </div>
             </div>
-            <div
-                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
@@ -133,7 +129,8 @@
                     <div class="gap-y-2 flex flex-col pl-5 pt-5">
                         <h1 class="text-black1 font-bold text-4xl leading-tight dark:text-white ">{{ $agenda->title }}
                         </h1>
-                        <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">{{ $agenda->deskripsi }}
+                        <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
+                            {{ $agenda->deskripsi }}
                         </div>
                     </div>
 
@@ -146,7 +143,7 @@
                                     Waktu
                                 </h3>
                                 <div class="text-base leading-relaxed text-black4 dark:text-purple-200">
-                                    {{ $agenda->start . ' - ' . $agenda->end }} 
+                                    {{ $agenda->start . ' - ' . $agenda->end }}
                                 </div>
                             </div>
                         </div>
@@ -175,91 +172,30 @@
             </div>
             <div class="flex flex-col gap-7">
                 <div class="flex flex-wrap gap-x-10 justify-center">
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
+                    @foreach ($umkm as $item)
+                        @if ($item->tokoBuka())
+                            <div class="group relative border border-purple-800 rounded-2xl">
+                                <img src="{{ $item->getCover() }}" alt=""
+                                    class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
+                                <div
+                                    class="absolute justify-center w-full top-10 flex">
+                                    <div class="bg-indigo-900 text-base   text-white w-full text-center  font-semibold ">
+                                        {{ $item->nama_umkm }}</div>
+                                </div>
+                                <div
+                                    class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
+                                    <a href="{{ route('user.umkm.detail', $item->id_umkm) }}"
+                                        class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">Lihat Detail
+                                        </a>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
-            <div class="flex flex-col gap-7">
-                <div class="flex flex-wrap gap-x-10 justify-center">
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm1.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm2.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm3.jpeg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <img src="{{ asset('assets/images/umkm/umkm4.jpg') }}" alt=""
-                            class="transition-all ease-in-out duration-500 group-hover:border-4 border-ungu w-[320px] h-[220px] rounded-2xl">
-                        <div
-                            class="group-hover:opacity-100 transition-all ease-in-out duration-500 opacity-0 absolute justify-center w-full bottom-8 flex">
-                            <a href="#"
-                                class="hover:bg-indigo-900 text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">view
-                                Details</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-center">
+                <a href="{{ route('user.umkm') }}"
+                    class="hover:bg-indigo-900 text-base shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">Lihat UMKM Lainnya</a>
             </div>
         </div>
     </section>
