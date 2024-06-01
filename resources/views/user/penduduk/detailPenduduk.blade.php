@@ -6,7 +6,7 @@
                 <div class="gap-y-2 flex flex-col">
                     <div class="title">
                         <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                                class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                         </h3>
 
                         <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
@@ -54,9 +54,9 @@
     <section class="berita mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">Berita
+                <h1 class="text-black1 dark:text-whiten font-bold text-5xl leading-tight">Berita
                 </h1>
-                <div class="text-base leading-loose text-black3 items-center">
+                <div class="text-base leading-loose text-black3 dark:text-white items-center">
                     tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
                 </div>
 
@@ -71,7 +71,7 @@
                     @endif
                     @foreach ($berita as $item)
                         <div id="alert-additional-content-3 "
-                            class="p-4 mb-4 w-[70vw] mx-auto text-purple-800 border border-purple-300 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-400 dark:border-purple-800"
+                            class="p-4 mb-4 w-[70vw] mx-auto text-purple-800 border border-purple-300 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-200 dark:border-purple-800"
                             role="alert">
                             <div class="flex items-center">
 
@@ -94,34 +94,13 @@
 
         </div>
     </section>
-    {{-- 
-    <div class="historyberita max-w-6xl mx-auto font-sans pb-12">
-        @if ($berita == null || $berita->isEmpty())
-            <div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-                role="alert">
-                <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                </svg>
-                <div>
-                    Anda belum memiliki berita.
-                </div>
-            </div>
-        @endif
-        @foreach ($berita as $item)
-            <x-partials.user.berita.dashboard.status-berita type="{{ $item->status }}" judul="{{ $item->judul }}"
-                slug="{{ $item->slug }}" id-berita="{{ $item->id_berita }}" />
-        @endforeach
-    </div>
- --}}
-
+    
     <section class="umkm mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">Showcase UMKM
+                <h1 class="text-black1 dark:text-whiten font-bold text-5xl leading-tight">Showcase UMKM
                 </h1>
-                <div class="text-base leading-loose text-black3 items-center">
+                <div class="text-base leading-loose text-black3 dark:text-white items-center">
                     Di sini, Anda dapat melihat detail tentang bisnis, termasuk informasi kontak, <br> deskripsi
                     usaha,
                     dan data penting lainnya yang membantu memperkuat identitas dan visi bisnis.

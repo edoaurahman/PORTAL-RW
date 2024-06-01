@@ -105,14 +105,14 @@
                                     <div class="flex items-center my-2">
                                         <input id="default-checkbox" type="checkbox" value="Pendatang"
                                             name="status_penduduk[]"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="default-checkbox"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pendatang</label>
                                     </div>
                                     <div class="flex items-center my-2">
                                         <input id="default-checkbox" type="checkbox" value="Penduduk Tetap"
                                             name="status_penduduk[]"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="default-checkbox"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Penduduk
                                             Tetap</label>
@@ -139,14 +139,14 @@
                                     <div class="flex items-center my-2">
                                         <input id="default-checkbox" type="checkbox" value="Laki-Laki"
                                             name="jenis_kelamin[]"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="default-checkbox"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-Laki</label>
                                     </div>
                                     <div class="flex items-center my-2">
                                         <input id="default-checkbox" type="checkbox" value="Perempuan"
                                             name="jenis_kelamin[]"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="default-checkbox"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
                                     </div>
@@ -167,15 +167,15 @@
                     <input type="text" id="table-search-users" name="s" autocomplete="off"
                         value="{{ old('s') }}"
                         class="block p-2 ps-10 text-sm text-gray-900 border
-                        border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500
+                        border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-purple-500 focus:border-purple-500
                         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                        dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        dark:focus:ring-purple-500 dark:focus:border-purple-500"
                         placeholder="Cari penduduk">
                 </div>
             </div>
         </form>
         <table class="shadow-md w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-purple-50 dark:bg-purple-900 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="p-4">
 
@@ -224,7 +224,7 @@
                         </td>
                         <td class="px-6 py-4">
                             <a href="{{ route('user.detail', $item->nik) }}"
-                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
+                                class="font-medium text-purple-600 dark:text-purple-500 hover:underline">Detail</a>
                         </td>
                     </tr>
                 @endforeach
