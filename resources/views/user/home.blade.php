@@ -9,10 +9,10 @@
                     </p>
                 </div>
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 text-[35px] leading-none">
+                    <h1 class="text-black1 dark:text-purple-50 text-[35px] leading-none">
                         Bersatu dalam <b>Keberagaman</b>, <br>
                         Harmoni dalam <b> Kebersamaan</b>.</h1>
-                    <div class="text-[20px] leading-loose text-black3">
+                    <div class="text-[20px] leading-loose text-black3 dark:text-purple-100">
                         RW 2 Desa Arjosari<br>
                         Kecamatan Blimbing.
                     </div>
@@ -65,50 +65,55 @@
 
     <section class="features max-w-6xl mx-auto py-12 font-sans">
 
-        <h1 class="pb-5 text-center font-bold text-5xl leading-tight">Mengutamakan Kenyamanan<br>Untuk Warga</h1>
+        <h1 class="pb-5 text-center font-bold text-5xl leading-tight dark:text-whiten ">Mengutamakan Kenyamanan<br>Untuk
+            Warga</h1>
         <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
         <div class="grid grid-cols-4 gap-x-8 px-5">
 
-            <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div
+                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
                         Kebersihan
                     </h3>
-                    <div class="text-base leading-relaxed text-black3">
+                    <div class="text-base leading-relaxed text-black3  dark:text-purple-200">
                         Adanya bersih Lingkungan Rutin Tiap Bulan dan petugas kebersihan yang bekerja setiap hari,
                         membuat lingkungan RW 2 selalu bersih dan nyaman</div>
                 </div>
             </div>
-            <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div
+                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
                         Keamanan
                     </h3>
-                    <div class="text-base leading-relaxed text-black3">
+                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
                         Satpam Linmas yang berjaga 24 jam dan berbagai peraturan yang telah ditetapkan, membuat
                         lingkungan RW 2 Lebih Aman</div>
                 </div>
             </div>
-            <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div
+                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
                         Fasilitas
                     </h3>
-                    <div class="text-base leading-relaxed text-black3">
+                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
                         Berbagai Fasilitas yang tersedia, memberikan rasa bangga tersendiri bagi warga RW 2 atas
                         pencapaiannya hingga saat ini</div>
                 </div>
             </div>
-            <div class="my-card bg-white flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
+            <div
+                class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
                 <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
                 <div class="flex flex-col gap-y-1">
                     <h3 class=" text-2xl font-bold">
                         Layanan
                     </h3>
-                    <div class="text-base leading-relaxed text-black3">
+                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
                         pengaduan dan keperluan yang dibutuhkan warga, selalu dilayani oleh Ketua RT dan RW sebaik
                         mungkin, sehingga memberikan kepuasan untuk warga</div>
                 </div>
@@ -117,39 +122,40 @@
     </section>
 
     <section class="benefit max-w-6xl mx-auto font-sans py-12">
-        <h1 class="text-center font-bold text-5xl leading-tight">Kegiatan dan Agenda</h1>
+        <h1 class="text-center font-bold text-5xl leading-tight dark:text-whiten">Kegiatan dan Agenda</h1>
         <div class="grid grid-cols-2 items-center gap-x-10">
             <div class="flex flex-row item-center">
                 <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}" alt=""
                     class="h-[550px]">
             </div>
-            <div class="flex flex-col gap-y-10">
-                <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 font-bold text-4xl leading-tight">{{ $agenda->title }}
-                    </h1>
-                    <div class="text-base leading-loose text-black3">{{ $agenda->deskripsi }}
+            <div class="flex flex-col gap-y-10 ">
+                <div class="bg-purple-100 dark:bg-gray-800 rounded-3xl">
+                    <div class="gap-y-2 flex flex-col pl-5 pt-5">
+                        <h1 class="text-black1 font-bold text-4xl leading-tight dark:text-white ">{{ $agenda->title }}
+                        </h1>
+                        <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">{{ $agenda->deskripsi }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="flex flex-col gap-y-10">
+                    <div class="flex flex-col gap-y-10 pl-5 pr-5 pb-5">
 
-                    <div class=" flex flex-row bg-white rounded-2xl p-5 items-center gap-x-4">
-                        {{-- <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i> --}}
-                        <div class="flex flex-col ">
-                            <h3 class=" text-2xl font-bold text-black1">
-                                Waktu
-                            </h3>
-                            <div class="text-base leading-relaxed text-black4">
-                                {{ $agenda->start . ' - ' . $agenda->end }}
+                        <div class=" flex flex-row bg-white dark:bg-gray-700 rounded-2xl p-5 items-center gap-x-4">
+                            {{-- <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i> --}}
+                            <div class="flex flex-col ">
+                                <h3 class=" text-2xl font-bold text-black1 dark:text-purple-100">
+                                    Waktu
+                                </h3>
+                                <div class="text-base leading-relaxed text-black4 dark:text-purple-200">
+                                    {{ $agenda->start . ' - ' . $agenda->end }} 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex flex-row gap-x-4 items-center">
+                <div class="flex flex-row gap-x-4 items-center pl-5 ">
                     <a href="{{ route('user.agenda') }}"
-                        class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">
-                        Selengkapnya</a>
+                        class="hover:bg-indigo-900 text-base bg-purple-400  text-white py-4 px-10 rounded-full font-semibold">
+                        Lainnya</a>
 
                 </div>
             </div>
@@ -159,9 +165,9 @@
     <section class="umkm mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">UMKM RW 2
+                <h1 class="text-black1 font-bold text-5xl leading-tight dark:text-whiten">UMKM
                 </h1>
-                <div class="text-base leading-loose text-black3 items-center">
+                <div class="text-base leading-loose text-black3 dark:text-white items-center">
                     They built amazing website to help more people around the world <br>by using our recommendation
                     services
                     and products
@@ -260,9 +266,9 @@
     <section class="umkm mx-auto font-sans py-12">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 font-bold text-5xl leading-tight">Aspirasi Warga
+                <h1 class="text-black1 font-bold text-5xl dark:text-whiten leading-tight">Aspirasi Warga
                 </h1>
-                <div class="text-base leading-loose text-black3 items-center">
+                <div class="text-base leading-loose text-black3 dark:text-white items-center">
                     Suarakan Keluh Kesah Pesan dan Kesan mu <br>untuk membangun Lingkungan RW 2 Menjadi Lebih Baik
                 </div>
                 <div class="grid grid-cols-1 mx-auto sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13">
@@ -282,15 +288,15 @@
                                     {{ $item->isi }}
                                 </p>
                                 <div
-                                    class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                    class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 dark:bg-gray-500 rounded-e-xl rounded-es-xl dark:bg-gray-700">
                                     @if ($item->status == 'pending')
-                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">belum di
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-300">belum di
                                             respon</span>
                                     @else
-                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Respon :
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-300">Respon :
                                         </span>
                                         <span
-                                            class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ $item->respon }}</span>
+                                            class="text-sm font-normal text-gray-500 dark:text-gray-300">{{ $item->respon }}</span>
                                     @endif
                                 </div>
                             </div>
@@ -323,11 +329,11 @@
                     <form action="{{ route('user.aspirasi.store') }}" class="max-w-sm" method="post">
                         @csrf
                         <textarea name="aspirasi" id="message" rows="4"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
                             placeholder="tulis aspirasi disini..."></textarea>
 
                         <button type="submit"
-                            class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">kirim
+                            class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-400 dark:hover:bg-purple-700 dark:focus:ring-purple-800">kirim
                             aspirasi</button>
                     </form>
                 </div>
