@@ -22,7 +22,6 @@
                 <div class="p-4 border-t border-b md:border md:rounded">
                     <div class="flex py-2">
                         <i class="fa fa-user h-5 my-auto mx-3" aria-hidden="true"></i>
-
                         <div>
                             <p class="font-semibold text-gray-700 text-sm"> {{ $berita->Penulis->nama }}</p>
                             <p class="font-semibold text-gray-600 text-xs"> Editor </p>
@@ -42,16 +41,12 @@
                 <div class="iklan mt-8">
                     <img src="https://source.unsplash.com/300x200/?advertising,social&fm=jpg&q=60"
                         alt="Iklan Masyarakat" width="300" height="200">
-
                     <img class="mt-4" src="https://source.unsplash.com/300x400/?iklan,social,portrait&fm=jpg&q=60"
                         alt="Iklan Masyarakatt" width="300" height="400">
                 </div>
-
-
             </div>
         </div>
     </section>
     <x-view.Popular-Berita />
-
     <div class="mt-90"></div>
 </x-layout.user-layout>

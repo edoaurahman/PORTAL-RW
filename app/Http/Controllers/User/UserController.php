@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         $agenda = AgendaModel::where('start', '>=', date('Y-m-d'))->first();
         $aspirasi = AspirasiModel::all();
-        $umkm = UMKMModel::all();
+        $umkm = UMKMModel::limit(4)->get();
         $gambar_struktur = SettingHomeModel::select('id_setting', 'gambarstruktur')->first();
         return view("user.home", compact('agenda', 'aspirasi', 'gambar_struktur', 'umkm'));
     }
