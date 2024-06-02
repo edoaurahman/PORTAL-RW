@@ -60,6 +60,7 @@ Route::prefix('umkm')->group(function () {
         Route::get('/detail/{id}', [UmkmController::class, 'show'])->name('user.umkm.detail');
         Route::get('/create', [UmkmController::class, 'create'])->name('user.umkm.tambah');
         Route::post('/store', [UmkmController::class, 'store'])->name('user.umkm.store');
+        Route::post('/status', [UmkmController::class, 'set_status'])->name('user.umkm.status');
     });
 });
 

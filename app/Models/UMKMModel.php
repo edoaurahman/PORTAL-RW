@@ -21,14 +21,10 @@ class UMKMModel extends Model
         'hari',
         'jam_buka',
         'jam_tutup',
-        'id_kategori_umkm',
+        'status',
         'nik',
     ];
 
-    public function kategori(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(KategoriUMKMModel::class, 'id_kategori', 'id_kategori_umkm');
-    }
     public function penduduk(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(PendudukModel::class, 'nik', 'nik');
@@ -38,12 +34,23 @@ class UMKMModel extends Model
         return $this->hasMany(GambarUMKMModel::class, 'id_umkm', 'id_umkm');
     }
 
+    public function listKategori(): HasMany
+    {
+        return $this->hasMany(ListKategoriUMKMModel::class, "id_umkm", "id_umkm");
+    }
+
     public function generateCuplikan()
     {
         $dom = new \DOMDocument();
         $dom->loadHTML($this->deskripsi);
         $cuplikan = strip_tags($dom->textContent);
         return Str::limit($cuplikan, 50);
+    }
+
+    public function textcut()
+    {
+        $nama = $this->nama_umkm;
+        return Str::limit($nama, 19);
     }
     public function getCover(): string
     {

@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="item-info p-5">
                                     <div class="item-rating flex justify-between items-center mt-3">
-                                        <p class="text-xl font-medium">{{ $item->nama_umkm }}</p>
+                                        <p class="text-xl font-medium">{{ $item->textcut() }}</p>
                                         {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                     </div>
                                     <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>

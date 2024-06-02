@@ -112,4 +112,18 @@ class UmkmController extends Controller
         });
         return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil ditambahkan');
     }
+    public function set_status(Request $request)
+    {
+        $umkm = UMKMModel::find($request->id_umkm);
+        $umkm->status = $request->status;
+        $umkm->save();
+        // if ($request->status == 'publish') {
+        //     $umkm->id_umkm->akun;
+        // } else if ($request->status == 'pending') {
+        //     $umkm->id_umkm->akun;
+        // } else if ($request->status == 'reject') {
+        //     $umkm->id_umkm->akun;
+        // }
+        return redirect()->back();
+    }
 }

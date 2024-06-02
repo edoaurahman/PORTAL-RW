@@ -37,40 +37,32 @@
                         </div>
                     </div>
 
-                    {{-- <div class="col-span-full">
+                    <div class="col-span-full mt-4">
                         <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover
                             photo</label>
                         <div
-                            class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                            <div class="text-center">
-                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
-                                    aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div class="mt-4 flex text-sm leading-6 text-gray-600">
-                                    <label for="file-upload"
-                                        class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                                        <span>Upload a file</span>
-                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                                    </label>
-                                    <p class="pl-1">or drag and drop</p>
+                            class="mt-2 flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            <div class="">
+
+                                <div class="text-center">
+                                    <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                        aria-hidden="true" id="fortInput">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <img id="imagePreview" class="hidden mx-auto" src="#" alt="Image Preview">
+                                    <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
+                                        <label for="cover"
+                                            class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                            <span id="changetext">Upload a file</span>
+                                            <input type="file" class="sr-only" name="cover" id="cover">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF max 2MB</p>
                                 </div>
-                                <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                             </div>
-                        </div>
-                    </div> --}}
-                    <div class="cover">
-                        <p>cover</p>
-                        <div class="relative z-0 w-full my-5 group">
-                            <input type="file" name="cover" id="cover"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                placeholder=" " required />
-                            <label for="cover"
-                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
-                                2MB</label>
-                            <img id="imagePreview" class="hidden" src="#" alt="Image Preview">
                         </div>
                     </div>
                 </div>
@@ -195,18 +187,36 @@
                     you pick what else you want to hear about.</p>
 
                 <div class="mt-10 space-y-10">
-                    <h2>Slide Header UMKM</h2>
-                    <div class="relative z-0 w-full my-5 group">
-                        <input type="file" name="slide[]" id="slide" multiple accept="image/*"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" " required />
-                        <label for="slide"
-                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
-                            2MB</label>
-                        <div id="imagePreviewContainer" class="hidden grid grid-cols-3 gap-4"></div>
-                        <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
+                    <div class="col-span-full mt-4">
+                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Slider
+                            photo
+                            header UMKM</label>
+                        <div
+                            class="mt-2 flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            <div class="">
+                                <div class="text-center">
+                                    <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24"
+                                        fill="currentColor" aria-hidden="true" id="fortInputSlide">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <div id="imagePreviewContainer" class="hidden grid grid-cols-3 gap-4"></div>
+                                    <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
+                                        <label for="slide"
+                                            class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                            <span id="changetextslide">Upload a file</span>
+                                            <input type="file" class="sr-only" name="slide[]" id="slide"
+                                                multiple accept="image/*">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF max 2MB</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
+                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
                 </div>
             </div>
 
@@ -216,6 +226,7 @@
                 <button type="submit"
                     class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
             </div>
+        </div>
     </form>
 
 
@@ -255,6 +266,9 @@
         } else {
             document.getElementById('imagePreview').src = "#";
         }
+
+        document.getElementById('fortInput').classList.add('hidden');
+        document.getElementById('changetext').innerText = 'Change a file';
     });
 
     document.getElementById('slide').addEventListener('change', function(event) {
@@ -282,5 +296,7 @@
         } else {
             imagePreviewContainer.classList.add('hidden'); // Sembunyikan container jika tidak ada file
         }
+        document.getElementById('fortInputSlide').classList.add('hidden');
+        document.getElementById('changetextslide').innerText = 'Change a file';
     });
 </script>

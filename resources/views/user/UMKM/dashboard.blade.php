@@ -59,13 +59,13 @@
                         <div
                             class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
                         </div>
-                        <div class="items w-full h-full m-auto rounded-2xl shadow-md  ">
+                        <div class="items w-full h-full m-auto rounded-2xl shadow-md">
                             <div class="item-img pb-5">
-                                <img class="w-auto rounded-t-lg" src="{{ $item->getCover() }}" alt="">
+                                <img class="w-auto rounded-t-lg h-[10px]" src="{{ $item->getCover() }}" alt="">
                             </div>
                             <div class="item-info p-5">
                                 <div class="item-rating flex justify-between items-center mt-3">
-                                    <p class="text-xl font-medium">{{ $item->nama_umkm }}</p>
+                                    <p class="text-xl font-medium">{{ $item->textcut() }}</p>
                                     {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                 </div>
                                 <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
