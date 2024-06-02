@@ -61,47 +61,59 @@ class BansosController extends Controller
 
     public function method_ahp()
     {
-        $bobot = [
-            'gaji' => 0.15,
-            'jumlah_tanggungan' => 0.25,
-            'luas_tanah' => 0.2,
-            'kapasitas_listrik' => 0.2,
-            'jumlah_kendaraan' => 0.2,
+        $criteriaComparisonMatrix = [
+            [1, 3, 5, 7, 9],
+            [1 / 3, 1, 3, 5, 7],
+            [1 / 5, 1 / 3, 1, 3, 5],
+            [1 / 7, 1 / 5, 1 / 3, 1, 3],
+            [1 / 9, 1 / 7, 1 / 5, 1 / 3, 1],
         ];
-        $data = BansosModel::where('status', 'pending')->get();
-        // Normalisasi nilai kriteria
-        $maxJumlahTanggungan = $data->max('jumlah_tanggungan');
-        $minGaji = $data->min('gaji');
-        $minLuasTanah = $data->min('luas_tanah');
-        $minKapasitasListrik = $data->min('kapasitas_listrik');
-        $minJumlahKendaraan = $data->min('jumlah_kendaraan');
 
-        $normalizedData = $data->map(function ($item) use ($maxJumlahTanggungan, $minGaji, $minLuasTanah, $minKapasitasListrik, $minJumlahKendaraan) {
-            return [
-                'id_bansos' => $item->id_bansos,
-                'no_kk' => $item->no_kk,
-                'gaji' => $minGaji / $item->gaji,
-                'jumlah_tanggungan' => $item->jumlah_tanggungan / $maxJumlahTanggungan,
-                'luas_tanah' => $minLuasTanah / $item->luas_tanah,
-                'kapasitas_listrik' => $minKapasitasListrik / $item->kapasitas_listrik,
-                'jumlah_kendaraan' => $minJumlahKendaraan / $item->jumlah_kendaraan,
+        // Hitung bobot kriteria
+        $criteriaWeights = $this->calculateWeights($criteriaComparisonMatrix);
+
+        $bansos = BansosModel::all();
+
+        $bansosWeights = [];
+        foreach ($bansos as $data) {
+            $bansosWeights[] = [
+                'id_bansos' => $data->id_bansos,
+                'no_kk' => $data->no_kk,
+                'gaji' => $criteriaWeights[0] * (1 / $data->gaji),
+                'jumlah_tanggungan' => $criteriaWeights[1] * $data->jumlah_tanggungan,
+                'luas_tanah' => $criteriaWeights[2] * (1 / $data->luas_tanah),
+                'kapasitas_listrik' => $criteriaWeights[3] * (1 / $data->kapasitas_listrik),
+                'jumlah_kendaraan' => $criteriaWeights[4] * (1 / $data->jumlah_kendaraan),
+                'nilai_total' => $criteriaWeights[0] * (1 / $data->gaji) +
+                    $criteriaWeights[1] * $data->jumlah_tanggungan +
+                    $criteriaWeights[2] * (1 / $data->luas_tanah) +
+                    $criteriaWeights[3] * (1 / $data->kapasitas_listrik) +
+                    $criteriaWeights[4] * (1 / $data->jumlah_kendaraan),
             ];
+        }
+
+        usort($bansosWeights, function ($a, $b) {
+            return $b['nilai_total'] <=> $a['nilai_total'];
         });
 
-        // Menghitung nilai total
-        $rankedData = $normalizedData->map(function ($item) use ($bobot) {
-            $item['nilai_total'] = ($item['gaji'] * $bobot['gaji']) +
-                ($item['jumlah_tanggungan'] * $bobot['jumlah_tanggungan']) +
-                ($item['luas_tanah'] * $bobot['luas_tanah']) +
-                ($item['kapasitas_listrik'] * $bobot['kapasitas_listrik']) +
-                ($item['jumlah_kendaraan'] * $bobot['jumlah_kendaraan']);
-            return $item;
-        });
+        return $bansosWeights;
+    }
 
-        // Urutkan berdasarkan nilai total
-        $sortedData = $rankedData->sortByDesc('nilai_total');
-        // dd($sortedData, $rankedData);
-        return $sortedData;
+    private function calculateWeights($matrix)
+    {
+        $rowSums = array_map('array_sum', $matrix);
+        $totalSum = array_sum($rowSums);
+
+        $normalizedMatrix = [];
+        foreach ($matrix as $i => $row) {
+            foreach ($row as $j => $value) {
+                $normalizedMatrix[$i][$j] = $value / $totalSum;
+            }
+        }
+
+        $weights = array_map('array_sum', $normalizedMatrix);
+
+        return $weights;
     }
 
     public function index()
