@@ -203,21 +203,19 @@
                         <label for="slide"
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Max
                             2MB</label>
-                        <img id="imagePreviewContainer" class="hidden" src="#" alt="Image Preview">
+                        <div id="imagePreviewContainer" class="hidden grid grid-cols-3 gap-4"></div>
+                        <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
                     </div>
 
-                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
                 </div>
-
             </div>
-        </div>
 
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-            <a href="{{ route('user.umkm.dashboard') }}">
-                <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button></a>
-            <button type="submit"
-                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-        </div>
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <a href="{{ route('user.umkm.dashboard') }}">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button></a>
+                <button type="submit"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            </div>
     </form>
 
 
@@ -273,7 +271,7 @@
                 reader.onload = function(e) {
                     const img = document.createElement('img');
                     img.src = e.target.result;
-                    img.classList.add('image-preview'); // Tambahkan kelas untuk styling
+                    img.classList.add('max-w-[400px]'); // Tambahkan kelas untuk styling
                     img.alt = 'Image Preview';
 
                     imagePreviewContainer.appendChild(img);
