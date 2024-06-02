@@ -72,7 +72,7 @@ class BansosController extends Controller
         // Hitung bobot kriteria
         $criteriaWeights = $this->calculateWeights($criteriaComparisonMatrix);
 
-        $bansos = BansosModel::all();
+        $bansos = BansosModel::where('status', 'pending')->get();
 
         $bansosWeights = [];
         foreach ($bansos as $data) {
