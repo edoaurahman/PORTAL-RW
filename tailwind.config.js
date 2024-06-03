@@ -23,7 +23,10 @@ export default {
         'black3': '#5D5D7C',
         'black4': '#8D90A8',
 
-        // warna utama halaman user hover
+        // warna user dark mode
+        'biru':'#00c0ff',
+        'ungu_muda':'#3a2b71',
+        'paragraf':'#b0abc3',
 
 
         // -----
@@ -305,6 +308,7 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('tailwind-scrollbar'),
   ],
 }
