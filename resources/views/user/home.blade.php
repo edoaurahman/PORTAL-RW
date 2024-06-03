@@ -48,10 +48,10 @@
                         </div>
                     </div>
                     <div class="flex flex-row gap-x-4 items-center">
-                        <a href="#"
+                        <a href="{{ route('user.layanan') }}"
                             class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold dark:bg-biru dark:hover:bg-white dark:hover:text-biru">Surat
                             Pengantar</a>
-                        <a href="#"
+                        <a href="{{ route('user.penduduk') }}"
                             class="gap-x-2 flex items-center text-ungu font-semibold text-base dark:text-biru dark:hover:text-white">
                             <i class="fa-solid fa-user"></i>
                             Penduduk RW 02
