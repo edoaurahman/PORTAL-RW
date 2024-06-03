@@ -187,7 +187,7 @@
                             href="#"
                             @click.prevent="selected = (selected.includes('inventaris') ? '':'inventaris')"
                             :class="{ 'bg-ungu text-white dark:bg-purple-700': (selected.includes('inventaris')) }">
-                            <i class="fa-solid fa-id-card"></i>
+                            <i class="fa-solid fa-toolbox"></i>
                             Inventaris
                             <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
                                 :class="{ 'rotate-180': (selected.includes('inventaris')) }" width="20"
