@@ -22,7 +22,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $jumlahRT = AlamatModel::groupBy('rt')->count('rt');
+        $jumlahRT = AlamatModel::distinct('rt')->count('rt');
         $jumlahPenduduk = PendudukModel::count();
         $jumlahAgenda = AgendaModel::count();
         $jumlahUMKM = UMKMModel::count();
@@ -70,6 +70,8 @@ class AdminController extends Controller
         $totalPendudukPerempuanTetap = PendudukModel::where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Penduduk Tetap')->count();
         $totalPendudukPerempuanPendatang = PendudukModel::where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Pendatang')->count();
 
+        $umkmList = UMKMModel::take(4)->get();
+        
         // hitung umur berdasarkan tanggal lahir
         $umur = [
             '0-5' => PendudukModel::whereBetween('tgl_lahir', [date('Y-m-d', strtotime('-5 years')), date('Y-m-d')])->count(),
@@ -80,7 +82,7 @@ class AdminController extends Controller
         ];
         // dd($umur['0-5']);
 
-        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran', 'gambarstruktur', 'pemasukkan', 'listBulan', 'totalPenduduk', 'totalPendudukPerempuan', 'totalPendudukLaki', 'totalPendudukLakiTetap', 'totalPendudukLakiPendatang', 'totalPendudukPerempuanTetap', 'totalPendudukPerempuanPendatang', 'totalPendudukTetap', 'totalPendudukPendatang', 'umur'));
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran', 'gambarstruktur', 'pemasukkan', 'listBulan', 'totalPenduduk', 'totalPendudukPerempuan', 'totalPendudukLaki', 'totalPendudukLakiTetap', 'totalPendudukLakiPendatang', 'totalPendudukPerempuanTetap', 'totalPendudukPerempuanPendatang', 'totalPendudukTetap', 'totalPendudukPendatang', 'umur', 'umkmList'));
     }
 
     public function store_agenda(Request $request)

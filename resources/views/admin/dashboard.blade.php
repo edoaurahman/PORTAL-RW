@@ -270,45 +270,29 @@
         <!-- ====== Kalender End -->
 
         <!-- ====== UMKM Start -->
-        <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
+        <div class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
             <h4 class="mb-2 text-xl font-bold text-black dark:text-white text-center">
                 UMKM
             </h4>
             <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
-                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="">
-                        <img class="w-full h-50 object-cover rounded-t-sm"
-                            src="{{ asset('assets/images/umkm/food_19.png') }}" alt="UMKM 1">
-                    </div>
-                    <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Abid's Bakery</h5>
-                    </div>
-                </div>
-                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm"
-                        src="{{ asset('assets/images/umkm/food_26.png') }}" alt="UMKM 2">
-                    <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Makaroni 25 Anang</h5>
-                    </div>
-                </div>
-                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm"
-                        src="{{ asset('assets/images/umkm/food_12.png') }}" alt="UMKM 3">
-                    <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Ice Cream Mak Cik Edo</h5>
-                    </div>
-                </div>
-                <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <img class="w-full h-50 object-cover rounded-t-sm"
-                        src="{{ asset('assets/images/umkm/food_2.png') }}" alt="UMKM 3">
-                    <div class="p-4">
-                        <h5 class="text-lg font-medium mb-1">Salad Pak De Putra</h5>
-                    </div>
-                </div>
+                @foreach ($umkmList as $umkm)
+                    <a href="{{ route('user.umkm.detail', $umkm->id_umkm) }}" class="group">
+                        <div class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                            <div>
+                                <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset($umkm->cover) }}" alt="{{ $umkm->nama_umkm }}">
+                            </div>
+                            <div class="p-4">
+                                <h5 class="text-lg font-medium mb-1 group-hover:text-indigo-600">{{ $umkm->nama_umkm }}</h5>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
         <!-- ====== UMKM End -->
+
+
+
         <!--- struktur RW -->
         <div
             class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
