@@ -41,8 +41,11 @@ class UmkmController extends Controller
 
     public function edit($id)
     {
+
         $kategori = KategoriUMKMModel::all();
-        return view('user.UMKM.edit', compact('kategori'));
+        $umkm = UMKMModel::find($id);
+        // dd($umkm->listkategori);
+        return view('user.UMKM.edit', compact('umkm', 'kategori'));
     }
     public function store(Request $request)
     {

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ListKategoriUMKMModel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\PendudukModel;
@@ -58,5 +59,20 @@ class UMKMSeeder extends Seeder
 
         // Insert data UMKM ke database
         UMKMModel::insert($UMKM);
+
+        $listKategori = [
+            ['id_kategori' => 1, 'id_umkm' => 1],
+            ['id_kategori' => 2, 'id_umkm' => 2],
+            ['id_kategori' => 3, 'id_umkm' => 3],
+            ['id_kategori' => 4, 'id_umkm' => 4],
+            ['id_kategori' => 5, 'id_umkm' => 5],
+            ['id_kategori' => 6, 'id_umkm' => 6],
+            ['id_kategori' => 7, 'id_umkm' => 7],
+            ['id_kategori' => 8, 'id_umkm' => 8],
+            ['id_kategori' => 9, 'id_umkm' => 9],
+            ['id_kategori' => 10, 'id_umkm' => 10],
+            ['id_kategori' => 1, 'id_umkm' => 4],
+        ];
+        ListKategoriUMKMModel::insert($listKategori);
     }
 }

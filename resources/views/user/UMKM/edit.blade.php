@@ -10,12 +10,14 @@
 
 
 
-    <form class="hero max-w-6xl mx-auto font-sans py-20" action="{{ route('user.umkm.store') }}" method="post"
+    <form class="hero max-w-6xl mx-auto font-sans py-20" action="{{ route('user.umkm.update') }}" method="post"
         enctype="multipart/form-data">
         @csrf
+        @method('PUT')
+        <input type="hidden" name="id_umkm" value="{{ $umkm->id_umkm }}">
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Create data UMKM</h2>
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Update data UMKM</h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600">Dalam proses pencatatan data UMKM, langkah awal yang
                     penting adalah pembuatan data yang akurat dan komprehensif. Melalui formulir ini, Anda dapat dengan
                     mudah mencatat informasi penting tentang UMKM, termasuk nama UMKM, jadwal operasional, kategori
@@ -29,10 +31,10 @@
                         <div class="mt-2">
                             <div
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="username"
+                                <input type="text" value="{{ $umkm->nama_umkm }}" name="nama_umkm" id="username"
                                     autocomplete="username"
                                     class="block flex-1 border-0 bg-transparent ml-1 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="Toko..">
+                                    placeholder="">
                             </div>
                         </div>
                     </div>
@@ -45,13 +47,14 @@
                             <div class="">
 
                                 <div class="text-center">
-                                    <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                    {{-- <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
                                         aria-hidden="true" id="fortInput">
                                         <path fill-rule="evenodd"
                                             d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
                                             clip-rule="evenodd" />
-                                    </svg>
-                                    <img id="imagePreview" class="hidden mx-auto" src="#" alt="Image Preview">
+                                    </svg> --}}
+                                    <img id="imagePreview" class="mx-auto max-h-[100px]" src="{{ $umkm->getCover() }}"
+                                        alt="Image Preview">
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="cover"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
@@ -90,7 +93,7 @@
                                 </div>
                                 <input type="time" id="start_time" name="start_time"
                                     class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    min="01:00" max="18:00" value="00:00" required />
+                                    min="01:00" max="18:00" value="{{ $umkm->jam_buka }}" required />
                             </div>
                         </div>
                         <div>
@@ -108,7 +111,7 @@
                                 </div>
                                 <input type="time" id="end_time" name="end_time"
                                     class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    min="01:00" max="00:00" value="00:00" required />
+                                    min="01:00" max="00:00" value="{{ $umkm->jam_tutup }}" required />
                             </div>
                         </div>
                     </div>
@@ -119,43 +122,43 @@
                     <div class="mt-4 space-y-3 ">
                         <div class="flex items-center gap-x-3">
                             <input id="Senin" value="Senin" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Senin', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Senin"
                                 class="block text-sm font-medium leading-6 text-gray-900">Senin</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Selasa" value="Selasa" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Selasa', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Selasa"
                                 class="block text-sm font-medium leading-6 text-gray-900">Selasa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Rabu" value="Rabu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Rabu', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Rabu"
                                 class="block text-sm font-medium leading-6 text-gray-900">Rabu</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Kamis" value="Kamis" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Kamis', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Kamis"
                                 class="block text-sm font-medium leading-6 text-gray-900">Kamis</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Jumat" value="Jumat" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Jumat', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Jumat"
                                 class="block text-sm font-medium leading-6 text-gray-900">Jumat</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Sabtu" value="Sabtu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Sabtu', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Sabtu"
                                 class="block text-sm font-medium leading-6 text-gray-900">Sabtu</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Minggu" value="Minggu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"{{ in_array('Minggu', mb_split(',', $umkm->hari)) ? 'checked' : '' }}>
                             <label for="Minggu"
                                 class="block text-sm font-medium leading-6 text-gray-900">Minggu</label>
                         </div>
@@ -170,7 +173,8 @@
                             <div class="flex items-center gap-x-3">
                                 <input type="checkbox" id="list_kategori {{ $item->id_kategori }}"
                                     name="list_kategori[]" value="{{ $item->id_kategori }}" multiple
-                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                    @if (in_array($item->id_kategori, $umkm->listKategori->pluck('id_kategori')->toArray())) checked @endif>
                                 <label for="ist_kategori{{ $item->id_kategori }}"
                                     class="block text-sm font-medium leading-6 text-gray-900">{{ $item->nama_kategori }}</label>
                             </div>
@@ -195,13 +199,17 @@
                             class="mt-2 flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                             <div class="">
                                 <div class="text-center">
-                                    <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24"
+                                    {{-- <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24"
                                         fill="currentColor" aria-hidden="true" id="fortInputSlide">
                                         <path fill-rule="evenodd"
                                             d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
                                             clip-rule="evenodd" />
-                                    </svg>
-                                    <div id="imagePreviewContainer" class="hidden grid grid-cols-3 gap-4"></div>
+                                    </svg> --}}
+                                    <div id="imagePreviewContainer" class="grid grid-cols-3 gap-4">
+                                        @foreach ($umkm->gambar as $item)
+                                            <img src="{{ $item->getSlideUMKM() }}" alt="">
+                                        @endforeach
+                                    </div>
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="slide"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
@@ -216,7 +224,7 @@
                             </div>
                         </div>
                     </div>
-                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
+                    <textarea id="summernote" name="deskripsi">{{ $umkm->deskripsi }}</textarea>
                 </div>
             </div>
 
@@ -224,7 +232,7 @@
                 <a href="{{ route('user.umkm.dashboard') }}">
                     <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button></a>
                 <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
             </div>
         </div>
     </form>
