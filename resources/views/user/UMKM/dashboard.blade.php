@@ -7,17 +7,16 @@
                         <div class="w-fit gap-x-2  small-badge flex flex-row  rounded-full items-center">
                             <i class="fa-regular fa-newspaper"></i>
                             <p class=" text-base font-normal text-black">
-                                Riwayat Unggahan Berita RW
+                                Dashboard UMKM
                             </p>
                         </div>
-                        <h2 class="font-bold text-black text-6xl">Mari tambahkan kabar terbaru </h2>
+                        <h2 class="font-bold text-black text-6xl">Daftarkan UMKM Anda </h2>
                     </div>
                     <div class=" flex-1 text-base leading-loose text-black3">
                         <p class="text-sm text-black3">
-                            Tetaplah terinformasi dengan berita terbaru di wilayah RW kita. Ayo, tambahkan kabar terbaru
-                            untuk berbagi informasi penting, kegiatan, dan perkembangan menarik dengan seluruh warga.
-                            Klik tombol di bawah ini untuk mulai membuat berita baru dan berkontribusi dalam menjaga
-                            komunitas kita tetap terhubung!
+                            UMKM ini bertujuan untuk membantu UMKM dalam mengakses informasi, memonitor perkembangan
+                            bisnis, dan mendapatkan dukungan yang dibutuhkan untuk pertumbuhan dan pengembangan usaha
+                            mereka.
                         </p>
                         <div class="mt-7">
                             <a href="{{ route('user.umkm.tambah') }}"
