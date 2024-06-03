@@ -120,7 +120,6 @@
                                             <p class="text-sm">
                                                 {{ $item->data['message'] }}
                                             </p>
-
                                             <p class="text-xs">{{ $item->created_at }}</p>
                                         </a>
                                     </li>

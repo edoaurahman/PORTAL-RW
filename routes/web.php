@@ -69,7 +69,10 @@ Route::prefix('admin')->group(function () {
             Route::get('/penerima', [BansosController::class, 'penerima'])->name('admin.bansos.penerima');
             Route::put('/penerima', [BansosController::class, 'set_penerima'])->name('admin.bansos.set_penerima');
         });
-        Route::get('/data-umkm', [UmkmController::class, 'index'])->name('admin.data-umkm');
+        Route::prefix('/data-umkm')->group(function () {
+            Route::get('/', [UmkmController::class, 'index'])->name('admin.data-umkm');
+            Route::post('/status', [UmkmController::class, 'set_status'])->name('admin.umkm.status');
+        });
 
         Route::prefix('inventaris')->group(function () {
             Route::get('/', [InventarisController::class, 'index'])->name('admin.inventaris');

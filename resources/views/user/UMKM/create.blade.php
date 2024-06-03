@@ -4,18 +4,28 @@
 <x-layout.user-layout>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span class="block sm:inline">{{ $error }}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg onclick="this.parentElement.parentElement.style.display='none'"
+                        class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                            d="M14.348 14.849a1 1 0 01-1.414 0L10 10.414l-2.935 2.435a1 1 0 01-1.414-1.435l3-2.5a1 1 0 011.414 0l3 2.5a1 1 0 010 1.435z" />
+                    </svg>
+                </span>
+            </div>
         @endforeach
     @endif
-
-
 
     <form class="hero max-w-6xl mx-auto font-sans py-20" action="{{ route('user.umkm.store') }}" method="post"
         enctype="multipart/form-data">
         @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Create data UMKM</h2>
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Request Pendaftaran UMKM</h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600">Dalam proses pencatatan data UMKM, langkah awal yang
                     penting adalah pembuatan data yang akurat dan komprehensif. Melalui formulir ini, Anda dapat dengan
                     mudah mencatat informasi penting tentang UMKM, termasuk nama UMKM, jadwal operasional, kategori
@@ -29,8 +39,8 @@
                         <div class="mt-2">
                             <div
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="username"
-                                    autocomplete="username"
+                                <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="nama_umkm"
+                                    required autocomplete="off"
                                     class="block flex-1 border-0 bg-transparent ml-1 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="Toko..">
                             </div>
@@ -51,12 +61,14 @@
                                             d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    <img id="imagePreview" class="hidden mx-auto" src="#" alt="Image Preview">
+                                    <img id="imagePreview" class="hidden mx-auto h-[400px]" src="#"
+                                        alt="Image Preview">
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="cover"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                             <span id="changetext">Upload a file</span>
-                                            <input type="file" class="sr-only" name="cover" id="cover">
+                                            <input type="file" class="sr-only" name="cover" id="cover"
+                                                accept="image/*" required>
                                         </label>
                                         <p class="pl-1">or drag and drop</p>
                                     </div>
@@ -168,10 +180,10 @@
                     <div class="mt-4 space-y-3 ">
                         @foreach ($kategori as $item)
                             <div class="flex items-center gap-x-3">
-                                <input type="checkbox" id="list_kategori {{ $item->id_kategori }}"
+                                <input type="checkbox" id="list_kategori-{{ $item->id_kategori }}"
                                     name="list_kategori[]" value="{{ $item->id_kategori }}" multiple
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                <label for="ist_kategori{{ $item->id_kategori }}"
+                                <label for="list_kategori-{{ $item->id_kategori }}"
                                     class="block text-sm font-medium leading-6 text-gray-900">{{ $item->nama_kategori }}</label>
                             </div>
                         @endforeach
@@ -183,8 +195,9 @@
             <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Deskripsi Mikro Kecil dan Menengah (UMKM)
                 </h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">We'll always let you know about important changes, but
-                    you pick what else you want to hear about.</p>
+                <p class="mt-1 text-sm leading-6 text-gray-600">Disini Anda dapat memasukkan beberapa produk anda yang
+                    akan dijadikan slide. Di dalam deskripsi anda dapat memasukkan link e-commerce, peta maps, gambar,
+                    price list , dan sebagainya</p>
 
                 <div class="mt-10 space-y-10">
                     <div class="col-span-full mt-4">
@@ -201,7 +214,7 @@
                                             d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    <div id="imagePreviewContainer" class="hidden grid grid-cols-3 gap-4"></div>
+                                    <div id="imagePreviewContainer" class="hidden grid-cols-3 gap-4"></div>
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="slide"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
@@ -216,7 +229,7 @@
                             </div>
                         </div>
                     </div>
-                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Berita disini ###' }}</textarea>
+                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Deskripsi UMKM Anda disini ###' }}</textarea>
                 </div>
             </div>
 
@@ -279,6 +292,7 @@
 
         if (files.length > 0) {
             imagePreviewContainer.classList.remove('hidden'); // Tampilkan container
+            imagePreviewContainer.classList.add('grid'); // Tambahkan kelas grid
             Array.from(files).forEach(file => {
                 const reader = new FileReader();
 

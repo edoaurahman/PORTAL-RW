@@ -52,8 +52,8 @@
                                 {{ $item->penduduk->nama }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                @if ($item->status == 'reject')
-                                    <form action="{{ route('user.umkm.status') }}" method="post">
+                                @if ($item->status == 'reject' || $item->status == 'pending')
+                                    <form action="{{ route('admin.umkm.status') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="id_umkm" value="{{ $item->id_umkm }}">
                                         <input type="hidden" name="status" value="publish">
@@ -66,7 +66,7 @@
                                         </button>
                                     </form>
                                 @else
-                                    <form action="{{ route('user.umkm.status') }}" method="post">
+                                    <form action="{{ route('admin.umkm.status') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="id_umkm" value="{{ $item->id_umkm }}">
                                         <input type="hidden" name="status" value="reject">
@@ -91,6 +91,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="m-2">
+            {{ $UMKM->links() }}
         </div>
         <!-- End Body Content -->
     </div>

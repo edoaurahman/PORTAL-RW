@@ -13,8 +13,9 @@ return new class extends Migration {
         Schema::create('tb_gambar_umkm', function (Blueprint $table) {
             $table->integer('id_gambar_umkm')->autoIncrement();
             $table->string('gambar', 100);
+            $table->enum('position', ['slide', 'content']);
             $table->integer('id_umkm');
-            $table->foreign('id_umkm')->references('id_umkm')->on('tb_umkm')->cascadeOnDelete();
+            $table->foreign('id_umkm')->references('id_umkm')->on('tb_umkm');
             $table->timestamps();
         });
     }

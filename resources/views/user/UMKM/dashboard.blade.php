@@ -56,12 +56,24 @@
             @foreach ($umkm as $item)
                 <div class="group relative">
                     <div class=" absolute  bg-ungu px-2 py-1 rounded-tl-lg">
-                        {{-- <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
-                            class="flex w-2.5 h-2.5 mr-3 bg-green-400 rounded-full me-1.5 flex-shrink-0"></span>Buka</span> --}}
-                        {{-- <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
-                            class="flex w-2.5 h-2.5 mr-3 bg-yellow-300 rounded-full me-1.5 flex-shrink-0"></span>Pending</span> --}}
-                        <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
-                                class="flex w-2.5 h-2.5 mr-3 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>Tutup</span>
+                        @if ($item->status == 'pending')
+                            <span
+                                class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                                    class="flex w-2.5 h-2.5 mr-3 bg-yellow-300 rounded-full me-1.5 flex-shrink-0"></span>Pending</span>
+                        @elseif ($item->status == 'reject')
+                            <span
+                                class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                                    class="flex w-2.5 h-2.5 mr-3 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>Di
+                                Tolak</span>
+                        @elseif ($item->tokoBuka())
+                            <span
+                                class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                                    class="flex w-2.5 h-2.5 mr-3 bg-green-400 rounded-full me-1.5 flex-shrink-0"></span>Buka</span>
+                        @else
+                            <span
+                                class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                                    class="flex w-2.5 h-2.5 mr-3 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>Tutup</span>
+                        @endif
                     </div>
                     <div class="items w-full h-full m-auto rounded-2xl shadow-md">
                         <div class="item-img ">
@@ -75,20 +87,21 @@
                             </div>
                             <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
 
-                            <div class="flex flex-row gap-x-3 mt-3">
+                            <div class="flex gap-3 mt-3 items-center">
                                 <a href="{{ route('user.umkm.detail', $item->id_umkm) }}"
-                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
-                                    Detail
+                                    class="hover:text-indigo-400 text-ungu text-sm font-medium ">
+                                    Lihat
                                 </a>
                                 <a href="{{ route('user.umkm.edit', $item->id_umkm) }}"
-                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
-                                    Update
+                                    class="hover:text-indigo-400 text-ungu text-sm font-medium ">
+                                    Edit
                                 </a>
                                 <form action="{{ route('user.umkm.delete', $item->id_umkm) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
-                                        class="item price hover:text-indigo-400 text-ungu text-sm font-medium "
+                                        onclick="return confirm('Apakah kamu ingin menghapus umkm ini?')"
+                                        class=" hover:text-indigo-400 text-red-600 text-sm font-medium "
                                         onclick="return confirm('Apakah kamu ingin menghapus umkm ini?')">Delete</button>
                                 </form>
                             </div>
