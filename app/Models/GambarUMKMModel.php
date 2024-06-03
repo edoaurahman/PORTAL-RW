@@ -13,6 +13,7 @@ class GambarUMKMModel extends Model
     protected $fillable = [
         'id_gambar_umkm',
         'gambar',
+        'position',
         'id_umkm',
     ];
 

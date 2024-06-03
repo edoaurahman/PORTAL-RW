@@ -33,6 +33,10 @@ class UMKMModel extends Model
     {
         return $this->hasMany(GambarUMKMModel::class, 'id_umkm', 'id_umkm');
     }
+    public function gambarSlide(): HasMany
+    {
+        return $this->hasMany(GambarUMKMModel::class, 'id_umkm', 'id_umkm')->where('position', 'slide');
+    }
 
     public function listKategori(): HasMany
     {

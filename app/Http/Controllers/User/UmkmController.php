@@ -7,6 +7,7 @@ use App\Models\GambarUMKMModel;
 use App\Models\KategoriUMKMModel;
 use App\Models\ListKategoriUMKMModel;
 use App\Models\UMKMModel;
+use App\Notifications\UMKM;
 use DOMDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,7 @@ class UmkmController extends Controller
 {
     public function index()
     {
-        $umkm = UMKMModel::all();
+        $umkm = UMKMModel::where('status', 'publish')->get();
         return view('user.UMKM.index', compact('umkm'));
     }
 
@@ -44,12 +45,10 @@ class UmkmController extends Controller
 
         $kategori = KategoriUMKMModel::all();
         $umkm = UMKMModel::find($id);
-        // dd($umkm->listkategori);
         return view('user.UMKM.edit', compact('umkm', 'kategori'));
     }
     public function store(Request $request)
     {
-        // dd($request->all());
         try {
             $isi = $request->isi;
             $dom = new DOMDocument();
@@ -74,7 +73,7 @@ class UmkmController extends Controller
                 $img->setAttribute('src', asset('storage/images/umkm/content/' . $image_name));
             }
         } catch (\Exception $e) {
-            return config('app.debug') ? $e->getMessage() : redirect()->back()->withErrors(['Terjadi kesalahan pada gambar/format berita yang diupload', 'Coba format ulang text berita'])->withInput();
+            return config('app.debug') ? $e->getMessage() : redirect()->back()->withErrors(['Terjadi kesalahan pada gambar/format UMKM yang diupload', 'Coba format ulang text UMKM'])->withInput();
         }
 
         $deskripsi = $dom->saveHTML();
@@ -94,6 +93,7 @@ class UmkmController extends Controller
                 $gambar = new GambarUMKMModel();
                 $gambar->id_umkm = $umkm->id_umkm;
                 $gambar->gambar = $name;
+                $gambar->position = 'content';
                 $gambar->save();
                 Storage::disk('public')->makeDirectory('images/umkm/content');
                 Storage::disk('public')->put('images/umkm/content/' . $name, $data);
@@ -104,6 +104,7 @@ class UmkmController extends Controller
                 $slide = new GambarUMKMModel();
                 $slide->id_umkm = $umkm->id_umkm;
                 $slide->gambar = $data->hashName();
+                $slide->position = 'slide';
                 $slide->save();
                 $data->store('images/umkm/slide_umkm', 'public');
             }
@@ -117,6 +118,8 @@ class UmkmController extends Controller
             }
 
             $request->cover->store('images/umkm/cover_umkm', 'public');
+            $user = auth()->user();
+            $user->notify(new UMKM('UMKM berhasil ditambahkan. Mohon tunggu verifikasi dari admin.'));
         });
         return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil ditambahkan');
     }
@@ -159,7 +162,7 @@ class UmkmController extends Controller
         }
 
         $deskripsi = $dom->saveHTML();
-        $gambar_umkm = GambarUMKMModel::where('id_umkm', $id_umkm)->get();
+        $gambar_umkm = GambarUMKMModel::where('id_umkm', $id_umkm)->where('position', 'content')->get();
         foreach ($gambar_umkm as $g) {
             if (!in_array($g->gambar, array_keys($list_images))) {
                 $g->delete();
@@ -189,22 +192,34 @@ class UmkmController extends Controller
             $umkm->save();
 
             foreach ($list_images as $name => $data) {
-                if (GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->where('gambar', $name)->count() > 0) {
+                if (GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->where('gambar', $name)->where('position', 'content')->count() > 0) {
                     continue;
                 }
                 $gambar = new GambarUMKMModel();
                 $gambar->id_umkm = $umkm->id_umkm;
                 $gambar->gambar = $name;
+                $gambar->position = 'content';
                 $gambar->save();
                 Storage::disk('public')->makeDirectory('images/umkm/content');
                 Storage::disk('public')->put('images/umkm/content/' . $name, $data);
             }
 
             if ($request->hasFile('slide')) {
+                // cek hapus gambar slide
+                $gambar_slide = GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->where('position', 'slide')->get();
+                foreach ($gambar_slide as $g) {
+                    $g->delete();
+                    try {
+                        Storage::disk('public')->delete('images/umkm/slide_umkm/' . $g->gambar);
+                    } catch (\Exception $e) {
+                        continue;
+                    }
+                }
                 foreach ($request->slide as $data) {
                     $slide = new GambarUMKMModel();
                     $slide->id_umkm = $umkm->id_umkm;
                     $slide->gambar = $data->hashName();
+                    $slide->position = 'slide';
                     $slide->save();
                     $data->store('images/umkm/slide_umkm', 'public');
                 }
@@ -221,6 +236,8 @@ class UmkmController extends Controller
             if ($request->hasFile('cover')) {
                 $request->cover->store('images/umkm/cover_umkm', 'public');
             }
+            $user = auth()->user();
+            $user->notify(new UMKM('UMKM berhasil diubah. Mohon tunggu verifikasi dari admin.'));
         });
 
         return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil diperbarui');
@@ -229,7 +246,7 @@ class UmkmController extends Controller
     public function destroy(UMKMModel $umkm)
     {
         // Check if the UMKM has associated content images
-        $gambarContent = GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->get();
+        $gambarContent = GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->where('position', 'content')->get();
         if ($gambarContent->count() > 0) {
             foreach ($gambarContent as $g) {
                 $g->delete();
@@ -242,7 +259,7 @@ class UmkmController extends Controller
         }
 
         // Check if the UMKM has associated slide images
-        $gambarSlide = GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->whereNotIn('gambar', $gambarContent->pluck('gambar'))->get();
+        $gambarSlide = GambarUMKMModel::where('id_umkm', $umkm->id_umkm)->where('position', 'slide')->get();
         if ($gambarSlide->count() > 0) {
             foreach ($gambarSlide as $g) {
                 $g->delete();
@@ -267,23 +284,4 @@ class UmkmController extends Controller
         $umkm->delete();
         return redirect()->route('user.umkm.dashboard')->with('success', 'UMKM berhasil dihapus');
     }
-
-
-
-    public function set_status(Request $request)
-    {
-        $umkm = UMKMModel::find($request->id_umkm);
-        $umkm->status = $request->status;
-        $umkm->save();
-        // if ($request->status == 'publish') {
-        //     $umkm->id_umkm->akun;
-        // } else if ($request->status == 'pending') {
-        //     $umkm->id_umkm->akun;
-        // } else if ($request->status == 'reject') {
-        //     $umkm->id_umkm->akun;
-        // }
-        return redirect()->back();
-    }
-
-
 }
