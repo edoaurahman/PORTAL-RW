@@ -28,3 +28,4 @@ jobs:
             php artisan migrate:fresh --seed
             npm install
             npm run build
+            rm -rf ./public/storage/
