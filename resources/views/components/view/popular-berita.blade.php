@@ -1,6 +1,6 @@
 <div>
     <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
-    <section class="text-gray-600 dark:text-gray-50 mt-12 max-w-6xl mx-auto">
+    <section class="text-gray-600 dark:text-gray-50 mt-12 max-w-6xl mx-auto sm:px-0 px-10">
         <h2 class="text-3xl font-bold">Popular News</h2>
         <div class="container px-5 py-8 mx-auto">
             <div class="flex flex-wrap -m-4">

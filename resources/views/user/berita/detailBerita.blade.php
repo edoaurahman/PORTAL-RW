@@ -1,9 +1,10 @@
 <x-layout.user-layout>
 
-    <section class="mt-8 max-w-6xl mx-auto">
+    <section class="mt-8 max-w-6xl mx-auto sm:px-0 px-10">
         <div class="mb-4 md:mb-0 w-full mx-auto relative">
             <div class="px-4 lg:px-0">
-                <h2 class="text-4xl font-semibold text-gray-800 dark:text-gray-50 leading-tight"> {{ $berita->judul }}</h2>
+                <h2 class="text-4xl font-semibold text-gray-800 dark:text-gray-50 leading-tight"> {{ $berita->judul }}
+                </h2>
                 </a>
             </div>
 
@@ -23,7 +24,8 @@
                     <div class="flex py-2">
                         <i class="fa fa-user h-5 my-auto mx-3" aria-hidden="true"></i>
                         <div>
-                            <p class="font-semibold text-gray-700 dark:text-gray-300 text-sm"> {{ $berita->Penulis->nama }}</p>
+                            <p class="font-semibold text-gray-700 dark:text-gray-300 text-sm">
+                                {{ $berita->Penulis->nama }}</p>
                             <p class="font-semibold text-gray-600 dark:text-gray-500 text-xs"> Editor </p>
                         </div>
                     </div>
