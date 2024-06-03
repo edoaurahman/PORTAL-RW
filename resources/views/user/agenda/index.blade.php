@@ -1,15 +1,18 @@
 <x-layout.user-layout>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-    <section class="hero max-w-6xl mx-auto font-sans pb-30 pt-[100px] ">
+    <section class="hero max-w-6xl mx-auto font-sans pb-30 pt-[100px] sm:px-0 px-10">
         <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-row item-center">
+            <div class="hidden sm:flex flex-row item-center">
                 <img src="{{ asset('assets/images/illustration/orangorang.webp') }}" alt="" class=" max-w-100">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[50px] leading-none">Informasi Kegiatan dan Agenda
+                    <h1 class="text-ungu dark:text-orange-100 font-bold text-3xl sm:text-[50px] leading-none">Informasi
+                        Kegiatan
+                        dan
+                        Agenda
                     </h1>
-                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[60px] leading-none">
+                    <h1 class="text-black1 dark:text-purple-500 font-bold text-3xl sm:text-[60px] leading-none">
                         Warga RW 2
                     </h1>
                 </div>
@@ -21,11 +24,11 @@
     </section>
 
     <section id="kalender"
-        class="grid grid-cols-2 gap-4 max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-gray-800 p-14 rounded-3xl z-20 relative ">
+        class="grid sm:grid-cols-2 gap-4 max-w-6xl sm:pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-gray-800 p-10 sm:p-14 rounded-3xl z-20 relative ">
         <div>
             <h5 class="mx-5 mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Kalender Agenda RW 2
             </h5>
-            <div class="bg-white rounded-xl mx-5 p-10">
+            <div class="bg-white rounded-xl sm:mx-5 p-5 sm:p-10">
                 <div id="calendar"></div>
             </div>
         </div>
