@@ -61,6 +61,10 @@ Route::prefix('umkm')->group(function () {
         Route::get('/create', [UmkmController::class, 'create'])->name('user.umkm.tambah');
         Route::post('/store', [UmkmController::class, 'store'])->name('user.umkm.store');
         Route::post('/status', [UmkmController::class, 'set_status'])->name('user.umkm.status');
+        Route::get('/edit/{umkm}', [UmkmController::class, 'edit'])->name('user.umkm.edit');
+        Route::put('/', [UmkmController::class, 'update'])->name('user.umkm.update');
+        Route::delete('/detete/{umkm}', [UmkmController::class, 'destroy'])->name('user.umkm.delete');
+
     });
 });
 

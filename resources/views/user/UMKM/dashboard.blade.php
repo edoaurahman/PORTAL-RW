@@ -80,14 +80,17 @@
                                     class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
                                     Detail
                                 </a>
-                                <a href="2"
+                                <a href="{{ route('user.umkm.edit', $item->id_umkm) }}"
                                     class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
                                     Update
                                 </a>
-                                <a href="3"
-                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
-                                    Delete
-                                </a>
+                                <form action="{{ route('user.umkm.delete', $item->id_umkm) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        class="item price hover:text-indigo-400 text-ungu text-sm font-medium "
+                                        onclick="return confirm('Apakah kamu ingin menghapus umkm ini?')">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>
