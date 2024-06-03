@@ -26,8 +26,8 @@
                 </div>
             </a>
 
-            <a class="{{ $berita_populer[1] == null ? 'hidden' : '' }} w-full md:w-1/3 relative rounded" style=height:
-                24em; href="{{ route('user.berita.detail', $berita_populer[1]->slug) }}">
+            <a class="{{ $berita_populer[1] == null ? 'hidden' : '' }} w-full md:w-1/3 relative rounded hidden sm:block"
+                style=height: 24em; href="{{ route('user.berita.detail', $berita_populer[1]->slug) }}">
                 <div class="absolute left-0 top-0 w-full h-full z-10"
                     style="background-image:linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
                 <img src="{{ $berita_populer[1]->sampul }}"
@@ -57,10 +57,12 @@
                         href="{{ route('user.berita.detail', $item->slug) }}">
                         <div class=" lg:w-48 flex-none bg-cover bg-center text-center overflow-hidden opacity-75"
                             style="background-image: url('{{ $item->sampul }}')"></div>
-                        <div class="bg-white dark:bg-gray-700 rounded px-4 flex flex-col justify-between leading-normal w-full p-5">
+                        <div
+                            class="bg-white dark:bg-gray-700 rounded px-4 flex flex-col justify-between leading-normal w-full p-5">
                             <div>
                                 <div class="mt-3 md:mt-0 ">
-                                    <p class="text-black2 dark:text-gray-100 font-bold text-1xl mb-2">{{ $item->judul }}</p>
+                                    <p class="text-black2 dark:text-gray-100 font-bold text-1xl mb-2">
+                                        {{ $item->judul }}</p>
                                 </div>
                                 <p class="text-black3 dark:text-gray-300 text-base">{{ $item->generateCuplikan() }}</p>
                             </div>
@@ -87,7 +89,8 @@
             <div class="w-full lg:w-1/3 px-3">
                 {{-- * topics * --}}
                 <div class="mb-4">
-                    <h5 class="font-bold text-lg uppercase text-gray-700 dark:text-gray-100 px-1 mb-2"> Popular Topics </h5>
+                    <h5 class="font-bold text-lg uppercase text-gray-700 dark:text-gray-100 px-1 mb-2"> Popular Topics
+                    </h5>
                     <ul>
                         @php
                             $colors = ['bg-red-300', 'bg-green-300', 'bg-blue-300', 'bg-yellow-300', 'bg-purple-300'];
@@ -113,7 +116,8 @@
 
                 {{-- * subscribe * --}}
                 <div class="p-1 mt-4 mb-4">
-                    <h5 class="font-bold text-lg uppercase text-gray-700 dark:text-gray-100 mb-2"> Pentingnya Berita RW 02 </h5>
+                    <h5 class="font-bold text-lg uppercase text-gray-700 dark:text-gray-100 mb-2"> Pentingnya Berita RW
+                        02 </h5>
                     <p class="text-gray-600 dark:text-gray-300">
                         Berita memiliki peran yang sangat penting di RW 02 Arjosari karena menjadi sumber informasi
                         utama bagi warga untuk mengetahui berbagai peristiwa, kegiatan, dan kebijakan yang terjadi di
