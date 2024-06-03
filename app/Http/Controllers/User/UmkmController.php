@@ -16,10 +16,20 @@ use Storage;
 
 class UmkmController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $umkm = UMKMModel::where('status', 'publish')->get();
-        return view('user.UMKM.index', compact('umkm'));
+        $query = UMKMModel::where('status', 'publish');
+        if ($request->has('kategori')) {
+            $query->whereHas('listKategori', function ($q) use ($request) {
+                $q->whereIn('id_kategori', $request->kategori);
+            });
+        }
+        if ($request->has('s')) {
+            $query->where('nama_umkm', 'like', '%' . $request->s . '%');
+        }
+        $umkm = $query->get();
+        $kategori = KategoriUMKMModel::all();
+        return view('user.UMKM.index', compact('umkm', 'kategori'));
     }
 
     public function dashboard()
