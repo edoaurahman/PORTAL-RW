@@ -1,10 +1,10 @@
 <x-layout.user-layout>
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
-        <div class="flex flex-row items-center justify-between gap-x-20">
+    <section class="max-w-6xl mx-auto font-sans pb-12 pt-[100px] sm:px-0 px-10">
+        <div class="flex flex-col gap-y-10 sm:flex-row items-center justify-between gap-x-20">
             <div class="flex-1 flex-col gap-y-10 space-y-5">
-
                 <div class="gap-y-2 flex flex-col space-y-2">
-                    <h1 class="text-black1 font-bold text-[70px] leading-none dark:text-white">Data Seluruh<br>
+                    <h1 class="text-black1 font-bold text-4xl sm:text-[70px] leading-none dark:text-white">Data
+                        Seluruh<br>
                         Penduduk RT {{ $user->penduduk->alamat->rt }}.
                     </h1>
                     <div class="text-base leading-loose text-black3 dark:text-gray-400">
@@ -67,96 +67,94 @@
 
     <section class="tablePenduduk max-w-6xl mx-auto font-sans py-12 relative overflow-x-auto  sm:rounded-lg">
         <form action="" method="get">
-            <div
-                class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-10">
-                <div>
-                    <button id="filterButton" data-dropdown-toggle="filter"
-                        class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                        type="button">
-                        <span class="sr-only">Action button</span>
-                        Filter
-                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
-                    <!-- Dropdown menu -->
-                    <div id="filter"
-                        class="absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div class="flex items-end justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-10">
+                <button id="filterButton" data-dropdown-toggle="filter"
+                    class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                    type="button">
+                    <span class="sr-only">Action button</span>
+                    Filter
+                    <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="filter"
+                    class="absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 
-                        <div id="accordion-collapse" data-accordion="collapse">
-                            <h2 id="accordion-collapse-heading-1">
-                                <button type="button"
-                                    class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                    data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
-                                    aria-controls="accordion-collapse-body-1">
-                                    <span>Status Penduduk</span>
-                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M9 5 5 1 1 5" />
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="accordion-collapse-body-1" class="hidden"
-                                aria-labelledby="accordion-collapse-heading-1">
-                                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                                    <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Pendatang"
-                                            name="status_penduduk[]"
-                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
-                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pendatang</label>
-                                    </div>
-                                    <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Penduduk Tetap"
-                                            name="status_penduduk[]"
-                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
-                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Penduduk
-                                            Tetap</label>
-                                    </div>
+                    <div id="accordion-collapse" data-accordion="collapse">
+                        <h2 id="accordion-collapse-heading-1">
+                            <button type="button"
+                                class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
+                                aria-controls="accordion-collapse-body-1">
+                                <span>Status Penduduk</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-1" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-1">
+                            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center my-2">
+                                    <input id="default-checkbox" type="checkbox" value="Pendatang"
+                                        name="status_penduduk[]"
+                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="default-checkbox"
+                                        class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pendatang</label>
+                                </div>
+                                <div class="flex items-center my-2">
+                                    <input id="default-checkbox" type="checkbox" value="Penduduk Tetap"
+                                        name="status_penduduk[]"
+                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="default-checkbox"
+                                        class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Penduduk
+                                        Tetap</label>
                                 </div>
                             </div>
+                        </div>
 
-                            <h2 id="accordion-collapse-heading-2">
-                                <button type="button"
-                                    class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                                    data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
-                                    aria-controls="accordion-collapse-body-2">
-                                    <span>Jenis Kelamin</span>
-                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M9 5 5 1 1 5" />
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="accordion-collapse-body-2" class="hidden"
-                                aria-labelledby="accordion-collapse-heading-2">
-                                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                                    <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Laki-Laki"
-                                            name="jenis_kelamin[]"
-                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
-                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-Laki</label>
-                                    </div>
-                                    <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Perempuan"
-                                            name="jenis_kelamin[]"
-                                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
-                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
-                                    </div>
+                        <h2 id="accordion-collapse-heading-2">
+                            <button type="button"
+                                class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                                aria-controls="accordion-collapse-body-2">
+                                <span>Jenis Kelamin</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-2" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-2">
+                            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center my-2">
+                                    <input id="default-checkbox" type="checkbox" value="Laki-Laki"
+                                        name="jenis_kelamin[]"
+                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="default-checkbox"
+                                        class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-Laki</label>
+                                </div>
+                                <div class="flex items-center my-2">
+                                    <input id="default-checkbox" type="checkbox" value="Perempuan"
+                                        name="jenis_kelamin[]"
+                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="default-checkbox"
+                                        class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <label for="table-search" class="sr-only">Search</label>
-                <div class="relative">
+                <div class="relative items-center h-full">
                     <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -165,8 +163,7 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search-users" name="s" autocomplete="off"
-                        value="{{ old('s') }}"
-                        class="block p-2 ps-10 text-sm text-gray-900 border
+                        class="block ps-10 text-sm text-gray-900 border
                         border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-purple-500 focus:border-purple-500
                         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
                         dark:focus:ring-purple-500 dark:focus:border-purple-500"
