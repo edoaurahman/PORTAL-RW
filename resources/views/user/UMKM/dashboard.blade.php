@@ -54,37 +54,45 @@
         {{-- End List Berita --}}
         <div class="display-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
             @foreach ($umkm as $item)
-                <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
-                    <div class="group relative">
-                        <div
-                            class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
+                <div class="group relative">
+                    <div class=" absolute  bg-ungu px-2 py-1 rounded-tl-lg">
+                        {{-- <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                            class="flex w-2.5 h-2.5 mr-3 bg-green-400 rounded-full me-1.5 flex-shrink-0"></span>Buka</span> --}}
+                        {{-- <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                            class="flex w-2.5 h-2.5 mr-3 bg-yellow-300 rounded-full me-1.5 flex-shrink-0"></span>Pending</span> --}}
+                        <span class="flex flex-none items-center text-sm font-medium text-white dark:text-white "><span
+                                class="flex w-2.5 h-2.5 mr-3 bg-red-500 rounded-full me-1.5 flex-shrink-0"></span>Tutup</span>
+                    </div>
+                    <div class="items w-full h-full m-auto rounded-2xl shadow-md">
+                        <div class="item-img ">
+                            <img class="w-auto rounded-t-lg h-[206px] object-cover" src="{{ $item->getCover() }}"
+                                alt="">
                         </div>
-                        <div class="items w-full h-full m-auto rounded-2xl shadow-md">
-                            <div class="item-img pb-5">
-                                <img class="w-auto rounded-t-lg h-[10px]" src="{{ $item->getCover() }}" alt="">
+                        <div class="item-info p-5">
+                            <div class="item-rating flex justify-between items-center mt-3">
+                                <p class="text-xl font-medium">{{ $item->textcut() }}</p>
+                                {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                             </div>
-                            <div class="item-info p-5">
-                                <div class="item-rating flex justify-between items-center mt-3">
-                                    <p class="text-xl font-medium">{{ $item->textcut() }}</p>
-                                    {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
-                                </div>
-                                <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
+                            <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
 
-                                <div class="item price group-hover:text-indigo-900 text-ungu text-sm font-medium my-3">
-                                    Selengkapnya
-                                </div>
-                            </div>
-                            <div
-                                class="{{ $item->tokoBuka() ? 'hidden' : '' }} opacity-100 absolute justify-center w-full bottom-[60%] flex">
-                                <p
-                                    class="text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                                    TUTUP</p>
+                            <div class="flex flex-row gap-x-3 mt-3">
+                                <a href="{{ route('user.umkm.detail', $item->id_umkm) }}"
+                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
+                                    Detail
+                                </a>
+                                <a href="2"
+                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
+                                    Update
+                                </a>
+                                <a href="3"
+                                    class="item price hover:text-indigo-400 text-ungu text-sm font-medium ">
+                                    Delete
+                                </a>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             @endforeach
-        </div>
         </div>
     </section>
     {{-- End List Berita --}}
