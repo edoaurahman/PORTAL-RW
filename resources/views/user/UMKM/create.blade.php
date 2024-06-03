@@ -299,7 +299,7 @@
                 reader.onload = function(e) {
                     const img = document.createElement('img');
                     img.src = e.target.result;
-                    img.classList.add('max-w-[400px]'); // Tambahkan kelas untuk styling
+                    img.classList.add('max-w-full'); // Tambahkan kelas untuk styling
                     img.alt = 'Image Preview';
 
                     imagePreviewContainer.appendChild(img);
