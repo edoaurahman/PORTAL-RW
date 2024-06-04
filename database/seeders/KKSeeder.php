@@ -40,10 +40,10 @@ class KKSeeder extends Seeder
             ['no_kk' => '3522110504040008', 'nik_kepalakeluarga' => '3522110504040013'],
             ['no_kk' => '3522110504040009', 'nik_kepalakeluarga' => '3522110504040014'],
             // putra
-            ['no_kk' => '3522110504040010', 'nik_kepalakeluarga' => '3522110504040015'],
-            ['no_kk' => '3522110504040011', 'nik_kepalakeluarga' => '3522110504040016'],
-            ['no_kk' => '3522110504040012', 'nik_kepalakeluarga' => '3522110504040017'],
-            ['no_kk' => '3522110504040013', 'nik_kepalakeluarga' => '3522110504040018'],
+            ['no_kk' => '3522110504040010', 'nik_kepalakeluarga' => '3522110504040022'],
+            ['no_kk' => '3522110504040011', 'nik_kepalakeluarga' => '3522110504040026'],
+            ['no_kk' => '3522110504040012', 'nik_kepalakeluarga' => '3522110504040030'],
+            ['no_kk' => '3522110504040013', 'nik_kepalakeluarga' => '3522110504040034'],
             // anang
             ['no_kk' => '3522110504040014', 'nik_kepalakeluarga' => '3522110504040019'],
             ['no_kk' => '3522110504040015', 'nik_kepalakeluarga' => '3522110504040020'],
