@@ -56,9 +56,7 @@ class PendudukController extends Controller
             if ($this->isAdmin()) {
                 $query->where('nama', 'like', '%' . $request->s . '%');
             } elseif ($this->isRW()) {
-                $query->whereHas('akun.level', function ($query) {
-                    $query->whereIn('nama_level', ['Penduduk', 'RT']);
-                });
+                $query->where('nama', 'like', '%' . $request->s . '%');
             } else {
                 $rt = $this->alamat->rt;
                 $query->whereHas('alamat', function ($query) use ($rt) {
