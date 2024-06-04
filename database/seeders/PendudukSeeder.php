@@ -98,17 +98,17 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-01.png')
                 ],
 
-                // abid nik 6-22
+                // abid nik 6-21
 
-                // putra nik 23-38
+                // putra nik 22-37
 
-                // anang nik 39-55
+                // anang nik 38-53
 
-                // zaki nik 56 - 71
+                // zaki nik 54 - 69
 
-                // edo nik 72 - 88
+                // edo nik 70 - 85
 
-                // siapa saja 89 - 109
+                // siapa saja 86 - 117
             ];
         PendudukModel::insert($penduduk);
     }
