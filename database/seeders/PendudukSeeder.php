@@ -15,59 +15,6 @@ class PendudukSeeder extends Seeder
      */
     public function run(): void
     {
-        $alamat =
-            [
-                [
-                    'id_alamat' => '1',
-                    'rw' => '1',
-                    'rt' => '1',
-                    'kel' => 'Prigi',
-                    'kecamatan' => 'Kanor',
-                    'jalan' => 'Jl. Raya Prigi'
-                ],
-                [
-                    'id_alamat' => '2',
-                    'rw' => '1',
-                    'rt' => '1',
-                    'kel' => 'Prigi',
-                    'kecamatan' => 'Kanor',
-                    'jalan' => 'Jl. Raya Prigi'
-                ],
-                [
-                    'id_alamat' => '3',
-                    'rw' => '1',
-                    'rt' => '1',
-                    'kel' => 'Prigi',
-                    'kecamatan' => 'Kanor',
-                    'jalan' => 'Jl. Raya Prigi'
-                ],
-                [
-                    'id_alamat' => '4',
-                    'rw' => '1',
-                    'rt' => '1',
-                    'kel' => 'Prigi',
-                    'kecamatan' => 'Kanor',
-                    'jalan' => 'Jl. Raya Prigi'
-                ],
-                [
-                    'id_alamat' => '5',
-                    'rw' => '1',
-                    'rt' => '1',
-                    'kel' => 'Prigi',
-                    'kecamatan' => 'Kanor',
-                    'jalan' => 'Jl. Raya Prigi'
-                ],
-                [
-                    'id_alamat' => '6',
-                    'rw' => '1',
-                    'rt' => '3',
-                    'kel' => 'Siman',
-                    'kecamatan' => 'Ponorogo',
-                    'jalan' => 'Jl. Raya Siman'
-                ],
-            ];
-        AlamatModel::insert($alamat);
-
         $penduduk =
             [
                 [
