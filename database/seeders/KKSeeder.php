@@ -59,16 +59,16 @@ class KKSeeder extends Seeder
             ['no_kk' => '3522110504040023', 'nik_kepalakeluarga' => '3522110504040028'],
             ['no_kk' => '3522110504040024', 'nik_kepalakeluarga' => '3522110504040028'],
             ['no_kk' => '3522110504040025', 'nik_kepalakeluarga' => '3522110504040028'],
-            // siapa saja
-            ['no_kk' => '3522110504040026', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040027', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040028', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040029', 'nik_kepalakeluarga' => '3522110504040028'],
-            // siapa saja
-            ['no_kk' => '3522110504040030', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040031', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040032', 'nik_kepalakeluarga' => '3522110504040028'],
-            ['no_kk' => '3522110504040033', 'nik_kepalakeluarga' => '3522110504040028'],
+            // siapa saja (done)
+            ['no_kk' => '3522110504040026', 'nik_kepalakeluarga' => '3522110504040086'],
+            ['no_kk' => '3522110504040027', 'nik_kepalakeluarga' => '3522110504040090'],
+            ['no_kk' => '3522110504040028', 'nik_kepalakeluarga' => '3522110504040094'],
+            ['no_kk' => '3522110504040029', 'nik_kepalakeluarga' => '3522110504040098'],
+            // siapa saja (done)
+            ['no_kk' => '3522110504040030', 'nik_kepalakeluarga' => '3522110504040102'],
+            ['no_kk' => '3522110504040031', 'nik_kepalakeluarga' => '3522110504040106'],
+            ['no_kk' => '3522110504040032', 'nik_kepalakeluarga' => '3522110504040110'],
+            ['no_kk' => '3522110504040033', 'nik_kepalakeluarga' => '3522110504040114'],
         ];
         KkModel::insert($kk);
     }
