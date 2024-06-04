@@ -127,13 +127,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="messages.html"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-regular fa-lightbulb"></i>
-                                    Aspirasi
-                                </a>
-                            </li>
-                            <li>
                                 <a href="{{ route('user.umkm.dashboard') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-shop"></i>

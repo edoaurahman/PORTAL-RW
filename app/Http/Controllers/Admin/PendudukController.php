@@ -64,24 +64,25 @@ class PendudukController extends Controller
                 });
             }
 
-            $filters = [
-                'rt' => 'alamat.rt',
-                'status_penduduk' => 'status_penduduk',
-                'jenis_kelamin' => 'jenis_kelamin'
-            ];
-
-            foreach ($filters as $param => $column) {
-                if ($request->has($param)) {
-                    $value = $request->$param;
-                    if (is_array($value)) {
-                        $query->whereIn($column, $value);
-                    } else {
-                        $query->where($column, $value);
+            if ($request->has('rt')) {
+                $query->whereHas(
+                    'alamat',
+                    function ($query) use ($request) {
+                        $query->where('rt', $request->rt);
                     }
-                }
+                );
             }
 
-            $penduduk = $query->paginate($paginate);
+            if ($request->has('status_penduduk')) {
+                $query->where('status_penduduk', $request->status_penduduk);
+            }
+
+            if ($request->has('jenis_kelamin')) {
+                $query->where('jenis_kelamin', $request->jenis_kelamin);
+            }
+
+
+            $penduduk = $query->paginate($paginate)->withQueryString();
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
                 'code' => 500,
