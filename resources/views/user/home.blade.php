@@ -1,4 +1,158 @@
 <x-layout.user-layout>
+    <style>
+        .demo {
+            background: #f8f8f8;
+        }
+
+        .our-team {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .our-team .pic {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .our-team .layer-1 {
+            width: 200%;
+            overflow: hidden;
+            transform: rotate(10deg) translate(-13%, 13%);
+        }
+
+        .our-team .layer-2 {
+            background: #fff;
+            overflow: hidden;
+            transform: rotate(-16deg) translate(-9%, -13%);
+        }
+
+        .our-team .layer-3 {
+            width: 51%;
+            margin: 0 auto;
+            transform: rotate(6deg) translateY(5%);
+        }
+
+        .our-team img {
+            width: 150px;
+            height: auto;
+        }
+
+        .our-team .social {
+            width: 50%;
+            height: 150%;
+            background: linear-gradient(to right, rgba(244, 205, 3, 0), rgba(3, 176, 244, 0.8));
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease-out 0s;
+        }
+
+        .our-team:hover .social {
+            transform: translateX(0px);
+        }
+
+        .our-team .social-icon {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 30px;
+            position: absolute;
+            bottom: 95px;
+            right: 15px;
+        }
+
+        .our-team .social-icon li a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            font-size: 13px;
+            color: #000;
+            text-align: center;
+            margin: 4px 0;
+            transform: scale(0);
+            transition: all 0.2s ease-out 0.4s;
+        }
+
+        .our-team:hover .social-icon li a {
+            transform: scale(1);
+        }
+
+        .our-team .social-icon li a.fa-facebook:hover {
+            color: #4867aa;
+        }
+
+        .our-team .social-icon li a.fa-google-plus:hover {
+            color: #db4437;
+        }
+
+        .our-team .social-icon li a.fa-twitter:hover {
+            color: #1da1f2;
+        }
+
+        .our-team .team-info {
+            padding: 15px 15px 20px;
+            margin: 25px;
+            background: #48c6f7;
+            border-radius: 3px;
+            text-align: center;
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            transition: all 0.2s ease-out 0s;
+        }
+
+        .our-team:hover .team-info {
+            background: #fff;
+        }
+
+        .our-team .title {
+            font-size: 18px;
+            color: #000;
+            margin: 0;
+        }
+
+        .our-team .post {
+            display: block;
+            font-size: 14px;
+            font-style: italic;
+            color: #6c6c6c;
+            margin-top: 5px;
+        }
+
+        .our-team .description {
+            padding: 0 20px;
+            font-size: 14px;
+            color: #6c6c6c;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 990px) {
+            .our-team {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .our-team .social-icon {
+                right: 25px;
+            }
+
+            .our-team .team-info {
+                bottom: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .our-team .team-info {
+                bottom: 65px;
+            }
+        }
+    </style>
     <div class="dark:bg-[#1f1345]">
 
         <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
@@ -92,7 +246,7 @@
                             class="bg-purple-50 mt-4 mx-auto max-w-7xl px-6 rounded-lg shadow-md lg:px-8 lg:py-5 dark:bg-ungu_muda">
                             <div
                                 class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 border-gray-200  lg:mx-0 lg:max-w-none">
-                                <article class="flex max-w-xl flex-col items-start justify-between">
+                                {{-- <article class="flex max-w-xl flex-col items-start justify-between">
                                     <div class="group relative">
                                         <h3
                                             class="mt-2 text-lg font-bold leading-6 text-black group-hover:text-gray-600 dark:text-white">
@@ -120,8 +274,99 @@
                                         <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                             alt="" class="h-10 w-10 rounded-full bg-gray-50">
                                     </div>
-                                </article>
+                                </article> --}}
+                                <div class="container">
+                                    <div class="grid grid-cols-3 gap-4">
 
+                                        <div class="">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <div class="layer-1">
+                                                        <div class="layer-2">
+                                                            <div class="layer-3">
+                                                                <img src="{{ asset('assets/images/illustration/img_2.jpg') }}"
+                                                                    alt="">
+                                                                <div class="social">
+                                                                    <ul class="social-icon">
+                                                                        <li><a href="#"
+                                                                                class="fab fa-facebook"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-google-plus"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-twitter"></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info">
+                                                        <h3 class="title">kristina</h3>
+                                                        <span class="post">Web Designer</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <div class="layer-1">
+                                                        <div class="layer-2">
+                                                            <div class="layer-3">
+                                                                <img src="{{ asset('assets/images/illustration/img_2.jpg') }}"
+                                                                    alt="">
+                                                                <div class="social">
+                                                                    <ul class="social-icon">
+                                                                        <li><a href="#"
+                                                                                class="fab fa-facebook"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-google-plus"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-twitter"></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info">
+                                                        <h3 class="title">kristina</h3>
+                                                        <span class="post">Web Designer</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <div class="layer-1">
+                                                        <div class="layer-2">
+                                                            <div class="layer-3">
+                                                                <img src="{{ asset('assets/images/illustration/img_1.jpg') }}"
+                                                                    alt="">
+                                                                <div class="social">
+                                                                    <ul class="social-icon">
+                                                                        <li><a href="#"
+                                                                                class="fab fa-facebook"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-google-plus"></a></li>
+                                                                        <li><a href="#"
+                                                                                class="fab fa-twitter"></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info">
+                                                        <h3 class="title">Williamson</h3>
+                                                        <span class="post">Web Developer</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- More posts... -->
                             </div>
                         </div>
@@ -131,7 +376,7 @@
             </div>
         </section>
 
-        <div class="slider  max-w-6xl mx-auto font-sans py-12">
+        {{-- <div class="slider  max-w-6xl mx-auto font-sans py-12">
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative overflow-hidden h-52 md:h-[600px]">
@@ -267,9 +512,9 @@
                 </button>
             </div>
 
-        </div>
+        </div> --}}
 
-        <div class="max-w-6xl mx-auto font-sans py-12 bg-[#f8f8f8]">
+        {{-- <div class="max-w-6xl mx-auto font-sans py-12 bg-[#f8f8f8]">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="our-team overflow-hidden relative">
@@ -278,8 +523,9 @@
                                 class="layer-1 w-[200%] overflow-hidden rotate-[10deg] -translate-x-13 translate-y-13">
                                 <div
                                     class="layer-2 bg-white overflow-hidden -rotate-[16deg] -translate-x-9 translate-y-13">
-                                    <div class="layer-3 w-[50%] my-auto">
-                                        <img src="{{ asset('assets/images/ilustration/img_1.jpg') }}" alt="">
+                                    <div class="layer-3 w-[50%] my-auto rotate-[10deg] -translate-x-13 translate-y-5">
+                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}"
+                                            class="w-full h-auto" alt="">
                                         <div class="social">
                                             <ul class="social-icon">
                                                 <li><a href="#" class="fab fa-facebook"></a></li>
@@ -321,6 +567,94 @@
                             <div class="team-info">
                                 <h3 class="title">kristina</h3>
                                 <span class="post">Web Designer</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
+                            tempus. Curabitur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+        <div class="max-w-6xl mx-auto font-sans py-12">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="">
+                    <div class="our-team">
+                        <div class="pic">
+                            <div class="layer-1">
+                                <div class="layer-2">
+                                    <div class="layer-3">
+                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}" alt="">
+                                        <div class="social">
+                                            <ul class="social-icon">
+                                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">Web Developer</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
+                            tempus. Curabitur.
+                        </p>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="our-team">
+                        <div class="pic">
+                            <div class="layer-1">
+                                <div class="layer-2">
+                                    <div class="layer-3">
+                                        <img src="{{ asset('assets/images/illustration/img_2.jpg') }}" alt="">
+                                        <div class="social">
+                                            <ul class="social-icon">
+                                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="title">kristina</h3>
+                                <span class="post">Web Designer</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
+                            tempus. Curabitur.
+                        </p>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="our-team">
+                        <div class="pic">
+                            <div class="layer-1">
+                                <div class="layer-2">
+                                    <div class="layer-3">
+                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}" alt="">
+                                        <div class="social">
+                                            <ul class="social-icon">
+                                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">Web Developer</span>
                             </div>
                         </div>
                         <p class="description">
