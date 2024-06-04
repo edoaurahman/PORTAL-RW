@@ -87,17 +87,17 @@ class AlamatSeeder extends Seeder
             ["id_alamat" => "23", "rw" => 2, "rt" => 5, "kel" => "Sukun", "kecamatan" => "Sukun", "jalan" => "Jl. Flamboyan Merah No. 78"],
             ["id_alamat" => "24", "rw" => 2, "rt" => 5, "kel" => "Sukun", "kecamatan" => "Sukun", "jalan" => "Jl. Matahari Pagi No. 89"],
             ["id_alamat" => "25", "rw" => 2, "rt" => 5, "kel" => "Sukun", "kecamatan" => "Sukun", "jalan" => "Jl. Cempaka Putih No. 90"],
-            ["id_alamat" => "32", "rw" => 2, "rt" => 5, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Mawar Elok No. 10"],
+            ["id_alamat" => "26", "rw" => 2, "rt" => 5, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Mawar Elok No. 10"],
             // siapa saja (RT6)
-            ["id_alamat" => "33", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Melati Mekar No. 11"],
-            ["id_alamat" => "34", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Kenanga Harum No. 12"],
-            ["id_alamat" => "35", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Sejahtera No. 13"],
-            ["id_alamat" => "36", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Mawar Permai No. 14"],
+            ["id_alamat" => "27", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Melati Mekar No. 11"],
+            ["id_alamat" => "28", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Kenanga Harum No. 12"],
+            ["id_alamat" => "29", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Sejahtera No. 13"],
+            ["id_alamat" => "30", "rw" => 2, "rt" => 6, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Mawar Permai No. 14"],
             // siapa aja (RT7)
-            ["id_alamat" => "37", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Melati Asri No. 15"],
-            ["id_alamat" => "38", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Kenanga Indah No. 16"],
-            ["id_alamat" => "39", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Lestari No. 17"],
-            ["id_alamat" => "40", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Lestari No. 18"],
+            ["id_alamat" => "31", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Melati Asri No. 15"],
+            ["id_alamat" => "32", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Kenanga Indah No. 16"],
+            ["id_alamat" => "33", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Lestari No. 17"],
+            ["id_alamat" => "34", "rw" => 2, "rt" => 7, "kel" => "Arjosari", "kecamatan" => "Blimbing", "jalan" => "Jl. Anggrek Lestari No. 18"],
         ];
         AlamatModel::insert($alamat);
 
