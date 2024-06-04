@@ -16,23 +16,23 @@ class KKSeeder extends Seeder
         $kk = [
             [
                 'no_kk' => '3522110504040001',
-                'nik_kepalakeluarga' => '3522110504040006',
+                'nik_kepalakeluarga' => '3522110504040001',
             ],
             [
                 'no_kk' => '3522110504040002',
-                'nik_kepalakeluarga' => '3522110504040008',
+                'nik_kepalakeluarga' => '3522110504040002',
             ],
             [
                 'no_kk' => '3522110504040003',
-                'nik_kepalakeluarga' => '3522110504040007',
+                'nik_kepalakeluarga' => '3522110504040003',
             ],
             [
                 'no_kk' => '3522110504040004',
-                'nik_kepalakeluarga' => '3522110504040009',
+                'nik_kepalakeluarga' => '3522110504040004',
             ],
             [
                 'no_kk' => '3522110504040005',
-                'nik_kepalakeluarga' => '3522110504040010',
+                'nik_kepalakeluarga' => '3522110504040005',
             ],
             ['no_kk' => '3522110504040006', 'nik_kepalakeluarga' => '3522110504040011'],
             ['no_kk' => '3522110504040007', 'nik_kepalakeluarga' => '3522110504040012'],

@@ -18,7 +18,7 @@ class PendudukSeeder extends Seeder
         $penduduk =
             [
                 [
-                    'nik' => '3522110504040006',
+                    'nik' => '3522110504040001',
                     'nama' => "Ridho Aulia' Rahman",
                     'tempat_lahir' => 'Bojonegoro',
                     'tgl_lahir' => '2004-05-04',
@@ -34,7 +34,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040007',
+                    'nik' => '3522110504040002',
                     'nama' => "Anang",
                     'tempat_lahir' => 'Bojonegoro',
                     'tgl_lahir' => '2004-05-04',
@@ -43,14 +43,14 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040003',
+                    'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '2',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040008',
+                    'nik' => '3522110504040003',
                     'nama' => "Abid",
                     'tempat_lahir' => 'Bojonegoro',
                     'tgl_lahir' => '2004-05-04',
@@ -59,14 +59,14 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040002',
+                    'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '3',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040009',
+                    'nik' => '3522110504040004',
                     'nama' => "Putra",
                     'tempat_lahir' => 'Bojonegoro',
                     'tgl_lahir' => '2004-05-04',
@@ -75,14 +75,14 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040004',
+                    'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '4',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040010',
+                    'nik' => '3522110504040005',
                     'nama' => "Zaki",
                     'tempat_lahir' => 'Bojonegoro',
                     'tgl_lahir' => '2004-05-04',
@@ -91,15 +91,15 @@ class PendudukSeeder extends Seeder
                     'status_perkawinan' => 'Belum Kawin',
                     'pekerjaan' => 'Pelajar',
                     'gol_darah' => 'O',
-                    'no_kk' => '3522110504040002',
+                    'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
                     'id_alamat' => '5',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040012',
-                    'nama' => "Caca Putri",
+                    'nik' => '3522110504040006',
+                    'nama' => "Jokowi",
                     'tempat_lahir' => 'Pomorogo',
                     'tgl_lahir' => '2006-04-15',
                     'jenis_kelamin' => 'Perempuan',
@@ -114,7 +114,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
-                    'nik' => '3522110504040013',
+                    'nik' => '3522110504040007',
                     'nama' => "Budi Setiawan",
                     'tempat_lahir' => 'Malang',
                     'tgl_lahir' => '1985-01-01',
@@ -130,7 +130,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-02.png'),
                 ],
                 [
-                    'nik' => '3522110504040014',
+                    'nik' => '3522110504040008',
                     'nama' => "Ani Lestari",
                     'tempat_lahir' => 'Surabaya',
                     'tgl_lahir' => '1990-07-17',
@@ -146,7 +146,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-03.png'),
                 ],
                 [
-                    'nik' => '3522110504040015',
+                    'nik' => '3522110504040009',
                     'nama' => "Dimas Pratama",
                     'tempat_lahir' => 'Jember',
                     'tgl_lahir' => '1995-03-23',
@@ -162,7 +162,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-04.png'),
                 ],
                 [
-                    'nik' => '3522110504040016',
+                    'nik' => '3522110504040010',
                     'nama' => "Rina Sari",
                     'tempat_lahir' => 'Blitar',
                     'tgl_lahir' => '1998-12-08',
@@ -178,7 +178,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-05.png'),
                 ],
                 [
-                    'nik' => '3522110504040017',
+                    'nik' => '3522110504040011',
                     'nama' => "Andi Setiawan",
                     'tempat_lahir' => 'Kediri',
                     'tgl_lahir' => '2002-05-14',
@@ -194,7 +194,7 @@ class PendudukSeeder extends Seeder
                     'image' => url('assets/images/user/user-06.png'),
                 ],
                 [
-                    'nik' => '3522110504040018',
+                    'nik' => '3522110504040012',
                     'nama' => "Bella Puspita",
                     'tempat_lahir' => 'Probolinggo',
                     'tgl_lahir' => '2000-11-21',
