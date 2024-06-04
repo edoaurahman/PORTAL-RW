@@ -271,11 +271,11 @@
 
         <!-- ====== UMKM Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
+            class="col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-12">
             <h4 class="mb-2 text-xl font-bold text-black dark:text-white text-center">
                 UMKM
             </h4>
-            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
+            <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 @foreach ($umkmList as $umkm)
                     <a href="{{ route('user.umkm.detail', $umkm->id_umkm) }}" class="group">
                         <div
@@ -298,7 +298,7 @@
 
 
         <!--- struktur RW -->
-        <div
+        {{-- <div
             class=" col-span-12 rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
             <div>
                 <h4 class="mb-4 text-xl font-bold text-black dark:text-white text-center">
@@ -312,7 +312,7 @@
                 data-modal-toggle="struktur"
                 class=" bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg">Ubah
             </button>
-        </div>
+        </div> --}}
 
 
         <!--- struktur RW end-->

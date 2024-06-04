@@ -71,7 +71,7 @@ class AdminController extends Controller
         $totalPendudukPerempuanPendatang = PendudukModel::where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Pendatang')->count();
 
         $umkmList = UMKMModel::take(4)->get();
-        
+
         // hitung umur berdasarkan tanggal lahir
         $umur = [
             '0-5' => PendudukModel::whereBetween('tgl_lahir', [date('Y-m-d', strtotime('-5 years')), date('Y-m-d')])->count(),
@@ -148,26 +148,26 @@ class AdminController extends Controller
 
     }
 
-    public function updategambarStruktur(Request $request)
-    {
-        $request->validate([
-            'gambarstruktur' => 'required|image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
-        ]);
+    // public function updategambarStruktur(Request $request)
+    // {
+    //     $request->validate([
+    //         'gambarstruktur' => 'required|image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
+    //     ]);
 
-        try {
-            $gambarstruktur = SettingHomeModel::find($request->id_setting);
-            // hapus gambar lama keculi gambar default struktur.png
-            if ($gambarstruktur->gambarstruktur != 'struktur.png') {
-                if (file_exists(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur))) {
-                    unlink(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
-                }
-            }
-            $gambarstruktur->gambarstruktur = $request->gambarstruktur->hashName();
-            $gambarstruktur->save();
-            move_uploaded_file($request->gambarstruktur, public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
-        } catch (\Exception $e) {
-            return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Struktur RT Berhasil di Ubah, Gambar tidak ditemukan')->withInput();
-        }
-        return redirect()->route('admin.dashboard')->with('success', 'Struktur RW Berhasil Diubah.');
-    }
+    //     try {
+    //         $gambarstruktur = SettingHomeModel::find($request->id_setting);
+    //         // hapus gambar lama keculi gambar default struktur.png
+    //         if ($gambarstruktur->gambarstruktur != 'struktur.png') {
+    //             if (file_exists(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur))) {
+    //                 unlink(public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
+    //             }
+    //         }
+    //         $gambarstruktur->gambarstruktur = $request->gambarstruktur->hashName();
+    //         $gambarstruktur->save();
+    //         move_uploaded_file($request->gambarstruktur, public_path('assets/images/struktur/' . $gambarstruktur->gambarstruktur));
+    //     } catch (\Exception $e) {
+    //         return config('app.debug') ? redirect()->route('admin.dashboard')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.dashboard')->withErrors('Struktur RT Berhasil di Ubah, Gambar tidak ditemukan')->withInput();
+    //     }
+    //     return redirect()->route('admin.dashboard')->with('success', 'Struktur RW Berhasil Diubah.');
+    // }
 }
