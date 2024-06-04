@@ -1,158 +1,4 @@
 <x-layout.user-layout>
-    <style>
-        .demo {
-            background: #f8f8f8;
-        }
-
-        .our-team {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .our-team .pic {
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        .our-team .layer-1 {
-            width: 200%;
-            overflow: hidden;
-            transform: rotate(10deg) translate(-13%, 13%);
-        }
-
-        .our-team .layer-2 {
-            background: #fff;
-            overflow: hidden;
-            transform: rotate(-16deg) translate(-9%, -13%);
-        }
-
-        .our-team .layer-3 {
-            width: 51%;
-            margin: 0 auto;
-            transform: rotate(6deg) translateY(5%);
-        }
-
-        .our-team img {
-            width: 150px;
-            height: auto;
-        }
-
-        .our-team .social {
-            width: 50%;
-            height: 150%;
-            background: linear-gradient(to right, rgba(244, 205, 3, 0), rgba(3, 176, 244, 0.8));
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease-out 0s;
-        }
-
-        .our-team:hover .social {
-            transform: translateX(0px);
-        }
-
-        .our-team .social-icon {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 30px;
-            position: absolute;
-            bottom: 55px;
-            right: 15px;
-        }
-
-        .our-team .social-icon li a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            background: #fff;
-            border-radius: 50%;
-            font-size: 13px;
-            color: #000;
-            text-align: center;
-            margin: 4px 0;
-            transform: scale(0);
-            transition: all 0.2s ease-out 0.4s;
-        }
-
-        .our-team:hover .social-icon li a {
-            transform: scale(1);
-        }
-
-        .our-team .social-icon li a.fa-facebook:hover {
-            color: #4867aa;
-        }
-
-        .our-team .social-icon li a.fa-google-plus:hover {
-            color: #db4437;
-        }
-
-        .our-team .social-icon li a.fa-twitter:hover {
-            color: #1da1f2;
-        }
-
-        .our-team .team-info {
-            padding: 6px 7px;
-            margin: 25px;
-            background: #48c6f7;
-            border-radius: 3px;
-            text-align: center;
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            right: 0;
-            transition: all 0.2s ease-out 0s;
-        }
-
-        .our-team:hover .team-info {
-            background: #fff;
-        }
-
-        .our-team .title {
-            font-size: 12px;
-            color: #000;
-            margin: 0;
-        }
-
-        .our-team .post {
-            display: block;
-            font-size: 9px;
-            font-style: italic;
-            color: #6c6c6c;
-            margin-top: px;
-        }
-
-        .our-team .description {
-            padding: 0 20px;
-            font-size: 14px;
-            color: #6c6c6c;
-            text-align: center;
-        }
-
-        @media only screen and (max-width: 990px) {
-            .our-team {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-            .our-team .social-icon {
-                right: 25px;
-            }
-
-            .our-team .team-info {
-                bottom: 30px;
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-            .our-team .team-info {
-                bottom: 65px;
-            }
-        }
-    </style>
     <div class="dark:bg-[#1f1345]">
 
         <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
@@ -246,7 +92,7 @@
                             class="bg-purple-50 mt-4 mx-auto max-w-7xl px-6 rounded-lg shadow-md lg:px-8 lg:py-5 dark:bg-ungu_muda">
                             <div
                                 class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 border-gray-200  lg:mx-0 lg:max-w-none">
-                                {{-- <article class="flex max-w-xl flex-col items-start justify-between">
+                                <article class="flex max-w-xl flex-col items-start justify-between">
                                     <div class="group relative">
                                         <h3
                                             class="mt-2 text-lg font-bold leading-6 text-black group-hover:text-gray-600 dark:text-white">
@@ -274,99 +120,7 @@
                                         <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                             alt="" class="h-10 w-10 rounded-full bg-gray-50">
                                     </div>
-                                </article> --}}
-                                <div class="container">
-                                    <div class="grid grid-cols-3 gap-4">
-
-                                        <div class="">
-                                            <div class="our-team">
-                                                <div class="pic">
-                                                    <div class="layer-1">
-                                                        <div class="layer-2">
-                                                            <div class="layer-3">
-                                                                <img src="{{ asset('assets/images/illustration/img_2.jpg') }}"
-                                                                    alt="">
-                                                                <div class="social">
-                                                                    <ul class="social-icon">
-                                                                        <li><a href="#"><i
-                                                                                    class="fa-brands fa-whatsapp"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i
-                                                                                    class="fa-regular fa-map"></i></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="team-info">
-                                                        <h3 class="title">kristina</h3>
-                                                        <span class="post">Web Designer</span>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="our-team">
-                                                <div class="pic">
-                                                    <div class="layer-1">
-                                                        <div class="layer-2">
-                                                            <div class="layer-3">
-                                                                <img src="{{ asset('assets/images/illustration/img_2.jpg') }}"
-                                                                    alt="">
-                                                                <div class="social">
-                                                                    <ul class="social-icon">
-                                                                        <li><a href="#"
-                                                                                class="fab fa-facebook"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-google-plus"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-twitter"></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="team-info">
-                                                        <h3 class="title">kristina</h3>
-                                                        <span class="post">Web Designer</span>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="our-team">
-                                                <div class="pic">
-                                                    <div class="layer-1">
-                                                        <div class="layer-2">
-                                                            <div class="layer-3">
-                                                                <img src="{{ asset('assets/images/illustration/img_1.jpg') }}"
-                                                                    alt="">
-                                                                <div class="social">
-                                                                    <ul class="social-icon">
-                                                                        <li><a href="#"
-                                                                                class="fab fa-facebook"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-google-plus"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-twitter"></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="team-info">
-                                                        <h3 class="title">Williamson</h3>
-                                                        <span class="post">Web Developer</span>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </article>
                                 <!-- More posts... -->
                             </div>
                         </div>
@@ -376,367 +130,84 @@
             </div>
         </section>
 
-        {{-- <div class="slider  max-w-6xl mx-auto font-sans py-12">
-            <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative overflow-hidden h-52 md:h-[600px]">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-row items-center gap-x-18" loading="lazy">
-                            <div class="grid grid-cols-2 items-center gap-x-10">
-                                <div class="flex flex-row item-center">
-                                    <img src="{{ asset('assets/images/home/illustration_2.png') }}" alt=""
-                                        class="h-[550px]">
-                                </div>
-                                <div class="flex flex-col gap-y-5">
-                                    <div class="gap-y-2 flex flex-col">
-                                        <h1 class="text-black1 font-bold text-5xl leading-tight dark:text-white">
-                                            Kepengurusan</h1>
-                                        <div class="text-base leading-loose text-black3 dark:text-paragraf">
-                                            "Kepengurusan RW 02 Kelurahan Arjosari" mencantumkan ketua RW dan RT,
-                                            memudahkan warga
-                                            dalam
-                                            berkomunikasi dan berkoordinasi dengan pengurus.
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="bg-purple-50 mt-4 mx-auto max-w-7xl px-6 rounded-lg shadow-md lg:px-8 lg:py-5 dark:bg-ungu_muda">
-                                        <div
-                                            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 border-gray-200  lg:mx-0 lg:max-w-none">
-                                            <article class="flex max-w-xl flex-col items-start justify-between">
-                                                <div class="group relative">
-                                                    <h3
-                                                        class="mt-2 text-lg font-bold leading-6 text-black group-hover:text-gray-600 dark:text-white">
-                                                        <a href="#">
-                                                            <span class="absolute inset-0"></span>
-                                                            Rukun Warga
-                                                        </a>
-                                                    </h3>
-                                                    <p
-                                                        class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-paragraf">
-                                                        "Aktor-aktor di RW
-                                                        kami, dengan peran serta kontribusinya yang tak tergantikan,
-                                                        menjadi tulang
-                                                        punggung dalam memperkokoh dan mempertahankan kebersamaan serta
-                                                        harmoni di
-                                                        lingkungan".</p>
-                                                </div>
-                                                <div
-                                                    class="relative mt-4 flex items-center justify-end w-full  gap-x-4 py-5">
-                                                    <div class="text-sm leading-6 text-right">
-                                                        <p class="font-semibold text-gray-900 dark:text-white">
-                                                            <a href="#">
-                                                                <span class="absolute inset-0"></span>
-                                                                Michael Foster
-                                                            </a>
-                                                        </p>
-                                                        <p class="text-gray-600 dark:text-paragraf">Ketua Rw</p>
-                                                    </div>
-                                                    <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                        alt="" class="h-10 w-10 rounded-full bg-gray-50">
-                                                </div>
-                                            </article>
+        <section class="features max-w-6xl mx-auto py-12 font-sans">
+        </section>
 
-                                            <!-- More posts... -->
-                                        </div>
-                                    </div>
-                                </div>
+        <section class=" max-w-6xl mx-auto font-sans py-20">
+            <div class="flex justify-center items-center">
+                <div>
+                    <h5 class="text-blue-600 text-center font-bold">Our Team</h5>
+                    <h1 class="pb-5 text-center font-bold text-5xl leading-tight dark:text-whiten ">Ketua RT</h1>
+                    <p class="mt-4 text-center mx-auto lg:w-1/3 md:w-1/2">
+                        There are many variations of passages of Lorem Ipsum available but
+                        the majority have suffered alteration in some form.
+                    </p>
+                    <div class="mt-24 flex gap-4 flex-wrap justify-center items-center">
+                        <div class="relative overflow-hidden w-[270px] h-[330px] bg-slate-400 rounded-2xl">
+
+                            <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                                src="https://media.istockphoto.com/id/1342029049/photo/head-shot-of-beautiful-woman-student-teacher-or-blogger.jpg?s=612x612&w=0&k=20&c=NwyPh-KlEYBxJFCuFnzSiv1-pgGOCDxqctzIF7ZHig0="
+                                alt="member">
+                            <div class="overflow-hidden p-4 bg-white absolute left-4 bottom-4 right-4 rounded-lg">
+                                <p class="font-bold text-center">Zara</p>
+                                <p class="text-gray-500 text-center">Web Developer</p>
+                                <img class="absolute -left-10 -bottom-10"
+                                    src="{{ asset('assets/images/illustration/circle.svg') }}" alt="circle">
+                                <img class="absolute -right-2 -top-4 w-9"
+                                    src="{{ asset('assets/images/illustration/grid.svg') }}" alt="circle">
 
                             </div>
                         </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="/assets/images/product/product-01.png" loading="lazy"
-                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="/assets/images/product/product-01.png" loading="lazy"
-                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="/assets/images/product/product-01.png" loading="lazy"
-                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="/assets/images/product/product-01.png" loading="lazy"
-                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="...">
-                    </div>
-                </div>
-                <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                        data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                        data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                        data-carousel-slide-to="2"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                        data-carousel-slide-to="3"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                        data-carousel-slide-to="4"></button>
-                </div>
-                <!-- Slider controls -->
-                <button type="button"
-                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-prev>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M5 1 1 5l4 4" />
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button"
-                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-next>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="m1 9 4-4-4-4" />
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
-            </div>
+                        <div class="relative overflow-hidden w-[270px] h-[330px] bg-slate-400 rounded-2xl">
 
-        </div> --}}
+                            <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                                src="https://media.istockphoto.com/id/1342027604/photo/arab-male-english-teacher-explaining-rules-near-blackboard-standing-with-clipboard-smiling-at.jpg?s=612x612&w=0&k=20&c=uH6EdaZKnvOK3nxXeinoDqUbDKmS07TsUmJFRTXym9g="
+                                alt="member">
+                            <div class="overflow-hidden p-4 bg-white absolute left-4 bottom-4 right-4 rounded-lg">
+                                <p class="font-bold text-center">Ahmed</p>
+                                <p class="text-gray-500 text-center">Web Developer</p>
+                                <img class="absolute -left-10 -bottom-10"
+                                    src="{{ asset('assets/images/illustration/circle.svg') }}" alt="circle">
+                                <img class="absolute -right-2 -top-4 w-9"
+                                    src="{{ asset('assets/images/illustration/grid.svg') }}" alt="circle">
 
-        {{-- <div class="max-w-6xl mx-auto font-sans py-12 bg-[#f8f8f8]">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="our-team overflow-hidden relative">
-                        <div class="pic pb-5 mb-8">
-                            <div
-                                class="layer-1 w-[200%] overflow-hidden rotate-[10deg] -translate-x-13 translate-y-13">
-                                <div
-                                    class="layer-2 bg-white overflow-hidden -rotate-[16deg] -translate-x-9 translate-y-13">
-                                    <div class="layer-3 w-[50%] my-auto rotate-[10deg] -translate-x-13 translate-y-5">
-                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}"
-                                            class="w-full h-auto" alt="">
-                                        <div class="social">
-                                            <ul class="social-icon">
-                                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                                <li><a href="#" class="fab fa-twitter"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info">
-                                <h3 class="title">Williamson</h3>
-                                <span class="post">Web Developer</span>
                             </div>
                         </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
-                            tempus. Curabitur.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="our-team">
-                        <div class="pic">
-                            <div class="layer-1">
-                                <div class="layer-2">
-                                    <div class="layer-3">
-                                        <img src="images/img-2.jpg" alt="">
-                                        <div class="social">
-                                            <ul class="social-icon">
-                                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                                <li><a href="#" class="fab fa-twitter"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info">
-                                <h3 class="title">kristina</h3>
-                                <span class="post">Web Designer</span>
+                        <div class="relative overflow-hidden w-[270px] h-[330px] bg-slate-400 rounded-2xl">
+
+                            <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                                src="https://media.istockphoto.com/id/1124593620/photo/girl-in-muslim-clothes-calmly-looking-into-the-camera.jpg?s=612x612&w=0&k=20&c=ZSx1FvF0_oTI8ErkkpZamc-sGhxR_4-K0-_jv6Al3IU="
+                                alt="member">
+                            <div class="overflow-hidden p-4 bg-white absolute left-4 bottom-4 right-4 rounded-lg">
+                                <p class="font-bold text-center">Zahur</p>
+                                <p class="text-gray-500 text-center">Web Developer</p>
+                                <img class="absolute -left-10 -bottom-10"
+                                    src="{{ asset('assets/images/illustration/circle.svg') }}" alt="circle">
+                                <img class="absolute -right-2 -top-4 w-9"
+                                    src="{{ asset('assets/images/illustration/grid.svg') }}" alt="circle">
+
                             </div>
                         </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
-                            tempus. Curabitur.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <div class="max-w-6xl mx-auto font-sans py-12">
-            <div class="grid grid-cols-3 gap-4">
-                <div class="">
-                    <div class="our-team">
-                        <div class="pic">
-                            <div class="layer-1">
-                                <div class="layer-2">
-                                    <div class="layer-3">
-                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}" alt="">
-                                        <div class="social">
-                                            <ul class="social-icon">
-                                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                                <li><a href="#" class="fab fa-twitter"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info">
-                                <h3 class="title">Williamson</h3>
-                                <span class="post">Web Developer</span>
+                        <div class="relative overflow-hidden w-[270px] h-[330px] bg-slate-400 rounded-2xl">
+
+                            <img class="absolute top-0 left-0 w-full h-full object-cover object-center"
+                                src="https://media.istockphoto.com/id/1389465862/photo/shot-of-a-young-businessman-working-on-his-laptop-at-his-desk.jpg?s=612x612&w=0&k=20&c=YZEk5hp1E8cv8y-xXLumH4H5zIVyyf4UdETZvsuH8Vk="
+                                alt="member">
+                            <div class="overflow-hidden p-4 bg-white absolute left-4 bottom-4 right-4 rounded-lg">
+                                <p class="font-bold text-center">Mohamed</p>
+                                <p class="text-gray-500 text-center">Web Developer</p>
+                                <img class="absolute -left-10 -bottom-10"
+                                    src="{{ asset('assets/images/illustration/circle.svg') }}" alt="circle">
+                                <img class="absolute -right-2 -top-4 w-9"
+                                    src="{{ asset('assets/images/illustration/grid.svg') }}" alt="circle">
+
                             </div>
                         </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
-                            tempus. Curabitur.
-                        </p>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="our-team">
-                        <div class="pic">
-                            <div class="layer-1">
-                                <div class="layer-2">
-                                    <div class="layer-3">
-                                        <img src="{{ asset('assets/images/illustration/img_2.jpg') }}" alt="">
-                                        <div class="social">
-                                            <ul class="social-icon">
-                                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                                <li><a href="#" class="fab fa-twitter"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info">
-                                <h3 class="title">kristina</h3>
-                                <span class="post">Web Designer</span>
-                            </div>
-                        </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
-                            tempus. Curabitur.
-                        </p>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="our-team">
-                        <div class="pic">
-                            <div class="layer-1">
-                                <div class="layer-2">
-                                    <div class="layer-3">
-                                        <img src="{{ asset('assets/images/illustration/img_1.jpg') }}" alt="">
-                                        <div class="social">
-                                            <ul class="social-icon">
-                                                <li><a href="#" class="fab fa-facebook"></a></li>
-                                                <li><a href="#" class="fab fa-google-plus"></a></li>
-                                                <li><a href="#" class="fab fa-twitter"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-info">
-                                <h3 class="title">Williamson</h3>
-                                <span class="post">Web Developer</span>
-                            </div>
-                        </div>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
-                            tempus. Curabitur.
-                        </p>
+
                     </div>
                 </div>
             </div>
-        </div>
-
-        {{-- <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
-        <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-row item-center">
-                <img src="{{ $gambar_struktur->getGambar() }}" alt="" class=" mr-30 max-w-150">
-            </div>
-            <div class="flex flex-col gap-y-10">
-                <div class=" text-right gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[60px] leading-none">Struktur Kepengurusan
-                    </h1>
-                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[60px] leading-none">
-                        RW 2
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-        {{-- <section class="features max-w-6xl mx-auto py-12 font-sans">
-
-        <h1 class="pb-5 text-center font-bold text-5xl leading-tight dark:text-whiten ">Mengutamakan
-            Kenyamanan<br>Untuk
-            Warga</h1>
-        <!-- <h3 class="text-black1 font-bold text-5xl text-center mb-8">Ketua RT</h3> -->
-        <div class="grid grid-cols-4 gap-x-8 px-5">
-
-            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
-                <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                <div class="flex flex-col gap-y-1">
-                    <h3 class=" text-2xl font-bold">
-                        Kebersihan
-                    </h3>
-                    <div class="text-base leading-relaxed text-black3  dark:text-purple-200">
-                        Adanya bersih Lingkungan Rutin Tiap Bulan dan petugas kebersihan yang bekerja setiap hari,
-                        membuat lingkungan RW 2 selalu bersih dan nyaman</div>
-                </div>
-            </div>
-            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
-                <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                <div class="flex flex-col gap-y-1">
-                    <h3 class=" text-2xl font-bold">
-                        Keamanan
-                    </h3>
-                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
-                        Satpam Linmas yang berjaga 24 jam dan berbagai peraturan yang telah ditetapkan, membuat
-                        lingkungan RW 2 Lebih Aman</div>
-                </div>
-            </div>
-            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
-                <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                <div class="flex flex-col gap-y-1">
-                    <h3 class=" text-2xl font-bold">
-                        Fasilitas
-                    </h3>
-                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
-                        Berbagai Fasilitas yang tersedia, memberikan rasa bangga tersendiri bagi warga RW 2 atas
-                        pencapaiannya hingga saat ini</div>
-                </div>
-            </div>
-            <div class="my-card bg-white dark:bg-gray-700 flex flex-col gap-y-8 items-start rounded-2xl px-5 py-[30px]">
-                <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i>
-                <div class="flex flex-col gap-y-1">
-                    <h3 class=" text-2xl font-bold">
-                        Layanan
-                    </h3>
-                    <div class="text-base leading-relaxed text-black3 dark:text-purple-200">
-                        pengaduan dan keperluan yang dibutuhkan warga, selalu dilayani oleh Ketua RT dan RW sebaik
-                        mungkin, sehingga memberikan kepuasan untuk warga</div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
+        </section>
 
         <section class="benefit max-w-6xl mx-auto font-sans py-12">
             <h1 class="text-center font-bold text-5xl leading-tight dark:text-whiten">Kegiatan dan Agenda</h1>
