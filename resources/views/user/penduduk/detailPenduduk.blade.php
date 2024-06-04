@@ -1,63 +1,72 @@
 <x-layout.user-layout>
-    <section class="DataDiri max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+    <section class="max-w-6xl mx-auto font-sans pb-12 pt-[100px] sm:px-0 px-10 ">
         <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-1 gap-y-10
-            ">
+            <div class="flex flex-1 gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <div class="title">
-                        <h3 class="flex items-center text-5xl font-extrabold dark:text-white">Data diri penduduk<span
-                                class="bg-ungu text-white text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-800 ms-2">{{ $penduduk->status_penduduk }}</span>
+                    <div class="w-full flex flex-row justify-between items-center">
+                        <h3 class="text-2xl sm:text-5xl font-extrabold dark:text-white">
+                            Data diri penduduk
                         </h3>
-
-                        <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini adalah
-                            profil
-                            lengkap penduduk RW 2 Arjosari, yang mencakup informasi pribadi, alamat, status
-                            kependudukan, dan data penting lainnya yang relevan untuk keperluan administratif dan sosial
-                            di wilayah tersebut.</p>
+                        <span
+                            class="bg-ungu text-white text-lg sm:text-[25px] font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-800 ms-2">{{ $penduduk->status_penduduk }}</span>
                     </div>
-                    <div class="flex flex-row justify-between gap-5  pt-5">
-                        <div class="flex flex-1">
-                            <dl
-                                class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-                                <div class="flex flex-col pb-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->nama }}</dd>
-                                </div>
-                                <div class="flex flex-col py-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
-                                    <dd class="text-lg font-semibold">
-                                        {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
-                                    </dd>
-                                </div>
-                            </dl>
+                    <div class="sm:grid grid-cols-3">
+
+                        <div class="col-span-1 sm:ml-20 order-1 sm:order-2">
+                            <img src="{{ $penduduk->foto_profile() }}" alt="" class="w-full rounded-lg">
                         </div>
-                        <div class="flex flex-1">
-                            <dl
-                                class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-
-                                <div class="flex flex-col pt-3">
-                                    <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor handphone</dt>
-                                    <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
+                        <div class="col-span-2 order-2 sm:order-1">
+                            <p class="text-base font-normal text-gray-500 lg:text-base pt-3 dark:text-gray-400">Ini
+                                adalah
+                                profil
+                                lengkap penduduk RW 2 Arjosari, yang mencakup informasi pribadi, alamat, status
+                                kependudukan, dan data penting lainnya yang relevan untuk keperluan administratif dan
+                                sosial
+                                di wilayah tersebut.</p>
+                            <div class="flex flex-row justify-between gap-5 pt-5">
+                                <div class="flex">
+                                    <dl
+                                        class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+                                        <div class="flex flex-col pb-3">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
+                                            <dd class="text-lg font-semibold">{{ $penduduk->nama }}</dd>
+                                        </div>
+                                        <div class="flex flex-col py-3">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                                            <dd class="text-lg font-semibold">
+                                                {{ $penduduk->alamat->jalan . ' RT' . $penduduk->alamat->rt . ' RW' . $penduduk->alamat->rw . ', ' . $penduduk->alamat->kel . ' ' . $penduduk->alamat->kecamatan }}
+                                            </dd>
+                                        </div>
+                                    </dl>
                                 </div>
+                                <div class="flex flex-1">
+                                    <dl
+                                        class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
 
-                            </dl>
+                                        <div class="flex flex-col pt-3">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor handphone
+                                            </dt>
+                                            <dd class="text-lg font-semibold">{{ $penduduk->no_hp }}</dd>
+                                        </div>
+
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row item-center">
-                <img src="{{ $penduduk->foto_profile() }}" alt="" class="h-[200px]">
-            </div>
+
         </div>
     </section>
 
-    <section class="berita mx-auto font-sans py-12">
+    <section class="berita mx-auto font-sans py-12 sm:px-0 px-10">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 dark:text-whiten font-bold text-5xl leading-tight">Berita
+                <h1 class="text-black1 dark:text-whiten font-bold text-3xl sm:text-5xl leading-tight">Berita
                 </h1>
-                <div class="text-base leading-loose text-black3 dark:text-white items-center">
-                    tempat dimana sang penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
+                <div class="text-base leading-loose text-black3 dark:text-white items-center">Tempat dimana sang
+                    penduduk menuliskan berita, maka akan tampil berita apa saja yang telah dibuat
                 </div>
 
                 <div class="mx-auto max-w-6xl font-sans pb-12">
@@ -71,11 +80,10 @@
                     @endif
                     @foreach ($berita as $item)
                         <div id="alert-additional-content-3 "
-                            class="p-4 mb-4 w-[70vw] mx-auto text-purple-800 border border-purple-300 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-200 dark:border-purple-800"
+                            class="p-4 mb-4 w-[70vw] gap-y-2 mx-auto text-purple-800 border border-purple-300 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-200 dark:border-purple-800"
                             role="alert">
-                            <div class="flex items-center">
-
-                                <h3 class="text-lg font-medium">{{ $item->judul }}</h3>
+                            <div class="flex items-center text-left">
+                                <h3 class="sm:text-lg font-medium">{{ $item->judul }}</h3>
                             </div>
                             <div class="flex">
                                 <a href="{{ route('user.berita.detail', $item->slug) }}">
@@ -95,10 +103,10 @@
         </div>
     </section>
 
-    <section class="umkm mx-auto font-sans py-12">
+    <section class="umkm mx-auto font-sans py-12 sm:px-0 px-10">
         <div class="flex flex-col gap-y-8">
             <div class="gap-y-2 flex flex-col text-center">
-                <h1 class="text-black1 dark:text-whiten font-bold text-5xl leading-tight">Showcase UMKM
+                <h1 class="text-black1 dark:text-whiten font-bold text-3xl sm:text-5xl leading-tight">Showcase UMKM
                 </h1>
                 <div class="text-base leading-loose text-black3 dark:text-white items-center">
                     Di sini, Anda dapat melihat detail tentang bisnis, termasuk informasi kontak, <br> deskripsi
