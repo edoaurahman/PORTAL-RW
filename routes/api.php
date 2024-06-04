@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Api\AgendaController;
 use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\PendudukController;
+use App\Http\Controllers\Api\RTController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,10 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/data-rt/{id}', [RTController::class, 'getDataRT']);
 Route::get('/kk/{no_kk}', [PendudukController::class, 'getPendudukByKK']);
 Route::get('/bansos/saw', [BansosController::class, 'method_saw']);
 Route::get('/bansos/ahp', [BansosController::class, 'method_ahp']);
-
-Route::put('/agenda/update', [AdminController::class, 'update_draggable_agenda']);
 
 Route::post('/agenda', [AgendaController::class, 'index']);

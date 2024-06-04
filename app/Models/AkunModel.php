@@ -37,4 +37,9 @@ class AkunModel extends Authenticatable
     {
         return $this->HasMany(UMKMModel::class, 'nik', 'nik');
     }
+
+    public function link_maps()
+    {
+        return $this->hasOne(MapsModel::class, 'nik', 'nik');
+    }
 }

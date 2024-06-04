@@ -117,8 +117,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/aspirasi', [AspirasiController::class, 'index'])->name('admin.aspirasi');
         Route::put('/aspirasi/respon', [AspirasiController::class, 'respon'])->name('admin.aspirasi.respon');
 
+        Route::prefix('/data-rt')->group(function () {
+            Route::get('/', [RTController::class, 'index'])->name('admin.data-rt');
+            Route::put('/update', [RTController::class, 'edit_rt'])->name('admin.data-rt.edit');
+        });
 
-        Route::get('/data-rt', [RTController::class, 'index'])->name('admin.data-rt')->middleware(['isRw']);
         Route::prefix('level')->group(function () {
             Route::middleware(['isRw'])->group(function () { // isSuperAdmin middleware
                 Route::get('/', [LevelController::class, 'index'])->name('admin.level');

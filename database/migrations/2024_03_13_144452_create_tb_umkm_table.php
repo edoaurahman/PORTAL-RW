@@ -23,6 +23,7 @@ class CreateTbUmkmTable extends Migration
             $table->time('jam_tutup');
             $table->enum('status', ['publish', 'pending', 'reject'])->default('pending');
             $table->string('nik', 16);
+            $table->integer('view')->default(0);
             $table->timestamps();
 
             $table->foreign('nik', 'tb_umkm_ibfk_1')->references('nik')->on('tb_penduduk');

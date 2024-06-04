@@ -41,6 +41,11 @@ class UmkmController extends Controller
     public function show($id)
     {
         $umkm = UMKMModel::find($id);
+        if (!session()->has('viewed_umkm_' . $umkm->id_berita)) {
+            $umkm->view += 1;
+            $umkm->save();
+            session()->put('viewed_umkm_' . $umkm->id_berita, true);
+        }
         // dd($umkm->gambarSlide()->get()->toArray());
         return view('user.UMKM.detailumkm', compact('umkm'));
     }
