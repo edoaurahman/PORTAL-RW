@@ -281,7 +281,7 @@
                         <div
                             class="rounded-md border border-gray-300 shadow-default dark:border-strokedark dark:bg-boxdark transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
                             <div>
-                                <img class="w-full h-50 object-cover rounded-t-sm" src="{{ asset($umkm->cover) }}"
+                                <img class="w-full h-50 object-cover rounded-t-sm" src="{{ $umkm->getCover() }}"
                                     alt="{{ $umkm->nama_umkm }}">
                             </div>
                             <div class="p-4">
