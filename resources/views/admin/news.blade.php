@@ -72,7 +72,8 @@
                                 {{ $item->status }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
-                                <form action="{{ route('user.berita.status') }}" method="post">
+                                <form {{ $item->status == 'pending' || $item->status == 'reject' ? '' : 'hidden' }}
+                                    action="{{ route('user.berita.status') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="id_berita" value="{{ $item->id_berita }}">
                                     <input type="hidden" name="status" value="publish">
@@ -84,7 +85,8 @@
                                         </div>
                                     </button>
                                 </form>
-                                <form action="{{ route('user.berita.status') }}" method="post">
+                                <form {{ $item->status == 'publish' ? '' : 'hidden' }}
+                                    action="{{ route('user.berita.status') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="id_berita" value="{{ $item->id_berita }}">
                                     <input type="hidden" name="status" value="reject">

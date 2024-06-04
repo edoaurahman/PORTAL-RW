@@ -73,7 +73,7 @@
                 <img src="{{ asset('assets/images/illustration/polsek.png') }}" alt="">
             </div>
             <div class="iklan-4 flex items-center gap-x-3 font-bold text-2xl w-20 mx-20">
-                <img src="{{ asset('assets/images/illustration/jatim.png') }}" alt="">
+                <img src="{{ asset('assets/images/illustration/jatim.webp') }}" alt="">
             </div>
         </div>
     </section> --}}
@@ -362,7 +362,7 @@
                                         {{ $item->isi }}
                                     </p>
                                     <div
-                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 dark:bg-gray-500 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
                                         @if ($item->status == 'pending')
                                             <span class="text-sm font-normal text-gray-500 dark:text-gray-300">belum di
                                                 respon</span>

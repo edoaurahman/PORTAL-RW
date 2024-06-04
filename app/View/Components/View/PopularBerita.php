@@ -23,7 +23,7 @@ class PopularBerita extends Component
     public function render(): View|Closure|string
     {
         // berikan 5 berita yang paling populer
-        $berita = BeritaModel::with('penulis', 'kategori')
+        $berita = BeritaModel::with('penulis', 'kategori')->where('status', 'publish')
             ->orderBy('view', 'desc')
             ->limit(3)
             ->get();

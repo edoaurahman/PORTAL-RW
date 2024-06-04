@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scrollbar-thumb-ungu scrollbar-track-sky-300">
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,8 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
     <div class="flex h-screen overflow-hidden">
         <x-partials.admin.sidenav />
         <!-- ===== Content Area Start ===== -->
-        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-purple-50 dark:bg-black">
+        <div
+            class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-purple-50 dark:bg-black scrollbar-thin">
             <!-- ===== Header Start ===== -->
             <x-partials.admin.header-component />
             <!-- ===== Header End ===== -->
@@ -40,8 +41,6 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
             <!-- ===== Main Content End ===== -->
         </div>
         <!-- ===== Content Area End ===== -->
-        {{--
-        <x-partials.admin.footer /> --}}
     </div>
 </body>
 <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
@@ -65,6 +64,5 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         })
     })
 </script>
-</head>
 
 </html>

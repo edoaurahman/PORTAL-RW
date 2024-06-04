@@ -18,7 +18,7 @@ class UmkmController extends Controller
 {
     public function index(Request $request)
     {
-        $query = UMKMModel::where('status', 'publish');
+        $query = UMKMModel::where('status', 'publish')->orderBy('created_at', 'desc');
         if ($request->has('kategori')) {
             $query->whereHas('listKategori', function ($q) use ($request) {
                 $q->whereIn('id_kategori', $request->kategori);
@@ -41,6 +41,7 @@ class UmkmController extends Controller
     public function show($id)
     {
         $umkm = UMKMModel::find($id);
+        // dd($umkm->gambarSlide()->get()->toArray());
         return view('user.UMKM.detailumkm', compact('umkm'));
     }
 
