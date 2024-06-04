@@ -2,13 +2,12 @@
 
     <section class="mt-8 max-w-6xl mx-auto sm:px-0 px-10">
         <div class="mb-4 md:mb-0 w-full mx-auto relative">
-            <div class="px-4 lg:px-0">
+            <div class="px-4 lg:px-0 py-5">
                 <h2 class="text-4xl font-semibold text-gray-800 dark:text-gray-50 leading-tight"> {{ $berita->judul }}
                 </h2>
                 </a>
             </div>
-
-            <img src="{{ $berita->sampul }}" class="w-full object-cover lg:rounded h-[28em]" alt="Blog Cover" />
+            <img src="{{ $berita->sampul }}" class="w-full object-cover lg:rounded h-[32em]" alt="Blog Cover" />
         </div>
 
         <div class="flex flex-col lg:flex-row lg:space-x-12">
