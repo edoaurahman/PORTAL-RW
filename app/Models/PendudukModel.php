@@ -78,4 +78,9 @@ class PendudukModel extends Model
         $bansos = BansosModel::where('no_kk', $this->no_kk)->whereIn('status', ['approved', 'done'])->first();
         return $bansos != null;
     }
+
+    public function maps()
+    {
+        return $this->hasOne(MapsModel::class, 'nik', 'nik');
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTbLinkUmkmTable extends Migration
+class CreateTbLinkMapsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateTbLinkUmkmTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_link_umkm', function (Blueprint $table) {
-            $table->integer('id_umkm');
-            $table->string('nama', 100);
-            $table->string('link', 100);
+        Schema::create('tb_link_maps', function (Blueprint $table) {
+            $table->integer('id_link_maps')->autoIncrement();
+            $table->string('nik', 16);
+            $table->string('link');
             $table->timestamps();
 
-            $table->foreign('id_umkm', 'tb_link_umkm_ibfk_1')->references('id_umkm')->on('tb_umkm');
+            $table->foreign('nik', 'tb_link_maps_ibfk_1')->references('nik')->on('tb_penduduk');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateTbLinkUmkmTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_link_umkm');
+        Schema::dropIfExists('tb_link_maps');
     }
 }
