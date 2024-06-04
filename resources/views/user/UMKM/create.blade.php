@@ -20,13 +20,16 @@
         @endforeach
     @endif
 
-    <form class="hero max-w-6xl mx-auto font-sans py-20" action="{{ route('user.umkm.store') }}" method="post"
-        enctype="multipart/form-data">
+    <form class="hero max-w-6xl mx-auto font-sans py-20 sm:px-0 px-10" action="{{ route('user.umkm.store') }}"
+        method="post" enctype="multipart/form-data">
         @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Request Pendaftaran UMKM</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Dalam proses pencatatan data UMKM, langkah awal yang
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Request Pendaftaran UMKM
+                </h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400 text-justify">Dalam proses pencatatan
+                    data UMKM,
+                    langkah awal yang
                     penting adalah pembuatan data yang akurat dan komprehensif. Melalui formulir ini, Anda dapat dengan
                     mudah mencatat informasi penting tentang UMKM, termasuk nama UMKM, jadwal operasional, kategori
                     produk atau layanan, serta unggahan gambar cover dan slide untuk memberikan gambaran yang jelas
@@ -34,7 +37,8 @@
 
                 <div class="mt-10 gap-x-6 gap-y-8">
                     <div class="sm:col-span-4">
-                        <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Nama Usaha
+                        <label for="username"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Nama Usaha
                             Mikro Kecil dan Menengah (UMKM)</label>
                         <div class="mt-2">
                             <div
@@ -48,7 +52,8 @@
                     </div>
 
                     <div class="col-span-full mt-4">
-                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover
+                        <label for="cover-photo"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Cover
                             photo</label>
                         <div
                             class="mt-2 flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
@@ -66,13 +71,14 @@
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="cover"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                                            <span id="changetext">Upload a file</span>
+                                            <span id="changetext" class="px-2">Upload a file</span>
                                             <input type="file" class="sr-only" name="cover" id="cover"
                                                 accept="image/*" required>
                                         </label>
-                                        <p class="pl-1">or drag and drop</p>
+                                        <p class="pl-1 dark:text-gray-300">or drag and drop</p>
                                     </div>
-                                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF max 2MB</p>
+                                    <p class="text-xs leading-5 text-gray-600 dark:text-gray-100">PNG, JPG, GIF max 2MB
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +87,9 @@
             </div>
 
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Informasi Data</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Tersedia informasi terbaru mengenai jam operasional dan
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">Informasi Data</h2>
+                <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300">Tersedia informasi terbaru mengenai
+                    jam operasional dan
                     layanan UMKM, lengkap dengan kategori produk, waktu buka dan tutup.</p>
 
                 <div class=" mt-10">
@@ -127,64 +134,59 @@
                 </div>
 
                 <fieldset class="mt-10">
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Pilih Hari Buka</legend>
-                    <div class="mt-4 space-y-3 ">
+                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">Pilih Hari Buka
+                    </legend>
+                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300">
                         <div class="flex items-center gap-x-3">
                             <input id="Senin" value="Senin" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Senin"
-                                class="block text-sm font-medium leading-6 text-gray-900">Senin</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Senin" class="block text-sm font-medium leading-6">Senin</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Selasa" value="Selasa" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Selasa"
-                                class="block text-sm font-medium leading-6 text-gray-900">Selasa</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Selasa" class="block text-sm font-medium leading-6">Selasa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Rabu" value="Rabu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Rabu"
-                                class="block text-sm font-medium leading-6 text-gray-900">Rabu</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Rabu" class="block text-sm font-medium leading-6">Rabu</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Kamis" value="Kamis" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Kamis"
-                                class="block text-sm font-medium leading-6 text-gray-900">Kamis</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Kamis" class="block text-sm font-medium leading-6">Kamis</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Jumat" value="Jumat" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Jumat"
-                                class="block text-sm font-medium leading-6 text-gray-900">Jumat</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Jumat" class="block text-sm font-medium leading-6">Jumat</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Sabtu" value="Sabtu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Sabtu"
-                                class="block text-sm font-medium leading-6 text-gray-900">Sabtu</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Sabtu" class="block text-sm font-medium leading-6">Sabtu</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="Minggu" value="Minggu" name="hari[]" type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            <label for="Minggu"
-                                class="block text-sm font-medium leading-6 text-gray-900">Minggu</label>
+                                class="h-4 w-4 border-gray-300">
+                            <label for="Minggu" class="block text-sm font-medium leading-6">Minggu</label>
                         </div>
                     </div>
                 </fieldset>
 
                 <fieldset class="mt-10">
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Pilih Kategori Mikro Kecil dan
+                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">Pilih Kategori
+                        Mikro Kecil dan
                         Menengah (UMKM)</legend>
-                    <div class="mt-4 space-y-3 ">
+                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300">
                         @foreach ($kategori as $item)
                             <div class="flex items-center gap-x-3">
                                 <input type="checkbox" id="list_kategori-{{ $item->id_kategori }}"
                                     name="list_kategori[]" value="{{ $item->id_kategori }}" multiple
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="list_kategori-{{ $item->id_kategori }}"
-                                    class="block text-sm font-medium leading-6 text-gray-900">{{ $item->nama_kategori }}</label>
+                                    class="block text-sm font-medium leading-6 ">{{ $item->nama_kategori }}</label>
                             </div>
                         @endforeach
                     </div>
@@ -193,15 +195,19 @@
             </div>
 
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Deskripsi Mikro Kecil dan Menengah (UMKM)
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">Deskripsi
+                    Mikro Kecil dan Menengah (UMKM)
                 </h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Disini Anda dapat memasukkan beberapa produk anda yang
+                <p class="mt-1 text-sm leading-6 text-gray-600 text-justify dark:text-gray-300">Disini Anda dapat
+                    memasukkan
+                    beberapa produk anda yang
                     akan dijadikan slide. Di dalam deskripsi anda dapat memasukkan link e-commerce, peta maps, gambar,
                     price list , dan sebagainya</p>
 
                 <div class="mt-10 space-y-10">
                     <div class="col-span-full mt-4">
-                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Slider
+                        <label for="cover-photo"
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Slider
                             photo
                             header UMKM</label>
                         <div
@@ -218,18 +224,21 @@
                                     <div class="mt-4 flex text-sm justify-center leading-6 text-gray-600">
                                         <label for="slide"
                                             class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                                            <span id="changetextslide">Upload a file</span>
+                                            <span id="changetextslide" class="px-2">Upload a file</span>
                                             <input type="file" class="sr-only" name="slide[]" id="slide"
                                                 multiple accept="image/*">
                                         </label>
-                                        <p class="pl-1">or drag and drop</p>
+                                        <p class="pl-1  dark:text-gray-300">or drag and drop</p>
                                     </div>
-                                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF max 2MB</p>
+                                    <p class="text-xs leading-5 text-gray-600 dark:text-gray-300">PNG, JPG, GIF max 2MB
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Deskripsi UMKM Anda disini ###' }}</textarea>
+                    <div class="bg-white p-2 rounded-lg">
+                        <textarea id="summernote" name="isi">{{ old('deskripsi') ?? '### Tulis Deskripsi UMKM Anda disini ###' }}</textarea>
+                    </div>
                 </div>
             </div>
 
