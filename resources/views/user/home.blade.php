@@ -1,37 +1,5 @@
 <x-layout.user-layout>
     <div class="dark:bg-[#1f1345]">
-        {{-- <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
-        <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-col gap-y-10">
-                <div class="w-fit gap-x-2 px-4 py-2 small-badge flex flex-row bg-purple-500 rounded-full items-center">
-                    <!-- <i class="fa-solid fa-globe"></i> -->
-                    <p class=" text-base font-semibold text-white">
-                        Lingkungan yang berisi lebih dari 1000 jiwa.
-                    </p>
-                </div>
-                <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-black1 dark:text-purple-50 text-[35px] leading-none">
-                        Bersatu dalam <b>Keberagaman</b>, <br>
-                        Harmoni dalam <b> Kebersamaan</b>.</h1>
-                    <div class="text-[20px] leading-loose text-black3 dark:text-purple-100">
-                        RW 2 Desa Arjosari<br>
-                        Kecamatan Blimbing.
-                    </div>
-                </div>
-                <!-- <div class="flex flex-row gap-x-4 items-center">
-                    <a href="#" class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold">Tanpa
-                        Login</a>
-                    <a href="#" class="gap-x-2 flex items-center text-ungu font-semibold text-base">
-                        <i class="fa-solid fa-message"></i>
-                        Unduh Surat
-                    </a>
-                </div> -->
-            </div>
-            <div class="flex flex-row item-center">
-                <img src="{{ asset('assets/images/illustration/warga.webp') }}" alt="" class="h-[550px]">
-            </div>
-        </div>
-    </section> --}}
 
         <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
             <div class="flex flex-row items-center justify-between">
@@ -39,7 +7,7 @@
                     <div class="gap-y-6 flex flex-col">
                         <h1 class="text-black1 font-bold text-[70px] leading-none dark:text-white">
                             Tumbuh<br>
-                            <span class="dark:text-biru">Bersama RW 02.</span>
+                            <span class="dark:text-purple-700">Bersama RW 02.</span>
                         </h1>
                         <div class="text-base leading-loose text-black3 dark:text-white">
                             Web digital untuk mencatat dan mengelola data warga RW 02 (nama, alamat, tanggal lahir).
@@ -49,10 +17,10 @@
                     </div>
                     <div class="flex flex-row gap-x-4 items-center">
                         <a href="{{ route('user.layanan') }}"
-                            class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold dark:bg-biru dark:hover:bg-white dark:hover:text-biru">Surat
+                            class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
                             Pengantar</a>
                         <a href="{{ route('user.penduduk') }}"
-                            class="gap-x-2 flex items-center text-ungu font-semibold text-base dark:text-biru dark:hover:text-white">
+                            class="gap-x-2 flex items-center text-ungu font-semibold text-base dark:text-purple-700 dark:hover:text-white">
                             <i class="fa-solid fa-user"></i>
                             Penduduk RW 02
                         </a>
@@ -64,24 +32,10 @@
             </div>
         </section>
 
-        {{-- <section class="partners max-w-6xl mx-auto font-sans py-12">
-        <div class="flex flex-row gap-x-10 items-center justify-center">
-            <div class="iklan-2 flex items-center gap-x-3 font-bold text-2xl w-30 mx-10">
-                <img src="{{ asset('assets/images/illustration/kotamalang.png') }}" alt="">
-            </div>
-            <div class="iklan-3 flex items-center gap-x-3 font-bold text-2xl w-20 mx-20">
-                <img src="{{ asset('assets/images/illustration/polsek.png') }}" alt="">
-            </div>
-            <div class="iklan-4 flex items-center gap-x-3 font-bold text-2xl w-20 mx-20">
-                <img src="{{ asset('assets/images/illustration/jatim.webp') }}" alt="">
-            </div>
-        </div>
-    </section> --}}
-
         <section class="features max-w-6xl mx-auto py-12 font-sans">
             <div class="grid grid-cols-3 gap-x-8 px-5">
                 <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                    <i class="fa-solid fa-broom text-5xl text-ungu dark:text-biru"></i>
+                    <i class="fa-solid fa-broom text-5xl text-ungu dark:text-purple-700"></i>
                     <div class="flex flex-col gap-y-5">
                         <h3 class=" text-2xl font-bold dark:text-white">
                             Kebersihan
@@ -93,7 +47,7 @@
                     </div>
                 </div>
                 <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                    <i class="fa-solid fa-lock text-5xl text-ungu dark:text-biru"></i>
+                    <i class="fa-solid fa-lock text-5xl text-ungu dark:text-purple-700"></i>
                     <div class="flex flex-col gap-y-5">
                         <h3 class=" text-2xl font-bold dark:text-white">
                             Keamanan
@@ -104,7 +58,7 @@
                     </div>
                 </div>
                 <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                    <i class="fa-solid fa-gear text-5xl text-ungu dark:text-biru"></i>
+                    <i class="fa-solid fa-gear text-5xl text-ungu dark:text-purple-700"></i>
                     <div class="flex flex-col gap-y-5">
                         <h3 class=" text-2xl font-bold dark:text-white">
                             Pelayanan
@@ -177,6 +131,206 @@
             </div>
         </section>
 
+        <div class="slider  max-w-6xl mx-auto font-sans py-12">
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative overflow-hidden h-52 md:h-[600px]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="flex flex-row items-center gap-x-18" loading="lazy">
+                            <div class="grid grid-cols-2 items-center gap-x-10">
+                                <div class="flex flex-row item-center">
+                                    <img src="{{ asset('assets/images/home/illustration_2.png') }}" alt=""
+                                        class="h-[550px]">
+                                </div>
+                                <div class="flex flex-col gap-y-5">
+                                    <div class="gap-y-2 flex flex-col">
+                                        <h1 class="text-black1 font-bold text-5xl leading-tight dark:text-white">
+                                            Kepengurusan</h1>
+                                        <div class="text-base leading-loose text-black3 dark:text-paragraf">
+                                            "Kepengurusan RW 02 Kelurahan Arjosari" mencantumkan ketua RW dan RT,
+                                            memudahkan warga
+                                            dalam
+                                            berkomunikasi dan berkoordinasi dengan pengurus.
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-purple-50 mt-4 mx-auto max-w-7xl px-6 rounded-lg shadow-md lg:px-8 lg:py-5 dark:bg-ungu_muda">
+                                        <div
+                                            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 border-gray-200  lg:mx-0 lg:max-w-none">
+                                            <article class="flex max-w-xl flex-col items-start justify-between">
+                                                <div class="group relative">
+                                                    <h3
+                                                        class="mt-2 text-lg font-bold leading-6 text-black group-hover:text-gray-600 dark:text-white">
+                                                        <a href="#">
+                                                            <span class="absolute inset-0"></span>
+                                                            Rukun Warga
+                                                        </a>
+                                                    </h3>
+                                                    <p
+                                                        class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-paragraf">
+                                                        "Aktor-aktor di RW
+                                                        kami, dengan peran serta kontribusinya yang tak tergantikan,
+                                                        menjadi tulang
+                                                        punggung dalam memperkokoh dan mempertahankan kebersamaan serta
+                                                        harmoni di
+                                                        lingkungan".</p>
+                                                </div>
+                                                <div
+                                                    class="relative mt-4 flex items-center justify-end w-full  gap-x-4 py-5">
+                                                    <div class="text-sm leading-6 text-right">
+                                                        <p class="font-semibold text-gray-900 dark:text-white">
+                                                            <a href="#">
+                                                                <span class="absolute inset-0"></span>
+                                                                Michael Foster
+                                                            </a>
+                                                        </p>
+                                                        <p class="text-gray-600 dark:text-paragraf">Ketua Rw</p>
+                                                    </div>
+                                                    <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                        alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                                                </div>
+                                            </article>
+
+                                            <!-- More posts... -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/images/product/product-01.png" loading="lazy"
+                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/images/product/product-01.png" loading="lazy"
+                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/images/product/product-01.png" loading="lazy"
+                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/images/product/product-01.png" loading="lazy"
+                            class=" object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt="...">
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                        data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                        data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto font-sans py-12 bg-[#f8f8f8]">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team overflow-hidden relative">
+                        <div class="pic pb-5 mb-8">
+                            <div
+                                class="layer-1 w-[200%] overflow-hidden rotate-[10deg] -translate-x-13 translate-y-13">
+                                <div
+                                    class="layer-2 bg-white overflow-hidden -rotate-[16deg] -translate-x-9 translate-y-13">
+                                    <div class="layer-3 w-[50%] my-auto">
+                                        <img src="{{ asset('assets/images/ilustration/img_1.jpg') }}" alt="">
+                                        <div class="social">
+                                            <ul class="social-icon">
+                                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">Web Developer</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
+                            tempus. Curabitur.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <div class="layer-1">
+                                <div class="layer-2">
+                                    <div class="layer-3">
+                                        <img src="images/img-2.jpg" alt="">
+                                        <div class="social">
+                                            <ul class="social-icon">
+                                                <li><a href="#" class="fab fa-facebook"></a></li>
+                                                <li><a href="#" class="fab fa-google-plus"></a></li>
+                                                <li><a href="#" class="fab fa-twitter"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-info">
+                                <h3 class="title">kristina</h3>
+                                <span class="post">Web Designer</span>
+                            </div>
+                        </div>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan sagittis nunc ac
+                            tempus. Curabitur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         {{-- <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div class="flex flex-row items-center justify-between">

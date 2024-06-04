@@ -1,9 +1,11 @@
 <x-layout.form-login-layout>
     <div class="grid grid-cols-2 h-screen">
         <div class="flex justify-center items-center bg-transparent">
-            <div class="absolute z-[-1] h-screen w-screen bg-black2" id="particles-js"></div>
+            <div class="absolute z-[-1] h-screen w-screen bg-[#1f1345]" id="particles-js"></div>
             <div class="text-right pr-20 pl-20 ">
-                <h2 class="text-5xl font-extrabold font-sans text-white mb-5 uppercase">Hubungan di Era Digital
+                <h2 class="text-5xl font-extrabold font-sans text-white mb-5 uppercase">Hubungan <span
+                        class="text-biru">Era
+                        Digital</span>
                 </h2>
                 <p class="text-white text-lg mb-9">Selamat datang di Portal Web RW 02, tempat di mana Anda dapat
                     mengakses berbagai layanan dan informasi terkait dengan lingkungan dan kegiatan komunitas di RW 02.
@@ -12,7 +14,7 @@
                     kita.</p>
                 <a href="{{ route('user.home') }}">
                     <button type="button"
-                        class="text-ungu hover:text-white border-2 border-ungu hover:bg-ungu focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium text-base px-8 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                        class="text-white hover:text-biru hover:bg-white bg-biru focus:ring-4 focus:outline-none focus:ring-white font-medium text-base px-8 py-2.5 text-center me-2 mb-2 ">
                         Beranda</button>
                 </a>
             </div>
@@ -21,7 +23,7 @@
             <form class="w-full pl-20 pr-24" action="{{ route('auth') }}" method="POST">
                 @csrf
                 <h1 class="text-3xl font-sans font-medium text-ungu mb-2">Welcome!</h1>
-                <h3 class="text-2xl font-sans font-normal capitalize mb-8">Sign into your account</h3>
+                <h3 class="text-2xl font-sans font-normal capitalize mb-8">Masuk ke akun anda</h3>
 
                 <div class="mb-5">
                     <label for="username"
@@ -108,7 +110,7 @@
                         }
                     },
                     "color": {
-                        "value": "#640EF1"
+                        "value": "#fff"
                     },
                     "shape": {
                         "type": "circle",
