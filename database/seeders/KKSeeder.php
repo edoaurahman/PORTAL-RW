@@ -64,7 +64,6 @@ class KKSeeder extends Seeder
             ['no_kk' => '3522110504040027', 'nik_kepalakeluarga' => '3522110504040028'],
             ['no_kk' => '3522110504040028', 'nik_kepalakeluarga' => '3522110504040028'],
             ['no_kk' => '3522110504040029', 'nik_kepalakeluarga' => '3522110504040028'],
-
             ['no_kk' => '3522110504040030', 'nik_kepalakeluarga' => '3522110504040028'],
         ];
         KkModel::insert($kk);
