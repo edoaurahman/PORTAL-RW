@@ -18,7 +18,7 @@
 
     <section class="max-w-6xl mx-auto font-sans">
         <div class="explore-menu flex flex-col gap-5">
-            <h1 class="text-[#262626] text-2xl font-semibold">Kuliner UMKM</h1>
+            <h1 class="text-[#262626] dark:text-white text-2xl font-semibold">Menjelajah UMKM</h1>
             <p class="explore-menu-text
                 max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2,
                 tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan
@@ -83,10 +83,10 @@
                             </div>
                         </div>
                         <input type="search" name="s"
-                            class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
                             placeholder="Cari UMKM">
                         <button type="submit"
-                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                            class="text-white absolute end-2.5 bottom-2.5 bg-purple-500 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Search</button>
                     </form>
                 </div>
             </div>

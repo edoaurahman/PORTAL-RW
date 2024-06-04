@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 dark:bg-purple-600 sticky top-0 z-99999">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex shadow shadow-fuchsia-50 items-center space-x-3 rtl:space-x-reverse">
+        <a href="https://flowbite.com/" class="flex  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
                 '{{ asset('assets/images/logo/logo-dark.png') }}'"
                 width="40px" height="auto" class="duration-300" alt="Logo" />
