@@ -137,12 +137,12 @@ class PendudukController extends Controller
         return view('admin.penduduk.akun', compact('penduduk'));
     }
 
-    public function kk_penduduk()
+    public function kk_penduduk(Request $request)
     {
-        $penduduk = new KkModel();
+        $query = new KkModel();
         try {
-            if ($this->isAdmin()) {
-                $penduduk = KkModel::with('pendudukHasOne')->get();
+            if ($this->isAdmin() || $this->isRW()) {
+                $penduduk = KkModel::with('pendudukHasOne');
             } else {
                 $penduduk = KkModel::with('pendudukHasOne');
                 if ($this->alamat) {
@@ -150,7 +150,6 @@ class PendudukController extends Controller
                         $query->where('rt', $this->alamat->rt);
                     });
                 }
-                $penduduk = $penduduk->get();
             }
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
@@ -158,7 +157,14 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-        return view('admin.penduduk.kk', compact('penduduk'));
+        if ($request->has('s')) {
+            $penduduk->whereHas('pendudukHasOne', function ($query) use ($request) {
+                $query->where('nama', 'like', '%' . $request->s . '%');
+            });
+        }
+        $listRT = AlamatModel::select('rt')->distinct()->get();
+        $penduduk = $penduduk->paginate(10)->withQueryString();
+        return view('admin.penduduk.kk', compact('penduduk', 'listRT'));
     }
 
     public function kk_detail_penduduk(string $no_kk)
