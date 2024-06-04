@@ -58,7 +58,7 @@
             margin: 0;
             width: 30px;
             position: absolute;
-            bottom: 95px;
+            bottom: 55px;
             right: 15px;
         }
 
@@ -94,7 +94,7 @@
         }
 
         .our-team .team-info {
-            padding: 15px 15px 20px;
+            padding: 6px 7px;
             margin: 25px;
             background: #48c6f7;
             border-radius: 3px;
@@ -111,17 +111,17 @@
         }
 
         .our-team .title {
-            font-size: 18px;
+            font-size: 12px;
             color: #000;
             margin: 0;
         }
 
         .our-team .post {
             display: block;
-            font-size: 14px;
+            font-size: 9px;
             font-style: italic;
             color: #6c6c6c;
-            margin-top: 5px;
+            margin-top: px;
         }
 
         .our-team .description {
@@ -288,12 +288,12 @@
                                                                     alt="">
                                                                 <div class="social">
                                                                     <ul class="social-icon">
-                                                                        <li><a href="#"
-                                                                                class="fab fa-facebook"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-google-plus"></a></li>
-                                                                        <li><a href="#"
-                                                                                class="fab fa-twitter"></a></li>
+                                                                        <li><a href="#"><i
+                                                                                    class="fa-brands fa-whatsapp"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                    class="fa-regular fa-map"></i></a>
+                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>

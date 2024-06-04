@@ -67,25 +67,7 @@ class PendudukSeeder extends Seeder
                 ],
             ];
         AlamatModel::insert($alamat);
-        $kk = [
-            [
-                'no_kk' => '3522110504040001',
-                'nik_kepalakeluarga' => '3522110504040006',
-            ],
-            [
-                'no_kk' => '3522110504040002',
-                'nik_kepalakeluarga' => '3522110504040008',
-            ],
-            [
-                'no_kk' => '3522110504040003',
-                'nik_kepalakeluarga' => '3522110504040007',
-            ],
-            [
-                'no_kk' => '3522110504040004',
-                'nik_kepalakeluarga' => '3522110504040009',
-            ],
-        ];
-        KkModel::insert($kk);
+
         $penduduk =
             [
                 [
