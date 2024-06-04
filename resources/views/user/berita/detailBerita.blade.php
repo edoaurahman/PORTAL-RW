@@ -40,12 +40,12 @@
                         </button>
                     </a>
                 </div>
-                <div class="iklan mt-8">
+                {{-- <div class="iklan mt-8">
                     <img src="https://source.unsplash.com/300x200/?advertising,social&fm=jpg&q=60"
                         alt="Iklan Masyarakat" width="300" height="200">
                     <img class="mt-4" src="https://source.unsplash.com/300x400/?iklan,social,portrait&fm=jpg&q=60"
                         alt="Iklan Masyarakatt" width="300" height="400">
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
