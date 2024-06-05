@@ -17,6 +17,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/flowbite.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/user/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="{{ asset('assets/js/bundle.js') }}"></script>
     <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
