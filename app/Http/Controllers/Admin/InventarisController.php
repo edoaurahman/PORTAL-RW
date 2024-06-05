@@ -64,7 +64,9 @@ class InventarisController extends Controller
             $inventaris = InventarisModel::findOrFail($request->id_inventaris);
             if ($request->hasFile('image')) {
                 // hapus gambar lama
-                unlink(storage_path('app/public/inventaris/' . $inventaris->image));
+                if (file_exists(storage_path('app/public/inventaris/' . $inventaris->image))) {
+                    unlink(storage_path('app/public/inventaris/' . $inventaris->image));
+                }
                 $image = $request->file('image');
                 $image->store('inventaris', 'public');
                 $inventaris->image = $image->hashName();
