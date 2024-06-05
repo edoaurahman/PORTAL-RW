@@ -1,4 +1,4 @@
-<nav class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg fixed w-full z-50 top-0">
+<nav class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
@@ -103,7 +103,7 @@
 
                     <!-- Dropdown Start -->
                     <div x-show="dropdownOpen"
-                        class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:bg-purple-950 dark:border-strokedark ">
+                        class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:bg-[#1c123d] dark:border-strokedark ">
                         <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
                             <li {{ auth()->user()->level->nama_level == 'Penduduk' ? 'hidden' : '' }}>
                                 <a href="{{ route('admin.dashboard') }}"
