@@ -260,7 +260,7 @@
                 </h4>
                 <div id="calendar"></div>
                 <button data-modal-target="add-agenda" data-modal-toggle="add-agenda"
-                    class="mt-5 block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-700 dark:hover:bg-purple-800 dark:focus:ring-purple-800"
+                    class="mt-5 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-700 dark:hover:bg-purple-800 dark:focus:ring-purple-800"
                     type="button">
                     Tambah Agenda
                 </button>
@@ -604,8 +604,10 @@
                 fill: false
             }, {
                 label: 'Pengeluaran',
-                data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600,
-                    1400
+                data: [
+                    @foreach ($pengeluaran as $value )
+                        '{{ $value->total }}',
+                    @endforeach
                 ], // Ganti dengan data pengeluaran per bulan
                 borderColor: '#B186F8',
                 tension: 0.1,

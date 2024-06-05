@@ -14,6 +14,7 @@ class PengeluaranModel extends Model
         'id_kategori',
         'keterangan',
         'jumlah',
+        'created_at',
     ];
 
     public function kategori()

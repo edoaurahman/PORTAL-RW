@@ -42,9 +42,9 @@
                             <td class="px-6 py-4">
                                 @foreach ($item->listKategori as $list)
                                     @if ($loop->last)
-                                        <p class="text-xs">{{ $list->kategori->nama_kategori }}</p>
+                                        <p class="text-sm">{{ $list->kategori->nama_kategori }}</p>
                                     @else
-                                        <p class="text-xs">{{ $list->kategori->nama_kategori }}, &nbsp;</p>
+                                        <p class="text-sm">{{ $list->kategori->nama_kategori }}, &nbsp;</p>
                                     @endif
                                 @endforeach
                             </td>

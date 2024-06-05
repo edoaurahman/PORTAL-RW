@@ -42,6 +42,12 @@ class AdminController extends Controller
             ->whereYear('created_at', date('Y'))
             ->groupBy('bulan')
             ->get();
+            
+        $pengeluaran = PengeluaranModel::select(DB::raw('MONTH(created_at) as bulan'), DB::raw('SUM(jumlah) as total'))
+            ->whereYear('created_at', date('Y'))
+            ->groupBy('bulan')
+            ->get();
+
         $listBulan = [
             'Januari',
             'Februari',
@@ -82,7 +88,7 @@ class AdminController extends Controller
         ];
         // dd($umur['0-5']);
 
-        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran', 'gambarstruktur', 'pemasukkan', 'listBulan', 'totalPenduduk', 'totalPendudukPerempuan', 'totalPendudukLaki', 'totalPendudukLakiTetap', 'totalPendudukLakiPendatang', 'totalPendudukPerempuanTetap', 'totalPendudukPerempuanPendatang', 'totalPendudukTetap', 'totalPendudukPendatang', 'umur', 'umkmList'));
+        return view('admin.dashboard', compact('jumlahRT', 'jumlahPenduduk', 'jumlahAgenda', 'jumlahUMKM', 'agenda', 'total', 'totalPemasukkan', 'totalPengeluaran', 'gambarstruktur', 'pemasukkan', 'pengeluaran', 'listBulan', 'totalPenduduk', 'totalPendudukPerempuan', 'totalPendudukLaki', 'totalPendudukLakiTetap', 'totalPendudukLakiPendatang', 'totalPendudukPerempuanTetap', 'totalPendudukPerempuanPendatang', 'totalPendudukTetap', 'totalPendudukPendatang', 'umur', 'umkmList'));
     }
 
     public function store_agenda(Request $request)

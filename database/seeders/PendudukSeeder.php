@@ -46,7 +46,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '2',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -62,7 +62,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '3',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -78,7 +78,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '4',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -94,7 +94,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '5',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
 
@@ -135,10 +135,10 @@ class PendudukSeeder extends Seeder
                 ['nik' => '3522110504040026', 'nama' => "Andi Setiawan", 'tempat_lahir' => 'Kediri', 'tgl_lahir' => '1988-05-14', 'jenis_kelamin' => 'Laki-laki', 'agama' => 'Islam', 'status_perkawinan' => 'Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040011', 'no_hp' => '087890123456', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 12, 'image' => url('assets/images/user/user-06.png'),],
                 ['nik' => '3522110504040027', 'nama' => "Rina Sari", 'tempat_lahir' => 'Blitar', 'tgl_lahir' => '1998-12-08', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Katolik', 'status_perkawinan' => 'Kawin', 'pekerjaan' => 'Wiraswasta', 'gol_darah' => 'AB', 'no_kk' => '3522110504040011', 'no_hp' => '085678901234', 'status_penduduk' => 'Pendatang', 'id_alamat' => 12, 'image' => url('assets/images/user/user-05.png'),],
                 ['nik' => '3522110504040028', 'nama' => "Bella Puspita", 'tempat_lahir' => 'Probolinggo', 'tgl_lahir' => '2013-11-21', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Hindu', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'A', 'no_kk' => '3522110504040011', 'no_hp' => '089012345678', 'status_penduduk' => 'Pendatang', 'id_alamat' => 12, 'image' => url('assets/images/user/user-07.png'),],
-                ['nik' => '3522110504040029', 'nama' => "Rizki Pratama", 'tempat_lahir' => 'Surabaya', 'tgl_lahir' => '2016-02-15', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'B', 'no_kk' => '3522110504040011', 'no_hp' => '089012345679', 'status_penduduk' => 'Pendatang', 'id_alamat' => 12, 'image' => url('assets/images/user/user-08.png'),],
+                ['nik' => '3522110504040029', 'nama' => "Gandis Prawono", 'tempat_lahir' => 'Surabaya', 'tgl_lahir' => '2016-02-15', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'B', 'no_kk' => '3522110504040011', 'no_hp' => '089012345679', 'status_penduduk' => 'Pendatang', 'id_alamat' => 12, 'image' => url('assets/images/user/user-08.png'),],
                 //kk3
                 ['nik' => '3522110504040030', 'nama' => "Lutfi Alamsyah", 'tempat_lahir' => 'Malang', 'tgl_lahir' => '2002-03-20', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'O', 'no_kk' => '3522110504040012', 'no_hp' => '089012345680', 'status_penduduk' => 'Pendatang', 'id_alamat' => 13, 'image' => url('assets/images/user/user-09.png'),],
-                ['nik' => '3522110504040031', 'nama' => "Dewi Ayu", 'tempat_lahir' => 'Banyuwangi', 'tgl_lahir' => '2003-04-25', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Hindu', 'status_perkawinan' => 'Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'AB', 'no_kk' => '3522110504040012', 'no_hp' => '089012345681', 'status_penduduk' => 'Pendatang', 'id_alamat' => 13, 'image' => url('assets/images/user/user-10.png'),],
+                ['nik' => '3522110504040031', 'nama' => "Lemon Watermelon", 'tempat_lahir' => 'Banyuwangi', 'tgl_lahir' => '2003-04-25', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Hindu', 'status_perkawinan' => 'Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'AB', 'no_kk' => '3522110504040012', 'no_hp' => '089012345681', 'status_penduduk' => 'Pendatang', 'id_alamat' => 13, 'image' => url('assets/images/user/user-10.png'),],
                 ['nik' => '3522110504040032', 'nama' => "Rahmat Hidayat", 'tempat_lahir' => 'Jember', 'tgl_lahir' => '2022-05-30', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'A', 'no_kk' => '3522110504040012', 'no_hp' => '089012345682', 'status_penduduk' => 'Pendatang', 'id_alamat' => 13, 'image' => url('assets/images/user/user-11.png'),],
                 ['nik' => '3522110504040033', 'nama' => "Nurul Huda", 'tempat_lahir' => 'Kediri', 'tgl_lahir' => '2023-06-15', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'O', 'no_kk' => '3522110504040012', 'no_hp' => '089012345683', 'status_penduduk' => 'Pendatang', 'id_alamat' => 13, 'image' => url('assets/images/user/user-12.png'),],
                 //kk4
@@ -149,9 +149,9 @@ class PendudukSeeder extends Seeder
 
                 // anang nik 38-53 (RT3)
                 // kk1
-                ['nik' => '3522110504040038', 'nama' => "Joko Widodido", 'tempat_lahir' => 'Solo', 'tgl_lahir' => '2006-04-15', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Hindu', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040014', 'no_hp' => '081234512393', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-01.png')],
+                ['nik' => '3522110504040038', 'nama' => "Joki Yudhoyono", 'tempat_lahir' => 'Solo', 'tgl_lahir' => '2006-04-15', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Hindu', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040014', 'no_hp' => '081234512393', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-01.png')],
                 ['nik' => '3522110504040039', 'nama' => "Dewi Sukmawati", 'tempat_lahir' => 'Bandung', 'tgl_lahir' => '2005-03-14', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'O', 'no_kk' => '3522110504040014', 'no_hp' => '081234512394', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-02.png')],
-                ['nik' => '3522110504040040', 'nama' => "Budi Santoso", 'tempat_lahir' => 'Jakarta', 'tgl_lahir' => '2004-02-13', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'A', 'no_kk' => '3522110504040014', 'no_hp' => '081234512395', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-03.png')],
+                ['nik' => '3522110504040040', 'nama' => "Topan Situmeyang", 'tempat_lahir' => 'Jakarta', 'tgl_lahir' => '2004-02-13', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'A', 'no_kk' => '3522110504040014', 'no_hp' => '081234512395', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-03.png')],
                 ['nik' => '3522110504040041', 'nama' => "Citra Lestari", 'tempat_lahir' => 'Surabaya', 'tgl_lahir' => '2003-01-12', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Katolik', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'AB', 'no_kk' => '3522110504040014', 'no_hp' => '081234512396', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 15, 'image' => url('assets/images/user/user-04.png')],
                 // kk2
                 ['nik' => '3522110504040042', 'nama' => "Eko Prasetyo", 'tempat_lahir' => 'Malang', 'tgl_lahir' => '2002-05-11', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Budha', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040015', 'no_hp' => '081234512397', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 16, 'image' => url('assets/images/user/user-05.png')],
@@ -164,7 +164,7 @@ class PendudukSeeder extends Seeder
                 ['nik' => '3522110504040048', 'nama' => "Kiki Amalia", 'tempat_lahir' => 'Surabaya', 'tgl_lahir' => '1996-04-05', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Hindu', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'A', 'no_kk' => '3522110504040016', 'no_hp' => '081234512403', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 17, 'image' => url('assets/images/user/user-11.png')],
                 ['nik' => '3522110504040049', 'nama' => "Lina Agustina", 'tempat_lahir' => 'Malang', 'tgl_lahir' => '1995-03-04', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'AB', 'no_kk' => '3522110504040016', 'no_hp' => '081234512404', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 17, 'image' => url('assets/images/user/user-12.png')],
                 // kk4
-                ['nik' => '3522110504040050', 'nama' => "Maya Sari", 'tempat_lahir' => 'Yogyakarta', 'tgl_lahir' => '1994-02-03', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040017', 'no_hp' => '081234512405', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-13.png')],
+                ['nik' => '3522110504040050', 'nama' => "Budi Sare", 'tempat_lahir' => 'Yogyakarta', 'tgl_lahir' => '1994-02-03', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'B', 'no_kk' => '3522110504040017', 'no_hp' => '081234512405', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-13.png')],
                 ['nik' => '3522110504040051', 'nama' => "Nur Hidayat", 'tempat_lahir' => 'Semarang', 'tgl_lahir' => '1993-01-02', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'O', 'no_kk' => '3522110504040017', 'no_hp' => '081234512406', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-14.png')],
                 ['nik' => '3522110504040052', 'nama' => "Oki Setiawan", 'tempat_lahir' => 'Solo', 'tgl_lahir' => '1992-05-01', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'A', 'no_kk' => '3522110504040017', 'no_hp' => '081234512407', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-15.png')],
                 ['nik' => '3522110504040053', 'nama' => "Putri Ayu", 'tempat_lahir' => 'Bandung', 'tgl_lahir' => '1991-04-30', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Katolik', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'AB', 'no_kk' => '3522110504040017', 'no_hp' => '081234512408', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-16.png')],
