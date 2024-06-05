@@ -1,19 +1,19 @@
 <x-layout.user-layout>
     <section class="hero max-w-6xl mx-auto font-sans py-20">
-        <div class="px-4 py-6  dark:border-gray-600 dark:bg-gray-800">
+        <div class="px-4 py-6 ">
             <div class="flex flex-col gap-y-4">
                 <div class="gap-y-2 flex flex-row justify-between items-center">
                     <div class="flex-1 space-y-2">
                         <div class="w-fit gap-x-2  small-badge flex flex-row  rounded-full items-center">
                             <i class="fa-solid fa-handshake"></i>
-                            <p class=" text-base font-normal text-black">
+                            <p class=" text-base font-normal text-black dark:text-white">
                                 Riwayat Penerimaan Bansos
                             </p>
                         </div>
-                        <h2 class="font-bold text-black text-6xl">Bansos Untuk Rakyat Yang Membutuhkan</h2>
+                        <h2 class="font-bold text-black dark:text-white text-6xl">Bansos Untuk Rakyat Yang Membutuhkan</h2>
                     </div>
                     <div class=" flex-1 text-base leading-loose text-black3">
-                        <p class="text-sm text-black3">
+                        <p class="text-sm text-black3 dark:text-gray-400">
                             Bantuan Sosial (Bansos) merupakan sebuah program yang bertujuan untuk memberikan dukungan
                             kepada masyarakat yang membutuhkan, terutama dalam kondisi-kondisi yang sulit seperti
                             bencana alam, krisis ekonomi, atau pandemi global. Program ini dirancang untuk memberikan
@@ -24,7 +24,7 @@
                         </p>
                         <div class="mt-7">
                             <button data-modal-target="add-bansos" data-modal-toggle="add-bansos"
-                                class="hover:bg-indigo-900 text-sm bg-ungu text-white py-3 px-7  font-semibold">Request
+                                class="rounded-lg hover:bg-indigo-900 text-sm bg-ungu dark:bg-purple-700 hover:dark:bg-purple-900 text-white py-3 px-7  font-semibold">Request
                                 Bansos</button>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
     </div>
     {{-- End List Berita --}}
 
-    <section class="max-w-6xl mx-auto font-sans mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
+    <section class="max-w-6xl mx-auto font-sans mb-60 bg-ungu dark:bg-purple-900 p-14 rounded-3xl z-20 relative ">
         <div class="items-center justify-between">
             <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Mekanisme Penerimaan Bansos
             </h5>
