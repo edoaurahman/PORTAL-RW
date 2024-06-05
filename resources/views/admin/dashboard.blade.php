@@ -604,8 +604,10 @@
                 fill: false
             }, {
                 label: 'Pengeluaran',
-                data: [500, 800, 700, 1200, 1000, 900, 1100, 1300, 1500, 1800, 1600,
-                    1400
+                data: [
+                    @foreach ($pengeluaran as $value )
+                        '{{ $value->total }}',
+                    @endforeach
                 ], // Ganti dengan data pengeluaran per bulan
                 borderColor: '#B186F8',
                 tension: 0.1,
