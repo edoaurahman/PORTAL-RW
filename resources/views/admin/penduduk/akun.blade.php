@@ -16,11 +16,11 @@
                 </small>
             </h3>
         </div>
-        <div class="flex justify-between pb-5">
-            <h1> </h1>
+        <div class="grid grid-cols-6 gap-4 pb-5">
+            <x-partials.admin.penduduk.filter />
             <!-- Modal toggle -->
             <button data-modal-target="add-penduduk" data-modal-toggle="add-penduduk"
-                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="!col-start-7 col-span-1 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
                 Buat Akun Penduduk
             </button>
@@ -88,7 +88,7 @@
                                 <button onclick="showEdit({{ $item }})" data-modal-target="edit-akun-penduduk"
                                     data-modal-toggle="edit-akun-penduduk"
                                     class="font-medium text-white bg-yellow-300 p-2  rounded">
-                                        Edit
+                                    Edit
                                 </button>
 
                                 <form action="{{ route('admin.penduduk.akun.delete', $item->id_akun) }}" method="post">
@@ -105,6 +105,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="pt-5">
+            {{ $penduduk->links() }}
         </div>
     </div>
 

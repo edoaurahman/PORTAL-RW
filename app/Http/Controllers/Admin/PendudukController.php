@@ -89,51 +89,51 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-
-        $listRT = AlamatModel::select('rt')->distinct()->get();
-        return view('admin.penduduk.index', compact('penduduk', 'listRT'));
+        return view('admin.penduduk.index', compact('penduduk'));
     }
 
 
     public function akun_penduduk(Request $request)
     {
-        $penduduk = new AkunModel();
+        $query = AkunModel::with('penduduk');
         try {
-            if ($this->isAdmin()) {
-                $penduduk = AkunModel::when($request->has('s'), function ($query) use ($request) {
-                    return $query->whereHas('penduduk', function ($query) use ($request) {
-                        $query->where('nama', 'like', '%' . $request->s . '%');
-                    });
-                })->get();
-            } else if ($this->isRW()) {
-                $penduduk = AkunModel::with('penduduk', 'level')->whereHas('level', function ($query) {
-                    $query->whereIn('nama_level', ['Penduduk', 'RT']);
-                })->when($request->has('s'), function ($query) use ($request) {
-                    return $query->whereHas('penduduk', function ($query) use ($request) {
-                        $query->where('nama', 'like', '%' . $request->s . '%');
-                    });
-                })->get();
-            } else {
+            if (!$this->isAdmin() && !$this->isRW()) {
                 $rt = $this->alamat->rt;
-                $penduduk = AkunModel::with('penduduk', 'level')->whereHas('penduduk.alamat', function ($query) use ($rt) {
+                $query->whereHas('penduduk.alamat', function ($query) use ($rt) {
                     $query->where('rt', $rt);
-                })->whereHas('level', function ($query) {
-                    $query->where('nama_level', 'Penduduk');
-                })->when($request->has('s'), function ($query) use ($request, $rt) {
-                    return $query->whereHas('penduduk', function ($query) use ($request, $rt) {
-                        $query->where('nama', 'like', '%' . $request->s . '%');
-                    })->whereHas('penduduk.alamat', function ($query) use ($rt) {
-                        $query->where('rt', $rt);
-                    });
-                })->get();
+                });
             }
+            if ($request->has('s')) {
+                $query->whereHas('penduduk', function ($query) use ($request) {
+                    $query->where('nama', 'like', '%' . $request->s . '%');
+                });
+            }
+
+            if ($request->has('rt')) {
+                $query->whereHas('penduduk.alamat', function ($query) use ($request) {
+                    $query->where('rt', $request->rt);
+                });
+            }
+
+            if ($request->has('jenis_kelamin')) {
+                $query->whereHas('penduduk', function ($query) use ($request) {
+                    $query->where('jenis_kelamin', $request->jenis_kelamin);
+                });
+            }
+
+            if ($request->has('status_penduduk')) {
+                $query->whereHas('penduduk', function ($query) use ($request) {
+                    $query->where('status_penduduk', $request->status_penduduk);
+                });
+            }
+            // dd($query->get());
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
                 'code' => 500,
                 'message' => $e->getMessage(),
             ]);
         }
-
+        $penduduk = $query->paginate(10)->withQueryString();
         return view('admin.penduduk.akun', compact('penduduk'));
     }
 
@@ -162,9 +162,8 @@ class PendudukController extends Controller
                 $query->where('nama', 'like', '%' . $request->s . '%');
             });
         }
-        $listRT = AlamatModel::select('rt')->distinct()->get();
         $penduduk = $penduduk->paginate(10)->withQueryString();
-        return view('admin.penduduk.kk', compact('penduduk', 'listRT'));
+        return view('admin.penduduk.kk', compact('penduduk'));
     }
 
     public function kk_detail_penduduk(string $no_kk)

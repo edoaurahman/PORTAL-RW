@@ -76,4 +76,34 @@ class InvertarisTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/admin/inventaris/peminjaman');
     }
+
+    public function test_set_all_peminjaman_done(): void
+    {
+        $admin = AkunModel::find(1);
+        $peminjaman = PeminjamanModel::where('status', 'approved')->get();
+        foreach ($peminjaman as $p) {
+            $response = $this->actingAs($admin)->post('/admin/inventaris/peminjaman/status', [
+                'id_peminjaman' => $p->id_peminjaman,
+                'status' => 'done',
+            ]);
+            $response->assertSessionHasNoErrors();
+            $response->assertStatus(302);
+            $response->assertRedirect('/admin/inventaris/peminjaman');
+        }
+    }
+
+    public function test_set_all_peminjaman_approve(): void
+    {
+        $admin = AkunModel::find(1);
+        $peminjaman = PeminjamanModel::where('status', 'pending')->get();
+        foreach ($peminjaman as $p) {
+            $response = $this->actingAs($admin)->post('/admin/inventaris/peminjaman/status', [
+                'id_peminjaman' => $p->id_peminjaman,
+                'status' => 'approved',
+            ]);
+            $response->assertSessionHasNoErrors();
+            $response->assertStatus(302);
+            $response->assertRedirect('/admin/inventaris/peminjaman');
+        }
+    }
 }

@@ -91,7 +91,7 @@ class InventarisController extends Controller
 
     public function peminjaman()
     {
-        $peminjaman = PeminjamanModel::all();
+        $peminjaman = PeminjamanModel::paginate(10);
         return view("admin.peminjaman", compact("peminjaman"));
     }
 
