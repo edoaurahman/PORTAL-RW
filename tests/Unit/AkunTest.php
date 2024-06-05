@@ -12,7 +12,7 @@ class AkunTest extends TestCase
     /**
      * A basic unit test example.
      */
-    public function test_add_akun(): void
+    public function test_akun(): void
     {
         $akun = AkunModel::find(1);
         // ambil penduduk yang akan dijadikan akun, kecuali yang sudah punya akun

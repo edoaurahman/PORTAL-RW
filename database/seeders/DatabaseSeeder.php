@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             SettingKeuangan::class,
             AgendaSeeder::class,
             KategoriUMKMSeeder::class,
-            UMKMSeeder::class,
+                // UMKMSeeder::class,
             KategoriBeritaSeeder::class,
             DetailBeritaSeeder::class,
             SettingHomeSeeder::class,
