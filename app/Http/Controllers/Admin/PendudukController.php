@@ -82,7 +82,7 @@ class PendudukController extends Controller
             }
 
 
-            $penduduk = $query->paginate($paginate)->withQueryString();
+            $penduduk = $query->orderBy('created_at', 'desc')->paginate($paginate)->withQueryString();
         } catch (\Exception $e) {
             return redirect()->route('error')->with([
                 'code' => 500,
@@ -133,7 +133,7 @@ class PendudukController extends Controller
                 'message' => $e->getMessage(),
             ]);
         }
-        $penduduk = $query->paginate(10)->withQueryString();
+        $penduduk = $query->orderBy('created_at', 'desc')->paginate(10)->withQueryString();
         return view('admin.penduduk.akun', compact('penduduk'));
     }
 

@@ -90,6 +90,13 @@
                                 {{ $item->alamatLengkap() }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
+                                @empty($item->akun)
+                                    <button onclick="showFormAddAkun({{ $item }})"
+                                        data-modal-target="add-akun-penduduk" data-modal-toggle="add-akun-penduduk"
+                                        class="font-medium text-white bg-blue-700 p-2  rounded">
+                                        Buat Akun
+                                    </button>
+                                @endempty
                                 <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
                                     <button class="font-medium text-white bg-green-400 p-2  rounded">
                                         Detail
@@ -121,7 +128,7 @@
         </div>
     </div>
     <x-partials.admin.penduduk.add />
-
+    <x-partials.admin.penduduk.add-akun />
     <x-partials.admin.penduduk.edit />
 
     <script>

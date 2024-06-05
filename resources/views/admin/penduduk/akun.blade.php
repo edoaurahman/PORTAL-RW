@@ -19,7 +19,7 @@
         <div class="grid grid-cols-6 gap-4 pb-5">
             <x-partials.admin.penduduk.filter />
             <!-- Modal toggle -->
-            <button data-modal-target="add-penduduk" data-modal-toggle="add-penduduk"
+            <button data-modal-target="add-akun-penduduk" data-modal-toggle="add-akun-penduduk"
                 class="!col-start-7 col-span-1 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
                 Buat Akun Penduduk

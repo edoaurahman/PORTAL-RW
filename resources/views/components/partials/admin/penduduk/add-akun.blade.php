@@ -1,7 +1,7 @@
 <div>
-    <form action="{{ route('admin.penduduk.akun.store') }}" method="post" x-data="{ setAsNik: false }">
+    <form action="{{ route('admin.penduduk.akun.store') }}" method="post" x-data="{ setAsNik: false }" id="form-add-akun">
         @csrf
-        <div id="add-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+        <div id="add-akun-penduduk" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-[80%]">
                 <!-- Modal content -->
@@ -13,7 +13,7 @@
                         </h3>
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-hide="add-penduduk">
+                            data-modal-hide="add-akun-penduduk">
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -113,7 +113,7 @@
                     <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                         <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tambah</button>
-                        <button data-modal-hide="add-penduduk" type="button"
+                        <button data-modal-hide="add-akun-penduduk" type="button"
                             class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tutup</button>
                     </div>
                 </div>
@@ -121,3 +121,11 @@
         </div>
     </form>
 </div>
+
+<script>
+    function showFormAddAkun(e) {
+        console.log(e);
+        formInput = document.getElementById('form-add-akun');
+        formInput.querySelector('input[name="nik"]').value = e.nik;
+    }
+</script>

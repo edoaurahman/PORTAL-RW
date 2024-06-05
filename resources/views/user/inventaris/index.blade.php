@@ -24,7 +24,8 @@
                     @foreach ($inventaris as $item)
                         <div class="bg-purple-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
                             <div class="flex flex-col sm:flex-row relative sm:items-center space-x-4">
-                                <img src="{{ $item->getImage() }}" alt="Terop" class="w-64 h-34 rounded-lg">
+                                <img src="{{ $item->getImage() }}" alt="Terop"
+                                    class="w-64 h-64 object-cover rounded-lg">
                                 <div>
                                     <h3 class="sm:text-2xl font-bold text-zinc-900 dark:text-white">{{ $item->nama }}
                                     </h3>
