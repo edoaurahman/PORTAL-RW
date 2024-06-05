@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\AkunModel;
 use App\Models\ListKategoriUMKMModel;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\PendudukModel;
 use App\Models\UMKMModel;
 
 class UMKMSeeder extends Seeder
@@ -16,10 +15,10 @@ class UMKMSeeder extends Seeder
     public function run(): void
     {
         // Mendapatkan semua NIK dari tabel penduduk
-        $penduduk = PendudukModel::all();
+        $akun = AkunModel::all();
         $nik = [];
-        foreach ($penduduk as $p) {
-            $nik[] = $p->nik;
+        foreach ($akun as $p) {
+            $nik[] = $p->penduduk->nik;
         }
 
         // Mendapatkan NIK acak dari array $nik
