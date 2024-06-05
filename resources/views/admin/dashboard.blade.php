@@ -172,7 +172,7 @@
             <h4 class="mb-4 px-7.5 text-xl font-bold text-black dark:text-white text-center">
                 Agenda RW
             </h4>
-            <div class="scrollbar-thin overflow-auto h-[550px] p-5">
+            <div class="overflow-auto h-[550px] p-5">
                 <div x-show="$store.agenda.data.length === 0">
                     <div class="flex items center justify-center h-full">
                         <span class="text-gray-400 dark:text-gray-500">Tidak ada Agenda</span>

@@ -89,9 +89,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Jumlah Penerima Bansos
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            {{-- <th scope="col" class="px-6 py-3">
                                 Total Aspirasi
-                            </th>
+                            </th> --}}
                             <th scope="col" class="px-6 py-3">
                                 Diterima
                             </th>
@@ -101,42 +101,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- <?php foreach ($report as $key => $item): ?>
                             <tr
                                 class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                                 <th class="px-6 py-4">
-                                    <?= $key + 1 ?>
+                                    {{ $jumlahRT }}
                                 </th>
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $item['mahasiswa'] ?? $item['dosen'] ?>
+                                    {{ $totalPenduduk }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    <?= $item['tanggal_pesan'] ?>
+                                    {{ $pendudukPendatang}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['tanggal_pakai'] ?>
+                                    {{ $pendudukTetap}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['dosen'] ?>
+                                    {{ $jumlahKK }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['kelas'] ?>
+                                    {{-- <?= $item['kelas'] ?> --}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['ruang'] ?>
+                                    {{-- <?= $item['ruang'] ?> --}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['jam_mulai'] ?>
+                                    {{-- <?= $item['jam_mulai'] ?> --}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['jam_selesai'] ?>
+                                    {{-- <?= $item['jam_selesai'] ?> --}}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <?= $item['keterangan'] ?>
+                                    {{-- <?= $item['keterangan'] ?> --}}
                                 </td>
                             </tr>
-                        <?php endforeach ?> --}}
                     </tbody>
                 </table>
             </div>
