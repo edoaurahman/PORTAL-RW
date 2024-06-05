@@ -46,7 +46,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '2',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -62,7 +62,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '3',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -78,7 +78,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '4',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
                 [
@@ -94,7 +94,7 @@ class PendudukSeeder extends Seeder
                     'no_kk' => '3522110504040001',
                     'no_hp' => '081234567890',
                     'status_penduduk' => 'Pendatang',
-                    'id_alamat' => '5',
+                    'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
 
