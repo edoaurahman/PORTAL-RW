@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-purple-600 sticky top-0 z-99999">
+<nav class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg fixed w-full z-10 top-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
@@ -78,7 +78,7 @@
             @guest
                 <div class="py-1">
                     <a href="{{ route('login') }}"
-                        class="block px-5 py-2 mr-5 bg-indigo-950 rounded-full text-white">Login</a>
+                        class="block px-5 py-2 mr-5 bg-indigo-950 dark:bg-purple-400 rounded-full text-white">Login</a>
                 </div>
             @endguest
             @auth
