@@ -1,5 +1,5 @@
 <x-layout.user-layout>
-    <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] sm:px-0 px-10">
+    <section class="hero max-w-6xl mx-auto font-sans pb-[200px]  pt-[200px] sm:px-0 px-10">
         <div class="flex flex-row items-center justify-between">
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
@@ -17,7 +17,25 @@
         </div>
     </section>
 
+    <section class="max-w-6xl mx-auto font-sans  ">
+        <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
+            <div class="p-5">
+                <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Layanan
+                </h5>
+                <p> Temukan beragam layanan yang kami tawarkan untuk membantu Anda. Dari pelayanan pengurusan data penduduk hingga berbagai kebutuhan perizinan, kami hadir untuk membantu dan mempermudah akses layanan bagi masyarakat. <br><br></p>
+                <div class="flex flex-row gap-x-4 items-end">
+                    <a href="#tutorial"
+                        class="hover:bg-indigo-900 dark:hover:bg-purple-700 text-base bg-ungu dark:bg-black border dark:border-purple-700  text-white py-4 px-10 rounded-lg font-semibold">Cara
+                        Meminjam Inventaris</a>
+                </div>
+            </div>
+    </section>
+
+
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
+        <div>
+            <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Daftar Inventaris</h5>
+        </div>
         <div class="min-h-screen">
             <main class="p-8">
                 <div class="space-y-8">
@@ -40,7 +58,7 @@
                                 <div class="absolute item-center bottom-0 right-0 px-6 py-4">
                                     <button data-modal-target="pinjam-inventaris" data-modal-toggle="pinjam-inventaris"
                                         onclick="showpinjam({{ $item }})"
-                                        class="text-sm sm:text-lg ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg">Pinjam</button>
+                                        class="text-sm sm:text-lg ml-auto bg-purple-600 hover:bg-purple-800 dark:bg-purple-700 dark:hover:bg-purple-900 text-white px-4 py-2 rounded-lg">Pinjam</button>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +67,9 @@
             </main>
         </div>
     </section>
+   
     <section id="tutorial"
-        class=" max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu p-14 rounded-3xl z-20 relative ">
+        class=" max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-purple-900 p-14 rounded-3xl z-20 relative ">
         <div class=" items-center justify-between">
             <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Mekanisme Peminjaman</h5>
             <h1 class="leading-loose text-white dark:text-white">

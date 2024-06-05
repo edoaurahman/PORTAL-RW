@@ -1,17 +1,17 @@
 <x-layout.user-layout>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-    <section class="hero max-w-6xl mx-auto font-sans pb-30 pt-[100px] sm:px-0 px-10">
+    <section class="hero max-w-6xl mx-auto font-sans pb-[200px] pt-[200px] sm:px-0 px-10">
         <div class="flex flex-row items-center justify-between">
             <div class="hidden sm:flex flex-row item-center">
                 <img src="{{ asset('assets/images/illustration/orangorang.webp') }}" alt="" class=" max-w-100">
             </div>
             <div class="flex flex-col gap-y-10">
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-3xl sm:text-[50px] leading-none">Informasi
+                    <h2 class="text-ungu dark:text-orange-100 font-bold text-3xl sm:text-[50px] leading-none">Informasi
                         Kegiatan
                         dan
                         Agenda
-                    </h1>
+                    </h2>
                     <h1 class="text-black1 dark:text-purple-500 font-bold text-3xl sm:text-[60px] leading-none">
                         Warga RW 2
                     </h1>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </section>
-    <section class=" max-w-2xl  mx-auto font-sans bg-purple-500 dark:bg-gray-700 p-2 rounded-3xl z-20 relative">
+    <section class=" max-w-2xl  mx-auto font-sans bg-purple-500 dark:bg-purple-800 p-2 rounded-3xl z-20 relative">
         <h1 class="text-center font-bold text-3xl leading-tight text-white">Agenda</h1>
     </section>
 
@@ -28,7 +28,7 @@
         <div>
             <h5 class="mx-5 mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Kalender Agenda RW 2
             </h5>
-            <div class="bg-white rounded-xl sm:mx-5 p-5 sm:p-10">
+            <div class="bg-purple-200 dark:bg-gray-700 rounded-xl sm:mx-5 p-5 sm:p-10">
                 <div id="calendar"></div>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <div x-show="$store.agenda.isLoading"
                 class="flex items-center justify-center w-full h-56 rounded-lg bg-transparent dark:bg-gray-800 dark:border-gray-700">
                 <div role="status">
-                    <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                    <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
                         viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
