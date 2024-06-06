@@ -24,6 +24,20 @@ class InvertarisTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/inventaris');
     }
+    public function test_pinjam_100_barang(): void
+    {
+        $penduduk = AkunModel::all()->random();
+        for ($i = 1; $i <= 100; $i++) {
+            $inventaris = InventarisModel::where('jumlah', '>', 0)->limit(30)->get();
+            $response = $this->actingAs($penduduk)->post('/inventaris/pinjam', [
+                'id_inventaris' => $inventaris->random()->id_inventaris,
+                'jumlah' => 1,
+            ]);
+            $response->assertSessionHasNoErrors();
+            $response->assertStatus(302);
+            $response->assertRedirect('/inventaris');
+        }
+    }
 
     public function test_approve_peminjaman(): void
     {

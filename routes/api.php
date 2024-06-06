@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BansosController;
-use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Api\AgendaController;
-use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\PendudukController;
 use App\Http\Controllers\Api\RTController;
 use Illuminate\Http\Request;
