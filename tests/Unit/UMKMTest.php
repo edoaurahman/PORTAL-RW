@@ -214,5 +214,6 @@ class UMKMTest extends TestCase
         $response = $this->actingAs($akun->random())->post('/umkm/store', $UMKM[rand(0, 9)]);
         $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
+        $response->assertRedirect('/umkm/dashboard');
     }
 }
