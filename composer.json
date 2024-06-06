@@ -12,8 +12,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8",
-        "spatie/laravel-pdf": "^1.5"
+        "laravel/tinker": "^2.8"
     },
     "require-dev": {
         "bennett-treptow/laravel-migration-generator": "^4.3",
