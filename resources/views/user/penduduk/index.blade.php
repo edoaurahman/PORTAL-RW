@@ -208,8 +208,8 @@
                             </td>
                             <th scope="row"
                                 class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                <img width="45px" src="{{ $item->foto_profile() }}" alt="User"
-                                    class="rounded-full object-cover" />
+                                <img src="{{ $item->foto_profile() }}" alt="User"
+                                    class="rounded-full object-cover w-12 h-12" />
                                 <div class="ps-3">
                                     <div class="sm:text-base font-semibold">{{ $item->nama }}</div>
                                     <div class="font-normal text-gray-500">{{ $item->status_penduduk }}</div>
@@ -235,6 +235,7 @@
             <div class="w-full text-center text-gray-500 {{ !$penduduk->isEmpty() ? 'hidden' : '' }}">
                 <h1 class="p-5">Tidak ada data</h1>
             </div>
+
             <div class="mt-5">
                 {{ $penduduk->links() }}
             </div>
