@@ -149,3 +149,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/error', function () {
     return view('error');
 })->name('error');
+
+Route::get('/report-data/preview', [ReportDataController::class, 'preview'])->name('admin.report-data.preview');
+Route::get('/report-data/download', [ReportDataController::class, 'downloadPdf'])->name('admin.report-data.download');
