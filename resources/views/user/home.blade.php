@@ -1,24 +1,24 @@
 <x-layout.user-layout>
     <div class="dark:bg-[#1f1345]">
         <div class="px-7 sm:max-w-6xl mx-auto font-sans">
+
             <section class="hero pb-12 pt-[100px] ">
                 <div class="flex flex-col sm:flex-row items-center justify-between">
-                    <div class="flex flex-col flex-1 gap-y-10">
-                        <div class="gap-y-6 flex flex-col">
-                            <h1 class="text-black1 font-bold text-[70px] leading-none dark:text-white">
+                    <div class="flex flex-col flex-1 gap-y-8 sm:gap-y-10">
+                        <div class="gap-y-2 sm:gap-y-6 flex flex-col">
+                            <h1 class="text-black1 font-bold text-5xl sm:text-[70px] leading-none dark:text-white">
                                 Tumbuh<br>
                                 <span class="dark:text-purple-700">Bersama RW 02.</span>
                             </h1>
-                            <div class="text-base leading-loose text-black3 dark:text-white">
-                                Web digital untuk mencatat dan mengelola data warga RW 02 (nama, alamat, tanggal lahir).
-                                Antarmuka user-friendly mempercepat akses informasi, mendukung administrasi, layanan
-                                sosial,
-                                pencarian cepat, dan laporan statistik.
+                            <div class="text-sm sm:text-base leading-loose text-black3 dark:text-white">
+                                Web digital untuk mencatat dan mengelola data warga RW 02. Antarmuka user-friendly
+                                mempercepat akses informasi, mendukung metode oenerima bansos, layanan sosial, pencarian
+                                cepat, dan laporan statistik.
                             </div>
                         </div>
                         <div class="flex flex-row gap-x-4 items-center">
                             <a href="{{ route('user.layanan') }}"
-                                class="hover:bg-indigo-900 text-base bg-ungu text-white py-4 px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
+                                class="hover:bg-indigo-900 text-sm sm:text-base bg-ungu text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
                                 Pengantar</a>
                             <a href="{{ route('user.penduduk') }}"
                                 class="gap-x-2 flex items-center text-ungu font-semibold text-base dark:text-purple-700 dark:hover:text-white">
@@ -34,39 +34,42 @@
                 </div>
             </section>
 
-            <section class="features max-w-6xl mx-auto py-12 font-sans">
-                <div class="grid grid-cols-3 gap-x-8 px-5">
-                    <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                        <i class="fa-solid fa-broom text-5xl text-ungu dark:text-purple-700"></i>
-                        <div class="flex flex-col gap-y-5">
-                            <h3 class=" text-2xl font-bold dark:text-white">
+            <section class="features py-12">
+                <div class="grid grid-col sm:grid-cols-3 gap-y-3 gap-x-8 px-5">
+                    <div
+                        class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
+                        <i class="fa-solid fa-broom text-4xl sm:text-5xl text-ungu dark:text-purple-700"></i>
+                        <div class="flex flex-col gap-y-3 sm:gap-y-5">
+                            <h3 class=" text-xl sm:text-2xl font-bold dark:text-white">
                                 Kebersihan
                             </h3>
-                            <div class="text-base leading-relaxed text-black3  dark:text-paragraf">
+                            <div class="text-sm sm:text-base leading-relaxed text-black3  dark:text-paragraf">
                                 Rutinitas bersih lingkungan bulanan dan petugas kebersihan harian membuat RW 02 selalu
                                 bersih
                                 dan nyaman.</div>
                         </div>
                     </div>
-                    <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                        <i class="fa-solid fa-lock text-5xl text-ungu dark:text-purple-700"></i>
-                        <div class="flex flex-col gap-y-5">
-                            <h3 class=" text-2xl font-bold dark:text-white">
+                    <div
+                        class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
+                        <i class="fa-solid fa-lock text-4xl sm:text-5xl text-ungu dark:text-purple-700"></i>
+                        <div class="flex flex-col gap-y-3 sm:gap-y-5">
+                            <h3 class="text-xl sm:text-2xl font-bold dark:text-white">
                                 Keamanan
                             </h3>
-                            <div class="text-base leading-relaxed text-black3  dark:text-paragraf">
+                            <div class="text-sm sm:text-base leading-relaxed text-black3  dark:text-paragraf">
                                 Satpam Linmas berjaga 24 jam dan berbagai peraturan yang ketat membuat RW 02 lebih aman
                                 dan
                                 nyaman.</div>
                         </div>
                     </div>
-                    <div class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-8 items-start rounded-2xl p-10">
-                        <i class="fa-solid fa-gear text-5xl text-ungu dark:text-purple-700"></i>
-                        <div class="flex flex-col gap-y-5">
-                            <h3 class=" text-2xl font-bold dark:text-white">
+                    <div
+                        class="my-card bg-white dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
+                        <i class="fa-solid fa-gear text-4xl sm:text-5xl text-ungu dark:text-purple-700"></i>
+                        <div class="flex flex-col gap-y-3 sm:gap-y-5">
+                            <h3 class="text-xl sm:text-2xl font-bold dark:text-white">
                                 Pelayanan
                             </h3>
-                            <div class="text-base leading-relaxed text-black3  dark:text-paragraf">
+                            <div class="text-sm sm:text-base leading-relaxed text-black3  dark:text-paragraf">
                                 Pelayanan masyarakat yang responsif dan fasilitas umum yang lengkap membuat RW 02
                                 semakin
                                 nyaman.</div>
@@ -75,66 +78,110 @@
                 </div>
             </section>
 
-
-            <section class="benefit max-w-6xl mx-auto font-sans py-12">
-                <div class="grid grid-cols-2 items-center gap-x-10">
-                    <div class="flex flex-row item-center">
-                        <img src="{{ $rw->penduduk->foto_profile() }}" alt="" class="h-[550px]">
+            <section class="OurTeam py-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 items-center sm:gap-x-10">
+                    <div class="flex flex-row item-center justify-center">
+                        <img src="{{ $rw->penduduk->foto_profile() }}" alt=""
+                            class="hidden sm:block sm:h-[500px] rounded-xl">
                     </div>
-                    <div class="relative">
+                    <div class="">
                         <div>
-                            <h1 class="text-black1 font-bold text-5xl leading-tight pb-5 dark:text-white">Ketua Rukun
-                                Warga
+                            <h1
+                                class="text-black font-extrabold text-3xl sm:text-5xl leading-tight pb-4 sm:pb-5 dark:text-white">
+                                Ketua Rukun Warga
                             </h1>
-                            <div class="text-base mt-4 leading-loose text-black3 dark:text-paragraf">
+                            <div class="text-sm sm:text-base sm:mt-4 leading-loose text-black3 dark:text-paragraf">
                                 "Kepengurusan RW 02 Kelurahan Arjosari" mencantumkan ketua RW dan RT, memudahkan warga
                                 dalam
                                 berkomunikasi dan berkoordinasi dengan pengurus.
                             </div>
                         </div>
-                        <div class="flex mt-5">
-                            <div class="w-1/2">
-                                <dl class="max-w-md text-gray-900  divide-gray-200 dark:text-white">
-                                    <div class="flex flex-col pb-3">
-                                        <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
-                                        <dd class="text-lg font-semibold">{{ $rw->penduduk->nama }}</dd>
-                                    </div>
-                                    <div class="flex flex-col py-3">
-                                        <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
-                                        <dd class="text-lg font-semibold">
-                                            {{ $rw->penduduk->alamatLengkap() }}
-                                        </dd>
-                                    </div>
-                                </dl>
+                        <div class="hidden sm:block">
+                            <div class="flex mt-5 ">
+                                <div class="w-1/2">
+                                    <dl class="max-w-md text-gray-900  divide-gray-200 dark:text-white">
+                                        <div class="flex flex-col pb-3">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
+                                            <dd class="text-lg font-semibold">{{ $rw->penduduk->nama }}</dd>
+                                        </div>
+                                        <div class="flex flex-col py-3">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                                            <dd class="text-lg font-semibold">
+                                                {{ $rw->penduduk->alamatLengkap() }}
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="w-1/2">
+                                    <dl
+                                        class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+
+                                        <div class="flex flex-col">
+                                            <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor
+                                                handphone
+                                            </dt>
+                                            <dd class="text-lg font-semibold">{{ $rw->penduduk->no_hp }}</dd>
+                                        </div>
+
+                                    </dl>
+                                </div>
                             </div>
-                            <div class="w-1/2">
-                                <dl
-                                    class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
-
-                                    <div class="flex flex-col">
-                                        <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Nomor
-                                            handphone
-                                        </dt>
-                                        <dd class="text-lg font-semibold">{{ $rw->penduduk->no_hp }}</dd>
+                            <button onclick="window.location.href='{{ route('user.detail', $rw->penduduk->nik) }}'"
+                                class="hidden sm:block text-sm text-purple-700 py-2 mt-4 rounded-full font-semibold hover:text-white">Detail
+                                Penduduk
+                                <i class="fa-solid fa-arrow-right text-md"></i>
+                            </button>
+                        </div>
+                        <div class="block sm:hidden">
+                            <div class="flex mt-5 relative group ">
+                                <div
+                                    class="absolute flex justify-center items-center bg-indigo-900/0 group-hover:bg-indigo-900/80 w-full h-full transition ease-in-out duration-700 rounded-lg">
+                                    <div class="hidden group-hover:block">
+                                        <a onclick="window.location.href='{{ route('user.detail', $rw->penduduk->nik) }}'"
+                                            class=" text-sm bg-ungu text-white py-4 px-5 my-3 rounded-2xl font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Detail
+                                            Penduduk
+                                            <i class="fa-solid fa-arrow-right text-md"></i>
+                                        </a>
                                     </div>
-
-                                </dl>
+                                </div>
+                                <div class="w-1/2">
+                                    <div class="  ">
+                                        <img src="{{ $rw->penduduk->foto_profile() }}" alt=""
+                                            class="w-40 top-0 left-0 h-full object-cover object-center rounded-lg">
+                                    </div>
+                                </div>
+                                <div class="w-1/2">
+                                    <div class="max-w-md text-gray-900 dark:text-white dark:divide-gray-700">
+                                        <div class="flex flex-col">
+                                            <dt class=" text-gray-500 md:text-lg dark:text-gray-400">Nama</dt>
+                                            <dd class="text-sm font-semibold">{{ $rw->penduduk->nama }}</dd>
+                                        </div>
+                                        <div class="flex flex-col py-2">
+                                            <dt class=" text-gray-500 md:text-lg dark:text-gray-400">Alamat</dt>
+                                            <dd class="text-sm font-semibold">
+                                                {{ $rw->penduduk->alamatLengkap() }}
+                                            </dd>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <dt class=" text-gray-500 md:text-lg dark:text-gray-400">Nomor
+                                                handphone
+                                            </dt>
+                                            <dd class="text-sm font-semibold">{{ $rw->penduduk->no_hp }}</dd>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <button onclick="window.location.href='{{ route('user.detail', $rw->penduduk->nik) }}'"
-                            class=" text-sm  text-purple-700 py-2 mt-4 rounded-full font-semibold hover:text-white">Detail
-                            Penduduk
-                            <i class="fa-solid fa-arrow-right text-md"></i>
-                        </button>
                     </div>
                 </div>
             </section>
 
-            <section class=" max-w-6xl mx-auto font-sans py-20">
+            <section class=" max-w-6xl mx-auto font-sans py-5 sm:py-20">
                 <div class=" items-center">
                     <div>
-                        <h1 class="pb-5 text-center font-bold text-5xl leading-tight dark:text-whiten ">Daftar Ketua RT
+                        <h1
+                            class="pb-2 sm:pb-5 text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten ">
+                            Daftar Ketua RT
                         </h1>
                         <p class="mt-4 text-center mx-auto lg:w-1/3 md:w-1/2">
                             Ketua RT adalah pemimpin yang dipilih warga untuk menjaga keharmonisan, mengoordinasikan
@@ -163,8 +210,7 @@
                                             </div>
 
                                             <img class=" top-0 left-0 w-full h-full object-cover object-center"
-                                                src="{{ asset('assets/images/illustration/img_1.jpg') }}"
-                                                alt="member">
+                                                src="{{ $item->penduduk->foto_profile() }}" alt="member">
                                         </div>
                                         <div
                                             class="overflow-hidden p-4 bg-purple-100 group-hover:bg-white/70 absolute left-4 bottom-4 right-4 rounded-lg dark:bg-ungu_muda">
@@ -192,21 +238,18 @@
                 </div>
             </section>
 
-            <div class=" max-w-6xl mx-auto">
-
-            </div>
-
-            <section class="benefit max-w-6xl mx-auto font-sans py-12">
-                <h1 class="text-center font-bold text-5xl leading-tight dark:text-whiten">Kegiatan dan Agenda</h1>
-                <div class="grid grid-cols-2 items-center gap-x-10">
+            <section class="agenda font-sans py-12">
+                <h1 class="text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten">Kegiatan dan
+                    Agenda</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 items-center sm:gap-x-10">
                     <div class="flex flex-row item-center">
                         <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}" alt=""
-                            class="h-[550px]">
+                            class="h-[400px] sm:h-[550px] hidden sm:block">
                     </div>
-                    <div class="flex flex-col gap-y-10 ">
+                    <div class="flex flex-col  gap-y-10 ">
                         <div class="bg-purple-100 dark:bg-gray-800 rounded-3xl">
-                            <div class="gap-y-2 flex flex-col pl-5 pt-5">
-                                <h1 class="text-black1 font-bold text-4xl leading-tight dark:text-white ">
+                            <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
+                                <h1 class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
                                     {{ $agenda->title }}
                                 </h1>
                                 <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
@@ -214,16 +257,18 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col gap-y-10 pl-5 pr-5 pb-5">
+                            <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5">
 
                                 <div
                                     class=" flex flex-row bg-white dark:bg-gray-700 rounded-2xl p-5 items-center gap-x-4">
-                                    {{-- <i class="fa-solid fa-shield-halved text-5xl text-ungu"></i> --}}
+                                    <img src="{{ asset('assets/images/illustration/kalenderagenda.webp') }}"
+                                        alt="" class="h-[100px] sm:hidden block">
                                     <div class="flex flex-col ">
-                                        <h3 class=" text-2xl font-bold text-black1 dark:text-purple-100">
+                                        <h3 class="text-xl sm:text-2xl font-bold text-black1 dark:text-purple-100">
                                             Waktu
                                         </h3>
-                                        <div class="text-base leading-relaxed text-black4 dark:text-purple-200">
+                                        <div
+                                            class="text-sm sm:text-base leading-relaxed text-black4 dark:text-purple-200">
                                             {{ $agenda->start . ' - ' . $agenda->end }}
                                         </div>
                                     </div>
@@ -232,7 +277,7 @@
                         </div>
                         <div class="flex flex-row gap-x-4 items-center pl-5 ">
                             <a href="{{ route('user.agenda') }}"
-                                class="hover:bg-indigo-900 text-base bg-purple-400  text-white py-4 px-10 rounded-full font-semibold">
+                                class="hover:bg-indigo-900 text-sm sm:text-base bg-purple-400  text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold">
                                 Lainnya</a>
 
                         </div>
