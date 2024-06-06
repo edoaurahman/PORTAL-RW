@@ -54,7 +54,7 @@ class UMKMModel extends Model
     public function textcut()
     {
         $nama = $this->nama_umkm;
-        return Str::limit($nama, 19);
+        return Str::limit($nama, 16);
     }
     public function getCover(): string
     {

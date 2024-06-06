@@ -99,7 +99,7 @@
                             </div>
                             <div class="items w-full h-full m-auto rounded-2xl shadow-md  ">
                                 <div class="item-img pb-5">
-                                    <img class="w-auto rounded-t-lg h-[200px] object-cover"
+                                    <img class=" rounded-t-lg h-[200px] w-full object-cover"
                                         src="{{ $item->getCover() }}" alt="">
                                 </div>
                                 <div class="item-info p-5">

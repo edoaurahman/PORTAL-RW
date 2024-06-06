@@ -211,9 +211,11 @@ class UMKMTest extends TestCase
         ];
 
         $akun = AkunModel::all();
-        $response = $this->actingAs($akun->random())->post('/umkm/store', $UMKM[rand(0, 9)]);
-        $response->assertSessionHasNoErrors();
-        $response->assertStatus(302);
-        $response->assertRedirect('/umkm/dashboard');
+        for ($i = 0; $i < 90; $i++) {
+            $response = $this->actingAs($akun[$i])->post('/umkm/store', $UMKM[rand(0, 9)]);
+            $response->assertSessionHasNoErrors();
+            $response->assertStatus(302);
+            $response->assertRedirect('/umkm/dashboard');
+        }
     }
 }

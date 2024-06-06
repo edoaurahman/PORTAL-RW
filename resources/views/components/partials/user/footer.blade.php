@@ -1,5 +1,5 @@
 <footer class="w-full bg-black1">
-    <div class="sm:max-w-6xl mx-auto py-10">
+    <div class="sm:max-w-6xl mx-auto py-15">
         <div class="company text-center">
             <p class="text-sm font-sans text-gray-500">Developed with love by <span class="text-white">ALIMPROJECT</span>
                 © 2024</p>
