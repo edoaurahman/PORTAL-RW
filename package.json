@@ -17,6 +17,7 @@
     "dependencies": {
         "apexcharts": "^3.49.0",
         "flowbite": "^2.3.0",
+        "puppeteer": "^22.10.0",
         "quill-image-resize": "^3.0.9"
     }
 }

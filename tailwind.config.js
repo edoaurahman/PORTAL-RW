@@ -12,6 +12,7 @@ export default {
       'sans': ['Poppins', 'open Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
       'serif': ['Noto Serif', 'ui-serif'],
       satoshi: ['Satoshi', 'sans-serif'],
+      'surat': ['times new roman', 'serif'],
     },
     extend: {
       colors: {
@@ -24,9 +25,9 @@ export default {
         'black4': '#8D90A8',
 
         // warna user dark mode
-        'biru':'#00c0ff',
-        'ungu_muda':'#3a2b71',
-        'paragraf':'#b0abc3',
+        'biru': '#00c0ff',
+        'ungu_muda': '#3a2b71',
+        'paragraf': '#b0abc3',
 
 
         // -----
@@ -282,7 +283,7 @@ export default {
         bottomtop: {
           '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
           '50%': { transform: 'translate3d(0, -100%, 0)' },
-        },fadeIn: {
+        }, fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
