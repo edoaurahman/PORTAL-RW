@@ -17,12 +17,12 @@
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto font-sans  ">
+    <section class="max-w-6xl mx-auto font-sans p-6  ">
         <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
             <div class="p-5">
-                <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Layanan
+                <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Inventaris
                 </h5>
-                <p> Temukan beragam layanan yang kami tawarkan untuk membantu Anda. Dari pelayanan pengurusan data penduduk hingga berbagai kebutuhan perizinan, kami hadir untuk membantu dan mempermudah akses layanan bagi masyarakat. <br><br></p>
+                <p> Temukan beragam Inventaris milik kita yang dapat dipinjam untuk membantu kebutuhan anda ataupun keperluan bersama. Inventaris yang tersedia bersumber dari dana Kas warga yang setiap pengeluarannya di setujui oleh warga, maka gunakanlah inventaris kita sebaik mungkin. <br><br></p>
                 <div class="flex flex-row gap-x-4 items-end">
                     <a href="#tutorial"
                         class="hover:bg-indigo-900 dark:hover:bg-purple-700 text-base bg-ungu dark:bg-black border dark:border-purple-700  text-white py-4 px-10 rounded-lg font-semibold">Cara
@@ -34,7 +34,7 @@
 
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div>
-            <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Daftar Inventaris</h5>
+            <h5 class="mb-2 p-6 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Daftar Inventaris</h5>
         </div>
         <div class="min-h-screen">
             <main class="p-8">
