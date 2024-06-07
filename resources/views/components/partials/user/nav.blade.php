@@ -117,28 +117,28 @@
                             <li>
                                 <a href="{{ route('user.profile') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-user w-[22px]" aria-hidden="true"></i>
                                     Profil Saya
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('user.berita.dashboard') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-regular fa-newspaper"></i>
+                                    <i class="fa-regular fa-newspaper w-[22px]"></i>
                                     Berita
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('user.umkm.dashboard') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-solid fa-shop"></i>
+                                    <i class="fa-solid fa-shop w-[22px]"></i>
                                     UMKM
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('user.bansos') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-solid fa-handshake"></i>
+                                    <i class="fa-solid fa-handshake w-[22px]"></i>
                                     Bansos
                                 </a>
                             </li>
