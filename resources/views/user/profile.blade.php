@@ -53,7 +53,7 @@
                             </h1>
                             <div class="mb-2 text-blueGray-600">
                                 <i
-                                    class="fas fa-venus-mars mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->jenis_kelamin }}
+                                    class="fa-solid fa-person-half-dress mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->jenis_kelamin }}
                             </div>
                             <div class="mb-2 text-blueGray-600">
                                 <i
@@ -61,14 +61,14 @@
                             </div>
                             <div class="mb-2 text-blueGray-600">
                                 <i
-                                    class="fas fa-venus-mars mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->agama }}
+                                    class="fa-solid fa-hands-praying mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->agama }}
                             </div>
                             <div class="mb-2 text-blueGray-600">
                                 <i
-                                    class="fas fa-venus-mars mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->status_perkawinan }}
+                                    class="fas fa-ring mr-2 text-lg text-blueGray-400"></i>{{ auth()->user()->penduduk->status_perkawinan }}
                             </div>
                             <div class="mb-2 text-blueGray-600">
-                                <i class="fas mr-2 text-lg text-blueGray-400"></i>Gol darah :
+                                <i class="fa-solid fa-droplet mr-2 text-lg text-blueGray-400"></i>Gol darah :
                                 {{ auth()->user()->penduduk->gol_darah }}
                             </div>
                             <div class="mb-2 text-blueGray-600 ">
