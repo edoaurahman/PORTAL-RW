@@ -104,17 +104,19 @@
                                 aria-labelledby="accordion-collapse-heading-1">
                                 <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                                     <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Pendatang"
-                                            name="status_penduduk[]"
+                                        <input onclick="formSubmit(this)" id="pendatang" type="checkbox"
+                                            {{ $request->status_penduduk ? (in_array('Pendatang', $request->status_penduduk) ? 'checked' : '') : '' }}
+                                            value="Pendatang" name="status_penduduk[]"
                                             class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
+                                        <label for="pendatang"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pendatang</label>
                                     </div>
                                     <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Penduduk Tetap"
-                                            name="status_penduduk[]"
+                                        <input onclick="formSubmit(this)" id="tetap" type="checkbox"
+                                            {{ $request->status_penduduk ? (in_array('Penduduk Tetap', $request->status_penduduk) ? 'checked' : '') : '' }}
+                                            value="Penduduk Tetap" name="status_penduduk[]"
                                             class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
+                                        <label for="tetap"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Penduduk
                                             Tetap</label>
                                     </div>
@@ -138,17 +140,19 @@
                                 aria-labelledby="accordion-collapse-heading-2">
                                 <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
                                     <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Laki-Laki"
-                                            name="jenis_kelamin[]"
+                                        <input onclick="formSubmit(this)"
+                                            {{ $request->jenis_kelamin ? (in_array('Laki-Laki', $request->jenis_kelamin) ? 'checked' : '') : '' }}
+                                            id="laki-laki" type="checkbox" value="Laki-Laki" name="jenis_kelamin[]"
                                             class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
+                                        <label for="laki-laki"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laki-Laki</label>
                                     </div>
                                     <div class="flex items-center my-2">
-                                        <input id="default-checkbox" type="checkbox" value="Perempuan"
-                                            name="jenis_kelamin[]"
+                                        <input onclick="formSubmit(this)" id="perempuan" type="checkbox"
+                                            {{ $request->jenis_kelamin ? (in_array('Perempuan', $request->jenis_kelamin) ? 'checked' : '') : '' }}
+                                            value="Perempuan" name="jenis_kelamin[]"
                                             class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="default-checkbox"
+                                        <label for="perempuan"
                                             class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Perempuan</label>
                                     </div>
                                 </div>
@@ -384,6 +388,12 @@
         if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
             const chart = new ApexCharts(document.getElementById("column-chart"), options);
             chart.render();
+        }
+    </script>
+
+    <script>
+        function formSubmit(e) {
+            e.form.submit();
         }
     </script>
 </x-layout.user-layout>

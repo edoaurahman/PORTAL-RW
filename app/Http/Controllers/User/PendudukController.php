@@ -65,7 +65,7 @@ class PendudukController extends Controller
         $totalPendudukPerempuanTetap = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
             $query->where('rt', auth()->user()->penduduk->alamat->rt);
         })->where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Penduduk Tetap')->count();
-        return view('user.penduduk.index', compact('penduduk', 'user', 'totalPenduduk', 'totalPendudukLakiLaki', 'totalPendudukPerempuan', 'totalPendudukPendatang', 'totalPendudukTetap', 'totalPendudukLakiLakiPendatang', 'totalPendudukPerempuanPendatang', 'totalPendudukLakiLakiTetap', 'totalPendudukPerempuanTetap'));
+        return view('user.penduduk.index', compact('penduduk', 'user', 'totalPenduduk', 'totalPendudukLakiLaki', 'totalPendudukPerempuan', 'totalPendudukPendatang', 'totalPendudukTetap', 'totalPendudukLakiLakiPendatang', 'totalPendudukPerempuanPendatang', 'totalPendudukLakiLakiTetap', 'totalPendudukPerempuanTetap', 'request'));
     }
 
     public function show($nik)
