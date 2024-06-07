@@ -28,4 +28,3 @@ jobs:
             php artisan config:clear
             npm install
             npm run build
-            rm -rf ./public/storage/
