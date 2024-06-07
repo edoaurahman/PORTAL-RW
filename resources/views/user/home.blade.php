@@ -160,8 +160,7 @@
             <section class="OurTeam py-5 sm:py-12">
                 <div class=" items-center">
                     <div>
-                        <h1
-                            class="pb-2 sm:pb-5 text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten ">
+                        <h1 class=" text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten ">
                             Daftar Ketua RT
                         </h1>
                         <p class="mt-4 text-center mx-auto lg:w-1/2 md:w-1/2">
@@ -274,11 +273,10 @@
                     <div class="gap-y-2 flex flex-col text-center">
                         <h1 class="text-black1 font-bold text-5xl leading-tight dark:text-whiten">Usaha Warga RW
                         </h1>
-                        <div class="text-base leading-loose text-black3 dark:text-white items-center">
-                            They built amazing website to help more people around the world <br>by using our
-                            recommendation
-                            services
-                            and products
+                        <div
+                            class="text-base leading-loose text-black3 dark:text-white items-center text-center mx-auto lg:w-1/2 md:w-1/2">
+                            "Usaha Warga RW" adalah program pemberdayaan ekonomi warga RW melalui pengembangan usaha
+                            lokal dan peningkatan akses pasar.
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
@@ -333,7 +331,8 @@
                         <h1 class="text-black1 font-bold text-4xl sm:text-5xl dark:text-whiten leading-tight">Aspirasi
                             Warga
                         </h1>
-                        <div class="text-sm sm:text-base leading-loose text-black3 dark:text-white items-center">
+                        <div
+                            class="text-sm sm:text-base leading-loose text-black3 dark:text-white items-center pb-6 mt-4">
                             Suarakan Keluh Kesah Pesan dan Kesan mu <br>untuk membangun Lingkungan RW 2 Menjadi Lebih
                             Baik
                         </div>
@@ -350,7 +349,7 @@
                                         </div>
 
                                         <span
-                                            class="text-sm font-normal text-start text-gray-500 dark:text-gray-400">pesan
+                                            class="text-sm font-normal text-start text-gray-500 dark:text-gray-400">Pesan
                                             :
                                         </span>
                                         <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
@@ -360,9 +359,8 @@
                                             class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
                                             @if ($item->status == 'pending')
                                                 <span
-                                                    class="text-sm font-normal text-gray-500 dark:text-gray-300">belum
-                                                    di
-                                                    respon</span>
+                                                    class="text-sm font-normal text-gray-500 dark:text-gray-300">Belum
+                                                    di respon</span>
                                             @else
                                                 <span
                                                     class="text-sm font-normal text-gray-500 dark:text-gray-300">Respon
@@ -388,7 +386,7 @@
                             <h1 class="text-white font-bold text-2xl sm:text-3xl leading-tight">Kirimkan Aspirasimu!
                             </h1>
                             <div class="text-sm sm:text-base leading-loose text-white">
-                                memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas
+                                Memberikan wadah bagi warga untuk berpartisipasi aktif dalam peningkatan kualitas
                                 layanan
                                 publik
                                 dan mendukung transparansi serta akuntabilitas.
@@ -401,11 +399,11 @@
                                 @csrf
                                 <textarea name="aspirasi" id="message" rows="4"
                                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
-                                    placeholder="tulis aspirasi disini..."></textarea>
+                                    placeholder="Tulis aspirasi disini..."></textarea>
 
                                 <button type="submit"
-                                    class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-400 dark:hover:bg-purple-700 dark:focus:ring-purple-800">kirim
-                                    aspirasi</button>
+                                    class="   my-2 text-white hover:bg-indigo-900  bg-kuning focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-400 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Kirim
+                                    Aspirasi</button>
                             </form>
                         </div>
                     </div>

@@ -4,11 +4,11 @@
             style="background-image: url(/assets/images/illustration/mieayam.webp);">
             <div
                 class="header-content absolute flex flex-col items-end gap-6 max-w-[50%] bottom-[10%] right-[6vw] animate-fadein3s">
-                <h2 class="font-medium text-right text-white text-7xl">Order your favorite food here</h2>
-                <p class="text-sm text-right text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Praesentium,
-                    accusamus odit
-                    aperiam numquam</p>
+                <h2 class="font-medium text-right text-white text-5xl leading-tight">Bangga Menggunakan Produk Lokal</h2>
+                <p class="text-sm text-right text-white">Mendukung produk lokal menunjukkan kebanggaan terhadap karya
+                    anak bangsa. Produk Indonesia
+                    berkualitas tinggi, mendorong ekonomi, menciptakan lapangan kerja, dan melestarikan budaya. Bangga
+                    menggunakan produk lokal berarti membangun masa depan Indonesia.</p>
             </div>
         </div>
     </section>
@@ -17,9 +17,10 @@
         <div class="explore-menu flex flex-col gap-5">
             <h1 class="text-[#262626] dark:text-white text-2xl font-semibold">Menjelajah UMKM</h1>
             <p class="explore-menu-text
-                max-w-[60%] ">Selamat menjelajahi Kuliner di Lingkungan RW 2,
-                tempat di mana setiap gigitan membawa Anda pada petualangan rasa yang tak terlupakan. Temukan hidangan
-                favorit Anda dan nikmati kelezatan kuliner Malang dalam genggaman tangan</p>
+                max-w-[60%] ">Mengenalkan Anda pada usaha mikro, kecil, dan
+                menengah yang menjadi pilar ekonomi lokal di RW 2 Arjosari. Temukan produk dan jasa unik dari UMKM di
+                lingkungan ini, dan dukung pertumbuhan ekonomi serta melestarikan kekayaan budaya Indonesia. Mari
+                bersama-sama mendukung UMKM untuk masa depan yang lebih baik.</p>
         </div>
     </section>
 
