@@ -16,14 +16,16 @@
                 </small>
             </h3>
         </div>
-        <div class="grid grid-cols-6 gap-4 pb-5">
-            <x-partials.admin.penduduk.filter />
+        <div class="sm:flex justify-between mb-5">
             <!-- Modal toggle -->
-            <button data-modal-target="add-akun-penduduk" data-modal-toggle="add-akun-penduduk"
-                class="!col-start-7 col-span-1 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button">
-                Buat Akun Penduduk
-            </button>
+            <div class="order-2 mb-5 flex justify-end">
+                <button data-modal-target="add-akun-penduduk" data-modal-toggle="add-akun-penduduk"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800"
+                    type="button">
+                    Buat Akun Penduduk
+                </button>
+            </div>
+            <x-partials.admin.penduduk.filter />
         </div>
         @if (session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-3"

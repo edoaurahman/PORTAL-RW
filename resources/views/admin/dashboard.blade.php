@@ -317,7 +317,6 @@
 
         <!--- struktur RW end-->
 
-        <x-partials.admin.struktur />
         <x-partials.admin.agenda.add-agenda />
         <x-partials.admin.agenda.edit-agenda />
     </div>
@@ -605,7 +604,7 @@
             }, {
                 label: 'Pengeluaran',
                 data: [
-                    @foreach ($pengeluaran as $value )
+                    @foreach ($pengeluaran as $value)
                         '{{ $value->total }}',
                     @endforeach
                 ], // Ganti dengan data pengeluaran per bulan
