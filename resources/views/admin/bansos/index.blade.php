@@ -19,14 +19,14 @@
             class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 p-5 bg-white dark:bg-gray-700 rounded my-5">
             <li class="me-2">
                 <a href="#"
-                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-purple-600 dark:hover:bg-gray-800 dark:hover:text-white"
-                    :class="{ 'text-white bg-purple-600': (method === 'SAW') }" @click="toggle('SAW')">Metode
+                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-blue-800 dark:hover:bg-purple-800 dark:hover:text-white"
+                    :class="{ 'text-white bg-blue-700 dark:bg-purple-700': (method === 'SAW') }" @click="toggle('SAW')">Metode
                     SAW</a>
             </li>
             <li class="me-2">
                 <a href="#"
-                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-purple-600 dark:hover:bg-gray-800 dark:hover:text-white"
-                    :class="{ 'text-white bg-purple-600': (method === 'AHP') }" @click="toggle('AHP')">Metode AHP</a>
+                    class="inline-block px-4 py-3 rounded-lg hover:text-white hover:bg-blue-800 dark:hover:bg-purple-800 dark:hover:text-white"
+                    :class="{ 'text-white bg-blue-700 dark:bg-purple-700': (method === 'AHP') }" @click="toggle('AHP')">Metode AHP</a>
             </li>
         </ul>
         @if (session('success'))

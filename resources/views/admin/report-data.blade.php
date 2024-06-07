@@ -14,7 +14,7 @@
             <div class="fixed end-6 bottom-6 group animate-bounce">
                 <button type="button" onclick="printJS('printJS-form', 'html')" aria-controls="speed-dial-menu-default"
                     aria-expanded="false"
-                    class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                    class="flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 dark:bg-purple-700 dark:hover:bg-purple-800 rounded-full w-14 h-14 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
                     <i class="fa-solid fa-print  text-xl"></i>
                     <span class="sr-only">Open actions menu</span>
                 </button>

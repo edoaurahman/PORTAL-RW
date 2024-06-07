@@ -46,7 +46,7 @@
             @endforeach
         @endif
         <!-- Start Body Content -->
-        <form action="{{ route('admin.keuangan.setting.update') }}" method="post" class="bg-white p-5 rounded">
+        <form action="{{ route('admin.keuangan.setting.update') }}" method="post" class="bg-white dark:bg-gray-700 p-5 rounded">
             @csrf
             <div class="mb-6">
                 <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimal
@@ -83,7 +83,7 @@
             </div>
 
             <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Simpan</button>
+                class="text-white bg-blue-700 hover:bg-blue-800 dark:bg-purple-700 dark:hover:bg-purple-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800">Simpan</button>
         </form>
         <!-- End Body Content -->
     </div>
