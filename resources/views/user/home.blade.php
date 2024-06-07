@@ -175,9 +175,8 @@
                         <div class="swiper-wrapper">
                             @foreach ($rt as $item)
                                 <div class="swiper-slide">
-                                    <div
-                                        class="relative group overflow-hidden w-[270px] h-[330px] bg-white rounded-2xl">
-                                        <div class="relative ">
+                                    <div class="relative group overflow-hidden h-[330px] bg-white rounded-2xl">
+                                        <div class="relative h-full">
                                             <div
                                                 class="absolute bg-indigo-900/0 group-hover:bg-indigo-900/80 w-full h-full transition ease-in-out duration-700 skew-x-12 group-hover:skew-x-0 rotate-90 group-hover:rotate-0">
                                                 <div class="flex h-full justify-center items-center gap-5">
@@ -417,8 +416,20 @@
 
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 4,
-            spaceBetween: 5,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                420: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+            },
             loop: true,
             pagination: {
                 el: ".swiper-pagination",
