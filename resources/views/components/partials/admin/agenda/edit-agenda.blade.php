@@ -4,7 +4,7 @@
         <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
     </div>
 
-    <div class="bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-[80vh] sm:w-full"
+    <div class="bg-white dark:bg-gray-700 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-[80vh] sm:w-full"
         @click.outside="$store.agenda.toggle()">
         <div class="p-4 md:p-5 space-y-4 overflow-y-auto max-h-[80vh]">
             <form action="{{ route('admin.agenda.update') }}" method="POST">
