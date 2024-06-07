@@ -98,7 +98,7 @@
                             <span
                                 class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
                         </span>
-                
+
                         <svg class="fill-current duration-300 ease-in-out" width="18" height="18"
                             viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -115,21 +115,21 @@
                                 fill="" />
                         </svg>
                     </a>
-                
+
                     <!-- Dropdown Start -->
                     <div x-show="dropdownOpen"
                         class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
                         <div class="px-4.5 py-3">
                             <h5 class="text-sm font-medium text-bodydark2">Pengaduan Masyarakat</h5>
                         </div>
-                
+
                         <ul class="flex h-auto flex-col overflow-y-auto">
                             @foreach ($aspirasi as $item)
                                 <li>
                                     <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                                        href="{{ route('admin.aspirasi')}}">
+                                        href="{{ route('admin.aspirasi') }}">
                                         <i class="fa fa-user-circle h-12.5 w-12.5" aria-hidden="true"></i>
-                
+
                                         <div>
                                             <h6 class="text-sm font-medium text-black dark:text-white">
                                                 {{ $item->penduduk->nama }}
@@ -143,7 +143,7 @@
                         </ul>
                     </div>
                     <!-- Dropdown End -->
-                </li>                
+                </li>
                 <!-- Chat Notification Area -->
             </ul>
 
@@ -171,15 +171,10 @@
                     <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
                         <li>
                             <a href="{{ route('user.profile') }}"
-                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 448 512">
-                                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path
-                                            d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
-                                    </svg>
-                                    Profil Saya
-                                </a>
+                                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Profil Saya
+                            </a>
                         </li>
                         <li>
                             <a href="{{ route('user.home') }}"
