@@ -157,7 +157,7 @@
                 </div>
             </section>
 
-            <section class="Our Team max-w-6xl mx-auto font-sans py-5 sm:py-20">
+            <section class="OurTeam py-5 sm:py-12">
                 <div class=" items-center">
                     <div>
                         <h1
@@ -326,7 +326,7 @@
                     </div>
                 </div>
             </section>
-            <section class="aspirasi mx-auto font-sans pt-12 pb-5 sm:pb-12">
+            <section class="aspirasi mx-auto font-sans pt-12 pb-5 sm:py-12">
                 <div class="flex flex-col gap-y-8">
                     <div class="gap-y-2 flex flex-col text-center">
                         <h1 class="text-black1 font-bold text-4xl sm:text-5xl dark:text-whiten leading-tight">Aspirasi
