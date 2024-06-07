@@ -113,7 +113,7 @@
                                 </div>
                                 <input type="time" id="start_time" name="start_time"
                                     class="bg-gray-50 border leading-none border-gray-300 text-gray-900 dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    min="01:00" max="18:00" value="00:00" required />
+                                    value="00:00" required />
                             </div>
                         </div>
                         <div>
@@ -132,7 +132,7 @@
                                 </div>
                                 <input type="time" id="end_time" name="end_time"
                                     class="bg-gray-50 border leading-none border-gray-300 text-gray-900 dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    min="01:00" max="00:00" value="00:00" required />
+                                    value="00:00" required />
                             </div>
                         </div>
                     </div>
