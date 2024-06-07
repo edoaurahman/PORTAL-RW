@@ -1,10 +1,10 @@
 <x-layout.form-login-layout>
     <div class="sm:grid grid-cols-2 h-screen">
         <div class="hidden sm:flex justify-center items-center bg-transparent col-span-1">
-            <div class="absolute z-[-1] h-screen w-screen bg-[#1f1345]" id="particles-js"></div>
+            <div class="absolute z-[-1] h-screen w-screen bg-purple-400" id="particles-js"></div>
             <div class="text-right pr-20 pl-20 ">
                 <h2 class="text-5xl font-extrabold font-sans text-white mb-5 uppercase">Hubungan <span
-                        class="text-biru">Era
+                        class="text-indigo-700">Era
                         Digital</span>
                 </h2>
                 <p class="text-white text-lg mb-9">Selamat datang di Portal Web RW 02, tempat di mana Anda dapat
@@ -14,7 +14,7 @@
                     kita.</p>
                 <a href="{{ route('user.home') }}">
                     <button type="button"
-                        class="text-white hover:text-biru hover:bg-white bg-biru focus:ring-4 focus:outline-none focus:ring-white font-medium text-base px-8 py-2.5 text-center me-2 mb-2 ">
+                        class="text-white hover:text-indigo-700 hover:bg-white bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-white font-medium text-base px-8 py-2.5 text-center me-2 mb-2 ">
                         Beranda</button>
                 </a>
             </div>
@@ -22,7 +22,7 @@
         <div class="sm:py-0 py-20 flex justify-center items-center bg-white col-span-1" x-data="{ page: 'penduduk' }">
             <form class="w-full sm:pl-20 sm:pr-24 sm:px-0 px-10" action="{{ route('auth') }}" method="POST">
                 @csrf
-                <h1 class="text-3xl font-sans font-medium text-ungu mb-2">Welcome!</h1>
+                <h1 class="text-3xl font-sans font-medium text-purple-500 mb-2">Welcome!</h1>
                 <h3 class="text-2xl font-sans font-normal capitalize mb-8">Masuk ke akun anda</h3>
 
                 <div class="mb-5">
@@ -52,7 +52,7 @@
                 @enderror
                 <input type="hidden" name="page" :value="page">
                 <button type="submit"
-                    class="text-white bg-ungu hover:bg-indigo-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-4 w-full text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
+                    class="bg-purple-400 hover:bg-indigo-700 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-4 w-full text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
             </form>
             {{-- <div class="flex justify-end z-50 fixed text-white right-4 top-2">
                 <button
@@ -110,13 +110,13 @@
                         }
                     },
                     "color": {
-                        "value": "#fff"
+                        "value": "#edebfe"
                     },
                     "shape": {
                         "type": "circle",
                         "stroke": {
                             "width": 0,
-                            "color": "#000000"
+                            "color": "#6c2bd9"
                         },
                         "polygon": {
                             "nb_sides": 5
@@ -150,7 +150,7 @@
                     "line_linked": {
                         "enable": true,
                         "distance": 150,
-                        "color": "#640EF1",
+                        "color": "#6c2bd9",
                         "opacity": 0.4,
                         "width": 1
                     },
