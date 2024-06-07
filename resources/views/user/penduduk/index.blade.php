@@ -220,15 +220,7 @@
                                 <div class="ps-3">
                                     <div class="sm:text-base font-semibold">{{ $item->nama }}</div>
                                     <div class="font-normal text-gray-500">
-                                        @if ($item->akun->level->nama_level == 'RW')
-                                            RW
-                                        @elseif ($item->akun->level->nama_level == 'RT')
-                                            RT
-                                        @elseif ($item->akun->level->nama_level == 'Penduduk')
-                                            Penduduk Tetap
-                                        @else
-                                            Pendatang
-                                        @endif
+                                        {{ $item->akun->level->nama_level != 'Penduduk' ? $item->akun->level->nama_level : $item->status_penduduk }}
                                     </div>
                                 </div>
                             </th>
