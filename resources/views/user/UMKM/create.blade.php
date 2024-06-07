@@ -25,7 +25,8 @@
         @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Request Pendaftaran UMKM
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 dark:text-white">Request
+                    Pendaftaran UMKM
                 </h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400 text-justify">Dalam proses pencatatan
                     data UMKM,
@@ -38,14 +39,15 @@
                 <div class="mt-10 gap-x-6 gap-y-8">
                     <div class="sm:col-span-4">
                         <label for="username"
-                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Nama Usaha
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300 dark:text-gray-100">Nama
+                            Usaha
                             Mikro Kecil dan Menengah (UMKM)</label>
                         <div class="mt-2">
                             <div
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                 <input type="text" value="{{ old('nama_umkm') }}" name="nama_umkm" id="nama_umkm"
                                     required autocomplete="off"
-                                    class="block flex-1 border-0 bg-transparent ml-1 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                    class="block flex-1 border-0 bg-transparent ml-1 py-1.5 pl-1 text-gray-900 dark:text-gray-300 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="Toko..">
                             </div>
                         </div>
@@ -53,7 +55,7 @@
 
                     <div class="col-span-full mt-4">
                         <label for="cover-photo"
-                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Cover
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300 dark:text-gray-100">Cover
                             photo</label>
                         <div
                             class="mt-2 flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
@@ -87,7 +89,8 @@
             </div>
 
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">Informasi Data</h2>
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 dark:text-gray-100">
+                    Informasi Data</h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300">Tersedia informasi terbaru mengenai
                     jam operasional dan
                     layanan UMKM, lengkap dengan kategori produk, waktu buka dan tutup.</p>
@@ -96,7 +99,8 @@
                     <div id="time-range-container" class="mt-4 grid grid-cols-2 gap-4 mb-6 ">
                         <div>
                             <label for="start-time"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam Buka:</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 dark:text-white">Jam
+                                Buka:</label>
                             <div class="relative">
                                 <div
                                     class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
@@ -108,13 +112,14 @@
                                     </svg>
                                 </div>
                                 <input type="time" id="start_time" name="start_time"
-                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     min="01:00" max="18:00" value="00:00" required />
                             </div>
                         </div>
                         <div>
                             <label for="end-time"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam Tutup:</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 dark:text-white">Jam
+                                Tutup:</label>
                             <div class="relative">
                                 <div
                                     class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
@@ -126,7 +131,7 @@
                                     </svg>
                                 </div>
                                 <input type="time" id="end_time" name="end_time"
-                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="bg-gray-50 border leading-none border-gray-300 text-gray-900 dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     min="01:00" max="00:00" value="00:00" required />
                             </div>
                         </div>
@@ -134,9 +139,11 @@
                 </div>
 
                 <fieldset class="mt-10">
-                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">Pilih Hari Buka
+                    <legend
+                        class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300 dark:text-gray-100">
+                        Pilih Hari Buka
                     </legend>
-                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300">
+                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300 dark:text-gray-300">
                         <div class="flex items-center gap-x-3">
                             <input id="Senin" value="Senin" name="hari[]" type="checkbox"
                                 class="h-4 w-4 border-gray-300">
@@ -176,10 +183,12 @@
                 </fieldset>
 
                 <fieldset class="mt-10">
-                    <legend class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">Pilih Kategori
+                    <legend
+                        class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300 dark:text-gray-100">
+                        Pilih Kategori
                         Mikro Kecil dan
                         Menengah (UMKM)</legend>
-                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300">
+                    <div class="mt-4 space-y-3 text-gray-900 dark:text-gray-300 dark:text-gray-300">
                         @foreach ($kategori as $item)
                             <div class="flex items-center gap-x-3">
                                 <input type="checkbox" id="list_kategori-{{ $item->id_kategori }}"
@@ -195,7 +204,8 @@
             </div>
 
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">Deskripsi
+                <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 dark:text-gray-100">
+                    Deskripsi
                     Mikro Kecil dan Menengah (UMKM)
                 </h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600 text-justify dark:text-gray-300">Disini Anda dapat
@@ -207,7 +217,7 @@
                 <div class="mt-10 space-y-10">
                     <div class="col-span-full mt-4">
                         <label for="cover-photo"
-                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Slider
+                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-300 dark:text-gray-100">Slider
                             photo
                             header UMKM</label>
                         <div
@@ -244,7 +254,8 @@
 
             <div class="mt-6 flex items-center justify-end gap-x-6">
                 <a href="{{ route('user.umkm.dashboard') }}">
-                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button></a>
+                    <button type="button"
+                        class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">Cancel</button></a>
                 <button type="submit"
                     class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
             </div>
