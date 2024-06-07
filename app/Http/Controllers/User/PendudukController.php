@@ -51,7 +51,7 @@ class PendudukController extends Controller
         })->where('status_penduduk', 'Pendatang')->count();
         $totalPendudukTetap = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
             $query->where('rt', auth()->user()->penduduk->alamat->rt);
-        })->where('status_penduduk', 'Tetap')->count();
+        })->where('status_penduduk', 'Penduduk Tetap')->count();
 
         $totalPendudukLakiLakiPendatang = PendudukModel::with('alamat')->whereHas('alamat', function ($query) {
             $query->where('rt', auth()->user()->penduduk->alamat->rt);

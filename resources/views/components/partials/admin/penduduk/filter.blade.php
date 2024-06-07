@@ -1,4 +1,4 @@
-<form class="w-full col-span-3 !col-start-1">
+<form class="sm:w-[50vw] order-1">
     <div class="flex">
         <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Filter</label>
         <button id="dropdown-filter" data-dropdown-toggle="filter"
