@@ -77,7 +77,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 items-center sm:gap-x-10">
                     <div class="flex flex-row item-center justify-center">
                         <img src="{{ $rw->penduduk->foto_profile() }}" alt=""
-                            class="hidden sm:block sm:h-[500px] rounded-xl">
+                            class="hidden sm:block  sm:h-[500px] rounded-xl object-cover">
                     </div>
                     <div class="">
                         <div>
