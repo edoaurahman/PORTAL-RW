@@ -103,6 +103,7 @@
                             <div id="accordion-collapse-body-1" class="hidden"
                                 aria-labelledby="accordion-collapse-heading-1">
                                 <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+
                                     <div class="flex items-center my-2">
                                         <input onclick="formSubmit(this)" id="pendatang" type="checkbox"
                                             {{ $request->status_penduduk ? (in_array('Pendatang', $request->status_penduduk) ? 'checked' : '') : '' }}
@@ -218,7 +219,17 @@
                                     class="rounded-full object-cover w-12 h-12" />
                                 <div class="ps-3">
                                     <div class="sm:text-base font-semibold">{{ $item->nama }}</div>
-                                    <div class="font-normal text-gray-500">{{ $item->status_penduduk }}</div>
+                                    <div class="font-normal text-gray-500">
+                                        @if ($item->akun->level->nama_level == 'RW')
+                                            RW
+                                        @elseif ($item->akun->level->nama_level == 'RT')
+                                            RT
+                                        @elseif ($item->akun->level->nama_level == 'Penduduk')
+                                            Penduduk Tetap
+                                        @else
+                                            Pendatang
+                                        @endif
+                                    </div>
                                 </div>
                             </th>
                             <td class="px-6 py-4 hidden sm:table-cell">
