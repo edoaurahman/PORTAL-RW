@@ -172,7 +172,7 @@
                         <li>
                             <a href="{{ route('user.profile') }}"
                                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <i class="fa fa-user w-[22px]" aria-hidden="true"></i>
                                 Profil Saya
                             </a>
                         </li>
