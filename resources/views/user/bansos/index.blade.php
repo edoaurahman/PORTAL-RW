@@ -10,7 +10,8 @@
                                 Riwayat Penerimaan Bansos
                             </p>
                         </div>
-                        <h2 class="font-bold text-black dark:text-white text-6xl">Bansos Untuk Rakyat Yang Membutuhkan</h2>
+                        <h2 class="font-bold text-black dark:text-white text-6xl">Bansos Untuk Rakyat Yang Membutuhkan
+                        </h2>
                     </div>
                     <div class=" flex-1 text-base leading-loose text-black3">
                         <p class="text-sm text-black3 dark:text-gray-400">
@@ -114,6 +115,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 {{ $item->alasan ?? 'Tidak ada pesan' }}
+                                {{ $item->status == 'approved' ? 'Silahkan datang ke kantor desa untuk mengambil bansos' : '' }}
                             </td>
                         </tr>
                     @endforeach
