@@ -29,7 +29,7 @@ class PendudukSeeder extends Seeder
                     'gol_darah' => 'O',
                     'no_kk' => '3522110504040001',
                     'no_hp' => '083193985902',
-                    'status_penduduk' => 'Pendatang',
+                    'status_penduduk' => 'Penduduk Tetap',
                     'id_alamat' => '1',
                     'image' => url('assets/images/user/user-01.png')
                 ],
@@ -168,7 +168,7 @@ class PendudukSeeder extends Seeder
                 ['nik' => '3522110504040051', 'nama' => "Nur Hidayat", 'tempat_lahir' => 'Semarang', 'tgl_lahir' => '1993-01-02', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'O', 'no_kk' => '3522110504040017', 'no_hp' => '081234512406', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-14.png')],
                 ['nik' => '3522110504040052', 'nama' => "Oki Setiawan", 'tempat_lahir' => 'Solo', 'tgl_lahir' => '1992-05-01', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'A', 'no_kk' => '3522110504040017', 'no_hp' => '081234512407', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-15.png')],
                 ['nik' => '3522110504040053', 'nama' => "Putri Ayu", 'tempat_lahir' => 'Bandung', 'tgl_lahir' => '1991-04-30', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Katolik', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Pelajar', 'gol_darah' => 'AB', 'no_kk' => '3522110504040017', 'no_hp' => '081234512408', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 18, 'image' => url('assets/images/user/user-16.png')],
-                
+
                 // zaki nik 54 - 69 (RT4)
                 // kk 1
                 ['nik' => '3522110504040054', 'nama' => "Rama Saputra", 'tempat_lahir' => 'Jakarta', 'tgl_lahir' => '2005-12-10', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'AB', 'no_kk' => '3522110504040018', 'no_hp' => '081234512301', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 19, 'image' => url('assets/images/user/user-06.png')],
@@ -179,7 +179,7 @@ class PendudukSeeder extends Seeder
                 ['nik' => '3522110504040058', 'nama' => "Farhan Yuda", 'tempat_lahir' => 'Semarang', 'tgl_lahir' => '2006-03-12', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Buddha', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'O', 'no_kk' => '3522110504040019', 'no_hp' => '081234512305', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 20, 'image' => url('assets/images/user/user-10.png')],
                 ['nik' => '3522110504040059', 'nama' => "Galih Pratama", 'tempat_lahir' => 'Bandung', 'tgl_lahir' => '2005-10-05', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'AB', 'no_kk' => '3522110504040019', 'no_hp' => '081234512306', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 20, 'image' => url('assets/images/user/user-11.png')],
                 ['nik' => '3522110504040060', 'nama' => "Wira Saputra", 'tempat_lahir' => 'Surabaya', 'tgl_lahir' => '2004-04-25', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'A', 'no_kk' => '3522110504040019', 'no_hp' => '081234512307', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 20, 'image' => url('assets/images/user/user-12.png')],
-                ['nik' => '3522110504040061', 'nama' => "Hana Salsabila", 'tempat_lahir' => 'Palembang', 'tgl_lahir' => '2003-02-14', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'B', 'no_kk' => '3522110504040019', 'no_hp' => '081234512308', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 20, 'image' => url('assets/images/user/user-13.png')],             
+                ['nik' => '3522110504040061', 'nama' => "Hana Salsabila", 'tempat_lahir' => 'Palembang', 'tgl_lahir' => '2003-02-14', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'B', 'no_kk' => '3522110504040019', 'no_hp' => '081234512308', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 20, 'image' => url('assets/images/user/user-13.png')],
                 // kk 3
                 ['nik' => '3522110504040062', 'nama' => "Intan Putri", 'tempat_lahir' => 'Lampung', 'tgl_lahir' => '2002-06-22', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'O', 'no_kk' => '3522110504040020', 'no_hp' => '081234512309', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 21, 'image' => url('assets/images/user/user-14.png')],
                 ['nik' => '3522110504040063', 'nama' => "Joko Hartono", 'tempat_lahir' => 'Batam', 'tgl_lahir' => '2006-09-27', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Hindu', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'A', 'no_kk' => '3522110504040020', 'no_hp' => '081234512310', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 21, 'image' => url('assets/images/user/user-15.png')],
@@ -190,7 +190,7 @@ class PendudukSeeder extends Seeder
                 ['nik' => '3522110504040067', 'nama' => "Ahmad Dhani", 'tempat_lahir' => 'Padang', 'tgl_lahir' => '2005-07-23', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'A', 'no_kk' => '3522110504040021', 'no_hp' => '081234512314', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 22, 'image' => url('assets/images/user/user-19.png')],
                 ['nik' => '3522110504040068', 'nama' => "Dewi Kartika", 'tempat_lahir' => 'Malang', 'tgl_lahir' => '2004-02-12', 'jenis_kelamin' => 'Perempuan', 'agama' => 'Kristen', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'B', 'no_kk' => '3522110504040021', 'no_hp' => '081234512315', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 22, 'image' => url('assets/images/user/user-20.png')],
                 ['nik' => '3522110504040069', 'nama' => "Azka Setiawan", 'tempat_lahir' => 'Yogyakarta', 'tgl_lahir' => '2003-06-09', 'jenis_kelamin' => 'Laki-Laki', 'agama' => 'Islam', 'status_perkawinan' => 'Belum Kawin', 'pekerjaan' => 'Mahasiswa', 'gol_darah' => 'AB', 'no_kk' => '3522110504040021', 'no_hp' => '081234512316', 'status_penduduk' => 'Penduduk Tetap', 'id_alamat' => 22, 'image' => url('assets/images/user/user-21.png')],
-                
+
 
                 // edo nik 70 - 85 (RT5)
                 // KK 1

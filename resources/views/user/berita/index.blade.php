@@ -129,9 +129,6 @@
 
                     </div>
 
-                    {{-- * divider * --}}
-                    <div class="border border-dotted"></div>
-
                     {{-- * subscribe * --}}
                     <div class="p-1 mt-4 mb-4">
                         <h5 class="font-bold text-lg uppercase text-gray-700 dark:text-gray-100 mb-2"> Pentingnya Berita
@@ -149,10 +146,6 @@
                             yang lebih baik untuk kesejahteraan bersama.
                         </p>
                     </div>
-
-                    {{-- * divider * --}}
-                    <div class="border border-dotted"></div>
-
                 </div>
 
             </div>
