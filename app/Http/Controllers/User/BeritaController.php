@@ -33,9 +33,6 @@ class BeritaController extends Controller
                 $q->where('nama_kategori', $request->kategori);
             });
         }
-        if ($request->has('s')) {
-            $query->where('judul', 'like', '%' . $request->s . '%');
-        }
         $berita = $query->paginate($this->paggination)->withQueryString();
         return view('user.berita.index', compact('berita', 'kategori_populer', 'berita_populer'));
     }
