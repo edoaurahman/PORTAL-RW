@@ -18,4 +18,12 @@ class AgendaController extends Controller
             ->get();
         return response()->json($agenda);
     }
+
+    public function update(Request $request)
+    {
+        $agenda = AgendaModel::findOrFail($request->id);
+        $agenda->update($request->all());
+
+        return response()->json($agenda);
+    }
 }

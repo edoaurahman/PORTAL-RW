@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::put('/agenda/update', [AgendaController::class, 'update']);
+Route::post('/agenda', [AgendaController::class, 'index']);
 Route::get('/data-rt/{id}', [RTController::class, 'getDataRT']);
 Route::get('/kk/{no_kk}', [PendudukController::class, 'getPendudukByKK']);
 Route::get('/bansos/saw', [BansosController::class, 'method_saw']);
 Route::get('/bansos/ahp', [BansosController::class, 'method_ahp']);
-
-Route::post('/agenda', [AgendaController::class, 'index']);
