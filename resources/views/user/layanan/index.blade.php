@@ -19,7 +19,7 @@
     </section>
 
     <section class="max-w-6xl mx-auto font-sans p-6 ">
-        <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
+        <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-[#2d1c63] ">
             <div class="p-5">
                 <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Layanan
                 </h5>
@@ -39,7 +39,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
             @foreach ($layanan as $item)
-                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-[#2d1c63] dark:border-gray-700">
                         <img class="rounded-t-lg h-70 bg-purple-400 object-cover" src="{{ $item->getImage() }}"
                             alt="" />
                     <div class="p-5">

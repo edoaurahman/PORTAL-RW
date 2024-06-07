@@ -7,7 +7,7 @@
             
             <div class="relative p-4 w-full max-w-2xl max-h-[80%]">
                 <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="relative bg-white rounded-lg shadow dark:bg-[#1f1345]">
                     <!-- Modal header -->
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
@@ -29,7 +29,7 @@
                                 <i class="fa-solid fa-hashtag"></i>
                             </div>
                             <input type="hidden" name="id_inventaris">
-                            <input readonly autocomplete="off" required name="nama" type="text" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="">
+                            <input readonly autocomplete="off" required name="nama" type="text" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5  dark:bg-[#2d1c63] dark:border-purple-600 dark:placeholder-purple-700 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="">
                         </div>
 
                         <label for="jumlah" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">jumlah</label>
@@ -37,13 +37,13 @@
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-hashtag"></i>
                             </div>
-                            <input autocomplete="off" required name="jumlah" type="number" min="1" id="jumlah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Masukkan jumlah">
+                            <input autocomplete="off" required name="jumlah" type="number" min="1" id="jumlah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full ps-10 p-2.5  dark:bg-[#2d1c63] dark:border-purple-600 dark:placeholder-purple-700 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Masukkan jumlah">
                         </div>
 
                         <!-- Modal footer -->
                         <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                             <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Ajukan Peminjaman</button>
-                            <button data-modal-hide="pinjam-inventaris" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tutup</button>
+                            <button data-modal-hide="pinjam-inventaris" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-purple-700 dark:bg-purple-800 dark:text-purple-400 dark:border-purple-600 dark:hover:text-white dark:hover:bg-purple-700">Tutup</button>
                         </div>
                     </div>
                 </div>
