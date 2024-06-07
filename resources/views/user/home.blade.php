@@ -199,7 +199,7 @@
                                             </p>
                                             <p
                                                 class="text-gray-500 text-center group-hover:text-gray-800 dark:text-paragraf">
-                                                Ketua RT</p>
+                                                Ketua RT {{ $item->penduduk->alamat->rt }}</p>
                                             <img class="absolute -left-10 -bottom-10"
                                                 src="{{ asset('assets/images/illustration/circle.svg') }}"
                                                 alt="circle">
