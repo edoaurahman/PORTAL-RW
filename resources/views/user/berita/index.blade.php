@@ -1,12 +1,5 @@
 <x-layout.user-layout>
     <div class="dark:bg-[#1f1345] px-7 w-full sm:max-w-6xl mx-auto font-sans pt-[100px]">
-        {{-- judul = text-gray-600 --}}
-        {{-- sub = text-purple-500 dark:text-purple-700 --}}
-        {{-- paragaraf = text-gray-500 --}}
-        {{-- button = bg-purple-400 hover:bg-indigo-700 text-white dark:bg-purple-700 dark:hover:bg-white --}}
-        {{-- dark:hover:text-purple-700 --}}
-        {{-- form = bg-purple-100 dark:bg-ungu_muda --}}
-
         <section class="{{ $berita == null ? 'hidden' : '' }} mt-10 max-w-6xl mx-auto">
             <div class="block md:flex md:space-x-2 px-2 lg:p-0">
 
@@ -34,7 +27,7 @@
                     </div>
                 </a>
 
-                <a class="{{ $berita_populer[1] == null ? 'hidden' : '' }} w-full md:w-1/3 relative rounded hidden sm:block"
+                <a class="{{ $berita_populer[1] == null ? 'hidden' : '' }} w-full md:w-1/3 relative rounded hidden md:block"
                     style=height: 24em; href="{{ route('user.berita.detail', $berita_populer[1]->slug) }}">
                     <div class="absolute left-0 top-0 w-full h-full z-10"
                         style="background-image:linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
