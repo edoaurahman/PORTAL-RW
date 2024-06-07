@@ -1,4 +1,5 @@
-<nav class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
+<nav
+    class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
@@ -86,7 +87,8 @@
                     <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
                         <span class="hidden text-right lg:block">
                             <span class="block text-sm font-medium text-black dark:text-white">{{ $username }}</span>
-                            <span class="block text-xs font-medium text-black dark:text-white">{{ $level }}</span>
+                            <span
+                                class="block text-xs font-medium text-black dark:text-white">{{ $level == 'RT' ? 'Ketua ' . $level : $level }}</span>
                         </span>
 
                         <img src="{{ auth()->user()->penduduk->foto_profile() }}" alt="User"
