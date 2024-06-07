@@ -114,7 +114,7 @@
                                 {{ $item->created_at }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->alasan ?? 'Tidak ada pesan' }}
+                                {{ $item->alasan ?? '' }}
                                 {{ $item->status == 'approved' ? 'Silahkan datang ke kantor desa untuk mengambil bansos' : '' }}
                             </td>
                         </tr>
