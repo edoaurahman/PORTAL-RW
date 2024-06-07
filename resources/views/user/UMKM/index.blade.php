@@ -9,9 +9,6 @@
                     Praesentium,
                     accusamus odit
                     aperiam numquam</p>
-                <button
-                    class="border-none items-end text-[#747474] font-medium py-3 px-6 bg-white text-sm rounded-[50px]">Detail
-                    Showcase</button>
             </div>
         </div>
     </section>
@@ -93,7 +90,7 @@
             <div class="display-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
                 @foreach ($umkm as $item)
                     <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
-                        <div class="group relative">
+                        <div class="group relative dark:bg-ungu_muda">
                             <div
                                 class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
                             </div>

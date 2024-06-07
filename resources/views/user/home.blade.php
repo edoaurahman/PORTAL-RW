@@ -149,8 +149,8 @@
                             </dl>
                             <div class="flex flex-row gap-x-4 items-center mt-10">
                                 <a href="{{ route('user.detail', $rw->penduduk->nik) }}"
-                                    class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
-                                    Pengantar</a>
+                                    class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">
+                                    Detail RW</a>
                             </div>
                         </div>
                     </div>
@@ -326,6 +326,7 @@
                     </div>
                 </div>
             </section>
+
             <section class="aspirasi mx-auto font-sans pt-12 pb-5 sm:py-12">
                 <div class="flex flex-col gap-y-8">
                     <div class="gap-y-2 flex flex-col text-center">
