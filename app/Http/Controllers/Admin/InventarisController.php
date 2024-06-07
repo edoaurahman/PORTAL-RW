@@ -42,7 +42,7 @@ class InventarisController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required,max:20',
+            'nama' => 'required|string|max:20',
             'jumlah' => 'required',
         ]);
         DB::transaction(function () use ($request) {
@@ -60,9 +60,10 @@ class InventarisController extends Controller
     public function edit(Request $request)
     {
         $request->validate([
-            'nama' => 'required,max:20',
+            'nama' => 'required|string|max:20',
             'jumlah' => 'required',
         ]);
+
         DB::transaction(function () use ($request) {
             $inventaris = InventarisModel::findOrFail($request->id_inventaris);
             if ($request->hasFile('image')) {
