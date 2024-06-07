@@ -1,7 +1,7 @@
 <nav
     class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex  items-center space-x-3 rtl:space-x-reverse">
+        <a href="{{ route('user.home') }}" class="flex  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
                 '{{ asset('assets/images/logo/logo-dark.png') }}'"
                 width="40px" height="auto" class="duration-300" alt="Logo" />
