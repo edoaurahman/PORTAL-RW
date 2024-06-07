@@ -18,14 +18,14 @@
     </section>
 
     <section class="max-w-6xl mx-auto font-sans p-6  ">
-        <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
+        <div class=" w-full bg-white  border-gray-200 rounded-lg shadow dark:bg-[#2d1c63] ">
             <div class="p-5">
                 <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Inventaris
                 </h5>
                 <p> Temukan beragam Inventaris milik kita yang dapat dipinjam untuk membantu kebutuhan anda ataupun keperluan bersama. Inventaris yang tersedia bersumber dari dana Kas warga yang setiap pengeluarannya di setujui oleh warga, maka gunakanlah inventaris kita sebaik mungkin. <br><br></p>
                 <div class="flex flex-row gap-x-4 items-end">
                     <a href="#tutorial"
-                        class="hover:bg-indigo-900 dark:hover:bg-purple-700 text-base bg-ungu dark:bg-black border dark:border-purple-700  text-white py-4 px-10 rounded-lg font-semibold">Cara
+                        class="hover:bg-indigo-900 dark:hover:bg-purple-700 text-base bg-ungu dark:bg-purple-800 border dark:border-purple-700  text-white py-4 px-10 rounded-lg font-semibold">Cara
                         Meminjam Inventaris</a>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <main class="p-8">
                 <div class="space-y-8">
                     @foreach ($inventaris as $item)
-                        <div class="bg-purple-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <div class="bg-purple-100 dark:bg-[#2d1c63] p-6 rounded-lg shadow-md">
                             <div class="flex flex-col sm:flex-row relative sm:items-center space-x-4">
                                 <img src="{{ $item->getImage() }}" alt="Terop"
                                     class="w-64 h-64 object-cover rounded-lg">

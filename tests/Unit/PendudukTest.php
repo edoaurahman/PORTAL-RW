@@ -42,7 +42,7 @@ class PendudukTest extends TestCase
                 "jalan" => $value->alamat->jalan,
                 "rt" => $value->alamat->rt,
                 "rw" => $value->alamat->rw,
-                "no_hp" => $value->alamat->no_hp,
+                "no_hp" => $value->no_hp,
                 "image" => $files[rand(0, count($files) - 1)],
             ]);
             $response->assertSessionHasNoErrors();

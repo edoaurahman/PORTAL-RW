@@ -28,6 +28,7 @@ export default {
         'biru': '#00c0ff',
         'ungu_muda': '#3a2b71',
         'paragraf': '#b0abc3',
+        'background': '#1f1345',
 
 
         // -----

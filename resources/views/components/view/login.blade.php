@@ -1,6 +1,6 @@
 <x-layout.form-login-layout>
-    <div class="grid grid-cols-2 h-screen">
-        <div class="flex justify-center items-center bg-transparent">
+    <div class="sm:grid grid-cols-2 h-screen">
+        <div class="hidden sm:flex justify-center items-center bg-transparent col-span-1">
             <div class="absolute z-[-1] h-screen w-screen bg-[#1f1345]" id="particles-js"></div>
             <div class="text-right pr-20 pl-20 ">
                 <h2 class="text-5xl font-extrabold font-sans text-white mb-5 uppercase">Hubungan <span
@@ -19,8 +19,8 @@
                 </a>
             </div>
         </div>
-        <div class="flex justify-center items-center bg-white" x-data="{ page: 'penduduk' }">
-            <form class="w-full pl-20 pr-24" action="{{ route('auth') }}" method="POST">
+        <div class="sm:py-0 py-20 flex justify-center items-center bg-white col-span-1" x-data="{ page: 'penduduk' }">
+            <form class="w-full sm:pl-20 sm:pr-24 sm:px-0 px-10" action="{{ route('auth') }}" method="POST">
                 @csrf
                 <h1 class="text-3xl font-sans font-medium text-ungu mb-2">Welcome!</h1>
                 <h3 class="text-2xl font-sans font-normal capitalize mb-8">Masuk ke akun anda</h3>
