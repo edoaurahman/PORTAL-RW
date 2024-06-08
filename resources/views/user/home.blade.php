@@ -190,7 +190,7 @@
                                                             class="fa-brands fa-whatsapp text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md  transition ease-linear "></i>
                                                     </a>
                                                     <a class="opacity-0 group-hover:opacity-100 delay-500 transition ease-linear"
-                                                        href="{{ $item->link_maps->link }}" target="_blank">
+                                                        href="{{ $item->link_maps->link ?? '#' }}" target="_blank">
                                                         <i
                                                             class="fa-solid fa-map text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md  transition ease-linear "></i>
                                                     </a>
