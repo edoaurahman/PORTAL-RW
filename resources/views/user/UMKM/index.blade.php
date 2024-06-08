@@ -88,10 +88,18 @@
                     </form>
                 </div>
             </div>
+
+            {{-- judul = text-gray-600 --}}
+            {{-- sub = text-purple-500 dark:text-purple-700 --}}
+            {{-- paragaraf = text-gray-500 --}}
+            {{-- button = bg-purple-400 hover:bg-indigo-700 text-white dark:bg-purple-700 dark:hover:bg-white --}}
+            {{-- dark:hover:text-purple-700 --}}
+            {{-- form = bg-purple-100 dark:bg-ungu_muda --}}
+
             <div class="display-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
                 @foreach ($umkm as $item)
                     <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
-                        <div class="group relative dark:bg-ungu_muda">
+                        <div class="group relative dark:bg-ungu_muda rounded-2xl">
                             <div
                                 class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
                             </div>
@@ -102,13 +110,13 @@
                                 </div>
                                 <div class="item-info p-5">
                                     <div class="item-rating flex justify-between items-center mt-3">
-                                        <p class="text-xl font-medium">{{ $item->textcut() }}</p>
+                                        <p class="text-xl font-medium dark:text-white">{{ $item->textcut() }}</p>
                                         {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                     </div>
-                                    <p class="item-desc text-gray-600 text-xs">{{ $item->generateCuplikan() }}</p>
+                                    <p class="item-desc text-gray-500 text-xs">{{ $item->generateCuplikan() }}</p>
 
                                     <div
-                                        class="item price group-hover:text-indigo-900 text-ungu text-sm font-medium my-3">
+                                        class="item price text-purple-400 group-hover:text-indigo-700  group-dark:hover:text-purple-700 text-sm font-medium my-3">
                                         Selengkapnya
                                     </div>
                                 </div>
