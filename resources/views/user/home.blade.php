@@ -179,12 +179,21 @@
                                             <div
                                                 class="absolute bg-indigo-900/0 group-hover:bg-indigo-900/80 w-full h-full transition ease-in-out duration-700 skew-x-12 group-hover:skew-x-0 rotate-90 group-hover:rotate-0">
                                                 <div class="flex h-full justify-center items-center gap-5">
-                                                    <i
-                                                        class="fa-solid fa-user text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md opacity-0 group-hover:opacity-100 transition ease-linear delay-500"></i>
-                                                    <i
-                                                        class="fa-brands fa-whatsapp text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md opacity-0 group-hover:opacity-100 transition ease-linear delay-500"></i>
-                                                    <i
-                                                        class="fa-solid fa-map text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md opacity-0 group-hover:opacity-100 transition ease-linear delay-500"></i>
+                                                    <a class="opacity-0 group-hover:opacity-100 delay-500 transition ease-linear"
+                                                        href="{{ route('user.detail', $item->nik) }}">
+                                                        <i
+                                                            class="fa-solid fa-user text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md  transition ease-linear "></i>
+                                                    </a>
+                                                    <a class="opacity-0 group-hover:opacity-100 delay-500 transition ease-linear"
+                                                        href="{{ 'https://wa.me/' . $item->penduduk->no_hp }}">
+                                                        <i
+                                                            class="fa-brands fa-whatsapp text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md  transition ease-linear "></i>
+                                                    </a>
+                                                    <a class="opacity-0 group-hover:opacity-100 delay-500 transition ease-linear"
+                                                        href="{{ $item->link_maps->link }}" target="_blank">
+                                                        <i
+                                                            class="fa-solid fa-map text-white hover:text-indigo-900/80 hover:bg-white p-1 text-base hover:rounded-md  transition ease-linear "></i>
+                                                    </a>
                                                 </div>
                                             </div>
 
