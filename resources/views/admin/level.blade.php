@@ -88,7 +88,7 @@
                                     <input type="hidden" name="id_akun" value="{{ $item->id_akun }}">
                                     <button class="font-medium text-white bg-red-500 p-2 rounded "
                                         type="submit">
-                                        Set to Penduduk
+                                        Atur Menjadi Penduduk
                                     </button>
                                 </form>
                             </td>
