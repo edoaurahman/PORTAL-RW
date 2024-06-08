@@ -152,7 +152,7 @@
                 <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
                     <span class="hidden text-right lg:block">
                         <span class="block text-sm font-medium text-black dark:text-white">{{ $username }}</span>
-                        <span class="block text-xs font-medium">{{ $level }}</span>
+                        <span class="block text-xs font-medium">{{ $level == 'RT' ? 'Ketua ' . $level : $level }}</span>
                     </span>
 
                     <i class="fa fa-user-circle h-12.5 w-12.5" aria-hidden="true"></i>

@@ -227,7 +227,7 @@
 
                             <i class="fa-regular fa-newspaper"></i>
 
-                            News
+                            Berita
                         </a>
                     </li>
 
@@ -324,7 +324,7 @@
                                 <li x-show="levelUser === 'Super Admin' || levelUser === 'RW'">
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-graydark dark:text-white duration-300 ease-in-out hover:text-ungu dark:hover:bg-purple-600"
                                         :class="{ 'text-ungu dark:bg-purple-700': (selected == '/admin/keuangan/setting') }"
-                                        href="{{ route('admin.keuangan.setting') }}">Settings
+                                        href="{{ route('admin.keuangan.setting') }}">Pengaturan
                                     </a>
                                 </li>
                             </ul>
@@ -338,7 +338,7 @@
                             href="{{ route('admin.report-data') }}"
                             :class="{ 'bg-ungu text-white dark:bg-purple-700': (selected.includes('report-data')) }">
                             <i class="fa-solid fa-chart-line"></i>
-                            Report Data
+                            Data Laporan 
                         </a>
                     </li>
                 </ul>

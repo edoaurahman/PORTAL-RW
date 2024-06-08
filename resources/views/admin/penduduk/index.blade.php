@@ -88,7 +88,7 @@
                             <td class="px-6 py-4">
                                 {{ $item->jenis_kelamin }}
                             </td>
-                            <td class="px-6 py-4 max-w-md truncate">
+                            <td class="px-6 py-4 max-w-[17rem] truncate">
                                 {{ $item->alamatLengkap() }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
