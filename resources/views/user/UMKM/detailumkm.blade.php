@@ -61,7 +61,7 @@
                             class="flex items-center  text-2xl uppercase font-extrabold text-slate-700 group-hover:text-white dark:text-white dark:group-hover:text-dark_grey5">
                             <span>{{ $umkm->nama_umkm }}</span>
                             <span
-                                class="bg-blue-100 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-dark_grey4 dark:text-slate-100 ms-2 dark:group-hover:bg-gray-600">Rt
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-dark_grey4  ms-2 dark:group-hover:bg-gray-600">Rt
                                 {{ $umkm->penduduk->alamat->rt }}</span>
                         </h1>
                         <div class="flex">
@@ -134,7 +134,8 @@
                     <!-- Fasilitas end -->
                     <!-- Description Start  -->
                     <div class="deskripsi">
-                        <div class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
+                        <div
+                            class="px-4 lg:px-0 mt-8 text-gray-700 text-lg leading-relaxed dark:text-gray-300 w-full lg:w-3/4">
                             <p class="mt-2">{!! $umkm->deskripsi !!}</p>
                         </div>
                     </div>
