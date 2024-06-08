@@ -88,25 +88,25 @@
                             <td class="px-6 py-4">
                                 {{ $item->jenis_kelamin }}
                             </td>
-                            <td class="px-6 py-4 max-w-md truncate">
+                            <td class="px-6 py-4 max-w-sm truncate">
                                 {{ $item->alamatLengkap() }}
                             </td>
                             <td class="px-6 py-4 flex gap-2">
                                 @empty($item->akun)
                                     <button onclick="showFormAddAkun({{ $item }})"
                                         data-modal-target="add-akun-penduduk" data-modal-toggle="add-akun-penduduk"
-                                        class="font-medium text-white bg-blue-700 p-2  rounded">
+                                        class="font-medium text-white text-[12px] bg-blue-700 p-1  rounded">
                                         Buat Akun
                                     </button>
                                 @endempty
                                 <a href="{{ route('admin.penduduk.detail', $item->nik) }}">
-                                    <button class="font-medium text-white bg-green-400 p-2  rounded">
+                                    <button class="font-medium text-white text-[12px] bg-green-400 p-1  rounded">
                                         Detail
                                     </button>
                                 </a>
                                 <button onclick="showEdit({{ $item }})" data-modal-target="edit-penduduk"
                                     data-modal-toggle="edit-penduduk"
-                                    class="font-medium text-white bg-yellow-300 p-2  rounded">
+                                    class="font-medium text-white text-[12px] bg-yellow-300 p-1  rounded">
                                     Edit
                                 </button>
 
@@ -115,7 +115,8 @@
                                     @method('delete')
                                     <button
                                         onclick="return confirm('Apakah Anda akan menghapus data dengan Nik : {{ $item->nik }}')"
-                                        type="submit" class="font-medium text-white bg-red-500 p-2 rounded">
+                                        type="submit"
+                                        class="font-medium text-white text-[12px] bg-red-500 p-1 rounded">
                                         Hapus
                                     </button>
                                 </form>
