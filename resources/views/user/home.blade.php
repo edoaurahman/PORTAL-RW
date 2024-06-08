@@ -276,6 +276,7 @@
                     </div>
                 </div>
             </section>
+            perbaikan
 
             <section class="umkm mx-auto font-sans py-12">
                 <div class="flex flex-col gap-y-8">
@@ -292,7 +293,7 @@
                         @foreach ($umkm as $item)
                             @if ($item->tokoBuka())
                                 <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
-                                    <div class="group relative">
+                                    <div class="group relative dark:bg-ungu_muda rounded-2xl">
                                         <div
                                             class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
                                         </div>
@@ -303,14 +304,15 @@
                                             </div>
                                             <div class="item-info p-5">
                                                 <div class="item-rating flex justify-between items-center mt-3">
-                                                    <p class="text-xl font-medium">{{ $item->textcut() }}</p>
+                                                    <p class="text-xl font-medium dark:text-white">
+                                                        {{ $item->textcut() }}</p>
                                                     {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                                 </div>
-                                                <p class="item-desc text-gray-600 text-xs">
+                                                <p class="item-desc text-gray-500 text-xs">
                                                     {{ $item->generateCuplikan() }}</p>
 
                                                 <div
-                                                    class="item price group-hover:text-indigo-900 text-ungu text-sm font-medium my-3">
+                                                    class="item price text-purple-400 group-hover:text-indigo-700  group-dark:hover:text-purple-700 text-sm font-medium my-3">
                                                     Selengkapnya
                                                 </div>
                                             </div>
@@ -328,7 +330,7 @@
                     </div>
                     <div class="flex justify-center">
                         <a href="{{ route('user.umkm') }}"
-                            class="hover:bg-indigo-900 text-base shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">Lihat
+                            class=" text-base bg-purple-400 hover:bg-indigo-700 text-white dark:bg-purple-700 dark:hover:bg-white py-3 px-7 rounded-full font-semibold ">Lihat
                             UMKM Lainnya</a>
                     </div>
                 </div>
