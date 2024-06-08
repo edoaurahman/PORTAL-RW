@@ -291,41 +291,39 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 gap-y-13 mt-8">
                         @foreach ($umkm as $item)
-                            @if ($item->tokoBuka())
-                                <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
-                                    <div class="group relative dark:bg-ungu_muda rounded-2xl">
-                                        <div
-                                            class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
+                            <a href="{{ route('user.umkm.detail', $item->id_umkm) }}">
+                                <div class="group relative dark:bg-ungu_muda rounded-2xl">
+                                    <div
+                                        class="{{ $item->tokoBuka() ? 'hidden' : '' }} absolute bg-slate-950 rounded-2xl w-full h-full opacity-30">
+                                    </div>
+                                    <div class="items w-full h-full m-auto rounded-2xl shadow-md  ">
+                                        <div class="item-img pb-5">
+                                            <img class=" rounded-t-lg h-[200px] w-full object-cover"
+                                                src="{{ $item->getCover() }}" alt="">
                                         </div>
-                                        <div class="items w-full h-full m-auto rounded-2xl shadow-md  ">
-                                            <div class="item-img pb-5">
-                                                <img class=" rounded-t-lg h-[200px] w-full object-cover"
-                                                    src="{{ $item->getCover() }}" alt="">
+                                        <div class="item-info p-5">
+                                            <div class="item-rating flex justify-between items-center mt-3">
+                                                <p class="text-xl font-medium dark:text-white">
+                                                    {{ $item->textcut() }}</p>
+                                                {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                             </div>
-                                            <div class="item-info p-5">
-                                                <div class="item-rating flex justify-between items-center mt-3">
-                                                    <p class="text-xl font-medium dark:text-white">
-                                                        {{ $item->textcut() }}</p>
-                                                    {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
-                                                </div>
-                                                <p class="item-desc text-gray-500 text-xs">
-                                                    {{ $item->generateCuplikan() }}</p>
+                                            <p class="item-desc text-gray-500 text-xs">
+                                                {{ $item->generateCuplikan() }}</p>
 
-                                                <div
-                                                    class="item price text-purple-400 group-hover:text-indigo-700  group-dark:hover:text-purple-700 text-sm font-medium my-3">
-                                                    Selengkapnya
-                                                </div>
-                                            </div>
                                             <div
-                                                class="{{ $item->tokoBuka() ? 'hidden' : '' }} opacity-100 absolute justify-center w-full bottom-[60%] flex">
-                                                <p
-                                                    class="text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
-                                                    TUTUP</p>
+                                                class="item price text-purple-400 group-hover:text-indigo-700  group-dark:hover:text-purple-700 text-sm font-medium my-3">
+                                                Selengkapnya
                                             </div>
+                                        </div>
+                                        <div
+                                            class="{{ $item->tokoBuka() ? 'hidden' : '' }} opacity-100 absolute justify-center w-full bottom-[60%] flex">
+                                            <p
+                                                class="text-base shadow-2xl shadow-ungu bg-ungu text-white py-3 px-7 rounded-full font-semibold ">
+                                                TUTUP</p>
                                         </div>
                                     </div>
-                                </a>
-                            @endif
+                                </div>
+                            </a>
                         @endforeach
                     </div>
                     <div class="flex justify-center">
