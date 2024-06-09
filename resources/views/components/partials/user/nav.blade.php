@@ -158,7 +158,7 @@
                                 <a href="{{ route('user.inventaris.riwayatinventaris') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-handshake w-[22px]"></i>
-                                    Inventaris
+                                    Peminjaman
                                 </a>
                                 
                             </li>

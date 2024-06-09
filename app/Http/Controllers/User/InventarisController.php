@@ -17,6 +17,11 @@ class InventarisController extends Controller
         return view('user.inventaris.index', compact('inventaris'));
     }
 
+    public function riwayatinventaris()
+    {
+        return view('user.inventaris.riwayatinventaris');
+    }
+
     public function pinjam(Request $request)
     {
         DB::transaction(function () use ($request) {
