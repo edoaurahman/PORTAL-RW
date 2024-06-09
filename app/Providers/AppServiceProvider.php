@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
     {
         config(['app.locale' => 'id']);
         Carbon::setLocale('id');
-        Paginator::useBootstrap();
+
+        Paginator::useTailwind();
         Paginator::defaultView('vendor.pagination.tailwind');
         Paginator::defaultSimpleView('vendor.pagination.simple-tailwind');
     }

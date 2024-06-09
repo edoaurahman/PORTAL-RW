@@ -93,7 +93,7 @@
             </table>
         </div>
         <div class="m-2">
-            {{ $UMKM->links() }}
+            {{ $UMKM->onEachSide(1)->links() }}
         </div>
         <!-- End Body Content -->
     </div>
