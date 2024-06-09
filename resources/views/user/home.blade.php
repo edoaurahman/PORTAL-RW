@@ -170,7 +170,8 @@
                         <li class="mb-[50px] pl-[25px] w-100% sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
+                                    {{ $totalPenduduk }}</h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Total
                                     Penduduk</span>
@@ -179,16 +180,18 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
+                                    {{ $totalPendudukLaki }}</h3>
                                 <span
-                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Laki
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins text-nowrap font-medium inline-block pl-[26px]">Laki
                                     - Laki</span>
                             </div>
                         </li>
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
+                                    {{ $totalPendudukPerempuan }}</h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Perempuan</span>
                             </div>
@@ -196,7 +199,8 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
+                                    {{ $totalPendudukTetap }}</h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Penduduk
                                     Tetap</span>
@@ -205,7 +209,8 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
+                                    {{ $totalPendudukPendatang }}</h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Pendatang</span>
                             </div>
@@ -227,13 +232,28 @@
                 <div class="list w-full h-auto clear-both flex mt-[47px] ">
                     <div class="w-full">
                         <div class="grid grid-cols-1 sm:grid-cols-2 w-full px-4 gap-4">
+                            <style>
+                                /* Tambahkan animasi pada kelas .animate-width */
+                                @keyframes grow-bar {
+                                    from {
+                                        width: 0;
+                                    }
 
+                                    to {
+                                        width: var(--width);
+                                    }
+                                }
+
+                                .animate-width {
+                                    animation: grow-bar 1s forwards;
+                                }
+                            </style>
                             @foreach ($listRT as $item)
                                 <div class="mb-12">
                                     <p>RT {{ $item->rt }}</p>
-                                    <div class="bg-stroke relative h-2.5 w-full rounded-2xl">
-                                        <div
-                                            class="bg-primary absolute top-0 left-0 h-full w-0 intersect:w-[40%] rounded-2xl transition-all ease-in-out duration-1000">
+                                    <div class="bg-stroke grow relative h-2.5 w-full rounded-2xl">
+                                        <div data-persentase="{{ $item->persentase }}"
+                                            class="bar-data-rt bg-primary absolute top-0 left-0 h-full rounded-2xl transition-all ease-in-out duration-1000 w-1">
                                             <span
                                                 class="bg-primary absolute -right-4 bottom-full mb-2 rounded-sm px-3.5 py-1 text-sm text-white">
                                                 <span
@@ -244,7 +264,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -539,6 +558,31 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.bar-data-rt');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.getAttribute('data-persentase') + '%';
+                        bar.style.setProperty('--width', width);
+                        bar.classList.add('animate-width');
+                        observer.unobserve(
+                            bar); // berhenti mengamati elemen setelah animasi dimulai
+                    }
+                });
+            }, {
+                threshold: 0.1 // elemen harus terlihat 10% sebelum memicu animasi
+            });
+
+            bars.forEach(bar => {
+                observer.observe(bar);
+            });
         });
     </script>
 </x-layout.user-layout>

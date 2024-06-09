@@ -22,7 +22,9 @@
             <div class="p-5">
                 <h5 class="mb-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Informasi Inventaris
                 </h5>
-                <p> Temukan beragam Inventaris milik kita yang dapat dipinjam untuk membantu kebutuhan anda ataupun keperluan bersama. Inventaris yang tersedia bersumber dari dana Kas warga yang setiap pengeluarannya di setujui oleh warga, maka gunakanlah inventaris kita sebaik mungkin. <br><br></p>
+                <p> Temukan beragam Inventaris milik kita yang dapat dipinjam untuk membantu kebutuhan anda ataupun
+                    keperluan bersama. Inventaris yang tersedia bersumber dari dana Kas warga yang setiap pengeluarannya
+                    di setujui oleh warga, maka gunakanlah inventaris kita sebaik mungkin. <br><br></p>
                 <div class="flex flex-row gap-x-4 items-end">
                     <a href="#tutorial"
                         class="hover:bg-indigo-900 dark:hover:bg-purple-700 text-base bg-ungu dark:bg-purple-800 border dark:border-purple-700  text-white py-4 px-10 rounded-lg font-semibold">Cara
@@ -34,7 +36,8 @@
 
     <section class="hero max-w-6xl mx-auto font-sans pb-12 pt-[100px] ">
         <div>
-            <h5 class="mb-2 p-6 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Daftar Inventaris</h5>
+            <h5 class="mb-2 p-6 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">Daftar Inventaris
+            </h5>
         </div>
         <div class="min-h-screen">
             <main class="p-8">
@@ -67,14 +70,14 @@
             </main>
         </div>
     </section>
-   
+
     <section id="tutorial"
         class=" max-w-6xl pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-purple-900 p-14 rounded-3xl z-20 relative ">
         <div class=" items-center justify-between">
             <h5 class="mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Mekanisme Peminjaman</h5>
             <h1 class="leading-loose text-white dark:text-white">
-                1. klik tombol pinjam. <br>
-                2. isi jumlah barang yang diperlukan. <br>
+                1. Klik tombol pinjam. <br>
+                2. Isi jumlah barang yang diperlukan. <br>
                 3. Tunggu hingga mendapat pemberitahuan bahwa peminjaman telah di setujui oleh Admin. <br>
                 4. Datang ke rumah Pak RW untuk mengambil barang.
             </h1>

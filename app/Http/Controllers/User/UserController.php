@@ -39,8 +39,12 @@ class UserController extends Controller
                 'persentase' => round(($jumlahPendudukRT / $totalPenduduk) * 100)
             ];
         }
+        $totalPendudukLaki = PendudukModel::where('jenis_kelamin', 'Laki-Laki')->count();
+        $totalPendudukPerempuan = PendudukModel::where('jenis_kelamin', 'Perempuan')->count();
+        $totalPendudukTetap = PendudukModel::where('status_penduduk', 'Penduduk Tetap')->count();
+        $totalPendudukPendatang = PendudukModel::where('status_penduduk', 'Pendatang')->count();
 
-        return view("user.home", compact('agenda', 'aspirasi', 'umkm', 'rw', 'rt', 'listRT'));
+        return view("user.home", compact('agenda', 'aspirasi', 'umkm', 'rw', 'rt', 'listRT', 'totalPenduduk', 'totalPendudukLaki', 'totalPendudukPerempuan', 'totalPendudukTetap', 'totalPendudukPendatang'));
     }
 
 
