@@ -160,70 +160,77 @@
             <section class="range py-12">
                 <div class="counter_list w-full h-auto clear-both float-left">
                     <ul class="ml-[-25px] flex flex-wrap">
-                        <li class="mb-[50px] pl-[25px] w-1/5">
+                        {{-- perbaikan --}}
+                        {{-- judul = text-gray-600 --}}
+                        {{-- sub = text-purple-500 dark:text-purple-700 --}}
+                        {{-- paragaraf = text-gray-500 --}}
+                        {{-- button = bg-purple-400 hover:bg-indigo-700 text-white dark:bg-purple-700 dark:hover:bg-white --}}
+                        {{-- dark:hover:text-purple-700 --}}
+                        {{-- form = bg-purple-100 dark:bg-ungu_muda --}}
+                        <li class="mb-[50px] pl-[25px] w-100% sm:w-1/5 block">
                             <div
-                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-[#432d92] rounded-[10px] p-[40px] flex items-center justify-center">
-                                <h3 class="text-[60px] text-white font-extrabold">40</h3>
+                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
                                 <span
-                                    class="title text-[18px] text-white font-poppins font-medium inline-block pl-[26px]">Digital
-                                    Products</span>
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Total
+                                    Penduduk</span>
                             </div>
                         </li>
-                        <li class="mb-[50px] pl-[25px] w-1/5">
+                        <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
-                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-[#432d92] rounded-[10px] p-[40px] flex items-center justify-center">
-                                <h3 class="text-[60px] text-white font-extrabold">40</h3>
+                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
                                 <span
-                                    class="title text-[18px] text-white font-poppins font-medium inline-block pl-[26px]">Digital
-                                    Products</span>
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Laki
+                                    - Laki</span>
                             </div>
                         </li>
-                        <li class="mb-[50px] pl-[25px] w-1/5">
+                        <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
-                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-[#432d92] rounded-[10px] p-[40px] flex items-center justify-center">
-                                <h3 class="text-[60px] text-white font-extrabold">40</h3>
+                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
                                 <span
-                                    class="title text-[18px] text-white font-poppins font-medium inline-block pl-[26px]">Digital
-                                    Products</span>
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Perempuan</span>
                             </div>
                         </li>
-                        <li class="mb-[50px] pl-[25px] w-1/5">
+                        <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
-                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-[#432d92] rounded-[10px] p-[40px] flex items-center justify-center">
-                                <h3 class="text-[60px] text-white font-extrabold">40</h3>
+                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
                                 <span
-                                    class="title text-[18px] text-white font-poppins font-medium inline-block pl-[26px]">Digital
-                                    Products</span>
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Penduduk
+                                    Tetap</span>
                             </div>
                         </li>
-                        <li class="mb-[50px] pl-[25px] w-1/5">
+                        <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
-                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-[#432d92] rounded-[10px] p-[40px] flex items-center justify-center">
-                                <h3 class="text-[60px] text-white font-extrabold">40</h3>
+                                class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
+                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">40</h3>
                                 <span
-                                    class="title text-[18px] text-white font-poppins font-medium inline-block pl-[26px]">Digital
-                                    Products</span>
+                                    class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Pendatang</span>
                             </div>
                         </li>
+
                     </ul>
                 </div>
                 <div class=" items-center">
                     <div>
                         <h1 class=" text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten ">
-                            Daftar Ketua RT
+                            Jumlah Warga Setiap RT
                         </h1>
-                        <p class="mt-4 text-center mx-auto lg:w-1/2 md:w-1/2">
-                            Ketua RT adalah pemimpin yang dipilih warga untuk menjaga keharmonisan, mengoordinasikan
-                            kegiatan, dan memastikan kebutuhan serta aspirasi warga terpenuhi.
+                        <p class="mt-4 text-center mx-auto lg:w-1/2 md:w-1/2">Jumlah warga di setiap RT penting untuk
+                            mengelola lingkungan, menentukan kebutuhan fasilitas, dan merencanakan sumber daya secara
+                            berkelanjutan.
                         </p>
                     </div>
                 </div>
                 <div class="list w-full h-auto clear-both flex mt-[47px] ">
                     <div class="w-full">
-                        <div class="grid grid-cols-2 w-full px-4 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 w-full px-4 gap-4">
 
                             @foreach ($listRT as $item)
                                 <div class="mb-12">
+                                    <p>RT {{ $item->rt }}</p>
                                     <div class="bg-stroke relative h-2.5 w-full rounded-2xl">
                                         <div
                                             class="bg-primary absolute top-0 left-0 h-full w-0 intersect:w-[40%] rounded-2xl transition-all ease-in-out duration-1000">
