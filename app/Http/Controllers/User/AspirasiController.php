@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\AspirasiModel;
-use App\Models\BeritaModel;
 use Illuminate\Http\Request;
 
 class AspirasiController extends Controller
@@ -16,7 +15,9 @@ class AspirasiController extends Controller
     }
     public function riwayataspirasi()
     {
-        return view('user.aspirasi.riwayataspirasi');
+        $nik = auth()->user()->nik;
+        $aspirasi = AspirasiModel::with('akun')->where('author', $nik)->orderBy('updated_at', 'desc')->get();
+        return view('user.aspirasi.riwayataspirasi', compact('aspirasi'));
     }
     public function store(Request $request)
     {
