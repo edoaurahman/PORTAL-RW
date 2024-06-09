@@ -160,7 +160,7 @@
             <section class="range py-12">
                 <div class="counter_list w-full h-auto clear-both float-left">
                     <ul class="ml-[-25px] flex flex-wrap">
-                        <li class="mb-[50px] pl-[25px] w-100% sm:w-1/5 block">
+                        <li class="mb-[50px] pl-[25px] w-full sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
                                 <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
