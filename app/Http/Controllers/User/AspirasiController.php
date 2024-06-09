@@ -14,6 +14,10 @@ class AspirasiController extends Controller
         $aspirasi = AspirasiModel::all();
         return view('user.aspirasi.index', compact('aspirasi'));
     }
+    public function riwayataspirasi()
+    {
+        return view('user.aspirasi.riwayataspirasi');
+    }
     public function store(Request $request)
     {
         $request->validate([
