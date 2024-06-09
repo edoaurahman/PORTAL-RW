@@ -567,7 +567,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const bar = entry.target;
-                        const width = bar.getAttribute('data-persentase') + '%';
+                        const originalPercentage = parseInt(bar.getAttribute('data-persentase'),
+                        10);
+                        const newPercentage = originalPercentage + 10;
+                        const width = newPercentage + '%';
                         bar.style.setProperty('--width', width);
                         bar.classList.add('animate-width');
                         observer1.unobserve(
