@@ -148,16 +148,16 @@
                             <li>
                                 <a href="{{ route('user.aspirasi.riwayataspirasi') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-solid fa-handshake w-[22px]"></i>
+                                    <i class="fa-solid fa-comments w-[22px]"></i>
                                     Aspirasi
                                 </a>
-
                             </li>
 
                             <li>
                                 <a href="{{ route('user.inventaris.riwayatinventaris') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
-                                    <i class="fa-solid fa-handshake w-[22px]"></i>
+                                    
+                                    <i class="fa-solid fa-people-carry-box w-[22px]"></i>
                                     Peminjaman
                                 </a>
 
