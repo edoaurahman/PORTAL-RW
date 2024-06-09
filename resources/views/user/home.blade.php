@@ -160,18 +160,12 @@
             <section class="range py-12">
                 <div class="counter_list w-full h-auto clear-both float-left">
                     <ul class="ml-[-25px] flex flex-wrap">
-                        {{-- perbaikan --}}
-                        {{-- judul = text-gray-600 --}}
-                        {{-- sub = text-purple-500 dark:text-purple-700 --}}
-                        {{-- paragaraf = text-gray-500 --}}
-                        {{-- button = bg-purple-400 hover:bg-indigo-700 text-white dark:bg-purple-700 dark:hover:bg-white --}}
-                        {{-- dark:hover:text-purple-700 --}}
-                        {{-- form = bg-purple-100 dark:bg-ungu_muda --}}
                         <li class="mb-[50px] pl-[25px] w-100% sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
-                                    {{ $totalPenduduk }}</h3>
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                    data-penduduk-total="{{ $totalPenduduk }}">
+                                </h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Total
                                     Penduduk</span>
@@ -180,8 +174,9 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
-                                    {{ $totalPendudukLaki }}</h3>
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                    data-penduduk-total="{{ $totalPendudukLaki }}">
+                                </h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins text-nowrap font-medium inline-block pl-[26px]">Laki
                                     - Laki</span>
@@ -190,8 +185,9 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
-                                    {{ $totalPendudukPerempuan }}</h3>
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                    data-penduduk-total="{{ $totalPendudukPerempuan }}">
+                                </h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Perempuan</span>
                             </div>
@@ -199,8 +195,9 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
-                                    {{ $totalPendudukTetap }}</h3>
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                    data-penduduk-total="{{ $totalPendudukTetap }}">
+                                </h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Penduduk
                                     Tetap</span>
@@ -209,8 +206,9 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] text-purple-500 dark:text-purple-700 font-extrabold">
-                                    {{ $totalPendudukPendatang }}</h3>
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                    data-penduduk-total="{{ $totalPendudukPendatang }}">
+                                </h3>
                                 <span
                                     class="title text-[15px] text-gray-600 dark:text-white font-poppins font-medium inline-block pl-[26px]">Pendatang</span>
                             </div>
@@ -565,22 +563,60 @@
         document.addEventListener('DOMContentLoaded', function() {
             const bars = document.querySelectorAll('.bar-data-rt');
 
-            const observer = new IntersectionObserver((entries) => {
+            const observer1 = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const bar = entry.target;
                         const width = bar.getAttribute('data-persentase') + '%';
                         bar.style.setProperty('--width', width);
                         bar.classList.add('animate-width');
-                        observer.unobserve(
+                        observer1.unobserve(
                             bar); // berhenti mengamati elemen setelah animasi dimulai
                     }
                 });
             }, {
-                threshold: 0.1 // elemen harus terlihat 10% sebelum memicu animasi
+                threshold: 0.2 // elemen harus terlihat 10% sebelum memicu animasi
             });
 
             bars.forEach(bar => {
+                observer1.observe(bar);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.data-penduduk');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const data = card.getAttribute('data-penduduk-total');
+                        const counter = {
+                            value: 0
+                        };
+                        const updateCounter = () => {
+                            const target = +data;
+                            const count = +counter.value;
+                            const speed = 200;
+                            const inc = target / speed;
+                            if (count < target) {
+                                counter.value = count + inc;
+                                card.innerText = Math.ceil(counter.value);
+                                setTimeout(updateCounter, 10);
+                            } else {
+                                card.innerText = data;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(
+                            card); // berhenti mengamati elemen setelah animasi dimulai
+                    }
+                });
+            }, {
+                threshold: 0.2 // elemen harus terlihat 10% sebelum memicu animasi
+            });
+
+            cards.forEach(bar => {
                 observer.observe(bar);
             });
         });
