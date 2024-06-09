@@ -21,7 +21,10 @@ Route::get('/home', [UserController::class, 'index'])->name('user.home');
 
 Route::prefix('aspirasi')->group(function () {
     Route::middleware(['auth'])->group(function () {
+        Route::get('/', [AspirasiController::class, 'index'])->name('user.aspirasi');
         Route::post('/store', [AspirasiController::class, 'store'])->name('user.aspirasi.store');
+        
+        Route::get('/dashboard', [BeritaController::class, 'riwayataspirasi'])->name('user.aspirasi.riwayataspirasi');
     });
 });
 
@@ -64,7 +67,6 @@ Route::prefix('umkm')->group(function () {
         Route::get('/edit/{umkm}', [UmkmController::class, 'edit'])->name('user.umkm.edit');
         Route::put('/', [UmkmController::class, 'update'])->name('user.umkm.update');
         Route::delete('/detete/{umkm}', [UmkmController::class, 'destroy'])->name('user.umkm.delete');
-
     });
 });
 
@@ -76,6 +78,7 @@ Route::get('/agenda', [AgendaController::class, 'index'])->name('user.agenda');
 
 Route::get('/inventaris', [InventarisController::class, 'index'])->name('user.inventaris')->middleware('auth');
 Route::post('/inventaris/pinjam', [InventarisController::class, 'pinjam'])->name('user.inventaris.pinjam')->middleware('auth');
+Route::get('/inventaris/dashboard', [BeritaController::class, 'riwayatinventaris'])->name('user.inventaris.riwayatinventaris')->middleware('auth');
 
 // Layanan route
 Route::get('/layanan', [LayananController::class, 'index'])->name('user.layanan');
