@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\AgendaModel;
 use App\Models\AkunModel;
+use App\Models\AlamatModel;
 use App\Models\AspirasiModel;
+use App\Models\PendudukModel;
 use App\Models\SettingHomeModel;
 use App\Models\UMKMModel;
 use Illuminate\Http\Request;
@@ -23,7 +25,22 @@ class UserController extends Controller
         $rt = AkunModel::whereHas('level', function ($q) {
             $q->where('nama_level', 'RT');
         })->get();
-        return view("user.home", compact('agenda', 'aspirasi', 'umkm', 'rw', 'rt'));
+
+        $totalPenduduk = PendudukModel::count();
+        $jumlahRT = AlamatModel::distinct('rt')->count('rt');
+        $listRT = [];
+        for ($i = 1; $i <= $jumlahRT; $i++) {
+            // get persentase RT berdasarkan jumlah penduduk
+            $jumlahPendudukRT = PendudukModel::has('alamat')->whereHas('alamat', function ($q) use ($i) {
+                $q->where('rt', $i);
+            })->count();
+            $listRT[] = (object) [
+                'rt' => $i,
+                'persentase' => round(($jumlahPendudukRT / $totalPenduduk) * 100)
+            ];
+        }
+
+        return view("user.home", compact('agenda', 'aspirasi', 'umkm', 'rw', 'rt', 'listRT'));
     }
 
 
