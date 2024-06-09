@@ -1,7 +1,7 @@
 <nav
     class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
-        <a href="{{ route('user.home') }}" class="flex pr-100  items-center space-x-3 rtl:space-x-reverse">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4 px-10">
+        <a href="{{ route('user.home') }}" class="flex mr-auto items-center space-x-3">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
                 '{{ asset('assets/images/logo/logo-dark.png') }}'"
                 width="40px" height="auto" class="duration-300" alt="Logo" />
@@ -142,25 +142,25 @@
                                     <i class="fa-solid fa-handshake w-[22px]"></i>
                                     Bansos
                                 </a>
-                                
+
                             </li>
-                            
+
                             <li>
                                 <a href="{{ route('user.aspirasi.riwayataspirasi') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-handshake w-[22px]"></i>
                                     Aspirasi
                                 </a>
-                                
+
                             </li>
-                            
+
                             <li>
                                 <a href="{{ route('user.inventaris.riwayatinventaris') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-handshake w-[22px]"></i>
                                     Peminjaman
                                 </a>
-                                
+
                             </li>
                         </ul>
                         <form action="{{ route('logout') }}" method="post">
@@ -264,7 +264,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('user.layanan') }}"
-                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent" 
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
                                     :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('layanan')) }">Layanan</a>
                             </li>
                             <li>
