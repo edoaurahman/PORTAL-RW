@@ -1,7 +1,7 @@
 <nav
     class="bg-white dark:bg-purple-950 bg-opacity-10 dark:bg-opacity-10 backdrop-filter backdrop-blur-lg  z-50 top-0 fixed w-full">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="{{ route('user.home') }}" class="flex  items-center space-x-3 rtl:space-x-reverse">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
+        <a href="{{ route('user.home') }}" class="flex pr-100  items-center space-x-3 rtl:space-x-reverse">
             <img :src="darkMode ? '{{ asset('assets/images/logo/logo-light.png') }}' :
                 '{{ asset('assets/images/logo/logo-dark.png') }}'"
                 width="40px" height="auto" class="duration-300" alt="Logo" />
@@ -135,12 +135,32 @@
                                     UMKM
                                 </a>
                             </li>
+
                             <li>
                                 <a href="{{ route('user.bansos') }}"
                                     class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
                                     <i class="fa-solid fa-handshake w-[22px]"></i>
                                     Bansos
                                 </a>
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('user.aspirasi.riwayataspirasi') }}"
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
+                                    <i class="fa-solid fa-handshake w-[22px]"></i>
+                                    Aspirasi
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('user.inventaris.riwayatinventaris') }}"
+                                    class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-purple-600 dark:hover:text-white lg:text-base">
+                                    <i class="fa-solid fa-handshake w-[22px]"></i>
+                                    Peminjaman
+                                </a>
+                                
                             </li>
                         </ul>
                         <form action="{{ route('logout') }}" method="post">
@@ -174,7 +194,7 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden w-full md:flex md:flex-row md:w-auto sm:order-1" id="navbar-default"
+        <div class="hidden w-full pr-10 md:flex md:flex-row md:w-auto sm:order-1" id="navbar-default"
             x-data="{ selected: location.pathname }">
             <ul
                 class="font-medium flex flex-col md:items-center p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
@@ -194,7 +214,7 @@
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
                         :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('berita')) }">Berita</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('user.agenda') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
                         :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('agenda')) }">Agenda</a>
@@ -213,6 +233,47 @@
                     <a href="{{ route('user.layanan') }}"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white md:dark:hover:bg-transparent "
                         :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('layanan')) }">Layanan</a>
+                </li> --}}
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropDownLinkLainnya"
+                        class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 md:w-auto dark:text-purple-400 md:dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Lainnya
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropDownLinkLainnya"
+                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-[#1c123d] dark:divide-purple-600">
+                        <ul class="p-4 text-sm text-purple-700 dark:text-purple-400"
+                            aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="{{ route('user.agenda') }}"
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                                    :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('agenda')) }">Agenda</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.umkm') }}"
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                                    :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('umkm')) }">UMKM</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.inventaris') }}"
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                                    :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('inventaris')) }">Inventaris</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.layanan') }}"
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent" 
+                                    :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('layanan')) }">Layanan</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.aspirasi') }}"
+                                    class="block px-4 !py-2 text-sm text-black rounded hover:bg-purple-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-purple-400 md:dark:hover:text-white dark:hover:text-white  md:dark:hover:bg-transparent"
+                                    :class="{ 'text-purple-500 dark:text-purple-50': (selected.includes('aspirasi')) }">Aspirasi</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>

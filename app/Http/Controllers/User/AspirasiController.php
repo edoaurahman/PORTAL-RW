@@ -4,10 +4,20 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\AspirasiModel;
+use App\Models\BeritaModel;
 use Illuminate\Http\Request;
 
 class AspirasiController extends Controller
 {
+    public function index()
+    {
+        $aspirasi = AspirasiModel::all();
+        return view('user.aspirasi.index', compact('aspirasi'));
+    }
+    public function riwayataspirasi()
+    {
+        return view('user.aspirasi.riwayataspirasi');
+    }
     public function store(Request $request)
     {
         $request->validate([
