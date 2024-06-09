@@ -1,16 +1,17 @@
 <x-layout.user-layout>
-    <section class="hero max-w-6xl mx-auto font-sans py-20">
+    <section class="hero sm:max-w-6xl mx-auto font-sans py-20 sm:px-0 px-10">
         <div class="px-4 py-6 ">
             <div class="flex flex-col gap-y-4">
-                <div class="gap-y-2 flex flex-row justify-between items-center">
+                <div class="gap-y-2 flex sm:flex-row flex-col justify-between items-center">
                     <div class="flex-1 space-y-2">
                         <div class="w-fit gap-x-2  small-badge flex flex-row  rounded-full items-center">
                             <i class="fa-solid fa-handshake"></i>
-                            <p class=" text-base font-normal text-black dark:text-white">
+                            <p class=" sm:text-base font-normal text-black dark:text-white">
                                 Riwayat Penerimaan Bansos
                             </p>
                         </div>
-                        <h2 class="font-bold text-black dark:text-white text-6xl">Bansos Untuk Rakyat Yang Membutuhkan
+                        <h2 class="font-bold text-black dark:text-white sm:text-6xl text-2xl">Bansos Untuk Rakyat Yang
+                            Membutuhkan
                         </h2>
                     </div>
                     <div class=" flex-1 text-base leading-loose text-black3">
@@ -35,7 +36,7 @@
         </div>
     </section>
     {{-- List Bansos --}}
-    <div class="max-w-6xl mx-auto font-sans pb-12">
+    <div class="max-w-6xl mx-auto font-sans pb-12 sm:px-0 px-5">
         @if (session('success'))
             <div class="mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                 role="alert">
