@@ -20,4 +20,9 @@ class PeminjamanModel extends Model
     {
         return $this->belongsTo(InventarisModel::class, 'id_inventaris', 'id_inventaris');
     }
+
+    public function penduduk()
+    {
+        return $this->belongsTo(PendudukModel::class, 'nik', 'nik');
+    }
 }
