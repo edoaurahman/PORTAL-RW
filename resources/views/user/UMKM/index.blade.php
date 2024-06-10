@@ -33,7 +33,7 @@
                     <form action="" method="get" class="flex">
                         <div>
                             <button id="filterButton" data-dropdown-toggle="filter"
-                                class="h-full inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg  px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                class="h-full inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg  px-3 py-1.5 dark:bg-[#37177b] dark:text-gray-400 dark:border-gray-600 dark:hover:bg-purple-700 dark:hover:border-purple-600 dark:focus:ring-purple-700"
                                 type="button">
                                 <span class="sr-only">Action button</span>
                                 Filter
@@ -45,12 +45,12 @@
                             </button>
                             <!-- Dropdown menu -->
                             <div id="filter"
-                                class="z-9999 absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                class="z-9999 absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-[#37177b] dark:divide-gray-600">
 
                                 <div id="accordion-collapse" data-accordion="collapse">
                                     <h2 id="accordion-collapse-heading-1">
                                         <button type="button"
-                                            class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                                            class="flex items-center justify-between w-full p-2 font-medium text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-purple-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-purple-800 gap-3"
                                             data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
                                             aria-controls="accordion-collapse-body-1">
                                             <span>Kategori</span>
@@ -64,13 +64,13 @@
                                     </h2>
                                     <div id="accordion-collapse-body-1" class="hidden"
                                         aria-labelledby="accordion-collapse-heading-1">
-                                        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                                        <div class="p-5 border border-b-0 border-gray-200 dark:border-purple-700">
                                             @foreach ($kategori as $item)
                                                 <div class="flex items-center my-2">
                                                     <input id="kategori-{{ $item->id_kategori }}" type="checkbox"
                                                         value="{{ $item->id_kategori }}" name="kategori[]"
                                                         value="{{ $item->id_kategori }}"
-                                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-purple-800 focus:ring-2 dark:bg-purple-700 dark:border-purple-600">
                                                     <label for="kategori-{{ $item->id_kategori }}"
                                                         class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $item->nama_kategori }}</label>
                                                 </div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <input type="search" name="s"
-                            class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                            class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-[#412283] dark:border-purple-600 dark:placeholder-purple-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
                             placeholder="Cari UMKM">
                         <button type="submit"
                             class="text-white absolute end-2.5 bottom-2.5 bg-purple-500 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-purple-700 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Search</button>

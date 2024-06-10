@@ -1,5 +1,5 @@
 <div id="alert-additional-content-4"
-    class="p-4 mb-4 text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+    class="p-4 mb-4 text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-[#33096e] dark:text-yellow-300 dark:border-yellow-800"
     role="alert">
     <div class="flex items-center">
         <svg class="flex-shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"

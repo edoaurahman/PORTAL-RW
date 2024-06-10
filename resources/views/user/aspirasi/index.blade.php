@@ -6,7 +6,7 @@
                     <div class="gap-y-2 flex flex-col">
                         <h1 class="text-ungu dark:text-orange-100 font-bold text-[40px] sm:text-[60px]  leading-none">Aduan Aspirasi dan Masukan
                         </h1>
-                        <h1 class="text-black1 dark:text-purple-500 font-bold text-[40px] sm:text-[40px]  leading-none">
+                        <h1 class="text-black1 dark:text-purple-500 font-bold text-[20px] sm:text-[40px]  leading-none">
                             Untuk membangun kesejahteraaan lingkungan
                         </h1>
                     </div>
@@ -24,7 +24,7 @@
                         @foreach ($aspirasi as $item)
                             <div class="flex flex-row gap-2.5">
                                 <div
-                                    class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-300 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                    class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-300 rounded-e-xl rounded-es-xl dark:bg-[#37177b]">
                                     <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Author :
                                         </span>
@@ -40,7 +40,7 @@
                                         {{ $item->isi }}
                                     </p>
                                     <div
-                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-[#261055]">
                                         @if ($item->status == 'pending')
                                             <span
                                                 class="text-sm font-normal text-gray-500 dark:text-gray-300">Belum

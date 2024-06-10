@@ -1,6 +1,6 @@
 <x-layout.user-layout>
     <section class="hero max-w-6xl mx-auto font-sans py-20">
-        <div class="px-10 py-6  dark:border-gray-600 dark:bg-gray-800">
+        <div class="px-10 py-6  ">
             <div class="gap-y-2 flex flex-col sm:flex-row sm:justify-between ">
                 <div class="flex-1 space-y-2">
                     <h2 class="font-bold text-black sm:text-6xl dark:text-white">Riwayat Peminjaman Inventaris</h2>
@@ -11,7 +11,7 @@
     {{-- List Berita --}}
     <div class="historyberita max-w-6xl mx-auto font-sans pb-12 sm:px-0 px-10">
         @if ($peminjaman == null || $peminjaman->isEmpty())
-            <div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            <div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-purple-800 dark:text-blue-400"
                 role="alert">
                 <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor" viewBox="0 0 20 20">

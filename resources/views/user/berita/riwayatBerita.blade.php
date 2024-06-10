@@ -1,6 +1,6 @@
 <x-layout.user-layout>
     <section class="hero max-w-6xl mx-auto font-sans py-20">
-        <div class="px-10 py-6  dark:border-gray-600 dark:bg-gray-800">
+        <div class="px-10 py-6  ">
             <div class="gap-y-2 flex flex-col sm:flex-row sm:justify-between ">
                 <div class="flex-1 space-y-2">
                     <div class="w-fit gap-x-2  small-badge flex flex-row rounded-full items-center">

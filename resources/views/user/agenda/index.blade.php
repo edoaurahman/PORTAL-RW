@@ -24,11 +24,11 @@
     </section>
 
     <section id="kalender"
-        class="grid sm:grid-cols-2 gap-4 max-w-6xl sm:pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-gray-800 p-10 sm:p-14 rounded-3xl z-20 relative ">
+        class="grid sm:grid-cols-2 gap-4 max-w-6xl sm:pt-20 mx-auto font-sans pb-12 mb-60 bg-ungu dark:bg-[#37177b] p-10 sm:p-14 rounded-3xl z-20 relative ">
         <div>
             <h5 class="mx-5 mb-2 text-[20px] font-bold tracking-tight text-white dark:text-white">Kalender Agenda RW 2
             </h5>
-            <div class="bg-purple-200 dark:bg-gray-700 rounded-xl sm:mx-5 p-5 sm:p-10">
+            <div class="bg-purple-200 dark:bg-[#180248] rounded-xl sm:mx-5 p-5 sm:p-10">
                 <div id="calendar"></div>
             </div>
         </div>
