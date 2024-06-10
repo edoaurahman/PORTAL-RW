@@ -412,8 +412,8 @@
                                         </div>
                                         <div class="item-info p-5">
                                             <div class="item-rating flex justify-between items-center mt-3">
-                                                <p class="text-xl font-medium dark:text-white">
-                                                    {{ $item->textcut() }}</p>
+                                                <p class="text-xl font-medium dark:text-white truncate">
+                                                    {{ $item->nama_umkm }}</p>
                                                 {{-- <img class="w-18" src="assets/images/umkm/rating_starts.png" alt=""> --}}
                                             </div>
                                             <p class="item-desc text-gray-500 text-xs">
@@ -568,7 +568,7 @@
                     if (entry.isIntersecting) {
                         const bar = entry.target;
                         const originalPercentage = parseInt(bar.getAttribute('data-persentase'),
-                        10);
+                            10);
                         const newPercentage = originalPercentage + 10;
                         const width = newPercentage + '%';
                         bar.style.setProperty('--width', width);
