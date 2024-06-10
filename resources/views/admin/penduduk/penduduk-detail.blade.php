@@ -44,13 +44,19 @@
     <div class="mt-10 text-xl">
         <h1><strong>FOTO RUMAH</strong></h1>
     </div>
-    <div
-        class="grid grid-cols-2 md:grid-cols-4 mt-2 w-full items-center gap-4 bg-white dark:bg-gray-700 p-10 rounded-lg">
-        @foreach ($foto_rumah as $item)
-            <img src="{{ $item->image() }}" alt="foto rumah" class="modal-image shadow-xl rounded-md bg-white"
-                width="200px">
-        @endforeach
-    </div>
+    @if ($foto_rumah->isEmpty())
+        <div class="mt-5 text-center">
+            <h1 class="text-2xl">Foto rumah tidak ditemukan</h1>
+        </div>
+    @else
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 mt-2 w-full items-center gap-4 bg-white dark:bg-gray-700 p-10 rounded-lg">
+            @foreach ($foto_rumah as $item)
+                <img src="{{ $item->image() }}" alt="foto rumah" class="modal-image shadow-xl rounded-md bg-white"
+                    width="200px">
+            @endforeach
+        </div>
+    @endif
 
     <x-partials.admin.modal.image />
 
