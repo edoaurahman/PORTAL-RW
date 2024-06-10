@@ -104,10 +104,11 @@
         <div class="pt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
             @foreach ($bansos->foto_bansos as $item)
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="{{ $item->fotoRumah }}" alt="">
+                    <img class="h-auto max-w-full rounded-lg modal-image" src="{{ $item->fotoRumah }}" alt="">
                 </div>
             @endforeach
         </div>
 
     </div>
+    <x-partials.admin.modal.image />
 </x-layout.admin-layout>

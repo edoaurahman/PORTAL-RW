@@ -12,6 +12,11 @@
                 </small>
             </h3>
         </div>
+        <div class="md:!justify-start flex justify-center ">
+            <img src="{{ $foto_penduduk }}" width="300px"
+                class="rounded-xl bg-white dark:bg-gray-700 shadow-xl p-5 modal-image" alt="">
+        </div>
+
         <div class="mt-5 relative overflow-x-auto sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-graydark dark:text-gray-400">
                 <tbody>
@@ -36,4 +41,17 @@
             </button>
         </a>
     </div>
+    <div class="mt-10 text-xl">
+        <h1><strong>FOTO RUMAH</strong></h1>
+    </div>
+    <div
+        class="grid grid-cols-2 md:grid-cols-4 mt-2 w-full items-center gap-4 bg-white dark:bg-gray-700 p-10 rounded-lg">
+        @foreach ($foto_rumah as $item)
+            <img src="{{ $item->image() }}" alt="foto rumah" class="modal-image shadow-xl rounded-md bg-white"
+                width="200px">
+        @endforeach
+    </div>
+
+    <x-partials.admin.modal.image />
+
 </x-layout.admin-layout>

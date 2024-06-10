@@ -100,7 +100,7 @@
                                 {{ $item->jumlah > 0 ? 'Tersedia' : 'Kosong' }}
                             </td>
                             <td class="px-6 py-4">
-                                <img src="{{ $item->getImage() }}" class="max-w-[100px]" alt="">
+                                <img src="{{ $item->getImage() }}" class="max-w-[100px] modal-image" alt="">
                             </td>
                             <td class="px-6 py-4 flex gap-2">
                                 <button onclick="showEdit({{ $item }})" data-modal-target="edit-inventaris"
@@ -132,4 +132,5 @@
 
     <x-partials.admin.inventaris.add />
     <x-partials.admin.inventaris.edit />
+    <x-partials.admin.modal.image />
 </x-layout.admin-layout>

@@ -297,7 +297,9 @@ class PendudukController extends Controller
             'RT' => $penduduk->alamat->rt,
             'RW' => $penduduk->alamat->rw,
         ];
-        return view('admin.penduduk.penduduk-detail', compact('detail_penduduk'));
+        $foto_rumah = FotoRumah::where('no_kk', $penduduk->no_kk)->get();
+        $foto_penduduk = $penduduk->foto_profile();
+        return view('admin.penduduk.penduduk-detail', compact('detail_penduduk', 'foto_rumah', 'foto_penduduk'));
     }
 
     public function update(Request $request)
