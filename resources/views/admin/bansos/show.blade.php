@@ -17,7 +17,7 @@
         <!-- End Header Content -->
         <div class="grid grid-cols-3 gap-4">
             <dl
-                class="col-span-1 max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700 bg-white rounded-xl p-5">
+                class="col-span-1 max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:bg-gray-800 dark:divide-gray-700 bg-white rounded-xl p-5">
                 <div class="flex flex-col pb-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Kepala Keluarga</dt>
                     <dd class="text-lg font-semibold">{{ $bansos->kk->kepalaKeluarga->nama }}</dd>
