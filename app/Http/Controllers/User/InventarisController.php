@@ -19,7 +19,12 @@ class InventarisController extends Controller
 
     public function riwayatinventaris()
     {
-        return view('user.inventaris.riwayatinventaris');
+        $nik = auth()->user()->nik;
+        $peminjaman = PeminjamanModel::whereHas('penduduk', function ($query) use ($nik) {
+            $query->where('nik', $nik);
+        })->with('inventaris')->get();
+        return view('user.inventaris.riwayatinventaris', compact('peminjaman'));
+
     }
 
     public function pinjam(Request $request)
