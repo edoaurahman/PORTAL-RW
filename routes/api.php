@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\BansosController;
+use App\Http\Controllers\Api\AgendaController;
+use App\Http\Controllers\Api\PendudukController;
+use App\Http\Controllers\Api\RTController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::put('/agenda/update', [AgendaController::class, 'update']);
+Route::post('/agenda', [AgendaController::class, 'index']);
+Route::get('/data-rt/{id}', [RTController::class, 'getDataRT']);
+Route::get('/kk/{no_kk}', [PendudukController::class, 'getPendudukByKK']);
+Route::get('/bansos/saw', [BansosController::class, 'method_saw']);
+Route::get('/bansos/ahp', [BansosController::class, 'method_ahp']);
