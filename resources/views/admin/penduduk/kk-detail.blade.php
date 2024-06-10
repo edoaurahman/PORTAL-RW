@@ -119,5 +119,5 @@
             @endforeach
         </div>
     </div>
-    <x-partials.admin.penduduk.kk.add-foto-rumah :no-kk="$penduduk->no_kk" />
+    <x-partials.admin.penduduk.kk.Add-Foto-Rumah :no-kk="$penduduk->no_kk" />
 </x-layout.admin-layout>
