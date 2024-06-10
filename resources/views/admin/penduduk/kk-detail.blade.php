@@ -100,7 +100,7 @@
                 <h1 class="text-2xl">Foto rumah tidak ditemukan</h1>
             </div>
         @endif
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
             @foreach ($penduduk->foto_rumah as $item)
                 <div class="relative bg-white p-5 rounded-xl">
                     <img src="{{ $item->image() }}" alt="" class="w-full h-80 object-cover modal-image">
