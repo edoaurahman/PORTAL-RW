@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="flex flex-row item-center hidden sm:block">
-                <img src="{{ asset('assets/images/illustration/avatarpakrw.webp') }}" alt="" class=" max-w-100">
+                <img src="{{ asset('assets/images/illustration/layanan.webp') }}" alt="" class=" max-w-100">
             </div>
         </div>
     </section>

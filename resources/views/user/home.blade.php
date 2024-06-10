@@ -8,7 +8,7 @@
                         <div class="gap-y-2 sm:gap-y-6 flex flex-col">
                             <h1 class="text-gray-600 font-bold text-5xl sm:text-[70px] leading-none dark:text-white">
                                 Tumbuh<br>
-                                <span class="text-purple-500 dark:text-purple-700">Bersama RW 02.</span>
+                                <span class="text-purple-500 dark:text-purple-400">Bersama RW 02.</span>
                             </h1>
                             <div class="text-sm sm:text-base leading-loose text-black3 dark:text-white">
                                 Web digital untuk mencatat dan mengelola data warga RW 02. Antarmuka user-friendly
@@ -23,8 +23,8 @@
                         </div>
                     </div>
                     <div class="flex flex-row item-center hidden sm:block">
-                        <img src="{{ asset('assets/images/illustration/warga.webp') }}" alt=""
-                            class="h-[550px]">
+                        <img src="{{ asset('assets/images/illustration/home.webp') }}" alt=""
+                            class="w-[550px] h-max-[550px]">
                     </div>
                 </div>
             </section>
@@ -33,7 +33,7 @@
                 <div class="grid grid-col sm:grid-cols-3 gap-y-3 gap-x-8 px-5">
                     <div
                         class="my-card bg-purple-100 dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
-                        <i class="fa-solid fa-broom text-4xl sm:text-5xl text-purple-500 dark:text-purple-700"></i>
+                        <i class="fa-solid fa-broom text-4xl sm:text-5xl text-purple-500 dark:text-purple-400"></i>
                         <div class="flex flex-col gap-y-3 sm:gap-y-5">
                             <h3 class=" text-xl sm:text-2xl font-bold text-gray-600 dark:text-white">
                                 Kebersihan
@@ -46,7 +46,7 @@
                     </div>
                     <div
                         class="my-card bg-purple-100 dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
-                        <i class="fa-solid fa-lock text-4xl sm:text-5xl text-purple-500 dark:text-purple-700"></i>
+                        <i class="fa-solid fa-lock text-4xl sm:text-5xl text-purple-500 dark:text-purple-400"></i>
                         <div class="flex flex-col gap-y-3 sm:gap-y-5">
                             <h3 class="text-xl sm:text-2xl font-bold text-gray-600 dark:text-white">
                                 Keamanan
@@ -59,7 +59,7 @@
                     </div>
                     <div
                         class="my-card bg-purple-100 dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
-                        <i class="fa-solid fa-gear text-4xl sm:text-5xl text-purple-500 dark:text-purple-700"></i>
+                        <i class="fa-solid fa-gear text-4xl sm:text-5xl text-purple-500 dark:text-purple-400"></i>
                         <div class="flex flex-col gap-y-3 sm:gap-y-5">
                             <h3 class="text-xl sm:text-2xl font-bold text-gray-600 dark:text-white">
                                 Pelayanan
@@ -163,7 +163,7 @@
                         <li class="mb-[50px] pl-[25px] w-full sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-400 font-extrabold data-penduduk"
                                     data-penduduk-total="{{ $totalPenduduk }}">
                                 </h3>
                                 <span
@@ -174,7 +174,7 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-400 font-extrabold data-penduduk"
                                     data-penduduk-total="{{ $totalPendudukLaki }}">
                                 </h3>
                                 <span
@@ -185,7 +185,7 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-400 font-extrabold data-penduduk"
                                     data-penduduk-total="{{ $totalPendudukPerempuan }}">
                                 </h3>
                                 <span
@@ -195,7 +195,7 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-400 font-extrabold data-penduduk"
                                     data-penduduk-total="{{ $totalPendudukTetap }}">
                                 </h3>
                                 <span
@@ -206,7 +206,7 @@
                         <li class="mb-[50px] pl-[25px] w-1/2 sm:w-1/5 block">
                             <div
                                 class="list_inner tilt-effect w-full h-auto clear-both float-left relative bg-purple-100 dark:bg-ungu_muda rounded-[10px] p-[30px] flex items-center justify-center">
-                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-700 font-extrabold data-penduduk"
+                                <h3 class="text-[40px] transition-all duration-1000 ease-in text-purple-500 dark:text-purple-400 font-extrabold data-penduduk"
                                     data-penduduk-total="{{ $totalPendudukPendatang }}">
                                 </h3>
                                 <span
@@ -251,11 +251,11 @@
                                     <p>RT {{ $item->rt }}</p>
                                     <div class="bg-stroke grow relative h-2.5 w-full rounded-2xl">
                                         <div data-persentase="{{ $item->persentase }}"
-                                            class="bar-data-rt bg-primary absolute top-0 left-0 h-full rounded-2xl transition-all ease-in-out duration-1000 w-1">
+                                            class="bar-data-rt bg-ungu absolute top-0 left-0 h-full rounded-2xl transition-all ease-in-out duration-1000 w-1">
                                             <span
-                                                class="bg-primary absolute -right-4 bottom-full mb-2 rounded-sm px-3.5 py-1 text-sm text-white">
+                                                class="bg-ungu absolute -right-4 bottom-full mb-2 rounded-sm px-3.5 py-1 text-sm text-white">
                                                 <span
-                                                    class="bg-primary absolute bottom-[-2px] left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm"></span>
+                                                    class="bg-ungu absolute bottom-[-2px] left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm"></span>
                                                 {{ $item->persentase }}%
                                             </span>
                                         </div>
@@ -349,7 +349,7 @@
                             class="h-[350px] hidden sm:block">
                     </div>
                     <div class="flex flex-col gap-y-10 ">
-                        <div class="bg-purple-100 dark:bg-gray-800 rounded-3xl pb-5">
+                        <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
                             <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
                                 <h1 class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
                                     {{ $agenda->title }}
@@ -359,10 +359,10 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5">
+                            <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5  ">
 
                                 <div
-                                    class=" flex flex-row bg-white dark:bg-gray-700 rounded-2xl p-5 items-center gap-x-4">
+                                    class=" flex flex-row bg-white dark:bg-[#29115d] rounded-2xl p-5 items-center gap-x-4">
                                     <img src="{{ asset('assets/images/illustration/kalenderimg.webp') }}"
                                         alt="" class="h-[60px] sm:hidden block">
                                     <div class="flex flex-col ">
@@ -458,7 +458,7 @@
                             @foreach ($aspirasi as $item)
                                 <div class="flex flex-row gap-2.5">
                                     <div
-                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-300 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                        class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-300 rounded-e-xl rounded-es-xl dark:bg-[#37177b]">
                                         <div class="flex items-center space-x-2 rtl:space-x-reverse">
                                             <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Author :
                                             </span>
@@ -474,7 +474,7 @@
                                             {{ $item->isi }}
                                         </p>
                                         <div
-                                            class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                                            class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 bg-purple-100 rounded-e-xl rounded-es-xl dark:bg-[#261055]">
                                             @if ($item->status == 'pending')
                                                 <span
                                                     class="text-sm font-normal text-gray-500 dark:text-gray-300">Belum
@@ -516,7 +516,7 @@
                             <form action="{{ route('user.aspirasi.store') }}" class="max-w-sm" method="post">
                                 @csrf
                                 <textarea name="aspirasi" id="message" rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 dark:bg-[#37177b] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
                                     placeholder="Tulis aspirasi disini..."></textarea>
 
                                 <button type="submit"

@@ -6,13 +6,13 @@
                     <div class="gap-y-2 flex flex-col">
                         <h1 class="text-ungu dark:text-orange-100 font-bold text-[40px] sm:text-[60px]  leading-none">Aduan Aspirasi dan Masukan
                         </h1>
-                        <h1 class="text-black1 dark:text-purple-500 font-bold text-[40px] sm:text-[60px]  leading-none">
+                        <h1 class="text-black1 dark:text-purple-500 font-bold text-[40px] sm:text-[40px]  leading-none">
                             Untuk membangun kesejahteraaan lingkungan
                         </h1>
                     </div>
                 </div>
                 <div class="flex-row item-center hidden sm:block">
-                    <img src="{{ asset('assets/images/illustration/avatarpakrw.webp') }}" alt="" class=" max-w-100">
+                    <img src="{{ asset('assets/images/illustration/aspirasi.webp') }}" alt="" class=" max-w-100">
                 </div>
             </div>
         </section>
