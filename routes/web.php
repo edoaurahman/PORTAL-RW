@@ -55,6 +55,8 @@ Route::prefix('admin')->group(function () {
             Route::prefix('kk')->group(function () {
                 Route::get('/detail/{no_kk}', [PendudukController::class, 'kk_detail_penduduk'])->name('admin.penduduk.kk.detail');
                 Route::put('/update', [PendudukController::class, 'update_kk'])->name('admin.penduduk.kk.update');
+                Route::post('/foto-rumah/store', [PendudukController::class, 'store_foto_rumah'])->name('admin.penduduk.kk.foto-rumah.store');
+                Route::delete('/foto-rumah/delete/{id}', [PendudukController::class, 'delete_foto_rumah'])->name('admin.penduduk.kk.foto-rumah.delete');
             });
         });
 

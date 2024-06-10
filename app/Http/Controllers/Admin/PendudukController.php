@@ -378,4 +378,47 @@ class PendudukController extends Controller
             return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage());
         }
     }
+
+    public function store_foto_rumah(Request $request)
+    {
+        // dd($request->toArray());
+        // batasi maskimal ukuaran file 2MB
+        $request->validate([
+            'foto_rumah.*' => 'required|file|mimes:jpg,jpeg,png,svg|max:2048',
+        ], [
+            'foto_rumah.*.required' => 'Foto rumah wajib diunggah.',
+            'foto_rumah.*.file' => 'Foto rumah harus berupa file.',
+            'foto_rumah.*.mimes' => 'Foto rumah harus berformat: jpg, jpeg, png, atau svg.',
+            'foto_rumah.*.max' => 'Ukuran foto rumah tidak boleh lebih dari 2MB.',
+        ]);
+
+        try {
+            foreach ($request->foto_rumah as $image) {
+                $fotoRumah = new FotoRumah();
+                $fotoRumah->no_kk = $request->no_kk;
+                $fotoRumah->image = $image->hashName();
+                $fotoRumah->save();
+                $image->store('images/rumah', 'public');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('admin.penduduk.kk-detail', $request->no_kk)->withErrors($e->getMessage());
+        }
+
+        return redirect()->back()->with('success', 'Foto Rumah Berhasil Ditambahkan.');
+    }
+
+    public function delete_foto_rumah($id)
+    {
+        try {
+            $fotoRumah = FotoRumah::find($id);
+            // delete file image
+            if (file_exists('storage/images/rumah/' . $fotoRumah->image)) {
+                unlink('storage/images/rumah/' . $fotoRumah->image);
+            }
+            $fotoRumah->delete();
+            return redirect()->back()->with('success', 'Foto Rumah Berhasil Dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors($e->getMessage());
+        }
+    }
 }
