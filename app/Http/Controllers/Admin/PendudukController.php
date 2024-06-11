@@ -343,9 +343,10 @@ class PendudukController extends Controller
                 }
 
                 $akun = AkunModel::where('nik', $penduduk->nik)->first();
+                $this->cek_level_akun($akun);
                 if ($akun) {
                     $this->akun_penduduk_delete($akun->id_akun);
-                    session()->forget(['success', 'error', 'warning', 'info']);
+                    session()->forget(['success', 'errors']);
                 }
 
                 // cek apakah penduduk kepala keluarga
@@ -401,10 +402,7 @@ class PendudukController extends Controller
         try {
             DB::transaction(function () use ($id) {
                 $akun = AkunModel::find($id);
-                $cek_level = $akun->level->nama_level;
-                if ($cek_level == 'RT' || $cek_level == 'RW' || $cek_level == 'Super Admin') {
-                    throw new \Exception('Akun dengan level ' . $cek_level . ' tidak dapat dihapus. Ubah level akun terlebih dahulu.');
-                }
+                $this->cek_level_akun($akun);
                 // hapus umkm
                 $list_umkm = UMKMModel::where('nik', $akun->nik)->get();
                 if ($list_umkm->count() > 0) {
@@ -459,6 +457,14 @@ class PendudukController extends Controller
             return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Dihapus.');
         } catch (\Exception $e) {
             return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage());
+        }
+    }
+
+    public function cek_level_akun(AkunModel $akun)
+    {
+        $cek_level = $akun->level->nama_level;
+        if ($cek_level == 'RT' || $cek_level == 'RW' || $cek_level == 'Super Admin') {
+            throw new \Exception('Akun dengan level ' . $cek_level . ' tidak dapat dihapus. Ubah level akun terlebih dahulu.');
         }
     }
 
