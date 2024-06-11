@@ -329,42 +329,85 @@ class PendudukController extends Controller
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Diupdate.');
     }
 
+    // public function destroy($nik)
+    // {
+    //     // return $nik;
+    //     try {
+    //         DB::transaction(function () use ($nik) {
+    //             $penduduk = PendudukModel::where('nik', $nik)->first();
+    //             $akun = AkunModel::where('nik', $penduduk->nik)->first();
+    //             if ($akun) {
+    //                 $this->akun_penduduk_delete($akun->id_akun);
+    //             }
+    //             // cek apakah penduduk kepala keluarga
+    //             $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
+    //             if ($isKepalaKK) {
+    //                 // ambil semua anggota keluarga kecuali kepala keluarga
+    //                 $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
+    //                 // jika anggota keluarga lebih dari 1
+    //                 if ($anggotaKeluarga->count() >= 1) {
+    //                     return redirect()->back()->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.');
+    //                 }
+    //                 // hapus foto penduduk
+    //                 if (file_exists('storage/images/penduduk/' . $penduduk->image)) {
+    //                     unlink('storage/images/penduduk/' . $penduduk->image);
+    //                 }
+    //                 // jika anggota keluarga hanya 1
+    //                 $penduduk->delete();
+    //                 $isKepalaKK->delete();
+    //             }
+    //             $penduduk->delete();
+    //         });
+    //     } catch (\Exception $e) {
+    //         return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
+    //     }
+    //     return redirect()->back()->with('success', 'Penduduk Berhasil Dihapus.');
+    // }
+
     public function destroy($nik)
     {
-        // return $nik;
         try {
             DB::transaction(function () use ($nik) {
                 $penduduk = PendudukModel::where('nik', $nik)->first();
+
+                if (!$penduduk) {
+                    throw new \Exception('Penduduk tidak ditemukan.');
+                }
+
                 $akun = AkunModel::where('nik', $penduduk->nik)->first();
                 if ($akun) {
                     $this->akun_penduduk_delete($akun->id_akun);
+                    session()->forget(['success', 'error', 'warning', 'info']);
                 }
+
                 // cek apakah penduduk kepala keluarga
                 $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
                 if ($isKepalaKK) {
                     // ambil semua anggota keluarga kecuali kepala keluarga
                     $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
-                    // jika anggota keluarga lebih dari 1
-                    if ($anggotaKeluarga->count() >= 1) {
-                        return redirect()->route('admin.penduduk')->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.')->withInput();
+
+                    // jika anggota keluarga lebih dari 0
+                    if ($anggotaKeluarga->count() > 0) {
+                        throw new \Exception('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu di halaman <a class="text-blue-500" href="/admin/penduduk/kk">Daftar KK</a>.');
                     }
+
                     // hapus foto penduduk
                     if (file_exists('storage/images/penduduk/' . $penduduk->image)) {
                         unlink('storage/images/penduduk/' . $penduduk->image);
                     }
-                    // jika anggota keluarga hanya 1
-                    $penduduk->delete();
-                    $isKepalaKK->delete();
-                    // delete akun
 
+                    // jika anggota keluarga hanya 1 (kepala keluarga)
+                    $isKepalaKK->delete();
                 }
+
                 $penduduk->delete();
             });
         } catch (\Exception $e) {
-            return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
+            return redirect()->route('admin.penduduk')->withErrors($e->getMessage());
         }
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Dihapus.');
     }
+
 
     public function update_kk(Request $request)
     {
