@@ -57,10 +57,10 @@ Route::prefix('bansos')->group(function () {
 });
 
 Route::prefix('umkm')->group(function () {
+    Route::get('/', [UmkmController::class, 'index'])->name('user.umkm');
+    Route::get('/detail/{id}', [UmkmController::class, 'show'])->name('user.umkm.detail');
     Route::middleware(['auth'])->group(function () {
-        Route::get('/', [UmkmController::class, 'index'])->name('user.umkm');
         Route::get('/dashboard', [UmkmController::class, 'dashboard'])->name('user.umkm.dashboard');
-        Route::get('/detail/{id}', [UmkmController::class, 'show'])->name('user.umkm.detail');
         Route::get('/create', [UmkmController::class, 'create'])->name('user.umkm.tambah');
         Route::post('/store', [UmkmController::class, 'store'])->name('user.umkm.store');
         Route::get('/edit/{umkm}', [UmkmController::class, 'edit'])->name('user.umkm.edit');
