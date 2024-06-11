@@ -9,11 +9,14 @@ use App\Http\Requests\StoreAkunPenduduk;
 use App\Http\Requests\StorePenduduk;
 use App\Models\AkunModel;
 use App\Models\AlamatModel;
+use App\Models\AspirasiModel;
+use App\Models\BansosModel;
 use App\Models\BeritaModel;
 use App\Models\FotoRumah;
 use App\Models\GambarUMKMModel;
 use App\Models\KkModel;
 use App\Models\LevelModel;
+use App\Models\PeminjamanModel;
 use App\Models\PendudukModel;
 use App\Models\UMKMModel;
 use Illuminate\Http\Request;
@@ -329,41 +332,6 @@ class PendudukController extends Controller
         return redirect()->route('admin.penduduk')->with('success', 'Penduduk Berhasil Diupdate.');
     }
 
-    // public function destroy($nik)
-    // {
-    //     // return $nik;
-    //     try {
-    //         DB::transaction(function () use ($nik) {
-    //             $penduduk = PendudukModel::where('nik', $nik)->first();
-    //             $akun = AkunModel::where('nik', $penduduk->nik)->first();
-    //             if ($akun) {
-    //                 $this->akun_penduduk_delete($akun->id_akun);
-    //             }
-    //             // cek apakah penduduk kepala keluarga
-    //             $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
-    //             if ($isKepalaKK) {
-    //                 // ambil semua anggota keluarga kecuali kepala keluarga
-    //                 $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
-    //                 // jika anggota keluarga lebih dari 1
-    //                 if ($anggotaKeluarga->count() >= 1) {
-    //                     return redirect()->back()->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.');
-    //                 }
-    //                 // hapus foto penduduk
-    //                 if (file_exists('storage/images/penduduk/' . $penduduk->image)) {
-    //                     unlink('storage/images/penduduk/' . $penduduk->image);
-    //                 }
-    //                 // jika anggota keluarga hanya 1
-    //                 $penduduk->delete();
-    //                 $isKepalaKK->delete();
-    //             }
-    //             $penduduk->delete();
-    //         });
-    //     } catch (\Exception $e) {
-    //         return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
-    //     }
-    //     return redirect()->back()->with('success', 'Penduduk Berhasil Dihapus.');
-    // }
-
     public function destroy($nik)
     {
         try {
@@ -449,6 +417,32 @@ class PendudukController extends Controller
                         $controller = new BeritaController();
                         $data_berita = BeritaModel::where('id_berita', $berita->id_berita)->first();
                         $controller->destroy($data_berita);
+                    }
+                }
+
+                $list_peminjaman = PeminjamanModel::where('nik', $akun->nik)->get();
+                if ($list_peminjaman->count() > 0) {
+                    foreach ($list_peminjaman as $peminjaman) {
+                        $controller = new InventarisController();
+                        $data_peminjaman = PeminjamanModel::where('id_peminjaman', $peminjaman->id_peminjaman)->first();
+                        $controller->destroy_peminjaman($data_peminjaman);
+                    }
+                }
+
+                $isKepalaKK = KkModel::where('nik_kepalakeluarga', $akun->nik)->first();
+                if ($isKepalaKK) {
+                    $list_bansos = BansosModel::where('no_kk', $isKepalaKK->no_kk)->get();
+                    if ($list_bansos->count() > 0) {
+                        foreach ($list_bansos as $bansos) {
+                            $bansos->delete();
+                        }
+                    }
+                }
+
+                $list_aspirasi = AspirasiModel::where('author', $akun->nik)->get();
+                if ($list_aspirasi->count() > 0) {
+                    foreach ($list_aspirasi as $aspirasi) {
+                        $aspirasi->delete();
                     }
                 }
                 $akun->delete();
