@@ -266,10 +266,13 @@ class BansosController extends Controller
     {
         $request->validate([
             'id' => 'required|exists:tb_bansos,id_bansos',
-            'status' => 'required|in:approved,rejected',
+            'status' => 'required|in:approved,rejected,delete',
             'alasan' => 'required_if:status,rejected',
         ]);
         $bansos = BansosModel::find($request->id);
+        if ($request->status == 'delete') {
+            $this->destroy($request);
+        }
         $bansos->status = $request->status;
         $bansos->alasan = $request->alasan;
         $bansos->save();
