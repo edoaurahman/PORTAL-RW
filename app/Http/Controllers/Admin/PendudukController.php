@@ -401,6 +401,10 @@ class PendudukController extends Controller
         try {
             DB::transaction(function () use ($id) {
                 $akun = AkunModel::find($id);
+                $cek_level = $akun->level->nama_level;
+                if ($cek_level == 'RT' || $cek_level == 'RW' || $cek_level == 'Super Admin') {
+                    throw new \Exception('Akun dengan level ' . $cek_level . ' tidak dapat dihapus. Ubah level akun terlebih dahulu.');
+                }
                 // hapus umkm
                 $list_umkm = UMKMModel::where('nik', $akun->nik)->get();
                 if ($list_umkm->count() > 0) {
@@ -444,6 +448,11 @@ class PendudukController extends Controller
                     foreach ($list_aspirasi as $aspirasi) {
                         $aspirasi->delete();
                     }
+                }
+
+                $link_maps = $akun->link_maps();
+                if ($link_maps) {
+                    $link_maps->delete();
                 }
                 $akun->delete();
             });
