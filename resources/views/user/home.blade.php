@@ -350,34 +350,49 @@
                             class="h-[350px] hidden sm:block">
                     </div>
                     <div class="flex flex-col gap-y-10 ">
-                        <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
-                            <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
-                                <h1 class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
-                                    {{ $agenda->title }}
-                                </h1>
-                                <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
-                                    {{ $agenda->deskripsi }}
+                        @if ($agenda == null)
+                            <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
+                                <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
+                                    <h1
+                                        class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
+                                        Tidak ada agenda
+                                    </h1>
+                                    <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
+                                        Tidak ada agenda yang tersedia saat ini
+                                    </div>
                                 </div>
                             </div>
+                        @else
+                            <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
+                                <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
+                                    <h1
+                                        class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
+                                        {{ $agenda->title }}
+                                    </h1>
+                                    <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
+                                        {{ $agenda->deskripsi }}
+                                    </div>
+                                </div>
 
-                            <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5  ">
+                                <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5  ">
 
-                                <div
-                                    class=" flex flex-row bg-white dark:bg-[#29115d] rounded-2xl p-5 items-center gap-x-4">
-                                    <img src="{{ asset('assets/images/illustration/kalenderimg.webp') }}"
-                                        alt="" class="h-[60px] sm:hidden block">
-                                    <div class="flex flex-col ">
-                                        <h3 class="text-xl sm:text-2xl font-bold text-black1 dark:text-purple-100">
-                                            Waktu
-                                        </h3>
-                                        <div
-                                            class="text-sm sm:text-base leading-relaxed text-black4 dark:text-purple-200">
-                                            {{ $agenda->start . ' - ' . $agenda->end }}
+                                    <div
+                                        class=" flex flex-row bg-white dark:bg-[#29115d] rounded-2xl p-5 items-center gap-x-4">
+                                        <img src="{{ asset('assets/images/illustration/kalenderimg.webp') }}"
+                                            alt="" class="h-[60px] sm:hidden block">
+                                        <div class="flex flex-col ">
+                                            <h3 class="text-xl sm:text-2xl font-bold text-black1 dark:text-purple-100">
+                                                Waktu
+                                            </h3>
+                                            <div
+                                                class="text-sm sm:text-base leading-relaxed text-black4 dark:text-purple-200">
+                                                {{ $agenda->start . ' - ' . $agenda->end }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="flex flex-row gap-x-4 items-center pl-5 ">
                             <a href="{{ route('user.agenda') }}"
                                 class=" text-sm sm:text-base bg-purple-400 hover:bg-indigo-900 text-white dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700 py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold">
