@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\BeritaController;
+use App\Http\Controllers\User\UmkmController;
 use App\Http\Requests\StoreAkunPenduduk;
 use App\Http\Requests\StorePenduduk;
 use App\Models\AkunModel;
 use App\Models\AlamatModel;
+use App\Models\BeritaModel;
 use App\Models\FotoRumah;
+use App\Models\GambarUMKMModel;
 use App\Models\KkModel;
 use App\Models\LevelModel;
 use App\Models\PendudukModel;
+use App\Models\UMKMModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -328,21 +333,33 @@ class PendudukController extends Controller
     {
         // return $nik;
         try {
-            $penduduk = PendudukModel::where('nik', $nik)->first();
-            // cek apakah penduduk kepala keluarga
-            $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
-            if ($isKepalaKK) {
-                // ambil semua anggota keluarga kecuali kepala keluarga
-                $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
-                // jika anggota keluarga lebih dari 1
-                if ($anggotaKeluarga->count() >= 1) {
-                    return redirect()->route('admin.penduduk')->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.')->withInput();
+            DB::transaction(function () use ($nik) {
+                $penduduk = PendudukModel::where('nik', $nik)->first();
+                $akun = AkunModel::where('nik', $penduduk->nik)->first();
+                if ($akun) {
+                    $this->akun_penduduk_delete($akun->id_akun);
                 }
-                // jika anggota keluarga hanya 1
+                // cek apakah penduduk kepala keluarga
+                $isKepalaKK = KkModel::where('nik_kepalakeluarga', $penduduk->nik)->first();
+                if ($isKepalaKK) {
+                    // ambil semua anggota keluarga kecuali kepala keluarga
+                    $anggotaKeluarga = PendudukModel::where('no_kk', $isKepalaKK->no_kk)->where('nik', '!=', $penduduk->nik)->get();
+                    // jika anggota keluarga lebih dari 1
+                    if ($anggotaKeluarga->count() >= 1) {
+                        return redirect()->route('admin.penduduk')->withErrors('Kepala Keluarga tidak dapat dihapus, silahkan pindahkan kepala keluarga terlebih dahulu.')->withInput();
+                    }
+                    // hapus foto penduduk
+                    if (file_exists('storage/images/penduduk/' . $penduduk->image)) {
+                        unlink('storage/images/penduduk/' . $penduduk->image);
+                    }
+                    // jika anggota keluarga hanya 1
+                    $penduduk->delete();
+                    $isKepalaKK->delete();
+                    // delete akun
+
+                }
                 $penduduk->delete();
-                $isKepalaKK->delete();
-            }
-            $penduduk->delete();
+            });
         } catch (\Exception $e) {
             return config('app.debug') ? redirect()->route('admin.penduduk')->withErrors($e->getMessage())->withInput() : redirect()->route('admin.penduduk')->withErrors('Penduduk Gagal Dihapus.')->withInput();
         }
@@ -371,8 +388,28 @@ class PendudukController extends Controller
     public function akun_penduduk_delete($id)
     {
         try {
-            $akun = AkunModel::find($id);
-            $akun->delete();
+            DB::transaction(function () use ($id) {
+                $akun = AkunModel::find($id);
+                // hapus umkm
+                $list_umkm = UMKMModel::where('nik', $akun->nik)->get();
+                if ($list_umkm->count() > 0) {
+                    foreach ($list_umkm as $umkm) {
+                        $controller = new UmkmController();
+                        $data_umkm = UMKMModel::where('id_umkm', $umkm->id_umkm)->first();
+                        $controller->destroy($data_umkm);
+                    }
+                }
+                // hapus berita
+                $list_berita = BeritaModel::where('author', $akun->nik)->get();
+                if ($list_berita->count() > 0) {
+                    foreach ($list_berita as $berita) {
+                        $controller = new BeritaController();
+                        $data_berita = BeritaModel::where('id_berita', $berita->id_berita)->first();
+                        $controller->destroy($data_berita);
+                    }
+                }
+                $akun->delete();
+            });
             return redirect()->route('admin.penduduk.akun')->with('success', 'Akun Berhasil Dihapus.');
         } catch (\Exception $e) {
             return redirect()->route('admin.penduduk.akun')->withErrors($e->getMessage());
