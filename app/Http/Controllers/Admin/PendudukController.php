@@ -397,9 +397,9 @@ class PendudukController extends Controller
                     }
 
                     // jika anggota keluarga hanya 1 (kepala keluarga)
+                    $penduduk->delete();
                     $isKepalaKK->delete();
                 }
-
                 $penduduk->delete();
             });
         } catch (\Exception $e) {
