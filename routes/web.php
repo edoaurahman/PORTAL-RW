@@ -98,6 +98,7 @@ Route::prefix('admin')->group(function () {
             Route::middleware(['isRw'])->group(function () {
                 Route::get('/pengeluaran', [KeuanganController::class, 'pengeluaran'])->name('admin.keuangan.pengeluaran');
                 Route::post('/pengeluaran/store', [KeuanganController::class, 'store_pengeluaran'])->name('admin.keuangan.pengeluaran.store');
+                Route::put('/pengeluaran/update', [KeuanganController::class, 'update_pengeluaran'])->name('admin.keuangan.pengeluaran.update');
                 Route::post('/kategori/store', [KeuanganController::class, 'store_kategori'])->name('admin.keuangan.kategori.store');
                 Route::put('/kategori/update', [KeuanganController::class, 'update_kategori'])->name('admin.keuangan.kategori.update');
                 Route::get('/pengeluaran/kategori', [KeuanganController::class, 'kategori'])->name('admin.keuangan.kategori');

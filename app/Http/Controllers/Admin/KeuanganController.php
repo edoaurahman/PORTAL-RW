@@ -298,4 +298,24 @@ class KeuanganController extends Controller
 
         return redirect()->back()->with('success', 'Kategori keuangan berhasil diubah');
     }
+
+    public function update_pengeluaran(Request $request)
+    {
+        $request->validate([
+            'id_pengeluaran' => 'required|exists:tb_pengeluaran,id_pengeluaran',
+            'jumlah' => 'required|numeric',
+            'keterangan' => 'required',
+            'id_kategori' => 'required|exists:tb_kategori_keuangan,id_kategori'
+        ]);
+
+        DB::transaction(function () use ($request) {
+            PengeluaranModel::where('id_pengeluaran', $request->id_pengeluaran)->update([
+                'jumlah' => $request->jumlah,
+                'keterangan' => $request->keterangan,
+                'id_kategori' => $request->id_kategori
+            ]);
+        });
+
+        return redirect()->back()->with('success', 'Data pengeluaran berhasil diubah');
+    }
 }
