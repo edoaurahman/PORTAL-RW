@@ -343,8 +343,8 @@ class PendudukController extends Controller
                 }
 
                 $akun = AkunModel::where('nik', $penduduk->nik)->first();
-                $this->cek_level_akun($akun);
                 if ($akun) {
+                    $this->cek_level_akun($akun);
                     $this->akun_penduduk_delete($akun->id_akun);
                     session()->forget(['success', 'errors']);
                 }
