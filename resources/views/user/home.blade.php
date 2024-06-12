@@ -11,15 +11,14 @@
                                 <span class="text-purple-500 dark:text-purple-400">Bersama RW 02.</span>
                             </h1>
                             <div class="text-sm sm:text-base leading-loose text-black3 dark:text-white">
-                                Web digital untuk mencatat dan mengelola data warga RW 02. Antarmuka user-friendly
-                                mempercepat akses informasi, mendukung metode oenerima bansos, layanan sosial, pencarian
+                                Digitalisasi pencatatan dan pengelolaan data warga RW 02. 
+                                mempercepat akses informasi, mendukung pembagian bansos tepat sasaran, kemudahan layanan sosial, pencarian
                                 cepat, dan laporan statistik.
                             </div>
                         </div>
                         <div class="flex flex-row gap-x-4 items-center">
                             <a href="{{ route('user.layanan') }}"
-                                class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
-                                Pengantar</a>
+                                class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Layanan Kami</a>
                         </div>
                     </div>
                     <div class="flex flex-row item-center hidden sm:block">
