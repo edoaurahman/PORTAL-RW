@@ -61,6 +61,7 @@ class BansosController extends Controller
 
     public function method_ahp()
     {
+        // Matriks perbandingan kriteria
         $criteriaComparisonMatrix = [
             [1, 3, 5, 7, 9],
             [1 / 3, 1, 3, 5, 7],
@@ -72,26 +73,32 @@ class BansosController extends Controller
         // Hitung bobot kriteria
         $criteriaWeights = $this->calculateWeights($criteriaComparisonMatrix);
 
+        // Ambil data bansos yang statusnya pending
         $bansos = BansosModel::where('status', 'pending')->get();
 
         $bansosWeights = [];
         foreach ($bansos as $data) {
+            $gajiWeight = $criteriaWeights[0] * (1 / $data->gaji);
+            $tanggunganWeight = $criteriaWeights[1] * $data->jumlah_tanggungan;
+            $luasTanahWeight = $criteriaWeights[2] * (1 / $data->luas_tanah);
+            $listrikWeight = $criteriaWeights[3] * (1 / $data->kapasitas_listrik);
+            $kendaraanWeight = $criteriaWeights[4] * (1 / $data->jumlah_kendaraan);
+
+            $totalWeight = $gajiWeight + $tanggunganWeight + $luasTanahWeight + $listrikWeight + $kendaraanWeight;
+
             $bansosWeights[] = [
                 'id_bansos' => $data->id_bansos,
                 'no_kk' => $data->no_kk,
-                'gaji' => $criteriaWeights[0] * (1 / $data->gaji),
-                'jumlah_tanggungan' => $criteriaWeights[1] * $data->jumlah_tanggungan,
-                'luas_tanah' => $criteriaWeights[2] * (1 / $data->luas_tanah),
-                'kapasitas_listrik' => $criteriaWeights[3] * (1 / $data->kapasitas_listrik),
-                'jumlah_kendaraan' => $criteriaWeights[4] * (1 / $data->jumlah_kendaraan),
-                'nilai_total' => $criteriaWeights[0] * (1 / $data->gaji) +
-                    $criteriaWeights[1] * $data->jumlah_tanggungan +
-                    $criteriaWeights[2] * (1 / $data->luas_tanah) +
-                    $criteriaWeights[3] * (1 / $data->kapasitas_listrik) +
-                    $criteriaWeights[4] * (1 / $data->jumlah_kendaraan),
+                'gaji' => $gajiWeight,
+                'jumlah_tanggungan' => $tanggunganWeight,
+                'luas_tanah' => $luasTanahWeight,
+                'kapasitas_listrik' => $listrikWeight,
+                'jumlah_kendaraan' => $kendaraanWeight,
+                'nilai_total' => $totalWeight,
             ];
         }
 
+        // Urutkan berdasarkan nilai total secara descending
         usort($bansosWeights, function ($a, $b) {
             return $b['nilai_total'] <=> $a['nilai_total'];
         });
@@ -101,20 +108,33 @@ class BansosController extends Controller
 
     private function calculateWeights($matrix)
     {
-        $rowSums = array_map('array_sum', $matrix);
-        $totalSum = array_sum($rowSums);
+        $numCriteria = count($matrix);
 
-        $normalizedMatrix = [];
-        foreach ($matrix as $i => $row) {
-            foreach ($row as $j => $value) {
-                $normalizedMatrix[$i][$j] = $value / $totalSum;
+        // Jumlahkan setiap kolom
+        $columnSums = array_fill(0, $numCriteria, 0);
+        for ($i = 0; $i < $numCriteria; $i++) {
+            for ($j = 0; $j < $numCriteria; $j++) {
+                $columnSums[$j] += $matrix[$i][$j];
             }
         }
 
-        $weights = array_map('array_sum', $normalizedMatrix);
+        // Normalisasi matriks
+        $normalizedMatrix = [];
+        for ($i = 0; $i < $numCriteria; $i++) {
+            for ($j = 0; $j < $numCriteria; $j++) {
+                $normalizedMatrix[$i][$j] = $matrix[$i][$j] / $columnSums[$j];
+            }
+        }
+
+        // Hitung bobot kriteria
+        $weights = array_fill(0, $numCriteria, 0);
+        for ($i = 0; $i < $numCriteria; $i++) {
+            $weights[$i] = array_sum($normalizedMatrix[$i]) / $numCriteria;
+        }
 
         return $weights;
     }
+
 
     public function index()
     {
@@ -246,10 +266,13 @@ class BansosController extends Controller
     {
         $request->validate([
             'id' => 'required|exists:tb_bansos,id_bansos',
-            'status' => 'required|in:approved,rejected',
+            'status' => 'required|in:approved,rejected,delete',
             'alasan' => 'required_if:status,rejected',
         ]);
         $bansos = BansosModel::find($request->id);
+        if ($request->status == 'delete') {
+            $this->destroy($request);
+        }
         $bansos->status = $request->status;
         $bansos->alasan = $request->alasan;
         $bansos->save();

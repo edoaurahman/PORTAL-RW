@@ -17,7 +17,8 @@ class UserController extends Controller
     public function index()
     {
         $agenda = AgendaModel::where('start', '>=', date('Y-m-d'))->first();
-        $aspirasi = AspirasiModel::all();
+        $aspirasi = AspirasiModel::get()->random(4);
+        
         $umkm = UMKMModel::limit(4)->where('status', 'publish')->orderBy('view', 'desc')->get();
         $rw = AkunModel::whereHas('level', function ($q) {
             $q->where('nama_level', 'RW');

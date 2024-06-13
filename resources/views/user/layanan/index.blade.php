@@ -5,10 +5,11 @@
             <div class="flex flex-col gap-y-10">
 
                 <div class="gap-y-2 flex flex-col">
-                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[50px] sm:text-[70px]  leading-none">Pak RW
+                    <h1 class="text-ungu dark:text-orange-100 font-bold text-[30px] sm:text-[50px]  leading-none">Kini Urusan Layanan
+                        
                     </h1>
-                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[50px] sm:text-[70px]  leading-none">
-                        Siap Melayani!
+                    <h1 class="text-black1 dark:text-purple-500 font-bold text-[30px] sm:text-[50px]  leading-none">
+                        Lebih Cepat dan Mudah!
                     </h1>
                 </div>
             </div>

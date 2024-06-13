@@ -3,7 +3,7 @@
         <div class="px-7 sm:max-w-6xl mx-auto font-sans">
 
             <section class="hero pb-12 pt-[100px] ">
-                <div class="flex flex-col sm:flex-row items-center justify-between">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-x-4 ">
                     <div class="flex flex-col flex-1 gap-y-8 sm:gap-y-10">
                         <div class="gap-y-2 sm:gap-y-6 flex flex-col">
                             <h1 class="text-gray-600 font-bold text-5xl sm:text-[70px] leading-none dark:text-white">
@@ -11,15 +11,14 @@
                                 <span class="text-purple-500 dark:text-purple-400">Bersama RW 02.</span>
                             </h1>
                             <div class="text-sm sm:text-base leading-loose text-black3 dark:text-white">
-                                Web digital untuk mencatat dan mengelola data warga RW 02. Antarmuka user-friendly
-                                mempercepat akses informasi, mendukung metode oenerima bansos, layanan sosial, pencarian
+                                Digitalisasi pencatatan dan pengelolaan data warga RW 02. 
+                                mempercepat akses informasi, mendukung pembagian bansos tepat sasaran, kemudahan layanan sosial, pencarian
                                 cepat, dan laporan statistik.
                             </div>
                         </div>
                         <div class="flex flex-row gap-x-4 items-center">
                             <a href="{{ route('user.layanan') }}"
-                                class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Surat
-                                Pengantar</a>
+                                class="text-sm sm:text-base bg-purple-400 hover:bg-indigo-700 text-white py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700">Layanan Kami</a>
                         </div>
                     </div>
                     <div class="flex flex-row item-center hidden sm:block">
@@ -29,7 +28,7 @@
                 </div>
             </section>
 
-            <section class="features py-12">
+            <section class="features py-15">
                 <div class="grid grid-col sm:grid-cols-3 gap-y-3 gap-x-8 px-5">
                     <div
                         class="my-card bg-purple-100 dark:bg-ungu_muda flex flex-col gap-y-4 sm:gap-y-8 items-start rounded-2xl p-7 sm:p-10">
@@ -73,7 +72,7 @@
                 </div>
             </section>
 
-            <section class="KetuaRw py-12">
+            <section class="KetuaRw py-15">
                 <div class="grid grid-cols-1 sm:grid-cols-2 items-center sm:gap-x-10">
                     <div class="flex flex-row item-center justify-center">
                         <img src="{{ $rw->penduduk->foto_profile() }}" alt=""
@@ -157,8 +156,8 @@
                 </div>
             </section>
 
-            <section class="range py-12">
-                <div class="counter_list w-full h-auto clear-both float-left">
+            <section class="range py-15">
+                <div class="counter_list w-full h-auto clear-both float-left py-15">
                     <ul class="ml-[-25px] flex flex-wrap">
                         <li class="mb-[50px] pl-[25px] w-full sm:w-1/5 block">
                             <div
@@ -227,7 +226,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="list w-full h-auto clear-both flex mt-[47px] ">
+                <div class="list w-full h-auto clear-both flex mt-[60px] ">
                     <div class="w-full">
                         <div class="grid grid-cols-1 sm:grid-cols-2 w-full px-4 gap-4">
                             <style>
@@ -246,16 +245,17 @@
                                     animation: grow-bar 1s forwards;
                                 }
                             </style>
+
                             @foreach ($listRT as $item)
                                 <div class="mb-12">
-                                    <p>RT {{ $item->rt }}</p>
-                                    <div class="bg-stroke grow relative h-2.5 w-full rounded-2xl">
+                                    <p class="text-gray-500 pb-2">RT {{ $item->rt }}</p>
+                                    <div class="bg-purple-200 grow relative h-2.5 w-full rounded-2xl">
                                         <div data-persentase="{{ $item->persentase }}"
-                                            class="bar-data-rt bg-ungu absolute top-0 left-0 h-full rounded-2xl transition-all ease-in-out duration-1000 w-1">
+                                            class="bar-data-rt bg-purple-500 dark:bg-purple-700 absolute top-0 left-0 h-full rounded-2xl transition-all ease-in-out duration-1000 w-1">
                                             <span
-                                                class="bg-ungu absolute -right-4 bottom-full mb-2 rounded-sm px-3.5 py-1 text-sm text-white">
+                                                class="bg-purple-500 dark:bg-purple-700 absolute -right-4 bottom-full mb-2 rounded-sm px-3.5 py-1 text-sm text-white">
                                                 <span
-                                                    class="bg-ungu absolute bottom-[-2px] left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm"></span>
+                                                    class="bg-purple-500 dark:bg-purple-700 absolute bottom-[-2px] left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm"></span>
                                                 {{ $item->persentase }}%
                                             </span>
                                         </div>
@@ -267,7 +267,7 @@
                 </div>
             </section>
 
-            <section class="OurTeam py-5 sm:py-12">
+            <section class="OurTeam py-5 sm:py-15">
                 <div class=" items-center">
                     <div>
                         <h1 class=" text-center font-bold text-4xl sm:text-5xl leading-tight dark:text-whiten ">
@@ -287,7 +287,7 @@
                                     <div class="relative group overflow-hidden h-[330px] bg-white rounded-2xl">
                                         <div class="relative h-full">
                                             <div
-                                                class="absolute bg-indigo-900/0 group-hover:bg-indigo-900/80 w-full h-full transition ease-in-out duration-700 skew-x-12 group-hover:skew-x-0 rotate-90 group-hover:rotate-0">
+                                                class="absolute bg-indigo-900/0  group-hover:bg-purple-400/80 group-hover:dark:bg-purple-700/80 w-full h-full transition ease-in-out duration-700 skew-x-12 group-hover:skew-x-0 rotate-90 group-hover:rotate-0">
                                                 <div class="flex h-full justify-center items-center gap-5">
                                                     <a class="opacity-0 group-hover:opacity-100 delay-500 transition ease-linear"
                                                         href="{{ route('user.detail', $item->nik) }}">
@@ -349,34 +349,49 @@
                             class="h-[350px] hidden sm:block">
                     </div>
                     <div class="flex flex-col gap-y-10 ">
-                        <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
-                            <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
-                                <h1 class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
-                                    {{ $agenda->title }}
-                                </h1>
-                                <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
-                                    {{ $agenda->deskripsi }}
+                        @if ($agenda == null)
+                            <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
+                                <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
+                                    <h1
+                                        class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
+                                        Tidak ada agenda
+                                    </h1>
+                                    <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
+                                        Tidak ada agenda yang tersedia saat ini
+                                    </div>
                                 </div>
                             </div>
+                        @else
+                            <div class="bg-purple-100 dark:bg-[#37177b] rounded-3xl pb-5">
+                                <div class="sm:gap-y-2 flex flex-col pl-5 pt-5">
+                                    <h1
+                                        class="text-black1 font-bold text-3xl sm:text-4xl leading-tight dark:text-white ">
+                                        {{ $agenda->title }}
+                                    </h1>
+                                    <div class="text-base leading-loose text-black3 dark:text-purple-200 pb-4">
+                                        {{ $agenda->deskripsi }}
+                                    </div>
+                                </div>
 
-                            <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5  ">
+                                <div class="flex flex-col gap-y-10 pl-5 pr-5 sm:pb-5  ">
 
-                                <div
-                                    class=" flex flex-row bg-white dark:bg-[#29115d] rounded-2xl p-5 items-center gap-x-4">
-                                    <img src="{{ asset('assets/images/illustration/kalenderimg.webp') }}"
-                                        alt="" class="h-[60px] sm:hidden block">
-                                    <div class="flex flex-col ">
-                                        <h3 class="text-xl sm:text-2xl font-bold text-black1 dark:text-purple-100">
-                                            Waktu
-                                        </h3>
-                                        <div
-                                            class="text-sm sm:text-base leading-relaxed text-black4 dark:text-purple-200">
-                                            {{ $agenda->start . ' - ' . $agenda->end }}
+                                    <div
+                                        class=" flex flex-row bg-white dark:bg-[#29115d] rounded-2xl p-5 items-center gap-x-4">
+                                        <img src="{{ asset('assets/images/illustration/kalenderimg.webp') }}"
+                                            alt="" class="h-[60px] sm:hidden block">
+                                        <div class="flex flex-col ">
+                                            <h3 class="text-xl sm:text-2xl font-bold text-black1 dark:text-purple-100">
+                                                Waktu
+                                            </h3>
+                                            <div
+                                                class="text-sm sm:text-base leading-relaxed text-black4 dark:text-purple-200">
+                                                {{ $agenda->start . ' - ' . $agenda->end }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="flex flex-row gap-x-4 items-center pl-5 ">
                             <a href="{{ route('user.agenda') }}"
                                 class=" text-sm sm:text-base bg-purple-400 hover:bg-indigo-900 text-white dark:bg-purple-700 dark:hover:bg-white dark:hover:text-purple-700 py-4 px-5 sm:py-4 sm:px-10 rounded-full font-semibold">

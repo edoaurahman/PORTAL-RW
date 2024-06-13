@@ -12,15 +12,8 @@ class AgendaController extends Controller
     public function index(Request $request)
     {
         // agenda pada bulan ini dan tahun ini
-        $date = $request->date ? date('Y-m-d', strtotime($request->date)) : date('Y-m-d');
-        $agenda = AgendaModel::where('start', '>=', $date)
-            ->orderBy('start')
-            ->get();
-        $lastAgenda = AgendaModel::where('start', '<', $date)
-            ->orderBy('start')
-            ->get();
-        // append last agenda
-        $agenda = $agenda->concat($lastAgenda);
+        $date = $request->date ? date('Y-m', strtotime($request->date)) : date('Y-m');
+        $agenda = AgendaModel::where('start', 'like', '%' . $date . '%')->get();
         return response()->json($agenda);
     }
 

@@ -1,6 +1,6 @@
 <x-layout.user-layout>
     <section class="max-w-6xl mx-auto font-sans">
-        <div class="header bg-cover rounded-xl bg-no-repeat relative my-8 mx-auto h-[29vw]"
+        <div class="header bg-cover rounded-xl bg-no-repeat relative my-8 mx-auto sm:h-[29vw] h-[80vh]"
             style="background-image: url(/assets/images/illustration/mieayam.webp);">
             <div
                 class="header-content absolute flex flex-col items-end gap-6 max-w-[50%] bottom-[10%] right-[6vw] animate-fadein3s">
@@ -13,18 +13,19 @@
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto font-sans">
+    <section class="max-w-6xl mx-auto font-sans sm:px-0 px-10">
         <div class="explore-menu flex flex-col gap-5">
             <h1 class="text-[#262626] dark:text-white text-2xl font-semibold">Menjelajah UMKM</h1>
             <p class="explore-menu-text
-                max-w-[60%] ">Mengenalkan Anda pada usaha mikro, kecil, dan
+                sm:max-w-[60%] text-justify">Mengenalkan Anda pada usaha mikro,
+                kecil, dan
                 menengah yang menjadi pilar ekonomi lokal di RW 2 Arjosari. Temukan produk dan jasa unik dari UMKM di
                 lingkungan ini, dan dukung pertumbuhan ekonomi serta melestarikan kekayaan budaya Indonesia. Mari
                 bersama-sama mendukung UMKM untuk masa depan yang lebih baik.</p>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto font-sans">
+    <section class="max-w-6xl mx-auto font-sans sm:px-0 px-10">
         <div class="display mt-8">
             <div class="py-5 mt-3">
                 <label for="default-search"
@@ -134,5 +135,5 @@
             </div>
         </div>
     </section>
-    <div class="mt-90"></div>
+    <div class="mt-20"></div>
 </x-layout.user-layout>

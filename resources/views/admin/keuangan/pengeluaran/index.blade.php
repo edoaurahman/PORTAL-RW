@@ -66,6 +66,9 @@
                         <th scope="col" class="px-6 py-3">
                             Tanggal
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,8 +84,16 @@
                             <td class="px-6 py-4 ">
                                 {{ $item->jumlah }}
                             </td>
-                            <td class="px-6 py-4 flex gap-2">
+                            <td class="px-6 py-4">
                                 {{ $item->created_at }}
+                            </td>
+                            <td class="px-6 py-4 ">
+                                <button data-modal-target="edit-pengeluaran" data-modal-toggle="edit-pengeluaran"
+                                    onclick="showEdit({{ $item }})"
+                                    class="block text-white bg-yellow-300 hover:bg-yellow-400 dark:bg-yellow-300 dark:hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:focus:ring-yellow-800"
+                                    type="button">
+                                    Edit
+                                </button>
                             </td>
                         </tr>
                     @endforeach
@@ -103,4 +114,5 @@
         <!-- End Body Content -->
     </div>
     <x-partials.admin.keuangan.pengeluaran.add />
+    <x-partials.admin.keuangan.pengeluaran.edit />
 </x-layout.admin-layout>

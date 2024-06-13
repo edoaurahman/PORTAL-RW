@@ -119,5 +119,11 @@ class InventarisController extends Controller
     }
 
 
+    public function destroy_peminjaman(PeminjamanModel $peminjaman)
+    {
+        $peminjaman->delete();
+        // return redirect()->route('admin.inventaris.peminjaman')->with('success', 'Data berhasil dihapus');
+    }
+
 }
 

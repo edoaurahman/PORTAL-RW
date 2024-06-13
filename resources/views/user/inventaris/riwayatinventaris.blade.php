@@ -24,9 +24,8 @@
             </div>
         @endif
         @foreach ($peminjaman as $item)
-            <x-partials.user.inventaris.statuspinjam 
-            status="{{ $item->status }}" nama="{{ $item->nama }}"
-             jumlah="{{ $item->jumlah }}"/>
+            <x-partials.user.inventaris.StatusPinjam status="{{ $item->status }}" nama="{{ $item->nama }}"
+                jumlah="{{ $item->jumlah }}" />
         @endforeach
     </div>
     {{-- End List Berita --}}

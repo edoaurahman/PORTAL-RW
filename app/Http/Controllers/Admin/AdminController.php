@@ -42,7 +42,7 @@ class AdminController extends Controller
             ->whereYear('created_at', date('Y'))
             ->groupBy('bulan')
             ->get();
-            
+
         $pengeluaran = PengeluaranModel::select(DB::raw('MONTH(created_at) as bulan'), DB::raw('SUM(jumlah) as total'))
             ->whereYear('created_at', date('Y'))
             ->groupBy('bulan')
@@ -76,7 +76,7 @@ class AdminController extends Controller
         $totalPendudukPerempuanTetap = PendudukModel::where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Penduduk Tetap')->count();
         $totalPendudukPerempuanPendatang = PendudukModel::where('jenis_kelamin', 'Perempuan')->where('status_penduduk', 'Pendatang')->count();
 
-        $umkmList = UMKMModel::take(4)->get();
+        $umkmList = UMKMModel::orderBy('view', 'desc')->limit(4)->get();
 
         // hitung umur berdasarkan tanggal lahir
         $umur = [
